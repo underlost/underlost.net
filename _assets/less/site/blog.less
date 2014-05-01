@@ -1,0 +1,264 @@
+
+.layout-foreground {
+	position: relative;
+	z-index: 100
+}
+
+.layout-single-column {
+	max-width: 640px;
+	margin: 0 auto
+}
+
+.layout-fill,.layout-fill-width {
+	width: 100%
+}
+
+.layout-fill,.layout-fill-height {
+	height: 100%
+}
+
+.align-middle:before,.align-middle .align-block,.align-bottom:before,.align-bottom .align-block {
+	display: inline-block;
+	vertical-align: middle
+}
+
+.align-middle:before,.align-bottom:before {
+	content: '';
+	height: 100%
+}
+
+.align-bottom:before,.align-bottom .align-block {
+	vertical-align: bottom
+}
+
+
+.blog {
+	background: #fff url('../img/seattle.jpg') top center fixed no-repeat;
+	background-size: cover;
+}
+
+.blog a:hover {text-decoration: none}
+
+
+.blog-avatar {
+	margin-bottom: 20px;
+	display: inline-block;
+	width: 120px;
+	height: 120px;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	overflow: hidden;
+	border: 3px solid #fff;
+	z-index: 500;
+	background-color: #fff;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.3)
+}
+
+
+.blog-avatar-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%
+}
+
+.blog-home {
+	height: 380px;
+	text-align: center;
+
+	.align-block {
+		margin-top: 50px
+	}
+
+	.blog-title {
+		font-size: 48px;
+		font-weight: 700;
+		font-family: @font-family-sans-serif;
+		margin-bottom: 0
+	}
+
+	.blog-description {
+		font-size: 21px;
+		line-height: 29px;
+		font-weight: 300;
+		font-family: @font-family-sans-serif;
+		margin: 0 0 10px 0;
+		padding: 0;
+		color: @gray;
+	}
+}
+
+.post-page-wrapper {margin-top: 15px}
+
+.post-page-wrapper>p {
+	letter-spacing: .01rem;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 29px;
+	color: #555;
+	margin-bottom: 33px;
+}
+
+.post-page-wrapper>h3 {font-weight: 700;}
+
+.terminal {background: #333; color: #f2f2f2; margin-bottom: 33px;}
+
+.post-item {
+	display: block;
+	padding: 0 0 30px;
+	word-wrap: break-word;
+    border-bottom: 1px solid #e5e5e3;
+}
+
+.river-posts:last-child .post-item {
+	margin-bottom: 30px
+}
+
+.post-item-title,
+.post-item-title>a {
+	font-family: @font-family-sans-serif;
+	letter-spacing: -0.02em;
+	font-weight: 700;
+	font-style: normal;
+	display: block;
+	font-size: 28px;
+	line-height: 1.1;
+	color: #333332;
+	margin-bottom: 4px
+}
+
+.post-item-snippet>p {
+	font-family: @font-family-sans-serif;
+	letter-spacing: -0.02em;
+	font-weight: 300;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 27px;
+	color: #666665;
+	margin-bottom: 4px
+}
+
+.post-meta {
+    display: block;
+    margin-top: 10px;
+}
+
+.post-meta,
+.post-item-meta {
+	font-family: @font-family-sans-serif;
+	font-size: 14px;
+	color: #b3b3b1
+}
+
+.post-item-meta-item {
+	display: inline
+}
+
+.post-title {
+	font-family: @font-family-sans-serif;
+	letter-spacing: -0.02em;
+	font-weight: 700;
+	font-style: normal;
+	letter-spacing: -0.04em;
+	font-size: 50px;
+	line-height: 1.1;
+	margin-bottom: 8px
+}
+
+.post-article {margin-top: 25px}
+
+.site-mast {margin-bottom: 25px; margin-left: -40px;}
+.site-mast .media-heading>a { color: #666; font-weight: 300;}
+.site-mast .media-body { padding-top: 6px;}
+
+li.project a:hover {text-decoration: none}
+
+
+.list-item {
+	border-top: 1px solid rgba(255,255,255,0.2);
+	padding: 40px 0 35px
+}
+
+.list-item:last-child {
+	border-bottom: 1px solid rgba(255,255,255,0.2)
+}
+
+
+.site-footer {
+    position: relative;
+    margin: 8rem 0 0 0;
+    padding: 4rem 0;
+    border-top: 1px solid darken(#fafafa, 10%);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.7em;
+    color: darken(#fafafa, 25%);
+    text-align: center;
+    background: #fafafa;
+
+	a {
+		color: darken(#fafafa, 35%);
+	}
+
+	a:hover {
+		color: darken(#fafafa, 50%);
+	}
+}
+
+
+.subscribe {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    margin-left: -15px;
+    border: darken(#fafafa, 10%) 1px solid;
+    text-align: center;
+    border-radius: 50px;
+    background: #fff;
+	padding-top: 2px;
+    transition: box-shadow 0.5s;
+}
+
+.subscribe:hover {
+    box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
+    transition: box-shadow 0.25s;
+}
+
+.dark {
+	background: url('../img/dark_bg.jpg') center center fixed;
+	background-size: cover;
+
+	a,
+	h1,
+	.post-item-title,
+	.post-item-title a,
+	.post-page-wrapper>h3 {
+		text-shadow: 0 1px 1px rgba(0,0,0,.3);
+		color: #f2f2f2;
+	}
+
+	.post-item-snippet>p,
+	.post-page-wrapper>p {color: #999; text-shadow: 0 1px 1px rgba(0,0,0,.75);}
+
+	.site-footer {
+		color: #666;
+		border-color: #333;
+		background: #1e1e1e;
+		background: rgba(30,30,30,0.75);
+	}
+
+	.subscribe {
+		border-color: #333;
+		background: #333;
+	}
+
+	hr { border-top-color: #444}
+}

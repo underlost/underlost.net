@@ -1,0 +1,190 @@
+#work {
+    background: url('../img/pattern.png');
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -ms-transition: background .5s;
+    -o-transition: background .5s;
+    transition: background .5s;
+}
+
+small#underlost-arrow {
+    position: absolute;
+    left: 75px;
+    top: 22px;
+    z-index: 100;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    font-size: 12px;
+    font-weight: 400;
+    background: rgba(0,0,0,.1);
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+#work .work {
+    float: left;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .25s;
+    -moz-transition: opacity .25s;
+    -ms-transition: opacity .25s;
+    -o-transition: opacity .25s;
+    transition: opacity .25s;
+}
+
+#work > div.active {
+    opacity: 1;
+}
+
+#work > div > div {
+    width: 1024px;
+    left: 50%;
+    margin-left: -512px;
+    padding-bottom: 50px;
+}
+
+#work h1 {
+    color: #fff;
+    font-size: 58px;
+    line-height: 62px;
+}
+
+.work small {
+    display: block;
+    margin: 4px 0 25px;
+    font-size: 14px;
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255,255,255,.25);
+}
+
+#work p {
+    max-width: 440px;
+    padding-bottom: 18px;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+#work p a {color: #f2f2f2}
+
+#work .photo img {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: -200%;
+    opacity: 1;
+    pointer-events: none;
+    -webkit-transition: bottom .5s, opacity .5s;
+    -moz-transition: bottom .5s, opacity .5s;
+    -ms-transition: bottom .5s, opacity .5s;
+    -o-transition: bottom .5s, opacity .5s;
+    transition: bottom .5, opacity .5s;
+}
+
+
+#work .active img {
+    bottom: 0;
+    opacity: 1;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0;
+
+    -webkit-box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
+    -o-box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
+    box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
+}
+
+#work .btn-default {
+    color: rgba(255,255,255,.85);
+    border-width: 0;
+    background: rgba(0,0,0,.2);
+}
+
+/* @group Replica */
+
+#replica small {
+    color: #4b4f50;
+}
+
+#replica p {
+    color: #565b5c;
+    text-shadow: 0 1px 1px rgba(255,255,255,.2);
+}
+
+/* @end */
+
+/* @group Jaded Gamer */
+
+#jadedgamer small {
+    color: #284d30;
+}
+
+#jadedgamer p {
+    color: #305938;
+    text-shadow: 0 1px 1px rgba(255,255,255,.3);
+}
+
+/* @end */
+
+/* @group Gamer News */
+
+#gamernews small {
+    color: darken(#952067, 15%);
+    text-shadow: 0 1px 1px rgba(255,255,255,.1);
+}
+
+#gamernews p {
+    color: darken(#952067, 20%);
+    text-shadow: 0 1px 1px rgba(255,255,255,.2);
+}
+
+/* @end */
+
+/* @group Mbarrington */
+
+#mbarrington small {
+    color: #6f4d12;
+}
+
+#mbarrington p {
+    color: #7e5713;
+    text-shadow: 0 1px 1px rgba(255,255,255,.3);
+}
+
+/* @end */
+
+/* @group Designcor */
+
+#designcor small {
+    color: #405805;
+}
+
+#designcor p {
+    color: #516e07;
+    text-shadow: 0 1px 1px rgba(255,255,255,.3);
+}
+
+/* @end */
+
+/* @group Vapor */
+
+#vapor p {
+    color: #686562;
+    text-shadow: 0 1px 1px rgba(255,255,255,.3);
+}
+
+#vapor small {
+    color: #53514f;
+    text-shadow: 0 1px 1px rgba(255,255,255,.2);
+}

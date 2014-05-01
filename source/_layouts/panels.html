@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="panel" id="work" style="background-color:#{{ page.color }}">
+	<div class="work active" id="{{ page.slug }}" data-background="{{ page.color }}">
+		<div class="vertical">
+			<h1>{{ page.title }}</h1>
+			<small>{{ page.deck }}</small>
+			{{ content }}
+			<span class="photo"><img src="{{ page.image }}" alt="Screenshot of {{ page.title }}"></span>
+		</div>
+	</div>
+</div>

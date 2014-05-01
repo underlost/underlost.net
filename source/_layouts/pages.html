@@ -1,0 +1,33 @@
+{% include header.html %}
+    <body class="{{page.slug}} {% if page.dark%}dark{% endif %}">
+
+        <header id="underlost-info">
+            <a id="logo" href="/#top"><img src="/assets/img/logo.png" width="32" height="32" alt="underlost logo"></a>
+            <ul class="list-unstyled" id="underlost-contact">
+                <li>Phone: +1 (608) 403-5501</li>
+                <li>Email: tyler@underlost.net</li>
+            </ul>
+        </header>
+
+        <header class="blog-home layout-single-column">
+
+            <div class="align-middle layout-single-column layout-foreground layout-fill-height">
+                <div class="align-block">
+                    <h1 class="blog-title">{{page.title}}</h1>
+                    <p class="blog-description blog-description-tagline">{{ page.deck }}</p>
+                </div>
+            </div>
+        </header>
+
+        {% if page.page_type == 'list' %}
+        <section class="river layout-single-column">
+        {% else %}
+        <section class="post-page-wrapper layout-single-column">
+        {% endif %}
+            {{ content }}
+        </section>
+
+        {% include blog-footer.html %}
+
+    </body>
+{% include footer.html %}
