@@ -7,13 +7,15 @@
 
 # TECHNOLOGY COLOPHON
 
-    Jekyll + AWS S3 site hosting
     HTML5, CSS3
-    jQuery
-    Twitter Bootstrap
     LESS
+    jQuery
+    Jekyll
+    Twitter Bootstrap
+    grunt
+    AWS S3, Cloudfront
+    Heroku
     Memcachier
     New Relic
     Paper Trail
     Unicorn (server)
-    grunt

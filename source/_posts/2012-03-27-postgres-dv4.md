@@ -3,6 +3,7 @@ layout: posts
 title: PostgreSQL 8.4 on a Media Temple (dv) Server
 slug: postgres-dv4
 date: 2012-03-27T20:30:30
+snippet: 'Getting the latest version of PostgrSQL running on A Media Temple (dv) Server'
 ---
 
 ### Preface

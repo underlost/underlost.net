@@ -12,13 +12,13 @@ layout: nil
     <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
     <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
 
-    {% for post in site.data.blog %}
+    {% for post in site.posts %}
     <item>
       <title>{{ post.title }}</title>
-      <link>{{ site.blog }}{{ post.slug }}</link>
+      <link>{{ site.site }}{{ post.url }}</link>
       <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>{{ site.blog }}{{ post.slug }}</guid>
+      <guid>{{ site.site }}{{ post.url }}</guid>
       <description>{{ post.snippet | xml_escape }}</description>
     </item>
     {% endfor %}

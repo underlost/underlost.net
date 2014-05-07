@@ -5,6 +5,8 @@ slug: vapor
 deck: 'Backpack viewer for Valve Web API'
 color: a19d97
 image: /assets/img/work/vapor.jpg
+permalink: /vapor/
+date: 2014-03-01
 ---
 
 Vapor is a simple backback (item inventory) viewer I wrote to better understand Valve's Steam Web API.

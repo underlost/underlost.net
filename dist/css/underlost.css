@@ -5738,6 +5738,7 @@ li.project a:hover {
 }
 .dark {
   background: url('../img/dark_bg.jpg') center center fixed;
+  background-color: #1a1a1a;
   -webkit-background-size: cover;
           background-size: cover;
 }

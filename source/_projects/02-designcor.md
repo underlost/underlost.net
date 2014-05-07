@@ -5,6 +5,8 @@ slug: designcor
 deck: 'Design and code for graphic and print company.'
 color: 7cad00
 image: /assets/img/work/designcor.jpg
+permalink: /designcor/
+date: 2014-02-01
 ---
 
 The original Designcor website had been using the same design and code for nearly a decade. It didnt just need a fresh coat of paint, it required a complete overhaul.

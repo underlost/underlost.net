@@ -22,12 +22,12 @@ title: underlost.net
 <div class="panel" id="work">
 	<small id="underlost-arrow">Use your arrow keys (&larr; and &rarr;) to navigate.</small>
 
-	{% for post in site.posts reversed %}
+	{% for post in site.projects reversed %}
 	<div class="work {% if forloop.first %}active{% endif %}" id="{{ post.slug }}" data-background="{{ post.color }}">
 		<div class="vertical">
 			<h1>{{ post.title }}</h1>
 			<small>{{ post.deck }}</small>
-			{{ post.content }}
+			{{ post.content | markdownify }}
 			<span class="photo"><img class="img-rounded" src="{{ post.image }}" alt="Screenshot of {{ post.title }}"></span>
 		</div>
 	</div>

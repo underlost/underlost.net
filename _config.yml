@@ -8,9 +8,9 @@ plugins:     ./source/_plugins
 
 future:      true
 lsi:         false
-pygments:    true
+highlighter:    true
 markdown:    kramdown
-permalink:   :title
+permalink:   blog/:title
 
 rdiscount:
   extensions: []
@@ -30,6 +30,13 @@ kramdown:
     coderay_tab_width: 4
     coderay_bold_every: 10
     coderay_css: style
+
+collections:
+  projects:
+    label: projects
+    output: true
+    relative_directory: :slug
+    directory: :slug
 
 exclude: [
     "dist",

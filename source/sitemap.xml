@@ -10,19 +10,19 @@ layout: nil
     <priority>1.0</priority>
    </url>
 
-   {% for post in site.data.blog %}
+   {% for post in site.posts %}
    <url>
-       <loc>http://underlost.net{{ site.blog }}{{ post.slug }}</loc>
-       <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
+       <loc>http://underlost.net{{ post.url }}</loc>
+       <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.5</priority>
    </url>
    {% endfor %}
 
-   {% for post in site.posts %}
+   {% for post in site.projects %}
    <url>
        <loc>http://underlost.net{{ post.url }}</loc>
-       <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+       <lastmod>{{ post.date | date: "%Y-%m-%dT%H:%M:%S-%z" }}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.1</priority>
    </url>

@@ -8,11 +8,11 @@ page_type: list
 ---
 
 <ul class="list-unstyled river-posts">
-    {% for post in site.data.projects %}
+    {% for post in site.projects reversed %}
     <li class="river-post list-item project">
         <div class="layout-single-column">
-            <h3 class="post-item-title"><a href="/{{ post.slug }}" title="{{ post.title }}">{{ post.title }}</a></h3>
-            <a class="post-item-snippet" href="/{{ post.slug }}">
+            <h3 class="post-item-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+            <a class="post-item-snippet" href="{{ post.url }}">
                 <p>{{ post.deck }}</p>
             </a>
         </div>

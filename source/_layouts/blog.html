@@ -21,10 +21,10 @@
                 <div class="index-page">
                     <section class="river layout-single-column">
                     <ul class="list-unstyled river-posts">
-                        {% for post in site.data.blog %}
+                        {% for post in site.posts %}
                         <li class="river-post post-item">
-                            <h3 class="post-item-title"><a href="{{ site.blog }}{{ post.slug }}" title="{{ post.title }}">{{ post.title }}</a></h3>
-                            <a class="post-item-snippet" href="{{ site.blog }}{{ post.slug }}">
+                            <h3 class="post-item-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+                            <a class="post-item-snippet" href="{{ post.url }}">
                                 <p>{{ post.snippet }}</p>
                             </a>
                             <span class="post-meta">
