@@ -289,8 +289,8 @@ module.exports = function (grunt) {
     git_deploy: {
       github: {
         options: {
-          url: 'git@github.com:underlost/underlost.github.com.git',
-          branch: 'master',
+          url: 'git@github.com:underlost/underlost.net.git',
+          branch: 'gh-pages',
           message: 'Deployed from gruntfile.js'
         },
         src: 'source'

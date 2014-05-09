@@ -1,7 +1,7 @@
 {
   "name": "underlost",
   "description": "Assets for underlost.net",
-  "version": "0.0.1",
+  "version": "2.0.1",
   "keywords": [
       "underlost",
       "Tyler Rilling"
@@ -15,14 +15,14 @@
   "less": "_less/underlost.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/underlost/underlost.github.io.git"
+    "url": "https://github.com/underlost/underlost.net.git"
   },
   "bugs": {
-    "url": "https://github.com/underlost/underlost.github.io/issues"
+    "url": "https://github.com/underlost/underlost.net/issues"
   },
   "license": {
     "type": "MIT",
-    "url": "https://github.com/underlost/underlost.github.io/blob/master/LICENSE"
+    "url": "https://github.com/underlost/underlost.net/blob/master/LICENSE"
   },
   "devDependencies": {
     "btoa": "~1.1.1",
@@ -67,7 +67,7 @@
       "lib": "dist"
     },
     "shim": {
-      "js/bootstrap": {
+      "js/underlost": {
         "imports": "jquery",
         "exports": "$"
       }

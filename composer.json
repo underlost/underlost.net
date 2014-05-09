@@ -10,12 +10,12 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/underlost/underlost.github.io/issues"
+    "issues": "https://github.com/underlost/underlost.net/issues"
   },
   "license": "MIT",
   "extra": {
     "branch-alias": {
-      "dev-master": "0.1.x-dev"
+      "master": "2.0.1"
     }
   }
 }

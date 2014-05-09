@@ -1,11 +1,16 @@
 safe: True
+port: 4000
 base-url:    /
+
+gems:
+  - jekyll-sitemap
+
 
 future:      true
 lsi:         false
-pygments:    true
+highlighter: true
 markdown:    kramdown
-permalink:   :title
+permalink:   blog/:title
 
 rdiscount:
   extensions: []
@@ -26,9 +31,20 @@ kramdown:
     coderay_bold_every: 10
     coderay_css: style
 
+collections:
+  projects:
+    label: projects
+    output: true
+    relative_directory: :slug
+    directory: :slug
+
+exclude: [
+    CNAME,
+    README.md
+]
 
 # Custom vars
-current_version:  1.1.0
+current_version:  2.0.1
 repo: https://github.com/underlost/underlost.net
 site: http://underlost.net/
 author: Tyler Rilling
