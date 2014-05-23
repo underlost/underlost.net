@@ -1,7 +1,6 @@
 /*!
- * underlost.net v0.0.1 (http://underlost.net)
+ * underlost.net v2.0.1 (http://underlost.net)
  * Copyright 2014 Tyler Rilling
- * Licensed under MIT (https://github.com/underlost/underlost.github.io/blob/master/LICENSE)
  */
 
 if (typeof jQuery === 'undefined') { throw new Error('underlost\'s JavaScript requires jQuery') }

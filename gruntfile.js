@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 
   var fs = require('fs');
   var path = require('path');
-  var updateShrinkwrap = require('./grunt/shrinkwrap.js');
+  var updateShrinkwrap = require('./.grunt/shrinkwrap.js');
 
   // Project configuration.
   grunt.initConfig({
@@ -27,7 +27,6 @@ module.exports = function (grunt) {
     banner: '/*!\n' +
             ' * underlost.net v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
             ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-            ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
             ' */\n',
     jqueryCheck: 'if (typeof jQuery === \'undefined\') { throw new Error(\'underlost\\\'s JavaScript requires jQuery\') }\n\n',
 
@@ -44,7 +43,7 @@ module.exports = function (grunt) {
         options: {
           jshintrc: 'grunt/.jshintrc'
         },
-        src: ['Gruntfile.js', 'grunt/*.js']
+        src: ['Gruntfile.js', '.grunt/*.js']
       },
       src: {
         src: '_assets/js/*.js'

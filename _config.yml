@@ -42,8 +42,7 @@ collections:
     directory: :slug
 
 exclude: [
-    "dist",
-    "grunt",
+    dist,
     Gemfile,
     Gemfile.lock,
     Procfile,
