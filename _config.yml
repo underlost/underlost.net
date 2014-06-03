@@ -53,12 +53,12 @@ exclude: [
 ]
 
 # Custom vars
-current_version:  1.1.0
+current_version:  2.2.1
 repo: https://github.com/underlost/underlost.net
 site: http://underlost.net/
 url: http://underlost.net
 author: Tyler Rilling
 
 blog: /blog/
-blog_title: underlost.net
+blog_title: Underlost
 blog_deck: By Tyler Rilling

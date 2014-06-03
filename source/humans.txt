@@ -11,7 +11,8 @@
     LESS
     jQuery
     Jekyll
-    Twitter Bootstrap
+    Bootstrap
+    Ratchet
     grunt
     AWS S3, Cloudfront
     Heroku

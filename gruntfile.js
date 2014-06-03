@@ -94,6 +94,7 @@ module.exports = function (grunt) {
           '_assets/js/scrollspy.js',
           '_assets/js/tab.js',
           '_assets/js/affix.js',
+          '_assets/js/jquery.history.min.js',
           '_assets/js/handler.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
@@ -292,7 +293,7 @@ module.exports = function (grunt) {
           branch: 'gh-pages',
           message: 'Deployed from gruntfile.js'
         },
-        src: 'source'
+        src: '_site'
       },
     },
 

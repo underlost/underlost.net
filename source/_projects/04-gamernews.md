@@ -7,6 +7,8 @@ color: 952067
 image: /assets/img/work/gamernews.jpg
 permalink: /gamernews/
 date: 2014-04-01
+previous_page: jadedgamer
+next_page: vapor
 ---
 
 I wanted to learn how social news sites like Reddit and Hacker News worked, so I wrote my own. Ranking is calculated by a fairly simple algorithm: Score = (P-1) / (T+2)^G

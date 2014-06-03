@@ -4,46 +4,14 @@ title: underlost.net
 ---
 
 <div class="panel main-panel" id="top">
-	<div class="vertical">
-		<h1>Looking for<br />a Web Engineer?</h1>
-		<p>My name is Tyler Rilling, although most people know me as <strong>Underlost</strong>, and I make websites. From sketch, to design, code and bug fixing, I do it all. And right now, I&rsquo;m looking for a full-time <a class="job-link" href="/job/">job</a> in Seattle.</p>
-		<p class="button-set visible-md visible-lg">
-			<a class="next btn btn-primary" href="#replica">View selected works</a>
-			<a class="btn btn-success" href="/blog/">Or go to the blog</a>
-		</p>
-
-		<p class="button-set visible-xs visible-sm">
-			<a class="btn btn-success" href="/projects/">View selected projects</a>
-			<a class="btn btn-success" href="/blog/">Or go to the blog</a>
-		</p>
-	</div>
-</div>
-
-<div class="panel" id="work">
-	<small id="underlost-arrow">Use your arrow keys (&larr; and &rarr;) to navigate.</small>
-
-	{% for post in site.projects reversed %}
-	<div class="work {% if forloop.first %}active{% endif %}" id="{{ post.slug }}" data-background="{{ post.color }}">
+	<div class="layout-single-column">
 		<div class="vertical">
-			<h1>{{ post.title }}</h1>
-			<small>{{ post.deck }}</small>
-			{{ post.content | markdownify }}
-			<span class="photo"><img class="img-rounded" src="{{ post.image }}" alt="Screenshot of {{ post.title }}"></span>
+			<h1 class="heading">Looking for<br />a Web Engineer?</h1>
+			<p>My name is Tyler Rilling, although most people know me as <strong>Underlost</strong>, and I make websites. From sketch, to design, code and bug fixing, I do it all. And right now, I&rsquo;m looking for a full-time <a class="job-link" href="/job/" data-ignore="push">job</a> in Seattle.</p>
+			<p class="button-set">
+				<a class="next btn btn-primary" href="/replica/" data-pjax=".content">View selected works</a>
+				<a class="btn btn-success" href="/blog/" data-ignore="push">Or go to the blog</a>
+			</p>
 		</div>
-	</div>
-	{% endfor %}
-
-</div>
-
-{% include interested.html %}
-
-<div class="panel" id="cats">
-	<div class="vertical">
-		<h1></h1>
-		<ul id="meow" class="unstyled">
-			<li class="active"><img src="http://farm9.staticflickr.com/8345/8249543907_988c47db6a_z.jpg" alt="Gadget"></li>
-			<li><img src="http://farm9.staticflickr.com/8205/8250593566_61a50d22b6_z.jpg" alt="Chuck"></li>
-			<li><img src="http://farm9.staticflickr.com/8490/8249527309_ae07c8c1f9_z.jpg" alt="Wide eyes"></li>
-		</ul>
 	</div>
 </div>

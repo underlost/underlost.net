@@ -1,6 +1,9 @@
-html, body {
+html {
     width: 100%;
     height: 100%;
+    background-color: @body-bg;
+    background-image: url('../img/pattern.png');
+
 }
 
 a {
@@ -9,26 +12,6 @@ a {
     -ms-transition: color .25s ease-in, background .25s ease-in, opacity .25s ease-in;
     -o-transition: color .25s ease-in, background .25s ease-in, opacity .25s ease-in;
     transition: color .25s ease-in, background .25s ease-in, opacity .25s ease-in;
-}
-
-#page {
-    height: 100%;
-    max-height: 100%;
-}
-
-.main {
-    text-shadow: 0 1px 1px rgba(0,0,0,.4);
-    overflow: hidden;
-
-    h1 {
-        font-family: @font-family-serif;
-        font-size: 64px;
-        line-height: 72px;
-        font-weight: 700;
-        text-transform: uppercase;
-        mask-image: url('../img/mask.png');
-        -webkit-mask-image: url('../img/mask.png');
-    }
 }
 
 #underlost-info {
@@ -50,15 +33,16 @@ a {
 #underlost-contact {
 	display: block;
 	float: right;
-	height: 20px;
-	color: #fff;
+
+    a {color: #f2f2f2;}
+    a:hover {text-decoration: none;}
 
     li {
         text-align: right;
         opacity: .75;
         font-size: 15px;
         font-weight: 400;
-        margin-bottom: 3px;
+        margin-top: 3px;
         text-shadow: 0 1px 2px rgba(0,0,0,.5);
     }
 
@@ -68,11 +52,9 @@ a {
 }
 
 #underlost-social {
-    position: fixed;
-    left: 25px;
-    right: 25px;
-    bottom: 25px;
+
     z-index: 100;
+    margin: 20px auto 0;
 
     a {
         color: #f2f2f2;
@@ -84,11 +66,22 @@ a {
 
 }
 
-section#panels {
-	position: relative;
+h1.heading {
+    font-family: @font-family-serif;
+    font-size: 64px;
+    line-height: 72px;
+    font-weight: 700;
+    text-transform: uppercase;
+    mask-image: url('../img/mask.png');
+    -webkit-mask-image: url('../img/mask.png');
+    color: #eee;
+}
+
+#content {
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	z-index: 1;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
 
     .panel{
         position: relative;
@@ -109,23 +102,17 @@ section#panels {
 }
 
 .main-panel {
-
-    h1 {
-        color: #eee;
-        text-align: center;
-    }
+    text-align: center;
 
     p {
         max-width: 640px;
+        min-width: 200px;
         margin: 10px auto 0;
         color: #ebebeb;
         font-size: 20px;
         line-height: 32px;
-        text-align: center;
         font-weight: 400;
     }
-
-    a {}
 
     .job-link {
         color: #fff;
@@ -145,12 +132,13 @@ section#panels {
 .vertical {
 	position: absolute;
 	top: 25%;
-	width: 100%;
 	height: 400px;
+    min-width: 200px;
+    margin: 0 auto;
 }
 
 #top {
-    background: url('../img/top.jpg') center center;
+    background: url('../img/top.jpg') center center fixed;
     background-size: cover;
 }
 
@@ -164,8 +152,13 @@ section#panels {
     background-size: cover;
 }
 
+.dark {
+    background: #1a1a1a url('../img/dark_bg.jpg') center center fixed;
+    background-size: cover;
+}
+
 .section-background-image {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;

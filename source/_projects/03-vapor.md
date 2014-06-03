@@ -7,6 +7,8 @@ color: a19d97
 image: /assets/img/work/vapor.jpg
 permalink: /vapor/
 date: 2014-03-01
+previous_page: gamernews
+next_page: designcor
 ---
 
 Vapor is a simple backback (item inventory) viewer I wrote to better understand Valve's Steam Web API.

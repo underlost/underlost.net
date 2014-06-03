@@ -1,43 +1,37 @@
 @media all and (max-width:700px) {
-    .main-panel h1 {
+    h1.heading {
         font-size: 36px;
         line-height: 40px;
     }
 
     .main-panel p {
-        max-width: 350px;
         font-size: 17px;
-        line-height: 27px
+        line-height: 25px;
+        margin: 10px 20px 0;
     }
 
-    #work small {
-        display: none;
+    .work {
+        .photo, small {display: none;}
+
+        .vertical {
+            position: relative;
+            left: 0;
+            top: 80px;
+            margin: auto;
+        }
+
     }
 
-    #work h1 {
-        color: #fff;
-        font-size: 30px;
-        line-height: 32px;
+    .works-nav {
+        text-align: center;
+        .pull-right {float: none !important;}
     }
 
-    #work .photo {
-        display: none;
-    }
-
-    #work > div > div {
-        max-width: 350px;
-        position: relative;
-        left: 0;
-        top: 75px;
-        margin: auto;
-        padding: 0 10px;
-    }
 
     .blog-home .blog-title {
         font-size: 32px;
     }
 
-    .post-item,
     .list-item,
     .post-article,
     .dark .post-page-wrapper { margin: 15px; }
@@ -50,4 +44,6 @@
     }
 
     #underlost-info {position: absolute;}
+
+    .image-src-fixed {padding-top: 50px}
 }

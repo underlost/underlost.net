@@ -7,6 +7,8 @@ color: 7cad00
 image: /assets/img/work/designcor.jpg
 permalink: /designcor/
 date: 2014-02-01
+previous_page: vapor
+next_page: mbarrington
 ---
 
 The original Designcor website had been using the same design and code for nearly a decade. It didnt just need a fresh coat of paint, it required a complete overhaul.

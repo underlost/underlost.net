@@ -1,5 +1,10 @@
 {% include header.html %}
     <body class="blog">
+
+        <header id="underlost-info">
+            <a id="logo" href="/blog/"><img src="/assets/img/underlost.png" width="32" height="32" alt="underlost logo"></a>
+        </header>
+
         <div class="image-src-fixed">
             <div class="layout-foreground scrolling-region">
 
@@ -7,16 +12,6 @@
                     <div class="post-content layout-single-column">
 
                         <header class="post-header">
-
-                            <div class="site-mast media">
-                                <a class="pull-left" href="{{ site.blog }}">
-                                    <img class="media-object img-circle" src="https://secure.gravatar.com/avatar/ddf39b714f62f43094e000cf27120d97?s=32" alt="avatar">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a class="pull-left" href="{{ site.blog }}">{{ site.blog_title }}</a></h4>
-                                </div>
-                            </div>
-
                             <h1 class="post-title">{{ page.title }}</h1>
                             <span class="post-item">
                                 <span class="post-item-meta">{{ page.date | date: "%A, %B %e %Y" }}</span>
