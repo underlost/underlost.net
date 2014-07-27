@@ -5,7 +5,7 @@ base-url:    /
 gems:
   - jekyll-sitemap
 
-source:      ./source
+source:      ./src/site
 destination: ./_site
 plugins:     ./source/_plugins
 
@@ -53,7 +53,7 @@ exclude: [
 ]
 
 # Custom vars
-current_version:  2.2.1
+current_version:  2.3.1
 repo: https://github.com/underlost/underlost.net
 site: http://underlost.net/
 url: http://underlost.net

@@ -1,9 +1,9 @@
 /*!
- * underlost.net v2.0.1 (http://underlost.net)
- * Copyright 2014 Tyler Rilling
+ * underlost.net v2.3.1 (http://underlost.net)
+ * Copyright 2014 Tyler Rilling (http://underlost.net/)
  */
 
-if (typeof jQuery === 'undefined') { throw new Error('underlost\'s JavaScript requires jQuery') }
+if (typeof jQuery === 'undefined') { throw new Error('UnderTasker\'s JavaScript requires jQuery') }
 
 /* ========================================================================
  * Bootstrap: transition.js v3.1.1
@@ -1988,14 +1988,7 @@ $(function () {
     });
   };
   setInterval(kitty, 3000);
-  $.easing.swing = function (x, t, b, c, d) {
-    if ((t /= d / 2) < 1)
-      return c / 2 * t * t + b;
-    return -c / 2 * (--t * (t - 2) - 1) + b;
-  };
-  $.fx.speeds._default = 700;
 });
-
 
 
 (function ($) {
@@ -2082,5 +2075,25 @@ $(function () {
 
             return false;
         });
+    });
+
+    var keymap = {};
+
+    // LEFT
+    keymap[ 37 ] = "#panel-prev-link";
+    // RIGHT
+    keymap[ 39 ] = "#panel-next-link";
+
+    $(document).on( "keyup", function(event) {
+        var href,
+            selector = keymap[ event.which ];
+        // if the key pressed was in our map, check for the href
+        if ( selector ) {
+            href = $( selector ).attr( "href" );
+            if ( href ) {
+                // navigate where the link points
+                window.location = href;
+            }
+        }
     });
 })(jQuery);

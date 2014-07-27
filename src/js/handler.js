@@ -13,14 +13,7 @@ $(function () {
     });
   };
   setInterval(kitty, 3000);
-  $.easing.swing = function (x, t, b, c, d) {
-    if ((t /= d / 2) < 1)
-      return c / 2 * t * t + b;
-    return -c / 2 * (--t * (t - 2) - 1) + b;
-  };
-  $.fx.speeds._default = 700;
 });
-
 
 
 (function ($) {
@@ -107,5 +100,25 @@ $(function () {
 
             return false;
         });
+    });
+
+    var keymap = {};
+
+    // LEFT
+    keymap[ 37 ] = "#panel-prev-link";
+    // RIGHT
+    keymap[ 39 ] = "#panel-next-link";
+
+    $(document).on( "keyup", function(event) {
+        var href,
+            selector = keymap[ event.which ];
+        // if the key pressed was in our map, check for the href
+        if ( selector ) {
+            href = $( selector ).attr( "href" );
+            if ( href ) {
+                // navigate where the link points
+                window.location = href;
+            }
+        }
     });
 })(jQuery);
