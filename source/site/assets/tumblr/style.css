@@ -1,0 +1,338 @@
+/* @override 
+	http://underlost.net/static/css/site.css
+	http://media.underlost.net/tumblr/blog/css/style.css
+	http://underlost.github.io/assets/tumblr/style.css
+*/
+
+/* Default styles */
+
+/* @group Pulse */
+
+div#marker {
+	width: 95px;
+	height: 85px;
+	margin: 0 auto;
+	z-index: 500;
+}
+
+div#marker a {
+	display: block;
+}
+
+div#marker div.dot_pulse {
+	margin: 0 auto;
+	width: 70px;
+	height: 70px;
+	border-radius: 100px;
+	z-index: 10;
+	background-color: transparent;
+	border: 10px solid #333;
+	-webkit-animation-name: dotPulse;
+	-moz-animation-name: dotPulse;
+	-webkit-animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function: linear;
+	opacity: 0.2;
+	border-top-left-radius: 100px 100px;
+	border-top-right-radius: 100px 100px;
+	border-bottom-right-radius: 100px 100px;
+	border-bottom-left-radius: 100px 100px;
+}
+
+div#marker div.dot {
+	margin: 0 auto;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	position: relative;
+	background-color: #ccc;
+	z-index: 50;
+	position: relative;
+	top: -55px;
+}
+
+@-webkit-keyframes 'dotPulse' {
+	0% {
+		-webkit-transform: scale(0);
+	opacity: 0;
+}
+
+8% {
+	-webkit-transform: scale(0);
+	opacity: 0;
+}
+
+15% {
+	-webkit-transform: scale(0.1);
+	opacity: 0.8;
+}
+
+30% {
+	-webkit-transform: scale(0.5);
+	opacity: 0.2;
+}
+
+100% {
+	opacity: 0;
+	border: 10px solid #ffffff;
+	-webkit-transform: scale(1);
+}
+
+}
+
+
+@-moz-keyframes dotPulse {
+	0% {
+		-moz-transform: scale(0);
+	opacity: 0;
+	}
+}
+
+/* @end */
+
+body {
+	background: #faf9f7;
+	text-shadow: 1px 1px 1px #FFF;
+	text-rendering: optimizeLegibility;
+	font-family: "proxima-nova",sans-serif;
+}
+
+#wrap {
+	margin: 0 auto;
+	width: 612px;
+	position: relative;
+	z-index: 15;
+}
+
+
+
+.seattle {
+	position: fixed;
+	top: 0;
+	display: block;
+	height: 100%;
+	width: 1000%;
+	background: url('http://underlost.github.io/assets/tumblr/seattle.jpg') top center fixed no-repeat;
+	background-size: cover;
+	z-index: 1;
+}
+
+a:active {
+	position: relative;
+	top: 1px;
+}
+
+a:link {
+	transition: 		text-shadow .3s, color .3s;
+	-moz-transition: 	text-shadow .3s, color .3s;
+	-webkit-transition: text-shadow .3s, color .3s;
+}
+
+
+a:link, a:visited {color: #333;text-decoration:none;}
+
+p.lead {
+	color: #222;
+}
+
+time {
+	display: block;
+	margin-top: 40px;
+}
+
+nav.site-nav {
+	position: fixed;
+	z-index: 100;
+	bottom: 15px;
+	left: 15px;
+	padding: 10px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.site-nav-branding img {
+	width: 32px;
+}
+
+header#top {
+	margin-top: 50px;
+	z-index: 1;
+	text-align: center;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #ddd;
+}
+
+#avatar {
+  width: 100px;
+  border-radius: 50%;
+  margin: 0 10px 30px 0;
+  box-shadow: 0 0 0 2px white;
+  -webkit-transition: 200ms;
+     -moz-transition: 200ms;
+      -ms-transition: 200ms;
+       -o-transition: 200ms;
+          transition: 200ms;
+}
+
+header#top h1 {
+	margin-top: 0;
+	font-weight: 600;
+	font-size: 30px;
+	line-height: 30px;
+	font-family: "proxima-nova",sans-serif;
+	
+}
+
+header#top h1 a {
+	color: 333;
+}
+
+header#top h1 a:hover {
+	color: #333;
+}
+
+section#river {
+	min-height: 900px;
+	z-index: 10;
+}
+
+header#top p#description {
+	font-size: 18px;
+	color: #888;
+	margin: 0;
+	font-family: "ff-providence-sans-web-pro",cursive;
+}
+
+header#top p#description a {
+	color: #111;
+}
+
+a:hover,
+a:focus {
+	color: #369;
+}
+
+
+section#river {
+	padding-top: 40px;
+	position: relative;
+	min-height: 900px;
+	z-index: 10;
+}
+
+div.date h3 {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	color: #999;
+	font-weight: 500;
+	font-size: 16px;
+	font-family: "proxima-nova",sans-serif;
+	text-align: center;
+}
+
+
+section#river article {
+	margin-bottom: 75px;
+	padding-bottom: 25px;
+	font-family: "proxima-nova",sans-serif;
+	border-bottom: 1px solid #ddd;
+}
+
+section#river article.video,
+section#river article.photo {
+	text-align: center;
+}
+
+article blockquote {
+	border-left: 4px solid rgba(0, 0, 0, .1);
+	padding-left: 20px;
+}
+
+
+article blockquote p.source {
+	padding-top: 8px;
+}
+
+div.permalink,
+div.postmeta {
+	display: none;
+}
+
+h2 {
+	text-align: left;
+	font-size: 22px;
+	line-height: 28px;
+	font-weight: 300;
+}
+
+h2 a {
+	text-decoration: none;
+	font-family: "proxima-nova",sans-serif;
+	font-weight: 600;
+}
+
+footer[role=footer]{
+	position: relative;
+	z-index: 100;
+	text-align: center;
+	padding: 0px 0 30px 40px;
+	border-bottom: 1px solid #e8ebf2;
+}
+
+ 
+
+@media (max-width: 800px) {
+  header#sidebar {
+    width: auto;
+    min-height: 120px;
+    position: static;
+    font-size: 110%;
+    padding: 20px;
+  }
+  
+	header#sidebar p.description {
+		padding-right: 20px;
+		margin-left: 120px;
+	}
+  
+  header#begin {
+	display: none;
+}
+  
+  section#content {
+    margin: 0;
+    padding: 0;
+    display: ;
+  }
+  
+  
+
+	article div.entry-content {
+		font-size: 15px;
+		line-height: 26px;
+	}
+
+	section#content article.image img{
+		width: 100%;
+		margin: 0 0 20px;
+	}
+  
+  section#content article {
+	padding-right: 40px;
+}
+
+  #avatar {
+    display: inline;
+    margin: 0 15px 0 0;
+    float: left;
+  }
+}
+
+
+
+

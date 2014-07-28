@@ -5,9 +5,9 @@ base-url:    /
 gems:
   - jekyll-sitemap
 
-source:      ./src/site
+source:      ./source/site
 destination: ./_site
-plugins:     ./source/_plugins
+plugins:     ./source/site/_plugins
 
 future:      true
 lsi:         false

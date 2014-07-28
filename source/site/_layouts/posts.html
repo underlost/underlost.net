@@ -1,0 +1,36 @@
+{% include header.html %}
+    <body class="blog">
+
+        <header id="underlost-info">
+            <a id="logo" href="/blog/"><img src="/assets/img/underlost.png" width="32" height="32" alt="underlost logo"></a>
+        </header>
+
+        <div class="image-src-fixed">
+            <div class="layout-foreground scrolling-region">
+
+                <article class="post-article supports-full-image-sections">
+                    <div class="post-content layout-single-column">
+
+                        <header class="post-header">
+                            <h1 class="post-title">{{ page.title }}</h1>
+                            <span class="post-item">
+                                <span class="post-item-meta">{{ page.date | date: "%A, %B %e %Y" }}</span>
+                                {% if page.source %}<span class="post-item-meta"> &bull; <a href="{{ page.source }}"> {{ page.source_title }}</a></span>{% endif %}
+                            </span>
+                        </header>
+
+                        <section class="post-page-wrapper">
+                            {{ content }}
+                        </section>
+
+                        <footer class="post-footer post-supplemental"></footer>
+
+                    </div>
+                </article>
+
+                {% include blog-footer.html %}
+
+            </div>
+        </div>
+    </body>
+{% include footer.html %}

@@ -1,0 +1,41 @@
+{% include header.html %}
+<body class="blog">
+
+    <header id="underlost-info">
+        <a id="logo" href="/blog/"><img src="/assets/img/underlost.png" width="32" height="32" alt="underlost logo"></a>
+    </header>
+
+    <header class="blog-home">
+        <div class="align-middle layout-single-column layout-foreground layout-fill-height">
+            <div class="align-block">
+
+
+
+                <h1 class="blog-title">{{ site.blog_title }}</h1>
+                <p class="blog-description blog-description-tagline">{{ site.blog_deck }}</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="index-page">
+        <section class="river layout-single-column">
+        <ul class="list-unstyled river-posts">
+            {% for post in site.posts %}
+            <li class="river-post post-item">
+                <h3 class="post-item-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+                <a class="post-item-snippet" href="{{ post.url }}">
+                    <p>{{ post.snippet }}</p>
+                </a>
+                <span class="post-meta">
+                    <span class="post-item-meta">{{ post.date | date: "%A, %B %e %Y" }}</span>
+                    {% if post.source %}<span class="post-item-meta"> &bull; <a href="{{ post.source }}">{{ post.source_title }}</a></span>{% endif %}
+                </span>
+            </li>
+            {% endfor %}
+        </ul>
+        </section>
+    </div>
+
+    {% include blog-footer.html %}
+</body>
+{% include footer.html %}

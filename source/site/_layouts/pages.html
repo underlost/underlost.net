@@ -1,0 +1,34 @@
+{% include header.html %}
+    <body class="{{page.slug}}">
+
+        {% include underlost-info.html %}
+
+        <section id="content" class="{% if page.dark%}dark{% endif %}">
+
+            <div class="{% if page.dark%}dark{% endif %}" id="{{page.slug}}">
+
+                <header class="blog-home layout-single-column">
+                    <div class="align-middle layout-single-column layout-foreground layout-fill-height">
+                        <div class="align-block">
+                            <h1 class="blog-title">{{page.title}}</h1>
+                            <p class="blog-description blog-description-tagline">{{ page.deck }}</p>
+                        </div>
+                    </div>
+                </header>
+
+                {% if page.page_type == 'list' %}
+                <div class="river layout-single-column">
+                {% else %}
+                <div class="post-page-wrapper layout-single-column">
+                {% endif %}
+                    {{ content }}
+                </div>
+
+            {% include blog-footer.html %}
+            </div>
+        </section>
+
+        {% include javascript.html %}
+
+    </body>
+{% include footer.html %}
