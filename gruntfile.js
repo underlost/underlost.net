@@ -35,7 +35,7 @@ module.exports = function (grunt) {
 
     jshint: {
       options: {
-        jshintrc: 'src/js/.jshintrc'
+        jshintrc: 'source/js/.jshintrc'
       },
       grunt: {
         options: {
@@ -44,16 +44,16 @@ module.exports = function (grunt) {
         src: ['Gruntfile.js', 'grunt/*.js']
       },
       src: {
-        src: 'src/js/*.js'
+        src: 'source/js/*.js'
       },
       test: {
-        src: 'src/js/tests/unit/*.js'
+        src: 'source/js/tests/unit/*.js'
       }
     },
 
     jscs: {
       options: {
-        config: 'src/js/.jscsrc'
+        config: 'source/js/.jscsrc'
       },
       grunt: {
         options: {
@@ -80,20 +80,20 @@ module.exports = function (grunt) {
       },
       undertask: {
         src: [
-          'src/js/transition.js',
-          'src/js/alert.js',
-          'src/js/button.js',
-          'src/js/carousel.js',
-          'src/js/collapse.js',
-          'src/js/dropdown.js',
-          'src/js/modal.js',
-          'src/js/tooltip.js',
-          'src/js/popover.js',
-          'src/js/scrollspy.js',
-          'src/js/tab.js',
-          'src/js/affix.js',
-          'src/js/jquery.history.min.js',
-          'src/js/handler.js'
+          'source/js/transition.js',
+          'source/js/alert.js',
+          'source/js/button.js',
+          'source/js/carousel.js',
+          'source/js/collapse.js',
+          'source/js/dropdown.js',
+          'source/js/modal.js',
+          'source/js/tooltip.js',
+          'source/js/popover.js',
+          'source/js/scrollspy.js',
+          'source/js/tab.js',
+          'source/js/affix.js',
+          'source/js/jquery.history.min.js',
+          'source/js/handler.js'
         ],
         dest: 'dist/js/<%= pkg.slug %>.js'
       }
@@ -114,9 +114,9 @@ module.exports = function (grunt) {
 
     qunit: {
       options: {
-        inject: 'src/js/tests/unit/phantom.js'
+        inject: 'source/js/tests/unit/phantom.js'
       },
-      files: 'src/js/tests/index.html'
+      files: 'source/js/tests/index.html'
     },
 
     less: {
@@ -129,7 +129,7 @@ module.exports = function (grunt) {
           sourceMapFilename: 'dist/css/<%= pkg.slug %>.css.map'
         },
         files: {
-          'dist/css/<%= pkg.slug %>.css': 'src/less/<%= pkg.slug %>.less'
+          'dist/css/<%= pkg.slug %>.css': 'source/less/<%= pkg.slug %>.less'
         }
       },
       minify: {
@@ -157,7 +157,7 @@ module.exports = function (grunt) {
 
     csslint: {
       options: {
-        csslintrc: 'src/less/.csslintrc'
+        csslintrc: 'source/less/.csslintrc'
       },
       src: [
         'dist/css/<%= pkg.slug %>.css'
@@ -185,7 +185,7 @@ module.exports = function (grunt) {
 
     csscomb: {
       options: {
-        config: 'src/less/.csscomb.json'
+        config: 'source/less/.csscomb.json'
       },
       dist: {
         expand: true,
@@ -199,7 +199,7 @@ module.exports = function (grunt) {
       dynamic: {
         files: [{
         expand: true,
-        cwd: 'src/img/',
+        cwd: 'source/img/',
         src: ['**/*.{png,jpg,gif}'],
         dest: 'dist/img/'
       }]
@@ -225,7 +225,7 @@ module.exports = function (grunt) {
           'img/*',
           'img/work/*',
         ],
-        dest: 'src/site/assets'
+        dest: 'source/site/assets'
       },
     },
 
@@ -241,7 +241,7 @@ module.exports = function (grunt) {
     jekyll: {
       options : {
         bundleExec: true,
-        src : 'src/site',
+        src : 'source/site',
       },
       site: {}
     },
@@ -272,7 +272,7 @@ module.exports = function (grunt) {
         tasks: ['jshint:test', 'qunit']
       },
       less: {
-        files: 'src/less/*.less',
+        files: 'source/less/*.less',
         tasks: 'less'
       }
     },
