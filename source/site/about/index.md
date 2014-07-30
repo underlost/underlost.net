@@ -14,7 +14,7 @@ I am Tyler, but most probably know me better simply as Underlost. I'm a somewhat
 
 ### Current projects
 
-I just finished building [Jaded Gamer](http://jadedgamer.com/), an experiment in bootstrapping a modern day startup. You should read more about that [here](https://medium.com/jaded-gamer/building-jaded-gamer-e08c6532b56d). Right now I'm mostly focusing on relaunching my other site, [A Life Well Played](http://alifewellplayed/), and building the blog engine, [Replica](http://tyler.codes/Replica/), which powers it.
+I just finished building [Jaded Gamer](http://jadedgamer.com/), an experiment in bootstrapping a modern day startup. You should read more about that [here](https://medium.com/jaded-gamer/building-jaded-gamer-e08c6532b56d). Right now I'm mostly focusing on relaunching my other site, [A Life Well Played](http://alifewellplayed.com/), and building the blog engine, [Replica](http://tyler.codes/Replica/), which powers it.
 
 ---
 
@@ -22,7 +22,7 @@ I just finished building [Jaded Gamer](http://jadedgamer.com/), an experiment in
 
 underlost.net is hosted on Amazon S3 with CloudFront.
 
-The site is [published through Jekyll](https://medium.com/underlost-dot-net/rebuilding-underlost-net-b0ce9c78db58), the static site generator. It uses a custom design I built myself, along with a few useful [tools](http://tyler.codes/Undertasker) I wrote to make publishing the site easier.
+The site is [published through Jekyll](https://medium.com/underlost-dot-net/rebuilding-underlost-net-b0ce9c78db58), the static site generator. It uses a custom design I built myself, along with a few useful [tools](http://tyler.codes/UnderTasker/) I wrote to make publishing the site easier.
 
 ---
 
