@@ -1,9 +1,18 @@
-html {
+
+// Layers to keep everything organized.
+
+@zindex-001: 1;
+@zindex-100: 100;
+@zindex-150: 150;
+@zindex-300: 300;
+@zindex-500: 500;
+
+
+html, body, #content, #wrapper {
     width: 100%;
     height: 100%;
-    background-color: @body-bg;
-    background-image: url('../img/pattern.png');
-
+    background: @body-bg url('../img/bg.jpg') center center fixed no-repeat;
+    background-size: cover;
 }
 
 a {
@@ -14,158 +23,327 @@ a {
     transition: color .25s ease-in, background .25s ease-in, opacity .25s ease-in;
 }
 
-#underlost-info {
-	position: fixed;
-	left: 25px;
-	right: 25px;
-	top: 25px;
-	z-index: 5000;
+
+.layout-foreground {
+    position: relative;
+    z-index: 100
 }
 
-#logo {
-	float: left;
+.layout-single-column {
+    max-width: 640px;
+    margin: 0 auto
 }
 
-#logo:hover {
-	opacity: .75;
+.layout-fill,.layout-fill-width {
+    width: 100%
 }
 
-#underlost-contact {
-	display: block;
-	float: right;
-
-    a {color: #f2f2f2;}
-    a:hover {text-decoration: none;}
-
-    li {
-        text-align: right;
-        opacity: .75;
-        font-size: 15px;
-        font-weight: 400;
-        margin-top: 3px;
-        text-shadow: 0 1px 2px rgba(0,0,0,.5);
-    }
-
-    li:hover {
-        opacity: 1;
-    }
+.layout-fill,.layout-fill-height {
+    height: 100%
 }
 
-#underlost-social {
-
-    z-index: 100;
-    margin: 20px auto 0;
-
-    a {
-        color: #f2f2f2;
-        padding: 0 10px 0 0;
-        opacity: .5;
-    }
-
-    a:hover { opacity: .75; }
-
+.align-middle:before,.align-middle .align-block,.align-bottom:before,.align-bottom .align-block {
+    display: inline-block;
+    vertical-align: middle
 }
 
-h1.heading {
-    font-family: @font-family-serif;
-    font-size: 64px;
-    line-height: 72px;
-    font-weight: 700;
-    text-transform: uppercase;
-    mask-image: url('../img/mask.png');
-    -webkit-mask-image: url('../img/mask.png');
-    color: #eee;
+.align-middle:before,.align-bottom:before {
+    content: '';
+    height: 100%
 }
 
-#content {
-	width: 100%;
-	height: 100vh;
-	z-index: 1;
-    text-shadow: 0 1px 1px rgba(0,0,0,.4);
-
-    .panel{
-        position: relative;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        clear: both;
-        margin: 0;
-        background-color:none;
-        border-width:0;
-        border-radius:0;
-        -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.05);
-        box-shadow:0 1px 1px rgba(0,0,0,0.05)
-    }
+.align-bottom:before,.align-bottom .align-block {
+    vertical-align: bottom
 }
 
-.main-panel {
-    text-align: center;
-
-    p {
-        max-width: 640px;
-        min-width: 200px;
-        margin: 10px auto 0;
-        color: #ebebeb;
-        font-size: 20px;
-        line-height: 32px;
-        font-weight: 400;
-    }
-
-    .job-link {
-        color: #fff;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    .job-link:hover {color: #ebebeb;}
-
-    .btn-set {margin-top: 10px;}
-
-}
-
-
-/* @end */
-
-.vertical {
-	position: absolute;
-	top: 25%;
-	height: 400px;
-    min-width: 200px;
+.inner {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
     margin: 0 auto;
 }
 
-#top {
-    background: url('../img/top.jpg') center center fixed;
-    background-size: cover;
+.vertical {
+    display: table-cell;
+    vertical-align: middle;
 }
 
-#Error404 {
-    background: url('../img/error.jpg') center center;
-    background-size: cover;
+
+#particles-js{
+    position:fixed;
+    z-index: @zindex-001;
+    overflow: hidden;
+    top:0; bottom: 0;
+    left:0; right: 0;
+    height:100%;
+    width:100%;
+    transition:all 900ms ease;
+
+
+    canvas{
+        display: block;
+        vertical-align:bottom;
+    }
 }
 
-#contact {
-    background: #2f3439 url('../img/contact.jpg') center center fixed no-repeat;
-    background-size: cover;
+#underlost-info {
+    position: absolute;
+    z-index: @zindex-300;
+    top: 32px;
+    left: 32px;
 }
 
-.dark {
-    background: #1a1a1a url('../img/dark_bg.jpg') center center fixed;
-    background-size: cover;
+.site-head {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
 }
 
-.section-background-image {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 100vh;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	background-position: center;
+
+.rings {
+    position: relative;
+    z-index: @zindex-300;
+    height: 560px;
+    margin: 0 auto;
+
+    .ring {
+        position: absolute;
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .one {
+        width: 560px;
+        height: 560px;
+        background-size: 560px 560px;
+        background-image: url('../img/rings/ring_01.png');
+        top: 0; right: 0;
+    }
+
+    .two {
+        width: 450px;
+        height: 450px;
+        background-size: 450px 450px;
+        background-image: url('../img/rings/ring_02.png');
+        top: 55px; right: 55px;
+    }
+
+    .three {
+        width: 432px;
+        height: 432px;
+        background-size: 432px 432px;
+        background-image: url('../img/rings/ring_03.png');
+        top: 64px; right: 64px;
+    }
+
+    .four {
+        width: 416px;
+        height: 416px;
+        background-size: 416px 416px;
+        background-image: url('../img/rings/ring_04.png');
+        top: 72px; right: 72px;
+    }
+
+    .five {
+        width: 392px;
+        height: 392px;
+        background-size: 392px 392px;
+        background-image: url('../img/rings/dash_01.png');
+        top: 84px; right: 84px;
+    }
+
+    .six {
+        width: 360px;
+        height: 360px;
+        background-size: 360px 360px;
+        background-image: url('../img/rings/dash_02.png');
+        top: 100px; right: 100px;
+    }
+
+    .seven {
+        width: 318px;
+        height: 318px;
+        background-size: 318px 318px;
+        background-image: url('../img/rings/ring_05.png');
+        top: 121px; right: 121px;
+    }
+}
+
+.site-nav {
+    margin: 64px 0 0 14px;
+
+    .vLine {
+        background: #96bf48;
+        border-radius: 1px;
+        width: 5px;
+        height: 80px;
+    }
+}
+
+.sections-nav {
+    position: relative;
+    z-index: @zindex-300;
+    text-align: left;
+
+    li {
+        margin: 0 0 30px 0;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    li a {
+        display: block;
+        padding: 0 12px 0 32px;
+        height: 100px;
+        text-decoration: none;
+    }
+
+    li strong {
+        color: #fff;
+        display: inline-block;
+        font: 24px/32px @font-family-sans-serif;
+        margin: 14px 0 0 0;
+        vertical-align: middle
+    }
+
+
+    li small {
+        color: #377384;
+        color: rgba(69,170,184,0.75);
+        display: block;
+        font: 16px/18px @font-family-sans-serif;
+    }
+
+}
+
+.arrow-header{
+    display:block;
+    position:absolute;
+    z-index: @zindex-300;
+    bottom:10%;
+    left:50%;
+    color: #fff;
+    opacity: .5;
+}
+
+.arrow-header:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+.underlost-section {
+    position: relative;
+    z-index: @zindex-300;
+    .vertical {padding: 100px 0;}
+    .section-icon {text-align: center; margin-bottom: 40px;}
+
+    p.lead {font: 24px/32px @font-family-sans-serif;}
+    p {font: 20px/28px @font-family-sans-serif;}
+}
+
+.underlost-intro {
+    color: #45aab8;
+    background: #005a66;
+
+    .project-links {
+        margin-top: 45px;
+        text-align: center;
+
+        .btn-default {
+            color: #45aab8;
+            border-color: #45aab8;
+            background: none;
+            margin: 0 15px;
+        }
+
+        .btn-default:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+    }
+}
+
+.underlost-photos {
+    color: #a76500;
+    background: #ffb441;
+
+    .content-wrapper {
+        border-top: 2px solid #a76500;
+        border-bottom: 2px solid #a76500;
+    }
+
+}
+
+.underlost-games {
+    color: #485c23;
+    background: #96bf48;
+
+    .jumbotron {
+        color: #fff;
+        text-align: center;
+        padding: 175px 0;
+        background: #96bf48 url('../img/photo/ctrlr.jpg') no-repeat center center;
+        background-size: cover;
+        margin: 0;
+        position: relative;
+    }
+
+    .content-wrapper {
+        border-top: 2px solid #485c23;
+        border-bottom: 2px solid #485c23;
+    }
+
+}
+
+.site-footer {
+    position: relative;
+    z-index: 500;
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    background: #333 no-repeat center center;
+    background-size: cover;
+
+    a {color: #fff;}
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.seablue {
+    background-image: url('../img/bg.jpg');
+}
+
+.contact-bg {
+    background-image: url('../img/contact.jpg');
+}
+
+.page {}
+
+/* Carousel base class */
+.carousel {
+    position: relative;
+    height: 500px;
+
+    .item {
+        height: 500px;
+        background-color: #777;
+        background-size: cover;
+    }
+}
+.shadow {
+    position: absolute;
+    z-index: 10000;
+    height: 80px;
+    width: 100%;
+    background-image: url('../img/shadow.png');
 }

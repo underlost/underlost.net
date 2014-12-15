@@ -33,6 +33,15 @@ module.exports = function (grunt) {
       dist: ['dist']
     },
 
+    coffee: {
+        compile: {
+            files: {
+                // 'source/js/app.js': 'source/coffee/source.coffee', // 1:1 compile
+                'source/js/app.js': ['source/coffee/*.coffee'] // compile and concat into single file
+            }
+        },
+    },
+
     jshint: {
       options: {
         jshintrc: 'source/js/.jshintrc'
@@ -92,6 +101,8 @@ module.exports = function (grunt) {
           'source/js/scrollspy.js',
           'source/js/tab.js',
           'source/js/affix.js',
+
+          'source/js/particles.js',
           'source/js/jquery.history.min.js',
           'source/js/handler.js'
         ],
@@ -224,6 +235,8 @@ module.exports = function (grunt) {
           'fonts/*',
           'img/*',
           'img/work/*',
+          'img/rings/*',
+          'img/photo/*',
         ],
         dest: 'source/site/assets'
       },

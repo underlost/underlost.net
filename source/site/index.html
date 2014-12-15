@@ -1,17 +1,135 @@
 ---
 layout: default
 title: underlost.net
+slug: index
 ---
 
-<div class="panel main-panel" id="top">
-	<div class="layout-single-column">
-		<div class="vertical">
-			<h1 class="heading">Looking for<br />a Web Engineer?</h1>
-			<p>My name is Tyler Rilling, although most people know me as <strong>Underlost</strong>, and I make websites. From sketch, to design, code and bug fixing, I do it all. And right now, I&rsquo;m looking for a full-time <a class="job-link" href="/job/" data-ignore="push">job</a> in Seattle.</p>
-			<p class="button-set">
-				<a class="btn btn-success" href="/about/">Learn more</a>
-				<a class="next btn btn-primary" href="/replica/">View selected works</a>
-			</p>
+<section class="site-head" id="top">
+	<div class="vertical">
+		<div class="container">
+		<div class="row">
+			<div class="col-md-7 visible-lg-block">
+				<div class="rings">
+					<span class="ring zero portrait"></span>
+					<span class="ring one spin"></span>
+					<span class="ring two"></span>
+					<span class="ring three spin-alt"></span>
+					<span class="ring four"></span>
+					<span class="ring five spin-alt"></span>
+					<span class="ring six spin"></span>
+					<span class="ring seven"></span>
+				</div>
+			</div>
+
+			<div class="col-md-5">
+				<nav class="site-nav">
+					<ul class="sections-nav list-unstyled">
+						<span class="selection"></span>
+
+						<li class="home-url selected">
+							<a class="pjax" data-section="journal" href="#"><strong>Underlost</strong>
+								<small>By Tyler Rilling</small>
+							</a>
+						</li>
+						<li class="works-nav">
+							<a class="pjax" data-section="works" href="/works/"><strong>Selected Works</strong>
+								<small>Project Highlights</small>
+							</a>
+						</li>
+						<li class="colophon-nav">
+							<a class="pjax" data-section="colophon" href="/about/"><strong>Colophon</strong>
+								<small>Learn more about me and this site</small>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
 		</div>
 	</div>
-</div>
+	<a data-animate="swing" class="arrow-header" href="#"><i class="fa fa-chevron-down fa-3x"></i></a>
+</section>
+
+<section class="underlost-intro underlost-section">
+	<div class="layout-single-column">
+		<div class="vertical">
+			<p class="lead">My name is Tyler Rilling, although most people know me as <strong>Underlost</strong>. I'm a creative developer &amp; UI designer
+				with a passion for user experience. From sketch to design, coding to bug fixing, I do it all.</p>
+
+			<p>This is a little more text.</p>
+
+			<div class="project-links">
+				<a href="#" class="btn btn-default btn-lg" role="button"><i class="fa fa-github"></i> Replica CMS</a>
+				<a href="#" class="btn btn-default btn-lg" role="button"><i class="fa fa-github"></i> _Seattle</a>
+				<a href="#" class="btn btn-default btn-lg" role="button"><i class="fa fa-github"></i> UnderTasker</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="underlost-photos underlost-section">
+		<!-- Carousel
+		================================================== -->
+		<div id="photosCarousel" class="carousel slide" data-ride="carousel">
+			<div class="halfDark"></div>
+			<div class="shadow"></div>
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#photosCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#photosCarousel" data-slide-to="1"></li>
+				<li data-target="#photosCarousel" data-slide-to="2"></li>
+				<li data-target="#photosCarousel" data-slide-to="3"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<div class="item item01 active" style="background-image: url('./assets/img/fish_bg.jpg')"></div>
+				<div class="item" style="background-image: url('./assets/img/photo/crowd_pax.jpg')"></div>
+				<div class="item" style="background-image: url('./assets/img/photo/renn_faire.jpg')"></div>
+				<div class="item" style="background-image: url('./assets/img/photo/titan.jpg')"></div>
+			</div>
+			<a class="left carousel-control" href="#photosCarousel" role="button" data-slide="prev">
+				<span class="fa fa-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#photosCarousel" role="button" data-slide="next">
+				<span class="fa fa-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div><!-- /.carousel -->
+	<div class="content-wrapper">
+		<div class="layout-single-column">
+			<div class="vertical">
+				<div class="section-icon"><i class="fa fa-camera-retro fa-5x"></i></div>
+				<p>My name is Tyler Rilling, although most people know me as <strong>Underlost</strong>. I'm a creative developer &amp; UI designer
+					with a passion for user experience. From sketch to design, coding to bug fixing, I do it all.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="underlost-games underlost-section">
+	<div class="shadow"></div>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>A Life Well Played</h1>
+			<p>A photo blog of sorts.</p>
+		</div>
+	</div>
+
+	<div class="content-wrapper">
+		<div class="layout-single-column">
+			<div class="vertical">
+				<div class="section-icon"><i class="fa fa-gamepad fa-5x"></i></div>
+				<p>My name is Tyler Rilling, although most people know me as <strong>Underlost</strong>. I'm a creative developer &amp; UI designer
+					with a passion for user experience. From sketch to design, coding to bug fixing, I do it all.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="site-footer contact-bg" id="bottom">
+	<div class="vertical">
+		{% include underlost-social.html %}
+	</div>
+
+	{% include footer.html %}
+</section>
