@@ -1,6 +1,27 @@
-.page-head {
-    height: 420px;
+section#page-head {
+    display: table;
+    position: fixed;
+    z-index: 1;
+    width: 28%;
+    height: 100%;
     text-align: center;
+    border-right: 25px solid rgba(255,255,255,0.1);
+}
+
+section#river {
+    background: #fff;
+    position: relative;
+    z-index: 10;
+    padding-top: 80px;
+    margin-left: 28%;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility: visible;
+}
+
+.page-head {
+
+    margin-left: 40px;
 
     .align-block {
         margin-top: 50px
@@ -29,21 +50,20 @@
     margin-top: 15px;
     position: relative;
     z-index: 500;
-
-    a { color: #f2f2f2; }
+    margin-left: 60px;
+    max-width: 640px;
 }
 
 .post-page-wrapper>p {
-    font: 22px/33px @font-family-serif;
-    letter-spacing: .05rem;
+    font: 19px/33px @font-family-sans-serif;
+    letter-spacing: 0.01rem;
     font-weight: 300;
     font-style: normal;
-    margin-bottom: 33px;
-    color: #999;
+    color: #444;
 
 }
 
 .post-page-wrapper>h3 {
     font-weight: 700;
-    color: #f2f2f2;
+    color: #485463;
 }

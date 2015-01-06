@@ -68,9 +68,16 @@ a {
     vertical-align: middle;
 }
 
+.particles-wrap {
+    position: fixed;
+    top:0; bottom: 0;
+    left:0; right: 0;
+    height:100%;
+    width:100%;
+}
 
 #particles-js{
-    position:fixed;
+    position: absolute;
     z-index: @zindex-001;
     overflow: hidden;
     top:0; bottom: 0;
@@ -87,7 +94,7 @@ a {
 }
 
 #underlost-info {
-    position: absolute;
+    position: fixed;
     z-index: @zindex-300;
     top: 32px;
     left: 32px;
@@ -100,77 +107,6 @@ a {
     height: 100%;
     text-align: center;
     color: #fff;
-}
-
-
-.rings {
-    position: relative;
-    z-index: @zindex-300;
-    height: 560px;
-    margin: 0 auto;
-
-    .ring {
-        position: absolute;
-        display: block;
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
-
-    .one {
-        width: 560px;
-        height: 560px;
-        background-size: 560px 560px;
-        background-image: url('../img/rings/ring_01.png');
-        top: 0; right: 0;
-    }
-
-    .two {
-        width: 450px;
-        height: 450px;
-        background-size: 450px 450px;
-        background-image: url('../img/rings/ring_02.png');
-        top: 55px; right: 55px;
-    }
-
-    .three {
-        width: 432px;
-        height: 432px;
-        background-size: 432px 432px;
-        background-image: url('../img/rings/ring_03.png');
-        top: 64px; right: 64px;
-    }
-
-    .four {
-        width: 416px;
-        height: 416px;
-        background-size: 416px 416px;
-        background-image: url('../img/rings/ring_04.png');
-        top: 72px; right: 72px;
-    }
-
-    .five {
-        width: 392px;
-        height: 392px;
-        background-size: 392px 392px;
-        background-image: url('../img/rings/dash_01.png');
-        top: 84px; right: 84px;
-    }
-
-    .six {
-        width: 360px;
-        height: 360px;
-        background-size: 360px 360px;
-        background-image: url('../img/rings/dash_02.png');
-        top: 100px; right: 100px;
-    }
-
-    .seven {
-        width: 318px;
-        height: 318px;
-        background-size: 318px 318px;
-        background-image: url('../img/rings/ring_05.png');
-        top: 121px; right: 121px;
-    }
 }
 
 .site-nav {
@@ -215,6 +151,7 @@ a {
         color: rgba(69,170,184,0.75);
         display: block;
         font: 16px/18px @font-family-sans-serif;
+        letter-spacing: 0.01rem;
     }
 
 }
@@ -234,69 +171,6 @@ a {
     opacity: 1;
 }
 
-.underlost-section {
-    position: relative;
-    z-index: @zindex-300;
-    .vertical {padding: 100px 0;}
-    .section-icon {text-align: center; margin-bottom: 40px;}
-
-    p.lead {font: 24px/32px @font-family-sans-serif;}
-    p {font: 20px/28px @font-family-sans-serif;}
-}
-
-.underlost-intro {
-    color: #45aab8;
-    background: #005a66;
-
-    .project-links {
-        margin-top: 45px;
-        text-align: center;
-
-        .btn-default {
-            color: #45aab8;
-            border-color: #45aab8;
-            background: none;
-            margin: 0 15px;
-        }
-
-        .btn-default:hover {
-            color: #fff;
-            border-color: #fff;
-        }
-    }
-}
-
-.underlost-photos {
-    color: #a76500;
-    background: #ffb441;
-
-    .content-wrapper {
-        border-top: 2px solid #a76500;
-        border-bottom: 2px solid #a76500;
-    }
-
-}
-
-.underlost-games {
-    color: #485c23;
-    background: #96bf48;
-
-    .jumbotron {
-        color: #fff;
-        text-align: center;
-        padding: 175px 0;
-        background: #96bf48 url('../img/photo/ctrlr.jpg') no-repeat center center;
-        background-size: cover;
-        margin: 0;
-        position: relative;
-    }
-
-    .content-wrapper {
-        border-top: 2px solid #485c23;
-        border-bottom: 2px solid #485c23;
-    }
-
-}
 
 .site-footer {
     position: relative;
@@ -319,31 +193,8 @@ a {
     }
 }
 
-.seablue {
-    background-image: url('../img/bg.jpg');
-}
-
 .contact-bg {
     background-image: url('../img/contact.jpg');
 }
 
 .page {}
-
-/* Carousel base class */
-.carousel {
-    position: relative;
-    height: 500px;
-
-    .item {
-        height: 500px;
-        background-color: #777;
-        background-size: cover;
-    }
-}
-.shadow {
-    position: absolute;
-    z-index: 10000;
-    height: 80px;
-    width: 100%;
-    background-image: url('../img/shadow.png');
-}

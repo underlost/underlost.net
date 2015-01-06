@@ -26,12 +26,12 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #113946;
+@body-bg:               #0b171f;
 //** Global text color on `<body>`.
-@text-color:            lighten(@body-bg, 75%);
+@text-color:            @gray-dark;
 
 //** Global textual link color.
-@link-color:            #377384;
+@link-color:            @gray-darker;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 //** Link hover decoration.
@@ -42,7 +42,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "jaf-bernino-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       "freight-text-pro", Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -853,4 +853,4 @@
 //** Width of horizontal description list titles
 @dl-horizontal-offset:        @component-offset-horizontal;
 //** Horizontal line color.
-@hr-border:                   darken(#428bca, 26.5%);
+@hr-border:                   #eee;

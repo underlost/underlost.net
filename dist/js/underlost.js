@@ -1,6 +1,6 @@
 /*!
  * underlost.net v3.0.1 (http://underlost.net)
- * Copyright 2014 Tyler Rilling (http://underlost.net/)
+ * Copyright 2015 Tyler Rilling (http://underlost.net/)
  */
 
 if (typeof jQuery === 'undefined') { throw new Error('UnderTasker\'s JavaScript requires jQuery') }
@@ -2564,18 +2564,6 @@ particlesJS('particles-js', {
     /* Retina Display Support */
     retina_detect: true
 });
-
-
-(function(d) {
-    var tkTimeout=3000;
-    if(window.sessionStorage){if(sessionStorage.getItem('useTypekit')==='false'){tkTimeout=0;}}
-        var config = {
-            kitId: 'bci8gpa',
-            scriptTimeout: tkTimeout
-        },
-        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+"wf-inactive";if(window.sessionStorage){sessionStorage.setItem("useTypekit","false")}},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+="wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-    })(document);
-
 
 /*
 * Add a CSS3 animation class to an element only when it's in the viewport.
