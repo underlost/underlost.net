@@ -9,7 +9,7 @@ section#page-head {
 }
 
 section#river {
-    background: #fff;
+    background: rgba(255,255,255,0.9);
     position: relative;
     z-index: 10;
     padding-top: 80px;
@@ -21,11 +21,9 @@ section#river {
 
 .page-head {
 
-    margin-left: 40px;
+    margin-left: 60px;
 
-    .align-block {
-        margin-top: 50px
-    }
+    .align-block {}
 
     .page-title {
         font-size: 48px;
@@ -38,7 +36,7 @@ section#river {
         font-size: 22px;
         line-height: 33px;
         font-weight: 300;
-        font-family: @font-family-serif;
+        font-family: @font-family-sans-serif;
         margin: 0 0 10px 0;
         padding: 0;
         letter-spacing: .2rem;
@@ -52,18 +50,39 @@ section#river {
     z-index: 500;
     margin-left: 60px;
     max-width: 640px;
-}
 
-.post-page-wrapper>p {
-    font: 19px/33px @font-family-sans-serif;
-    letter-spacing: 0.01rem;
-    font-weight: 300;
-    font-style: normal;
-    color: #444;
+    hr {
+        position: relative;
+        margin: 50px auto;
+    }
 
-}
+    hr:after {
+        display: block;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border: @hr-border 1px solid;
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        margin-left: -5px;
+        background: #f2f2f2;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+    }
 
-.post-page-wrapper>h3 {
-    font-weight: 700;
-    color: #485463;
+    >p {
+        font: 19px/33px @font-family-sans-serif;
+        letter-spacing: 0.01rem;
+        font-weight: 300;
+        font-style: normal;
+        color: #444;
+
+    }
+
+    >h3 {
+        font-weight: 700;
+        color: #333;
+    }
 }

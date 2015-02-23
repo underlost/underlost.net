@@ -2037,7 +2037,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #ccc;
   }
 .sr-only {
   position: absolute;
@@ -8241,17 +8241,14 @@ section#river {
   z-index: 10;
   padding-top: 80px;
   margin-left: 28%;
-  background: #fff;
+  background: rgba(255, 255, 255, .9);
 
           backface-visibility: visible;
   -webkit-backface-visibility: visible;
      -moz-backface-visibility: visible;
   }
 .page-head {
-  margin-left: 40px;
-  }
-.page-head .align-block {
-  margin-top: 50px;
+  margin-left: 60px;
   }
 .page-head .page-title {
   margin-bottom: 0;
@@ -8262,7 +8259,7 @@ section#river {
 .page-head .page-description {
   padding: 0;
   margin: 0 0 10px 0;
-  font-family: "freight-text-pro", Georgia, "Times New Roman", Times, serif;
+  font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 22px;
   font-weight: 300;
   line-height: 33px;
@@ -8275,6 +8272,23 @@ section#river {
   margin-top: 15px;
   margin-left: 60px;
   }
+.post-page-wrapper hr {
+  position: relative;
+  margin: 50px auto;
+  }
+.post-page-wrapper hr:after {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  content: "";
+  background: #f2f2f2;
+  border: #ccc 1px solid;
+  border-radius: 100%;
+  }
 .post-page-wrapper > p {
   font: 19px/33px 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -8284,7 +8298,7 @@ section#river {
   }
 .post-page-wrapper > h3 {
   font-weight: 700;
-  color: #485463;
+  color: #333;
   }
 [role=footer] {
   position: relative;
@@ -8296,8 +8310,8 @@ section#river {
   color: #bababa;
   text-align: center;
   background: #1e1e1e;
-  background: rgba(30, 30, 30, .75);
-  border-top: 1px solid rgba(0, 0, 0, .75);
+  background: rgba(30, 30, 30, .01);
+  border-top: 1px solid rgba(0, 0, 0, .1);
   }
 [role=footer] a {
   color: #a1a1a1;
@@ -8314,12 +8328,16 @@ section#river {
   padding-top: 2px;
   margin-left: -15px;
   text-align: center;
-  background: #333;
+  background: #ccc;
   border: #444 1px solid;
   border-radius: 50px;
   -webkit-transition: -webkit-box-shadow .5s;
        -o-transition:         box-shadow .5s;
           transition:         box-shadow .5s;
+  }
+.subscribe i {
+  padding-top: 4px;
+  font-size: 13px;
   }
 .subscribe:hover {
   -webkit-box-shadow: rgba(0, 0, 0, .05) 0 0 0 3px;
