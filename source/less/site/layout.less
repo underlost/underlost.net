@@ -74,6 +74,7 @@ a {
     left:0; right: 0;
     height:100%;
     width:100%;
+    z-index: @zindex-001;
 }
 
 #particles-js{
@@ -110,8 +111,10 @@ a {
         top: 25px; right: 20px;
     }
 
+    #logo {display: block;}
     h1, h1 a {color: #f2f2f2; font-size: 15px; margin: 10px 0 5px;}
-    p, p a {color: #f2f2f2; font-weight: 300; margin: 0; opacity: .65; font-size: 15px; line-height: 15px;}
+    p {opacity: .65;}
+    p, p>a {color: #f2f2f2; font-weight: 300; margin: 0;  font-size: 15px; line-height: 15px;}
 }
 
 .content-section {
@@ -121,27 +124,23 @@ a {
     display: table;
     background-size: cover;
 
-    .content-inner {
-        margin-left: 27%;
-    }
+    .content-inner {margin-left: 27%;}
 
     .content-panel {
-
+        position: relative;
+        z-index: @zindex-500;
+        background: rgba(69,170,184,0.1);
         padding: 25px 0;
+        color: #f2f2f2;
+        p {.lead(); opacity: .5;}
+        a {color: #f2f2f2;}
+        h1 {font-weight: 100;}
     }
 }
 
-#contact {
-    background-image: url('../img/contact.jpg'); color: #f2f2f2;
-    .content-panel {background: rgba(69,170,184,0.1)}
-}
-
-#colophon {
-    background-image: url('../img/colophon.jpg'); color: #f2f2f2;
-    .content-panel {background: rgba(69,170,184,0.1)}
-}
-
-#error404 {background-image: url('../img/error.jpg'); color: #f2f2f2;}
+#contact {background-image: url('../img/contact.jpg');}
+#colophon {background-image: url('../img/colophon.jpg');}
+#error404 {background-image: url('../img/error.jpg');}
 
 .site-nav {
     margin: 0;
