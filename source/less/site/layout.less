@@ -11,7 +11,7 @@
 html, body, #content, #wrapper {
     width: 100%;
     height: 100%;
-    background: @body-bg url('../img/bg1.jpg') center center fixed no-repeat;
+    background: @body-bg url('../img/bg2.jpg') center center fixed no-repeat;
     background-size: cover;
 }
 
@@ -92,48 +92,83 @@ a {
         vertical-align:bottom;
     }
 }
-
-#underlost-info {
-    position: fixed;
-    z-index: @zindex-300;
-    top: 32px;
-    left: 32px;
-}
-
 .site-head {
-    position: relative;
-    display: table;
-    width: 100%;
+    background: url('../img/bordered.png') fixed -200px 0 repeat-y;
+    position: fixed;
+    z-index: @zindex-500;
     height: 100%;
-    text-align: center;
-    color: #fff;
+    width: 27%;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    display: table;
+    text-align: right;
+
+    .site-head-inner {
+        display: block;
+        width: 100%;
+        position: absolute;
+        z-index: @zindex-500;
+        top: 25px; right: 20px;
+    }
+
+    h1, h1 a {color: #f2f2f2; font-size: 15px; margin: 10px 0 5px;}
+    p, p a {color: #f2f2f2; font-weight: 300; margin: 0; opacity: .65; font-size: 15px; line-height: 15px;}
 }
+
+.content-section {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: table;
+    background-size: cover;
+
+    .content-inner {
+        margin-left: 27%;
+    }
+
+    .content-panel {
+
+        padding: 25px 0;
+    }
+}
+
+#contact {
+    background-image: url('../img/contact.jpg'); color: #f2f2f2;
+    .content-panel {background: rgba(69,170,184,0.1)}
+}
+
+#colophon {
+    background-image: url('../img/colophon.jpg'); color: #f2f2f2;
+    .content-panel {background: rgba(69,170,184,0.1)}
+}
+
+#error404 {background-image: url('../img/error.jpg'); color: #f2f2f2;}
 
 .site-nav {
-    margin: 64px 0 0 14px;
+    margin: 0;
 
     .vLine {
         background: #96bf48;
-        border-radius: 1px;
         width: 5px;
-        height: 80px;
+        height: 30px;
+        right: 0;
     }
 }
 
 .sections-nav {
     position: relative;
     z-index: @zindex-300;
-    text-align: left;
+    text-align: right;
 
     li {
-        margin: 0 0 30px 0;
+        margin: 0 0 5px 0;
         -webkit-font-smoothing: antialiased;
+         /* background: rgba(69,170,184,0.05); */
     }
 
     li a {
         display: block;
         padding: 0 12px 0 32px;
-        height: 100px;
+        height: 30px;
         text-decoration: none;
     }
 
@@ -141,7 +176,7 @@ a {
         color: #fff;
         display: inline-block;
         font: 24px/32px @font-family-sans-serif;
-        margin: 14px 0 0 0;
+        margin: 2px 0 0 0;
         vertical-align: middle
     }
 

@@ -98,7 +98,7 @@ function kittySlide() {
                 var $this = $(this);
 
                 //wrap the UL with a positioned object just in case
-                $this.wrap('<div style="position:relative;width:'+$this.css('width')+';height:'+$this.css('height')+';"></div>');
+                $this.wrap('<div style="position:relative;"></div>');
 
                 //test to see if element exists, if not, append it
                 if(!$('.vLine').length){
@@ -106,7 +106,7 @@ function kittySlide() {
                     //parent is the ul we wrapped
                     //insert the vLine element into the document
                     $this.parent().append($('<div style="position:absolute;top:'+$this.position().top+'px;" class="vLine"></div>'));
-                    $('.vLine').css('left', '0');
+                    $('.vLine').css('right', '0');
 
                 }
 
@@ -119,7 +119,7 @@ function kittySlide() {
                     //we want to reset the line if this is met
                     if(['UL', 'LI'].indexOf(e.toElement.tagName) == -1){
                         $('.vLine').stop().animate({
-                            top: '16px'
+                            top: '0px'
                         });
                     }
                 });
@@ -222,8 +222,8 @@ function kittySlide() {
             .promise()
             .done(function () {
                 $content.html(response.$content).fadeIn(500);
-                animateClasses();
-                $('.sections-nav').vLine();
+                // animateClasses();
+                 $('.sections-nav').vLine();
             });
         }).fail(function () {
             document.location.href = url;

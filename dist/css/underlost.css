@@ -8059,7 +8059,7 @@ body,
 #wrapper {
   width: 100%;
   height: 100%;
-  background: #0b171f url('../img/bg1.jpg') center center fixed no-repeat;
+  background: #0b171f url('../img/bg2.jpg') center center fixed no-repeat;
   -webkit-background-size: cover;
           background-size: cover;
   }
@@ -8137,48 +8137,100 @@ a {
   display: block;
   vertical-align: bottom;
   }
-#underlost-info {
-  position: fixed;
-  top: 32px;
-  left: 32px;
-  z-index: 300;
-  }
 .site-head {
+  position: fixed;
+  z-index: 500;
+  display: table;
+  width: 27%;
+  height: 100%;
+  text-align: right;
+  background: url('../img/bordered.png') fixed -200px 0 repeat-y;
+  border-right: 1px solid rgba(255, 255, 255, .15);
+  }
+.site-head .site-head-inner {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  z-index: 500;
+  display: block;
+  width: 100%;
+  }
+.site-head h1,
+.site-head h1 a {
+  margin: 10px 0 5px;
+  font-size: 15px;
+  color: #f2f2f2;
+  }
+.site-head p,
+.site-head p a {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 15px;
+  color: #f2f2f2;
+  opacity: .65;
+  }
+.content-section {
   position: relative;
   display: table;
   width: 100%;
   height: 100%;
-  color: #fff;
-  text-align: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  }
+.content-section .content-inner {
+  margin-left: 27%;
+  }
+.content-section .content-panel {
+  padding: 25px 0;
+  }
+#contact {
+  color: #f2f2f2;
+  background-image: url('../img/contact.jpg');
+  }
+#contact .content-panel {
+  background: rgba(69, 170, 184, .1);
+  }
+#colophon {
+  color: #f2f2f2;
+  background-image: url('../img/colophon.jpg');
+  }
+#colophon .content-panel {
+  background: rgba(69, 170, 184, .1);
+  }
+#error404 {
+  color: #f2f2f2;
+  background-image: url('../img/error.jpg');
   }
 .site-nav {
-  margin: 64px 0 0 14px;
+  margin: 0;
   }
 .site-nav .vLine {
+  right: 0;
   width: 5px;
-  height: 80px;
+  height: 30px;
   background: #96bf48;
-  border-radius: 1px;
   }
 .sections-nav {
   position: relative;
   z-index: 300;
-  text-align: left;
+  text-align: right;
   }
 .sections-nav li {
-  margin: 0 0 30px 0;
+  margin: 0 0 5px 0;
 
   -webkit-font-smoothing: antialiased;
+  /* background: rgba(69,170,184,0.05); */
   }
 .sections-nav li a {
   display: block;
-  height: 100px;
+  height: 30px;
   padding: 0 12px 0 32px;
   text-decoration: none;
   }
 .sections-nav li strong {
   display: inline-block;
-  margin: 14px 0 0 0;
+  margin: 2px 0 0 0;
   font: 24px/32px 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff;
   vertical-align: middle;
