@@ -1,16 +1,16 @@
 /* config dom id (optional) + config particles params */
 particlesJS('particles-js', {
     particles: {
-        color: '#45aab8',
+        color: '#fff',
         shape: 'circle', // "circle", "edge" or "triangle"
-        opacity: .5,
+        opacity: .25,
         size: 1,
         size_random: true,
-        nb: 200,
+        nb: 100,
         line_linked: {
             enable_auto: true,
             distance: 110,
-            color: '#1d4c5f',
+            color: '#fff',
             opacity: .25,
             width: 1,
             condensed_mode: {
@@ -32,7 +32,7 @@ particlesJS('particles-js', {
         detect_on: 'canvas', // "canvas" or "window"
         mode: 'grab',
         line_linked: {
-            opacity: .25
+            opacity: .15
         },
         events: {
             onclick: {

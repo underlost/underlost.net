@@ -7947,81 +7947,7 @@ sway
             transform: rotate(-360deg);
     }
   }
-.rings {
-  position: relative;
-  z-index: 300;
-  height: 560px;
-  margin: 0 auto;
-  }
-.rings .ring {
-  position: absolute;
-  display: block;
-  background-repeat: no-repeat;
-  background-position: center center;
-  }
-.rings .one {
-  top: 0;
-  right: 0;
-  width: 560px;
-  height: 560px;
-  background-image: url('../img/rings/ring_01.png');
-  -webkit-background-size: 560px 560px;
-          background-size: 560px 560px;
-  }
-.rings .two {
-  top: 55px;
-  right: 55px;
-  width: 450px;
-  height: 450px;
-  background-image: url('../img/rings/ring_02.png');
-  -webkit-background-size: 450px 450px;
-          background-size: 450px 450px;
-  }
-.rings .three {
-  top: 64px;
-  right: 64px;
-  width: 432px;
-  height: 432px;
-  background-image: url('../img/rings/ring_03.png');
-  -webkit-background-size: 432px 432px;
-          background-size: 432px 432px;
-  }
-.rings .four {
-  top: 72px;
-  right: 72px;
-  width: 416px;
-  height: 416px;
-  background-image: url('../img/rings/ring_04.png');
-  -webkit-background-size: 416px 416px;
-          background-size: 416px 416px;
-  }
-.rings .five {
-  top: 84px;
-  right: 84px;
-  width: 392px;
-  height: 392px;
-  background-image: url('../img/rings/dash_01.png');
-  -webkit-background-size: 392px 392px;
-          background-size: 392px 392px;
-  }
-.rings .six {
-  top: 100px;
-  right: 100px;
-  width: 360px;
-  height: 360px;
-  background-image: url('../img/rings/dash_02.png');
-  -webkit-background-size: 360px 360px;
-          background-size: 360px 360px;
-  }
-.rings .seven {
-  top: 121px;
-  right: 121px;
-  width: 318px;
-  height: 318px;
-  background-image: url('../img/rings/ring_05.png');
-  -webkit-background-size: 318px 318px;
-          background-size: 318px 318px;
-  }
+/* Sizes */
 .rings-small {
   position: relative;
   z-index: 300;
@@ -8052,6 +7978,156 @@ sway
   background-image: url('../img/rings/ring_05.png');
   -webkit-background-size: 190px 190px;
           background-size: 190px 190px;
+  }
+.rings-medium {
+  position: relative;
+  z-index: 300;
+  height: 450px;
+  margin: 0 auto;
+  }
+.rings-medium .ring {
+  position: absolute;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  }
+.rings-medium .one {
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 450px;
+  background-image: url('../img/rings/ring_01.png');
+  -webkit-background-size: 450px 450px;
+          background-size: 450px 450px;
+  }
+.rings-medium .two {
+  top: (450px - 362px) / 2;
+  right: (450px - 362px) / 2;
+  width: 362px;
+  height: 362px;
+  background-image: url('../img/rings/ring_02.png');
+  -webkit-background-size: 362px 362px;
+          background-size: 362px 362px;
+  }
+.rings-medium .three {
+  top: 64px;
+  right: 64px;
+  width: 432px;
+  height: 432px;
+  background-image: url('../img/rings/ring_03.png');
+  -webkit-background-size: 432px 432px;
+          background-size: 432px 432px;
+  }
+.rings-medium .four {
+  top: 72px;
+  right: 72px;
+  width: 416px;
+  height: 416px;
+  background-image: url('../img/rings/ring_04.png');
+  -webkit-background-size: 416px 416px;
+          background-size: 416px 416px;
+  }
+.rings-medium .five {
+  top: 84px;
+  right: 84px;
+  width: 392px;
+  height: 392px;
+  background-image: url('../img/rings/dash_01.png');
+  -webkit-background-size: 392px 392px;
+          background-size: 392px 392px;
+  }
+.rings-medium .six {
+  top: 100px;
+  right: 100px;
+  width: 360px;
+  height: 360px;
+  background-image: url('../img/rings/dash_02.png');
+  -webkit-background-size: 360px 360px;
+          background-size: 360px 360px;
+  }
+.rings-medium .seven {
+  top: 121px;
+  right: 121px;
+  width: 318px;
+  height: 318px;
+  background-image: url('../img/rings/ring_05.png');
+  -webkit-background-size: 318px 318px;
+          background-size: 318px 318px;
+  }
+.rings-large {
+  position: relative;
+  z-index: 300;
+  height: 560px;
+  margin: 0 auto;
+  }
+.rings-large .ring {
+  position: absolute;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  }
+.rings-large .one {
+  top: 0;
+  right: 0;
+  width: 560px;
+  height: 560px;
+  background-image: url('../img/rings/ring_01.png');
+  -webkit-background-size: 560px 560px;
+          background-size: 560px 560px;
+  }
+.rings-large .two {
+  top: 55px;
+  right: 55px;
+  width: 450px;
+  height: 450px;
+  background-image: url('../img/rings/ring_02.png');
+  -webkit-background-size: 450px 450px;
+          background-size: 450px 450px;
+  }
+.rings-large .three {
+  top: 64px;
+  right: 64px;
+  width: 432px;
+  height: 432px;
+  background-image: url('../img/rings/ring_03.png');
+  -webkit-background-size: 432px 432px;
+          background-size: 432px 432px;
+  }
+.rings-large .four {
+  top: 72px;
+  right: 72px;
+  width: 416px;
+  height: 416px;
+  background-image: url('../img/rings/ring_04.png');
+  -webkit-background-size: 416px 416px;
+          background-size: 416px 416px;
+  }
+.rings-large .five {
+  top: 84px;
+  right: 84px;
+  width: 392px;
+  height: 392px;
+  background-image: url('../img/rings/dash_01.png');
+  -webkit-background-size: 392px 392px;
+          background-size: 392px 392px;
+  }
+.rings-large .six {
+  top: 100px;
+  right: 100px;
+  width: 360px;
+  height: 360px;
+  background-image: url('../img/rings/dash_02.png');
+  -webkit-background-size: 360px 360px;
+          background-size: 360px 360px;
+  }
+.rings-large .seven {
+  top: 121px;
+  right: 121px;
+  width: 318px;
+  height: 318px;
+  background-image: url('../img/rings/ring_05.png');
+  -webkit-background-size: 318px 318px;
+          background-size: 318px 318px;
   }
 html,
 body,
