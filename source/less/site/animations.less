@@ -380,7 +380,11 @@ sway
 }
 
 
-
+/*
+==============================================
+spin
+==============================================
+*/
 
 
 .spin {
@@ -411,6 +415,11 @@ sway
 	to { transform: rotate(360deg); }
 }
 
+/*
+==============================================
+Alt Spin
+==============================================
+*/
 
 .spin-alt {
 	-webkit-animation: spin-alt 50s infinite linear;
@@ -438,4 +447,33 @@ sway
 
 @keyframes spin-alt {
 	to { transform: rotate(-360deg); }
+}
+
+/*
+==============================================
+Letter Flash
+==============================================
+*/
+
+.letterFlash {
+	-webkit-animation-name: letter-flash;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 2400ms;
+	-webkit-animation-duration: 3.2s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-fill-mode: none;
+}
+
+@keyframes letter-flash {
+	0% {opacity: 0.35}
+	30% {opacity: 0.8}
+	40% {opacity: 0.45}
+	100% {opacity: 0.21}
+}
+
+@-webkit-keyframes letter-flash {
+	0% {opacity: 0.35}
+	30% {opacity: 0.8}
+	40% {opacity: 0.45}
+	100% {opacity: 0.21}
 }

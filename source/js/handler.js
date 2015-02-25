@@ -182,8 +182,9 @@ function kittySlide() {
     }
 
     $document.ready(function () {
-        animateClasses();
+        // animateClasses();
         $('.sections-nav').vLine();
+        $(".lithium-lettering").lettering();
 
         $document.on('click', 'a:internal', function (event) {
             if (event.which == 2 || event.ctrlKey || event.metaKey) {
@@ -224,6 +225,7 @@ function kittySlide() {
                 $content.html(response.$content).fadeIn(500);
                 // animateClasses();
                  $('.sections-nav').vLine();
+                 $(".lithium-lettering").lettering();
             });
         }).fail(function () {
             document.location.href = url;

@@ -1,0 +1,47 @@
+---
+layout: default
+title: Selected Works
+deck: By Tyler Rilling
+slug: works
+---
+
+
+<div id="selected-works" class="content-section">
+    <div class="vertical">
+        <div class="content-inner">
+            <div class="content-panel fadeRight">
+                <div class="layout-single-column">
+                    <h1 class="heading">{{page.title}}</h1>
+                    <p>Some text here.</p>
+                </div>
+            </div>
+            <div class="selected-works-panel fadeRight">
+                <div class="container-fluid">
+                    <div class=" row">
+                        {% for post in site.projects reversed %}
+                            <div class="col-xs-2">
+                                <a href="#" class="thumbnail">
+                                    <img src="{{ post.image }}" height=300 width=300 alt="{{ post.title }}">
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="sr-only">
+{% for post in site.projects reversed %}
+<li class="river-post list-item project">
+    <div class="layout-single-column">
+        <h3 class="post-item-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+        <a class="post-item-snippet" href="{{ post.url }}">
+            <p>{{ post.deck }}</p>
+        </a>
+    </div>
+</li>
+{% endfor %}
+</div>

@@ -108,13 +108,13 @@ a {
         width: 100%;
         position: absolute;
         z-index: @zindex-500;
-        top: 25px; right: 20px;
+        top: 25px; right: 15px;
     }
 
-    #logo {display: block;}
+    #logo {display: block; margin-bottom: 10px;}
     h1, h1 a {color: #f2f2f2; font-size: 15px; margin: 10px 0 5px;}
     p {opacity: .65;}
-    p, p>a {color: #f2f2f2; font-weight: 300; margin: 0;  font-size: 15px; line-height: 15px;}
+    p, p>a {color: #f2f2f2; font-weight: 300; margin: 0;  font-size: 12px; line-height: 15px;}
 }
 
 .content-section {
@@ -132,7 +132,7 @@ a {
         background: rgba(69,170,184,0.1);
         padding: 25px 0;
         color: #f2f2f2;
-        p {.lead(); opacity: .5;}
+        p {.lead(); opacity: .75;}
         a {color: #f2f2f2;}
         h1 {font-weight: 100;}
     }
@@ -140,6 +140,7 @@ a {
 
 #contact {background-image: url('../img/contact.jpg');}
 #colophon {background-image: url('../img/colophon.jpg');}
+#selected-works {background-image: url('../img/selected-works.jpg');}
 #error404 {background-image: url('../img/error.jpg');}
 
 .site-nav {
@@ -227,8 +228,48 @@ a {
     }
 }
 
-.contact-bg {
-    background-image: url('../img/contact.jpg');
+.lithium-flower {
+    position: relative;
+    height: 440px;
+
+    .lithium-panel {
+        position: absolute;
+        left: 400px;
+        bottom: 0;
+        width: 240px;
+        padding-bottom: 10px;
+        background-size: 100%;
+        background: url('../img/diagnostic.png') center bottom no-repeat;
+
+        h3 {font-weight: 100; margin: 0 0 5px; color: #f2f2f2; margin-left: 50px;}
+    }
 }
 
-.page {}
+.lithium-lettering {
+    span {.letterFlash(); opacity: 0.35;}
+    .char1 {-webkit-animation-delay: 0}
+    .char2 {-webkit-animation-delay: 100ms}
+    .char3 {-webkit-animation-delay: 200ms}
+    .char4 {-webkit-animation-delay: 300ms}
+    .char5 {-webkit-animation-delay: 400ms}
+    .char6 {-webkit-animation-delay: 500ms}
+    .char7 {-webkit-animation-delay: 600ms}
+    .char8 {-webkit-animation-delay: 700ms}
+    .char9 {-webkit-animation-delay: 800ms}
+    .char10 {-webkit-animation-delay: 900ms}
+    .char11 {-webkit-animation-delay: 1000ms}
+    .char12 {-webkit-animation-delay: 1100ms}
+    .char13 {-webkit-animation-delay: 1200ms}
+    .char14 {-webkit-animation-delay: 1300ms}
+    .char14 {-webkit-animation-delay: 1400ms}
+}
+
+
+.selected-works-panel {
+    margin: 20px;
+    position: relative;
+    z-index: @zindex-500;
+
+    .thumbnail {box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);}
+    a.thumbnail:hover {.sway();}
+}

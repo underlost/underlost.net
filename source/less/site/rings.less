@@ -59,14 +59,14 @@
     height: 450px;
     margin: 0 auto;
 
+    .debug {background-color: rgba(255,255,255,0.1);}
+
     .ring {
         position: absolute;
+        left: 0;
         display: block;
         background-repeat: no-repeat;
         background-position: center center;
-
-        /* Debug */
-        background-color: rgba(255,255,255,0.1);
     }
 
     .one {
@@ -74,7 +74,7 @@
         height: @ring-medium-1;
         background-size: @ring-medium-1 @ring-medium-1;
         background-image: url('../img/rings/ring_01.png');
-        top: 0; right: 0;
+        top: 0; left: 0;
     }
 
     .two {
@@ -82,7 +82,7 @@
         height: @ring-medium-2;
         background-size: @ring-medium-2 @ring-medium-2;
         background-image: url('../img/rings/ring_02.png');
-        top: ((@ring-medium-1 - @ring-medium-2) / 2); right: ((@ring-medium-1 - @ring-medium-2) / 2);
+        top: ((@ring-medium-1 - @ring-medium-2) / 2); left: ((@ring-medium-1 - @ring-medium-2) / 2);
     }
 
     .three {
@@ -90,7 +90,7 @@
         height: @ring-medium-3;
         background-size: @ring-medium-3 @ring-medium-3;
         background-image: url('../img/rings/ring_03.png');
-        top: ((@ring-medium-1 - @ring-medium-3) / 2); right: ((@ring-medium-1 - @ring-medium-3) / 2);
+        top: ((@ring-medium-1 - @ring-medium-3) / 2); left: ((@ring-medium-1 - @ring-medium-3) / 2);
     }
 
     .four {
@@ -98,7 +98,7 @@
         height: @ring-medium-4;
         background-size: @ring-medium-4 @ring-medium-4;
         background-image: url('../img/rings/ring_04.png');
-        top: ((@ring-medium-1 - @ring-medium-4) / 2); right: ((@ring-medium-1 - @ring-medium-4) / 2);
+        top: ((@ring-medium-1 - @ring-medium-4) / 2); left: ((@ring-medium-1 - @ring-medium-4) / 2);
     }
 
     .five {
@@ -106,7 +106,7 @@
         height: @ring-medium-5;
         background-size: @ring-medium-5 @ring-medium-5;
         background-image: url('../img/rings/dash_01.png');
-        top: ((@ring-medium-1 - @ring-medium-5) / 2); right: ((@ring-medium-1 - @ring-medium-5) / 2);
+        top: ((@ring-medium-1 - @ring-medium-5) / 2); left: ((@ring-medium-1 - @ring-medium-5) / 2);
     }
 
     .six {
@@ -114,7 +114,7 @@
         height: @ring-medium-6;
         background-size: @ring-medium-6 @ring-medium-6;
         background-image: url('../img/rings/dash_02.png');
-        top: ((@ring-medium-1 - @ring-medium-6) / 2); right: ((@ring-medium-1 - @ring-medium-6) / 2);
+        top: ((@ring-medium-1 - @ring-medium-6) / 2); left: ((@ring-medium-1 - @ring-medium-6) / 2);
     }
 
     .seven {
@@ -122,7 +122,7 @@
         height: @ring-medium-7;
         background-size: @ring-medium-7 @ring-medium-7;
         background-image: url('../img/rings/ring_05.png');
-        top: ((@ring-medium-1 - @ring-medium-7) / 2); right: ((@ring-medium-1 - @ring-medium-7) / 2);
+        top: ((@ring-medium-1 - @ring-medium-7) / 2); left: ((@ring-medium-1 - @ring-medium-7) / 2);
     }
 
 }
