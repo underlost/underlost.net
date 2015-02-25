@@ -77,22 +77,7 @@ a {
     z-index: @zindex-001;
 }
 
-#particles-js{
-    position: absolute;
-    z-index: @zindex-001;
-    overflow: hidden;
-    top:0; bottom: 0;
-    left:0; right: 0;
-    height:100%;
-    width:100%;
-    transition:all 900ms ease;
 
-
-    canvas{
-        display: block;
-        vertical-align:bottom;
-    }
-}
 .site-head {
     background: url('../img/bordered.png') fixed -200px 0 repeat-y;
     position: fixed;
@@ -123,6 +108,7 @@ a {
     width: 100%;
     display: table;
     background-size: cover;
+    background-position: center center;
 
     .content-inner {margin-left: 27%;}
 
@@ -270,6 +256,5 @@ a {
     position: relative;
     z-index: @zindex-500;
 
-    .thumbnail {box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);}
-    a.thumbnail:hover {.sway();}
+    .thumbnail {box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2); transition:all 900ms ease;}
 }

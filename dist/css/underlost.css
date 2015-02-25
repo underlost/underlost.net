@@ -8266,24 +8266,6 @@ a {
   width: 100%;
   height: 100%;
   }
-#particles-js {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  -webkit-transition: all 900ms ease;
-       -o-transition: all 900ms ease;
-          transition: all 900ms ease;
-  }
-#particles-js canvas {
-  display: block;
-  vertical-align: bottom;
-  }
 .site-head {
   position: fixed;
   z-index: 500;
@@ -8328,6 +8310,7 @@ a {
   display: table;
   width: 100%;
   height: 100%;
+  background-position: center center;
   -webkit-background-size: cover;
           background-size: cover;
   }
@@ -8528,17 +8511,9 @@ a {
 .selected-works-panel .thumbnail {
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
           box-shadow: 0 0 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
-  }
-.selected-works-panel a.thumbnail:hover {
-  -webkit-animation-name: sway;
-       -o-animation-name: sway;
-          animation-name: sway;
-  -webkit-animation-duration: 1.5s;
-       -o-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite;
-       -o-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  -webkit-transition: all 900ms ease;
+       -o-transition: all 900ms ease;
+          transition: all 900ms ease;
   }
 section#page-head {
   position: fixed;

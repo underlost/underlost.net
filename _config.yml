@@ -48,7 +48,6 @@ exclude: [
     Procfile,
     gruntfile.js,
     package.json,
-    composer.json,
     s3_website.yml
 ]
 

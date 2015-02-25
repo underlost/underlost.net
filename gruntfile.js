@@ -102,7 +102,7 @@ module.exports = function (grunt) {
           'source/js/tab.js',
           'source/js/affix.js',
 
-          'source/js/particles.js',
+          // 'source/js/particles.js',
           'source/js/jquery.lettering-0.6.1.min.js',
           'source/js/jquery.history.min.js',
           'source/js/handler.js'
