@@ -7643,6 +7643,16 @@ a {
 .underlost-social {
   margin-top: 20px;
   }
+.underlost-modal {
+  color: #bdbdbd;
+  }
+.underlost-modal a {
+  color: #f2f2f2;
+  }
+.underlost-modal .close {
+  color: #bdbdbd;
+  text-shadow: none;
+  }
 section#page-head {
   position: fixed;
   z-index: 1;
