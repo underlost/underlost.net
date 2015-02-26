@@ -5,11 +5,10 @@ deck: By Tyler Rilling
 slug: works
 ---
 
-
 <div id="selected-works" class="content-section">
     <div class="vertical">
         <div class="content-inner">
-            <div class="content-panel fadeRight">
+            <div class="content-panel layout-foreground fadeRight">
                 <div class="layout-single-column">
                     <h1 class="heading">{{page.title}}</h1>
                     <p>Some text here.</p>
@@ -18,9 +17,9 @@ slug: works
             <div class="selected-works-panel fadeRight">
                 <div class="container-fluid">
                     <div class=" row">
-                        {% for post in site.projects reversed %}
+                        {% for post in site.portfolio reversed %}
                             <div class="col-xs-2">
-                                <a href="#" class="thumbnail">
+                                <a href="#" class="thumbnail" data-toggle="modal" data-target="#{{ post.slug }}Modal">
                                     <img src="{{ post.image }}" height=300 width=300 alt="{{ post.title }}">
                                 </a>
                             </div>
@@ -32,16 +31,18 @@ slug: works
     </div>
 </div>
 
-
-<div class="sr-only">
-{% for post in site.projects reversed %}
-<li class="river-post list-item project">
-    <div class="layout-single-column">
-        <h3 class="post-item-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
-        <a class="post-item-snippet" href="{{ post.url }}">
-            <p>{{ post.deck }}</p>
-        </a>
+{% for post in site.portfolio reversed %}
+<div class="modal fade" id="{{ post.slug }}Modal" tabindex="-1" role="dialog" aria-labelledby="{{ post.slug }}ModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">{{ post.title }}</h4>
+            </div>
+            <div class="modal-body">
+                <p>{{ post.content }}</p>
+            </div>
+        </div>
     </div>
-</li>
-{% endfor %}
 </div>
+{% endfor %}

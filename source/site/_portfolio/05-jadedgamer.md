@@ -5,7 +5,7 @@ slug: jadedgamer
 deck: 'Video Game News Aggregator'
 color: 57ad68
 image: /assets/img/work/jaded.jpg
-permalink: /jadedgamer/
+permalink: /portfolio/jadedgamer/
 date: 2014-05-01
 previous_page: replica
 next_page: gamernews

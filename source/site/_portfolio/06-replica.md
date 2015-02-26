@@ -5,7 +5,7 @@ slug: replica
 deck: Django/Python Content Management System
 color: 919799
 image: /assets/img/work/replica.jpg
-permalink: /replica/
+permalink: /portfolio/replica/
 date: 2014-06-01
 previous_page: mbarrington
 next_page: jadedgamer

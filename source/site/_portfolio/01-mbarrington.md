@@ -5,7 +5,7 @@ slug: mbarrington
 deck: 'Concept, design, and code for local insurance company'
 color: f9a61a
 image: /assets/img/work/mbarr.jpg
-permalink: /mbarrington/
+permalink: /portfolio/mbarrington/
 date: 2014-01-01
 previous_page: designcor
 next_page: replica

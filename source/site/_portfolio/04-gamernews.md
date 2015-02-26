@@ -5,7 +5,7 @@ slug: gamernews
 deck: 'Hacker News/ Reddit clone written in python'
 color: 952067
 image: /assets/img/work/gamernews.jpg
-permalink: /gamernews/
+permalink: /portfolio/gamernews/
 date: 2014-04-01
 previous_page: jadedgamer
 next_page: vapor

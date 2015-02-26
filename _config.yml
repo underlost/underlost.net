@@ -35,11 +35,11 @@ kramdown:
     coderay_css: style
 
 collections:
-  projects:
-    label: projects
+  portfolio:
+    label: portfolio
     output: true
-    relative_directory: :slug
-    directory: :slug
+    relative_directory: portfolio/:slug
+    directory: portfolio/:slug
 
 exclude: [
     dist,

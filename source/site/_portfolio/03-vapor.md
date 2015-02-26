@@ -5,7 +5,7 @@ slug: vapor
 deck: 'Backpack viewer for Valve Web API'
 color: a19d97
 image: /assets/img/work/vapor.jpg
-permalink: /vapor/
+permalink: /portfolio/vapor/
 date: 2014-03-01
 previous_page: gamernews
 next_page: designcor

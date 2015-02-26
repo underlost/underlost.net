@@ -5,7 +5,7 @@ slug: designcor
 deck: 'Design and code for graphic and print company.'
 color: 7cad00
 image: /assets/img/work/designcor.jpg
-permalink: /designcor/
+permalink: /portfolio/designcor/
 date: 2014-02-01
 previous_page: vapor
 next_page: mbarrington
