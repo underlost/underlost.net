@@ -4,7 +4,7 @@ underlost.net is is the personal site/portfolio of Tyler Rilling. It's a tiny Je
 
 ## Usage
 
-The site can deployed multiple ways, on multiple services. The site is jekyell based, so a simple 'bundle exec jekyll --w' is only needed.
+The site can deployed multiple ways, on multiple services. Since the site is Jekyll based, so a simple 'bundle exec jekyll serve --w' is only needed for local development.
 
 For texting purposes on various devices, a github pages branch is set up at lab.underlost.net. Grunt is used to deploy there, with 'grunt git-deploy'
 
@@ -12,4 +12,4 @@ However, this setup was primarily designed to work with Heroku in mind. Upon doi
 
 'heroku run s3_website push'
 
-And there you have it. Is this a little overkill? Probably. But I like having multiple failsafes, and it's easy to change the DNS between Heroku, Github, and Amazon S3. 
+And there you have it. Is this a little overkill? Probably. But I like having multiple failsafes, and it's easy to change the DNS between Heroku, Github, and Amazon S3.
