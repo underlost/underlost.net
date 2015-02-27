@@ -1,5 +1,5 @@
 ---
-layout: panels
+layout: portfolio
 title: Designcor
 slug: designcor
 deck: 'Design and code for graphic and print company.'

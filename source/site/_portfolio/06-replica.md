@@ -1,5 +1,5 @@
 ---
-layout: panels
+layout: portfolio
 title: Replica CMS
 slug: replica
 deck: Django/Python Content Management System

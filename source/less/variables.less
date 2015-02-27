@@ -28,10 +28,10 @@
 //** Background color for `<body>`.
 @body-bg:               #0b171f;
 //** Global text color on `<body>`.
-@text-color:            @gray-dark;
+@text-color:            @gray-lighter;
 
 //** Global textual link color.
-@link-color:            @gray-darker;
+@link-color:            #f2f2f2;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 //** Link hover decoration.
@@ -144,9 +144,10 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:              rgba(255,255,255,.85);
+@btn-default-bg:                 rgba(0,0,0,.2);
+@btn-default-border:             darken(@btn-default-bg, 5%);
+
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;
@@ -458,8 +459,8 @@
 //
 //##
 
-@pager-bg:                             @pagination-bg;
-@pager-border:                         @pagination-border;
+@pager-bg:                             rgba(255,255,255,.1);
+@pager-border:                         darken(@pager-bg, 10%);
 @pager-border-radius:                  15px;
 
 @pager-hover-bg:                       @pagination-hover-bg;
@@ -596,7 +597,7 @@
 //** Modal backdrop opacity
 @modal-backdrop-opacity:      .5;
 //** Modal header border color
-@modal-header-border-color:   #1e1e1e;
+@modal-header-border-color:   rgba(0,0,0,.2);
 //** Modal footer border color
 @modal-footer-border-color:   @modal-header-border-color;
 
@@ -853,4 +854,4 @@
 //** Width of horizontal description list titles
 @dl-horizontal-offset:        @component-offset-horizontal;
 //** Horizontal line color.
-@hr-border:                   #ccc;
+@hr-border:                   rgba(255,255,255,.1);

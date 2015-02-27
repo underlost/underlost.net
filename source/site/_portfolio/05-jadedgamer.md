@@ -1,5 +1,5 @@
 ---
-layout: panels
+layout: portfolio
 title: Jaded Gamer
 slug: jadedgamer
 deck: 'Video Game News Aggregator'

@@ -1,5 +1,5 @@
 ---
-layout: panels
+layout: portfolio
 title: Vapor
 slug: vapor
 deck: 'Backpack viewer for Valve Web API'

@@ -1,6 +1,6 @@
 @media all and (max-width:800px) {
 
-    .vertical {display: block; margin-top: 25px;}
+    .vertical {display: block; margin: 40px auto; }
 
     .site-head { display: none; }
     .content-section {
@@ -9,6 +9,58 @@
             padding: 25px 25px;
             h1 {font: 24px/29px @font-family-sans-serif;}
         }
+    }
+
+    .site-footer {
+        text-align: center;
+        background: rgba(0,0,0,0.5);
+        .inner {margin: 0; width: 100%;}
+        .logo {img {width: 24px; height: 24px;}}
+        .secondary-nav {display: block; margin: 0 auto;}
+        .copyright {display: none;}
+    }
+
+    .lithium-flower {
+        .lithium-panel {
+            position: relative; left: 0; right: 0;
+            margin: 25px auto 0;
+            padding: 0;
+            background: none;
+        }
+    }
+
+    .rings-medium,
+    .rings-large {
+        position: relative;
+        height: 230px;
+        width: 230px;
+        margin: 0 auto;
+
+        .ring {
+            position: absolute;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .one {
+            width: @ring-small-1;
+            height: @ring-small-1;
+            background-size: @ring-small-1 @ring-small-1;
+            background-image: url('../img/rings/ring_01.png');
+            top: 0; left: 0;
+        }
+
+        .seven {
+            width: @ring-small-2;
+            height: @ring-small-2;
+            background-size: @ring-small-2 @ring-small-2;
+            background-image: url('../img/rings/ring_05.png');
+            top: 20px; left: 20px;
+        }
+
+        .two, .three, .four, .five, .six {display: None;}
+
     }
 
 }

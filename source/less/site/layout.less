@@ -75,7 +75,7 @@ a {
         top: 25px; right: 15px;
     }
 
-    #logo {display: block; margin-bottom: 10px;}
+    .logo {display: block; margin-bottom: 10px;}
     h1, h1 a {color: #f2f2f2; font-size: 15px; margin: 10px 0 5px;}
     p {opacity: .65;}
     p, p>a {color: #f2f2f2; font-weight: 300; margin: 0;  font-size: 12px; line-height: 15px;}
@@ -83,7 +83,7 @@ a {
 
 .content-section {
     position: relative;
-    z-index: 2;
+    z-index: 5;
     height: 100%;
     width: 100%;
     display: table;
@@ -99,11 +99,12 @@ a {
         p {font: 17px/25px @font-family-sans-serif; color: #bdbdbd; font-weight: 300;}
         a {color: #f2f2f2; opacity: 1;}
         h1 {font-weight: 100; span {font-size: 120%;}}
+
     }
 }
 
 #contact {background-image: url('../img/contact.jpg');}
-#colophon {background-image: url('../img/colophon.jpg');}
+#colophon, .page {background-image: url('../img/colophon.jpg');}
 #selected-works {background-image: url('../img/selected-works.jpg');}
 #error404 {background-image: url('../img/error.jpg');}
 
@@ -111,7 +112,6 @@ a {
 
 .site-nav {
     margin: 0;
-
     .vLine {
         background: #96bf48;
         width: 5px;
@@ -122,50 +122,46 @@ a {
 
 .sections-nav {
     text-align: right;
-
     li {
         margin: 0 0 5px 0;
         -webkit-font-smoothing: antialiased;
          /* background: rgba(69,170,184,0.05); */
+         a {
+             display: block;
+             padding: 0 12px 0 32px;
+             height: 30px;
+             text-decoration: none;
+         }
+         strong {
+             color: #fff;
+             display: inline-block;
+             font: 24px/32px @font-family-sans-serif;
+             margin: 2px 0 0 0;
+             vertical-align: middle
+         }
+         small {
+             color: #377384;
+             color: rgba(69,170,184,0.75);
+             display: block;
+             font: 16px/18px @font-family-sans-serif;
+             letter-spacing: 0.01rem;
+         }
     }
-
-    li a {
-        display: block;
-        padding: 0 12px 0 32px;
-        height: 30px;
-        text-decoration: none;
-    }
-
-    li strong {
-        color: #fff;
-        display: inline-block;
-        font: 24px/32px @font-family-sans-serif;
-        margin: 2px 0 0 0;
-        vertical-align: middle
-    }
-
-
-    li small {
-        color: #377384;
-        color: rgba(69,170,184,0.75);
-        display: block;
-        font: 16px/18px @font-family-sans-serif;
-        letter-spacing: 0.01rem;
-    }
-
 }
 
 .site-footer {
-    display: table;
-    vertical-align: bottom;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     z-index: 500;
     width: 100%;
-    text-align: center;
+    text-align: left;
     color: #fff;
-    padding: 25px 0;
-    background: rgba(69,170,184,0.1);
+    padding: 15px 0;
+
+
+    .inner {margin-left: 27%;}
+    .secondary-nav {display: none;}
+    .copyright {padding-left: 15px; opacity: .25;}
 
     a {color: #fff;}
 }
@@ -210,11 +206,16 @@ a {
     margin: 20px;
     position: relative;
     .thumbnail {box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2); transition:all 900ms ease;}
+    .pager {
+        li a{color: #f2f2f2;}
+        li a:hover {color: #333;}
+    }
 }
 
 .underlost-social {margin-top: 20px;}
 .underlost-modal {
-    color: #bdbdbd;
+    color: #FFF;
     a {color: #f2f2f2;}
-    .close {color: #bdbdbd; text-shadow: none;}
+    .btn-default {background: rgba(255,255,255,.25); border-width: 0; color: rgba(255,255,255,.75)}
+    .modal-content {background-image: url('../img/pattern.png'); img {box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);}}
 }
