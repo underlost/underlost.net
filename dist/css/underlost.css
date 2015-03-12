@@ -7498,7 +7498,7 @@ body,
 #wrapper {
   width: 100%;
   height: 100%;
-  background: #0b171f url('../img/bg2.jpg') center center fixed no-repeat;
+  background: #0b171f url('../img/bg.jpg') center center fixed no-repeat;
   -webkit-background-size: cover;
           background-size: cover;
   }
