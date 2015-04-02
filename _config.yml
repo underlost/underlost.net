@@ -42,20 +42,15 @@ collections:
     directory: portfolio/:slug
 
 exclude: [
-    dist,
-    Gemfile,
-    Gemfile.lock,
-    Procfile,
-    gruntfile.js,
-    package.json,
-    s3_website.yml
-]
+  README.md,
+  CHANGELOG.md
+ ]
 
 # Custom vars
 current_version:  2.3.1
 repo: https://github.com/underlost/underlost.net
-site: http://underlost.net/
-url: http://underlost.net
+site: https://underlost.net/
+url: https://underlost.net
 author: Tyler Rilling
 
 blog: /blog/

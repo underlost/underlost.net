@@ -1,1 +1,0 @@
-A static generated site.
