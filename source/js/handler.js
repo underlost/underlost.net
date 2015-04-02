@@ -50,14 +50,14 @@ function kittySlide() {
                 var $this = $(this);
 
                 //wrap the UL with a positioned object just in case
-                $this.wrap('<div style="position:relative;"></div>');
+                // $this.wrap('<div style="position:relative;"></div>');
 
                 //test to see if element exists, if not, append it
                 if(!$('.vLine').length){
 
                     //parent is the ul we wrapped
                     //insert the vLine element into the document
-                    $this.parent().append($('<div style="position:absolute;top:'+$this.position().top+'px;" class="vLine"></div>'));
+                    $this.parent().append($('<div style="position:absolute;top: -30px;" class="vLine"></div>'));
                     $('.vLine').css('right', '0');
 
                 }
@@ -71,7 +71,7 @@ function kittySlide() {
                     //we want to reset the line if this is met
                     if(['UL', 'LI'].indexOf(e.toElement.tagName) == -1){
                         $('.vLine').stop().animate({
-                            top: '0px'
+                            top: '-30px'
                         });
                     }
                 });
@@ -92,7 +92,22 @@ function kittySlide() {
 })(jQuery);
 
 
-
+(function( $ ) {
+    $.fn.activeNavigation = function(selector) {
+        var pathname = window.location.pathname
+        var hrefs = []
+        $(selector).find("a").each(function(){
+            if (pathname.indexOf($(this).attr("href")) > -1)
+                hrefs.push($(this))
+        })
+        if (hrefs.length) {
+            hrefs.sort(function(a,b){
+                return b.attr("href").length - a.attr("href").length
+            })
+            hrefs[0].closest('li').addClass("active").siblings().removeClass("active");
+        }
+    };
+})(jQuery);
 
 
 (function ($) {
@@ -134,9 +149,11 @@ function kittySlide() {
     }
 
     $document.ready(function () {
-        // animateClasses();
+        animateClasses();
         $('.sections-nav').vLine();
         $(".lithium-lettering").lettering();
+        $(document).activeNavigation(".sections-nav");
+
 
         $document.on('click', 'a:internal', function (event) {
             if (event.which == 2 || event.ctrlKey || event.metaKey) {
@@ -165,6 +182,7 @@ function kittySlide() {
             }
 
             var $content = $('#content');
+            var url = window.location.pathname;
 
             if (response.title.length) {
                 $('title').last().html(response.title);
@@ -175,34 +193,21 @@ function kittySlide() {
             .promise()
             .done(function () {
                 $content.html(response.$content).fadeIn(500);
-                // animateClasses();
-                 $('.sections-nav').vLine();
-                 $(".lithium-lettering").lettering();
+                animateClasses();
+                $('.sections-nav').vLine();
+                $(".lithium-lettering").lettering();
+                $(document).activeNavigation(".sections-nav");
+
+                //nav
+                // if (url.indexOf('/about') !== -1) { $('.site-nav-about').addClass('active');}
+                // if (url.indexOf('/portfolio') !== -1) { $('.site-nav-portfolio').addClass('active');}
+                // if (url.indexOf('/contact') !== -1) { $('.site-nav-contact').addClass('active');}
+
             });
         }).fail(function () {
             document.location.href = url;
 
             return false;
         });
-    });
-
-    var keymap = {};
-
-    // LEFT
-    keymap[ 37 ] = "#panel-prev-link";
-    // RIGHT
-    keymap[ 39 ] = "#panel-next-link";
-
-    $(document).on( "keyup", function(event) {
-        var href,
-        selector = keymap[ event.which ];
-        // if the key pressed was in our map, check for the href
-        if ( selector ) {
-            href = $( selector ).attr( "href" );
-            if ( href ) {
-                // navigate where the link points
-                window.location = href;
-            }
-        }
     });
 })(jQuery);

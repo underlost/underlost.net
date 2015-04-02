@@ -135,6 +135,12 @@ a {
     li {
         margin: 0 0 5px 0;
         -webkit-font-smoothing: antialiased;
+        opacity: .5;
+        -webkit-transition: color .25s ease-in, background .25s ease-in, opacity .25s ease-in;
+        -moz-transition: color .25s ease-in, background .25s ease-in, opacity .25s ease-in;
+        -ms-transition: color .25s ease-in, background .25s ease-in, opacity .25s ease-in;
+        -o-transition: color .25s ease-in, background .25s ease-in, opacity .25s ease-in;
+        transition: color .25s ease-in, background .25s ease-in, opacity .25s ease-in;
          /* background: rgba(69,170,184,0.05); */
          a {
              display: block;
@@ -149,6 +155,9 @@ a {
              margin: 2px 0 0 0;
              vertical-align: middle
          }
+
+         strong:hover {color: #96bf48; }
+
          small {
              color: #377384;
              color: rgba(69,170,184,0.75);
@@ -157,6 +166,8 @@ a {
              letter-spacing: 0.01rem;
          }
     }
+
+    li:hover, .active {opacity: 1;}
 }
 
 .site-footer {
@@ -222,7 +233,10 @@ a {
     }
 }
 
-.underlost-social {margin-top: 20px;}
+.underlost-social {
+    margin-top: 20px;
+    a:hover {color: #96bf48;}
+}
 .underlost-modal {
     color: #FFF;
     a {color: #f2f2f2;}

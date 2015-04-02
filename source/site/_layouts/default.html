@@ -13,13 +13,15 @@
 	<meta http-equiv="cleartype" content="on">
 	<link rel="shortcut icon" href="/assets/ico/favicon.ico">
 	<link rel="stylesheet" href="/assets/css/underlost.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700,500italic,300italic,400italic' rel='stylesheet' type='text/css'>
 	<link href='http://underlost.net/feed.xml' rel='alternate' type='application/rss+xml' title='underlost.net' />
-	<link rel="canonical" href="http://underlost.net{{ page.url | replace:'index.html','' }}" />
+	<link rel="canonical" href="https://underlost.net{{ page.url | replace:'index.html','' }}" />
 	<link type="text/plain" rel="author" href="/humans.txt" />
+
 	<meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@underlost">
     <meta name="twitter:creator" content="@underlost">
-    <meta name="twitter:url" content="http://underlost.net">
+    <meta name="twitter:url" content="https://underlost.net">
     <meta name="twitter:title" content="Tyler / underlost">
     <meta name="twitter:description" content="I make web things. I also take photographs and play video games.">
 
@@ -33,30 +35,10 @@
 	ga('create', 'UA-1247925-1', 'underlost.net');
 	ga('send', 'pageview');
 	</script>
-	<link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700,500italic,300italic,400italic' rel='stylesheet' type='text/css'>
 </head>
 	<body class="{{ page.slug }}">
 		<img class="sr-only" src="/assets/img/thumbnail.jpg" alt="underlost.net">
-		<div id="wrapper">
-			{% include header.html %}
-			<div id="content">
-				{{ content }}
-			</div>
-
-			<footer class="site-footer">
-				<div class="inner">
-					<ul class="list-inline secondary-nav">
-						<li><a class="logo" href="/"><img src="/assets/img/logo.png" width="32" height="32" alt="underlost logo"></a></li>
-						<li><a href="/">Home</a></li>
-						<li><a href="/about/">About</a></li>
-						<li><a href="/portfolio/">Selected Works</a></li>
-						<li><a href="/contact/">Contact</a></li>
-					</ul>
-					<small class="copyright">Copyright &copy; 2002–2015. Last <a href="https://github.com/underlost/underlost.net/">updated {{ site.time | date: "%B %d, %Y" }}</a>.</small>
-				</div>
-			</footer>
-
-		</div>
+		{{ content }}
 		{% include javascript.html %}
 	</body>
 </html>

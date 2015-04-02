@@ -1,5 +1,5 @@
 ---
-layout: pages
+layout: posts
 title: Hire Me
 deck: tyler@underlost.net
 slug: job
