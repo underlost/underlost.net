@@ -243,3 +243,44 @@ a {
     .btn-default {background: rgba(255,255,255,.25); border-width: 0; color: rgba(255,255,255,.75)}
     .modal-content {background-image: url('../img/pattern.png'); img {box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);}}
 }
+
+#recent-portfolio-minimal {display: none;}
+
+#recent-portfolio-container {
+    margin-top: 20px;
+    h2 {text-align: center; display: none;}
+}
+
+ul#recent-portfolio{
+  list-style: none;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  height: 150px;
+  max-width: 868px; /* Extra width so last image doesn't bounce to second line mid-animation */
+  background-color: 000;
+  overflow: hidden;
+
+  li {
+      float: left;
+      padding: 0;
+      margin: 0;
+
+    a {
+      display: block;
+      overflow: hidden;
+      height: 150px;
+      width: 123px;
+      margin: 0 1px;
+      background-position: top left;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    a.first {width: 124px;}
+    a.last {width: 124px;}
+
+    p {display: none;}
+  }
+
+}

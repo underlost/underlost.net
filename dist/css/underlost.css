@@ -7820,6 +7820,52 @@ a {
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
           box-shadow: 0 0 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
   }
+#recent-portfolio-minimal {
+  display: none;
+  }
+#recent-portfolio-container {
+  margin-top: 20px;
+  }
+#recent-portfolio-container h2 {
+  display: none;
+  text-align: center;
+  }
+ul#recent-portfolio {
+  display: block;
+  max-width: 868px;
+  height: 150px;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  list-style: none;
+  /* Extra width so last image doesn't bounce to second line mid-animation */
+  background-color: 000;
+  }
+ul#recent-portfolio li {
+  float: left;
+  padding: 0;
+  margin: 0;
+  }
+ul#recent-portfolio li a {
+  display: block;
+  width: 123px;
+  height: 150px;
+  margin: 0 1px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: top left;
+  -webkit-background-size: cover;
+          background-size: cover;
+  }
+ul#recent-portfolio li a.first {
+  width: 124px;
+  }
+ul#recent-portfolio li a.last {
+  width: 124px;
+  }
+ul#recent-portfolio li p {
+  display: none;
+  }
 .page {
   background: #0b171f url('../img/colophon.jpg') center center fixed no-repeat;
   -webkit-background-size: cover;
@@ -8070,6 +8116,12 @@ section#river {
   .rings-medium .six,
   .rings-large .six {
     display: None;
+    }
+  #recent-portfolio-container {
+    display: none;
+    }
+  #recent-portfolio-minimal {
+    display: block;
     }
   }
 .pace {

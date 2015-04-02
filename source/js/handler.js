@@ -29,6 +29,97 @@ function kittySlide() {
   setInterval(kitty, 3000);
 };
 
+function portfolioShowcase(){
+    $("ul#recent-portfolio li a").on('mouseover', function() {
+        $("ul#recent-portfolio li a").not(this).animate({
+            width: "105px"
+        }, {
+            queue: false,
+            duration: 400
+        });
+        $("ul#recent-portfolio li a:last").not(this).animate({
+            width: "106px"
+        }, {
+            queue: false,
+            duration: 400
+        });
+        $("ul#recent-portfolio li a:first").not(this).animate({
+            width: "106px"
+        }, {
+            queue: false,
+            duration: 400
+        });
+        $("ul#recent-portfolio li a").not(this).animate({
+            opacity: ".9"
+        }, {
+            queue: false,
+            duration: 400
+        });
+        if ($(this).hasClass('last')) {
+            $(this).animate({
+                width: "250px"
+            }, {
+                queue: false,
+                duration: 400
+            });
+        } else {
+            $(this).animate({
+                width: "249px"
+            }, {
+                queue: false,
+                duration: 400
+            });
+        };
+        $(this).animate({
+            opacity: "1.0"
+        }, {
+            queue: false,
+            duration: 400
+        });
+        $('#recent-portfolio-container h2').html($(this).attr('alt'));
+        $('#recent-portfolio-container h2').addClass('active');
+    });
+    if ($("div.portfolio-picks ul#recent-portfolio li a").length > 0) {
+        $("div.portfolio-picks ul#recent-portfolio li a").on('mouseout', function() {
+            $('#recent-portfolio-container h2').removeClass('active');
+            $('#recent-portfolio-container h2').html('Selected Works');
+            $("div.portfolio-picks ul#recent-portfolio li a:first").mouseover()
+        });
+    } else {
+        $("ul#recent-portfolio li a").on('mouseout', function(e) {
+            $('#recent-portfolio-container h2').removeClass('active');
+            $('#recent-portfolio-container h2').html('Selected Works');
+            $("ul#recent-portfolio li a").animate({
+                opacity: "1.0"
+            }, {
+                queue: false,
+                duration: 400
+            });
+            $("ul#recent-portfolio li a").animate({
+                width: "123px"
+            }, {
+                queue: false,
+                duration: 400
+            });
+            $("ul#recent-portfolio li a:last").animate({
+                width: "124px"
+            }, {
+                queue: false,
+                duration: 400
+            });
+            $("ul#recent-portfolio li a:first").animate({
+                width: "124px"
+            }, {
+                queue: false,
+                duration: 400
+            });
+        });
+    }
+    $("div.portfolio-picks ul#recent-portfolio li a:first").mouseover()
+};
+
+
+
 
 (function($){
     //define methods of the plugin
@@ -150,6 +241,7 @@ function kittySlide() {
 
     $document.ready(function () {
         animateClasses();
+        portfolioShowcase();
         $('.sections-nav').vLine();
         $(".lithium-lettering").lettering();
         $(document).activeNavigation(".sections-nav");
@@ -194,6 +286,7 @@ function kittySlide() {
             .done(function () {
                 $content.html(response.$content).fadeIn(500);
                 animateClasses();
+                portfolioShowcase();
                 $('.sections-nav').vLine();
                 $(".lithium-lettering").lettering();
                 $(document).activeNavigation(".sections-nav");

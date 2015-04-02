@@ -8,7 +8,7 @@ image: /assets/img/work/replica.jpg
 permalink: /portfolio/replica/
 date: 2014-06-01
 previous_page: mbarrington
-next_page: jadedgamer
+next_page: undertasker
 ---
 
 Replica is a content management system for Python/django I wrote for clients that found existing systems too complicated. Since then, I've continued to develop it, and even adopted it for my personal blog at [A Life Well Played](http://alifewellplayed.com/).
