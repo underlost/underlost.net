@@ -7630,6 +7630,10 @@ a {
 #error404 {
   background-image: url('../img/error.jpg');
   }
+body:after {
+  display: none;
+  content: url('../img/contact.jpg') url('../img/colophon.jpg') url('../img/selected-works.jpg') url('../img/error.jpg');
+  }
 .btn-contact {
   color: #4e6423 !important;
   }

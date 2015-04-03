@@ -117,6 +117,10 @@ a {
 #colophon, .page {background-image: url('../img/colophon.jpg');}
 #selected-works {background-image: url('../img/selected-works.jpg');}
 #error404 {background-image: url('../img/error.jpg');}
+body:after{
+    display:none;
+    content: url('../img/contact.jpg') url('../img/colophon.jpg') url('../img/selected-works.jpg') url('../img/error.jpg');
+}
 
 .btn-contact {color: darken(@brand-success, 25%) !important;}
 
