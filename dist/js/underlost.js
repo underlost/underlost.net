@@ -2397,19 +2397,19 @@ function portfolioShowcase(){
                 duration: 400
             });
             $("ul#recent-portfolio li a").animate({
-                width: "123px"
+                width: "100px"
             }, {
                 queue: false,
                 duration: 400
             });
             $("ul#recent-portfolio li a:last").animate({
-                width: "124px"
+                width: "101px"
             }, {
                 queue: false,
                 duration: 400
             });
             $("ul#recent-portfolio li a:first").animate({
-                width: "124px"
+                width: "101px"
             }, {
                 queue: false,
                 duration: 400

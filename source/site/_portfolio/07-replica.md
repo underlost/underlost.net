@@ -4,6 +4,7 @@ title: Replica CMS
 slug: replica
 deck: Django/Python Content Management System
 color: 919799
+rgba: 145,154,153,.25
 image: /assets/img/work/replica.jpg
 permalink: /portfolio/replica/
 date: 2014-06-01

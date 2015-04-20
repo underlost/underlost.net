@@ -79,21 +79,27 @@ a {
 
     .site-title {
         margin: 5px 0;
-        font-size: 15px;
-        line-height: 15px;
-        a {
-            color: #f2f2f2;
-            opacity: .65;
-            text-transform: uppercase;
-            font-weight: 100;
-        }
+        text-transform: uppercase;
+        font-size: 23px;
+        line-height: 23px;
+        a:hover {text-decoration: none;}
+
+    }
+    .site-subtitle {
+        font-size: 17px;
+        line-height: 19px;
+        opacity: .65;
+        font-weight: 100;
+        color: #f2f2f2;
+
+        a {font-style: italic;}
         a:hover {text-decoration: none; opacity: .95;}
     }
 }
 
 .content-section {
     position: relative;
-    z-index: 5;
+    z-index: 50;
     height: 100%;
     width: 100%;
     display: table;
@@ -120,6 +126,23 @@ a {
 body:after{
     display:none;
     content: url('../img/contact.jpg') url('../img/colophon.jpg') url('../img/selected-works.jpg') url('../img/error.jpg');
+}
+
+
+#selected-work {
+    .content-panel {
+        background: rgba(255,255,255,0.1);
+    }
+}
+
+#selected-work-bg {
+    background-image: url('../img/selected-works.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: fixed;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
 }
 
 .btn-contact {color: darken(@brand-success, 25%) !important;}
@@ -262,7 +285,6 @@ ul#recent-portfolio{
   padding: 0;
   height: 150px;
   max-width: 790px; /* Extra width so last image doesn't bounce to second line mid-animation */
-  background-color: 000;
   overflow: hidden;
 
   li {
@@ -274,15 +296,15 @@ ul#recent-portfolio{
       display: block;
       overflow: hidden;
       height: 150px;
-      width: 123px;
+      width: 100px;
       margin: 0 1px;
       background-position: top left;
       background-repeat: no-repeat;
       background-size: cover;
     }
 
-    a.first {width: 124px;}
-    a.last {width: 124px;}
+    a.first {width: 101px;}
+    a.last {width: 101px;}
 
     p {display: none;}
   }

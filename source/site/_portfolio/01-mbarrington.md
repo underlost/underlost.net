@@ -4,6 +4,7 @@ title: M Barrington
 slug: mbarrington
 deck: 'Concept, design, and code for local insurance company'
 color: f9a61a
+rgba: 249,166,26,.25
 image: /assets/img/work/mbarr.jpg
 permalink: /portfolio/mbarrington/
 date: 2014-01-01
