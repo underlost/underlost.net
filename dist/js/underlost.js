@@ -2542,7 +2542,7 @@ function portfolioShowcase(){
 
     $document.ready(function () {
         animateClasses();
-        portfolioShowcase();
+        // portfolioShowcase();
         $('.sections-nav').vLine();
         $(".lithium-lettering").lettering();
         $(document).activeNavigation(".sections-nav");
@@ -2587,7 +2587,7 @@ function portfolioShowcase(){
             .done(function () {
                 $content.html(response.$content).fadeIn(500);
                 animateClasses();
-                portfolioShowcase();
+                // portfolioShowcase();
                 $('.sections-nav').vLine();
                 $(".lithium-lettering").lettering();
                 $(document).activeNavigation(".sections-nav");

@@ -34,7 +34,8 @@ slug: portfolio
             <div class="container-fluid portfolio-picks fadeRight" id="recent-portfolio-container">
                 <ul class="list-inline clearfix" id="recent-portfolio">
                     {% for post in site.portfolio reversed %}
-                    <li><a alt="{{ post.title }} <small>{{ post.deck }}</small>" href="/portfolio/{{ post.slug }}/" style="background-image: url('{{ post.image }}');">
+                    <li class="col-xs-1 portfolio-item">
+                        <a alt="{{ post.title }} <small>{{ post.deck }}</small>" href="/portfolio/{{ post.slug }}/" style="background-image: url('{{ post.image }}');">
                         <p>{{ post.title }}</p></a>
                     </li>
                     {% endfor %}

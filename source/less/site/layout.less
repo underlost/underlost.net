@@ -79,21 +79,22 @@ a {
 
     .site-title {
         margin: 5px 0;
+        font-weight: 100;
         text-transform: uppercase;
-        font-size: 23px;
-        line-height: 23px;
+        font-size: 26px;
+        line-height: 34px;
         a:hover {text-decoration: none;}
 
     }
     .site-subtitle {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 19px;
         opacity: .65;
         font-weight: 100;
         color: #f2f2f2;
 
-        a {font-style: italic;}
-        a:hover {text-decoration: none; opacity: .95;}
+        a {font-style: italic; opacity: 1;}
+        a:hover {text-decoration: none;}
     }
 }
 
@@ -274,39 +275,44 @@ body:after{
 #recent-portfolio-minimal {display: none;}
 
 #recent-portfolio-container {
-    margin-top: 20px;
+    margin-top: @grid-gutter-width;
     h2 {text-align: center; display: none;}
 }
 
-ul#recent-portfolio{
-  list-style: none;
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  height: 150px;
-  max-width: 790px; /* Extra width so last image doesn't bounce to second line mid-animation */
-  overflow: hidden;
+ul#recent-portfolio {
+    display: block;
+    margin-left: @grid-gutter-width;
+}
 
-  li {
-      float: left;
-      padding: 0;
-      margin: 0;
+li.portfolio-item {
 
     a {
-      display: block;
-      overflow: hidden;
-      height: 150px;
-      width: 100px;
-      margin: 0 1px;
-      background-position: top left;
-      background-repeat: no-repeat;
-      background-size: cover;
+        display: block;
+        overflow: hidden;
+        height: 150px;
+        width: 100%;
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        p {
+            display: block;
+            opacity:0.0;
+            background-color: none;
+            transition: background-color 0.5s ease;
+            -webkit-transition: background-color 0.5s ease;
+        }
     }
 
-    a.first {width: 101px;}
-    a.last {width: 101px;}
+    a:hover {
+        text-decoration: none;
 
-    p {display: none;}
-  }
-
+        p {
+            opacity:1;
+            background-color: rgba(0,0,0,.75);
+            height: 100%; width: 100%;
+            padding: 5px;
+            text-decoration: none;
+        }
+    }
 }
