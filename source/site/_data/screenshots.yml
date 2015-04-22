@@ -1,0 +1,54 @@
+mbarrington:
+    - caption: test
+      url: /assets/img/screenshots/jaded_2
+    - caption: test2
+      url: /assets/img/screenshots/jaded_3
+    - caption: test3
+      url: /assets/img/screenshots/jaded_4
+
+designcor:
+    - caption: test
+      url: /assets/img/screenshots/jaded_2
+    - caption: test2
+      url: /assets/img/screenshots/jaded_3
+    - caption: test3
+      url: /assets/img/screenshots/jaded_4
+
+vapor:
+    - caption: test
+      url: /assets/img/screenshots/jaded_2
+    - caption: test2
+      url: /assets/img/screenshots/jaded_3
+    - caption: test3
+      url: /assets/img/screenshots/jaded_4
+
+gamernews:
+    - caption: test
+      url: /assets/img/screenshots/jaded_2
+    - caption: test2
+      url: /assets/img/screenshots/jaded_3
+    - caption: test3
+      url: /assets/img/screenshots/jaded_4
+
+jadedgamer:
+    - caption: test
+      url: /assets/img/screenshots/jaded_1.jpg
+      thumb: /assets/img/screenshots/jaded_1_thumb.jpg
+    - caption: test2
+      url: /assets/img/screenshots/jaded_2.jpg
+      thumb: /assets/img/screenshots/jaded_2_thumb.jpg
+    - caption: test3
+      url: /assets/img/screenshots/jaded_3.jpg
+      thumb: /assets/img/screenshots/jaded_3_thumb.jpg
+
+undertasker:
+    - caption: test
+      url: /assets/img/screenshots/jaded_2
+
+replica:
+    - caption: test
+      url: /assets/img/screenshots/jaded_2
+    - caption: test2
+      url: /assets/img/screenshots/jaded_3
+    - caption: test3
+      url: /assets/img/screenshots/jaded_4

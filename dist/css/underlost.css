@@ -5010,7 +5010,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 5px 14px;
   background-color: rgba(255, 255, 255, .1);
   border: 1px solid rgba(230, 230, 230, .1);
-  border-radius: 15px;
+  border-radius: 5px;
   }
 .pager li > a:hover,
 .pager li > a:focus {
@@ -7660,12 +7660,9 @@ body:after {
 #recent-portfolio-container {
   margin-top: 4px;
   }
-#recent-portfolio-container h2 {
-  display: none;
-  text-align: center;
-  }
 ul#recent-portfolio {
   display: block;
+  margin-top: 4px;
   margin-left: 4px;
   }
 li.portfolio-item a {

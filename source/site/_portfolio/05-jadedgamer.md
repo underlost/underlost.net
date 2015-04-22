@@ -14,4 +14,14 @@ next_page: gamernews
 
 Jaded Gamer is a news site aggregator, run and managed  completely in the cloud, utilizing various SAAS applications. RSS updates are pushed to the site via the pubsubhubbub protocol. New stories are then indexed immediately, and can be searched through by the elastic-search based server.
 
-<a class="btn btn-default" href="http://jadedgamer.com/">Visit Jaded Gamer</a>
+<ul class="list-inline clearfix">
+{% for image in site.data.screenshots.jadedgamer %}
+<li class="col-xs-2">
+<a href="{{image.url}}" class="thumbnail">
+  <img class="img-rounded" src="{{image.thumb}}" alt="{{ image.caption }}">
+</a>
+</li>
+{% endfor %}
+</ul>
+
+[Visit Jaded Gamer](http://jadedgamer.com/)

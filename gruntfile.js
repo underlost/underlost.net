@@ -238,7 +238,7 @@ module.exports = function (grunt) {
           'img/*',
           'img/work/*',
           'img/rings/*',
-          'img/photo/*',
+          'img/screenshots/*',
         ],
         dest: 'source/site/assets'
       },
