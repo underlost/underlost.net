@@ -12,8 +12,6 @@
     jQuery
     Jekyll
     Bootstrap
-    Ratchet
-    grunt
     AWS S3, Cloudfront
     Heroku
     Memcachier
