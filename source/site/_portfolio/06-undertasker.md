@@ -11,4 +11,6 @@ previous_page: replica
 next_page: jadedgamer
 ---
 
-HELPING YOU BOOTSTRAP YOUR WEB SITE/APP USING A GRUNT & NODE.JS STACK
+UnderTasker helps you bootstrap your website/app using a Grunt & Node.JS stack that's also highly configurable. Out of the box, UnderTasker compiles assets like Coffeescript and LESS, compresses Javascript UglifyJS, and autoprefixes CSS. It can also compress images with grunt-contrib-imagemin. It does rely on jekyll for building and validating HTML, however it can be swapped with similar things like Jade. And when everything's ready to go, you can easily publish static websites to github Pages with a single command.
+
+[Github Project &raquo;](https://github.com/underlost/undertasker)

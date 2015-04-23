@@ -17,4 +17,4 @@ M Barrington was a collaboration with local design agency, Designcor. I consulte
 
 ***
 
-<a class="btn btn-default" href="http://mbarrington.com">Visit M Barrington</a>
+[Visit M Barrington &raquo;](http://mbarrington.com)

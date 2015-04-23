@@ -258,6 +258,10 @@ body:after{
     padding: 0;
 }
 
+.thumbnail:hover {
+    box-shadow: 0 0px 20px rgba(0, 0, 0, .75), 0 2px 3px rgba(0, 0, 0, .75);
+}
+
 .selected-works-panel {
     margin: 20px;
     position: relative;
@@ -287,8 +291,7 @@ body:after{
 
 ul#recent-portfolio {
     display: block;
-    margin-top: @grid-gutter-width;
-    margin-left: @grid-gutter-width;
+    margin: @grid-gutter-width;
 }
 
 li.portfolio-item {
@@ -298,16 +301,22 @@ li.portfolio-item {
         overflow: hidden;
         height: 150px;
         width: 100%;
+        padding: 0;
         background-position: top left;
         background-repeat: no-repeat;
         background-size: cover;
 
         p {
+            opacity:0;
+            color: #f2f2f2;
+            padding: 5px;
             display: block;
-            opacity:0.0;
+            height: 100%; width: 100%;
             background-color: none;
-            transition: background-color 0.5s ease;
-            -webkit-transition: background-color 0.5s ease;
+            transition: all 0.5s ease;
+            -webkit-transition: all 0.5s ease;
+
+            span {font-weight: 300; font-size: 90%; opacity: .75;}
         }
     }
 
@@ -317,8 +326,6 @@ li.portfolio-item {
         p {
             opacity:1;
             background-color: rgba(0,0,0,.75);
-            height: 100%; width: 100%;
-            padding: 5px;
             text-decoration: none;
         }
     }

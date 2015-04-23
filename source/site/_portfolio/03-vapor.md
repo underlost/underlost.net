@@ -11,8 +11,8 @@ previous_page: gamernews
 next_page: designcor
 ---
 
-Vapor is a simple backback (item inventory) viewer I wrote to better understand Valve's Steam Web API.
+Vapor is a weekend project from a while back when I wanted to better understand Valve's Steam Web API. it can be used to view your most played games as well as your item backpacks.
 
 It consists of a python wrapper for the API, and a basic django application. It currently supports Team Fortress 2, Portal 2, and Dota2 backpacks.
 
-<a class="btn btn-default" href="http://vapor.underlost.net/id/underlost/tf2">Visit Vapor</a>
+[View tf2 backpack demo &raquo;](http://vapor.underlost.net/id/underlost/tf2)
