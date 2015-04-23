@@ -7288,6 +7288,7 @@ body,
 #wrapper {
   width: 100%;
   height: 100%;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
   background: #0b171f url('../img/bg.jpg') center center fixed no-repeat;
   -webkit-background-size: cover;
           background-size: cover;
@@ -7441,13 +7442,10 @@ body:after {
   z-index: 4;
   width: 100%;
   height: 100%;
-  background-image: url('../img/selected-works.jpg');
+  background-image: url('../img/bg_blur.jpg');
   background-position: center center;
   -webkit-background-size: cover;
           background-size: cover;
-  }
-.btn-contact {
-  color: #4e6423 !important;
   }
 .site-nav {
   margin: 0;
@@ -7456,7 +7454,7 @@ body:after {
   right: 0;
   width: 5px;
   height: 30px;
-  background: #96bf48;
+  background: rgba(255, 255, 255, .5);
   }
 .sections-nav {
   text-align: right;
@@ -7485,7 +7483,7 @@ body:after {
   vertical-align: middle;
   }
 .sections-nav li strong:hover {
-  color: #96bf48;
+  color: #f2f2f2;
   }
 .sections-nav li small {
   display: block;
@@ -7507,6 +7505,9 @@ body:after {
   color: #fff;
   text-align: left;
   }
+.site-footer a {
+  color: #fff;
+  }
 .site-footer .inner {
   margin-left: 27%;
   }
@@ -7516,9 +7517,6 @@ body:after {
 .site-footer .copyright {
   padding-left: 15px;
   opacity: .25;
-  }
-.site-footer a {
-  color: #fff;
   }
 .lithium-flower {
   position: relative;
@@ -8038,6 +8036,424 @@ section#river {
     -webkit-transform: rotate(360deg);
          -o-transform: rotate(360deg);
             transform: rotate(360deg);
+    }
+  }
+/*
+    Colorbox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+  }
+#cboxWrapper {
+  max-width: none;
+  }
+#cboxOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  }
+#cboxMiddleLeft,
+#cboxBottomLeft {
+  clear: left;
+  }
+#cboxContent {
+  position: relative;
+  }
+#cboxLoadedContent {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  }
+#cboxTitle {
+  margin: 0;
+  }
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  }
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+  cursor: pointer;
+  }
+.cboxPhoto {
+  display: block;
+  float: left;
+  max-width: none;
+  margin: auto;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  }
+.cboxIframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  }
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  }
+/*
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay {
+  background: #000;
+  }
+#colorbox {
+  outline: 0;
+  }
+#cboxContent {
+  margin-top: 20px;
+  background: #000;
+  }
+.cboxIframe {
+  background: #fff;
+  }
+#cboxError {
+  padding: 50px;
+  border: 1px solid #ccc;
+  }
+#cboxLoadedContent {
+  background: #fff;
+  border: 5px solid #000;
+  }
+#cboxTitle {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  color: #ccc;
+  }
+#cboxCurrent {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  color: #ccc;
+  }
+#cboxLoadingGraphic {
+  background: url(../img/loading.gif) no-repeat center center;
+  }
+/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+#cboxPrevious,
+#cboxNext,
+#cboxSlideshow,
+#cboxClose {
+  width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  background: none;
+  border: 0;
+  }
+/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+#cboxPrevious:active,
+#cboxNext:active,
+#cboxSlideshow:active,
+#cboxClose:active {
+  outline: 0;
+  }
+#cboxSlideshow {
+  position: absolute;
+  top: -20px;
+  right: 90px;
+  color: #fff;
+  }
+#cboxPrevious {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 28px;
+  height: 65px;
+  margin-top: -32px;
+  text-indent: -9999px;
+  background: url(../img/controls.png) no-repeat top left;
+  }
+#cboxPrevious:hover {
+  background-position: bottom left;
+  }
+#cboxNext {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  width: 28px;
+  height: 65px;
+  margin-top: -32px;
+  text-indent: -9999px;
+  background: url(../img/controls.png) no-repeat top right;
+  }
+#cboxNext:hover {
+  background-position: bottom right;
+  }
+#cboxClose {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: block;
+  width: 38px;
+  height: 19px;
+  text-indent: -9999px;
+  background: url(../img/controls.png) no-repeat top center;
+  }
+#cboxClose:hover {
+  background-position: bottom center;
+  }
+/*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
+.fancybox-wrap,
+.fancybox-skin,
+.fancybox-outer,
+.fancybox-inner,
+.fancybox-image,
+.fancybox-wrap iframe,
+.fancybox-wrap object,
+.fancybox-nav,
+.fancybox-nav span,
+.fancybox-tmp {
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+  border: 0;
+  outline: none;
+  }
+.fancybox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8020;
+  }
+.fancybox-skin {
+  position: relative;
+  color: #444;
+  text-shadow: none;
+  background: #f9f9f9;
+  border-radius: 4px;
+  }
+.fancybox-opened {
+  z-index: 8030;
+  }
+.fancybox-opened .fancybox-skin {
+  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, .5);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, .5);
+  }
+.fancybox-outer,
+.fancybox-inner {
+  position: relative;
+  }
+.fancybox-inner {
+  overflow: hidden;
+  }
+.fancybox-type-iframe .fancybox-inner {
+  -webkit-overflow-scrolling: touch;
+  }
+.fancybox-error {
+  padding: 15px;
+  margin: 0;
+  font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  white-space: nowrap;
+  }
+.fancybox-image,
+.fancybox-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  }
+.fancybox-image {
+  max-width: 100%;
+  max-height: 100%;
+  }
+#fancybox-loading,
+.fancybox-close,
+.fancybox-prev span,
+.fancybox-next span {
+  background-image: url('fancybox_sprite.png');
+  }
+#fancybox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 8060;
+  margin-top: -22px;
+  margin-left: -22px;
+  cursor: pointer;
+  background-position: 0 -108px;
+  opacity: .8;
+  }
+#fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background: url('fancybox_loading.gif') center center no-repeat;
+  }
+.fancybox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  z-index: 8040;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  }
+.fancybox-nav {
+  position: absolute;
+  top: 0;
+  z-index: 8040;
+  width: 40%;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent url('blank.gif');
+  /* helps IE */
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+.fancybox-prev {
+  left: 0;
+  }
+.fancybox-next {
+  right: 0;
+  }
+.fancybox-nav span {
+  position: absolute;
+  top: 50%;
+  z-index: 8040;
+  width: 36px;
+  height: 34px;
+  margin-top: -18px;
+  cursor: pointer;
+  visibility: hidden;
+  }
+.fancybox-prev span {
+  left: 10px;
+  background-position: 0 -36px;
+  }
+.fancybox-next span {
+  right: 10px;
+  background-position: 0 -72px;
+  }
+.fancybox-nav:hover span {
+  visibility: visible;
+  }
+.fancybox-tmp {
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+  max-width: 99999px;
+  max-height: 99999px;
+  overflow: visible !important;
+  visibility: hidden;
+  }
+/* Overlay helper */
+.fancybox-lock {
+  width: auto;
+  overflow: hidden !important;
+  }
+.fancybox-lock body {
+  overflow: hidden !important;
+  }
+.fancybox-lock-test {
+  overflow-y: hidden !important;
+  }
+.fancybox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8010;
+  display: none;
+  overflow: hidden;
+  background: url('fancybox_overlay.png');
+  }
+.fancybox-overlay-fixed {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  }
+.fancybox-lock .fancybox-overlay {
+  overflow: auto;
+  overflow-y: scroll;
+  }
+/* Title helper */
+.fancybox-title {
+  position: relative;
+  z-index: 8050;
+  font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: none;
+  visibility: hidden;
+  }
+.fancybox-opened .fancybox-title {
+  visibility: visible;
+  }
+.fancybox-title-float-wrap {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  z-index: 8050;
+  margin-bottom: -35px;
+  text-align: center;
+  }
+.fancybox-title-float-wrap .child {
+  display: inline-block;
+  padding: 2px 20px;
+  margin-right: -100%;
+  font-weight: bold;
+  line-height: 24px;
+  color: #fff;
+  text-shadow: 0 1px 2px #222;
+  white-space: nowrap;
+  background: transparent;
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgba(0, 0, 0, .8);
+  border-radius: 15px;
+  }
+.fancybox-title-outside-wrap {
+  position: relative;
+  margin-top: 10px;
+  color: #fff;
+  }
+.fancybox-title-inside-wrap {
+  padding-top: 10px;
+  }
+.fancybox-title-over-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  color: #fff;
+  background: #000;
+  background: rgba(0, 0, 0, .8);
+  }
+/*Retina graphics!*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  #fancybox-loading,
+  .fancybox-close,
+  .fancybox-prev span,
+  .fancybox-next span {
+    background-image: url('fancybox_sprite@2x.png');
+    -webkit-background-size: 44px 152px;
+            background-size: 44px 152px;
+    /*The size of the normal image, half the size of the hi-res image*/
+    }
+  #fancybox-loading div {
+    background-image: url('fancybox_loading@2x.gif');
+    -webkit-background-size: 24px 24px;
+            background-size: 24px 24px;
+    /*The size of the normal image, half the size of the hi-res image*/
     }
   }
 /*# sourceMappingURL=underlost.css.map */

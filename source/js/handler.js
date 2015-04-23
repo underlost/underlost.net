@@ -242,6 +242,7 @@ function portfolioShowcase(){
     $document.ready(function () {
         animateClasses();
         // portfolioShowcase();
+        $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
         $('.sections-nav').vLine();
         $(".lithium-lettering").lettering();
         $(document).activeNavigation(".sections-nav");
@@ -286,6 +287,7 @@ function portfolioShowcase(){
             .done(function () {
                 $content.html(response.$content).fadeIn(500);
                 animateClasses();
+                $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
                 // portfolioShowcase();
                 $('.sections-nav').vLine();
                 $(".lithium-lettering").lettering();

@@ -3,6 +3,7 @@ html, body, #content, #wrapper {
     height: 100%;
     background: @body-bg url('../img/bg.jpg') center center fixed no-repeat;
     background-size: cover;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
 
 a {
@@ -137,7 +138,7 @@ body:after{
 }
 
 #selected-work-bg {
-    background-image: url('../img/selected-works.jpg');
+    background-image: url('../img/bg_blur.jpg');
     background-size: cover;
     background-position: center center;
     position: fixed;
@@ -146,12 +147,11 @@ body:after{
     width: 100%;
 }
 
-.btn-contact {color: darken(@brand-success, 25%) !important;}
 
 .site-nav {
     margin: 0;
     .vLine {
-        background: #96bf48;
+        background: rgba(255,255,255,0.5);
         width: 5px;
         height: 30px;
         right: 0;
@@ -184,7 +184,7 @@ body:after{
              vertical-align: middle
          }
 
-         strong:hover {color: #96bf48; }
+         strong:hover {color: #f2f2f2; }
 
          small {
              color: #377384;
@@ -206,13 +206,14 @@ body:after{
     text-align: left;
     color: #fff;
     padding: 15px 0;
-
+    a {color: #fff;}
 
     .inner {margin-left: 27%;}
     .secondary-nav {display: none;}
-    .copyright {padding-left: 15px; opacity: .25;}
-
-    a {color: #fff;}
+    .copyright {
+        padding-left: 15px;
+        opacity: .25;
+    }
 }
 
 .lithium-flower {

@@ -17,7 +17,7 @@ Jaded Gamer is a view game news site aggregator, run and managed  completely in 
 <ul class="list-inline clearfix">
 {% for image in site.data.screenshots.jadedgamer %}
 <li class="col-xs-1">
-<a href="{{image.url}}" class="thumbnail">
+<a href="{{image.url}}" class="thumbnail lightbox">
   <img class="img-rounded" src="{{image.thumb}}" alt="{{ image.caption }}">
 </a>
 </li>
