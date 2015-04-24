@@ -195,3 +195,11 @@
         top: ((@ring-large-1 - @ring-large-7) / 2); right: ((@ring-large-1 - @ring-large-7) / 2);
     }
 }
+
+.no-backgroundsize {
+    .ring, .one, .two, .three, .four,
+    .five,.six, .seven {background-image: none; display: none;}
+    .rings-small {background-image: url('../img/rings/ring_static_small.png');}
+    .rings-medium {background-image: url('../img/rings/ring_static_medium.png');}
+    .rings-large {background-image: url('../img/rings/ring_static_large.png');}
+}

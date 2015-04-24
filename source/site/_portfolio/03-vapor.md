@@ -3,7 +3,8 @@ layout: portfolio
 title: Vapor
 slug: vapor
 deck: 'Backpack viewer for Valve Web API'
-color: a19d97
+color: 1b2638
+rgba: 27,38,56,.75
 image: /assets/img/work/vapor.jpg
 permalink: /portfolio/vapor/
 date: 2014-03-01

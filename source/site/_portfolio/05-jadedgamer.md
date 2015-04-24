@@ -8,7 +8,7 @@ rgba: 87,173,104,.5
 image: /assets/img/work/jaded.jpg
 permalink: /portfolio/jadedgamer/
 date: 2014-05-01
-previous_page: replica
+previous_page: undertasker
 next_page: gamernews
 ---
 

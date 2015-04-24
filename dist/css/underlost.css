@@ -7282,6 +7282,26 @@ Letter Flash
   -webkit-background-size: 318px 318px;
           background-size: 318px 318px;
   }
+.no-backgroundsize .ring,
+.no-backgroundsize .one,
+.no-backgroundsize .two,
+.no-backgroundsize .three,
+.no-backgroundsize .four,
+.no-backgroundsize .five,
+.no-backgroundsize .six,
+.no-backgroundsize .seven {
+  display: none;
+  background-image: none;
+  }
+.no-backgroundsize .rings-small {
+  background-image: url('../img/rings/ring_static_small.png');
+  }
+.no-backgroundsize .rings-medium {
+  background-image: url('../img/rings/ring_static_medium.png');
+  }
+.no-backgroundsize .rings-large {
+  background-image: url('../img/rings/ring_static_large.png');
+  }
 html,
 body,
 #content,
@@ -7660,6 +7680,8 @@ li.portfolio-item a {
   background-position: top left;
   -webkit-background-size: cover;
           background-size: cover;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2);
   }
 li.portfolio-item a p {
   display: block;
@@ -7936,6 +7958,21 @@ section#river {
   .rings-medium .six,
   .rings-large .six {
     display: None;
+    }
+  .no-backgroundsize .ring,
+  .no-backgroundsize .one,
+  .no-backgroundsize .two,
+  .no-backgroundsize .three,
+  .no-backgroundsize .four,
+  .no-backgroundsize .five,
+  .no-backgroundsize .six,
+  .no-backgroundsize .seven {
+    display: none;
+    background-image: none;
+    }
+  .no-backgroundsize .rings-medium,
+  .no-backgroundsize .rings-large {
+    background-image: url('../img/rings/ring_static_small.png');
     }
   #recent-portfolio-container {
     display: none;

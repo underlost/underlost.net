@@ -1,54 +1,57 @@
-mbarrington:
-    - caption: test
-      url: /assets/img/screenshots/jaded_2
-    - caption: test2
-      url: /assets/img/screenshots/jaded_3
-    - caption: test3
-      url: /assets/img/screenshots/jaded_4
-
 designcor:
-    - caption: test
-      url: /assets/img/screenshots/jaded_2
-    - caption: test2
-      url: /assets/img/screenshots/jaded_3
-    - caption: test3
-      url: /assets/img/screenshots/jaded_4
+    - caption: Homepage
+      url: /assets/img/screenshots/designcor_1.jpg
+      thumb: /assets/img/screenshots/designcor_1_thumb.jpg
+    - caption: About
+      url: /assets/img/screenshots/designcor_2.jpg
+      thumb: /assets/img/screenshots/designcor_2_thumb.jpg
+    - caption: Case Studies
+      url: /assets/img/screenshots/designcor_3.jpg
+      thumb: /assets/img/screenshots/designcor_3_thumb.jpg
+
+replica:
+    - caption: Dashboard
+      url: /assets/img/screenshots/replica_1.jpg
+      thumb: /assets/img/screenshots/replica_1_thumb.jpg
+    - caption: Editor
+      url: /assets/img/screenshots/replica_2.jpg
+      thumb: /assets/img/screenshots/replica_2_thumb.jpg
+    - caption: Blips
+      url: /assets/img/screenshots/replica_3.jpg
+      thumb: /assets/img/screenshots/replica_3_thumb.jpg
+
+mbarrington:
+    - caption: One
+      url: /assets/img/screenshots/mbarr_1.jpg
+      thumb: /assets/img/screenshots/mbarr_1_thumb.jpg
+    - caption: Two
+      url: /assets/img/screenshots/mbarr_2.jpg
+      thumb: /assets/img/screenshots/mbarr_2_thumb.jpg
+    - caption: Three
+      url: /assets/img/screenshots/mbarr_3.jpg
+      thumb: /assets/img/screenshots/mbarr_3_thumb.jpg
+
+gmachina:
+    - caption: Teaser
+      url: /assets/img/screenshots/gmachina_1.jpg
+      thumb: /assets/img/screenshots/gmachina_1_thumb.jpg
+
+gamernews:
+    - caption: Frontpage
+      url: /assets/img/screenshots/gamernews_1.jpg
+      thumb: /assets/img/screenshots/gamernews_1_thumb.jpg
+
+jadedgamer:
+    - caption: Frontpage
+      url: /assets/img/screenshots/jaded_1.jpg
+      thumb: /assets/img/screenshots/jaded_1_thumb.jpg
+    - caption: Subscribe to only the feeds you want
+      url: /assets/img/screenshots/jaded_2.jpg
+      thumb: /assets/img/screenshots/jaded_2_thumb.jpg
+    - caption: Search results
+      url: /assets/img/screenshots/jaded_3.jpg
+      thumb: /assets/img/screenshots/jaded_3_thumb.jpg
 
 vapor:
     - caption: test
       url: /assets/img/screenshots/jaded_2
-    - caption: test2
-      url: /assets/img/screenshots/jaded_3
-    - caption: test3
-      url: /assets/img/screenshots/jaded_4
-
-gamernews:
-    - caption: test
-      url: /assets/img/screenshots/jaded_2
-    - caption: test2
-      url: /assets/img/screenshots/jaded_3
-    - caption: test3
-      url: /assets/img/screenshots/jaded_4
-
-jadedgamer:
-    - caption: test
-      url: /assets/img/screenshots/jaded_1.jpg
-      thumb: /assets/img/screenshots/jaded_1_thumb.jpg
-    - caption: test2
-      url: /assets/img/screenshots/jaded_2.jpg
-      thumb: /assets/img/screenshots/jaded_2_thumb.jpg
-    - caption: test3
-      url: /assets/img/screenshots/jaded_3.jpg
-      thumb: /assets/img/screenshots/jaded_3_thumb.jpg
-
-undertasker:
-    - caption: test
-      url: /assets/img/screenshots/jaded_2
-
-replica:
-    - caption: test
-      url: /assets/img/screenshots/jaded_2
-    - caption: test2
-      url: /assets/img/screenshots/jaded_3
-    - caption: test3
-      url: /assets/img/screenshots/jaded_4
