@@ -4,7 +4,7 @@ underlost.net is the personal site/portfolio of Tyler Rilling (that's me). It's 
 
 ### Usage
 
-The site can be deployed multiple ways, on multiple services. Since the site is Jekyll based, a simple `bundle exec jekyll serve --w` is only needed for local development, living at `localhost:4000/`.
+The site can be deployed multiple ways, and on multiple services. Since the site is Jekyll based, a simple `bundle exec jekyll serve --w` (assuming you use bundler) is only needed for local development, living at `localhost:4000/`.
 
 For testing purposes on various devices, a Github pages branch is set up at [lab.underlost.net](http://lab.underlost.net). Grunt is used to deploy there, with `grunt deploy`
 
