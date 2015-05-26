@@ -5,7 +5,7 @@ slug: designcor
 deck: 'Design and code for graphic and print company.'
 color: 7cad00
 rgba: 124,173,0,.5
-image: /assets/img/work/designcor.jpg
+image: /assets/img/portfolio/designcor.jpg
 permalink: /portfolio/designcor/
 date: 2014-02-01
 previous_page: vapor

@@ -1,5 +1,5 @@
 /*!
- * underlost.net v3.0.1 (http://underlost.net)
+ * underlost.net v3.0.2 (http://underlost.net)
  * Copyright 2015 Tyler Rilling (http://underlost.net/)
  */
 
@@ -7523,7 +7523,6 @@ spin2x
 */
 .spin2x {
   -webkit-animation: spin 25s infinite linear;
-      -ms-animation: spin 25s infinite linear;
        -o-animation: spin 25s infinite linear;
           animation: spin 25s infinite linear;
   }
@@ -7534,18 +7533,12 @@ spin
 */
 .spin {
   -webkit-animation: spin 50s infinite linear;
-      -ms-animation: spin 50s infinite linear;
        -o-animation: spin 50s infinite linear;
           animation: spin 50s infinite linear;
   }
 @-webkit-keyframes spin {
   to {
     -webkit-transform: rotate(360deg);
-    }
-  }
-@-ms-keyframes spin {
-  to {
-    -ms-transform: rotate(360deg);
     }
   }
 @-o-keyframes spin {
@@ -7567,7 +7560,6 @@ Alt Spin 2x
 */
 .spin-alt2x {
   -webkit-animation: spin-alt 25s infinite linear;
-      -ms-animation: spin-alt 25s infinite linear;
        -o-animation: spin-alt 25s infinite linear;
           animation: spin-alt 25s infinite linear;
   }
@@ -7578,18 +7570,12 @@ Alt Spin
 */
 .spin-alt {
   -webkit-animation: spin-alt 50s infinite linear;
-      -ms-animation: spin-alt 50s infinite linear;
        -o-animation: spin-alt 50s infinite linear;
           animation: spin-alt 50s infinite linear;
   }
 @-webkit-keyframes spin-alt {
   to {
     -webkit-transform: rotate(-360deg);
-    }
-  }
-@-ms-keyframes spin-alt {
-  to {
-    -ms-transform: rotate(-360deg);
     }
   }
 @-o-keyframes spin-alt {
@@ -8598,6 +8584,60 @@ section#river {
   height: auto;
   border-radius: 5px;
   }
+/* Web fonts */
+@font-face {
+  font-family: 'tf2regular';
+  font-style: normal;
+  font-weight: normal;
+
+  src: url('../fonts/tf2-webfont.eot');
+  src: url('../fonts/tf2-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tf2-webfont.woff2') format('woff2'), url('../fonts/tf2-webfont.woff') format('woff'), url('../fonts/tf2-webfont.ttf') format('truetype'), url('../fonts/tf2-webfont.svg#tf2regular') format('svg');
+  }
+@font-face {
+  font-family: 'tf2_build';
+  font-style: normal;
+  font-weight: normal;
+
+  src: url('../fonts/tf2build-webfont.eot');
+  src: url('../fonts/tf2build-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tf2build-webfont.woff2') format('woff2'), url('../fonts/tf2build-webfont.woff') format('woff'), url('../fonts/tf2build-webfont.ttf') format('truetype'), url('../fonts/tf2build-webfont.svg#tf2_buildtf2_build') format('svg');
+  }
+#classNav {
+  font-family: 'tf2_build', 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #4f4944;
+  text-shadow: none;
+  background-color: #c2c2bb;
+  border-color: #babbb5;
+  -webkit-box-shadow: 0 10px 16px 0 rgba(0, 0, 0, .25);
+          box-shadow: 0 10px 16px 0 rgba(0, 0, 0, .25);
+  }
+#classNav .navbar-brand {
+  margin-right: 40px;
+  color: #4f4944;
+  }
+#classCard {
+  min-height: 600px;
+  margin-top: 50px;
+  background: #cfcfcf url('../img/work/bg_01.jpg') center center no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  }
+#classCard h1 {
+  font-family: 'tf2_build', 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 64px;
+  color: #403b37;
+  }
+#classCard h1 span {
+  display: block;
+  font-size: 22px;
+  }
+#movieCard {
+  min-height: 600px;
+  background-color: #282522;
+  }
+#arsenalCard {
+  min-height: 600px;
+  background-color: #1c1918;
+  }
 @media all and (max-width: 800px) {
   .vertical {
     display: block;
@@ -8758,7 +8798,6 @@ section#river {
   border-left-color: #96bf48;
   border-radius: 10px;
   -webkit-animation: pace-spinner 400ms linear infinite;
-      -ms-animation: pace-spinner 400ms linear infinite;
        -o-animation: pace-spinner 400ms linear infinite;
           animation: pace-spinner 400ms linear infinite;
   }
@@ -8780,16 +8819,6 @@ section#river {
   100% {
     -o-transform: rotate(360deg);
        transform: rotate(360deg);
-    }
-  }
-@-ms-keyframes pace-spinner {
-  0% {
-    -ms-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-  100% {
-    -ms-transform: rotate(360deg);
-        transform: rotate(360deg);
     }
   }
 @keyframes pace-spinner {

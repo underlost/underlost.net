@@ -5,7 +5,7 @@ slug: mbarrington
 deck: 'Concept, design, and code for local insurance company'
 color: f9a61a
 rgba: 249,166,26,.5
-image: /assets/img/work/mbarr.jpg
+image: /assets/img/portfolio/mbarr.jpg
 permalink: /portfolio/mbarrington/
 date: 2014-01-01
 previous_page: designcor

@@ -5,7 +5,7 @@ slug: gmachina
 deck: Indie Game
 color: 005e6a
 rgba: 0,94,106,.5
-image: /assets/img/work/gmachina.jpg
+image: /assets/img/portfolio/gmachina.jpg
 permalink: /portfolio/gmachina/
 date: 2015-01-01
 previous_page: mbarrington

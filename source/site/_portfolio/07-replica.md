@@ -5,7 +5,7 @@ slug: replica
 deck: Django/Python Content Management System
 color: 919799
 rgba: 145,154,153,.25
-image: /assets/img/work/replica.jpg
+image: /assets/img/portfolio/replica.jpg
 permalink: /portfolio/replica/
 date: 2014-06-01
 previous_page: gmachina

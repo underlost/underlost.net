@@ -5,7 +5,7 @@ slug: jadedgamer
 deck: 'Video Game News Aggregator'
 color: 57ad68
 rgba: 87,173,104,.5
-image: /assets/img/work/jaded.jpg
+image: /assets/img/portfolio/jaded.jpg
 permalink: /portfolio/jadedgamer/
 date: 2014-05-01
 previous_page: undertasker
