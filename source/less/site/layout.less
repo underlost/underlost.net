@@ -124,7 +124,16 @@ a {
 #contact {background-image: url('../img/contact.jpg');}
 #colophon, .page {background-image: url('../img/colophon.jpg');}
 #selected-works {background-image: url('../img/selected-works.jpg');}
-#error404 {background-image: url('../img/error.jpg');}
+#error404 {
+    background-image: url('../img/error.jpg');
+    .content-panel {
+        background: none;
+        p {font: 23px/25px @font-family-sans-serif; color: #f2f2f2; font-weight: 300;}
+        h1 {font-size: 64px;}
+    }
+}
+
+/* Preload backgreounds hack */
 body:after{
     display:none;
     content: url('../img/contact.jpg') url('../img/colophon.jpg') url('../img/selected-works.jpg') url('../img/error.jpg');
@@ -343,7 +352,7 @@ li.portfolio-item {
     margin-left: 27%;
     p {
         margin: 15px 0 0 15px;
-        span {opacity: .75; padding-right: 5px;}    
+        span {opacity: .75; padding-right: 5px;}
     }
     a {opacity: 1;}
 }

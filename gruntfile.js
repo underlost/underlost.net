@@ -240,6 +240,7 @@ module.exports = function (grunt) {
           'img/work/*',
           'img/rings/*',
           'img/portfolio/*',
+          'img/portfolio/screenshots/*',
         ],
         dest: 'source/site/assets'
       },
