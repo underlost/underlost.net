@@ -16,9 +16,7 @@ slug: portfolio
             <div class="content-panel layout-foreground fadeRight">
                 <div class="layout-single-column">
                     <h1 class="heading">{{page.title}}</h1>
-
-                    <p>{{content}}</p>
-
+                    {{content}}
                     {% if page.show_gallery %}
                     <ul id="recent-portfolio-minimal">
                         {% for post in site.portfolio reversed %}
@@ -69,7 +67,7 @@ slug: portfolio
                 <p class="lead">{{ post.deck }}</p>
                 <img src="{{ post.image }}" class="img-rounded img-responsive" alt="{{ post.title }}">
 
-                <p>{{ post.content }}</p>
+                <div class="modal-content">{{ post.content }}</div>
             </div>
         </div>
     </div>
