@@ -26,6 +26,11 @@
 
 }
 
+#classWrap {
+    position: relative;
+    z-index: 5000;
+}
+
 #classNav {
     background-color: #c2c2bb;
     border-color: #babbb5;
@@ -44,13 +49,25 @@
     min-height: 600px;
     background: #cfcfcf url('../img/work/bg_01.jpg') center center no-repeat;
     background-size: cover;
+    color: #46423d;
+
+    -webkit-box-shadow: inset 0px -10px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px -10px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px -10px 20px 0px rgba(0,0,0,0.75);
+
 
     h1 {
-        font-size: 64px;
+        margin: 190px 0 30px;
+        transform: rotate(-2deg);
+        font-size: 84px; line-height: 64px;
         font-family: 'tf2_build', @font-family-sans-serif;
         color: #403b37;
-        span {display: block; font-size: 22px;}
+        letter-spacing: -1px;
+        span {display: block; font-size: 22px; line-height: 24px;}
     }
+
+    .classBioText {}
+    .classPoseL img{ width: auto; height: auto;}
 }
 
 #movieCard {

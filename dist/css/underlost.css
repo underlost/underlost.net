@@ -8613,6 +8613,10 @@ section#river {
   src: url('../fonts/tf2build-webfont.eot');
   src: url('../fonts/tf2build-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tf2build-webfont.woff2') format('woff2'), url('../fonts/tf2build-webfont.woff') format('woff'), url('../fonts/tf2build-webfont.ttf') format('truetype'), url('../fonts/tf2build-webfont.svg#tf2_buildtf2_build') format('svg');
   }
+#classWrap {
+  position: relative;
+  z-index: 5000;
+  }
 #classNav {
   font-family: 'tf2_build', 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #4f4944;
@@ -8629,18 +8633,33 @@ section#river {
 #classCard {
   min-height: 600px;
   margin-top: 50px;
+  color: #46423d;
   background: #cfcfcf url('../img/work/bg_01.jpg') center center no-repeat;
   -webkit-background-size: cover;
           background-size: cover;
+  -webkit-box-shadow: inset 0 -10px 20px 0 rgba(0, 0, 0, .75);
+          box-shadow: inset 0 -10px 20px 0 rgba(0, 0, 0, .75);
   }
 #classCard h1 {
+  margin: 190px 0 30px;
   font-family: 'tf2_build', 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 64px;
+  font-size: 84px;
+  line-height: 64px;
   color: #403b37;
+  letter-spacing: -1px;
+  -webkit-transform: rotate(-2deg);
+      -ms-transform: rotate(-2deg);
+       -o-transform: rotate(-2deg);
+          transform: rotate(-2deg);
   }
 #classCard h1 span {
   display: block;
   font-size: 22px;
+  line-height: 24px;
+  }
+#classCard .classPoseL img {
+  width: auto;
+  height: auto;
   }
 #movieCard {
   min-height: 600px;
