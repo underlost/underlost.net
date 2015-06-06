@@ -29,6 +29,8 @@
 #classWrap {
     position: relative;
     z-index: 5000;
+
+    small.copyright {display: block;}
 }
 
 #classNav {
@@ -51,13 +53,8 @@
     background-size: cover;
     color: #46423d;
 
-    -webkit-box-shadow: inset 0px -10px 20px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: inset 0px -10px 20px 0px rgba(0,0,0,0.75);
-    box-shadow: inset 0px -10px 20px 0px rgba(0,0,0,0.75);
-
-
     h1 {
-        margin: 190px 0 30px;
+        margin: 225px 0 30px;
         transform: rotate(-2deg);
         font-size: 84px; line-height: 64px;
         font-family: 'tf2_build', @font-family-sans-serif;
@@ -65,9 +62,12 @@
         letter-spacing: -1px;
         span {display: block; font-size: 22px; line-height: 24px;}
     }
-
-    .classBioText {}
     .classPoseL img{ width: auto; height: auto;}
+}
+
+#classBioText p.lead {
+    margin-top: 20px;
+    font-size: 25px;
 }
 
 #movieCard {
@@ -75,7 +75,17 @@
     background-color: #282522;
 }
 
-#arsenalCard {
-    min-height: 600px;
+#qualificationsCard {
+    padding: 50px 0;
+    background-color: #1c1918;
+}
+
+#lookingforCard {
+    padding: 50px 0;
+    background-color: #282522;
+}
+
+#footerCard {
+    padding: 20px 0;
     background-color: #1c1918;
 }
