@@ -32,12 +32,12 @@ slug: work
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h1><span>The</span>Developer</h1>
+                    <h1><span>Meet The</span>Developer</h1>
 
-            		<div id="classBioText">
+            		<div id="classBioText" class="col-md-6">
             			<p>Location: Washington, USA </br>
             			Role: Support</p>
-                        <p>Text here.</p>
+                        <p class="lead">I’m a creative developer & UI designer with a passion for user experience. From sketch to design, coding to bug fixing, I do it all.</p>
             		</div>
                 </div>
                 <div class="col-md-4">
@@ -48,22 +48,33 @@ slug: work
             </div>
         </div><!-- /container -->
 	</div>
-    <div id="movieCard">
+    <div id="qualificationsCard">
         <div class="container">
-    		<div id="movieCardBG2"></div>
-    		<div id="movieCardTitle"><a name="movie"></a></div>
-    		<iframe id="movieYoutubeIframe" src="http://www.youtube.com/embed/geNMz0J9TEQ?hd=1" width="854" height="510" border="0" frameborder="0"></iframe>
-        </div><!-- /container -->
-	</div>
-    <div id="arsenalCard">
-        <div class="container">
-    		<div id="arsenalMoreLink"></div>
-    		<div id="arsenalCardBG2"></div>
-    		<div id="arsenalToTopLink"><a href="#top"></a></div>
+            <div class="row">
+                <div class="center-block col-md-4" style="float: none;">
+                {% capture job_qualifications %}{% include job_qualifications.md %}{% endcapture %}
+                {{ job_qualifications | markdownify }}
+                </div>
+            </div>
         </div><!-- /.container -->
 	</div>
+
+    <div id="lookingforCard">
+        <div class="container">
+            <div class="row">
+                <div class="center-block col-md-4" style="float: none;">
+                {% capture job_looking %}{% include job_looking.md %}{% endcapture %}
+                {{ job_looking | markdownify }}
+                </div>
+            </div>
+        </div><!-- /.container -->
+    </div>
+
     <div id="footerCard">
         <div class="container">
+            <small class="copyright">Copyright &copy; 2002–2015 Tyler Rilling. Last <a href="https://github.com/underlost/underlost.net/">updated June 05, 2015</a>.</small>
+            <small class"copyright">Valve, the Valve logo, the Steam logo, Team Fortress,
+                the Team Fortress logo are all trademarks  and/or registered trademarks of Valve Corporation.</small>
         </div><!-- /container -->
     </div>
 

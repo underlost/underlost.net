@@ -136,6 +136,7 @@ module.exports = function (grunt) {
     less: {
       compileCore: {
         options: {
+          compress: true,
           strictMath: true,
           sourceMap: true,
           outputSourceFiles: true,
@@ -180,10 +181,13 @@ module.exports = function (grunt) {
 
     cssmin: {
       options: {
+        compatibility: 'ie8',
         keepSpecialComments: '*',
-        noAdvanced: true, // turn advanced optimizations off until the issue is fixed in clean-css
-        report: 'min',
-        compatibility: 'ie8'
+        advanced: false
+      },
+      minifyCore: {
+        src: 'dist/css/<%= pkg.slug %>.css',
+        dest: 'dist/css/<%= pkg.slug %>.min.css'
       }
     },
 
@@ -319,7 +323,7 @@ module.exports = function (grunt) {
 
   // CSS build task.
   grunt.registerTask('less-compile', ['less:compileCore']);
-  grunt.registerTask('build-css', ['less-compile', 'autoprefixer', 'usebanner', 'csscomb', 'less:minify', 'cssmin']);
+  grunt.registerTask('build-css', ['less-compile', 'autoprefixer', 'usebanner', 'csscomb', 'less:minify', 'cssmin:minifyCore']);
 
   // HTML build/validation site task
   grunt.registerTask('build-site', ['jekyll', 'validation']);
