@@ -35,7 +35,7 @@ slug: work
                     <h1><span>Meet The</span>Developer</h1>
 
             		<div id="classBioText" class="col-md-6">
-                        <p class="lead">Currently based in Seattle, WA, I’m a creative developer & UI designer with a passion for user experience.
+                        <p class="lead">Currently based in Seattle, Washington, I’m a creative developer & UI designer with a passion for user experience.
                             From sketch to design, coding to bug fixing, I do it all.</p>
             		</div>
                 </div>
@@ -47,6 +47,19 @@ slug: work
             </div>
         </div><!-- /container -->
 	</div>
+
+    <div id="worksCard">
+        <ul class="row list-inline clearfix no-gutter">
+            {% for post in site.portfolio reversed %}
+            <li class="col-xs-1 portfolio-item">
+                <a class="thumbnailCards" alt="{{ post.title }}" href="/portfolio/{{ post.slug }}/" style="background-image: url('{{ post.image }}');">
+                    <p>{{ post.title }}: <span>{{ post.deck }}</span></p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
     <div id="qualificationsCard">
         <div class="container">
             <div class="row">
@@ -63,8 +76,8 @@ slug: work
             <div class="row">
                 <div class="center-block col-md-4" style="float: none;">
                     <p class="text-center">
-                        <a class="btn btn-default" href="/portfolio/" role="button">Selected Works</a>
-                        <a class="btn btn-default" href="https://github.com/underlost?tab=repositories" role="button">Github</a>
+                        <a class="btn btn-default btn-lg" href="/portfolio/" role="button">Selected Works</a>
+                        <a class="btn btn-default btn-lg" href="https://github.com/underlost?tab=repositories" role="button"><i class="fa fa-github-alt"></i> Github</a>
                     </p>
                 </div>
             </div>

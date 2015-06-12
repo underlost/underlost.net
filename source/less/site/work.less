@@ -23,11 +23,10 @@
          url('../fonts/tf2build-webfont.svg#tf2_buildtf2_build') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 .text-wrap > p {
-    font-size: 19px;
+    font-size: 21px;
     line-height: 29px;
     font-weight: 100;
 }
@@ -45,7 +44,6 @@
     background-color: #c2c2bb;
     color: #4f4944;
     border-color: #babbb5;
-
     -webkit-box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.25);
     -moz-box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.25);
     box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.25);
@@ -71,34 +69,42 @@
         span {display: block; font-size: 22px; line-height: 24px; letter-spacing: 1px;}
     }
     .classPoseL img {width: auto; height: auto;}
-
 }
 
 #classBioText p.lead {
     margin-top: 20px;
-    font-size: 25px;
+    font-size: 27px;
     text-shadow: none;
 }
 
-#qualificationsCard {
+#qualificationsCard,
+#lookingforCard {
     padding: 75px 0;
     background-color: #f2f2f2;
     color: #333;
     text-shadow: none;
+    a {color: #333;}
+    hr {color: #999;}
 }
 
 #githubCard {
     padding: 200px 0;
     background: #cfcfcf url('../img/work/bg_02.jpg') center center no-repeat;
     background-size: cover;
-}
 
-#lookingforCard {
-    padding: 50px 0;
-    background-color: #282522;
+    a.btn-default {
+        margin: 20px;
+        border: 2px solid #f2f2f2;
+    }
 }
 
 #footerCard {
     padding: 20px 0;
     background-color: #1c1918;
+}
+
+#worksCard {
+    height: 150px;
+    background-color: #f2f2f2;
+    overflow: hidden;
 }
