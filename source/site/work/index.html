@@ -35,9 +35,8 @@ slug: work
                     <h1><span>Meet The</span>Developer</h1>
 
             		<div id="classBioText" class="col-md-6">
-            			<p>Location: Washington, USA </br>
-            			Role: Support</p>
-                        <p class="lead">I’m a creative developer & UI designer with a passion for user experience. From sketch to design, coding to bug fixing, I do it all.</p>
+                        <p class="lead">Currently based in Seattle, WA, I’m a creative developer & UI designer with a passion for user experience.
+                            From sketch to design, coding to bug fixing, I do it all.</p>
             		</div>
                 </div>
                 <div class="col-md-4">
@@ -51,7 +50,7 @@ slug: work
     <div id="qualificationsCard">
         <div class="container">
             <div class="row">
-                <div class="center-block col-md-4" style="float: none;">
+                <div class="text-wrap center-block col-md-4" style="float: none;">
                 {% capture job_qualifications %}{% include job_qualifications.md %}{% endcapture %}
                 {{ job_qualifications | markdownify }}
                 </div>
@@ -59,10 +58,23 @@ slug: work
         </div><!-- /.container -->
 	</div>
 
-    <div id="lookingforCard">
+    <div id="githubCard">
         <div class="container">
             <div class="row">
                 <div class="center-block col-md-4" style="float: none;">
+                    <p class="text-center">
+                        <a class="btn btn-default" href="/portfolio/" role="button">Selected Works</a>
+                        <a class="btn btn-default" href="https://github.com/underlost?tab=repositories" role="button">Github</a>
+                    </p>
+                </div>
+            </div>
+        </div><!-- /.container -->
+    </div>
+
+    <div id="lookingforCard">
+        <div class="container">
+            <div class="row">
+                <div class="text-wrap center-block col-md-4" style="float: none;">
                 {% capture job_looking %}{% include job_looking.md %}{% endcapture %}
                 {{ job_looking | markdownify }}
                 </div>
@@ -72,9 +84,9 @@ slug: work
 
     <div id="footerCard">
         <div class="container">
+            <div class="text-wrap center-block col-md-4" style="float: none;">
             <small class="copyright">Copyright &copy; 2002–2015 Tyler Rilling. Last <a href="https://github.com/underlost/underlost.net/">updated June 05, 2015</a>.</small>
-            <small class"copyright">Valve, the Valve logo, the Steam logo, Team Fortress,
-                the Team Fortress logo are all trademarks  and/or registered trademarks of Valve Corporation.</small>
+            </div>
         </div><!-- /container -->
     </div>
 

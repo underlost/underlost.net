@@ -26,6 +26,12 @@
 
 }
 
+.text-wrap > p {
+    font-size: 19px;
+    line-height: 29px;
+    font-weight: 100;
+}
+
 #classWrap {
     position: relative;
     z-index: 5000;
@@ -34,16 +40,18 @@
 }
 
 #classNav {
-    background-color: #c2c2bb;
-    border-color: #babbb5;
-    color: #4f4944;
-    font-family: 'tf2_build', @font-family-sans-serif;
     text-shadow: none;
+    /*
+    background-color: #c2c2bb;
+    color: #4f4944;
+    border-color: #babbb5;
+
     -webkit-box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.25);
     -moz-box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.25);
     box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.25);
+    */
 
-    .navbar-brand {margin-right: 40px; color: #4f4944; }
+    .navbar-brand {margin-right: 40px; }
 }
 
 #classCard {
@@ -51,33 +59,38 @@
     min-height: 600px;
     background: #cfcfcf url('../img/work/bg_01.jpg') center center no-repeat;
     background-size: cover;
-    color: #46423d;
+    color: #1a1a1a;
 
     h1 {
         margin: 225px 0 30px;
         transform: rotate(-2deg);
         font-size: 84px; line-height: 64px;
         font-family: 'tf2_build', @font-family-sans-serif;
-        color: #403b37;
+        color: #333;
         letter-spacing: -1px;
-        span {display: block; font-size: 22px; line-height: 24px;}
+        span {display: block; font-size: 22px; line-height: 24px; letter-spacing: 1px;}
     }
-    .classPoseL img{ width: auto; height: auto;}
+    .classPoseL img {width: auto; height: auto;}
+
 }
 
 #classBioText p.lead {
     margin-top: 20px;
     font-size: 25px;
-}
-
-#movieCard {
-    min-height: 600px;
-    background-color: #282522;
+    text-shadow: none;
 }
 
 #qualificationsCard {
-    padding: 50px 0;
-    background-color: #1c1918;
+    padding: 75px 0;
+    background-color: #f2f2f2;
+    color: #333;
+    text-shadow: none;
+}
+
+#githubCard {
+    padding: 200px 0;
+    background: #cfcfcf url('../img/work/bg_02.jpg') center center no-repeat;
+    background-size: cover;
 }
 
 #lookingforCard {
