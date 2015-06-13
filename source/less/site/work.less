@@ -27,8 +27,8 @@
 
 .text-wrap > p {
     font-size: 21px;
-    line-height: 29px;
-    font-weight: 100;
+    line-height: floor((21px * @line-height-base));
+    font-weight: 300;
 }
 
 #classWrap {
@@ -106,4 +106,5 @@
 #worksCard {
     height: 150px;
     background-color: #27282C;
+    overflow: hidden;
 }

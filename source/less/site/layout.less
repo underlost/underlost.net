@@ -14,7 +14,6 @@ a {
     transition: color .25s ease-in, background .25s ease-in, opacity .25s ease-in;
 }
 
-
 .layout-foreground {
     position: relative;
     z-index: 100
@@ -134,7 +133,7 @@ a {
 }
 
 /* Preload backgreounds hack */
-body:after{
+body.index:after{
     display:none;
     content: url('../img/contact.jpg') url('../img/colophon.jpg') url('../img/selected-works.jpg') url('../img/error.jpg');
 }

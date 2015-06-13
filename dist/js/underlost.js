@@ -3717,6 +3717,12 @@ function portfolioShowcase(){
     }
 
     $document.ready(function () {
+        paceOptions = {
+            ajax: false, // disabled
+            document: false, // disabled
+            eventLag: false, // disabled
+            elements: { selectors: ['#content'] }
+        };
         animateClasses();
         // portfolioShowcase();
         $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
@@ -3759,10 +3765,16 @@ function portfolioShowcase(){
             }
 
             $content
-            .fadeOut(500)
+            .fadeOut(200)
             .promise()
             .done(function () {
-                $content.html(response.$content).fadeIn(500);
+                $content.html(response.$content).fadeIn(200);
+                paceOptions = {
+                    ajax: false, // disabled
+                    document: false, // disabled
+                    eventLag: false, // disabled
+                    elements: { selectors: ['#content'] }
+                };
                 animateClasses();
                 $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
                 // portfolioShowcase();
