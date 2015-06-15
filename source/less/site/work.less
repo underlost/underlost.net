@@ -25,30 +25,31 @@
     font-style: normal;
 }
 
+#classWrap {
+    position: relative;
+    z-index: 5000;
+    small.copyright {display: block;}
+}
+
 .text-wrap > p {
     font-size: 21px;
     line-height: floor((21px * @line-height-base));
     font-weight: 300;
 }
 
-#classWrap {
-    position: relative;
-    z-index: 5000;
-
-    small.copyright {display: block;}
+#qualificationsCard,
+#lookingforCard {
+    padding: 75px 0;
+    background-color: #f2f2f2;
+    color: #333;
+    text-shadow: none;
+    a {color: #333;}
+    hr {border-top:1px solid rgba(0,0,0,.1)}
+    h3 {margin-bottom: 15px;}
 }
 
 #classNav {
     text-shadow: none;
-    /*
-    background-color: #c2c2bb;
-    color: #4f4944;
-    border-color: #babbb5;
-    -webkit-box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.25);
-    box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.25);
-    */
-
     .navbar-brand {margin-right: 40px; }
 }
 
@@ -74,17 +75,15 @@
 #classBioText p.lead {
     margin-top: 20px;
     font-size: 27px;
-    text-shadow: none;
+    text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
 }
 
-#qualificationsCard,
-#lookingforCard {
-    padding: 75px 0;
-    background-color: #f2f2f2;
-    color: #333;
-    text-shadow: none;
-    a {color: #333;}
-    hr {color: #999;}
+#worksCard {
+    height: 152px;
+    overflow: hidden;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #ccc;
+    background-color: #cfcfcf;
 }
 
 #githubCard {
@@ -101,10 +100,4 @@
 #footerCard {
     padding: 20px 0;
     background-color: #1c1918;
-}
-
-#worksCard {
-    height: 150px;
-    background-color: #27282C;
-    overflow: hidden;
 }
