@@ -39,29 +39,22 @@
 
 #qualificationsCard,
 #lookingforCard {
-    padding: 75px 0;
-    background-color: #f2f2f2;
-    color: #333;
-    text-shadow: none;
+    margin: 50px auto;
+    .content-panel {background-color: rgba(255,255,255,0.1);}
     a {color: #333;}
     hr {border-top:1px solid rgba(0,0,0,.1)}
     h3 {margin-bottom: 15px;}
 }
 
-#classNav {
-    text-shadow: none;
-    .navbar-brand {margin-right: 40px; }
-}
-
 #classCard {
-    margin-top: 50px;
     min-height: 600px;
-    /* background: #cfcfcf url('../img/work/bg_01.jpg') center center no-repeat; */
+    background: #cfcfcf url('../img/work/bg_01.jpg') center center no-repeat;
     background-size: cover;
     color: #1a1a1a;
+    overflow: hidden;
 
     h1 {
-        margin: 225px 0 30px;
+        margin: 30px 0;
         transform: rotate(-2deg);
         font-size: 84px; line-height: 64px;
         font-family: 'tf2_build', @font-family-sans-serif;
@@ -87,17 +80,14 @@
 }
 
 #githubCard {
-    padding: 200px 0;
-    background: #cfcfcf url('../img/work/bg_02.jpg') center center no-repeat;
+    padding: 150px 0;
+    background: url('../img/work/bg_02.jpg') center center no-repeat;
     background-size: cover;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 
     a.btn-default {
         margin: 20px;
         border: 2px solid #f2f2f2;
     }
-}
-
-#footerCard {
-    padding: 20px 0;
-    background-color: #1c1918;
 }
