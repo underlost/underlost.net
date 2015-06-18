@@ -16,7 +16,7 @@ Replica is a content management system written in Python/django. It was original
 
 <ul class="list-inline clearfix">
 {% for image in site.data.screenshots.replica %}
-<li class="col-xs-1">
+<li class="col-xs-2">
 <a href="{{image.url}}" class="thumbnail lightbox">
   <img class="img-rounded" src="{{image.thumb}}" alt="{{ image.caption }}">
 </a>

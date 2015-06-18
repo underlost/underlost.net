@@ -16,7 +16,7 @@ gMachina is a small indie game I'm working on. It is a first person, psychologic
 
 <ul class="list-inline clearfix">
 {% for image in site.data.screenshots.gmachina %}
-<li class="col-xs-1">
+<li class="col-xs-2">
 <a href="{{image.url}}" class="thumbnail lightbox">
   <img class="img-rounded" src="{{image.thumb}}" alt="{{ image.caption }}">
 </a>

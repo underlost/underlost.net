@@ -12,13 +12,11 @@ previous_page: vapor
 next_page: mbarrington
 ---
 
-The original Designcor website had been using the same design and code for nearly a decade. It didn't just need a fresh coat of paint, it required a complete overhaul.
-
-Together we came up with a new vision for the website, where I wrote a custom WordPress theme using Twitter Bootstrap and JQuery.Designcor has since became part of another agency, however the wordpress theme is now available on Github.
+The original Designcor website had been using the same design and code for nearly a decade. Together we came up with a new vision for the website, where I wrote a custom WordPress theme using Twitter Bootstrap and JQuery. Designcor has since became part of another agency, however the WordPress theme is now available on [Github](https://github.com/underlost/designcor).
 
 <ul class="list-inline clearfix">
 {% for image in site.data.screenshots.designcor %}
-<li class="col-xs-1">
+<li class="col-xs-2">
 <a href="{{image.url}}" class="thumbnail lightbox">
   <img class="img-rounded" src="{{image.thumb}}" alt="{{ image.caption }}">
 </a>

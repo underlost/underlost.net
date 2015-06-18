@@ -17,7 +17,7 @@ M Barrington was a collaboration with local design agency, Designcor. I consulte
 
 <ul class="list-inline clearfix">
 {% for image in site.data.screenshots.mbarrington %}
-<li class="col-xs-1">
+<li class="col-xs-2">
 <a href="{{image.url}}" class="thumbnail lightbox">
   <img class="img-rounded" src="{{image.thumb}}" alt="{{ image.caption }}">
 </a>
