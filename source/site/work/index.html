@@ -10,25 +10,25 @@ slug: work
         <div id="classCard">
                 <div class="center-block col-md-4" style="float: none;">
                     <div class="row">
-                        <h1><span>Meet The</span>Developer</h1>
-                    </div>
-
-                    <div class="row">
                         <div class="classPoseL">
                             <img class="img-responsive" alt="sfm_pose" src="/assets/img/work/pose_1.png" />
                         </div>
                     </div>
-
-            		<div id="classBioText" class="col-md-6">
-                        <p class="lead">Currently based in Seattle, Washington, I’m a creative developer &amp; UI designer with a passion for user experience.
-                            From sketch to design, coding to bug fixing, I do it all.</p>
-            		</div>
                 </div>
 	    </div>
 
+        <div>
+            <div class="content-panel fadeRight">
+                <div class="layout-single-column">
+                    <p class="lead">Currently based in Seattle, Washington, I’m a creative developer &amp; UI designer with a passion for user experience.
+                        From sketch to design, coding to bug fixing, I do it all.</p>
+                </div>
+            </div><!-- /.content-panel -->
+        </div>
+
         <div id="qualificationsCard">
             <div class="content-panel fadeRight">
-                <div class="text-wrap center-block col-md-5" style="float: none;">
+                <div class="layout-single-column">
                     {% capture job_qualifications %}{% include job_qualifications.md %}{% endcapture %}
                     {{ job_qualifications | markdownify }}
                 </div>

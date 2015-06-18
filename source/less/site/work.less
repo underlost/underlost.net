@@ -39,7 +39,6 @@
 
 #qualificationsCard,
 #lookingforCard {
-    margin: 50px auto;
     .content-panel {background-color: rgba(255,255,255,0.1);}
     a {color: #333;}
     hr {border-top:1px solid rgba(0,0,0,.1)}
@@ -65,9 +64,9 @@
     .classPoseL img {width: auto; height: auto;}
 }
 
-#classBioText p.lead {
-    margin-top: 20px;
+.layout-single-column > p.lead {
     font-size: 27px;
+    line-height: floor((27px * @line-height-base));
     text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
 }
 
@@ -83,8 +82,8 @@
     padding: 150px 0;
     background: url('../img/work/bg_02.jpg') center center no-repeat;
     background-size: cover;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 
     a.btn-default {
         margin: 20px;

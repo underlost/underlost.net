@@ -37,13 +37,12 @@
     "grunt-saucelabs": "~8.3.2",
     "grunt-sed": "~0.1.1",
     "load-grunt-tasks": "~1.0.0",
-    "npm-shrinkwrap": "~5.1.0",
     "remarkable": "~1.4.0",
     "time-grunt": "~1.0.0",
     "grunt-git-deploy": "~0.1.1",
-    "grunt-contrib-imagemin": "~0.8.0",
-    "coffee-script": "",
-    "grunt-contrib-coffee": ""
+    "grunt-contrib-imagemin": "~0.9.4",
+    "coffee-script": "~1.9.3",
+    "grunt-contrib-coffee": "~0.13.0"
 
   },
   "repository": {
