@@ -7,9 +7,9 @@ slug: portfolio
 
 {% if page.color %}
 <div id="selected-work-bg"></div>
-<div id="selected-work" class="content-section" style="background-color:RGBA({{ page.rgba }})">
+<div id="selected-work" class="content-section hidden" style="background-color:RGBA({{ page.rgba }})">
 {% else %}
-<div id="selected-works" class="content-section">
+<div id="selected-works" class="content-section hidden">
 {% endif %}
     <div class="vertical">
         <div class="content-inner">
@@ -27,7 +27,7 @@ slug: portfolio
                 </div>
             </div>
             {% if page.show_gallery %}
-            <div class="container-fluid portfolio-picks fadeRight" id="recent-portfolio-container">
+            <div id="recent-portfolio-container" class="container-fluid portfolio-picks fadeRight">
                 <ul class="list-inline clearfix" id="recent-portfolio">
                     {% for post in site.portfolio reversed %}
                     <li class="col-xs-1 portfolio-item">
@@ -43,8 +43,8 @@ slug: portfolio
             {% if page.next_page or page.previous_page  %}
             <nav class="selected-works-panel">
                 <ul class="pager">
-                    <li class="previous"><a href="/portfolio/{{page.previous_page}}"><span aria-hidden="true">&larr;</span> Previous</a></li>
-                    <li class="next"><a href="/portfolio/{{page.next_page}}">Next <span aria-hidden="true">&rarr;</span></a></li>
+                    <li class="previous"><a href="/portfolio/{{page.previous_page}}/"><span aria-hidden="true">&larr;</span> Previous</a></li>
+                    <li class="next"><a href="/portfolio/{{page.next_page}}/">Next <span aria-hidden="true">&rarr;</span></a></li>
                 </ul>
             </nav>
             {% endif %}

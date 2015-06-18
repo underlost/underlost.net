@@ -240,6 +240,7 @@ function portfolioShowcase(){
     }
 
     $document.ready(function () {
+        Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
         paceOptions = {
             ajax: false, // disabled
             document: false, // disabled
@@ -292,6 +293,7 @@ function portfolioShowcase(){
             .promise()
             .done(function () {
                 $content.html(response.$content).fadeIn(200);
+                Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
                 paceOptions = {
                     ajax: false, // disabled
                     document: false, // disabled
@@ -304,11 +306,6 @@ function portfolioShowcase(){
                 $('.sections-nav').vLine();
                 $(".lithium-lettering").lettering();
                 $(document).activeNavigation(".sections-nav");
-
-                //nav
-                // if (url.indexOf('/about') !== -1) { $('.site-nav-about').addClass('active');}
-                // if (url.indexOf('/portfolio') !== -1) { $('.site-nav-portfolio').addClass('active');}
-                // if (url.indexOf('/contact') !== -1) { $('.site-nav-contact').addClass('active');}
 
             });
         }).fail(function () {

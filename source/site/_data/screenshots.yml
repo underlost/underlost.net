@@ -35,6 +35,12 @@ gmachina:
     - caption: Teaser
       url: /assets/img/portfolio/screenshots/gmachina_1.jpg
       thumb: /assets/img/portfolio/screenshots/gmachina_1_thumb.jpg
+    - caption: Ground substance
+      url: /assets/img/portfolio/screenshots/gmachina_2.jpg
+      thumb: /assets/img/portfolio/screenshots/gmachina_2_thumb.jpg
+    - caption: Goo Substance
+      url: /assets/img/portfolio/screenshots/gmachina_3.jpg
+      thumb: /assets/img/portfolio/screenshots/gmachina_3_thumb.jpg
 
 gamernews:
     - caption: Frontpage

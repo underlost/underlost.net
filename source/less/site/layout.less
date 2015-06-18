@@ -1,7 +1,7 @@
 html, body, #content, #wrapper {
     width: 100%;
     height: 100%;
-    background: @body-bg url('../img/bg.jpg') center center fixed no-repeat;
+    background: @body-bg url('../img/bg_blur.jpg') center center fixed no-repeat;
     background-size: cover;
     text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
@@ -105,6 +105,7 @@ a {
     display: table;
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
 
     .content-inner {margin-left: 27%;}
 
@@ -118,7 +119,8 @@ a {
     }
 }
 
-#work {background-image: url('../img/polygon.jpg'); background-attachment: fixed;}
+#index {background-image: url('../img/bg.jpg');}
+#work {background-image: url('../img/polygon.jpg');}
 #contact {background-image: url('../img/contact.jpg');
     a.btn-default {border: 1px solid #f2f2f2; margin-top: 15px;}
     a.btn-default:hover {.btn-success()}
