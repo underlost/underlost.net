@@ -267,6 +267,18 @@ module.exports = function (grunt) {
       site: {}
     },
 
+    htmllint: {
+      options: {
+        ignore: [
+          'Bad value X-UA-Compatible for attribute http-equiv on element meta.',
+          'Attribute "autocomplete" not allowed on element "button" at this point.',
+          'Attribute "autocomplete" not allowed on element "input" at this point.',
+          'Element "img" is missing required attribute "src".'
+        ]
+      },
+      src: '_site/**/*.html'
+    },
+
     validation: {
       options: {
         charset: 'utf-8',
