@@ -20,7 +20,7 @@ slug: portfolio
                     {% if page.show_gallery %}
                     <ul id="recent-portfolio-minimal">
                         {% for post in site.portfolio reversed %}
-                        <li><a alt="{{ post.title }}" data-toggle="modal" data-target="#{{ post.slug }}Modal" href="#{{ post.slug }}Modal">{{ post.title }}</a></li>
+                        <li><a alt="{{ post.title }}" href="/portfolio/{{ post.slug }}/">{{ post.title }}</a></li>
                         {% endfor %}
                     </ul>
                     {% endif %}
@@ -48,29 +48,6 @@ slug: portfolio
                 </ul>
             </nav>
             {% endif %}
-
         </div>
     </div>
 </div>
-
-
-{% if page.show_gallery %}
-{% for post in site.portfolio reversed %}
-<div class="modal underlost-modal fade" id="{{ post.slug }}Modal" tabindex="-1" role="dialog" aria-labelledby="{{ post.slug }}ModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content" style="background-color:#{{ post.color }}">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times"></i></span></button>
-                <h4 class="modal-title" id="{{ post.slug }}ModalLabel">{{ post.title }}</h4>
-            </div>
-            <div class="modal-body">
-                <p class="lead">{{ post.deck }}</p>
-                <img src="{{ post.image }}" class="img-rounded img-responsive" alt="{{ post.title }}">
-
-                <div class="modal-content">{{ post.content }}</div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
-{% endif %}
