@@ -76,3 +76,21 @@
     #contact {p.lead strong {display: block;}}
     #selected-work {margin-bottom: 55px;}
 }
+
+
+@media only screen and ( -webkit-min-device-pixel-ratio: 1.3 ),
+       only screen and (    min--moz-device-pixel-ratio: 1.3 ),
+       only screen and (      -o-min-device-pixel-ratio: 2.6/2 ), /* returns 1.3, see Dev.Opera */
+       only screen and (         min-device-pixel-ratio: 1.3 ),
+       only screen and ( min-resolution: 124.8dpi ),
+       only screen and ( min-resolution: 1.3dppx ) {
+
+           #index {background-image: url('../img/background/index@2x.jpg');}
+           /*
+           #work {background-image: url('../img/polygon@2x.jpg');}
+           #contact {background-image: url('../img/contact@2x.jpg');}
+           #colophon, .page {background-image: url('../img/colophon@2x.jpg');}
+           #selected-works {background-image: url('../img/selected-works@2x.jpg');}
+           #error404 {background-image: url('../img/error@2x.jpg');} */
+
+}
