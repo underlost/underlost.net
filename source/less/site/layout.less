@@ -116,15 +116,15 @@ a {
         p {font: 17px/25px @font-family-sans-serif; color: #bdbdbd; font-weight: 300;}
         a {color: #f2f2f2; opacity: 1;}
         h1 {font-weight: 100; span {font-size: 120%;}}
-
     }
 }
 
 #work {background-image: url('../img/polygon.jpg'); background-attachment: fixed;}
     #contact {background-image: url('../img/contact.jpg');
     a.btn-default {border: 1px solid #f2f2f2;}
-    a.btn-contact {color: @brand-success;}
+    a.btn-default:hover {.btn-success()}
 }
+
 #colophon, .page {background-image: url('../img/colophon.jpg');}
 #selected-works {background-image: url('../img/selected-works.jpg');}
 #error404 {
@@ -358,11 +358,4 @@ li.portfolio-item {
         span {opacity: .75; padding-right: 5px;}
     }
     a {opacity: 1;}
-}
-
-.no-gutter {
-  [class*="col-"] {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
 }

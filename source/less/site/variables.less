@@ -99,7 +99,7 @@
 @padding-xs-vertical:       1px;
 @padding-xs-horizontal:     5px;
 
-@line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
+@line-height-large:         1.33;
 @line-height-small:         1.5;
 
 @border-radius-base:        4px;
@@ -144,9 +144,10 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #f2f2f2;
-@btn-default-bg:                 transparent;
-@btn-default-border:             #f2f2f2;
+@btn-default-color:              rgba(255,255,255,.85);
+@btn-default-bg:                 rgba(0,0,0,.2);
+@btn-default-border:             darken(@btn-default-bg, 5%);
+
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;
@@ -170,11 +171,6 @@
 
 @btn-link-disabled-color:        @gray-light;
 
-// Allows for customizing button radius independently from global border radius
-@btn-border-radius-base:         @border-radius-base;
-@btn-border-radius-large:        @border-radius-large;
-@btn-border-radius-small:        @border-radius-small;
-
 
 //== Forms
 //
@@ -192,7 +188,6 @@
 
 // TODO: Rename `@input-border-radius` to `@input-border-radius-base` in v4
 //** Default `.form-control` border radius
-// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
 @input-border-radius:            @border-radius-base;
 //** Large `.form-control` border radius
 @input-border-radius-large:      @border-radius-large;
@@ -211,9 +206,6 @@
 @input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
 //** Small `.form-control` height
 @input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
-
-//** `.form-group` margin
-@form-group-margin-bottom:       15px;
 
 @legend-color:                   @gray-dark;
 @legend-border-color:            #e5e5e5;
@@ -274,8 +266,7 @@
 @zindex-popover:           1060;
 @zindex-tooltip:           1070;
 @zindex-navbar-fixed:      1030;
-@zindex-modal-background:  1040;
-@zindex-modal:             1050;
+@zindex-modal:             1040;
 
 
 //== Media queries breakpoints
@@ -388,7 +379,7 @@
 @navbar-default-toggle-border-color:       #ddd;
 
 
-//=== Inverted navbar
+// Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color:                      lighten(@gray-light, 15%);
 @navbar-inverse-bg:                         #222;
@@ -468,9 +459,9 @@
 //
 //##
 
-@pager-bg:                             @pagination-bg;
-@pager-border:                         @pagination-border;
-@pager-border-radius:                  15px;
+@pager-bg:                             rgba(255,255,255,.1);
+@pager-border:                         darken(@pager-bg, 10%);
+@pager-border-radius:                  5px;
 
 @pager-hover-bg:                       @pagination-hover-bg;
 
@@ -489,7 +480,6 @@
 @jumbotron-bg:                   @gray-lighter;
 @jumbotron-heading-color:        inherit;
 @jumbotron-font-size:            ceil((@font-size-base * 1.5));
-@jumbotron-heading-font-size:    ceil((@font-size-base * 4.5));
 
 
 //== Form states and alerts
@@ -596,18 +586,18 @@
 @modal-title-line-height:     @line-height-base;
 
 //** Background color of modal content area
-@modal-content-bg:                             #fff;
+@modal-content-bg:                             #121212;
 //** Modal content border color
 @modal-content-border-color:                   rgba(0,0,0,.2);
 //** Modal content border color **for IE8**
-@modal-content-fallback-border-color:          #999;
+@modal-content-fallback-border-color:          #1e1e1e;
 
 //** Modal backdrop background color
 @modal-backdrop-bg:           #000;
 //** Modal backdrop opacity
 @modal-backdrop-opacity:      .5;
 //** Modal header border color
-@modal-header-border-color:   #e5e5e5;
+@modal-header-border-color:   rgba(0,0,0,.2);
 //** Modal footer border color
 @modal-footer-border-color:   @modal-header-border-color;
 
@@ -742,11 +732,11 @@
 //##
 
 //** Padding around the thumbnail image
-@thumbnail-padding:           4px;
+@thumbnail-padding:           1px;
 //** Thumbnail background color
-@thumbnail-bg:                @body-bg;
+@thumbnail-bg:                none;
 //** Thumbnail border color
-@thumbnail-border:            #ddd;
+@thumbnail-border:            none;
 //** Thumbnail border radius
 @thumbnail-border-radius:     @border-radius-base;
 
@@ -864,4 +854,4 @@
 //** Width of horizontal description list titles
 @dl-horizontal-offset:        @component-offset-horizontal;
 //** Horizontal line color.
-@hr-border:                   @gray-lighter;
+@hr-border:                   rgba(255,255,255,.1);

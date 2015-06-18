@@ -28,29 +28,45 @@
 #classWrap {
     position: relative;
     z-index: 5000;
-    small.copyright {display: block;}
 }
 
 .text-wrap > p {
-    font-size: 21px;
-    line-height: floor((21px * @line-height-base));
+    font-size: 27px;
+    line-height: floor((27px * @line-height-base));
     font-weight: 300;
 }
 
-#qualificationsCard,
-#lookingforCard {
-    .content-panel {background-color: rgba(255,255,255,0.1);}
-    a {color: #333;}
-    hr {border-top:1px solid rgba(0,0,0,.1)}
-    h3 {margin-bottom: 15px;}
-}
+#lookingforCard { margin-bottom: 50px; }
 
 #classCard {
-    min-height: 600px;
-    background: #cfcfcf url('../img/work/bg_01.jpg') center center no-repeat;
+    padding: 0;
+    position: relative;
+    margin: 50px 0;
+
+    background: url('../img/work/bg_03.jpg') center center no-repeat;
     background-size: cover;
-    color: #1a1a1a;
-    overflow: hidden;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    p.lead {
+        padding: 120px 0;
+        text-align: center;
+        position: relative;
+        z-index: 1000;
+        color: #f2f2f2;
+
+        font-size: 33px;
+        line-height: floor((33px * @line-height-base));
+        font-weight: 100;
+    }
+
+    .classPoseL {
+        display: none;
+        z-index: 20;
+        position: absolute;
+        bottom: 0;
+    }
 
     h1 {
         margin: 30px 0;
@@ -62,12 +78,6 @@
         span {display: block; font-size: 22px; line-height: 24px; letter-spacing: 1px;}
     }
     .classPoseL img {width: auto; height: auto;}
-}
-
-.layout-single-column > p.lead {
-    font-size: 27px;
-    line-height: floor((27px * @line-height-base));
-    text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
 }
 
 #worksCard {
@@ -84,6 +94,7 @@
     background-size: cover;
     border-top: 1px solid rgba(255,255,255,0.1);
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin: 50px 0;
 
     a.btn-default {
         margin: 20px;
