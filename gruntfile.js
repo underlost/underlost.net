@@ -241,6 +241,7 @@ module.exports = function (grunt) {
           'css/*.map',
           'fonts/*',
           'img/*',
+          'img/background/*',
           'img/job/*',
           'img/rings/*',
           'img/portfolio/*',
