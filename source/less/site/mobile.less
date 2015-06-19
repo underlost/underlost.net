@@ -1,7 +1,10 @@
 @media all and (max-width:800px) {
 
     .vertical {display: block; margin: 40px auto; }
-    .site-toolbar {margin-left: 0;}
+    .site-toolbar {
+        margin-left: 0;
+        height: 65px;
+    }
     .site-head { display: none; }
     .content-section {
         .content-inner {margin-left: 0;}
@@ -75,8 +78,9 @@
     #recent-portfolio-minimal {display: block;}
     #contact {p.lead strong {display: block;}}
     #selected-work {margin-bottom: 55px;}
-}
 
+    #work {background-image: none;}
+}
 
 @media only screen and ( -webkit-min-device-pixel-ratio: 1.3 ),
        only screen and (    min--moz-device-pixel-ratio: 1.3 ),
@@ -86,11 +90,9 @@
        only screen and ( min-resolution: 1.3dppx ) {
 
            #index {background-image: url('../img/background/index@2x.jpg');}
-           /*
-           #work {background-image: url('../img/polygon@2x.jpg');}
            #contact {background-image: url('../img/contact@2x.jpg');}
            #colophon, .page {background-image: url('../img/colophon@2x.jpg');}
            #selected-works {background-image: url('../img/selected-works@2x.jpg');}
-           #error404 {background-image: url('../img/error@2x.jpg');} */
+           #error404 {background-image: url('../img/error@2x.jpg');}
 
 }
