@@ -1,0 +1,59 @@
+safe: false
+port: 4000
+base-url:    /
+
+gems:
+  - jekyll-sitemap
+
+source:      ./source/site
+destination: ./_site
+plugins:     ./source/site/_plugins
+
+future:      true
+lsi:         false
+highlighter: true
+markdown:    kramdown
+permalink:   blog/:title
+
+rdiscount:
+  extensions: []
+
+kramdown:
+  auto_ids: true,
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+  input: GFM
+
+  coderay:
+    coderay_wrap: div
+    coderay_line_numbers: inline
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: style
+
+collections:
+  portfolio:
+    label: portfolio
+    output: true
+    relative_directory: portfolio/:slug
+    directory: portfolio/:slug
+
+exclude: [
+  README.md,
+  CHANGELOG.md
+ ]
+
+# Custom vars
+current_version:  2.3.1
+repo: https://github.com/underlost/underlost.net
+site: https://underlost.net/
+url: https://underlost.net
+author: Tyler Rilling
+description: I make web things. I also take photographs and play video games.
+
+blog: /blog/
+blog_title: Underlost
+blog_deck: By Tyler Rilling

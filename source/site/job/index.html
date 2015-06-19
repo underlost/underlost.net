@@ -1,0 +1,44 @@
+---
+layout: panels
+title: Meet the Dev
+deck: Meet The Dev
+slug: work
+---
+
+<div id="work" class="content-section hidden">
+    <div class="content-inner">
+        <div id="classCard" class="content-panel fadeRight">
+            <div class="layout-single-column">
+                <p class="lead">Currently based in Seattle, I’m a creative developer &amp; UI designer with a passion for user experience.
+                    From sketch to design, coding to bug fixing, I do it all.</p>
+            </div>
+	    </div>
+
+        <div id="qualificationsCard">
+            <div class="content-panel fadeDown">
+                <div class="layout-single-column">
+                    {% capture job_qualifications %}{% include job_qualifications.md %}{% endcapture %}
+                    {{ job_qualifications | markdownify }}
+                </div>
+            </div><!-- /.content-panel -->
+    	</div>
+
+    <div id="githubCard">
+        <div class="layout-single-column">
+            <p class="text-center">
+                <a class="btn btn-default btn-lg" href="/portfolio/" role="button">Selected Works</a>
+                <a class="btn btn-default btn-lg" href="https://github.com/underlost?tab=repositories" role="button"><i class="fa fa-github-alt"></i> Github</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="lookingforCard">
+        <div class="content-panel">
+            <div class="layout-single-column">
+                {% capture job_looking %}{% include job_looking.md %}{% endcapture %}
+                {{ job_looking | markdownify }}
+            </div>
+        </div><!-- /.content-panel -->
+    </div>
+</div>
+</div>

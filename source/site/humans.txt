@@ -1,0 +1,22 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Tyler Rilling -- @underlost
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    LESS
+    jQuery
+    Jekyll
+    Bootstrap
+    AWS S3, Cloudfront
+    Heroku
+    Memcachier
+    New Relic
+    Paper Trail
+    Unicorn (server)
+    grunt
+    undertasker
