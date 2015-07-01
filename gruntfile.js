@@ -353,7 +353,7 @@ module.exports = function (grunt) {
   // Only build static assets, not html
   grunt.registerTask('dist', ['clean', 'build-css', 'build-js', 'build-img', 'copy:fonts', 'copy:dist']);
 
-  // Full Deploy
-  grunt.registerTask('deploy', ['git-deploy']);
+  // Full Deploy to Github
+  grunt.registerTask('deploy', ['dist', 'git-deploy']);
 
 };
