@@ -101,8 +101,7 @@ module.exports = function (grunt) {
           'source/js/scrollspy.js',
           'source/js/tab.js',
           'source/js/affix.js',
-
-          // 'source/js/particles.js',
+          'source/js/instantclick.min.js',
           'source/js/jquery.colorbox.js',
           'source/js/pace.min.js',
           'source/js/jquery.lettering-0.7.0.js',
