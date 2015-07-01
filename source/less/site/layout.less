@@ -114,7 +114,13 @@ a {
         padding: 25px 0;
         color: #f2f2f2;
         p {font: 19px/30px @font-family-sans-serif; color: #bdbdbd; font-weight: 300;}
-        a {color: #f2f2f2; opacity: 1;}
+        p a {
+            color: #f2f2f2;
+            opacity: 1;
+            padding-bottom: 2px;
+            border-bottom: 1px dotted @link-color;
+        }
+        p a:hover { text-decoration: none; border-bottom: 1px solid @link-color;}
         h1 {font-weight: 100; span {font-size: 120%;}}
     }
 }

@@ -82,13 +82,13 @@ function portfolioShowcase(){
     if ($("div.portfolio-picks ul#recent-portfolio li a").length > 0) {
         $("div.portfolio-picks ul#recent-portfolio li a").on('mouseout', function() {
             $('#recent-portfolio-container h2').removeClass('active');
-            $('#recent-portfolio-container h2').html('Selected Works');
+            $('#recent-portfolio-container h2').html('Selected Work');
             $("div.portfolio-picks ul#recent-portfolio li a:first").mouseover()
         });
     } else {
         $("ul#recent-portfolio li a").on('mouseout', function(e) {
             $('#recent-portfolio-container h2').removeClass('active');
-            $('#recent-portfolio-container h2').html('Selected Works');
+            $('#recent-portfolio-container h2').html('Selected Work');
             $("ul#recent-portfolio li a").animate({
                 opacity: "1.0"
             }, {
@@ -241,12 +241,6 @@ function portfolioShowcase(){
 
     $document.ready(function () {
         Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
-        paceOptions = {
-            ajax: false, // disabled
-            document: false, // disabled
-            eventLag: false, // disabled
-            elements: { selectors: ['#content'] }
-        };
         animateClasses();
         // portfolioShowcase();
         $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
@@ -294,12 +288,6 @@ function portfolioShowcase(){
             .done(function () {
                 $content.html(response.$content).fadeIn(200);
                 Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
-                paceOptions = {
-                    ajax: false, // disabled
-                    document: false, // disabled
-                    eventLag: false, // disabled
-                    elements: { selectors: ['#content'] }
-                };
                 animateClasses();
                 $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
                 // portfolioShowcase();
