@@ -283,10 +283,10 @@ function portfolioShowcase(){
             }
 
             $content
-            .fadeOut(200)
+            .fadeOut(100)
             .promise()
             .done(function () {
-                $content.html(response.$content).fadeIn(200);
+                $content.html(response.$content).fadeIn(100);
                 Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
                 animateClasses();
                 $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
