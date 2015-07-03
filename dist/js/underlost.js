@@ -2661,12 +2661,13 @@ function portfolioShowcase(){
     }
 
     $document.ready(function () {
-        Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
+        // Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
         animateClasses();
         // portfolioShowcase();
         $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
         $('.sections-nav').vLine();
         $(".lithium-lettering").lettering();
+        $('.content-section').removeClass("hidden").addClass("fadeIn");
         $(document).activeNavigation(".sections-nav");
 
 
@@ -2708,13 +2709,15 @@ function portfolioShowcase(){
             .promise()
             .done(function () {
                 $content.html(response.$content).fadeIn(100);
-                Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
+                // Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
+
                 animateClasses();
                 $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
                 // portfolioShowcase();
                 $('.sections-nav').vLine();
                 $(".lithium-lettering").lettering();
                 $(document).activeNavigation(".sections-nav");
+                $('.content-section').removeClass("hidden").addClass("fadeIn");
 
             });
         }).fail(function () {
