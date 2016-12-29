@@ -39,5 +39,6 @@ validation-report.json
 node_modules
 bower_components
 _site
+.publish
 tmp
 log

@@ -1,12 +1,12 @@
 safe: false
-port: 4000
+port: 9005
 base-url:    /
 
 gems:
   - jekyll-sitemap
 
 source:      ./source/site
-destination: ./_site
+destination: ./.publish
 plugins:     ./source/site/_plugins
 
 future:      true
@@ -47,7 +47,7 @@ exclude: [
  ]
 
 # Custom vars
-current_version:  2.3.1
+current_version:  4.0.0
 repo: https://github.com/underlost/underlost.net
 site: https://underlost.net/
 url: https://underlost.net

@@ -118,41 +118,53 @@ function portfolioShowcase(){
     $("div.portfolio-picks ul#recent-portfolio li a:first").mouseover()
 };
 
-
-
+function fullscreener(_container) {
+    _container.each(function () {
+        var _this = $(this);
+        //debugger;
+        var _src = _this.attr('src');
+        var _srcset = _this.attr('srcset');
+        if (_srcset != null)
+        {
+            var screenWidth = $win.width();
+            var src_arr = _parse_srcset(_srcset);
+            for (var i in src_arr)
+            {
+                if (src_arr[i].width >= screenWidth)
+                {
+                    _src = src_arr[i].url;
+                    break;
+                }
+            }
+        }
+        _this.parent().addClass($classes.FsrHolder).attr('style', 'background-image: url(' + _src + ');');
+    });
+}
 
 (function($){
     //define methods of the plugin
     var methods = {
         init: function(options){
-
             //set up some default values
             var defaults = {
                 'side' : 'left'
             }
-
             //for each element with vLine applied
             return this.each(function(){
-
                 //override defaults with user defined options
                 var settings = $.extend({}, defaults, options);
-
                 //cache variable for performance
                 var $this = $(this);
-
                 //wrap the UL with a positioned object just in case
                 // $this.wrap('<div style="position:relative;"></div>');
-
                 //test to see if element exists, if not, append it
                 if(!$('.vLine').length){
-
                     //parent is the ul we wrapped
                     //insert the vLine element into the document
-                    $this.parent().append($('<div style="position:absolute;top: -30px;" class="vLine"></div>'));
+                    $this.parent().append($('<div style="position:absolute;top: -200px;" class="vLine"></div>'));
                     $('.vLine').css('right', '0');
 
                 }
-
                 //define the hover functions for each li
                 $this.find('li').hover(function(e){
                     $('.vLine').stop().animate({
@@ -162,7 +174,7 @@ function portfolioShowcase(){
                     //we want to reset the line if this is met
                     if(['UL', 'LI'].indexOf(e.toElement.tagName) == -1){
                         $('.vLine').stop().animate({
-                            top: '-30px'
+                            top: '-200px'
                         });
                     }
                 });
@@ -203,36 +215,27 @@ function portfolioShowcase(){
 
 (function ($) {
     var $document = $(document);
-
     if (!History.enabled) {
         return false;
     }
-
     var root = History.getRootUrl();
-
     $.expr.filters.internal = function (elem) {
         return (elem.hostname == window.location.hostname && /(\/|\.html)$/i.test(elem.pathname)) || false;
     };
-
     function find_all($html, selector) {
         return $html.filter(selector).add($html.find(selector));
     }
-
     function parse_html(html) {
         return $($.parseHTML(html, document, true));
     }
-
     function parse_response(html) {
         var
         head = /<head[^>]*>([\s\S]+)<\/head>/.exec(html),
         body = /<body[^>]*>([\s\S]+)<\/body>/.exec(html),
-
         $head = head ? parse_html(head[1]) : $(),
         $body = body ? parse_html(body[1]) : $(),
-
         title = $.trim(find_all($head, 'title').last().html()),
         $content = $.trim(find_all($body, '#content').first().html());
-
         return {
             'title': title,
             '$content': $content
@@ -242,26 +245,22 @@ function portfolioShowcase(){
     $document.ready(function () {
         // Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
         animateClasses();
+        fullscreener($('.image-full'));
         // portfolioShowcase();
         $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
         $('.sections-nav').vLine();
         $(".lithium-lettering").lettering();
         $('.content-section').removeClass("hidden").addClass("fadeIn");
         $(document).activeNavigation(".sections-nav");
-
-
         $document.on('click', 'a:internal', function (event) {
             if (event.which == 2 || event.ctrlKey || event.metaKey) {
                 return true;
             }
-
             History.pushState(null, null, $(this).attr('href'));
             event.preventDefault();
-
             return false;
         });
     });
-
     $(window).on('statechange', function () {
         var
         url = History.getState().url,
@@ -289,19 +288,17 @@ function portfolioShowcase(){
             .done(function () {
                 $content.html(response.$content).fadeIn(100);
                 // Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
-
                 animateClasses();
+                fullscreener($('.image-full'));
                 $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
                 // portfolioShowcase();
                 $('.sections-nav').vLine();
                 $(".lithium-lettering").lettering();
                 $(document).activeNavigation(".sections-nav");
                 $('.content-section').removeClass("hidden").addClass("fadeIn");
-
             });
         }).fail(function () {
             document.location.href = url;
-
             return false;
         });
     });

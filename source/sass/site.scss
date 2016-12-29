@@ -1,0 +1,20 @@
+//Colors:
+$pace-color: #00FFFF;
+$site-primary: #00FFFF;
+$site-secondary: #ff00bb;
+$site-secondary-alt: #00ff00;
+$site-highlight: #FFF200;
+
+@import "bootstrap/bootstrap";
+@import "font-awesome/font-awesome";
+
+@import "site/pace";
+@import "site/lightbox";
+@import "site/animation";
+
+@import "site/header";
+@import "site/nav";
+@import "site/layout";
+@import "site/portfolio";
+@import "site/rings";
+@import "site/footer";

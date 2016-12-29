@@ -12,7 +12,8 @@ previous_page: undertasker
 next_page: gamernews
 ---
 
-Jaded Gamer is a view game news site aggregator, run and managed  completely in the cloud, utilizing various SAAS applications. RSS updates are pushed to the site via the pubsubhubbub protocol. New stories are then indexed immediately, and can be searched through by the elastic-search based server. For additional details, you can learn more on [Medium](https://medium.com/jaded-gamer/building-jaded-gamer-e08c6532b56d).
+Jaded Gamer was a video game news site aggregator, run and managed completely in the cloud, utilizing various SAAS applications. RSS updates were pushed to the site via the pubsubhubbub protocol. New stories were then indexed immediately, and could be searched through by the elastic-search based server. For additional details, you can learn more on [Medium](https://medium.com/@underlost/building-jaded-gamer-e08c6532b56d#.ew1sszjq9).
+
 
 <ul class="list-inline clearfix">
 {% for image in site.data.screenshots.jadedgamer %}
@@ -23,4 +24,6 @@ Jaded Gamer is a view game news site aggregator, run and managed  completely in 
 </li>
 {% endfor %}
 </ul>
-[Visit Jaded Gamer &raquo;](http://jadedgamer.com/)
+
+#### Update
+The Jaded Gamer service has since been retired as of September 1st, 2016. Jaded Gamer as since relaunched as a mobile development company. The original news site aggregator will live on in some form in 2017.

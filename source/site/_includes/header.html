@@ -1,28 +1,33 @@
-<header role="masthead" id="underlost-info" class="site-head fadeRight layout-foreground">
-    <div class="site-head-inner">
-        <a class="logo" href="/"><img src="/assets/img/logo.png" width="32" height="32" alt="underlost logo"></a>
-        <h1 class="site-title"><a href="/" rel="home">Underlost</a></h1>
-        <p class="site-subtitle">is <a href="/about">Tyler Rilling</a></p>
-    </div>
-    <nav class="site-nav vertical">
-        <ul class="sections-nav list-unstyled">
-            <span class="selection"></span>
-            <li class="home-url selected">
-                <a class="pjax site-nav-home" data-section="home" href="/"><strong>Home</strong></a>
-            </li>
-            <li class="about-url">
-                <a class="pjax site-nav-about" data-section="colophon" href="/about/"><strong>About</strong></a>
-            </li>
-            <li class="portfolio-url">
-                <a class="pjax site-nav-portfolio" data-section="works" href="/portfolio/"><strong>Selected Work</strong></a>
-            </li>
-            <li class="contact-url">
-                <a class="pjax site-nav-contact" data-section="contact" href="/contact/"><strong>Contact</strong></a>
-            </li>
-            <li class="job-url">
-                <a class="pjax site-nav-job" data-section="job" href="/job/"><strong>Hire Me</strong></a>
-            </li>
-        </ul>
-    </nav>
-
+<header role="masthead" id="underlost-info" class="site-header fadeRight layout-foreground">
+    <a class="logo" href="/"><img src="/assets/img/logo_alt.png" width="24" height="24" alt="underlost logo"></a>
+    <h1 class="site-title"><a href="/" rel="home">Underlost</a></h1>
+    <p class="site-subtitle">is <a href="/about">Tyler Rilling</a></p>
 </header>
+
+<nav class="site-nav">
+    <div class="rings rings-medium">
+        <span class="ring zero portrait"></span>
+        <span class="ring one" data-animate="spin"></span>
+        <span class="ring two" data-animate="spin2x"></span>
+        <span class="ring three" data-animate="spin-alt2x"></span>
+        <span class="ring four" data-animate="spin"></span>
+        <span class="ring five" data-animate="spin-alt"></span>
+        <span class="ring six" data-animate="spin"></span>
+        <span class="ring seven"></span>
+    </div>
+    <ul class="sections-nav list-unstyled text-right">
+        <span class="selection"></span>
+        <li class="about-url selected">
+            <a class="pjax site-nav-about" data-section="colophon" href="/">About</a>
+        </li>
+        <li class="portfolio-url">
+            <a class="pjax site-nav-portfolio" data-section="works" href="/portfolio/">Selected Work</a>
+        </li>
+        <li class="contact-url">
+            <a class="pjax site-nav-contact" data-section="contact" href="/contact/">Contact</a>
+        </li>
+        <li class="job-url">
+            <a class="pjax site-nav-work" data-section="work" href="/job/">Hire Me</a>
+        </li>
+    </ul>
+</nav>

@@ -1,53 +1,39 @@
 ---
-layout: panels
+layout: default
 title: Selected Work
 deck: projects I've Worked on
 slug: portfolio
 ---
 
 {% if page.color %}
-<div id="selected-work-bg"></div>
-<div id="selected-work" class="content-section hidden" style="background-color:RGBA({{ page.rgba }})">
-{% else %}
-<div id="selected-works" class="content-section hidden">
+<style type="text/css">
+    h2.heading:before { background-color: RGBA({{ page.rgba }}); }
+</style>
 {% endif %}
-    <div class="vertical">
-        <div class="content-inner">
-            <div class="content-panel layout-foreground fadeRight">
-                <div class="layout-single-column">
-                    <h1 class="heading">{{page.title}}</h1>
-                    {{content}}
-                    {% if page.show_gallery %}
-                    <ul id="recent-portfolio-minimal">
-                        {% for post in site.portfolio reversed %}
-                        <li><a alt="{{ post.title }}" href="/portfolio/{{ post.slug }}/">{{ post.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                </div>
-            </div>
-            {% if page.show_gallery %}
-            <div id="recent-portfolio-container" class="container-fluid portfolio-picks fadeRight">
-                <ul class="list-inline clearfix" id="recent-portfolio">
-                    {% for post in site.portfolio reversed %}
-                    <li class="col-xs-1 portfolio-item">
-                        <a class="thumbnail img-rounded" alt="{{ post.title }}" href="/portfolio/{{ post.slug }}/" style="background-image: url('{{ post.image }}');">
-                            <p>{{ post.title }}: <span>{{ post.deck }}</span></p>
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
 
-            {% if page.next_page or page.previous_page  %}
-            <nav class="selected-works-panel">
-                <ul class="pager">
-                    <li class="previous"><a href="/portfolio/{{page.previous_page}}/"><span aria-hidden="true">&larr;</span> Previous</a></li>
-                    <li class="next"><a href="/portfolio/{{page.next_page}}/">Next <span aria-hidden="true">&rarr;</span></a></li>
-                </ul>
-            </nav>
-            {% endif %}
-        </div>
+<div class="layout-single-column fadeRight">
+    <h2 class="heading"><span>{{page.title}}</span></h2>
+    {{content}}
+    {% if page.next_page or page.previous_page  %}
+    <ul class="pager fadeUp">
+        <li class="previous"><a href="/portfolio/{{page.previous_page}}/"><span aria-hidden="true">&larr;</span> Previous</a></li>
+        <li class="next"><a href="/portfolio/{{page.next_page}}/">Next <span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+    {% endif %}
+</div>
+
+{% if page.show_gallery %}
+<div class="layout-single-column fadeLeft">
+    <div id="recent-portfolio-container" class="portfolio-picks">
+        <ul class="list-inline clearfix" id="recent-portfolio">
+        {% for post in site.portfolio reversed %}
+            <li class="col-xs-6 portfolio-item">
+                <a class="thumbnail img-rounded" alt="{{ post.title }}" href="/portfolio/{{ post.slug }}/" style="background-image: url('{{ post.image }}');">
+                    <p><span>{{ post.title }}:</span> <small>{{ post.deck }}</small></p>
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
     </div>
 </div>
+{% endif %}

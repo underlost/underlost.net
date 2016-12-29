@@ -18,5 +18,5 @@
     New Relic
     Paper Trail
     Unicorn (server)
-    grunt
+    gulpfile
     undertasker

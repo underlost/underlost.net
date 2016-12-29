@@ -1,0 +1,130 @@
+body { background-image: url('../img/bg.gif'); }
+
+#wrapper {
+    padding: 40px 20px;
+    margin: auto;
+    position: relative;
+    .site-nav {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+    #content {
+        padding: 20px 0 20px 20px;
+        overflow: hidden;
+    }
+}
+
+.layout-single-column {
+    position: relative;
+
+    hr { animation: visible 0.2s, rgbshift 6s infinite; }
+
+    p {
+        letter-spacing: 2px;
+        -webkit-font-smoothing: antialiased; // Fix for font thickness for chrome/safari
+        a { background-color: $site-highlight; }
+    }
+
+    & + & {
+        padding-top: 25px;
+        margin-top: 30px;
+        &:before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            content: ' ';
+            height: 10px;
+            width: 1px;
+            background-color: #666;
+            animation: visible 0.2s, rgbshift 4s infinite;
+        }
+        &:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            content: ' ';
+            height: 1px;
+            width: 10px;
+            background-color: #666;
+            animation: visible 0.2s, rgbshift 4s infinite;
+        }
+    }
+
+    .image-wrap {
+        margin: 40px 0;
+        position: relative;
+
+        .img-responsive {
+            position: relative;
+            z-index: 10;
+        }
+
+        &:before {
+            content: ' ';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            z-index: 5;
+            background-color: $site-secondary-alt;
+            height: 25px;
+            width: 25px;
+        }
+    }
+}
+
+.heading {
+    position: relative;
+    span {
+        position: relative;
+        z-index: 10;
+    }
+    &:before {
+        content: ' ';
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        z-index: 5;
+    }
+}
+h2.heading {
+    font-size: 18px;
+    margin: 0 0 40px;
+
+    &:before {
+        background-color: $site-primary;
+        height: 20px;
+        width: 45px;
+    }
+}
+h4.heading {
+    //margin-top: 40px;
+    &:before {
+        //background-color: #00ff00;
+        background-color: $site-secondary;
+        height: 20px;
+        width: 15px;
+    }
+}
+
+.btn { letter-spacing: 1.5px; }
+.btn-default { background-color: #333; }
+.underlost-social { margin-top: 40px; }
+
+
+@media all and (min-width:801px) {
+    #wrapper {
+        max-width: 650px;
+
+        .site-nav {
+            float: left;
+            position: fixed;
+            width: 150px;
+        }
+
+        #content {
+            margin-left: 150px;
+            border-left: solid 1px #ccc;
+        }
+    }
+}

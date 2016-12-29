@@ -1,0 +1,10 @@
+.site-footer {
+    position: relative;
+    background-color: #1a1a1a;
+    margin: 40px 0 0 0;
+    padding: 4rem 1em;
+    color: darken(#fafafa, 25%);
+    text-align: center;
+    a { color: darken(#fafafa, 35%); }
+    a:hover { color: darken(#fafafa, 50%);}
+}

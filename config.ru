@@ -11,7 +11,7 @@ use Rack::Cache,
   entitystore: "file:tmp/cache/rack/body"
 
 use Rack::TryStatic,
-    :root => "_site",
+    :root => ".publish",
     :urls => %w[/],
     :try => ['.html', 'index.html', '/index.html']
 
