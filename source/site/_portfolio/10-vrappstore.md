@@ -7,7 +7,7 @@ color: CF202E
 rgba: 207,32,46,.75
 image: /assets/img/portfolio/vrappstore.jpg
 permalink: /portfolio/vrappstore/
-date: 2015-01-01
+date: 2016-10-01
 previous_page: ilfi
 next_page: winecountry
 ---

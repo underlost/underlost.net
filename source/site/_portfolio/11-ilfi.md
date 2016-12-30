@@ -2,12 +2,12 @@
 layout: portfolio
 title: International Living Future Institute
 slug: ilfi
-deck: A Drupal to WordPress migration
+deck: A Drupal to WordPress migration & custom theme
 color: EF4900
 rgba: 239,73,0,.75
 image: /assets/img/portfolio/ilfi.jpg
 permalink: /portfolio/ilfi/
-date: 2015-01-01
+date: 2016-12-29
 previous_page: mbarrington
 next_page: vrappstore
 ---
