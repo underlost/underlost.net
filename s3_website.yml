@@ -41,6 +41,7 @@ cloudfront_distribution_config:
 
 redirects:
     /about/: /
+    /404/: 404.html
 
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
 
