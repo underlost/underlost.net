@@ -7,7 +7,7 @@ gems:
 
 source:      ./source/site
 destination: ./.publish
-plugins:     ./source/site/_plugins
+plugins_dir:     ./source/site/_plugins
 
 future:      true
 lsi:         false
@@ -18,21 +18,14 @@ permalink:   blog/:title
 rdiscount:
   extensions: []
 
+# Kramdown
 kramdown:
-  auto_ids: true,
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
   input: GFM
-
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
+  hard_wrap: false
+  parse_block_html: true
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    line_numbers: false
 
 collections:
   portfolio:

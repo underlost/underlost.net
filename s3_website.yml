@@ -40,7 +40,7 @@ cloudfront_distribution_config:
 # concurrency_level: 5
 
 redirects:
-    about: /
+    /about/: /
 
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
 
