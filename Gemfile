@@ -11,6 +11,7 @@ gem "unicorn"
 gem 'newrelic_rpm'
 gem 's3_website'
 gem 'html-proofer'
+gem 'dotenv'
 
 gem 'dalli'
 gem 'rack-cache'
