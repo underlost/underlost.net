@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.3.0
+  - 2.2.3
 script:
   - bundle exec jekyll build
   - bundle exec htmlproof ./_publish --only-4xx --check-favicon --check-html --href-ignore "https://facebook.com/underlost"

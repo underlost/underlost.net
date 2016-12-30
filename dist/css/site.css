@@ -8089,6 +8089,9 @@ h4.heading:before {
       opacity: 0; }
 
 /* Sizes */
+.rings {
+  display: block; }
+
 .rings-small {
   position: relative;
   height: 230px;
