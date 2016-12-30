@@ -9,10 +9,7 @@ body { background-image: url('../img/bg.gif'); }
         margin: 0;
         overflow: hidden;
     }
-    #content {
-        padding: 20px 0 20px 20px;
-        overflow: hidden;
-    }
+    #content { overflow: hidden; }
 }
 
 .layout-single-column {
@@ -111,7 +108,6 @@ h4.heading {
 .btn-default { background-color: #333; }
 .underlost-social { margin-top: 40px; }
 
-
 @media all and (min-width:801px) {
     #wrapper {
         max-width: 650px;
@@ -125,6 +121,7 @@ h4.heading {
         #content {
             margin-left: 150px;
             border-left: solid 1px #ccc;
+            padding: 20px 0 20px 20px;
         }
     }
 }

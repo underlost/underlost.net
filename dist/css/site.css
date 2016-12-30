@@ -7957,7 +7957,6 @@ body {
     margin: 0;
     overflow: hidden; }
   #wrapper #content {
-    padding: 20px 0 20px 20px;
     overflow: hidden; }
 
 .layout-single-column {
@@ -8049,7 +8048,8 @@ h4.heading:before {
       width: 150px; }
     #wrapper #content {
       margin-left: 150px;
-      border-left: solid 1px #ccc; } }
+      border-left: solid 1px #ccc;
+      padding: 20px 0 20px 20px; } }
 
 .portfolio-picks .portfolio-item {
   margin-bottom: 10px;
@@ -8297,12 +8297,21 @@ h4.heading:before {
 
 .site-footer {
   position: relative;
-  background-color: #1a1a1a;
-  margin: 40px 0 0 0;
-  padding: 4rem 1em;
-  color: #bababa;
-  text-align: center; }
+  color: #1a1a1a;
+  letter-spacing: 1.5px;
+  padding-top: 10px; }
   .site-footer a {
-    color: #a1a1a1; }
-  .site-footer a:hover {
     color: #7b7b7b; }
+  .site-footer a:hover {
+    color: #1a1a1a; }
+  .site-footer:before {
+    content: ' ';
+    display: block;
+    height: 4px;
+    width: 15px;
+    background-color: #1a1a1a;
+    margin-bottom: 10px; }
+
+@media all and (min-width: 801px) {
+  .site-footer {
+    margin: 40px 0 0 150px; } }
