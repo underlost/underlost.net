@@ -3,7 +3,7 @@ rvm:
   - 2.2.3
 script:
   - bundle exec jekyll build
-  - bundle exec htmlproofer ./.publish --only-4xx --check-favicon --check-html
+  - bundle exec htmlproofer ./.publish --only-4xx --check-favicon --check-html --url-ignore "https://facebook.com/underlost"
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
