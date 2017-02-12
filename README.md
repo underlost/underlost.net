@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/underlost/underlost.net.svg?branch=master)](https://travis-ci.org/underlost/underlost.net)
+[![Dependencies](https://david-dm.org/underlost/underlost.net.svg)](https://david-dm.org/underlost/underlost.net)
 
 # underlost.net
 
