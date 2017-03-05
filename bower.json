@@ -27,7 +27,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "1.9.1 - 2",
+    "jquery": "2.1.4",
     "bootstrap-sass": "3.3.7",
     "components-font-awesome": "*",
     "instafeed.js": "^1.4.1"
