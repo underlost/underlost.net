@@ -12,11 +12,10 @@
 	<meta name="MobileOptimized" content="320">
 	<meta http-equiv="cleartype" content="on">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="white" />
 	<link rel="shortcut icon" href="/assets/ico/favicon.ico">
-	<link rel="stylesheet" href="/assets/css/underlost.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,100italic,300italic,400italic' rel='stylesheet' type='text/css'>
-	<link href='https://underlost.net/feed.xml' rel='alternate' type='application/rss+xml' title='underlost.net' />
+	<link rel="stylesheet" href="/assets/css/site.min.css">
+	<link href='https://underlost.net/projects.xml' rel='alternate' type='application/rss+xml' title='underlost.net' />
 	<link rel="canonical" href="https://underlost.net/job/" />
 	<link type="text/plain" rel="author" href="/humans.txt" />
 	<meta name="twitter:card" content="summary">
@@ -25,7 +24,6 @@
 	<meta name="twitter:url" content="https://underlost.net">
 	<meta name="twitter:title" content="Tyler / Underlost">
 	<meta name="twitter:description" content="I make web things. I also take photographs and play video games.">
-	<script type="text/javascript" src="/assets/js/modernizr.js"></script>
 	<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -36,109 +34,83 @@
 	ga('send', 'pageview');
 	</script>
 </head>
-	<body class="work">
-		<img class="sr-only" src="/assets/img/thumbnail.jpg" alt="underlost.net"><a name="top"></a>
-		<div id="wrapper">
-    <header role="masthead" id="underlost-info" class="site-head fadeRight layout-foreground">
-    <div class="site-head-inner">
-        <a class="logo" href="/"><img src="/assets/img/logo.png" width="32" height="32" alt="underlost logo"></a>
-        <h1 class="site-title"><a href="/" rel="home">Underlost</a></h1>
-        <p class="site-subtitle">is <a href="/about">Tyler Rilling</a></p>
-    </div>
-    <nav class="site-nav vertical">
-        <ul class="sections-nav list-unstyled">
-            <span class="selection"></span>
-            <li class="home-url selected">
-                <a class="pjax site-nav-home" data-section="home" href="/"><strong>Home</strong></a>
-            </li>
-            <li class="about-url">
-                <a class="pjax site-nav-about" data-section="colophon" href="/about/"><strong>About</strong></a>
-            </li>
-            <li class="portfolio-url">
-                <a class="pjax site-nav-portfolio" data-section="works" href="/portfolio/"><strong>Selected Work</strong></a>
-            </li>
-            <li class="contact-url">
-                <a class="pjax site-nav-contact" data-section="contact" href="/contact/"><strong>Contact</strong></a>
-            </li>
-            <li class="job-url">
-                <a class="pjax site-nav-job" data-section="job" href="/job/"><strong>Hire Me</strong></a>
-            </li>
-        </ul>
-    </nav>
-
+<body class="work">
+	<img class="sr-only" src="/assets/img/thumbnail.jpg" alt="underlost.net">
+    <div id="wrapper"><a name="top"></a>
+        <header role="masthead" id="underlost-info" class="site-header fadeRight layout-foreground">
+    <a class="logo" href="/"><img src="/assets/img/logo_alt.png" width="24" height="24" alt="underlost logo"></a>
+    <h1 class="site-title"><a href="/" rel="home">Underlost</a></h1>
+    <p class="site-subtitle">is Tyler Rilling</p>
 </header>
 
-    <div id="content">
-        <div id="work" class="content-section hidden">
-    <div class="content-inner">
-        <div id="classCard" class="content-panel fadeRight">
-            <div class="layout-single-column">
-                <p class="lead">Currently based in Seattle, I’m a creative developer &amp; UI designer with a passion for user experience.
-                    From sketch to design, coding to bug fixing, I do it all.</p>
-            </div>
-	    </div>
+<nav class="site-nav">
+    <a href="/" class="rings rings-medium">
+        <span class="ring zero portrait"></span>
+        <span class="ring one" data-animate="spin"></span>
+        <span class="ring two" data-animate="spin2x"></span>
+        <span class="ring three" data-animate="spin-alt2x"></span>
+        <span class="ring four" data-animate="spin"></span>
+        <span class="ring five" data-animate="spin-alt"></span>
+        <span class="ring six" data-animate="spin"></span>
+        <span class="ring seven"></span>
+    </a>
+    <ul class="sections-nav list-unstyled text-right">
+        <span class="selection"></span>
+        <li class="about-url selected">
+            <a class="pjax site-nav-about" data-section="colophon" href="/">About</a>
+        </li>
+        <li class="portfolio-url">
+            <a class="pjax site-nav-portfolio" data-section="works" href="/portfolio/">Selected Work</a>
+        </li>
+        <li class="contact-url">
+            <a class="pjax site-nav-contact" data-section="contact" href="/contact/">Contact</a>
+        </li>
+        <li class="job-url">
+            <a class="pjax site-nav-work" data-section="work" href="/job/">Hire Me</a>
+        </li>
+    </ul>
+</nav>
 
-        <div id="qualificationsCard">
-            <div class="content-panel fadeDown">
-                <div class="layout-single-column">
-                    
-                    <h3 id="qualifications">Qualifications</h3>
+        <main id="content"><div id="work" class="content-section hidden">
 
-<p>I am a web developer with over a decade of experience. I’m familiar with quite a lot of tools, programming languages, systems, and frameworks. To be honest, I’m a little obsessive about learning new things. Some of my skills range from HTML, CSS, and Javascript, to backend languages like Python and Ruby. I am also incredibly versatile with a number of web frameworks such as Django, Ruby on Rails, and CakePHP. I’m familiar with various server environments, both traditional configurations like LAMP, and cloud hosting such as Heroku or AWS. Working for various types of clients over the years has helped be develop skills that allow me to work well on my own, and equally well in teams.</p>
+    <div class="layout-single-column fadeRight">
+        <h2 class="heading"><span>Hire Me</span></h2>
 
-                </div>
-            </div><!-- /.content-panel -->
-    	</div>
+        <p class="lead">Currently based in Seattle, I’m a creative developer &amp; UI designer with a passion for user experience. From sketch to design, coding to bug fixing, I do it all.</p>
+    </div>
 
-    <div id="githubCard">
-        <div class="layout-single-column">
-            <p class="text-center">
-                <a class="btn btn-default btn-lg" href="/portfolio/" role="button">Selected Work</a>
-                <a class="btn btn-default btn-lg" href="https://github.com/underlost?tab=repositories" role="button"><i class="fa fa-github-alt"></i> Github</a>
-                <a class="btn btn-default btn-lg" href="https://medium.com/@underlost" role="button"><i class="fa fa-medium"></i> Medium</a>
-            </p>
+    <div class="layout-single-column fadeDown">
+        <h4 class="heading"><span>Sembia Studio</span></h4>
+        <p>I do most web development work under the name <a href="https://sembia.studio/">Sembia Studio</a> with several of my colleagues. If you would like to hire me, or for any of your web development or design enqueries, please send an email to <a href="mailto:tyler@sembia.studio?subject=Hello">tyler@sembia.studio</a>.</p>
+
+        <hr />
+
+        <h4 class="heading"><span>Jaded Gamer</span></h4>
+        <p>For video game related enquiries, please visit <a href="http://jadedgamer.com">JadedGamer.com</a>. Jaded Gamer specializes in virtual reality and mobile web app development.
+    </div>
+
+    <div class="layout-single-column fadeDown">
+        
+        <h3 id="qualifications">Qualifications</h3>
+
+<p>I am a web developer with over a decade of experience. I’m familiar with quite a lot of tools, programming languages, systems, and frameworks. To be honest, I’m a little obsessive about learning new things. Some of my skills range from HTML, CSS, and Javascript, to backend languages like Python and Ruby. I am also incredibly versatile with a number of web frameworks such as Django, Ruby on Rails, and Laravel. I’m familiar with various server environments, both traditional configurations like LAMP, and cloud hosting such as Heroku or AWS. Working for various types of clients over the years has helped be develop skills that allow me to work well on my own, and equally well in teams.</p>
+
+
+        <div class="image-wrap">
+            <img class="img-responsive" alt="Workspace" src="/assets/img/job/bg_02.jpg" />
         </div>
     </div>
 
-    <div id="lookingforCard">
-        <div class="content-panel">
-            <div class="layout-single-column">
-                
-                <h3 id="what-im-looking-for">What I’m Looking For</h3>
 
-<p>I’m looking for a job located in, or around the Seattle (Washington) area. I am looking to secure a web engineering position with a well established organization where I can effectively utilize my expertise in web development. I want something which enables me to make a positive contribution to the organization. Salary is negotiably, but I am looking for a full time position. I am <strong>not</strong> looking for part time or freelance work at this time.</p>
-
-<hr />
-
-<h3 id="resume">Resume</h3>
-
-<p><a href="/downloads/letter_resume.pdf"><i class="fa fa-download"></i> Cover Letter + Resume (PDF)</a><br />
-<a href="/downloads/resume.pdf"><i class="fa fa-download"></i> Resume (PDF)</a></p>
-
-            </div>
-        </div><!-- /.content-panel -->
-    </div>
 </div>
-</div>
+</main>
+        <footer class="site-footer">
+    <small class="copyright">Copyright &copy; 2002–2017. Last <a href="https://github.com/underlost/underlost.net/">updated March 07, 2017</a>.</small>
+</footer>
 
     </div>
+<script type="text/javascript" src="/assets/js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/site.min.js"></script>
 
-    <footer class="site-footer">
-        <div class="inner">
-            <ul class="list-inline secondary-nav">
-                <li><a class="logo" href="/"><img src="/assets/img/logo.png" width="32" height="32" alt="underlost logo"></a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/portfolio/">Selected Work</a></li>
-                <li><a href="/contact/">Contact</a></li>
-            </ul>
-            <small class="copyright">Copyright &copy; 2002–2015. Last <a href="https://github.com/underlost/underlost.net/">updated July 03, 2015</a>.</small>
-        </div>
-    </footer>
-
-</div>
-
-		<script type="text/javascript" src="/assets/js/libs/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="/assets/js/underlost.min.js"></script>
-
-	</body>
+</body>
 </html>
