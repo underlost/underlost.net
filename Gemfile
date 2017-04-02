@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.0'
 
-gem 'jekyll', '3.4.1'
+gem 'jekyll', '3.4.3'
 gem 'jekyll-sitemap', '>=1.0.0'
 gem 'RedCloth', '>=4.3.2'
 gem 'kramdown', '>=1.13.2'
