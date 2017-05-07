@@ -40,12 +40,12 @@ exclude: [
  ]
 
 # Custom vars
-current_version:  4.0.0
+current_version:  4.1.0
 repo: https://github.com/underlost/underlost.net
 site: https://underlost.net/
 url: https://underlost.net
 author: Tyler Rilling
-description: I make web things. I also take photographs and play video games.
+description: Python Hacker & Pixel Pusher.
 
 blog: /blog/
 blog_title: Underlost

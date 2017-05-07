@@ -5,7 +5,14 @@ $site-secondary: #ff00bb;
 $site-secondary-alt: #00ff00;
 $site-highlight: #FFF200;
 
-@import "bootstrap/bootstrap";
+// Bootstrap overrides
+$brand-primary: #333 !default;
+$font-family-sans-serif: "proxima-nova", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace:  "ubuntu-mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$headings-font-family:   $font-family-monospace;
+$grid-gutter-width-base:     20px !default;
+
+@import "bootstrap4/bootstrap";
 @import "font-awesome/font-awesome";
 
 @import "site/pace";

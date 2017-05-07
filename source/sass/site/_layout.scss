@@ -9,7 +9,7 @@ body { background-image: url('../img/bg.gif'); }
         margin: 0;
         overflow: hidden;
     }
-    #content { overflow: hidden; }
+    //#content { overflow: hidden; }
 }
 
 .layout-single-column {
@@ -55,6 +55,7 @@ body { background-image: url('../img/bg.gif'); }
         .img-responsive {
             position: relative;
             z-index: 10;
+            max-width: 100%;
         }
 
         &:before {
