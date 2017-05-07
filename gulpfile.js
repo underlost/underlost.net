@@ -216,7 +216,7 @@ gulp.task('build', function(callback) {
 // Deploy to github
 gulp.task('github', function(callback) {
     runSequence(
-        ['clean', 'build'], ['jekyll'], 'github-deploy', callback
+        'clean', 'build', 'jekyll', 'github-deploy', callback
     );
 });
 
