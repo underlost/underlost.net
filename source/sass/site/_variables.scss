@@ -1,0 +1,22 @@
+//Override bootstrap variables
+
+//Colors:
+$pace-color: #00FFFF;
+$site-primary: #00FFFF;
+$site-secondary: #ff00bb;
+$site-secondary-alt: #00ff00;
+$site-highlight: #FFF200;
+$white: #fff;
+
+// Bootstrap overrides
+$brand-primary: #333 !default;
+$font-family-sans-serif: "proxima-nova", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace:  "ubuntu-mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$headings-font-family:   $font-family-monospace;
+$grid-gutter-width-base:     20px !default;
+$border-radius: 0;
+
+$pagination-color:                     $white !default;
+$pagination-bg:                        $brand-primary !default;
+$pagination-border-width:              1px !default;
+$pagination-border-color:              transparent !default;

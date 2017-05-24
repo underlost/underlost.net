@@ -8,7 +8,7 @@ rgba: 0,94,106,.5
 image: /assets/img/portfolio/gmachina.jpg
 permalink: /portfolio/gmachina/
 date: 2015-01-01
-previous_page: winecountry
+previous_page: ilfi
 next_page: replica
 ---
 

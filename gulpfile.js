@@ -1,6 +1,6 @@
 /*!
  * UnderTasker
- * Copyright 2016 Tyler Rilling
+ * Copyright 2017 Tyler Rilling
  * Licensed under MIT (https://github.com/underlost/Undertasker/blob/master/LICENSE)
  */
 
@@ -20,7 +20,6 @@ var gulp   = require('gulp'),
     runSequence = require('run-sequence');
     coffee = require('gulp-coffee');
     gutil = require('gulp-util');
-    bower = require('gulp-bower');
     imagemin = require('gulp-imagemin');
     ghPages = require('gulp-gh-pages');
     git = require('gulp-deploy-git');
@@ -51,7 +50,7 @@ gulp.task('copy-dist', function() {
 gulp.task('copy-fonts', function() {
     gulp.src('source/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
     .pipe(gulp.dest('dist/fonts'));
-    gulp.src('bower_components/components-font-awesome/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
+    gulp.src('node_modules/components-font-awesome/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
     .pipe(gulp.dest('dist/fonts'));
 });
 
@@ -62,27 +61,17 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest('dist/img'))
 });
 
-// Copy Bower components
-gulp.task('copy-bower', function() {
-    gulp.src([
-        'bower_components/jquery/dist/jquery.min.js',
-    ])
-    .pipe(gulp.dest('dist/js/lib'));
-    gulp.src('bower_components/components-font-awesome/scss/**/*.*')
+// Copy Components
+gulp.task('copy-components', function() {
+    gulp.src('node_modules/components-font-awesome/scss/**/*.*')
     .pipe(gulp.dest('source/sass/font-awesome'));
-    gulp.src('bower_components/bootstrap-sass/assets/stylesheets/**/*.*')
+    gulp.src('node_modules/bootstrap-sass/assets/stylesheets/**/*.*')
     .pipe(gulp.dest('source/sass/bootstrap'));
 });
 
-// Runs Bower update
-gulp.task('bower-update', function() {
-    return bower({ cmd: 'update'});
-});
-
-// Bower tasks
-gulp.task('bower', function(callback) {
+gulp.task('install', function(callback) {
     runSequence(
-        'bower-update', 'copy-bower', callback
+        'copy-components', callback
     );
 });
 
@@ -113,21 +102,21 @@ gulp.task('build-css', function() {
 // Concat All JS into unminified single file
 gulp.task('concat-js', function() {
     return gulp.src([
-        'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/tether/dist/js/tether.min.js',
-        'bower_components/bootstrap/js/dist/util.js',
-        'bower_components/bootstrap/js/dist/alert.js',
-        'bower_components/bootstrap/js/dist/button.js',
-        // 'bower_components/bootstrap/js/dist/carousel.js',
-        'bower_components/bootstrap/js/dist/collapse.js',
-        'bower_components/bootstrap/js/dist/dropdown.js',
-        // 'bower_components/bootstrap/js/dist/modal.js',
-        'bower_components/bootstrap/js/dist/tooltip.js',
-        'bower_components/bootstrap/js/dist/popover.js',
-        // 'bower_components/bootstrap/js/dist/scrollspy.js',
-        // 'bower_components/bootstrap/js/dist/tab.js',
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/tether/dist/js/tether.min.js',
+        'node_modules/bootstrap/js/dist/util.js',
+        'node_modules/bootstrap/js/dist/alert.js',
+        'node_modules/bootstrap/js/dist/button.js',
+        // 'node_modules/bootstrap/js/dist/carousel.js',
+        'node_modules/bootstrap/js/dist/collapse.js',
+        'node_modules/bootstrap/js/dist/dropdown.js',
+        // 'node_modules/bootstrap/js/dist/modal.js',
+        'node_modules/bootstrap/js/dist/tooltip.js',
+        'node_modules/bootstrap/js/dist/popover.js',
+        // 'node_modules/bootstrap/js/dist/scrollspy.js',
+        // 'node_modules/bootstrap/js/dist/tab.js',
         // 'source/js/instantclick.min.js',
-        'bower_components/instafeed.js/instafeed.min.js',
+        'node_modules/instafeed.js/instafeed.min.js',
 
         'source/js/jquery.colorbox.js',
         'source/js/pace.min.js',

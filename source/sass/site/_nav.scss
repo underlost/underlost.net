@@ -38,6 +38,14 @@
     }
 }
 
+.page-link {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 100;
+    margin-right: 2px;
+}
+
+
 @media all and (min-width:801px) {
     .site-nav {
         .sections-nav {

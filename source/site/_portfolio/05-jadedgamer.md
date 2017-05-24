@@ -26,4 +26,4 @@ Jaded Gamer was a video game news site aggregator, run and managed completely in
 </ul>
 
 #### Update
-The Jaded Gamer service has since been retired as of September 1st, 2016. Jaded Gamer as since relaunched as a mobile development company. The original news site aggregator will live on in some form in 2017.
+The Jaded Gamer service has since been retired as of September 1st, 2016. Jaded Gamer has since relaunched as a mobile development company. The original news site aggregator will live on in some form in 2017.
