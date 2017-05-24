@@ -6,8 +6,8 @@
     <atom:link href="http://underlost.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>underlost.net</description>
     <language>en-us</language>
-    <pubDate>Sat, 06 May 2017 20:54:39 -0700</pubDate>
-    <lastBuildDate>Sat, 06 May 2017 20:54:39 -0700</lastBuildDate>
+    <pubDate>Tue, 23 May 2017 19:38:28 -0700</pubDate>
+    <lastBuildDate>Tue, 23 May 2017 19:38:28 -0700</lastBuildDate>
 
     
     <item>
@@ -17,24 +17,6 @@
       <author>Tyler@underlost.net (Tyler Rilling)</author>
       <guid>http://underlost.net/portfolio/ilfi</guid>
       <description>A Drupal to WordPress migration &amp; custom theme</description>
-    </item>
-    
-    <item>
-      <title>VR App Store</title>
-      <link>http://underlost.net/portfolio/vrappstore/</link>
-      <pubDate>Sat, 01 Oct 2016 00:00:00 -0700</pubDate>
-      <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>http://underlost.net/portfolio/vrappstore</guid>
-      <description>Vue.JS based web app</description>
-    </item>
-    
-    <item>
-      <title>WineCountry</title>
-      <link>http://underlost.net/portfolio/winecountry/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 -0700</pubDate>
-      <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>http://underlost.net/portfolio/winecountry</guid>
-      <description>A CakePHP / WordPress multisite</description>
     </item>
     
     <item>
