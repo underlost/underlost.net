@@ -36,29 +36,31 @@ var gulp   = require('gulp'),
 // Cleans the web dist folder
 gulp.task('clean', function () {
     del(['dist/']);
-    del(['source/site/dist/**/*']);
+    del(['source/site/assets/img/*']);
+    del(['source/site/assets/js/*']);
+    del(['source/site/assets/css/*']);
     del(['.publish']);
 });
 
-// Copy images
+// Copy dist
 gulp.task('copy-dist', function() {
-    gulp.src('dist/**/*.*')
-    .pipe(gulp.dest('source/site/assets'));
+    gulp.src('source/site/assets/**/*.*')
+    .pipe(gulp.dest('dist'));
 });
 
 // Copy fonts task
 gulp.task('copy-fonts', function() {
     gulp.src('source/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
-    .pipe(gulp.dest('dist/fonts'));
+    .pipe(gulp.dest('source/site/assets/fonts'));
     gulp.src('node_modules/components-font-awesome/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
-    .pipe(gulp.dest('dist/fonts'));
+    .pipe(gulp.dest('source/site/assets/fonts'));
 });
 
 // Minify Images
 gulp.task('imagemin', function() {
-    gulp.src('source/img/**/*.{jpg,png,gif,ico}')
-	.pipe(imagemin())
-	.pipe(gulp.dest('dist/img'))
+  gulp.src('source/img/**/*.{jpg,png,gif,ico}')
+  .pipe(imagemin())
+  .pipe(gulp.dest('source/site/assets/img'));
 });
 
 // Copy Components
@@ -92,10 +94,10 @@ gulp.task('build-css', function() {
         browsers: ['last 2 versions'],
         cascade: false
     }))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('source/site/assets/css'))
     .pipe(cleanCSS({compatibility: 'ie9'}))
     .pipe(rename('site.min.css'))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('source/site/assets/css'))
     .on('error', sass.logError)
 });
 
@@ -103,24 +105,9 @@ gulp.task('build-css', function() {
 gulp.task('concat-js', function() {
     return gulp.src([
         'node_modules/jquery/dist/jquery.min.js',
-        'node_modules/tether/dist/js/tether.min.js',
-        'node_modules/bootstrap/js/dist/util.js',
-        'node_modules/bootstrap/js/dist/alert.js',
-        'node_modules/bootstrap/js/dist/button.js',
-        // 'node_modules/bootstrap/js/dist/carousel.js',
-        'node_modules/bootstrap/js/dist/collapse.js',
-        'node_modules/bootstrap/js/dist/dropdown.js',
-        // 'node_modules/bootstrap/js/dist/modal.js',
-        'node_modules/bootstrap/js/dist/tooltip.js',
-        'node_modules/bootstrap/js/dist/popover.js',
-        // 'node_modules/bootstrap/js/dist/scrollspy.js',
-        // 'node_modules/bootstrap/js/dist/tab.js',
-        // 'source/js/instantclick.min.js',
-        'node_modules/instafeed.js/instafeed.min.js',
-
+        'source/js/vline.jquery.js',
         'source/js/jquery.colorbox.js',
         'source/js/pace.min.js',
-        'source/js/jquery.lettering-0.7.0.js',
         'source/js/jquery.history.min.js',
         'source/js/handler.js',
 
@@ -130,7 +117,7 @@ gulp.task('concat-js', function() {
     .pipe(sourcemaps.init())
         .pipe(concat('site.js'))
         .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('source/site/assets/js'));
 });
 
 // configure the jshint task
@@ -142,10 +129,10 @@ gulp.task('jshint', function() {
 
 // Shrinks all the js
 gulp.task('shrink-js', function() {
-    return gulp.src('dist/js/site.js')
+    return gulp.src('source/site/assets/js/site.js')
     .pipe(uglify())
     .pipe(rename('site.min.js'))
-    .pipe(gulp.dest('dist/js'))
+    .pipe(gulp.dest('source/site/assets/js'))
 });
 
 // Default Javascript build task

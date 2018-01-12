@@ -1,17 +1,8 @@
 ---
 layout: default
-title: Selected Work
-deck: projects I've Worked on
-slug: portfolio
 ---
 
-{% if page.color %}
-<style type="text/css">
-    h2.heading:before { background-color: RGBA({{ page.rgba }}); }
-</style>
-{% endif %}
-
-<div class="layout-single-column fadeRight">
+<div class="layout-single-column fadeRight main-content">
     <h2 class="heading"><span>{{page.title}}</span></h2>
     {{content}}
     {% if page.next_page or page.previous_page  %}
@@ -22,20 +13,31 @@ slug: portfolio
         </ul>
     </nav>
     {% endif %}
-</div>
 
-{% if page.show_gallery %}
-<div class="layout-single-column fadeLeft">
+<div class="layout-single-column fadeLeft mt-5">
+  <h2 class="heading"><span>Client Work</span></h2>
     <div id="recent-portfolio-container" class="portfolio-picks">
-        <ul class="list-inline row clearfix" id="recent-portfolio">
+        <ul class="list-unstyled row clearfix" id="recent-portfolio">
         {% for post in site.portfolio reversed %}
             <li class="col-6 portfolio-item">
                 <a class="thumbnail img-rounded" alt="{{ post.title }}" href="/portfolio/{{ post.slug }}/" style="background-image: url('{{ post.image }}');">
-                    <p><span>{{ post.title }}:</span> <small>{{ post.deck }}</small></p>
+                    <p><span>{{ post.title }}:</span> <small>{{ post.description }}</small></p>
                 </a>
             </li>
         {% endfor %}
         </ul>
     </div>
+
+  <h2 class="heading"><span>Personal Projects</span></h2>
+  <div id="recent-project-container" class="portfolio-picks">
+      <ul class="list-unstyled row clearfix" id="recent-portfolio">
+      {% for post in site.projects reversed %}
+          <li class="col-6 portfolio-item">
+              <a class="thumbnail img-rounded" alt="{{ post.title }}" href="/portfolio/{{ post.slug }}/" style="background-image: url('{{ post.image }}');">
+                  <p><span>{{ post.title }}:</span> <small>{{ post.description }}</small></p>
+              </a>
+          </li>
+      {% endfor %}
+      </ul>
+  </div>
 </div>
-{% endif %}

@@ -2,12 +2,12 @@ safe: false
 port: 9005
 base-url:    /
 
-gems:
+plugins:
   - jekyll-sitemap
 
 source:      ./source/site
 destination: ./.publish
-plugins_dir:     ./source/site/_plugins
+plugins_dir: ./source/site/_plugins
 
 future:      true
 lsi:         false
@@ -28,11 +28,18 @@ kramdown:
     line_numbers: false
 
 collections:
+  projects:
+    label: projects
+    output: true
+    relative_directory: portfolio/:slug
+    directory: portfolio/:slug
+
   portfolio:
     label: portfolio
     output: true
     relative_directory: portfolio/:slug
     directory: portfolio/:slug
+
 
 exclude: [
   README.md,

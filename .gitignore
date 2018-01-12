@@ -43,3 +43,4 @@ _site
 tmp
 log
 .env
+dist

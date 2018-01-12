@@ -29,95 +29,6 @@ function kittySlide() {
   setInterval(kitty, 3000);
 };
 
-function portfolioShowcase(){
-    $("ul#recent-portfolio li a").on('mouseover', function() {
-        $("ul#recent-portfolio li a").not(this).animate({
-            width: "105px"
-        }, {
-            queue: false,
-            duration: 400
-        });
-        $("ul#recent-portfolio li a:last").not(this).animate({
-            width: "106px"
-        }, {
-            queue: false,
-            duration: 400
-        });
-        $("ul#recent-portfolio li a:first").not(this).animate({
-            width: "106px"
-        }, {
-            queue: false,
-            duration: 400
-        });
-        $("ul#recent-portfolio li a").not(this).animate({
-            opacity: ".9"
-        }, {
-            queue: false,
-            duration: 400
-        });
-        if ($(this).hasClass('last')) {
-            $(this).animate({
-                width: "250px"
-            }, {
-                queue: false,
-                duration: 400
-            });
-        } else {
-            $(this).animate({
-                width: "249px"
-            }, {
-                queue: false,
-                duration: 400
-            });
-        };
-        $(this).animate({
-            opacity: "1.0"
-        }, {
-            queue: false,
-            duration: 400
-        });
-        $('#recent-portfolio-container h2').html($(this).attr('alt'));
-        $('#recent-portfolio-container h2').addClass('active');
-    });
-    if ($("div.portfolio-picks ul#recent-portfolio li a").length > 0) {
-        $("div.portfolio-picks ul#recent-portfolio li a").on('mouseout', function() {
-            $('#recent-portfolio-container h2').removeClass('active');
-            $('#recent-portfolio-container h2').html('Selected Work');
-            $("div.portfolio-picks ul#recent-portfolio li a:first").mouseover()
-        });
-    } else {
-        $("ul#recent-portfolio li a").on('mouseout', function(e) {
-            $('#recent-portfolio-container h2').removeClass('active');
-            $('#recent-portfolio-container h2').html('Selected Work');
-            $("ul#recent-portfolio li a").animate({
-                opacity: "1.0"
-            }, {
-                queue: false,
-                duration: 400
-            });
-            $("ul#recent-portfolio li a").animate({
-                width: "100px"
-            }, {
-                queue: false,
-                duration: 400
-            });
-            $("ul#recent-portfolio li a:last").animate({
-                width: "101px"
-            }, {
-                queue: false,
-                duration: 400
-            });
-            $("ul#recent-portfolio li a:first").animate({
-                width: "101px"
-            }, {
-                queue: false,
-                duration: 400
-            });
-        });
-    }
-    $("div.portfolio-picks ul#recent-portfolio li a:first").mouseover()
-};
-
 function fullscreener(_container) {
     _container.each(function () {
         var _this = $(this);
@@ -141,88 +52,22 @@ function fullscreener(_container) {
     });
 }
 
-(function(d) {
-    var config = {
-      kitId: 'bci8gpa',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-})(document);
-
-(function($){
-    //define methods of the plugin
-    var methods = {
-        init: function(options){
-            //set up some default values
-            var defaults = {
-                'side' : 'left'
-            }
-            //for each element with vLine applied
-            return this.each(function(){
-                //override defaults with user defined options
-                var settings = $.extend({}, defaults, options);
-                //cache variable for performance
-                var $this = $(this);
-                //wrap the UL with a positioned object just in case
-                // $this.wrap('<div style="position:relative;"></div>');
-                //test to see if element exists, if not, append it
-                if(!$('.vLine').length){
-                    //parent is the ul we wrapped
-                    //insert the vLine element into the document
-                    $this.parent().append($('<div style="position:absolute;top: -200px;" class="vLine"></div>'));
-                    $('.vLine').css('right', '0');
-
-                }
-                //define the hover functions for each li
-                $this.find('li').hover(function(e){
-                    $('.vLine').stop().animate({
-                        top: $(this).position().top
-                    },200);
-                }, function(e){
-                    //we want to reset the line if this is met
-                    if(['UL', 'LI'].indexOf(e.toElement.tagName) == -1){
-                        $('.vLine').stop().animate({
-                            top: '-200px'
-                        });
-                    }
-                });
-            });
-        }
-    }
-
-    //make it a function!
-    $.fn.vLine = function( method ) {
-        if (methods[method]) {
-            return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
-        } else if (typeof method === 'object' || !method) {
-            return methods.init.apply(this, arguments);
-        } else {
-            $.error( 'Method ' +  method + ' does not exist on jQuery.vLine' );
-        }
-    };
-})(jQuery);
-
-
-(function( $ ) {
-    $.fn.activeNavigation = function(selector) {
-        var pathname = window.location.pathname
-        var hrefs = []
-        $(selector).find("a").each(function(){
-            if (pathname.indexOf($(this).attr("href")) > -1)
-                hrefs.push($(this))
-        })
-        if (hrefs.length) {
-            hrefs.sort(function(a,b){
-                return b.attr("href").length - a.attr("href").length
-            })
-            hrefs[0].closest('li').addClass("active").siblings().removeClass("active");
-        }
-    };
-})(jQuery);
-
-
 (function ($) {
+  $.fn.activeNavigation = function(selector) {
+      var pathname = window.location.pathname
+      var hrefs = []
+      $(selector).find("a").each(function(){
+          if (pathname.indexOf($(this).attr("href")) > -1)
+              hrefs.push($(this))
+      })
+      if (hrefs.length) {
+          hrefs.sort(function(a,b){
+              return b.attr("href").length - a.attr("href").length
+          })
+          hrefs[0].closest('li').addClass("active").siblings().removeClass("active");
+      }
+  };
+
     var $document = $(document);
     if (!History.enabled) {
         return false;
@@ -255,10 +100,8 @@ function fullscreener(_container) {
         // Pace.on("done", function(){$(".content-section").removeClass("hidden").addClass("fadeIn");});
         animateClasses();
         fullscreener($('.image-full'));
-        // portfolioShowcase();
         $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
         $('.sections-nav').vLine();
-        $(".lithium-lettering").lettering();
         $('.content-section').removeClass("hidden").addClass("fadeIn");
         $(document).activeNavigation(".sections-nav");
         $document.on('click', 'a:internal', function (event) {
@@ -302,7 +145,6 @@ function fullscreener(_container) {
                 $("a.lightbox").colorbox({ transition:"elastic", maxWidth:"98%", maxHeight:"98%" });
                 // portfolioShowcase();
                 $('.sections-nav').vLine();
-                $(".lithium-lettering").lettering();
                 $(document).activeNavigation(".sections-nav");
                 $('.content-section').removeClass("hidden").addClass("fadeIn");
             });

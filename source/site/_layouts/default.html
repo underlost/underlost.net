@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 	<meta name="author" content="Tyler Rilling" />
-	<meta name="description" content="{{site.description}}" />
+	<meta name="description" content="{{page.description}}" />
 	<meta name="copyright" content="&copy; Copyright 2002 to Present"/>
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
@@ -18,12 +18,18 @@
 	<link href='{{site.url}}/projects.xml' rel='alternate' type='application/rss+xml' title='underlost.net' />
 	<link rel="canonical" href="{{site.url}}{{ page.url | replace:'index.html','' }}" />
 	<link type="text/plain" rel="author" href="/humans.txt" />
+  <meta property="og:url" content="{{site.url}}{{ page.url | replace:'index.html','' }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tyler Rilling / {{ page.title }}" />
+  <meta property="og:description" content="{{page.description}}" />
+  <meta property="og:image" content="{{site.url}}/assets/img/thumbnail.jpg" />
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@underlost">
 	<meta name="twitter:creator" content="@underlost">
 	<meta name="twitter:url" content="https://underlost.net">
 	<meta name="twitter:title" content="Tyler / Underlost">
 	<meta name="twitter:description" content="{{site.description}}">
+
 	<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -1,3 +1,15 @@
 ### Qualifications
 
-I am a web developer with over a decade of experience. I’m familiar with quite a lot of tools, programming languages, systems, and frameworks. To be honest, I’m a little obsessive about learning new things. Some of my skills range from HTML, CSS, and Javascript, to backend languages like Python and Ruby. I am also incredibly versatile with a number of web frameworks such as Django, Ruby on Rails, and Laravel. I'm familiar with various server environments, both traditional configurations like LAMP, and cloud hosting such as Heroku or AWS. Working for various types of clients over the years has helped be develop skills that allow me to work well on my own, and equally well in teams.
+I'm skilled with and can provide assistance in the following:
+
+* HTML5
+* LESS / SCSS / SASS
+* Javascript / jQuery
+* Vue.JS
+* ReactJS
+* Django Web framework
+* Python 2.7, 3.6
+* PHP
+* WordPress & WooCommerce
+* Heroku / AWS cloud hosting
+* Amazon Lambda
