@@ -6,7 +6,7 @@ description: A blog about video games and pop culture
 color: 919799
 rgba: 145,154,153,.25
 image: /assets/img/portfolio/lifewellplayed.jpg
-permalink: /portfolio/replica/
+permalink: /portfolio/lifewellplayed/
 date: 2014-06-01
 previous_page: undertasker
 next_page: jadedgamer

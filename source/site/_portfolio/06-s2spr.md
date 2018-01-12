@@ -8,6 +8,6 @@ rgba: 239,73,0,.75
 image: /assets/img/portfolio/s2spr.jpg
 permalink: /portfolio/s2spr/
 date: 2017-11-01
-previous_page: tanji
+previous_page: ilfi
 next_page: wonderstream
 ---
