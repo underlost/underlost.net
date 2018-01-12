@@ -6,7 +6,7 @@ description: 'Video Game News Aggregator'
 color: 57ad68
 rgba: 87,173,104,.5
 image: /assets/img/portfolio/jaded.jpg
-permalink: /projects/jadedgamer/
+permalink: /portfolio/jadedgamer/
 date: 2014-05-01
 previous_page: lifewellplayed
 next_page: gmachina

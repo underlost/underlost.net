@@ -5,7 +5,7 @@ slug: undertasker
 description: Helping you bootstrap your web site/app using a Gulp &amp; Node.js stack
 color: 919799
 image: /assets/img/portfolio/undertasker.jpg
-permalink: /projects/undertasker/
+permalink: /portfolio/undertasker/
 date: 2014-06-01
 previous_page: replica
 next_page: jadedgamer

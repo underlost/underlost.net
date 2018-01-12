@@ -6,7 +6,7 @@ description: 'Backpack viewer for Valve Web API'
 color: 1b2638
 rgba: 27,38,56,.75
 image: /assets/img/portfolio/vapor.jpg
-permalink: /projects/vapor/
+permalink: /portfolio/vapor/
 date: 2014-03-01
 previous_page: gmachina
 next_page: gamernews
