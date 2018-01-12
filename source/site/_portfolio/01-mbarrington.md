@@ -9,7 +9,7 @@ image: /assets/img/portfolio/mbarr.jpg
 permalink: /portfolio/mbarrington/
 date: 2014-01-01
 previous_page: designcor
-next_page: replica
+next_page: equire
 show_gallery: False
 ---
 

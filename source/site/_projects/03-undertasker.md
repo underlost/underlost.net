@@ -7,7 +7,7 @@ color: 919799
 image: /assets/img/portfolio/undertasker.jpg
 permalink: /portfolio/undertasker/
 date: 2014-06-01
-previous_page: replica
+previous_page: lifewellplayed
 next_page: jadedgamer
 ---
 

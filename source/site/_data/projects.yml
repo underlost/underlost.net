@@ -1,8 +1,8 @@
-- title: Replica CMS
-  slug: replica
+- title: A Life Well Played
+  slug: lifewellplayed
   deck: 'Django/Python Content Management System'
   color: '919799'
-  image: /assets/img/portfolio/replica.jpg
+  image: /assets/img/portfolio/lifewellplayed.jpg
 
 - title: Jaded Gamer
   slug: jadedgamer
