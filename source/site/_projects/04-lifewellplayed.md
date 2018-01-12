@@ -1,7 +1,7 @@
 ---
 layout: portfolio_item
 title: A Life Well Played
-slug: replica
+slug: lifewellplayed
 description: A blog about video games and pop culture
 color: 919799
 rgba: 145,154,153,.25
