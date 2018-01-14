@@ -11,3 +11,7 @@ date: 2017-11-01
 previous_page: ilfi
 next_page: wonderstream
 ---
+
+S2SPR was another custom WordPress in which I partnered with [Wildern](http://hellowildern.com).
+
+The theme features over 20 custom shortcodes and a modified version of Visual Composer to allow editors to easily build out pages and manage content with a unique and custom feel.
