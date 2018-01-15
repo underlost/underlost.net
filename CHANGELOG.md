@@ -1,3 +1,9 @@
+###4.3.0 (01/14/2018)
+* Updated footer
+* Updated bootstrap
+* Changed the way pages are laid out in Jekyll.
+* Updated portfolio.
+
 ### 4.2.0 (05/23/2017)
 * Started a Changelog
 * Removed Bower, moved everything to Yarn/package.json
