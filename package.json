@@ -1,7 +1,7 @@
 {
     "name": "underlost.net",
     "slug": "underlost",
-    "version": "4.3.0",
+    "version": "5.0.0",
     "description": "underlost.net website",
     "main": "gulpfile.js",
     "scripts": {
@@ -19,9 +19,9 @@
         "gulp-sass": ">=2.0.4",
         "gulp-notify": "~3.2.0",
         "gulp-jshint": ">=2.1.0",
-        "gulp-sourcemaps": ">=2.6.3",
-        "gulp-autoprefixer": ">=4.1.0",
-        "gulp-clean-css": ">=3.9.2",
+        "gulp-sourcemaps": ">=2.6.4",
+        "gulp-autoprefixer": ">=5.0.0",
+        "gulp-clean-css": ">=3.9.3",
         "gulp-rename": ">=1.2.2",
         "del": ">=3.0.0",
         "jshint-stylish": ">=2.0.1",
@@ -33,12 +33,12 @@
         "gulp-gh-pages": "^0.5.3",
         "gulp-imagemin": ">=4.1.0",
         "jshint": ">=2.9.5",
-        "browser-sync": "^2.23.5",
+        "browser-sync": "^2.23.6",
         "gulp-load-plugins": "~1.5.0",
-        "jquery": "^3.2.1",
-        "bootstrap": "4.0.0-beta.3",
+        "jquery": "^3.3.1",
+        "bootstrap": "4.0.0",
         "popper.js" : "^1.12.3",
-        "components-font-awesome": "*",
+        "components-font-awesome": "5.0.6",
         "instafeed.js": "^1.4.1"
     },
     "repository": {
@@ -46,7 +46,7 @@
         "url": "https://github.com/underlost/underlost.net.git",
         "ssh": "git@github.com:underlost/underlost.net.git"
     },
-    "author": "Tyler Rilling (https://underlost.net/)",
+    "author": "Tyler Rilling (https://tyler.codes/)",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/underlost/underlost.net/issues"

@@ -1,3 +1,8 @@
+###5.0.0 (02/16/2018)
+* Updated bootstrap
+* Updated Font-Awesome
+* New design
+
 ###4.3.0 (01/14/2018)
 * Updated footer
 * Updated bootstrap

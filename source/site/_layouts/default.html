@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Tyler Rilling / {{ page.title }}</title>
+	<title>{{ page.title }}</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -18,11 +18,13 @@
 	<link href='{{site.url}}/projects.xml' rel='alternate' type='application/rss+xml' title='underlost.net' />
 	<link rel="canonical" href="{{site.url}}{{ page.url | replace:'index.html','' }}" />
 	<link type="text/plain" rel="author" href="/humans.txt" />
+  <!-- Opengraph -->
   <meta property="og:url" content="{{site.url}}{{ page.url | replace:'index.html','' }}" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Tyler Rilling / {{ page.title }}" />
   <meta property="og:description" content="{{page.description}}" />
   <meta property="og:image" content="{{site.url}}/assets/img/thumbnail.jpg" />
+  <!-- Twitter -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@underlost">
 	<meta name="twitter:creator" content="@underlost">
@@ -41,12 +43,10 @@
 	</script>
 </head>
 <body class="{{ page.slug }}">
-	<img class="sr-only" src="/assets/img/thumbnail.jpg" alt="underlost.net" title="Tyler Rilling / Underlost">
-    <div id="wrapper"><a name="top"></a>
-        {% include header.html %}
-        <main id="content">{{ content }}</main>
-        {% include footer.html %}
-    </div>
-{% include javascript.html %}
+  <img class="sr-only" src="/assets/img/thumbnail.jpg" alt="underlost.net" title="Underlost.net" />
+  <div id="wrapper"><a name="top"></a>
+    {{ content }}
+  </div>
+<script type="text/javascript" src="/assets/js/site.js"></script>
 </body>
 </html>

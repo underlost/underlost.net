@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.4.0'
 
-gem 'jekyll', '3.7.0'
-gem 'jekyll-sitemap', '>=1.1.1'
+gem 'jekyll', '3.7.3'
+gem 'jekyll-sitemap', '>=1.2.0'
 gem 'RedCloth', '>=4.3.2'
 gem 'kramdown', '>=1.16.2'
 gem 'rack-contrib', '2.0.1'

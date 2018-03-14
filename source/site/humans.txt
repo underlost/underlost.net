@@ -8,10 +8,10 @@
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    LESS
+    SCSS
     jQuery
     Jekyll
-    Bootstrap
+    Bootstrap 4
     AWS S3, Cloudfront
     Heroku
     Memcachier
@@ -19,4 +19,4 @@
     Paper Trail
     Unicorn (server)
     gulpfile
-    undertasker
+    UnderTasker

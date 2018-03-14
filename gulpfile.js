@@ -1,6 +1,6 @@
 /*!
  * UnderTasker
- * Copyright 2017 Tyler Rilling
+ * Copyright 2018 Tyler Rilling
  * Licensed under MIT (https://github.com/underlost/Undertasker/blob/master/LICENSE)
  */
 
@@ -52,7 +52,7 @@ gulp.task('copy-dist', function() {
 gulp.task('copy-fonts', function() {
     gulp.src('source/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
     .pipe(gulp.dest('source/site/assets/fonts'));
-    gulp.src('node_modules/components-font-awesome/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
+    gulp.src('node_modules/components-font-awesome/webfonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
     .pipe(gulp.dest('source/site/assets/fonts'));
 });
 
@@ -67,13 +67,13 @@ gulp.task('imagemin', function() {
 gulp.task('copy-components', function() {
     gulp.src('node_modules/components-font-awesome/scss/**/*.*')
     .pipe(gulp.dest('source/sass/font-awesome'));
-    gulp.src('node_modules/bootstrap-sass/assets/stylesheets/**/*.*')
+    gulp.src('node_modules/bootstrap/scss/**/*.*')
     .pipe(gulp.dest('source/sass/bootstrap'));
 });
 
 gulp.task('install', function(callback) {
     runSequence(
-        'copy-components', callback
+        'copy-components', 'copy-fonts', callback
     );
 });
 

@@ -1,0 +1,25 @@
+@keyframes noise-anim{
+$steps: 20;
+@for $i from 0 through $steps{
+  #{percentage($i*(1/$steps))}{
+   $r: random(500);
+   clip:rect( $r +px,9999px, $r + random(100)+px, 0);
+   left: random(10) - 5%;
+   filter: saturate(random(100)/5);
+   transform: scale(1 + random(3)/10);
+  }
+}
+}
+
+@keyframes noise-anim-2{
+$steps: 20;
+@for $i from 0 through $steps{
+  #{percentage($i*(1/$steps))}{
+   $k: random(500);
+   clip:rect( $k +px,9999px, $k + random(50)+px, 0);
+   left: random(10) - 5%;
+   transform: scale(1 + random(3)/10);
+   filter: saturate(random(100)/5);
+  }
+}
+}
