@@ -1,7 +1,7 @@
-###6.0.0 (02/16/2018)
-* Updated bootstrap
+###5.1.0 (04/28/2018)
+* Updated bootstrap to 4.1
 * New design
-* underlost is maybe now an undertale game?
+* underlost is probably not an Undertale game.
 
 ###5.0.0 (02/16/2018)
 * Updated bootstrap
