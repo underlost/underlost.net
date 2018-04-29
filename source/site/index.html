@@ -1,21 +1,20 @@
 ---
 layout: default
-title: underlost
-description: A website by Tyler Rilling
+title: underlost.net
+description: Underlost is not an Undertale fan game.
 slug: index
-
 ---
 
-<main id="site-index" class="site-content site-geocities align-items-center d-flex">
-  <div class="hero_container text-center w-100">
-    <div class="hero_logo mx-auto">
-      <div class="hero_logo__inner"></div>
-      <div class="hero_logo__inner2"></div>
+<main class="site-content text-center mx-auto mt-5 w-100">
+  <div class="hero_container mx-auto">
+    <div class="hero_logo mx-auto mb-3">
+      <h1 class="sr-only">underlost is not an undertale game.</h1>
     </div>
-    <div class="w-100 d-block">
-      <h3 class="geo_text">hello, welcome to my website.</h3>
+    <div class="w-100 px-4">
+      <p class="lead">Underlost is the online handle for <a href="https://tyler.codes/">Tyler Rilling</a>.<br />
+        It is not an Undertale game. <a href="/colophon/">Probably</a>.</p>
+        {% include social.html %}
+        <small class="copyright">Copyright &copy; 2002–2018. Last <a href="https://github.com/underlost/underlost.net/">updated {{ site.time | date: "%B %d, %Y" }}</a>.</small>
     </div>
-
   </div>
-  <div class="hero_overlay"></div>
 </main>

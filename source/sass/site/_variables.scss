@@ -2,6 +2,14 @@
 $fa-font-path: "../fonts" !default;
 
 //bootstrap
+$primary: #141738 !default;
+$secondary: #ec8680 !default;
+$body-bg: #e0e0dc !default;
+$body-color: #141738 !default;
+$link-color: $secondary !default;
+$font-family-sans-serif:  'Determination Sans Web', "Helvetica Neue", Arial, sans-serif !default;
+$breadcrumb-bg: $body-bg;
+$breadcrumb-padding-x: 0 !default;
 
 //misc
-$pace-color: #333;
+$pace-color: $primary;

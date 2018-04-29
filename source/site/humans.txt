@@ -11,7 +11,7 @@
     SCSS
     jQuery
     Jekyll
-    Bootstrap 4
+    Bootstrap 4.1
     AWS S3, Cloudfront
     Heroku
     Memcachier

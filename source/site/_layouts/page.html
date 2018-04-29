@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb mx-4 mx-md-5 px-0">
+    <li class="breadcrumb-item"><a data-section="home" href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{page.slug}}</li>
+  </ol>
+</nav>
+
+<main class="site-content d-block mt-5 px-4 pl-md-5">
+  <h1 class="h5 h-line">{{page.title}}</h1>
+  {{ content }}
+</main>
+
+{% include footer.html %}

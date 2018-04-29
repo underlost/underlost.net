@@ -5,7 +5,7 @@
 
 # underlost.net
 
-underlost.net is the personal site/portfolio of Tyler Rilling (that's me). It's a tiny Jekyll-based static site designed to work on Heroku, Github, and Amazon S3/CloudFront, but should work on any host you can upload the *_site* directory to.
+underlost.net is a project by [Tyler Rilling](https://tyler.codes) (that's me). It's a tiny Jekyll-based static site designed to work on Heroku, Github, and Amazon S3/CloudFront, but should work on any host you can upload the *.publish* directory to.
 
 ### Usage
 
