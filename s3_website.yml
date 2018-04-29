@@ -41,8 +41,8 @@ cloudfront_distribution_config:
 
 redirects:
     /about/: /
-
-#   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
+    /contact/: /
+    /work/: /
 
 # routing_rules:
 #   - condition:

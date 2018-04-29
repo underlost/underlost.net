@@ -3,6 +3,7 @@ layout: page
 title: About This site // underlost.net
 description: About underlost.net
 slug: colophon
+permalink: /colophon/
 ---
 
 Underlost.net used to be my portfolio website. I've since moved domains to [Tyler.Codes](https://tyler.codes). This was primarily due to people getting confused with another project with the same name, a fan made **Undertale** game.
