@@ -107,6 +107,9 @@ gulp.task('concat-js', function() {
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/pace-progress/pace.js',
     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+    'node_modules/raphael/raphael.js',
+    'source/js/abstract.js',
+    'source/js/site.js',
     // Coffeescript
     'source/js/coffee/*.*',
   ])

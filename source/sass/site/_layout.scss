@@ -32,3 +32,32 @@
     margin-bottom: 30px;
   }
 }
+
+#wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+#background-wrapper {
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  position:fixed;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#background {
+  top:50%;
+  left:50%;
+  z-index:1;
+  width:3000px;
+  height:3000px;
+  position:absolute;
+  svg {
+    margin:-50% 0 0 -50%;
+    display:block;
+  }
+}
