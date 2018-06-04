@@ -1,19 +1,15 @@
 [![Build Status](https://travis-ci.org/underlost/underlost.net.svg?branch=master)](https://travis-ci.org/underlost/underlost.net)
 [![Dependencies](https://david-dm.org/underlost/underlost.net.svg)](https://david-dm.org/underlost/underlost.net)
-[![Dependency Status](https://gemnasium.com/badges/github.com/underlost/underlost.net.svg)](https://gemnasium.com/github.com/underlost/underlost.net)
-
 
 # underlost.net
-
-underlost.net is a project by [Tyler Rilling](https://tyler.codes) (that's me). It's a tiny Jekyll-based static site designed to work on Heroku, Github, and Amazon S3/CloudFront, but should work on any host you can upload the *.publish* directory to.
+underlost.net is a project demo by [Tyler Rilling](https://tyler.codes) (that's me). It's a tiny Jekyll-based static site designed to work on Heroku, Github, and Amazon S3/CloudFront, but should work on any host you can upload the *.publish* directory to.
 
 ### Usage
-
 The site can be deployed multiple ways, and on multiple services. Since the site is Jekyll based, a simple `bundle exec jekyll serve --w` (assuming you use bundler) is only needed for local development, living at `localhost:4000/`.
 
-For testing purposes on various devices, a Github pages branch is set up at [lab.underlost.net](http://lab.underlost.net). Gulp is used to deploy there, with `gulp github`
+For testing purposes on various devices, a Github pages branch is set up at [lab.underlost.net](https://lab.underlost.net). Gulp is used to deploy there, with `gulp github`
 
-However, this setup was primarily designed to work with Heroku in mind. Upon doing a push to a heroku instance `(git push heroku master)`, it will be deployed running Unicorn as the web server. You can probably get away with using the default server to serve the site, but I wanted something that could withstand a little more traffic. The main reason behind using Heroku though, is so I can store the site's S3/cloundFront environmental variables in a safe and secure place, while still having the ability to work on the site from just about anywhere. And since the actual production site of [underlost.net](http://underlost.net) lives behind S3/CloudFront, it uses the S3_website gem for easy uploads:
+However, this setup was primarily designed to work with Heroku in mind. Upon doing a push to a heroku instance `(git push heroku master)`, it will be deployed running Unicorn as the web server. You can probably get away with using the default server to serve the site, but I wanted something that could withstand a little more traffic. The main reason behind using Heroku though, is so I can store the site's S3/cloundFront environmental variables in a safe and secure place, while still having the ability to work on the site from just about anywhere. And since the actual production site of [underlost.net](https://underlost.net) lives behind S3/CloudFront, it uses the S3_website gem for easy uploads:
 
 `heroku run s3_website push`
 
