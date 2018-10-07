@@ -1,0 +1,13 @@
+.site-header {
+  h2 {
+    color: darken($body-bg, 25%);
+    &::after {
+      content: '';
+      display: block;
+      height: 10px;
+      width: 60px;
+      background-color: $secondary;
+      margin: 40px 0 40px 0px;
+    }
+  }
+}

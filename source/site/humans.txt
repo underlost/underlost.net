@@ -3,20 +3,19 @@
 
 # TEAM
 
-    Tyler Rilling -- @underlost
+  Tyler Rilling -- @underlost
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
-    SCSS
-    jQuery
-    Jekyll
-    Bootstrap 4.1
-    AWS S3, Cloudfront
-    Heroku
-    Memcachier
-    New Relic
-    Paper Trail
-    Unicorn (server)
-    gulpfile
-    UnderTasker
+  HTML5, CSS3
+  SCSS
+  jQuery
+  Jekyll
+  Bootstrap 4
+  AWS S3, Cloudfront
+  Heroku
+  Memcachier
+  Paper Trail
+  Unicorn (server)
+  gulp.js
+  UnderTasker

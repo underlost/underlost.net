@@ -3,13 +3,16 @@ $fa-font-path: "../fonts" !default;
 
 //bootstrap
 $primary: #141738 !default;
-$secondary: #ec8680 !default;
+$secondary: #64833F !default;
 $body-bg: #e0e0dc !default;
 $body-color: #141738 !default;
 $link-color: $secondary !default;
-$font-family-sans-serif:  'Determination Sans Web', "Helvetica Neue", Arial, sans-serif !default;
-$breadcrumb-bg: $body-bg;
-$breadcrumb-padding-x: 0 !default;
+$font-size-base: 1.1rem !default;
+$font-family-sans-serif: "jaf-bernina-sans", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif: "skolar-latin", georgia, serif !default;
+$font-family-monospace: "ubuntu-mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
-//misc
+$headings-font-family: $font-family-serif !default;
+
+//pace
 $pace-color: $primary;
