@@ -1,0 +1,48 @@
+.site-header {
+  position: relative;
+  svg {
+    stroke-width: 1.5px;
+    max-height: 60px;
+  }
+  .svg-container {
+    position: relative;
+    &::after {
+      display: block;
+      content: '';
+      height: 4px;
+      width: 50px;
+      margin-top: 1rem;
+      margin-bottom: 2.5rem;
+      background-color: $primary;
+    }
+  }
+  .lead {
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 2.75px;
+  }
+}
+
+.site-header-sm {
+  svg {
+    height: 20px;
+    path {stroke-width: 2px; fill: $primary; stroke: $primary}
+  }
+  &::after {
+    display: block;
+    content: '';
+    height: 2px;
+    width: 50px;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    background-color: $primary;
+  }
+}
+
+.st0 {
+  stroke: #9588FC;
+  stroke-width: 1; // must set this for DrawSVG to work
+  stroke-miterlimit: 1;
+  stroke-linejoin: round; // makes the ends of the stroke rounded
+  visibility: hidden;
+}

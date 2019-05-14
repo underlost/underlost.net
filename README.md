@@ -1,5 +1,7 @@
-[![Build Status](https://travis-ci.org/underlost/underlost.net.svg?branch=master)](https://travis-ci.org/underlost/underlost.net)
-[![Dependencies](https://david-dm.org/underlost/underlost.net.svg)](https://david-dm.org/underlost/underlost.net)
+
+**Note: As of 5/14/19 Ive started migrating to React. The current README is out of date**
+
+---
 
 # underlost.net
 underlost.net is a project demo by [Tyler Rilling](https://tyler.codes) (that's me). It's a tiny Jekyll-based static site designed to work on Heroku, Github, and Amazon S3/CloudFront, but should work on any host you can upload the *.publish* directory to.

@@ -1,0 +1,8 @@
+.text-green { color: $swampGreen; }
+.text-pink {color: $spidergwenPink; }
+.text-transparent {color: transparent;}
+
+.green-stroke {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $swampGreen;
+}

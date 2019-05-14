@@ -1,0 +1,56 @@
+.portfolio-picks {
+  .portfolio-item {
+    .portfolio-item-header {
+      color: $white;
+      position: absolute;
+      bottom: 20px;
+      left: 40px;
+      max-width: 60%;
+    }
+    .h3 {
+      transition: all .3s;
+      letter-spacing: 1px;
+    }
+    .h6 {
+      transition: all .3s;
+      &::after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 50px;
+        background-color: $white;
+        margin-top: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    &:hover {
+      .h3 {
+        letter-spacing: 2px;
+      }
+    }
+    &.col-md-12  {
+      .portfolio-item-inner {
+        height: 600px;
+      }
+    }
+  }
+  .portfolio-item-inner {
+    background-color: rgba($black, .1);
+    min-height: 350px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    //opacity: .1;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; top: 0; bottom: 0;
+      background-color: rgba($body-bg, .5);
+    }
+  }
+  .image-featured .image-wrap{
+    height: 100%;
+    width: 100%;
+  }
+}

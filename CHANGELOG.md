@@ -1,3 +1,7 @@
+###6.0.0 (05/14/2019)
+* WIP
+* Switched to React.JS and Gatsby
+
 ###5.1.0 (04/28/2018)
 * Updated bootstrap to 4.1
 * New design
