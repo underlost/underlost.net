@@ -1,0 +1,38 @@
+<section id="selected-works" class="section section-orange">
+  <div class="container">
+    <div class="section-content row no-gutters justify-content-md-center pt-5">
+      <h3 class="sr-only"><span>Client Work</span></h3>
+      <div id="portfolio-container" class="portfolio-picks col-md-10">
+        <div class="project-carousel owl-carousel">
+          {% for post in site.portfolio reversed %}
+          <div class="portfolio-item item my-5">
+            <a class="row no-gutters mb-5" href="/portfolio/{{ post.slug }}/">
+              <div class="col-md-6 my-5">
+                <div class="portfolio-item-inner py-4 px-5">
+                  <span class="d-block h1 headline">{{post.guid}}</span>
+                  <h4 class="h5 headline uppercase"><span>{{ post.title }}</span></h4>
+                  <p class="sr-only">{{ post.description }}</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="image-featured h-100">
+                  <div class="image-wrap" style="background-image: url('{{ post.image }}');"></div>
+                </div>
+              </div>
+            </a>
+            <div class="row no-gutters">
+              <div class="col-md-10">
+                <p>Lorem ipsum dolor amet swag mixtape edison bulb art party aesthetic banh mi. PBR&B chillwave thundercats chambray meditation twee. Raw denim cray tattooed XOXO pok pok listicle. Intelligentsia typewriter coloring book street art stumptown bicycle rights viral vape iceland cronut hell of. Cornhole narwhal gastropub vice tacos street art truffaut tote bag jean shorts.</p>
+                </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="section-footer">
+      <h3 class="h6 title">Selected Works</h3>
+    </div>
+  </div>
+</div>

@@ -9,22 +9,42 @@
     $(document).activeNavigation(".sections-nav");
     animateClasses();
     fullscreener($('.' + $classes.FsrImage));
-    //$('.sections-nav').vLine();
     $('.content-section').removeClass("hidden").addClass("fadeIn");
     //SectionFullpage();
-    jQuery(".parallax").paroller({ factor: '-0.1', type: 'foreground', direction: 'vertical' });
-    //jQuery(".parallax-menu").paroller({ factor: '1', type: 'foreground', direction: 'vertical' });
 
+    $('.burger-icon__wrap, #site-menu .close-btn, .pjax').on('click', function(e) {
+     e.preventDefault();
+     //console.log('burger icon trigger');
+     if ($("#site-menu").hasClass("contact_form--open")) {
+       $('#site-menu').removeClass('contact_form--open');
+     } else {
+       $('#page-wrap').toggleClass('nav__sidebar--open');
+     }
+    });
+    if($(".project-carousel").length){
+      $('.project-carousel').owlCarousel({
+        loop: true,
+        autoplay: false,
+        nav: true,
+        navText: ['<svg width="20px" height="32px" viewBox="0 0 20 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="#313E47"><polygon id="Path" points="3.45832136 32 0 28.6553931 13.0880388 16 0 3.34460687 3.45832136 0 20 16.0000573"></polygon></g></svg>',
+        '<svg width="20px" height="32px" viewBox="0 0 20 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="#313E47"><polygon id="Path" points="3.45832136 32 0 28.6553931 13.0880388 16 0 3.34460687 3.45832136 0 20 16.0000573"></polygon></g></svg>'],
+        margin: 0,
+        rewind: false,
+        dots: false,
+        items: 1,
+      });
+    }
   });
+
+  //pjax
   $(document).on('pjax:success', function () {
     //console.log('state change');
     $(document).activeNavigation(".sections-nav");
     animateClasses();
     fullscreener($('.' + $classes.FsrImage));
-    //$('.sections-nav').vLine();
     $('.content-section').removeClass("hidden").addClass("fadeIn");
-    //SectionFullpage();
   });
+
   // Sets a image as a background on its parent.
   function fullscreener(_container) {
     _container.each(function () {
@@ -45,30 +65,7 @@
       _this.parent().addClass($classes.FsrHolder).attr('style', 'background-image: url(' + _src + ');');
     });
   }
-  function SectionFullpage() {
-    if($('#content').length){
-      $('#content').fullpage({
-        navigation: false,
-        bigSectionsDestination: 'top',
-        responsiveWidth: 992,
-      });
-    }
-  }
-  // Basic Slider
-  function kittySlide() {
-    var kitty = function () {
-      var slides = $('#cats li'), active = slides.filter('.active');
-      if (!active.length) {
-        active = slides.last();
-      }
-      active.addClass('active');
-      var next = active.next().length ? active.next() : slides.first();
-      next.css('opacity', 0).addClass('active').animate({ opacity: 1 }, function () {
-        active.removeClass('active last-active');
-      });
-    };
-    setInterval(kitty, 3000);
-  };
+
   /*
   * Add a CSS3 animation class to an element only when it's in the viewport.
   * The class is taken from the attribute data-animate.
@@ -90,6 +87,6 @@ lightbox.option({
 })
 var pjax = new Pjax({
   elements: "a.pjax", // default is "a[href], form[action]"
-  selectors: ["title", ".site-main"],
+  selectors: ["title", ".site-content"],
   cacheBust: false
 })

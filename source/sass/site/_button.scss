@@ -1,0 +1,12 @@
+.btn-default {
+  border: 1px solid $body-color;
+  line-height: 2;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  &:hover {
+    background-color: $swampGreen;
+    border-color: $swampGreen;
+    color: $body-bg;
+  }
+}

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Selected Works
 description: Completed works for clients
 slug: portfolio
@@ -7,27 +7,32 @@ show_gallery: True
 permalink: /portfolio/
 ---
 
-<header class="sr-only">
-  <h1>{{page.title}}</h1>
-  <h2>{{page.description}}</h2>
-</header>
-
 <section id="works" class="content-section hidden mb-4">
-  <div data-animate="fadeRight" class="layout-single-column">
-    <p>Below are some projects I’ve worked on. They demonstrate some of my abilities, ranging from coding to design. Some of the listed projects can also be found on my <a href="https://github.com/underlost/">Github</a> page. For photography, make sure to check out my <a href="http://tyler.camera/">photo blog</a>, as well as my <a href="https://www.instagram.com/underlost/">Instagram</a> page.</p>
-    <p>I also occasionally write about projects on and share my thoughts on my other site, <a href="https://alifewellplayed.com">A Life Well Played</a>.</p>
+  <div class="row">
+    <div class="col-md-6 text-right">
+      <h3 class="headline xl text-lowercase text-transparent green-stroke px-5">Selected Works</h3>
+    </div>
+    <div class="col-md-6">
+      <div data-animate="fadeRight" class="layout-single-column">
+        <p>Below are some projects I’ve worked on. They demonstrate some of my abilities, ranging from coding to design. Some of the listed projects can also be found on my <a href="https://github.com/underlost/">Github</a> page.</p>
+      </div>
+    </div>
   </div>
 </section>
-<section id="portfolio" class="content-section hidden mb-4">
+<section id="portfolio" class="content-section hidden mb-5">
   <div data-animate="fadeLeft" class="layout-single-column">
-    <h3 class="heading"><span>Client Work</span></h3>
+    <h3 class="headline h4 text-lowercase sr-only">Client Work</h3>
     <div id="recent-portfolio-container" class="portfolio-picks">
-      <ul class="list-unstyled row no-gutters clearfix" id="recent-portfolio">
-        {% for post in site.portfolio reversed %}
-        <li class="col-6 portfolio-item mb-4">
-          <a class="portfolio-item-inner d-block mr-4" href="/portfolio/{{ post.slug }}/">
-            <h6 class="h6"><span>{{ post.title }}:</span> <small>{{ post.description }}</small></h6>
-            <span class="thumbnail img-rounded d-block" alt="{{ post.title }}"  style="background-image: url('{{ post.image }}');"></span>
+      <ul class="list-unstyled row" id="recent-portfolio">
+        {% assign mid = site.portfolio | sort: 'guid' %}
+        {% assign sorted = mid | reverse %}
+        {% for post in sorted %}
+        <li class="{{ post.size }} portfolio-item mb-4">
+          <a class="portfolio-item-inner d-block" href="/portfolio/{{ post.slug }}/" style="background-image: url('{{ post.image }}');">
+            <div class="portfolio-item-header">
+              <h3 class="h3 title"><span>{{ post.title }}</span></h3>
+              <h6 class="h6 title">{{ post.description }}</h6>
+            </div>
           </a>
         </li>
         {% endfor %}
@@ -37,14 +42,19 @@ permalink: /portfolio/
 </section>
 <section id="projects" class="content-section hidden mb-4">
   <div data-animate="fadeRight" class="layout-single-column">
-    <h3 class="heading"><span>Personal Projects</span></h3>
+    <div class="row">
+      <div class="col-md-6 offset-md-6 text-right mb-5">
+        <h3 class="headline xl text-transparent green-stroke">Personal Projects</h3>
+      </div>
+    </div>
     <div id="recent-project-container" class="portfolio-picks">
       <ul class="list-unstyled row clearfix" id="recent-portfolio">
         {% for post in site.projects reversed %}
-        <li class="col-12 portfolio-item mb-5">
+        <li class="{{ post.size }} portfolio-item mb-5">
           <a class="portfolio-item-inner d-block {% cycle 'odd', 'even' %}" href="/portfolio/{{ post.slug }}/">
-            <h6 class="h4"><span>{{ post.title }}:</span> <small>{{ post.description }}</small></h4>
-              <span class="thumbnail img-rounded d-block" alt="{{ post.title }}"  style="background-image: url('{{ post.image }}');"></span>
+            <h3 class="h3 title"><span>{{ post.title }}</span></h3>
+            <h6 class="h6 title">{{ post.description }}</h6>
+            <span class="thumbnail img-rounded d-block" alt="{{ post.title }}"  style="background-image: url('{{ post.image }}');"></span>
             </a>
           </li>
           {% endfor %}

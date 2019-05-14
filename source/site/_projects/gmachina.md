@@ -4,6 +4,7 @@ title: gMachina
 slug: gmachina
 description: A REST based API game backbone
 color: 952067
+size: 'col-md-4'
 image: /assets/img/projects/gmachina.jpg
 permalink: /portfolio/gmachina/
 date: 2014-04-01

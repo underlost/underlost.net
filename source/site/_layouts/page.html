@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<header class="site-header site-header-sm mt-5">
+  {% include svg/underlost.svg %}
+</header>
+
+<main class="site-main">
+  <div class="mx-auto mt-3 mt-md-5">
+    <article>
+      <header class="sr-only">
+        <h1 class="h1 title">{{page.title}}</h1>
+        <h2 class="h4">{{page.description}}</h2>
+      </header>
+      <div class="site-content">
+        {{ content }}
+      </div>
+    </article>
+    {% include footer.html %}
+  </div>
+</main>
