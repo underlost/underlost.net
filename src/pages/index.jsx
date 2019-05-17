@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import PageTransition from 'gatsby-v2-plugin-page-transitions';
-
+import SEO from "../components/seo"
 
 //CSS
 import '../sass/site.scss';
@@ -27,6 +27,7 @@ export default ({ data }) => (
     transitionTime={900}
     >
   <Page>
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <main className={"site-main index d-flex h-100 p-3 mx-auto flex-column mt-5"}>
       <header className={"site-header"}>
         <div className={"svg-container"}>

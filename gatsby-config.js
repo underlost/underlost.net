@@ -14,6 +14,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-v2-plugin-page-transitions',
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-sass`,
       options: {

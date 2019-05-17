@@ -1,5 +1,10 @@
 a { transition: 0.3s ease all; }
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .headline {
   position: relative;
   z-index: 5;
