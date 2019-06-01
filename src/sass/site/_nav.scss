@@ -28,6 +28,8 @@
 
 #site-menu {
   background-color: $swampGreen;
+  //background-image: url('/assets/siteNav.jpg');
+  background-size: cover;
   color: $black;
   position: fixed;
   max-width: 100%;
@@ -41,17 +43,52 @@
   transition: transform .3s;
 }
 
+// Sidebar Menu list styles
+.site-nav {
+  transition: ease all .3s;
+  height: auto;
+  opacity: 0;
+
+  a {color: rgba($black, .65); }
+  .menu-item {
+    //font-family: UtopiaStd-Semibold;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    font-weight: 800;
+    a {
+      text-transform: uppercase;
+      display: block;
+      position: relative;
+      //padding-top: 1rem;
+      //padding-bottom: 1rem;
+      transition: 0.3s ease all;
+      &:hover {
+        text-decoration: none;
+        color: $primary;
+      }
+    }
+  }
+}
+
 .nav-is-active {
   overflow: hidden;
   #page {
     transition: right .3s;
     transition: transform .3s;
     overflow: hidden;
-    transform: translateX(-50%);
+    //transform: translateX(-50%);
   }
   #site-menu {
     transform: translateX(50%);
     transition: transform .3s;
+  }
+  .site-nav  {
+    opacity: 1;
+    animation-name: fadeLeft;
+  	animation-duration: 0.8s;
+  	animation-timing-function: ease;
+  	visibility: visible !important;
   }
   .navbar-toggler {
     //width: 87px;
@@ -77,32 +114,6 @@
         opacity: 1;
         margin: 5px -4px;
         transform: rotate(0deg) translate(0px, 0px);
-      }
-    }
-  }
-}
-
-// Sidebar Menu list styles
-.site-nav {
-  transition: ease all .3s;
-  height: auto;
-  a {color: rgba($black, .65); }
-  .menu-item {
-    //font-family: UtopiaStd-Semibold;
-    font-size: 4rem;
-    letter-spacing: 2px;
-    line-height: 1.5;
-    font-weight: 800;
-    a {
-      text-transform: uppercase;
-      display: block;
-      position: relative;
-      //padding-top: 1rem;
-      //padding-bottom: 1rem;
-      transition: 0.3s ease all;
-      &:hover {
-        text-decoration: none;
-        color: $primary;
       }
     }
   }

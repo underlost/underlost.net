@@ -21,10 +21,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'permalink')
     ) {
       slug = `/${node.frontmatter.permalink}`
+      createNodeField({ node, name: 'slug', value: slug })
+      // Adds the name of "gatsby-source-filesystem" as field (in this case "projects" or "pages")
+      createNodeField({ node, name: 'sourceInstanceName', value: fileNode.sourceInstanceName })
     }
-    createNodeField({ node, name: 'slug', value: slug })
-    // Adds the name of "gatsby-source-filesystem" as field (in this case "projects" or "pages")
-    createNodeField({ node, name: 'sourceInstanceName', value: fileNode.sourceInstanceName })
   }
 }
 
@@ -32,8 +32,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   // Our templates for projects and files inside /pages/*.mdx
-  const projectPage = require.resolve('./src/templates/project.jsx')
-  const singlePage = require.resolve('./src/templates/page.jsx')
+  const projectPage = require.resolve('./src/templates/project.js')
+  const singlePage = require.resolve('./src/templates/page.js')
 
   const result = await wrapper(
     graphql(`
@@ -114,4 +114,20 @@ exports.onCreateWebpackConfig = ({ stage, actions, loaders, getConfig }) => {
   ]
 
   actions.replaceWebpackConfig(config)
+}
+
+// Fix for gsap plugin breaking in build mode.
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /DrawSVGPlugin/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
 }

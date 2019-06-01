@@ -12,6 +12,7 @@ body {
     font-size: 6rem;
     font-weight: 900;
     line-height: 1;
+    letter-spacing: .5rem;
   }
   &.h1 {
     font-size: 4rem;
@@ -35,9 +36,6 @@ body {
   }
   &.h6 {
     letter-spacing: 1.5px
-  }
-  &.uppercase {
-    text-transform: uppercase;
   }
 }
 .title {
@@ -128,6 +126,10 @@ body.home  {
 
 .section-content {
   background-color: lighten($body-bg, 5%);
+
+  .section-article {
+    border: 10px solid lighten($body-bg, 15%);
+  }
 }
 
 .xl-dash {

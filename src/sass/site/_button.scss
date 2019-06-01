@@ -4,9 +4,37 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 800;
+  position: relative;
+  background-color: $body-color;
+  color: $spidergwenPink;
+  &::before, &::after {
+    background-size: 10px 10px;
+    display: block;
+    bottom: -7px;
+    content: '';
+    position: absolute;
+    //opacity: .25;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='stripe-svg' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M-1,1 l2,-2 M0,10 l10,-10 M9,11 l2,-2' stroke='%23DFD360' stroke-width='1' /%3E%3C/svg%3E");
+
+  }
+  &::before {
+    right: -7px;
+    height: 100%;
+    width: 6px;
+  }
+  &::after {
+    left: 6px;
+    height: 6px;
+    width: calc(100% - 5px);
+  }
   &:hover {
     background-color: $swampGreen;
     border-color: $swampGreen;
     color: $body-bg;
+    &::before, &::after {
+      opacity: 1;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='stripe-svg' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M-1,1 l2,-2 M0,10 l10,-10 M9,11 l2,-2' stroke='%23CF2D7D' stroke-width='1' /%3E%3C/svg%3E");
+
+    }
   }
 }

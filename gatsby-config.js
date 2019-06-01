@@ -15,6 +15,20 @@ module.exports = {
   plugins: [
     'gatsby-v2-plugin-page-transitions',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `underlost.net`,
+        short_name: `underlost`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `static/images/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -42,8 +56,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
+        path: `${__dirname}/static/images`,
+        name: `images`,
       },
     },
 
