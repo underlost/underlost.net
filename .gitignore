@@ -44,3 +44,4 @@ tmp
 log
 .env
 dist
+public
