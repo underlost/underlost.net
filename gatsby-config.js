@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: 'underlost',
-    siteUrl: 'https://underlost.net',
-    description: 'This is a description',
-    googleSiteVerification: '#',
-    image: '#',
-    author: 'Tyler Rilling',
+    title: `underlost`,
+    siteUrl: `https://underlost.net`,
+    description: `This is a description`,
+    googleSiteVerification: `#`,
+    image: `#`,
+    author: `Tyler Rilling`,
     social: {
       twitter: `underlost`,
       instagram: `underlost`,
@@ -13,10 +13,10 @@ module.exports = {
     },
   },
   plugins: [
-    'gatsby-v2-plugin-page-transitions',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    `gatsby-v2-plugin-page-transitions`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -32,7 +32,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        implementation: require("sass"),
+        implementation: require(`sass`),
         precision: 8,
         includePaths: [`${__dirname}/src/sass/site.scss`],
         sourceComments: true,
@@ -60,34 +60,6 @@ module.exports = {
         name: `images`,
       },
     },
-
-    {
-      resolve: 'gatsby-mdx',
-      options: {
-        extensions: ['.mdx', '.md'],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 820,
-              quality: 90,
-              linkImagesToOriginal: false,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-external-links',
-            options: {
-              target: '_blank',
-              rel: 'nofollow noopener noreferrer',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-responsive-iframe',
-            options: {},
-          },
-        ],
-      },
-},
-
-  ]
+    `gatsby-plugin-mdx`,
+  ],
 }

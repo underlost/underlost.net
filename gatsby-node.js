@@ -1,4 +1,4 @@
-const _ = require('lodash')
+const _ = require(`lodash`)
 
 // graphql function doesn't throw an error so we have to check to check for the result.errors to throw manually
 const wrapper = promise =>
@@ -13,17 +13,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   let slug
   // Only use MDX nodes
-  if (node.internal.type === 'Mdx') {
+  if (node.internal.type === `Mdx`) {
     const fileNode = getNode(node.parent)
     // If the frontmatter contains a "permalink", use it
     if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'permalink')
+      Object.prototype.hasOwnProperty.call(node, `frontmatter`) &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, `permalink`)
     ) {
       slug = `/${node.frontmatter.permalink}`
-      createNodeField({ node, name: 'slug', value: slug })
+      createNodeField({ node, name: `slug`, value: slug })
       // Adds the name of "gatsby-source-filesystem" as field (in this case "projects" or "pages")
-      createNodeField({ node, name: 'sourceInstanceName', value: fileNode.sourceInstanceName })
+      createNodeField({ node, name: `sourceInstanceName`, value: fileNode.sourceInstanceName })
     }
   }
 }
@@ -32,8 +32,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   // Our templates for projects and files inside /pages/*.mdx
-  const projectPage = require.resolve('./src/templates/project.js')
-  const singlePage = require.resolve('./src/templates/page.js')
+  const projectPage = require.resolve(`./src/templates/project.js`)
+  const singlePage = require.resolve(`./src/templates/page.js`)
 
   const result = await wrapper(
     graphql(`
@@ -118,7 +118,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, loaders, getConfig }) => {
 
 // Fix for gsap plugin breaking in build mode.
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === 'build-html') {
+  if (stage === `build-html`) {
     actions.setWebpackConfig({
       module: {
         rules: [

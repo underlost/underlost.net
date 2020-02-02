@@ -13,7 +13,7 @@ class PortfolioItem extends React.Component {
     this.guid = props.guid
     this.title = props.title
     this.permalink = props.permalink
-    this.date = dayjs(props.date).format('DD MMMM YYYY')
+    this.date = dayjs(props.date).format(`DD MMMM YYYY`)
     this.description = props.description
     this.col1Width = props.col1Width
     this.col2Width = props.col2Width
@@ -26,20 +26,20 @@ class PortfolioItem extends React.Component {
   render() {
     return (
       <Fade big cascade>
-        <div key={this.guid} className={'row no-gutters project-item portfolio-item'}>
-          <div className={classnames('', this.col1Width, this.col1Order)}>
-            <div className={'image-wrapper'}>
+        <div key={this.guid} className={`row no-gutters project-item portfolio-item`}>
+          <div className={classnames(``, this.col1Width, this.col1Order)}>
+            <div className={`image-wrapper`}>
               <Img fluid={this.cover.childImageSharp.fluid} />
             </div>
-            <div className={'mt-3'}>
-              <span className={'h6 title guid'}>{this.guid}</span>
-              <h3 className={'h4 headline text-uppercase'}>
+            <div className={`mt-3`}>
+              <span className={`h6 title guid`}>{this.guid}</span>
+              <h3 className={`h4 headline text-uppercase`}>
                 <Link to={this.permalink}>{this.title}</Link>
               </h3>
             </div>
           </div>
-          <div className={classnames('', this.col2Width, this.col2Order)}>
-            <div className={'lead pt-lg-5'}>
+          <div className={classnames(``, this.col2Width, this.col2Order)}>
+            <div className={`lead pt-lg-5`}>
               <MDXRenderer>{this.body}</MDXRenderer>
             </div>
           </div>

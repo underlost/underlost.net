@@ -5,22 +5,22 @@ import { faGithub, faInstagram, faLinkedin, faMediumM, faTwitter } from '@fortaw
 
 const SocialLinks = () => (
   <ul className="list-social list-inline mb-1">
-    <li className={'list-inline-item'}>
+    <li className={`list-inline-item`}>
       <a href="http://twitter.com/underlost">
         <FontAwesomeIcon icon={faTwitter} fixedWidth size="lg" />
-        <span className={'sr-only'}>Twitter</span>
+        <span className={`sr-only`}>Twitter</span>
       </a>
     </li>
-    <li className={'list-inline-item'}>
+    <li className={`list-inline-item`}>
       <a href="http://github.com/underlost">
         <FontAwesomeIcon icon={faGithub} fixedWidth size="lg" />
-        <span className={'sr-only'}>Github</span>
+        <span className={`sr-only`}>Github</span>
       </a>
     </li>
-    <li className={'list-inline-item'}>
+    <li className={`list-inline-item`}>
       <a href="http://instagram.com/underlost/">
         <FontAwesomeIcon icon={faInstagram} fixedWidth size="lg" />
-        <span className={'sr-only'}>Instagram</span>
+        <span className={`sr-only`}>Instagram</span>
       </a>
     </li>
   </ul>

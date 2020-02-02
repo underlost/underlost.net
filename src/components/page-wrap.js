@@ -9,7 +9,7 @@ class PageWrap extends React.Component {
     super(props)
     this.state = {
       active: false,
-      navBarActiveClass: '',
+      navBarActiveClass: ``,
     }
   }
 
@@ -24,11 +24,11 @@ class PageWrap extends React.Component {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'nav-is-active',
-            })
+            navBarActiveClass: `nav-is-active`,
+          })
           : this.setState({
-              navBarActiveClass: '',
-            })
+            navBarActiveClass: ``,
+          })
       }
     )
   }
@@ -43,16 +43,16 @@ class PageWrap extends React.Component {
             className={`button navbar-toggler ${this.state.navBarActiveClass}`}
             data-target="page-wrap"
             onClick={() => this.toggleHamburger()}>
-            <span className={'icon-bar top-bar'} />
-            <span className={'icon-bar middle-bar'} />
-            <span className={'icon-bar middle-bar'} />
-            <span className={'icon-bar bottom-bar'} />
-            <span className={'sr-only'}>Toggle navigation</span>
+            <span className={`icon-bar top-bar`} />
+            <span className={`icon-bar middle-bar`} />
+            <span className={`icon-bar middle-bar`} />
+            <span className={`icon-bar bottom-bar`} />
+            <span className={`sr-only`}>Toggle navigation</span>
           </button>
         </div>
         <Nav />
         <div id="page">
-          <div className={'container site-content'}>{this.props.children}</div>
+          <div className={`container site-content`}>{this.props.children}</div>
         </div>
       </div>
     )

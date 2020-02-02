@@ -6,10 +6,10 @@ const Footer = () => {
   const data = useStaticQuery(query)
 
   return (
-    <footer className={'site-footer my-4 mt-md-5'}>
+    <footer className={`site-footer my-4 mt-md-5`}>
       <SocialLinks />
-      <small className={'copyright'}>
-        Copyright &copy; Tyler Rilling 2002–2019. Site last updated:{' '}
+      <small className={`copyright`}>
+        Copyright &copy; Tyler Rilling 2002–2019. Site last updated:{` `}
         <a href="https://github.com/underlost/underlost.net/">{data.site.buildTime}</a>.
       </small>
     </footer>

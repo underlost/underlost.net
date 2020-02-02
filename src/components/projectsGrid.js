@@ -5,9 +5,9 @@ const ProjectsGrid = () => {
   const data = useStaticQuery(query)
 
   return (
-    <div className={'row mb-5'}>
+    <div className={`row mb-5`}>
       {data.allMdx.edges.map(edge => (
-        <div className={'col-md-2'}>{edge.node.frontmatter.title}</div>
+        <div className={`col-md-2`}>{edge.node.frontmatter.title}</div>
       ))}
     </div>
   )

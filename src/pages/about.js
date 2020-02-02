@@ -9,45 +9,45 @@ export default () => (
 
   <PageTransition
     defaultStyle={{
-      transition: 'right 500ms cubic-bezier(0.47, 0, 0.75, 0.72)',
-      right: '100%',
-      position: 'absolute',
-      width: '100%',
+      transition: `right 500ms cubic-bezier(0.47, 0, 0.75, 0.72)`,
+      right: `100%`,
+      position: `absolute`,
+      width: `100%`,
     }}
     transitionStyles={{
-      entering: { right: '0%' },
-      entered: { right: '0%' },
-      exiting: { right: '100%' },
+      entering: { right: `0%` },
+      entered: { right: `0%` },
+      exiting: { right: `100%` },
     }}
     transitionTime={800}>
     <PageWrap>
       <SEO title="About" keywords={[`gatsby`, `application`, `react`]} />
 
       <PageLayout>
-        <section id="about" className={'section content-section'}>
-          <div className={'section-header sr-only'}>
-            <h3 className={'h6 title text-green'}>About</h3>
+        <section id="about" className={`section content-section`}>
+          <div className={`section-header sr-only`}>
+            <h3 className={`h6 title text-green`}>About</h3>
           </div>
-          <div className={'section-content row no-gutters px-5 py-5'}>
-            <div className={'col-md-12'}>
-              <article className={'section-article px-5 py-5'}>
-                <div className={'fadeRight layout-single-column'}>
-                  <h4 className={'xl text-lowercase headline text-transparent green-stroke col-md-11 px-0 mb-5'}>
+          <div className={`section-content row no-gutters px-5 py-5`}>
+            <div className={`col-md-12`}>
+              <article className={`section-article px-5 py-5`}>
+                <div className={`fadeRight layout-single-column`}>
+                  <h4 className={`xl text-lowercase headline text-transparent green-stroke col-md-11 px-0 mb-5`}>
                     A few things about me...
                   </h4>
-                  <p className={'lead'}>
-                    I’m a hybrid writer, UX designer and developer, with an interest in{' '}
+                  <p className={`lead`}>
+                    I’m a hybrid writer, UX designer and developer, with an interest in{` `}
                     <a href="https://tyler.camera/" target="_blank" rel="noopener noreferrer">
                       photography
-                    </a>{' '}
-                    and{' '}
+                    </a>{` `}
+                    and{` `}
                     <a href="https://alifewellplayed.com/" target="_blank" rel="noopener noreferrer">
                       video games
-                    </a>{' '}
+                    </a>{` `}
                     mixed in on the side. I'm basically the bard of the group.
                   </p>
                 </div>
-                <div className={'layout-single-column fadeLeft'}>
+                <div className={`layout-single-column fadeLeft`}>
                   <p>
                     In a past life, I had a background in information computer security and built a successful web
                     hosting business. Since then, I've worked as a UX designer and consultant for a few video games and
@@ -66,7 +66,7 @@ export default () => (
                     My work has been featured on CNN, ABC (Australia), and various local news outlets in the Seattle
                     area.
                   </p>
-                  <h5 className={'headline h4 text-lowercase mt-md-4 text-green'}>Currently...</h5>
+                  <h5 className={`headline h4 text-lowercase mt-md-4 text-green`}>Currently...</h5>
                   <p>
                     I've been creating things digitally for roughly two decades, since I was 10 years old. Currently,
                     I'm working as a developer at <a href="https://www.hellowildern.com/">Wildern</a> in Seattle. For

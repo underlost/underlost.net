@@ -7,7 +7,7 @@ const PortfolioGrid = () => {
   const data = useStaticQuery(query)
 
   return (
-    <div className={'portfolio-list row'}>
+    <div className={`portfolio-list row`}>
       {data.allMdx.edges.map(edge => (
         <PortfolioItem
           title={edge.node.frontmatter.title}
