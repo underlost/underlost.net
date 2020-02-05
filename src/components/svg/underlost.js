@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import { TweenMax, Circ, TimelineMax } from "gsap/TweenMax"
+//import { TweenMax, Circ, TimelineMax } from "gsap/TweenMaxBase"
+import { TweenMax, Circ, TimelineMax } from "gsap"
 import drawSVG from "../../lib/DrawSVGPlugin"
 
 const duration = 3.75

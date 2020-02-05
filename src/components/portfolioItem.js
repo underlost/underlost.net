@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import classnames from 'classnames'
 import Img from 'gatsby-image'
 import dayjs from 'dayjs'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import MDXRenderer from 'gatsby-plugin-mdx'
 import Fade from 'react-reveal/Fade'
 import Bounce from 'react-reveal/Bounce'
 

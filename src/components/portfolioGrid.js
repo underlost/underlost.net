@@ -10,6 +10,7 @@ const PortfolioGrid = () => {
     <div className={`portfolio-list row`}>
       {data.allMdx.edges.map(edge => (
         <PortfolioItem
+          key={edge.node.frontmatter.guid}
           title={edge.node.frontmatter.title}
           guid={edge.node.frontmatter.guid}
           color={edge.node.frontmatter.color}
@@ -20,7 +21,7 @@ const PortfolioGrid = () => {
           col2Width={edge.node.frontmatter.col2Width}
           col1Order={edge.node.frontmatter.col1Order}
           col2Order={edge.node.frontmatter.col2Order}
-          body={edge.node.code.body}
+          body={edge.node.body}
           cover={edge.node.frontmatter.image}
         />
       ))}
@@ -36,9 +37,7 @@ const query = graphql`
     ) {
       edges {
         node {
-          code {
-            body
-          }
+          body
           fields {
             slug
           }

@@ -13,9 +13,7 @@ export default ProjectPage
 export const pageQuery = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
+      body
       excerpt
       fields {
         slug
