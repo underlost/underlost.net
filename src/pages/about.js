@@ -2,26 +2,24 @@ import React from 'react'
 import PageTransition from 'gatsby-v2-plugin-page-transitions'
 
 import SEO from '../components/seo'
-import PageWrap from '../components/page-wrap'
+import PageWrap from '../components/Layout'
 import PageLayout from '../components/page-layout'
 
-export default () => (
-
-  <PageTransition
-    defaultStyle={{
-      transition: `right 500ms cubic-bezier(0.47, 0, 0.75, 0.72)`,
-      right: `100%`,
-      position: `absolute`,
-      width: `100%`,
-    }}
-    transitionStyles={{
-      entering: { right: `0%` },
-      entered: { right: `0%` },
-      exiting: { right: `100%` },
-    }}
-    transitionTime={800}>
+const AboutPage = () => (
+  <PageTransition defaultStyle={{
+    transition: `right 500ms cubic-bezier(0.47, 0, 0.75, 0.72)`,
+    right: `100%`,
+    position: `absolute`,
+    width: `100%`,
+  }}
+  transitionStyles={{
+    entering: { right: `0%` },
+    entered: { right: `0%` },
+    exiting: { right: `100%` },
+  }}
+  transitionTime={800}>
     <PageWrap>
-      <SEO title="About" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title="About" keywords={[`Tyler Rilling`, `underlost`, `Seattle web developer`]} />
 
       <PageLayout>
         <section id="about" className={`section content-section`}>
@@ -81,3 +79,5 @@ export default () => (
     </PageWrap>
   </PageTransition>
 )
+
+export default AboutPage

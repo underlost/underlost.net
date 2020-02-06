@@ -1,10 +1,8 @@
 import React from 'react'
-import Nav from '../components/nav'
+import Nav from './nav'
+import Header from './Header'
 
-//CSS
-import '../sass/site.scss'
-
-class PageWrap extends React.Component {
+class Layout extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -34,8 +32,6 @@ class PageWrap extends React.Component {
   }
 
   render() {
-    // eslint-disable-next-line
-    const { children, data } = this.props
     return (
       <div id="page-wrap" className={` ${this.state.navBarActiveClass}`}>
         <div className="toggle-wrapper">
@@ -52,11 +48,16 @@ class PageWrap extends React.Component {
         </div>
         <Nav />
         <div id="page">
-          <div className={`container site-content`}>{this.props.children}</div>
+          <div className={`container site-content`}>
+            <Header />
+            <main className={`site-main`}>
+              {this.props.children}
+            </main>
+          </div>
         </div>
       </div>
     )
   }
 }
 
-export default PageWrap
+export default Layout

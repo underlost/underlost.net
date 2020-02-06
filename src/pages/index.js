@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 import PageWrap from '../components/page-wrap'
 import UnderlostSVG from '../components/svg/underlost'
 
-export default ({ data }) => (
+const indexPage = () => (
   <PageTransition
     defaultStyle={{
       transition: `right 500ms cubic-bezier(0.47, 0, 0.75, 0.72)`,
@@ -45,6 +45,8 @@ export default ({ data }) => (
     </PageWrap>
   </PageTransition>
 )
+
+export default IndexPage
 
 export const query = graphql`
   query {

@@ -4,7 +4,7 @@ import Footer from '../components/footer'
 
 class PageLayout extends React.Component {
   render() {
-    const { children, data } = this.props
+    const { children } = this.props
     return (
       <div>
         <header className={`site-header site-header-sm mt-5`}>

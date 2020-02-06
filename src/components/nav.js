@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-class Nav extends React.Component {
-  render() {
-    return (
+const Nav = () => (
       <div id="site-menu" role="navigation">
         <div className={`px-3 px-md-5`}>
           <nav className={`site-nav`}>
@@ -32,8 +30,6 @@ class Nav extends React.Component {
           </nav>
         </div>
       </div>
-    )
-  }
-}
+)
 
 export default Nav

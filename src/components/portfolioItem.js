@@ -6,6 +6,7 @@ import dayjs from 'dayjs'
 import MDXRenderer from 'gatsby-plugin-mdx'
 import Fade from 'react-reveal/Fade'
 import Bounce from 'react-reveal/Bounce'
+import PropTypes from 'prop-types'
 
 class PortfolioItem extends React.Component {
   constructor(props) {
@@ -47,6 +48,20 @@ class PortfolioItem extends React.Component {
       </Fade>
     )
   }
+}
+
+PortfolioItem.propTypes = {
+  guid: PropTypes.node.isRequired,
+  cover: PropTypes.array,
+  title: PropTypes.string,
+  permalink: PropTypes.string,
+  description: PropTypes.string,
+  body: PropTypes.string,
+  date: PropTypes.string,
+  col1Order: PropTypes.string,
+  col2Order: PropTypes.string,
+  col1Width: PropTypes.string,
+  col2Width: PropTypes.string,
 }
 
 export default PortfolioItem

@@ -1,8 +1,9 @@
 import React from 'react'
+import UnderlostSVG from '.svg/underlost'
 
 const Header = () => (
-  <div style={{ color: `teal` }}>
-    <h1>This is a header.</h1>
-  </div>
+  <header className={`site-header site-header-sm mt-5`}>
+    <UnderlostSVG />
+  </header>
 )
 export default Header
