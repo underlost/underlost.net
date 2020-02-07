@@ -1,5 +1,5 @@
 import React from 'react'
-import UnderlostSVG from '.svg/underlost'
+import UnderlostSVG from './svg/underlost'
 
 const Header = () => (
   <header className={`site-header site-header-sm mt-5`}>

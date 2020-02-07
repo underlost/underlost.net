@@ -19,7 +19,11 @@ function SEO({ description, lang, meta, keywords, title }) {
             title
             description
             author
-            social
+            social {
+              twitter
+              instagram
+              Github
+            }
           }
         }
       }

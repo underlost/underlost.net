@@ -25,8 +25,8 @@
 
 .site-header-sm {
   svg {
-    height: 20px;
-    path {stroke-width: 2px; fill: $primary; stroke: $primary}
+    height: 35px;
+    path {stroke-width: 1.5px; fill: none; stroke: $primary}
   }
   &::after {
     display: block;

@@ -1,8 +1,7 @@
 import React from 'react'
 import PageTransition from 'gatsby-v2-plugin-page-transitions'
 
-import PageWrap from '../components/page-wrap'
-import PageLayout from '../components/page-layout'
+import Layout from '../components/Layout'
 
 export default () => (
   <PageTransition

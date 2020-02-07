@@ -5,8 +5,7 @@ import PropTypes from 'prop-types'
 import { useTrail } from 'react-spring'
 import PageTransition from 'gatsby-v2-plugin-page-transitions'
 
-import PageWrap from '../components/page-wrap'
-import PageLayout from '../components/page-layout'
+import Layout from '../components/Layout'
 
 import ProjectsGrid from '../components/projectsGrid'
 import PortfolioGrid from '../components/portfolioGrid'
@@ -26,23 +25,21 @@ export default () => (
       exiting: { right: `100%` },
     }}
     transitionTime={900}>
-    <PageWrap>
-      <PageLayout>
-        <div className={`row no-gutters mb-5`}>
-          <div className={`col-md-6 col-lg-4 text-md-left`}>
-            <h1 className={`xl headline text-uppercase text-transparent green-stroke`}>Selected Works</h1>
-          </div>
+    <Layout>
+      <div className={`row no-gutters mb-5`}>
+        <div className={`col-md-6 col-lg-4 text-md-left`}>
+          <h1 className={`xl headline text-uppercase text-transparent green-stroke`}>Selected Works</h1>
         </div>
+      </div>
 
-        <PortfolioGrid />
+      <PortfolioGrid />
 
-        <div className={`text-center mb-5`}>
-          <h2 className={`xl headline text-uppercase text-transparent green-stroke text-center mb-1`}>Projects</h2>
-          <p className={`lead`}>Personal projects I'm currently working on</p>
-        </div>
+      <div className={`text-center mb-5`}>
+        <h2 className={`xl headline text-uppercase text-transparent green-stroke text-center mb-1`}>Projects</h2>
+        <p className={`lead`}>Personal projects I'm currently working on</p>
+      </div>
 
-        <ProjectsGrid />
-      </PageLayout>
-    </PageWrap>
+      <ProjectsGrid />
+    </Layout>
   </PageTransition>
 )

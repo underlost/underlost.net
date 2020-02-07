@@ -1,12 +1,13 @@
 import React from 'react'
-import PageWrap from '../components/page-wrap'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
 
 const ProjectPage = () => (
-  <PageWrap>
+  <Layout>
     <div>
       <h1>Project template</h1>
     </div>
-  </PageWrap>
+  </Layout>
 )
 export default ProjectPage
 
