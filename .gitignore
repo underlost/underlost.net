@@ -26,6 +26,7 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 .idea
+.eslintcache
 
 # Komodo
 *.komodoproject

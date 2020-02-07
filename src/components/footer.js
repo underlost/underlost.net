@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import SocialLinks from '../components/social'
+import SocialLinks from './Social'
 
 const Footer = () => {
   const data = useStaticQuery(query)
@@ -9,8 +9,7 @@ const Footer = () => {
     <footer className={`site-footer my-4 mt-md-5`}>
       <SocialLinks />
       <small className={`copyright`}>
-        Copyright &copy; Tyler Rilling 2002–2019. Site last updated:{` `}
-        <a href="https://github.com/underlost/underlost.net/">{data.site.buildTime}</a>.
+        Copyright &copy; Tyler Rilling 2002–2020. Site last updated: <a href="https://github.com/underlost/underlost.net/">{data.site.buildTime}</a>.
       </small>
     </footer>
   )

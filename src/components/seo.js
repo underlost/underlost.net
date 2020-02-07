@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, keywords, title }) {
             title
             description
             author
+            social
           }
         }
       }
@@ -62,6 +63,10 @@ function SEO({ description, lang, meta, keywords, title }) {
         {
           name: `twitter:title`,
           content: title,
+        },
+        {
+          name: `twitter:site`,
+          content: site.siteMetadata.social.twitter,
         },
         {
           name: `twitter:description`,

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `underlost`,
+    title: `underlost.net`,
     siteUrl: `https://underlost.net`,
-    description: `This is a description`,
+    description: `I make dumb, sometimes cool things on the internet.`,
     googleSiteVerification: `#`,
     image: `#`,
     author: `Tyler Rilling`,
