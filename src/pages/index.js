@@ -10,19 +10,6 @@ import Layout from '../components/Layout'
 
 const IndexPage = () => (
   <Layout>
-    <PageTransition
-      defaultStyle={{
-        transition: `right 500ms cubic-bezier(0.47, 0, 0.75, 0.72)`,
-        right: `100%`,
-        position: `absolute`,
-        width: `100%`,
-      }}
-      transitionStyles={{
-        entering: { right: `0%` },
-        entered: { right: `0%` },
-        exiting: { right: `100%` },
-      }}
-      transitionTime={900}>
       <div className={`col-md-5 offset-md-7`}>
       
         <SEO
@@ -30,10 +17,10 @@ const IndexPage = () => (
           keywords={[`Tyler Rilling`, `underlost`, `Seattle Web Developer`, `Seattle Front-End Developer`]}
         />
         <main className={`site-main index d-flex h-100 py-3 mx-auto flex-column mt-5`}>
-          <h3 className={`subtitle mb-0 text-pink`}>Intro</h3>
-          <div className={`row no-gutters mt-4 fadeRight`}>
-            <h1 className={`lead col-md-8 col-lg-10`}>
-              Underlost is <span className={`bg-blue`}>Tyler Rilling</span>, a Python devloper and UX designer
+          <h3 className={`subtitle mb-0 text-pink text-uppercase`}>Introduction</h3>
+          <div className={`row no-gutters fadeRight`}>
+            <h1 className={`title lead col-md-8 col-lg-11 text-white`}>
+              Underlost is <span className={`bg-blue px-1`}>Tyler Rilling</span>, a Python devloper and UX designer
               specializing in AR/VR, living in Seattle, Washington. They are probably not an Undertale game.
             </h1>
           </div>
@@ -44,7 +31,6 @@ const IndexPage = () => (
           </div>
         </main>
       </div>
-    </PageTransition>
   </Layout>
 )
 
