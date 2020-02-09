@@ -1,0 +1,56 @@
+.headline {
+  position: relative;
+  z-index: 5;
+  &.xl {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: .5rem;
+  }
+  &.h1 {
+    font-size: 4rem;
+    font-weight: 900;
+  }
+    &.h2 {
+      font-size: 3rem;
+      letter-spacing: .25rem;
+      font-weight: 900;
+    }
+    &.h3 {
+      font-size: 40px;
+      letter-spacing: 3.7px;
+    }
+    &.h4 {
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+    &.h5 {
+      font-size: 14px;
+      letter-spacing: 5px;
+    }
+    &.h6 {
+      letter-spacing: 1.5px
+    }
+}
+.title {
+  font-family: $font-family-sans-serif;
+  &.h1 {
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
+  &.h6 {
+    text-transform: uppercase;
+    font-size: .95rem;
+    //letter-spacing: 5px;
+  }
+}
+
+.subtitle {
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    &::before {
+        content: '// ';
+    }
+}

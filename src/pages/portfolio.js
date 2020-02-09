@@ -2,44 +2,18 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import { useTrail } from 'react-spring'
-import PageTransition from 'gatsby-v2-plugin-page-transitions'
 
 import Layout from '../components/Layout'
 
 import ProjectsGrid from '../components/projectsGrid'
 import PortfolioGrid from '../components/portfolioGrid'
-import PortfolioItem from '../components/portfolioItem'
 
 export default () => (
-  <PageTransition
-    defaultStyle={{
-      transition: `right 500ms cubic-bezier(0.47, 0, 0.75, 0.72)`,
-      right: `100%`,
-      position: `absolute`,
-      width: `100%`,
-    }}
-    transitionStyles={{
-      entering: { right: `0%` },
-      entered: { right: `0%` },
-      exiting: { right: `100%` },
-    }}
-    transitionTime={900}>
-    <Layout>
-      <div className={`row no-gutters mb-5`}>
-        <div className={`col-md-6 col-lg-4 text-md-left`}>
-          <h1 className={`xl headline text-uppercase text-transparent green-stroke`}>Selected Works</h1>
-        </div>
-      </div>
+  <Layout>
+    <h2 className={`xl headline text-uppercase text-transparent blue-stroke`}>Selected Works</h2>
+    <PortfolioGrid />
 
-      <PortfolioGrid />
-
-      <div className={`text-center mb-5`}>
-        <h2 className={`xl headline text-uppercase text-transparent green-stroke text-center mb-1`}>Projects</h2>
-        <p className={`lead`}>Personal projects I'm currently working on</p>
-      </div>
-
-      <ProjectsGrid />
-    </Layout>
-  </PageTransition>
+    <h2 className={`xl headline text-uppercase text-transparent blue-stroke mb-1`}>Projects</h2>
+    <p className={`subtitle text-uppercase`}>Personal projects I'm currently working on</p>
+  </Layout>
 )

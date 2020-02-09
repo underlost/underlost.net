@@ -24,11 +24,11 @@ class Layout extends React.Component {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-            navBarActiveClass: `nav-is-active`,
-          })
+              navBarActiveClass: `nav-is-active`,
+            })
           : this.setState({
-            navBarActiveClass: ``,
-          })
+              navBarActiveClass: ``,
+            })
       }
     )
   }
@@ -36,8 +36,6 @@ class Layout extends React.Component {
   render() {
     return (
       <>
-        
-        
         <div id="page-wrap" className={` ${this.state.navBarActiveClass}`}>
           <div className="toggle-wrapper">
             <button
@@ -54,10 +52,10 @@ class Layout extends React.Component {
           <Nav />
           <div id="page">
             <div className={`container-fluid site-content pt-5`}>
-              <div className={`col-md-5 offset-md-7 pt-3`}>
-                <Header />
-              </div>
-              <main className={`site-main`}>{this.props.children}</main>
+              <Header />
+              <main className={`site-main row no-gutters`}>
+                <div className={`col-md-5 offset-md-7`}>{this.props.children}</div>
+              </main>
             </div>
           </div>
         </div>
