@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from './nav'
 import Header from './Header'
+import Footer from './Footer'
 import BackgroundFixed from './BackgroundFixed'
 import FixedOverlay from './FixedOverlay'
 
@@ -21,14 +22,9 @@ class Layout extends React.Component {
       },
       // after state has been updated,
       () => {
-        // set the class in state for the navbar accordingly
         this.state.active
-          ? this.setState({
-              navBarActiveClass: `nav-is-active`,
-            })
-          : this.setState({
-              navBarActiveClass: ``,
-            })
+          ? this.setState({ navBarActiveClass: `nav-is-active` })
+          : this.setState({ navBarActiveClass: `` })
       }
     )
   }
@@ -53,6 +49,7 @@ class Layout extends React.Component {
               <main className={`site-main row no-gutters`}>
                 <div className={`col-md-5 offset-md-7`}>{this.props.children}</div>
               </main>
+              <Footer />
             </div>
           </div>
         </div>

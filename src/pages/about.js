@@ -56,7 +56,7 @@ const AboutPage = () => (
         </p>
 
         <h3 className={`subtitle text-uppercase mt-md-4 text-blue`}>skillset</h3>
-        <ul>
+        <ul className={`list-unstyled`}>
           <li>Unity</li>
           <li>Unreal Engine</li>
           <li>Godot game engine</li>
