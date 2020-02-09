@@ -23,8 +23,7 @@ let gsap,
   _parseNum = value => parseFloat(value || 0),
   _getAttributeAsNumber = (target, attr) => _parseNum(target.getAttribute(attr)),
   _sqrt = Math.sqrt,
-  _getDistance = (x1, y1, x2, y2, scaleX, scaleY) =>
-    _sqrt(((_parseNum(x2) - _parseNum(x1)) * scaleX) ** 2 + ((_parseNum(y2) - _parseNum(y1)) * scaleY) ** 2),
+  _getDistance = (x1, y1, x2, y2, scaleX, scaleY) => _sqrt(((_parseNum(x2) - _parseNum(x1)) * scaleX) ** 2 + ((_parseNum(y2) - _parseNum(y1)) * scaleY) ** 2),
   _warn = message => console.warn(message),
   _hasNonScalingStroke = target => target.getAttribute('vector-effect') === 'non-scaling-stroke',
   _bonusValidated = 1, //<name>DrawSVGPlugin</name>
@@ -95,9 +94,7 @@ let gsap,
       style.strokeDasharray = 'none'
       length = target.getTotalLength() || 0
       if (scaleX !== scaleY) {
-        _warn(
-          "Warning: <path> length cannot be measured when vector-effect is non-scaling-stroke and the element isn't proportionally scaled."
-        )
+        _warn("Warning: <path> length cannot be measured when vector-effect is non-scaling-stroke and the element isn't proportionally scaled.")
       }
       length *= (scaleX + scaleY) / 2
       style.strokeDasharray = prevPoint
@@ -243,12 +240,7 @@ export const DrawSVGPlugin = {
           //works around a bug in Safari that caused strokes with rounded ends to still show initially when they shouldn't.
           style.strokeDashoffset = offset + 1
         }
-        style.strokeDasharray =
-          offset < 0.001 && length - dash <= 10
-            ? 'none'
-            : offset === dash
-            ? '0px, 999999px'
-            : dash + 'px,' + length + 'px'
+        style.strokeDasharray = offset < 0.001 && length - dash <= 10 ? 'none' : offset === dash ? '0px, 999999px' : dash + 'px,' + length + 'px'
       } else {
         style.strokeDasharray = dash + 'px,' + length + 'px'
       }

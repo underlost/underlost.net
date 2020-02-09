@@ -17,10 +17,7 @@ const ProjectsGrid = () => {
 
 const query = graphql`
   query {
-    allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { sourceInstanceName: { eq: "projects" } } }
-    ) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }, filter: { fields: { sourceInstanceName: { eq: "projects" } } }) {
       edges {
         node {
           fields {

@@ -41,4 +41,9 @@ const BackgroundFixed = props => (
   />
 )
 
+BackgroundFixed.propTypes = {
+  filename: PropTypes.node.isRequired,
+  alt: PropTypes.string,
+}
+
 export default BackgroundFixed

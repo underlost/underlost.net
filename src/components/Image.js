@@ -27,17 +27,14 @@ const Image = props => (
         return null
       }
       //const imageSizes = image.node.childImageSharp.sizes; sizes={imageSizes}
-      return (
-        <Img
-          alt={props.alt}
-          className={`image-wrapper`}
-          fluid={image.node.childImageSharp.fluid}
-          objectFit="cover"
-          objectPosition="50% 50%"
-        />
-      )
+      return <Img alt={props.alt} className={`image-wrapper`} fluid={image.node.childImageSharp.fluid} objectFit="cover" objectPosition="50% 50%" />
     }}
   />
 )
+
+Image.propTypes = {
+  filename: PropTypes.node.isRequired,
+  alt: PropTypes.string,
+}
 
 export default Image

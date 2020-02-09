@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, Link, graphql } from 'gatsby'
 import PortfolioItem from '../components/portfolioItem'
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 
 const PortfolioGrid = () => {
   const data = useStaticQuery(query)
@@ -31,10 +30,7 @@ const PortfolioGrid = () => {
 
 const query = graphql`
   query {
-    allMdx(
-      sort: { fields: [frontmatter___guid], order: DESC }
-      filter: { fields: { sourceInstanceName: { eq: "portfolio" } } }
-    ) {
+    allMdx(sort: { fields: [frontmatter___guid], order: DESC }, filter: { fields: { sourceInstanceName: { eq: "portfolio" } } }) {
       edges {
         node {
           body

@@ -40,13 +40,18 @@ const FixedOverlay = props => (
             left: 0,
             top: 0,
             bottom: 0,
-            width: '60%',
-            marginLeft: 'auto',
+            width: `60%`,
+            marginLeft: `auto`,
           }}
         />
       )
     }}
   />
 )
+
+FixedOverlay.propTypes = {
+  filename: PropTypes.node.isRequired,
+  alt: PropTypes.string,
+}
 
 export default FixedOverlay
