@@ -2,14 +2,14 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
-const ProjectPage = () => (
+const DefaultPage = () => (
   <Layout>
     <div>
       <h1>Page template</h1>
     </div>
   </Layout>
 )
-export default ProjectPage
+export default DefaultPage
 
 export const pageQuery = graphql`
   query($slug: String!) {
@@ -19,7 +19,6 @@ export const pageQuery = graphql`
       fields {
         slug
       }
-
       frontmatter {
         guid
         title

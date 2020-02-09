@@ -1,9 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import SEO from '../components/seo'
 import Layout from '../components/Layout'
 
 const ProjectPage = () => (
   <Layout>
+    <SEO />
     <div>
       <h1>Project template</h1>
     </div>
@@ -19,23 +21,13 @@ export const pageQuery = graphql`
       fields {
         slug
       }
-
       frontmatter {
         guid
         title
         date(formatString: "DD.MM.YYYY")
         description
         color
-        image {
-          childImageSharp {
-            fluid(maxWidth: 1920, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-            resize(width: 800) {
-              src
-            }
-          }
-        }
+        image
       }
     }
   }

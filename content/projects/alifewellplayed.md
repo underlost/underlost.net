@@ -3,17 +3,11 @@ guid: "901"
 title: "A Life Well Played"
 slug: "alifewellplayed"
 permalink: "projects/alifewellplayed/"
-description: "Just your typical blog"
+description: "A website about video games, pop culture, and the people involved."
 color: "952067"
 size: col-md-4
-image: "/assets/img/projects/alifewellplayed.jpg"
+image: "cover_alifewellplayed.jpg"
 date: "2014-04-01"
 retired: "false"
 ---
 
-#A Life Well Played is my personal blog.
-
-### V1: Replica
-
-
-### V2: The Move to WordPress

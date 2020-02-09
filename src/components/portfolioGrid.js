@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, Link, graphql } from 'gatsby'
-import PortfolioItem from '../components/portfolioItem'
+import PortfolioItem from './PortfolioItem'
 
 const PortfolioGrid = () => {
   const data = useStaticQuery(query)
@@ -20,7 +20,6 @@ const PortfolioGrid = () => {
           col2Width={edge.node.frontmatter.col2Width}
           col1Order={edge.node.frontmatter.col1Order}
           col2Order={edge.node.frontmatter.col2Order}
-          body={edge.node.body}
           cover={edge.node.frontmatter.image}
         />
       ))}
@@ -33,7 +32,6 @@ const query = graphql`
     allMdx(sort: { fields: [frontmatter___guid], order: DESC }, filter: { fields: { sourceInstanceName: { eq: "portfolio" } } }) {
       edges {
         node {
-          body
           fields {
             slug
           }
@@ -49,13 +47,7 @@ const query = graphql`
             col2Width
             col1Order
             col2Order
-            image {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
-                  src
-                }
-              }
-            }
+            image
           }
         }
       }

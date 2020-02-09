@@ -7,8 +7,20 @@ const AboutPage = () => (
   <Layout>
     <SEO
       title="About Tyler Rilling"
-      description="I'm a hybrid writer, UX designer and developer, with an interest in photography and video games mixed in on the side. I'm basically the bard of the group."
-      keywords={[`Tyler Rilling`, `underlost`, `Seattle web developer`]}
+      description="Tyler Rilling is a hybrid writer, UX designer and developer, with an interest in photography and video games mixed in on the side. I'm basically the bard of the group."
+      keywords = {
+        [`Tyler Rilling`,
+          `underlost`,
+          `undertale`,
+          `Seattle Web Developer`,
+          `Seattle Front-End Developer`,
+          `Seattle python developer`,
+          `PNW developer`,
+          `Pacific Northwest developer`,
+          `Seattle Photography`,
+          `Seattle Game Developer`,
+        ]
+      }
     />
     <article className={`section-article pr-lg-5`}>
       <div className={`fadeRight layout-single-column`}>

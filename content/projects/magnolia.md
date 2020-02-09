@@ -6,7 +6,9 @@ permalink: "projects/magnolia/"
 description: "A video game of sorts."
 color: "952067"
 size: "col-md-4"
-image: "/assets/img/projects/magnolia.jpg"
+image: "cover_magnolia.jpg"
 date: "2014-04-01"
 retired: "false"
 ---
+
+Magnolia is the working title for an upcoming narrative based video game I'm working on.

@@ -6,7 +6,9 @@ permalink: "projects/jadedgamer/"
 description: "A video game news aggregator"
 color: "952067"
 size: col-md-4
-image: "/assets/img/projects/jadedgamer.jpg"
+image: "cover_jadedgamer.jpg"
 date: "2014-04-01"
 retired: "false"
 ---
+
+Jaded Gamer is the *frontpage* of video game news. It's a somewhat simple news aggregators of various video game news publications.

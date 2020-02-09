@@ -7,7 +7,7 @@ const ProjectsGrid = () => {
   return (
     <div className={`row mb-5`}>
       {data.allMdx.edges.map(edge => (
-        <div key={edge.node.frontmatter.guid} className={`col-md-2`}>
+        <div key={edge.node.frontmatter.guid} className={`col-md-6`}>
           {edge.node.frontmatter.title}
         </div>
       ))}

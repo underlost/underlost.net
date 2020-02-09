@@ -3,15 +3,15 @@ import React from 'react'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import ClientGrid from '../components/ClientGrid'
-import ProjectsGrid from '../components/projectsGrid'
+import ProjectsGrid from '../components/ProjectsGrid'
 import PortfolioGrid from '../components/PortfolioGrid'
 
 const PortfolioPage = () => (
   <Layout>
     <SEO
-      title="Tyler Rilling' Selected Works"
-      description="Various projects I've worked on and continue to work on."
-      keywords={[`Tyler Rilling`, `underlost`, `Seattle web developer`, `GTyler Rilling Portfolio`, `Tyler Rilling Selected Works`]}
+      title="Tyler Rilling's Selected Works"
+      description="Clients Ive worked with, and case studies on selected works."
+      keywords={[`Tyler Rilling`, `underlost`, `Seattle web developer`, `Tyler Rilling Portfolio`, `Tyler Rilling Selected Works`]}
     />
 
     <h1></h1>

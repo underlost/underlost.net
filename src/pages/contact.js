@@ -1,9 +1,26 @@
 import React from 'react'
-
+import SEO from '../components/seo'
 import Layout from '../components/Layout'
 
 const ContactPage = () => (
   <Layout>
+    <SEO
+      title="Contact Information"
+      description="How to contact Tyler Rilling / underlost"
+      keywords={[
+        `Tyler Rilling`,
+        `underlost`,
+        `undertale`,
+        `Seattle Web Developer`,
+        `Seattle Front-End Developer`,
+        `Seattle python developer`,
+        `PNW developer`,
+        `Pacific Northwest developer`,
+        `contact Tyler Rilling`,
+        `contact underlost`,
+        `Email Tyler Rilling`,
+      ]}
+    />
     <article className={`section-article`}>
       <div className={`fadeRight layout-single-column`}>
         <h4 className={`xl text-lowercase headline text-transparent blue-stroke`}>Let&apos;s Chat!</h4>
