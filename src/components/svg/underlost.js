@@ -1,28 +1,21 @@
 import React from "react"
 import { Link } from "gatsby"
-//import { TweenMax, Circ, TimelineMax } from "gsap/TweenMaxBase"
-import { TweenMax, Circ, TimelineMax } from "gsap"
-import drawSVG from "../../lib/DrawSVGPlugin"
+import { TweenMax, Circ, gsap } from "gsap"
+import DrawSVGPlugin from "../../lib/DrawSVGPlugin"
+gsap.registerPlugin(DrawSVGPlugin)
 
 const duration = 3.75
 const delay = 1
 const ease = Circ.easeOut
-const plugins = [drawSVG, TweenMax, Circ, TimelineMax]
+
 
 class UnderlostSVG extends React.Component  {
-  constructor(props){
-    super(props)
-    // reference to the DOM node
-    this.myElement = null
-    // reference to the animation
-    this.myTween = null
-  }
 
   componentDidMount(){
     // use the node ref to create the animation
     TweenMax.set(this.svgAnimated, { visibility: `visible` })
     //this.myTween = TweenLite.to(this.svgAnimated, 1, {x: 100, y: 100});
-    var tl = new TimelineMax({ repeat: 0, yoyo: false })
+    var tl = new gsap.timeline({ repeat: 0, yoyo: false })
 	  tl.staggerFrom(`.st0`, duration, { drawSVG: `50% 50%`, ease: ease }, 3.20)
   }
 
