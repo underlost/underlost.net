@@ -7,22 +7,24 @@ const PortfolioGrid = () => {
 
   return (
     <div className={`portfolio-list pr-lg-5`}>
-      {data.allMdx.edges.map(edge => (
-        <PortfolioItem
-          key={edge.node.frontmatter.guid}
-          title={edge.node.frontmatter.title}
-          guid={edge.node.frontmatter.guid}
-          color={edge.node.frontmatter.color}
-          permalink={edge.node.fields.slug}
-          size={edge.node.frontmatter.guid}
-          description={edge.node.frontmatter.description}
-          col1Width={edge.node.frontmatter.col1Width}
-          col2Width={edge.node.frontmatter.col2Width}
-          col1Order={edge.node.frontmatter.col1Order}
-          col2Order={edge.node.frontmatter.col2Order}
-          cover={edge.node.frontmatter.image}
-        />
-      ))}
+      <div className={`row`}>
+        {data.allMdx.edges.map(edge => (
+          <PortfolioItem
+            key={edge.node.frontmatter.guid}
+            title={edge.node.frontmatter.title}
+            guid={edge.node.frontmatter.guid}
+            color={edge.node.frontmatter.color}
+            permalink={edge.node.fields.slug}
+            size={edge.node.frontmatter.guid}
+            description={edge.node.frontmatter.description}
+            col1Width={edge.node.frontmatter.col1Width}
+            col2Width={edge.node.frontmatter.col2Width}
+            col1Order={edge.node.frontmatter.col1Order}
+            col2Order={edge.node.frontmatter.col2Order}
+            cover={edge.node.frontmatter.image}
+          />
+        ))}
+      </div>
     </div>
   )
 }

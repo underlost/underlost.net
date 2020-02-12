@@ -1,14 +1,23 @@
 import React from 'react'
 import { useStaticQuery, Link, graphql } from 'gatsby'
+import ProjectItem from './ProjectItem'
 
 const ProjectsGrid = () => {
   const data = useStaticQuery(query)
 
   return (
-    <div className={`row mb-5`}>
+    <div className={`mb-5 layout-single-column`}>
       {data.allMdx.edges.map(edge => (
-        <div key={edge.node.frontmatter.guid} className={`col-md-6`}>
-          {edge.node.frontmatter.title}
+        <div key={edge.node.frontmatter.guid}>
+          <ProjectItem
+            key={edge.node.frontmatter.guid}
+            title={edge.node.frontmatter.title}
+            guid={edge.node.frontmatter.guid}
+            permalink={edge.node.fields.slug}
+            size={edge.node.frontmatter.guid}
+            description={edge.node.frontmatter.description}
+            cover={edge.node.frontmatter.image}
+          />
         </div>
       ))}
     </div>
@@ -24,11 +33,10 @@ const query = graphql`
             slug
           }
           frontmatter {
-            color
             guid
             title
-            size
             description
+            permalink
           }
         }
       }

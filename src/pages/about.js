@@ -66,25 +66,6 @@ const AboutPage = () => (
           an{` `}
           <a href="mailto:tylerr@hellowildern.com?subject=Hello">email</a>.
         </p>
-
-        <h3 className={`subtitle text-uppercase mt-md-4 text-blue`}>skillset</h3>
-        <ul className={`list-unstyled`}>
-          <li>Unity</li>
-          <li>Unreal Engine</li>
-          <li>Godot game engine</li>
-          <li>React Native</li>
-          <li>HTML5</li>
-          <li>LESS / SCSS / SASS</li>
-          <li>Vanilla Javascript and jQuery</li>
-          <li>ReactJS, VueJS, GatsbyJS</li>
-          <li>Django Web framework</li>
-          <li>Python</li>
-          <li>PHP</li>
-          <li>Ghost CMS</li>
-          <li>WordPress & WooCommerce</li>
-          <li>Heroku / AWS cloud hosting</li>
-          <li>Amazon Lambda</li>
-        </ul>
       </div>
     </article>
   </Layout>

@@ -10,21 +10,23 @@
   z-index: 100;
 }
 .navbar-toggler {
-    position: relative;
-    z-index: 500;
-    //opacity: 0;
-    transition: all .7s ease-in-out;
-    &:focus {outline: none;}
-    .icon-bar {
-      background-color: $white;
-      transform: rotate(0deg) translate(0px, 0px);
-      transition: ease all .2s;
-      display: block;
-      width: 28px;
-      height: 2px;
-      border-radius: 1px;
-      margin: 5px -4px;
-    }
+  background-color: transparent;
+  border-width: 0;
+  position: relative;
+  z-index: 500;
+  //opacity: 0;
+  transition: all .7s ease-in-out;
+  &:focus {outline: none;}
+  .icon-bar {
+    background-color: $white;
+    transform: rotate(0deg) translate(0px, 0px);
+    transition: ease all .2s;
+    display: block;
+    width: 28px;
+    height: 2px;
+    border-radius: 1px;
+    margin: 5px -4px;
+  }
 }
 
 #site-menu {

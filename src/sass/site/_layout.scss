@@ -18,7 +18,7 @@ body {
 
 .lead {
   font-size: 1.75rem;
-  
+
 }
 
 p {
@@ -70,7 +70,7 @@ body.home  {
 
 .layout-single-column {
   p {
-    font-size: 1.5rem;
+    //font-size: 1.3rem;
     letter-spacing: 2px;
     line-height: 1.5;
     font-weight: 400;
@@ -82,7 +82,7 @@ body.home  {
       }
     }
     &.lead {
-      font-size: 2.5rem;
+      font-size: 1.75rem;
       line-height: 1.5;
       margin-bottom: 2rem;
     }

@@ -1,17 +1,32 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 
-const ProjectPage = () => (
-  <Layout>
-    <SEO />
-    <div>
-      <h1>Project template</h1>
-    </div>
-  </Layout>
-)
+const ProjectPage = ({ data }) => {
+  const post = data.mdx
+  return (
+    <Layout>
+      <SEO />
+      <div className={`layout-single-column fadeLeft mr-lg-5`}>
+        <Link className={`d-block subtitle h6 text-uppercase`} to="/portfolio/">Projects</Link>
+        <article>
+          <h1>{post.frontmatter.title}</h1>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </article>
+      </div>
+    </Layout>
+  )
+
+}
 export default ProjectPage
+
+ProjectPage.propTypes = {
+  data: PropTypes.node.isRequired,
+}
 
 export const pageQuery = graphql`
   query($slug: String!) {
