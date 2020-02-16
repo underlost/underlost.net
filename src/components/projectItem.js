@@ -7,7 +7,7 @@ import Image from './Image'
 
 const ProjectItem = props => (
   <div key={props.guid} className={`project-item`}>
-    <Fade big>
+    <Fade bottom>
       <div className={`project-cover`}>
         <Image filename={props.cover} alt={props.title} />
       </div>

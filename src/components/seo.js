@@ -11,6 +11,7 @@ function SEO({ description, lang, meta, keywords, title }) {
           siteMetadata {
             title
             description
+            keywords
             author
             social {
               twitter
@@ -24,6 +25,7 @@ function SEO({ description, lang, meta, keywords, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaKeywords = keywords || site.siteMetadata.keywords
 
   return (
     <Helmet
@@ -36,6 +38,10 @@ function SEO({ description, lang, meta, keywords, title }) {
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: `keywords`,
+          content: metaKeywords,
         },
         {
           property: `og:title`,
@@ -85,6 +91,7 @@ SEO.defaultProps = {
 
 SEO.propTypes = {
   description: PropTypes.string,
+  keywords: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),

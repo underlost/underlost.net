@@ -4,6 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import BackgroundFixed from './BackgroundFixed'
 import FixedOverlay from './FixedOverlay'
+import Image from './Image'
 
 class Layout extends React.Component {
   constructor(props) {
@@ -34,6 +35,9 @@ class Layout extends React.Component {
       <>
         <div id="page-wrap" className={` ${this.state.navBarActiveClass}`}>
           <div className="toggle-wrapper">
+            <div className={`text-center mx-auto my-2`}>
+              <Image filename={`logo.png`} />
+            </div>
             <button className={`button navbar-toggler ${this.state.navBarActiveClass}`} data-target="page-wrap" onClick={() => this.toggleHamburger()}>
               <span className={`icon-bar top-bar`} />
               <span className={`icon-bar middle-bar`} />

@@ -22,8 +22,8 @@ const AboutPage = () => (
         ]
       }
     />
-    <article className={`section-article pr-lg-5`}>
-      <div className={`fadeRight layout-single-column`}>
+    <article className={`layout-single-column pr-lg-5`}>
+      <header className={`fadeRight d-block`}>
         <h1 className={`sr-only`}>
           I&apos;m a hybrid writer, UX designer and developer, with an interest in photography and video games mixed in on the side. I&apos;m basically the bard of the group.
         </h1>
@@ -41,7 +41,7 @@ const AboutPage = () => (
           {` `}
           mixed in on the side. I&apos;m basically the bard of the group.
         </p>
-      </div>
+      </header>
       <div className={`layout-single-column fadeLeft`}>
         <p>
           In a past life, I had a background in information computer security and built a successful web hosting business. Since then, I&apos;ve worked as a UX designer and consultant for
@@ -58,7 +58,7 @@ const AboutPage = () => (
           <em>Wine Country</em>, you’ve probably seen some of my work.{` `}
           <em>I&apos;m sorry about that</em>.
         </p>
-        <p>My work has also been featured on CNN, ABC (Australia), and various local news outlets in the Seattle area.</p>
+        <p>My work has also been featured on CNN, ABC (Australia), and various local news outlets in Seattle, Washington.</p>
 
         <h3 className={`subtitle text-uppercase mt-md-4 text-blue`}>Currently</h3>
         <p>

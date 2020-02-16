@@ -3,8 +3,18 @@ module.exports = {
     title: `underlost.net`,
     siteUrl: `https://underlost.net`,
     description: `I make dumb, sometimes cool things on the internet.`,
+    keywords: [
+      `Tyler Rilling`,
+      `underlost`,
+      `undertale`,
+      `Seattle Web Developer`,
+      `Seattle Front-End Developer`,
+      `Seattle python developer`,
+      `PNW developer`,
+      `Pacific Northwest developer`,
+    ],
     googleSiteVerification: `#`,
-    image: `#`,
+    image: ``,
     author: `Tyler Rilling`,
     social: {
       twitter: `underlost`,
@@ -16,6 +26,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -25,7 +36,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `static/images/logo.png`,
       },
     },
     {

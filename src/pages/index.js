@@ -22,20 +22,20 @@ const IndexPage = () => (
         `Pacific Northwest developer`,
       ]}
     />
-    <div className={`site-main index h-100 py-3 mx-auto mt-5`}>
-      <div className={`pr-lg-5 fadeRight`}>
+    <article className={`layout-single-column site-main index py-3 mx-auto mt-3 pr-lg-5`}>
+      <header className={`fadeRight d-block`}>
         <h3 className={`subtitle mb-0 text-pink text-uppercase`}>Introduction</h3>
         <h1 className={`title h1 text-white`}>
           Underlost is <span className={`bg-blue px-1`}>Tyler Rilling</span>, a Python developer and UX designer specializing in AR/VR, living in Seattle, Washington. They are probably not
           an Undertale game.
         </h1>
-      </div>
+      </header>
       <div className={`my-5 fadeLeft`}>
         <Link className={`btn btn-default px-5 py-2`} to="/about/">
           Learn More <FontAwesomeIcon icon={faAngleDoubleRight} fixedWidth size="lg" />
         </Link>
       </div>
-    </div>
+    </article>
   </Layout>
 )
 

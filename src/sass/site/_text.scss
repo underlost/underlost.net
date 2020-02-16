@@ -5,33 +5,35 @@
     font-size: 5rem;
     font-weight: 900;
     line-height: 1;
-    letter-spacing: .5rem;
+    letter-spacing: 4px;
   }
   &.h1 {
     font-size: 4rem;
     font-weight: 900;
+    line-height: 1;
+    letter-spacing: 3px;
   }
-    &.h2 {
-      font-size: 3rem;
-      letter-spacing: .25rem;
-      font-weight: 900;
-      line-height: 1;
-    }
-    &.h3 {
-      font-size: 40px;
-      letter-spacing: 3.7px;
-    }
-    &.h4 {
-      font-size: 28px;
-      letter-spacing: 1px;
-    }
-    &.h5 {
-      font-size: 14px;
-      letter-spacing: 5px;
-    }
-    &.h6 {
-      letter-spacing: 1.5px
-    }
+  &.h2 {
+    font-size: 3rem;
+    letter-spacing: .25rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+  &.h3 {
+    font-size: 40px;
+    letter-spacing: 3.7px;
+  }
+  &.h4 {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+  &.h5 {
+    font-size: 14px;
+    letter-spacing: 5px;
+  }
+  &.h6 {
+    letter-spacing: 1.5px
+  }
 }
 .title {
   font-family: $font-family-sans-serif;
