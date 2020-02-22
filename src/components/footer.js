@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <div className={`row no-gutters`}>
-      <div className={`col-md-5 offset-md-7 pt-3`}>
+      <div className={`col-md-7 offset-md-4 col-lg-5 offset-lg-7 pt-3`}>
         <Fade bottom>
           <footer className={`site-footer my-4 mt-md-5`}>
             <SocialLinks />

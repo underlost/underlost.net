@@ -8,19 +8,18 @@ const AboutPage = () => (
     <SEO
       title="About Tyler Rilling"
       description="Tyler Rilling is a hybrid writer, UX designer and developer, with an interest in photography and video games mixed in on the side. I'm basically the bard of the group."
-      keywords = {
-        [`Tyler Rilling`,
-          `underlost`,
-          `undertale`,
-          `Seattle Web Developer`,
-          `Seattle Front-End Developer`,
-          `Seattle python developer`,
-          `PNW developer`,
-          `Pacific Northwest developer`,
-          `Seattle Photography`,
-          `Seattle Game Developer`,
-        ]
-      }
+      keywords={[
+        `Tyler Rilling`,
+        `underlost`,
+        `undertale`,
+        `Seattle Web Developer`,
+        `Seattle Front-End Developer`,
+        `Seattle python developer`,
+        `PNW developer`,
+        `Pacific Northwest developer`,
+        `Seattle Photography`,
+        `Seattle Game Developer`,
+      ]}
     />
     <article className={`layout-single-column pr-lg-5`}>
       <header className={`fadeRight d-block`}>

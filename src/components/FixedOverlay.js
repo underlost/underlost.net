@@ -31,7 +31,7 @@ const FixedOverlay = props => (
       return (
         <Img
           alt={props.alt}
-          className={`image-wrapper`}
+          className={`image-wrapper image-fixed-overlay d-none d-md-block`}
           fluid={image.node.childImageSharp.fluid}
           objectFit="cover"
           objectPosition="50% 50%"
@@ -41,8 +41,6 @@ const FixedOverlay = props => (
             left: 0,
             top: 0,
             bottom: 0,
-            width: `60%`,
-            marginLeft: `auto`,
           }}
         />
       )

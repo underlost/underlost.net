@@ -1,15 +1,30 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+
+import SEO from '../components/seo'
 import Layout from '../components/Layout'
 
-const DefaultPage = () => (
-  <Layout>
-    <div>
-      <h1>Page template</h1>
-    </div>
-  </Layout>
-)
-export default DefaultPage
+const PageTemplate = ({ data }) => {
+  const post = data.mdx
+  return (
+    <Layout>
+      <SEO title={post.frontmatter.title} description={post.frontmatter.description} />
+      <div className={`layout-single-column fadeLeft mr-lg-5`}>
+        <article>
+          <h1>{post.frontmatter.title}</h1>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </article>
+      </div>
+    </Layout>
+  )
+}
+export default PageTemplate
+
+PageTemplate.propTypes = {
+  data: PropTypes.node.isRequired,
+}
 
 export const pageQuery = graphql`
   query($slug: String!) {
@@ -25,6 +40,7 @@ export const pageQuery = graphql`
         date(formatString: "DD.MM.YYYY")
         description
         color
+        image
       }
     }
   }

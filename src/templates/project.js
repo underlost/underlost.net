@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
@@ -10,9 +10,11 @@ const ProjectPage = ({ data }) => {
   const post = data.mdx
   return (
     <Layout>
-      <SEO />
+      <SEO title={post.frontmatter.title} description={post.frontmatter.description} />
       <div className={`layout-single-column fadeLeft mr-lg-5`}>
-        <Link className={`d-block subtitle h6 text-uppercase`} to="/portfolio/">Projects</Link>
+        <Link className={`d-block subtitle h6 text-uppercase`} to="/portfolio/">
+          Projects
+        </Link>
         <article>
           <h1>{post.frontmatter.title}</h1>
           <MDXRenderer>{post.body}</MDXRenderer>
@@ -20,7 +22,6 @@ const ProjectPage = ({ data }) => {
       </div>
     </Layout>
   )
-
 }
 export default ProjectPage
 

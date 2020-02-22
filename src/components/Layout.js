@@ -1,67 +1,46 @@
-import React from 'react'
-import Nav from './Nav'
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import Navigation from './Navigation'
 import Header from './Header'
 import Footer from './Footer'
 import BackgroundFixed from './BackgroundFixed'
 import FixedOverlay from './FixedOverlay'
 import Image from './Image'
 
-class Layout extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-      navBarActiveClass: ``,
-    }
+const Layout = ({ children }) => {
+  const [menuState, setMenuState] = useState(`nav-is-closed`)
+  const toggleMenu = () => {
+    setMenuState(state => (state === `nav-is-closed` ? `nav-is-active` : `nav-is-closed`))
   }
-
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        this.state.active
-          ? this.setState({ navBarActiveClass: `nav-is-active` })
-          : this.setState({ navBarActiveClass: `` })
-      }
-    )
-  }
-
-  render() {
-    return (
-      <>
-        <div id="page-wrap" className={` ${this.state.navBarActiveClass}`}>
-          <div className="toggle-wrapper">
-            <div className={`text-center mx-auto my-2`}>
-              <Image filename={`logo.png`} />
-            </div>
-            <button className={`button navbar-toggler ${this.state.navBarActiveClass}`} data-target="page-wrap" onClick={() => this.toggleHamburger()}>
-              <span className={`icon-bar top-bar`} />
-              <span className={`icon-bar middle-bar`} />
-              <span className={`icon-bar middle-bar`} />
-              <span className={`icon-bar bottom-bar`} />
-              <span className={`sr-only`}>Toggle navigation</span>
-            </button>
-          </div>
-          <Nav />
-          <div id="page">
-            <div className={`container-fluid site-content pt-5`}>
-              <Header />
-              <main className={`site-main row no-gutters`}>
-                <div className={`col-md-5 offset-md-7`}>{this.props.children}</div>
-              </main>
-              <Footer />
-            </div>
-          </div>
+  return (
+    <>
+      <div id="page" className={`viewport ${menuState}`}>
+        <div className="toggle-wrapper">
+          <button className={`button navbar-toggler`} data-target="page-wrap" onClick={() => toggleMenu()}>
+            <span className={`icon-bar top-bar`} />
+            <span className={`icon-bar middle-bar`} />
+            <span className={`icon-bar middle-bar`} />
+            <span className={`icon-bar bottom-bar`} />
+            <span className={`sr-only`}>Toggle navigation</span>
+          </button>
         </div>
-        <BackgroundFixed filename={`background.jpg`} />
-        <FixedOverlay filename={`overlay.png`} />
-      </>
-    )
-  }
+        <Navigation />
+        <div className={`container-fluid site-content px-4 px-md-2 pt-5`}>
+          <Header />
+          <main className={`site-main row no-gutters`}>
+            <div className={`col-md-7 offset-md-4 col-lg-5 offset-lg-7`}>{children}</div>
+          </main>
+          <Footer />
+        </div>
+      </div>
+      <BackgroundFixed filename={`background.jpg`} />
+      <FixedOverlay filename={`overlay.png`} />
+    </>
+  )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

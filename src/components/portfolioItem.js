@@ -5,7 +5,6 @@ import Fade from 'react-reveal/Fade'
 
 import Image from './Image'
 
-
 const PortfolioItem = props => (
   <div key={props.guid} className={`project-item portfolio-item col-6`}>
     <Fade big>

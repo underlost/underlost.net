@@ -31,7 +31,7 @@ const BackgroundFixed = props => (
       return (
         <Img
           alt={props.alt}
-          className={`image-wrapper`}
+          className={`image-wrapper d-none d-md-block`}
           fluid={image.node.childImageSharp.fluid}
           objectFit="cover"
           objectPosition="50% 50%"
