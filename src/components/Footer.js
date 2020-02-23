@@ -14,7 +14,7 @@ const Footer = () => {
             <SocialLinks />
             <small className={`copyright d-block text-uppercase`}>
               Copyright &copy; Tyler Rilling 2002–2020. <br />
-              Site last updated: <a href="https://github.com/underlost/underlost.net/">{data.site.buildTime}</a>.
+              Site last updated: <a href="https://github.com/underlost/underlost.net/">{data.site.buildTime}</a>. ❤️
             </small>
           </footer>
         </Fade>

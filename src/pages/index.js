@@ -27,7 +27,7 @@ const IndexPage = () => (
         <h3 className={`subtitle mb-0 text-pink text-uppercase`}>Introduction</h3>
         <h1 className={`title h1 text-white`}>
           Underlost is <span className={`bg-blue px-1`}>Tyler Rilling</span>, a Python developer and UX designer specializing in AR/VR, living in Seattle, Washington. They are probably not
-          an Undertale game.
+          an Undertale game. 👾
         </h1>
       </header>
       <div className={`my-5 fadeLeft`}>

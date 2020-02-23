@@ -19,12 +19,12 @@ const PortfolioPage = () => (
       </header>
       <div className={`fadeLeft`}>
         <p>
-          I make things online. My day job normally involves building ReactJS based apps and WordPress sites with a smathering of DevOps and project management on the side. I originally
+          I make things online. 🚧 My day job normally involves building ReactJS based apps and WordPress sites with a smathering of DevOps and project management on the side. I originally
           planned on sharing case studies and client work I&apos;ve done here, but seeing as this is my{` `}
           <strong>personal</strong> website, I thought I would keep with the tone, and just share personal projects I&apos;m working on.
         </p>
         <p>
-          For case studies and more professional work, check out my other sites,{` `}
+          For case studies and more professional work 👔, check out my other sites,{` `}
           <a target="_blank" rel="noopener noreferrer" title="Tyler.Codes" href="https://tyler.codes/">
             tyler.codes
           </a>

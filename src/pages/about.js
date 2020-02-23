@@ -32,13 +32,12 @@ const AboutPage = () => (
           <a href="https://tyler.camera/" target="_blank" rel="noopener noreferrer">
             photography
           </a>
-          {` `}
+          {` `} 📷
           and{` `}
           <a href="https://alifewellplayed.com/" target="_blank" rel="noopener noreferrer">
             video games
           </a>
-          {` `}
-          mixed in on the side. I&apos;m basically the bard of the group.
+          {` `} 🎮 mixed in on the side. I&apos;m basically the bard of the group. 😏
         </p>
       </header>
       <div className={`layout-single-column fadeLeft`}>
@@ -57,13 +56,13 @@ const AboutPage = () => (
           <em>Wine Country</em>, you’ve probably seen some of my work.{` `}
           <em>I&apos;m sorry about that</em>.
         </p>
-        <p>My work has also been featured on CNN, ABC (Australia), and various local news outlets in Seattle, Washington.</p>
+        <p>My work has also been featured on CNN, ABC (Australia), and various local news outlets in Seattle, Washington. 📰 </p>
 
         <h3 className={`subtitle text-uppercase mt-md-4 text-blue`}>Currently</h3>
         <p>
           Currently, I&apos;m working as a developer at <a href="https://www.hellowildern.com/">Wildern</a> in Seattle. For any web development or design project enqueries, please send me
           an{` `}
-          <a href="mailto:tylerr@hellowildern.com?subject=Hello">email</a>.
+          <a href="mailto:tylerr@hellowildern.com?subject=Hello">✉️ email</a>.
         </p>
       </div>
     </article>
