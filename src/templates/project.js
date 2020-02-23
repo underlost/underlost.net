@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import SEO from '../components/seo'
+import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 
 const ProjectPage = ({ data }) => {

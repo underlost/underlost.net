@@ -33,7 +33,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Our templates for projects and files inside /pages/*.mdx
   const projectPage = require.resolve(`./src/templates/project.js`)
-  const singlePage = require.resolve(`./src/templates/page.js`)
+  const singlePage = require.resolve(`./src/templates/single.js`)
 
   const result = await wrapper(
     graphql(`
@@ -56,7 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-        single: allMdx(filter: { fields: { sourceInstanceName: { eq: "pages" } } }) {
+        single: allMdx(filter: { fields: { sourceInstanceName: { eq: "single" } } }) {
           edges {
             node {
               fields {

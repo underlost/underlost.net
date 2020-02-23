@@ -5,7 +5,6 @@ import Header from './Header'
 import Footer from './Footer'
 import BackgroundFixed from './BackgroundFixed'
 import FixedOverlay from './FixedOverlay'
-import Image from './Image'
 
 const Layout = ({ children }) => {
   const [menuState, setMenuState] = useState(`nav-is-closed`)

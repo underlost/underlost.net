@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import SEO from '../components/seo'
+import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 
 const IndexPage = () => (
