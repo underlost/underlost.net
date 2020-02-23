@@ -2,7 +2,7 @@
     "name": "underlost.net",
     "private": true,
     "slug": "underlost",
-    "version": "6.5.0",
+    "version": "6.5.1",
     "description": "underlost.net website",
     "license": "MIT",
     "engines": {

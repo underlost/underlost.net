@@ -1,3 +1,18 @@
+.btn {
+  background-color: $black;
+  color: $white;
+  transition: all .3s ease;
+  letter-spacing: 1.5px;
+  &>svg {
+    transition: all .3s ease;
+  }
+  &:hover {
+    &>svg {
+      transform: translateX(8px);
+    }
+  }
+}
+
 .btn-default {
   border: 1px solid $body-color;
   line-height: 2;
@@ -5,10 +20,8 @@
   letter-spacing: 3px;
   font-weight: 800;
   position: relative;
-  background-color: $black;
   border-color: $seaBlue;
-  color: $white;
-  transition: all .3s ease;
+
 
   & > svg {
     transition: all .3s ease;

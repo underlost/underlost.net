@@ -32,8 +32,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   // Our templates for projects and files inside /pages/*.mdx
-  const projectPage = require.resolve(`./src/templates/project.js`)
-  const singlePage = require.resolve(`./src/templates/single.js`)
+  const projectPage = require.resolve(`./src/templates/page.js`)
+  const singlePage = require.resolve(`./src/templates/page.js`)
 
   const result = await wrapper(
     graphql(`

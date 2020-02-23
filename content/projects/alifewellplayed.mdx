@@ -2,7 +2,7 @@
 guid: "101"
 title: "A Life Well Played"
 slug: "alifewellplayed"
-permalink: "projects/alifewellplayed/"
+permalink: "portfolio/alifewellplayed/"
 description: "A website about video games, pop culture, and the people involved."
 color: "952067"
 size: col-md-4
@@ -11,3 +11,31 @@ date: "2014-04-01"
 retired: "false"
 ---
 
+### V1: Replica
+
+Years ago, I wrote Python (Django) skeleton framework to quickly build custom content management systems for clients. After being hired full time to work on VR, I rewrote the framework specifically for A Life Well Played, and named it Replica.  At the time, I was burnt out on WordPress and PHP websites, and just wanted something fast, written in Python that accomplished pretty much the exact functionality of WordPress and most other CMS’s. 
+
+Replica allowed me to quickly prototype new ideas and design quickly, while keeping content formatted in Markdown (or optionally HTML). I accomplished this by rewriting a lot of Django’s templating system to allow loading templates from from a database instead of HTML files, with syntax similar to modern MDX. 
+
+The Admin portion was based on what Ghost CMS was originally supposed to look like. Powered by [Chart.js](https://www.chartjs.org/), I created a UX to easily see what posts were scheduled to publish, ideas I was working on, and engagement. 
+
+The problem with building your own CMS for a single blog I quickly found, however, is that you’ll spend more time building the system, then actually getting to write on it. 
+
+Overall, the experience gave me a better understanding on UX best practices for building future dashboards, and what’s practical and needed for users.
+
+### V2: The Move to WordPress
+
+Knowing the direction I wanted to go, after about 4 years, I made the switch to WordPress. Because of careful planning of data structure from the start, it was incredibly easy to export 100’s of posts to WordPress, by mapping a JSON structure to WordPress’s WXML. Knowing how I wanted to layout out new content going forward, it was also easy to port over my custom templates (both dynamic and static) to WordPress’s theme system. 
+
+While no longer maintained, the theme can still be viewed [on Github](https://github.com/alifewellplayed/_exiled).
+
+
+### V3: Ghost And Beyond
+
+While WordPress offer’s a lot of great tools for writing and making the site truly yours, unless you have a great hosting plan, it can still be slow. I also wanted a more static solution, but with the ability to post and not require to build the site every time I wanted to publish new content.  Enter Ghost CMS- Headless. Ghost in Headless mode detaches the admin dashboard with the site endusers see completely. 
+
+I have a completely separate site that I can write on, and on publish, will rebuild a static version of the site hosted somewhere else completely. It also gives me the freedom to build the front-end however I want, with out the worry of how I’ll make it it work with any confinements. 
+
+Ghost still lacks *a lot* of the basic functionality of a CMS and a strong community to keep it growing, but once you get out of the traditional thinking of how a CMS should be structured, just about anything is possible  with it in Headless mode. 
+
+<Button btnType={`link`} title={`Visit A Life Well Played`}  alt={`View A Life Well Played Website`} website={`https://alifewellplayed.com`} />
