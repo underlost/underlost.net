@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `underlost.net`,
+    shortTile: `underlost.net`,
+    logo: `images/logo.png`,
+    cover_image: `images/background.jpg`,
+    siteIcon: `images/logo.png`,
     siteUrl: `https://underlost.net`,
     description: `I make dumb, sometimes cool things on the internet.`,
     keywords: [
@@ -13,20 +17,33 @@ module.exports = {
       `PNW developer`,
       `Pacific Northwest developer`,
     ],
+    author: {
+      name: `Tyler Rilling`,
+      image: ``,
+      sameAsArray: {},
+    },
     googleSiteVerification: `#`,
     image: ``,
-    author: `Tyler Rilling`,
     social: {
-      twitter: `underlost`,
+      twitter: `@underlost`,
       instagram: `underlost`,
-      Github: `underlost`,
+      github: `underlost`,
+      keybase: `underlost`,
     },
+    shareImageWidth: 1000,
+    shareImageHeight: 523,
+    backgroundColor: `#e9e9e9`,
+    themeColor: `#15171A`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-transition-link`,
+    {
+      resolve: `gatsby-plugin-zopfli`,
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
