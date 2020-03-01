@@ -46,7 +46,6 @@ const IndexPage = ({ location }) => (
 )
 
 IndexPage.propTypes = {
-  data: PropTypes.node.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,

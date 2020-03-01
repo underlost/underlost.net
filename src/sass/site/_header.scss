@@ -16,17 +16,19 @@
       background-color: $primary;
     }
   }
-  .lead {
-    font-weight: 300;
-    font-size: 2rem;
-    letter-spacing: 2.75px;
-  }
 }
-
 .site-header-sm {
   svg {
     height: 35px;
     path {stroke-width: 1.5px; fill: none; stroke: $primary}
+  }
+  &::before {
+    content: '┏';
+    position: absolute;
+    left: -30px;
+    top: -25px;
+    color: $primary;
+    transition: all .3s ease;
   }
   &::after {
     display: block;
@@ -36,6 +38,16 @@
     margin-top: 1rem;
     margin-bottom: 2.5rem;
     background-color: $primary;
+    transition: all .3s ease;
+  }
+  &:hover {
+    &::after {
+      //transform: translateX(100%);
+      width: 100%;
+    }
+    &::before {
+      color: $secondary;
+    }
   }
 }
 

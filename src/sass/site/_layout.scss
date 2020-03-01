@@ -9,7 +9,7 @@ body {
   transition: all .3s;
   overflow-x: hidden;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 .site-branding {
@@ -30,5 +30,17 @@ body {
 @include media-breakpoint-up(lg) {
   .image-fixed-overlay {
     width: 60%;
+  }
+  .videoOverlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
   }
 }

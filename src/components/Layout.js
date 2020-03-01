@@ -32,8 +32,8 @@ const Layout = ({ children }) => {
           <Footer />
         </div>
       </div>
-      <BackgroundFixed filename={`background.jpg`} />
-      <FixedOverlay filename={`overlay.png`} />
+      <BackgroundFixed filename={`background.jpg`} alt={`Video Background`} />
+      <FixedOverlay filename={`overlay.png`} alt={`Video Background Overlay`} />
     </>
   )
 }

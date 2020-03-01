@@ -22,7 +22,7 @@
         "bootstrap": "cp -r node_modules/bootstrap/scss/ src/sass/bootstrap/"
     },
     "resolutions": {
-        "sharp": "0.24.0"
+        "sharp": "^0.24.0"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.18",
@@ -55,6 +55,7 @@
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-helmet": "^5.2.1",
+        "react-hot-loader": "^4.12.19",
         "react-reveal": "^1.2.2",
         "react-transition-group": "^4.0.0"
     },
@@ -73,7 +74,7 @@
         "popper.js": "^1.14.7",
         "prettier": "^1.17.0",
         "prismjs": "^1.15.0",
-        "sharp": "0.24.0",
+        "sharp": "^0.24.0",
         "to-style": "^1.3.3",
         "typescript": "^3.7.5",
         "typography": "^0.16.0",
