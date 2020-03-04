@@ -36,7 +36,15 @@ const IndexPage = ({ location }) => (
           </h1>
         </header>
         <div className={`my-5 fadeLeft`}>
-          <AniLink className={`btn btn-default px-5 py-2`} cover bg="black" to="/about">
+          <AniLink direction="up" className={`btn btn-default px-5 py-2`} cover bg="
+            url(/images/loading.jpg)
+            center / cover
+            no-repeat        /* repeat */
+            fixed            /* attachment */
+            padding-box      /* origin */
+            content-box      /* clip */
+            black            /* color */
+          " to="/about">
             Learn More <FontAwesomeIcon icon={faAngleDoubleRight} fixedWidth size="lg" />
           </AniLink>
         </div>

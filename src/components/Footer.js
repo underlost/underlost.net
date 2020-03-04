@@ -8,9 +8,9 @@ const Footer = () => {
 
   return (
     <div className={`row no-gutters`}>
-      <div className={`col-md-7 offset-md-4 col-lg-5 offset-lg-7 pt-3`}>
+      <div className={`col-md-7 offset-md-4 col-lg-6 offset-lg-6 pt-3`}>
         <Fade bottom>
-          <footer className={`site-footer my-4 mt-md-5`}>
+          <footer className={`site-footer my-4 mt-md-5 mx-lg-5`}>
             <SocialLinks />
             <small className={`copyright d-block text-uppercase`}>
               Copyright &copy; Tyler Rilling 2002–2020. <br />
