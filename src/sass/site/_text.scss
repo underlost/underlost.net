@@ -39,7 +39,7 @@
 .title {
   font-family: $font-family-sans-serif;
   &.h1 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 34px;
     letter-spacing: 2px;
     line-height: 1.2;
@@ -47,6 +47,7 @@
   &.h6 {
     text-transform: uppercase;
     font-size: .95rem;
+    font-weight: 900;
     //letter-spacing: 5px;
   }
 }
