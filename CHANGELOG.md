@@ -2,6 +2,12 @@
 
 ---
 
+## 6.1.1 (02/29/2020)
+
+* Still WIP
+* Finalized Layout, added higher res assets
+* Added more content
+
 ## 6.1.0 (02/11/2020)
 
 * Still WIP

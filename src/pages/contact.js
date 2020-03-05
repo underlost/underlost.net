@@ -27,7 +27,7 @@ const ContactPage = ({ location }) => (
     <Layout>
       <article className={`layout-single-column pr-lg-5`}>
         <header className={`fadeRight d-block`}>
-          <h4 className={`xl text-lowercase headline text-transparent blue-stroke`}>Let&apos;s Chat!</h4>
+          <h4 className={`xl text-lowercase headline text-transparent blue-stroke mb-3`}>Let&apos;s Chat!</h4>
           <span className={`h4 headline text-uppercase text-pink mb-5 d-block`}>Tyler @ underlost.net</span>
         </header>
         <div className={`fadeLeft mb-5`}>

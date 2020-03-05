@@ -17,7 +17,7 @@ const PortfolioPage = ({ location }) => (
       <article className={`layout-single-column pr-lg-5`}>
         <header className={`fadeRight`}>
           <h1 className={`sr-only`}>Cases Studies and Projects</h1>
-          <h2 className={`h1 headline text-lowercase text-transparent blue-stroke mb-2 col-md-8 px-0`}>Personal Projects</h2>
+          <h2 className={`h1 headline text-lowercase text-transparent blue-stroke mb-3 col-md-8 px-0`}>Personal Projects</h2>
         </header>
         <div className={`fadeLeft`}>
           <p>

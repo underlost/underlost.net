@@ -27,9 +27,9 @@ const IndexPage = ({ location }) => (
       isHome={true}
     />
     <Layout>
-      <article className={`layout-single-column site-main index py-3 mx-auto mt-3 pr-lg-5`}>
+      <article className={`layout-single-column site-main index py-3 mt-3 pr-lg-5`}>
         <header className={`fadeRight d-block`}>
-          <h3 className={`subtitle mb-0 text-pink text-uppercase`}>Introduction</h3>
+          <h3 className={`subtitle mb-2 text-pink text-uppercase`}>Introduction</h3>
           <h1 className={`title h1 text-white`}>
             Underlost is <span className={`bg-blue px-1`}>Tyler Rilling</span>, a Python developer and UX designer specializing in AR/VR, living in Seattle, Washington. They are probably
             not an Undertale game. 👾

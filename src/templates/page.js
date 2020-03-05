@@ -14,22 +14,33 @@ import Image from '../components/Image'
 const ProjectPage = ({ data, location }) => {
   const post = data.mdx
   const shortcodes = { Link, Button, Image }
+  let breabcrumbs
+
+  if (post.frontmatter.type == `project`) {
+    breabcrumbs = (
+      <Link className={`d-block h6 headline text-uppercase text-primary`} to="/portfolio/">
+        <FontAwesomeIcon icon={faAngleDoubleLeft} fixedWidth size="sm" />
+          Back to all Projects
+      </Link>
+    )
+  } else {
+    breabcrumbs = null
+  }
   return (
     <>
-      <MetaData location={location} type="website" title={post.frontmatter.title} keywords={[]} description={post.frontmatter.description} />
+      <MetaData location={location} type="website" title={post.frontmatter.title} keywords={post.frontmatter.keywords} description={post.frontmatter.description} />
       <Layout>
-        <div className={`layout-single-column fadeLeft mr-lg-5`}>
-          <Link className={`d-block h6 headline text-uppercase text-primary`} to="/portfolio/">
-            <FontAwesomeIcon icon={faAngleDoubleLeft} fixedWidth size="sm" />
-            Back to all Projects
-          </Link>
+          {breabcrumbs}
           <article>
-            <h1>{post.frontmatter.title}</h1>
-            <MDXProvider components={shortcodes}>
-              <MDXRenderer>{post.body}</MDXRenderer>
-            </MDXProvider>
+            <header className={`fadeRight d-block`}>
+              <h1 className={`headline h1 text-lowercase text-transparent blue-stroke px-0 mb-3`}>{post.frontmatter.title}</h1>
+            </header>
+            <div className={`layout-single-column fadeLeft mr-lg-4`}>
+              <MDXProvider components={shortcodes}>
+                <MDXRenderer>{post.body}</MDXRenderer>
+              </MDXProvider>
+            </div>
           </article>
-        </div>
       </Layout>
     </>
   )
@@ -56,8 +67,10 @@ export const pageQuery = graphql`
         title
         date(formatString: "DD.MM.YYYY")
         description
+        keywords
         color
         image
+        type
       }
     }
   }
