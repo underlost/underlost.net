@@ -95,5 +95,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: ` UA-1247925-1`,
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
   ],
 }
