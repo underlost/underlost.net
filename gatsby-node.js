@@ -38,7 +38,18 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await wrapper(
     graphql(`
       {
-        projects: allMdx(filter: { fields: { sourceInstanceName: { eq: "projects" } } }) {
+        projects: allMdx(filter: {
+          fields: {
+            sourceInstanceName: {
+              eq: "projects"
+            }
+          },
+          frontmatter: {
+            published: {
+              eq: "true"
+            }
+          }
+        }) {
           edges {
             node {
               fields {
@@ -47,7 +58,18 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-        portfolio: allMdx(filter: { fields: { sourceInstanceName: { eq: "portfolio" } } }) {
+        portfolio: allMdx(filter: {
+          fields: {
+            sourceInstanceName: {
+              eq: "portfolio"
+            }
+          },
+          frontmatter: {
+            published: {
+              eq: "true"
+            }
+          }
+        }) {
           edges {
             node {
               fields {
@@ -56,7 +78,18 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-        single: allMdx(filter: { fields: { sourceInstanceName: { eq: "single" } } }) {
+        single: allMdx(filter: {
+          fields: {
+            sourceInstanceName: {
+              eq: "single"
+            }
+          },
+          frontmatter: {
+            published: {
+              eq: "true"
+            }
+          }
+        }) {
           edges {
             node {
               fields {

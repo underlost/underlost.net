@@ -22,6 +22,7 @@ $secondary: $seaBlue;
 $body-bg: $black;
 $body-color: $white;
 $link-color: $body-color;
+$link-hover-color: $primary;
 $font-size-base: 1.25rem;
 $font-family-sans-serif:  'Nunito Sans', "Helvetica Neue", Arial, sans-serif;
 $font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -44,3 +45,19 @@ $hr-border-color: rgba($white, .5);
 $btn-font-weight: bold;
 $input-btn-padding-y: 1rem !default;
 $input-btn-padding-x: 1.5rem !default;
+
+
+$container-max-widths: (
+  sm: 540px,
+  md: 820px,
+  lg: 1340px,
+  xl: 1400px
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1200px,
+  xl: 1600px
+);

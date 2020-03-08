@@ -25,6 +25,7 @@
 
   & > svg {
     transition: all .3s ease;
+    max-height: 33px;
   }
 
   &::before, &::after {

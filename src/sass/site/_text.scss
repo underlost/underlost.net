@@ -40,9 +40,9 @@
   font-family: $font-family-sans-serif;
   &.h1 {
     font-weight: 700;
-    font-size: 34px;
+    font-size: 1.75rem;
     letter-spacing: 2px;
-    line-height: 1.2;
+    line-height: 1.4;
   }
   &.h6 {
     text-transform: uppercase;
@@ -108,3 +108,10 @@ p {
     }
   }
 }
+
+@include media-breakpoint-up(lg) {
+  .title.h1 {
+    font-size: 2.15rem;
+  }
+}
+

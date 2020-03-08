@@ -58,3 +58,9 @@
   stroke-linejoin: round; // makes the ends of the stroke rounded
   visibility: hidden;
 }
+
+@include media-breakpoint-down(md) {
+  .site-header-sm svg {
+    height: 20px;
+  }
+}

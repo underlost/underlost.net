@@ -27,6 +27,14 @@ body {
   margin-left: auto;
 }
 
+@include media-breakpoint-down(md) {
+  .image-fixed-overlay {
+    img {
+      object-position: center center !important;
+    }
+  }
+}
+
 @include media-breakpoint-up(lg) {
   .image-fixed-overlay {
     width: 60%;
@@ -44,3 +52,11 @@ body {
     width: 100%;
   }
 }
+
+@include media-breakpoint-up(xl) {
+  .image-fixed-overlay {
+    width: 50%;
+  }
+}
+
+

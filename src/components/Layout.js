@@ -27,10 +27,8 @@ const Layout = ({ children }) => {
         <div className={`container-fluid site-content px-4 px-md-2 pt-5`}>
           <Header />
           <main className={`site-main row no-gutters`}>
-            <div className={`col-md-7 offset-md-4 col-lg-6 offset-lg-6`}>
-              <div className={`px-lg-5`}>
-              {children}
-              </div>
+            <div className={`col-md-7 offset-md-4 col-lg-6 offset-lg-6 col-xl-5 offset-xl-7`}>
+              <div className={`px-lg-5`}>{children}</div>
             </div>
           </main>
           <Footer />
