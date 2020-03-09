@@ -28,7 +28,7 @@ const BackgroundFixed = props => (
         return null
       }
       return (
-        <div className="glitch">
+        <div className="glitch d-none d-md-block">
           <div className="glitch__img"></div>
           <div className="glitch__img"></div>
           <div className="glitch__img"></div>

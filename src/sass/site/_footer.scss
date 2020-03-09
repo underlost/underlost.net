@@ -1,7 +1,12 @@
 .site-footer {
   letter-spacing: 1px;
-  line-height: 1;
-  svg {
-    max-height: 33px;
+  line-height: 1.8;
+  small {
+    font-weight: bold;
+  }
+  .list-social {
+    svg {
+      max-height: 33px;
+    }
   }
 }
