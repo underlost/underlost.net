@@ -55,6 +55,7 @@ const HomepageMeta = ({ settings, canonical, title, description, keywords, image
         <meta property="og:site_name" content={settings.title} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
+        <meta property="og:image" content={shareImage} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonical} />
         <meta name="twitter:title" content={title} />
@@ -108,6 +109,8 @@ const HomepageMetaQuery = props => (
                     description
                     keywords
                     siteUrl
+                    siteIcon
+                    cover_image
                     title
                     shareImageWidth
                     shareImageHeight
