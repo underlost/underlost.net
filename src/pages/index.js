@@ -23,7 +23,7 @@ const IndexPage = ({ location }) => (
         `PNW developer`,
         `Pacific Northwest developer`,
       ]}
-      description={`Underlost is Tyler Rilling, a Python developer and UX designer specializing in AR/VR, living in Seattle, Washington. They are probably not an Undertale game.`}
+      description={`Underlost is Tyler Rilling, a Python developer and level designer specializing in AR/VR, living in Seattle, Washington. They are probably not an Undertale game.`}
       isHome={true}
     />
     <Layout>
@@ -31,7 +31,7 @@ const IndexPage = ({ location }) => (
         <header className={`fadeRight d-block`}>
           <h3 className={`subtitle mb-2 text-pink text-uppercase`}>Introduction</h3>
           <h1 className={`title h1 text-white`}>
-            Underlost is <span className={`bg-blue px-1`}>Tyler Rilling</span>, a Python developer and UX designer specializing in AR/VR, living in Seattle, Washington. They are probably
+            Underlost is <span className={`bg-blue px-1`}>Tyler Rilling</span>, a Python developer and level designer specializing in AR/VR, living in Seattle, Washington. They are probably
             not an Undertale game. 👾
           </h1>
         </header>

@@ -29,11 +29,11 @@ const AboutPage = ({ location }) => (
       <article className={`layout-single-column pr-lg-5`}>
         <header className={`fadeRight d-block`}>
           <h1 className={`sr-only`}>
-            Tyler Rilling is a hybrid writer, UX designer and developer, with an interest in photography and video games mixed in on the side. They are basically the bard of the group.
+            Tyler Rilling is a hybrid writer, level designer and developer, with an interest in photography and video games mixed in on the side. They are basically the bard of the group.
           </h1>
           <h2 className={`headline h1 text-lowercase text-transparent blue-stroke px-0 mb-3 mr-lg-5 pr-lg-5`}>A few things about me...</h2>
           <p className={`title h1 text-white`}>
-            I&apos;m a hybrid writer, UX designer and developer, with an interest in{` `}
+            I&apos;m a hybrid writer, level designer and developer, with an interest in{` `}
             <a href="https://tyler.camera/" target="_blank" rel="noopener noreferrer">
               photography
             </a>
