@@ -59,11 +59,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        implementation: require(`node-sass`),
-        precision: 8,
-        includePaths: [`${__dirname}/src/sass/site.scss`],
-        sourceComments: true,
-        sourceMap: true,
+        sassOptions: {
+          includePaths: [`${__dirname}/src/sass/site.scss`],
+          precision: 6,
+          sourceComments: false,
+          sourceMap: false,
+        },
       },
     },
     {
