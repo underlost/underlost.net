@@ -17,7 +17,7 @@ const PortfolioItem = props => (
           <Link to={props.permalink}>{props.title}</Link>
         </h3>
       </div>
-      <p className={`sr-only`}>{props.description}</p>
+      <p className={`sr-only visually-hidden`}>{props.description}</p>
     </Fade>
   </div>
 )

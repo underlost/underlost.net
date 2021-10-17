@@ -28,7 +28,7 @@ const AboutPage = ({ location }) => (
     <Layout>
       <article className={`layout-single-column pr-lg-5`}>
         <header className={`fadeRight d-block`}>
-          <h1 className={`sr-only`}>
+          <h1 className={`sr-only visually-hidden`}>
             Tyler Rilling is a hybrid writer, level designer and developer, with an interest in photography and video games mixed in on the side. They are basically the bard of the group.
           </h1>
           <h2 className={`headline h1 text-lowercase text-transparent blue-stroke px-0 mb-3 mr-lg-5 pr-lg-5`}>A few things about me...</h2>
@@ -63,7 +63,7 @@ const AboutPage = ({ location }) => (
             <em>I&apos;m sorry about that</em>.
           </p>
 
-          <p>Some of my work has also been featured on CNN, ABC (Australia), and various local news outlets 📰 in Seattle, Washington. </p>
+          <p>Some of my work has also been featured on TechCrunch, CNN, ABC (Australia), and various local news outlets 📰 in Seattle, Washington and Los Angeles, California.</p>
 
           <h3 className={`subtitle text-uppercase mb-2 mt-5 text-blue`}>Currently</h3>
           <p>

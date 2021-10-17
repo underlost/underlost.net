@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
             <span className={`icon-bar middle-bar`} />
             <span className={`icon-bar middle-bar`} />
             <span className={`icon-bar bottom-bar`} />
-            <span className={`sr-only`}>Toggle navigation</span>
+            <span className={`sr-only visually-hidden`}>Toggle navigation</span>
           </button>
         </div>
         <Navigation />
