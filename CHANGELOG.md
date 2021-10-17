@@ -2,6 +2,11 @@
 
 ---
 
+## 6.1.2 (10/17/21)
+* Updated Bootstrap to v5
+* Updated packages, getting ready for minor site refresh and updates.
+
+
 ## 6.1.1 (02/29/2020)
 
 * Still WIP
