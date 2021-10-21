@@ -15,8 +15,8 @@ $gap-vertical: 5px;
 
 .glitch {
 	position: fixed;
-    top: 0;
-    bottom: 0;
+  top: 0;
+  bottom: 0;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
@@ -25,13 +25,14 @@ $gap-vertical: 5px;
 
 .glitch__img {
 	position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 	width: 100%;
 	height: 100%;
-	background: url('/images/background.jpg') no-repeat 50% 0;
+  z-index: 10;
+
 	background-color: $blend-color-1;
 	background-size: cover;
 	transform: translate3d(0,0,0);
@@ -40,6 +41,7 @@ $gap-vertical: 5px;
 
 .glitch__img:nth-child(n+2) {
 	opacity: 0;
+  background: url('/images/glitch.jpg') no-repeat 50% 0;
 }
 
 .glitch__img:nth-child(n+2) {
@@ -47,34 +49,39 @@ $gap-vertical: 5px;
 	animation-delay: $delay-anim;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
+  background: url('/images/glitch.jpg') no-repeat 50% 0;
 }
 
 .glitch__img:nth-child(2) {
 	background-color: $blend-color-2;
 	background-blend-mode: $blend-mode-2;
 	animation-name: glitch-anim-1;
+  background: url('/images/glitch.jpg') no-repeat 50% 0;
 }
 
 .glitch__img:nth-child(3) {
 	background-color: $blend-color-3;
 	background-blend-mode: $blend-mode-3;
 	animation-name: glitch-anim-2;
+  background: url('/images/glitch.jpg') no-repeat 50% 0;
 }
 
 .glitch__img:nth-child(4) {
 	background-color: $blend-color-4;
 	background-blend-mode: $blend-mode-4;
 	animation-name: glitch-anim-3;
+  background: url('/images/glitch.jpg') no-repeat 50% 0;
 }
 
 .glitch__img:nth-child(5) {
 	background-color: $blend-color-5;
 	background-blend-mode: $blend-mode-5;
 	animation-name: glitch-anim-flash;
+  background: url('/images/glitch.jpg') no-repeat 50% 0;
 }
 
 @keyframes glitch-anim-1 {
-	0% { 
+	0% {
 		opacity: 1;
 		transform: translate3d($gap-horizontal,0,0);
 		-webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
@@ -133,7 +140,7 @@ $gap-vertical: 5px;
 }
 
 @keyframes glitch-anim-2 {
-	0% { 
+	0% {
 		opacity: 1;
 		transform: translate3d(calc(-1 * #{$gap-horizontal}),0,0);
 		-webkit-clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
@@ -192,7 +199,7 @@ $gap-vertical: 5px;
 }
 
 @keyframes glitch-anim-3 {
-	0% { 
+	0% {
 		opacity: 1;
 		transform: translate3d(0, calc(-1 * #{$gap-vertical}), 0) scale3d(-1,-1,1);
 		-webkit-clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
@@ -283,7 +290,7 @@ $gap-vertical: 5px;
 }
 
 @keyframes glitch-anim-text {
-	0% { 
+	0% {
 		transform: translate3d(calc(-1 * #{$gap-horizontal}),0,0) scale3d(-1,-1,1);
 		-webkit-clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
 		clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
@@ -328,8 +335,8 @@ $gap-vertical: 5px;
 
 /* Flash */
 @keyframes glitch-anim-flash {
-	0%, 5% { 
-		opacity: 0.2; 
+	0%, 5% {
+		opacity: 0.2;
 		transform: translate3d($gap-horizontal, $gap-vertical, 0);
 	}
 	5.5%, 100% {

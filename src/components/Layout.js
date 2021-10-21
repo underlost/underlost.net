@@ -24,18 +24,18 @@ const Layout = ({ children }) => {
           </button>
         </div>
         <Navigation />
-        <div className={`container-fluid site-content px-4 px-md-2 pt-5`}>
+        <div className="container site-content px-4 pt-5">
           <Header />
-          <main className={`site-main row no-gutters`}>
-            <div className={`col-md-7 offset-md-4 col-lg-6 offset-lg-6 col-xl-5 offset-xl-7`}>
-              <div className={`px-lg-5`}>{children}</div>
+          <main className={`site-main row g-0`}>
+            <div className={`col-md-7 col-lg-6 col-xl-5`}>
+              <div>{children}</div>
             </div>
           </main>
           <Footer />
         </div>
       </div>
-      <BackgroundFixed filename={`background.jpg`} alt={`Video Background`} />
-      <FixedOverlay filename={`overlay.png`} alt={`Video Background Overlay`} />
+      <BackgroundFixed filename={`background.jpg`} alt={`Background`} />
+      <FixedOverlay filename={`overlay_reversed.png`} alt={`Background Overlay`} />
     </>
   )
 }

@@ -24,21 +24,21 @@ body {
 
 .image-fixed-overlay {
   width: 100%;
-  margin-left: auto;
-}
-
-@include media-breakpoint-down(md) {
-  .image-fixed-overlay {
+  margin-right: auto;
+  @include media-breakpoint-down(md) {
     img {
       object-position: center center !important;
     }
   }
+  @include media-breakpoint-up(lg) {
+    width: 70%;
+  }
+  @include media-breakpoint-up(xl) {
+    width: 60%;
+  }
 }
 
 @include media-breakpoint-up(lg) {
-  .image-fixed-overlay {
-    width: 60%;
-  }
   .videoOverlay {
     position: fixed;
     top: 0;
@@ -50,12 +50,6 @@ body {
     object-position: center;
     height: 100%;
     width: 100%;
-  }
-}
-
-@include media-breakpoint-up(xl) {
-  .image-fixed-overlay {
-    width: 50%;
   }
 }
 
