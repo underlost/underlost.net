@@ -38,18 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await wrapper(
     graphql(`
       {
-        projects: allMdx(filter: {
-          fields: {
-            sourceInstanceName: {
-              eq: "projects"
-            }
-          },
-          frontmatter: {
-            published: {
-              eq: "true"
-            }
-          }
-        }) {
+        projects: allMdx(filter: { fields: { sourceInstanceName: { eq: "projects" } }, frontmatter: { published: { eq: "true" } } }) {
           edges {
             node {
               fields {
@@ -58,18 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-        portfolio: allMdx(filter: {
-          fields: {
-            sourceInstanceName: {
-              eq: "portfolio"
-            }
-          },
-          frontmatter: {
-            published: {
-              eq: "true"
-            }
-          }
-        }) {
+        portfolio: allMdx(filter: { fields: { sourceInstanceName: { eq: "portfolio" } }, frontmatter: { published: { eq: "true" } } }) {
           edges {
             node {
               fields {
@@ -78,18 +56,16 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-        single: allMdx(filter: {
-          fields: {
-            sourceInstanceName: {
-              eq: "single"
-            }
-          },
-          frontmatter: {
-            published: {
-              eq: "true"
+        pages: allMdx(filter: { fields: { sourceInstanceName: { eq: "pages" } }, frontmatter: { published: { eq: "true" } } }) {
+          edges {
+            node {
+              fields {
+                slug
+              }
             }
           }
-        }) {
+        }
+        posts: allMdx(filter: { fields: { sourceInstanceName: { eq: "posts" } }, frontmatter: { published: { eq: "true" } } }) {
           edges {
             node {
               fields {
@@ -122,7 +98,16 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-  result.data.single.edges.forEach(edge => {
+  result.data.pages.edges.forEach(edge => {
+    createPage({
+      path: edge.node.fields.slug,
+      component: singlePage,
+      context: {
+        slug: edge.node.fields.slug,
+      },
+    })
+  })
+  result.data.posts.edges.forEach((edge) => {
     createPage({
       path: edge.node.fields.slug,
       component: singlePage,

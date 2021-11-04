@@ -6,7 +6,9 @@ const LinksList = () => {
   const data = useStaticQuery(query)
 
   return (
-    <ul className={`list-nav list-unstyled mb-0`}>
+    <ul className="list-nav list-unstyled mb-0" style={{
+      maxWidth: '500px',
+    }}>
       {data.allMdx.edges.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         const website = node.frontmatter.website

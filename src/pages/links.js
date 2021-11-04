@@ -27,10 +27,10 @@ const AboutPage = ({ location }) => (
       description={`Tyler Rilling is a hybrid writer, UX designer and developer, with an interest in photography and video games mixed in on the side. I'm basically the bard of the group.`}
     />
     <Layout>
-      <article className={`layout-single-column pr-lg-5`}>
-        <header className={`fadeRight d-block`}>
-          <h2 className={`headline h1 text-lowercase text-transparent blue-stroke px-0 mb-3 mr-lg-5 pr-lg-5`}>links</h2>
-          <p className={`title h1 text-white`}>Where you'll find me on the internet, and other useful places to visit.</p>
+      <article className="layout-single-column pr-lg-5">
+        <header className="fadeRight d-block">
+          <h2 className="headline h1 text-lowercase text-transparent blue-stroke px-0 mb-3 mr-lg-5 pr-lg-5">links</h2>
+          <p className="title h1 text-white pb-5">Where you'll find me on the internet, and other useful links.</p>
         </header>
 
         <LinksList />
