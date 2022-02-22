@@ -1,0 +1,72 @@
+/* CSS variables. Not needed for the effect to work. */
+$base: $pink;
+$bg-blend: multiply;
+$blur: 0px;
+$fg-blend: lighten;
+$foreground: $orange;
+$opacity: 1;
+$spacing: 1%;
+
+.post-hero {
+  .postHero-img-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .postHero-img {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  color: $white;
+  a {
+    color: $white;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, var(--slot2Transparent), var(--slot2));
+  }
+}
+
+.duotone-img-wrapper {
+  background-color:$base;
+  display: flex;
+  flex: 1 1 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    background-color: $foreground;
+    bottom: 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    mix-blend-mode: $fg-blend;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .duotone-img {
+    //filter: grayscale(100%) contrast(1);
+    flex: 1 0 100%;
+    mix-blend-mode: $bg-blend;
+    object-fit: cover;
+    opacity: $opacity;
+
+  }
+}
+
+
+
+

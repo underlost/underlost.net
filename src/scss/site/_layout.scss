@@ -1,0 +1,152 @@
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card-has-shadow {
+  box-shadow: var(--box-shadow-lg);
+}
+
+blockquote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-left: 8px solid $green;
+  padding-left: 1.5rem;
+}
+
+pre {
+  border: 1px solid darken($latte, 15%);
+  background-color: $latte;
+}
+
+.sr-only {
+  @extend .visually-hidden;
+}
+
+.viewport {
+  //border-left: 1px solid #33304B;
+  width: 100%;
+  //max-width: $siteWidth;
+  margin: auto;
+}
+
+.post-feed-wrapper,
+.post-feed {
+  margin-right: auto;
+  margin-left: auto;
+  //overflow-y: hidden;
+}
+
+.after-line-break {
+  position: relative;
+
+  &::after {
+    content: '';
+    transform: translateX(-4rem);
+    display: block;
+    width: 250px;
+    height: 45px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTUiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAyNTUgMzAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMSIgeDI9IjAiIHkxPSIuNSIgeTI9Ii41IiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2EzYjhhNiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM5OWUyZTciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSIxIiB4Mj0iMCIgeTE9Ii41IiB5Mj0iLjUiIGdyYWRpZW50VW5pdHM9Im9iamVjdEJvdW5kaW5nQm94Ij4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjOTllMmU3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmZGE2NSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHBhdGggZmlsbD0idXJsKCNhKSIgZD0iTTAgMGgyMDB2MzBIMHoiLz4KICA8cGF0aCBmaWxsPSJ1cmwoI2IpIiBkPSJNMCAwaDIwMHYxMEgweiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTUgMTEpIi8+Cjwvc3ZnPgo=")
+  }
+}
+
+.block-after {
+  @extend .after-line-break;
+}
+
+.toggle-wrapper {
+  position: fixed;
+  right: 40px;
+  top: 40px;
+  z-index: 100;
+}
+
+.navbar-toggler {
+  background-color: transparent;
+  //border-width: 0;
+  position: relative;
+  z-index: 500;
+  //opacity: 0;
+  transition: all .7s ease-in-out;
+  &:focus {outline: none;}
+  .icon-bar {
+    background-color: $dark;
+    transform: rotate(0deg) translate(0px, 0px);
+    transition: ease all .2s;
+    display: block;
+    width: 28px;
+    height: 4px;
+    border-radius: 1px;
+    margin: 5px -4px;
+  }
+  .bottom-bar {
+    width: 20px;
+    margin-left: auto;
+  }
+}
+
+.page.nav-is-active {
+  .site-head {
+    .site-nav {
+      transform: translateX(50%);
+      transition: transform .3s;
+    }
+  }
+  .navbar-toggler {
+    //width: 87px;
+    transition: transform .3s;
+    //transform: translateX(-420px);
+    .icon-bar{
+      transition: ease all .3s;
+      margin: 6px 0;
+    }
+    .icon-bar:nth-child(1) {
+      transform: rotate(45deg) translateX(0px);
+      transform-origin: bottom left;
+    }
+    .icon-bar:nth-child(2) {opacity: 0;}
+
+    .icon-bar:nth-child(3) {
+      transform: rotate(-45deg) translateX(0px);
+      transform-origin: top left;
+      width: 28px;
+    }
+    &:hover {
+      .icon-bar {
+        opacity: 1;
+        margin: 5px -4px;
+        transform: rotate(0deg) translate(0px, 0px);
+      }
+    }
+  }
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.bg-cover {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page-bottom {
+  min-height: 45px;
+  width: 100%;
+  background-size: cover;
+  background-image: url("data:image/jpeg;base64,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");
+}
+
+@media (max-width: 500px) {
+  .site-main {
+    overflow: hidden;
+  }
+  .container {
+    overflow-x: hidden;
+  }
+}

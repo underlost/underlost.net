@@ -1,0 +1,48 @@
+/* Footer
+/* ---------------------------------------------------------- */
+
+.site-footer {
+  text-align: center;
+    padding: 20px 0 40px 0;
+    //color: rgba(255, 255, 255, 0.7);
+    font-size: .85rem;
+    //background: var(--color-base);
+
+    .nav {
+      list-style: none;
+      li {
+        display: inline-block;
+        font-size: .9rem;
+        padding-left: .5rem;
+        padding-right: .5rem;
+      }
+    }
+}
+
+.site-footer-nav {
+    a {
+        color: $dark;
+        &:hover {
+            text-decoration: none;
+            color: $secondary;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .site-footer {
+        .list-inline-item {
+            display: block;
+            margin-right: 0;
+            margin-left: 0;
+
+            a {
+                font-weight: bold;
+                display: block;
+                font-size: 1.25rem;
+                padding-top: .3rem;
+                padding-bottom: .3rem;
+            }
+        }
+    }
+}

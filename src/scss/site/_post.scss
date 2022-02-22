@@ -1,0 +1,91 @@
+
+.read-first {
+  position: relative;
+  .read-first-list {
+    position: relative;
+    z-index: 5;
+  }
+}
+
+.read-first,
+.page-header {
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem;
+    margin-right: 0;
+    margin-left: auto;
+    transform: translateX(90px);
+    display: block;
+    width: 250px;
+    height: 72px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDgiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCAyNDggNzIiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMSIgeDI9IjAiIHkxPSIuNSIgeTI9Ii41IiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UxYmVkOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZDY3MDciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxwYXRoIGZpbGw9InVybCgjYSkiIGQ9Ik0wIDBoMjQ4djEwSDB6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDYyKSIvPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UxYmVkOCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2MykiPgogICAgPGNpcmNsZSBjeD0iMzEiIGN5PSIzMSIgcj0iMzEiIHN0cm9rZT0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iMzEiIGN5PSIzMSIgcj0iMzAiLz4KICA8L2c+Cjwvc3ZnPgoK");
+    }
+}
+
+.read-first {
+  &::after {
+  right: -1rem;
+    }
+}
+
+.page-header {
+  &::after {
+    right: 2rem;
+  }
+}
+
+.post-item-header {
+  transition: all 0.3s ease-in-out 0s;
+  &:hover {
+    transform: scale3d(1.02, 1.02, 1.02);
+    .h5 {color: $secondary;}
+  }
+}
+
+.content-body {
+  a:not(.btn) {
+    border-bottom: 2px solid $green;
+    position: relative;
+    &:hover {
+      text-decoration: none;
+      color: $secondary;
+      border-color: $secondary;
+    }
+  }
+  p > img {
+    max-width: 100%;
+    @include media-breakpoint-up(md) {
+      max-width: 150%;
+      margin-left: -25%;
+      margin-right: -25%;
+      display: block;
+      width: 150%;
+    }
+
+  }
+}
+
+.kg-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-text-wrapper~.post-hero-wrapper,
+.post-hero-wrapper~.post-text-wrapper {
+  margin-bottom: 3rem;
+}
+
+.post-text-wrapper~.post-hero-wrapper {
+  margin-top: 3rem;
+}
+
+.post-hero-wrapper~.post-hero-wrapper {
+  margin-bottom: 4.5rem;
+  @include media-breakpoint-up(md) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}

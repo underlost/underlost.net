@@ -1,60 +1,112 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import MetaData from '../components/meta/MetaData'
-import Layout from '../components/Layout'
-import PostsList from '../components/PostsList'
+import { graphql, Link } from 'gatsby'
+import { Layout } from '../components/common'
+import FeaturedCardsBlock from '../components/FeaturedCardsBlock'
+import { MetaData } from '../components/common/meta'
+import ReadFirstBlock from '../components/ReadFirstBlock'
+import SiteLogo from '../components/SiteLogo'
+import PopularPostsBlock from '../components/PopularBlock'
+import RecentBlockContinued from '../components/RecentBlockContinued'
 
-const IndexPage = ({ location }) => (
-  <>
-    <MetaData
-      location={location}
-      type="website"
-      title={`Tyler Rilling`}
-      keywords={[
-        `Tyler Rilling`,
-        `underlost`,
-        `undertale`,
-        `Seattle Web Developer`,
-        `Seattle Front-End Developer`,
-        `Seattle python developer`,
-        `PNW developer`,
-        `Pacific Northwest developer`,
-      ]}
-      description={`Underlost is Tyler Rilling, a Python developer and level designer specializing in AR/VR, living in Seattle, Washington. They are probably not an Undertale game.`}
-      isHome={true}
-    />
+/**
+ * Homepage Page
+ *
+ * Loads all posts from Ghost and displays them as an archibe.
+ * Optional Text and title are displayed from the homepage page in Ghost.
+ *
+ */
+const HomePage = ({ data, location }) => {
+  const page = data.ghostPage
+
+  return (
     <Layout>
-      <article className="pb-4">
-        <header className="fadeRight d-block">
-          <h3 className="subtitle mb-2 text-pink text-uppercase">Introduction</h3>
-          <h1 className="title h1 text-white">
-            Underlost is <span className="bg-blue px-1">Tyler Rilling</span>, a Python developer and level designer specializing in AR/VR, living in Seattle, Washington. They are probably
-            not an Undertale game. 👾
-          </h1>
-        </header>
-        <div className="my-5 fadeLeft">
-          <AniLink className="btn btn-default px-5 py-2" cover bg="cyan" direction="right" to="/about">
-            Learn More <FontAwesomeIcon icon={faAngleDoubleRight} fixedWidth size="lg" />
-          </AniLink>
-        </div>
-      </article>
+      <MetaData data={data} location={location} title="Underlost" type="website" isHome={true} />
+      <div className="container-lg pb-5">
+        <div className="row">
+          <div className="col-md-6 col-lg-5 mb-4 position-relative">
+            <div
+              className="mb-5"
+              style={{
+                position: `absolute`,
+                zIndex: `10`,
+                top: `-25px`,
+                left: `1.5rem`,
+              }}
+            >
+              <SiteLogo />
+            </div>
+            <div className="ms-md-5">
+              <FeaturedCardsBlock />
+            </div>
+          </div>
+          <div className="col-md-6 col-lg-7 mb-5">
+            <div className="card py-5 me-md-5">
+              <div className="card-body px-5">
+                {page && <div className="load-external-scripts pb-5" dangerouslySetInnerHTML={{ __html: page.html }} />}
 
-      <div className="fadeRight layout-single-column site-main index py-3 mt-3 pr-lg-5">
-        <h3 className="subtitle mb-3 text-blue text-uppercase">Writing</h3>
-        <PostsList />
+                <div className="pb-5">
+                  <p className="h6 text-green text-uppercase">Introduction</p>
+                  <h2>Underlost is Tyler Rilling, a Python web developer and narrative designer, living in Seattle, Washington. They are probably not an Undertale game. 👾</h2>
+                  <p>
+                    I also specialize in React, content management systems like WordPress and Ghost, and various other technologies. Currently a senior developer at an interactive design
+                    agency in Seattle. I also offer various consulting services.{` `}
+                    <a className="fw-bold btn-link has-arrow" href="/about/">
+                      Learn more{` `}
+                      <span className="d-inline-block px-1 arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="6" viewBox="0 0 22 6">
+                          <path stroke="#03080F" fill="none" fillRule="evenodd" d="M0 3h21m-3-3 3 3-3 3" />
+                        </svg>
+                      </span>
+                    </a>
+                  </p>
+                </div>
+
+                <ReadFirstBlock />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container-fluid px-0">
+        <PopularPostsBlock />
+      </div>
+      <div>
+        <RecentBlockContinued />
+      </div>
+
+      <div className="gh-content gh-canvas">
+        <nav className="pagination" role="navigation">
+          <Link to="/archive/" rel="next" className="btn btn-link me-0 ms-auto">
+            View Archives
+          </Link>
+        </nav>
       </div>
     </Layout>
-  </>
-)
+  )
+}
 
-IndexPage.propTypes = {
+HomePage.propTypes = {
+  data: PropTypes.shape({
+    ghostPage: PropTypes.shape({
+      codeinjection_styles: PropTypes.object,
+      title: PropTypes.string.isRequired,
+      html: PropTypes.string.isRequired,
+      feature_image: PropTypes.string,
+    }),
+  }).isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
 }
 
-export default IndexPage
+export default HomePage
+
+// This page query loads Homepage content if there is any
+export const pageQuery = graphql`
+  query GhostHomepageQuery {
+    ghostPage(slug: { eq: "homepage" }) {
+      ...GhostPageFields
+    }
+  }
+`

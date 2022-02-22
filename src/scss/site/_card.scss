@@ -1,0 +1,28 @@
+.post-card-header {
+  transition: all 0.3s ease-in-out 0s;
+  overflow: hidden;
+  .post-card-title {
+    transition: all 0.3s ease-in-out 0s;
+  }
+}
+
+.card {
+  .post-card-image-wrapper {
+    overflow: hidden;
+    height: 350px;
+  }
+  .post-card-image {
+    margin: 0 0 10px 0;
+    height: 100%;
+    width: auto;
+    background: $primary no-repeat center center;
+    background-size: cover;
+    transition: all .1s cubic-bezier(.26,.88,.57,.9);
+  }
+  &:hover {
+    .post-card-image {
+      transform: scale(1.05);
+      transition: all .5s cubic-bezier(.26,.88,.57,.9);
+    }
+  }
+}

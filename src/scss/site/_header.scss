@@ -1,0 +1,73 @@
+.site-head {
+  position: relative;
+  z-index: 100;
+
+  .site-nav {
+    background-color: $latte;
+    border-left: 1px solid darken($latte, 15%);
+    color: $primary;
+    position: fixed;
+    max-width: 100%;
+    width: 100%;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 50;
+    overflow: hidden;
+    transform: translateX(100%);
+    transition: transform .3s;
+
+    .nav {
+      list-style: none;
+      li {
+        font-size: 2.25rem;
+        letter-spacing: 1.5px;
+        line-height: 1.2;
+        font-weight: 600;
+
+        a {
+          color: $dark;
+          display: block;
+
+          &:hover {
+            color: $secondary;
+          }
+        }
+        .nav-current {
+          a {
+            color: $secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.site-brand {
+  margin-left: 0px;
+
+  .logoTitle,
+  .pixelHeart {
+    transition: all .5s ease-in-out;
+  }
+
+  &:hover {
+    .logoTitle {
+      fill: $primary;
+    }
+
+    .pixelHeart {
+      fill: $secondary;
+    }
+  }
+}
+
+
+@media (min-width: 500px) {
+  .site-mast-nav {
+    position: absolute;
+    left: -185px;
+    top: 0;
+    width: 185px;
+  }
+}

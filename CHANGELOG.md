@@ -2,7 +2,22 @@
 
 ---
 
+## 8.0.0 (02/22/22)
+
+* completeing merging most content from ALWP, Medium into the site.
+* Launched latest design
+
+## 7.0.5 (02/14/22)
+
+* Imported previous content from A Life Well Played
+
+
+## 7.0.0 (02/07/22)
+
+* started new design, introducing digital garden, blog hosted through Ghost.
+
 ## 6.1.2 (10/17/21)
+
 * Updated Bootstrap to v5
 * Updated packages, getting ready for minor site refresh and updates.
 

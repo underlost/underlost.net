@@ -1,8 +1,0 @@
-# These rules will change if you change your site’s custom domains or HTTPS settings
-
-# Redirect domain aliases to primary domain
-https://underlost.com/* https://underlost.net/:splat 301!
-https://underlost.org/* https://underlost.net/:splat 301!
-
-# Optional: Redirect default Netlify subdomain to primary domain
-https://underlost.netlify.com/* https://underlost.net/:splat 301!

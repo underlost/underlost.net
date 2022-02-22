@@ -1,151 +1,282 @@
-const _ = require(`lodash`)
+const path = require(`path`)
+const { postsPerPage } = require(`./src/utils/siteConfig`)
+const { paginate } = require(`gatsby-awesome-pagination`)
 
-// graphql function doesn't throw an error so we have to check to check for the result.errors to throw manually
-const wrapper = promise =>
-  promise.then(result => {
-    if (result.errors) {
-      throw result.errors
-    }
-    return result
-  })
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  let slug
-  // Only use MDX nodes
-  if (node.internal.type === `Mdx`) {
-    const fileNode = getNode(node.parent)
-    // If the frontmatter contains a "permalink", use it
-    if (
-      Object.prototype.hasOwnProperty.call(node, `frontmatter`) &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, `permalink`)
-    ) {
-      slug = `/${node.frontmatter.permalink}`
-      createNodeField({ node, name: `slug`, value: slug })
-      // Adds the name of "gatsby-source-filesystem" as field (in this case "projects" or "pages")
-      createNodeField({ node, name: `sourceInstanceName`, value: fileNode.sourceInstanceName })
-    }
-  }
-}
-
+/**
+ * Here is the place where Gatsby creates the URLs for all the
+ * posts, tags, pages and authors that we fetched from the Ghost site.
+ */
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  // Our templates for projects and files inside /pages/*.mdx
-  const projectPage = require.resolve(`./src/templates/page.js`)
-  const singlePage = require.resolve(`./src/templates/page.js`)
-
-  const result = await wrapper(
-    graphql(`
-      {
-        projects: allMdx(filter: { fields: { sourceInstanceName: { eq: "projects" } }, frontmatter: { published: { eq: "true" } } }) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-        portfolio: allMdx(filter: { fields: { sourceInstanceName: { eq: "portfolio" } }, frontmatter: { published: { eq: "true" } } }) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-        pages: allMdx(filter: { fields: { sourceInstanceName: { eq: "pages" } }, frontmatter: { published: { eq: "true" } } }) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-        posts: allMdx(filter: { fields: { sourceInstanceName: { eq: "posts" } }, frontmatter: { published: { eq: "true" } } }) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
+  const result = await graphql(`
+    {
+      blog: allGhostPost(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }) {
+        edges {
+          node {
+            slug
           }
         }
       }
-    `)
-  )
+      thoughts: allGhostPost(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#thoughts" } } } }) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+      caseStudies: allGhostPost(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#casestudies" } } } }) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+      projects: allGhostPost(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#projects" } } } }) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+      allGhostTag(sort: { order: ASC, fields: name }, filter: { visibility: { eq: "public" } }) {
+        edges {
+          node {
+            slug
+            url
+            postCount
+          }
+        }
+      }
+      allGhostAuthor(sort: { order: ASC, fields: name }) {
+        edges {
+          node {
+            slug
+            url
+            postCount
+          }
+        }
+      }
+      allGhostPage(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#page" } } } }) {
+        edges {
+          node {
+            slug
+            url
+          }
+        }
+      }
+    }
+  `)
 
-  result.data.projects.edges.forEach(edge => {
-    createPage({
-      path: edge.node.fields.slug,
-      component: projectPage,
-      context: {
-        // Pass "slug" through context so we can reference it in our query like "$slug: String!"
-        slug: edge.node.fields.slug,
-      },
-    })
-  })
-  result.data.portfolio.edges.forEach(edge => {
-    createPage({
-      path: edge.node.fields.slug,
-      component: projectPage,
-      context: {
-        // Pass "slug" through context so we can reference it in our query like "$slug: String!"
-        slug: edge.node.fields.slug,
-      },
-    })
-  })
-  result.data.pages.edges.forEach(edge => {
-    createPage({
-      path: edge.node.fields.slug,
-      component: singlePage,
-      context: {
-        slug: edge.node.fields.slug,
-      },
-    })
-  })
-  result.data.posts.edges.forEach((edge) => {
-    createPage({
-      path: edge.node.fields.slug,
-      component: singlePage,
-      context: {
-        slug: edge.node.fields.slug,
-      },
-    })
-  })
-}
+  //TODO: Filter out private pages
 
-// Necessary changes to get gatsby-mdx and Cypress working
-exports.onCreateWebpackConfig = ({ stage, actions, loaders, getConfig }) => {
-  const config = getConfig()
-
-  config.module.rules = [
-    ...config.module.rules.filter(rule => String(rule.test) !== String(/\.jsx?$/)),
-    {
-      ...loaders.js(),
-      test: /\.jsx?$/,
-      exclude: modulePath => /node_modules/.test(modulePath) && !/node_modules\/gatsby-mdx/.test(modulePath),
-    },
-  ]
-
-  actions.replaceWebpackConfig(config)
-}
-
-// Fix for gsap plugin breaking in build mode.
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === `build-html`) {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /DrawSVGPlugin/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    })
+  // Check for any errors
+  if (result.errors) {
+    // eslint-disable-next-line no-restricted-syntax
+    throw new Error(result.errors)
   }
+
+  // Extract query results
+  const tags = result.data.allGhostTag.edges
+  const authors = result.data.allGhostAuthor.edges
+  const pages = result.data.allGhostPage.edges
+  const posts = result.data.blog.edges
+  const thoughts = result.data.thoughts.edges
+  const projects = result.data.projects.edges
+  const caseStudies = result.data.caseStudies.edges
+
+  // Load templates
+  const indexTemplate = path.resolve(`./src/templates/archive.js`)
+  const tagsTemplate = path.resolve(`./src/templates/tag.js`)
+  const authorTemplate = path.resolve(`./src/templates/author.js`)
+  const pageTemplate = path.resolve(`./src/templates/page.js`)
+  const postTemplate = path.resolve(`./src/templates/post.js`)
+
+  // Create tag pages
+  tags.forEach(({ node }) => {
+    const totalPosts = node.postCount !== null ? node.postCount : 0
+    const numberOfPages = Math.ceil(totalPosts / postsPerPage)
+
+    // This part here defines, that our tag pages will use
+    // a `/tag/:slug/` permalink.
+    node.url = `/tag/${node.slug}/`
+
+    Array.from({ length: numberOfPages }).forEach((_, i) => {
+      const currentPage = i + 1
+      const prevPageNumber = currentPage <= 1 ? null : currentPage - 1
+      const nextPageNumber = currentPage + 1 > numberOfPages ? null : currentPage + 1
+      const previousPagePath = prevPageNumber ? (prevPageNumber === 1 ? node.url : `${node.url}page/${prevPageNumber}/`) : null
+      const nextPagePath = nextPageNumber ? `${node.url}page/${nextPageNumber}/` : null
+
+      createPage({
+        path: i === 0 ? node.url : `${node.url}page/${i + 1}/`,
+        component: tagsTemplate,
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          slug: node.slug,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numberOfPages: numberOfPages,
+          humanPageNumber: currentPage,
+          prevPageNumber: prevPageNumber,
+          nextPageNumber: nextPageNumber,
+          previousPagePath: previousPagePath,
+          nextPagePath: nextPagePath,
+        },
+      })
+    })
+  })
+
+  // Create author pages
+  authors.forEach(({ node }) => {
+    const totalPosts = node.postCount !== null ? node.postCount : 0
+    const numberOfPages = Math.ceil(totalPosts / postsPerPage)
+
+    // This part here defines, that our author pages will use
+    // a `/author/:slug/` permalink.
+    node.url = `/author/${node.slug}/`
+
+    Array.from({ length: numberOfPages }).forEach((_, i) => {
+      const currentPage = i + 1
+      const prevPageNumber = currentPage <= 1 ? null : currentPage - 1
+      const nextPageNumber = currentPage + 1 > numberOfPages ? null : currentPage + 1
+      const previousPagePath = prevPageNumber ? (prevPageNumber === 1 ? node.url : `${node.url}page/${prevPageNumber}/`) : null
+      const nextPagePath = nextPageNumber ? `${node.url}page/${nextPageNumber}/` : null
+
+      createPage({
+        path: i === 0 ? node.url : `${node.url}page/${i + 1}/`,
+        component: authorTemplate,
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          slug: node.slug,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numberOfPages: numberOfPages,
+          humanPageNumber: currentPage,
+          prevPageNumber: prevPageNumber,
+          nextPageNumber: nextPageNumber,
+          previousPagePath: previousPagePath,
+          nextPagePath: nextPagePath,
+        },
+      })
+    })
+  })
+
+  // Create pages
+  pages.forEach(({ node }) => {
+    // This part here defines, that our pages will use
+    // a `/:slug/` permalink.
+    node.url = `/${node.slug}/`
+
+    createPage({
+      path: node.url,
+      component: pageTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.slug,
+      },
+    })
+  })
+
+  // Create projects
+  projects.forEach(({ node }) => {
+    // This part here defines, that our pages will use
+    // a `/projects/:slug/` permalink.
+    node.url = `/projects/${node.slug}/`
+
+    createPage({
+      path: node.url,
+      component: postTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.slug,
+      },
+    })
+  })
+
+  // Create post pages
+  posts.forEach(({ node }) => {
+    // This part here defines, that our posts will use
+    // a `/:slug/` permalink.
+    node.url = `/writing/${node.slug}/`
+
+    createPage({
+      path: node.url,
+      component: postTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.slug,
+      },
+    })
+
+    //create AMP versions of each page
+    createPage({
+      path: `/writing/${node.slug}/amp/`,
+      component: path.resolve(`./src/templates/post.amp.js`),
+      context: {
+        slug: node.slug,
+      },
+    })
+  })
+
+  // Create post case studies
+  caseStudies.forEach(({ node }) => {
+    // This part here defines, that our posts will use
+    // a `/:slug/` permalink.
+    node.url = `/case-studies/${node.slug}/`
+
+    createPage({
+      path: node.url,
+      component: postTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.slug,
+      },
+    })
+  })
+
+  thoughts.forEach(({ node }) => {
+    // This part here defines, that our posts will use
+    // a `/:slug/` permalink.
+    node.url = `/thoughts/${node.slug}/`
+
+    createPage({
+      path: node.url,
+      component: postTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.slug,
+      },
+    })
+  })
+
+  // Create pagination
+  paginate({
+    createPage,
+    items: posts,
+    itemsPerPage: postsPerPage,
+    component: indexTemplate,
+    pathPrefix: ({ pageNumber }) => {
+      if (pageNumber === 0) {
+        return `/archive/`
+      } else {
+        return `/archive/page`
+      }
+    },
+  })
+}
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      fallback: { url: require.resolve(`url/`) },
+    },
+  })
 }

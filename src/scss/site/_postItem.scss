@@ -1,0 +1,14 @@
+.post-item {
+  position: relative;
+}
+.post-item ~ .post-item {
+  &::before {
+    margin-bottom: 0.75rem;
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: rgba($black, .5);
+    opacity: .5;
+  }
+}

@@ -1,0 +1,36 @@
+/* Tag Archives
+/* ---------------------------------------------------------- */
+
+.page-header {
+  position: relative;
+  background-color: $latte;
+  border: 1px solid darken($latte, 15%);
+  h1 {
+    margin: 0 0 1rem 0;
+  }
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2rem;
+      right: 2rem;
+      margin-right: 0;
+      margin-left: auto;
+      transform: translateX(90px);
+      display: block;
+      width: 250px;
+      height: 72px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIHZpZXdCb3g9IjAgMCAyNDggNzAiPgogIDxnPgogICAgPHBhdGggaWQ9IlJlY3RhbmdsZSIgZmlsbD0idXJsKCNfTGluZWFyMSkiIGQ9Ik0wIDYwaDI0OHYxMEgweiIvPgogICAgPGNpcmNsZSBjeD0iMTk0IiBjeT0iMzEiIHI9IjMwIiBmaWxsPSJub25lIiBzdHJva2U9IiM5NTg4ZmMiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwvZz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iX0xpbmVhcjEiIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIwIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KC0yNDggMCAwIC0yNDggMjQ4IDY1KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM3NTY4ZWYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYjNhY2UzIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KPC9zdmc+Cg==");
+    }
+}
+
+
+@media (max-width: 500px) {
+    .page-header {
+        padding-bottom: 4vw;
+        p {
+          font-size: 1.7rem;
+        }
+    }
+}
