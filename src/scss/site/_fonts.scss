@@ -52,29 +52,3 @@
        url('/fonts/rubik-v9-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   font-display: swap;
 }
-
-@font-face {
-  font-family: 'Brandon Grotesque';
-  src: url('/fonts/BrandonGrotesque-Black.eot');
-  src: local('Brandon Grotesque Black'), local('BrandonGrotesque-Black'),
-    url('/fonts/BrandonGrotesque-Black.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/BrandonGrotesque-Black.woff') format('woff'),
-    url('/fonts/BrandonGrotesque-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Brandon Grotesque';
-  src: url('/fonts/BrandonGrotesque-Medium.eot');
-  src: local('Brandon Grotesque Medium'), local('BrandonGrotesque-Medium'),
-    url('/fonts/BrandonGrotesque-Medium.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/BrandonGrotesque-Medium.woff') format('woff'),
-    url('/fonts/BrandonGrotesque-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* A font by Jos Buivenga (exljbris) -> www.exljbris.com */
