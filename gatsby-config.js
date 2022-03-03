@@ -40,7 +40,7 @@ module.exports = {
     logo: `images/logo.png`,
     cover_image: `images/background.jpg`,
     siteIcon: `images/logo.png`,
-    description: `I make dumb, sometimes cool things on the internet.`,
+    description: `Underlost is Tyler Rilling, a Python web developer and narrative designer, living in Seattle, Washington. They are probably not an Undertale game.`,
     social: {
       twitter: `@underlost`,
       instagram: `underlost`,
@@ -211,7 +211,6 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -286,31 +285,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-amp`,
-      options: {
-        analytics: {
-          type: `gtag`,
-          dataCredentials: `include`,
-          config: {
-            vars: {
-              gtag_id: `UA-111594796-1`,
-              config: {
-                'UA-111594796-1': {
-                  page_location: `{{pathname}}`,
-                },
-              },
-            },
-          },
-        },
-        canonicalBaseUrl: `https://underlost.net`,
-        components: [],
-        excludedPaths: [`/404*`, `/`],
-        pathIdentifier: `/amp/`,
-        relAmpHtmlPattern: `{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}`,
-        useAmpClientIdApi: true,
-      },
-    },
-    {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         typekit: {
@@ -319,12 +293,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: `UA-1247925-1`,
-        head: false,
-        anonymize: true,
-        respectDNT: true,
+        trackingIds: [`G-YZ280RLRRY`],
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+        },
       },
     },
   ],

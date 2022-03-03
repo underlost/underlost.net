@@ -213,15 +213,6 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: node.slug,
       },
     })
-
-    //create AMP versions of each page
-    createPage({
-      path: `/writing/${node.slug}/amp/`,
-      component: path.resolve(`./src/templates/post.amp.js`),
-      context: {
-        slug: node.slug,
-      },
-    })
   })
 
   // Create post case studies
@@ -273,6 +264,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
+// eslint-disable-next-line no-unused-vars
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
     resolve: {

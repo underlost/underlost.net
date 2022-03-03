@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import SiteLogoTiny from '../components/SiteLogoTiny'
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
@@ -18,9 +17,6 @@ const Tag = ({ data, location, pageContext }) => {
   return (
     <Layout>
       <MetaData data={data} location={location} type="series" />
-      <div className="gh-header gh-canvas">
-        <SiteLogoTiny />
-      </div>
       <div className="gh-content gh-canvas py-5">
         <header className="page-header tag-header mb-5 pb-5 px-4 py-5 px-md-5">
           <h1 className="h1 mb-4 text-capitalize">{tag.name}</h1>

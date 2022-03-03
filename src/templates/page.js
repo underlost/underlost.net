@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
-import SiteLogoTiny from '../components/SiteLogoTiny'
 
 /**
  * Single page (/:slug)
@@ -21,9 +20,6 @@ const Page = ({ data, location }) => {
       <Helmet>{page.codeinjection_styles && <style type="text/css">{`${page.codeinjection_styles}`}</style>}</Helmet>
       <Layout>
         <MetaData data={data} location={location} type="website" />
-        <div className="gh-header gh-canvas pb-5">
-          <SiteLogoTiny />
-        </div>
         <div className="gh-content gh-canvas py-5">
           <article className="content">
             <h1 className="content-title h1">{page.title}</h1>

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
-import SiteLogoTiny from '../components/SiteLogoTiny'
 
 /**
  * Template for blog pages. (/page/)
@@ -19,9 +18,6 @@ const Archive = ({ data, location, pageContext }) => {
   return (
     <Layout>
       <MetaData data={data} location={location} type="website" title="Archive" isHome={false} />
-      <div className="gh-header gh-canvas pb-5">
-        <SiteLogoTiny />
-      </div>
       <div className="gh-content gh-canvas py-5">
         <div className="content">
           <h1 className="content-title h1">Archive</h1>

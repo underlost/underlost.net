@@ -3,10 +3,8 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { Navigation } from '.'
+import SiteLogoTiny from '../SiteLogoTiny'
 // import config from '../../utils/siteConfig'
-
-//CSS
-import '../../scss/site.scss'
 
 /**
 * Main layout component
@@ -52,10 +50,14 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
               {isHome ? (
                 <div className="site-banner sr-only">
-                  <h1 className="site-banner-title ">{site.title}</h1>
+                  <h1 className="site-banner-title">{site.title}</h1>
                   <p className="site-banner-desc">{site.description}</p>
                 </div>
-              ) : null}
+              ) : (
+                <div className="gh-header gh-canvas pb-5 pt-5">
+                  <SiteLogoTiny />
+                </div>
+              )}
 
               <Navigation data={site.navigation} navClass="site-nav-item py-2" />
             </header>
@@ -100,7 +102,7 @@ DefaultLayout.propTypes = {
   }).isRequired,
 }
 
-const DefaultLayoutSettingsQuery = (props) => (
+const DefaultLayoutSettingsQuery = props => (
   <StaticQuery
     query={graphql`
       query GhostSettings {
@@ -121,7 +123,7 @@ const DefaultLayoutSettingsQuery = (props) => (
         }
       }
     `}
-    render={(data) => <DefaultLayout data={data} {...props} />}
+    render={data => <DefaultLayout data={data} {...props} />}
   />
 )
 

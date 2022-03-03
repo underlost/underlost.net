@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
-import SiteLogo from '../components/SiteLogo'
 
 /**
  * Author page (/author/:slug)
@@ -21,9 +20,6 @@ const Author = ({ data, location, pageContext }) => {
   return (
     <Layout>
       <MetaData data={data} location={location} type="profile" />
-      <div className="gh-header gh-canvas">
-        <SiteLogo />
-      </div>
       <div className="gh-content gh-canvas">
         <header className="page-header author-header mb-5 pb-5 px-4 py-5 px-md-5">
           <div className="row">

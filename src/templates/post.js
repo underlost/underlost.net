@@ -7,7 +7,6 @@ import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 import RelatedPostsBlock from '../components/RelatedPostsBlock'
-import SiteLogoTiny from '../components/SiteLogoTiny'
 import dayjs from 'dayjs'
 
 /**
@@ -29,9 +28,6 @@ const Post = ({ data, location }) => {
         <style type="text/css">{`${post.codeinjection_styles}`}</style>
       </Helmet>
       <div className="pb-5">
-        <div className="gh-header gh-canvas pb-5">
-          <SiteLogoTiny />
-        </div>
         <article className="content">
           <header className="gh-header gh-canvas">
             {post.feature_image ? <img className="gh-feature-image" src={post.feature_image} alt={post.title} /> : null}

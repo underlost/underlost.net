@@ -20,7 +20,7 @@ const HomePage = ({ data, location }) => {
   const page = data.ghostPage
 
   return (
-    <Layout>
+    <Layout isHome={true}>
       <MetaData data={data} location={location} title="Underlost" type="website" isHome={true} />
       <div className="container-lg pb-5">
         <div className="row">
@@ -32,8 +32,7 @@ const HomePage = ({ data, location }) => {
                 zIndex: `10`,
                 top: `-25px`,
                 left: `1.5rem`,
-              }}
-            >
+              }}>
               <SiteLogo />
             </div>
             <div className="ms-md-5">
