@@ -42,7 +42,6 @@
     "gatsby": "^4.9.1",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-plugin-advanced-sitemap": "^2.0.0",
-    "gatsby-plugin-amp": "^0.2.2",
     "gatsby-plugin-catch-links": "^4.7.0",
     "gatsby-plugin-feed": "^4.7.0",
     "gatsby-plugin-google-gtag": "^4.9.0",
