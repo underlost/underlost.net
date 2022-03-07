@@ -5,5 +5,5 @@
 [template]
   incoming-hooks = ["Ghost"]
 
-[plugins]
+[[plugins]]
 package = "@netlify/plugin-gatsby"
