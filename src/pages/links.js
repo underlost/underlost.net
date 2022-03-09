@@ -5,14 +5,10 @@ import { MetaData } from '../components/common/meta'
 import { Layout } from '../components/common'
 //import InnerLink from '../components/InnerLink'
 import LinksList from '../components/LinksList'
-import SiteLogoTiny from '../components/SiteLogoTiny'
 
 const LinksPage = ({ data, location }) => (
   <Layout>
     <MetaData data={data} location={location} title="Links" type="website" />
-    <div className="gh-header gh-canvas pb-5">
-      <SiteLogoTiny />
-    </div>
     <div className="gh-content gh-canvas py-5">
       <article className="content">
         <h1 className="content-title h1">Links</h1>
