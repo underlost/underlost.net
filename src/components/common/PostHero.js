@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
+import LazyloadImage from '../../components/LazyloadImage'
 
 const PostHero = ({ post }) => {
   const url = `/writing/${post.slug}/`
@@ -11,9 +12,7 @@ const PostHero = ({ post }) => {
     <div className="container post-hero-wrapper pb-5">
       <article className="post-hero py-4 position-relative">
         <Link to={url} className="d-block position-relative px-4 px-lg-5" style={{ zIndex: 1 }}>
-          <header
-            className="post-hero-header d-flex align-items-end"
-            style={{ minHeight: `500px` }}>
+          <header className="post-hero-header d-flex align-items-end" style={{ minHeight: `500px` }}>
             <div className="d-block w-100" style={{ borderTop: `1px solid #fff` }}>
               <h3 className="h2 text-uppercase pt-4 mb-0">{post.title}</h3>
               <span className="h6 text-uppercase mb-0">{readingTime}</span>
@@ -22,12 +21,7 @@ const PostHero = ({ post }) => {
         </Link>
 
         <div className="postHero-img-wrapper">
-          <div
-            className="postHero-img bg-cover"
-            style={{
-              backgroundImage: `url(${post.feature_image})`,
-            }}
-          />
+          <LazyloadImage className="postHero-img image-cover" src={post.feature_image} widthPx={400} alt={post.title} />
         </div>
       </article>
     </div>

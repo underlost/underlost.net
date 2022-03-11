@@ -14,7 +14,8 @@
   .post-card-image {
     margin: 0 0 10px 0;
     height: 100%;
-    width: auto;
+    object-fit: cover;
+    width: 100%;
     background: $primary no-repeat center center;
     background-size: cover;
     transition: all .1s cubic-bezier(.26,.88,.57,.9);

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import { auto } from '@popperjs/core'
+import LazyloadImage from '../components/LazyloadImage'
 
 const PopularCard = ({ post }) => {
   const url = `/writing/${post.slug}/`
@@ -11,17 +12,11 @@ const PopularCard = ({ post }) => {
         className="card post-card-header px-lg-4"
         style={{
           backgroundColor: `transparent`,
-        }}
-      >
+        }}>
         <Link className="post-card-link d-block" to={url}>
           {post.feature_image && (
             <div className="post-card-image-wrapper">
-              <div
-                className="post-card-image"
-                style={{
-                  backgroundImage: `url(${post.feature_image})`,
-                }}
-              />
+              <LazyloadImage className="post-card-image" src={post.feature_image} widthPx={400} alt={post.title} />
             </div>
           )}
           <div className="pt-4 px-0">
@@ -57,7 +52,7 @@ PopularCard.propTypes = {
 const PopularPosts = ({ data }) => {
   const posts = data.allGhostPost.edges
   return (
-    <div className="popular-cards-wrapper mb-5">
+    <div className="popular-cards-wrapper mb-5 w-100" style={{ overflow: `hidden` }}>
       <section className="post-feed-vertical bg-blue px-4 py-5 bg-blue">
         <div className="post-feed-header position-relative pb-4">
           <h3
