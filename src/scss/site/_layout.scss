@@ -135,6 +135,11 @@ pre {
   background-repeat: no-repeat;
 }
 
+.image-cover {
+  object-fit: cover;
+  object-position: center;
+}
+
 .page-bottom {
   min-height: 45px;
   width: 100%;
