@@ -19,9 +19,8 @@ const PostHero = ({ post }) => {
             </div>
           </header>
         </Link>
-
         <div className="postHero-img-wrapper">
-          <LazyloadImage className="postHero-img image-cover" src={post.feature_image} widthPx={400} alt={post.title} />
+          <LazyloadImage className="postHero-img image-cover" key={post.feature_image} src={post.feature_image} alt={post.title} />
         </div>
       </article>
     </div>

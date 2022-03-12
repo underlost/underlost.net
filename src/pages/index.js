@@ -51,9 +51,9 @@ const HomePage = ({ data, location }) => {
                   </h1>
                   <p>
                     I also specialize in React, content management systems like WordPress and Ghost, and various other technologies. Currently a senior developer at an interactive design
-                    agency in Seattle. I also offer various consulting services.{` `}
-                    <a className="fw-bold btn-link has-arrow" href="/about/">
-                      Learn more{` `}
+                    agency in Seattle. I also offer various {` `}
+                    <a className="fw-bold btn-link has-arrow" href="/consulting/">
+                      consulting services{` `}
                       <span className="d-inline-block px-1 arrow">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="6" viewBox="0 0 22 6">
                           <path stroke="#03080F" fill="none" fillRule="evenodd" d="M0 3h21m-3-3 3 3-3 3" />

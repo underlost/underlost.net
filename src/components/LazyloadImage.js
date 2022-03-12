@@ -1,61 +1,72 @@
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import VisibilitySensor from '../components/VisibilitySensor'
+import { handleViewport } from 'react-in-viewport'
 
-class LazyloadImage extends Component {
-  render() {
-    let srcSetAttributeValue = ``
-    let sanitiseImageSrc = this.props.src.replace(` `, `%20`)
+const INIT = 0
+const LOADING = 1
+const LOADED = 2
 
-    // Iterate through the array of values from the "srcsetSizes" array property.
-    if (this.props.srcsetSizes !== undefined && this.props.srcsetSizes.length > 0) {
-      for (let i = 0; i < this.props.srcsetSizes.length; i++) {
-        srcSetAttributeValue += `${sanitiseImageSrc}?tr=w-${this.props.srcsetSizes[i].imageWidth} ${this.props.srcsetSizes[i].viewPortWidth}w`
+const ImageObject = (props) => {
+  const { src: originalSrc, forwardedRef, inViewport, alt, className } = props
+  const [src, setSrc] = useState(null)
+  const [status, setStatus] = useState(INIT)
 
-        if (this.props.srcsetSizes.length - 1 !== i) {
-          srcSetAttributeValue += `, `
-        }
-      }
+  const loadImage = (imageSrc) => {
+    const img = new Image() // eslint-disable-line
+    setStatus(LOADING)
+    img.onload = () => {
+      setSrc(imageSrc)
+      setStatus(LOADED)
     }
-
-    return (
-      <VisibilitySensor key={sanitiseImageSrc} delayedCall={true} partialVisibility={true} once>
-        {({ isVisible }) => (
-          <>
-            {isVisible ? (
-              <img className={this.props.className} src={`${sanitiseImageSrc}?tr=w-${this.props.widthPx}`} alt={this.props.alt} srcSet={srcSetAttributeValue} />
-            ) : (
-              <img className={this.props.className} src={`${sanitiseImageSrc}?tr=w-${this.props.defaultWidthPx}`} alt={this.props.alt} />
-            )}
-          </>
-        )}
-      </VisibilitySensor>
-    )
+    img.alt = alt
+    img.src = imageSrc
   }
+
+  useEffect(() => {
+    if (inViewport && status === INIT) {
+      loadImage(originalSrc)
+    }
+  }, [inViewport, status])
+
+  const getBackgroundColor = () => {
+    switch (status) {
+    case LOADING:
+      return `rgba(0,0,0,.32)`
+    case LOADED:
+      return `rgba(0,0,0,.50)`
+    case INIT:
+    default:
+      return `rgba(0,0,0,.12)`
+    }
+  }
+
+  return (
+    <div
+      className={className}
+      style={{
+        transitionDuration: `300ms`,
+        maxWidth: `100%`,
+        marginBottom: `100%`,
+        backgroundColor: getBackgroundColor(),
+      }}
+      ref={forwardedRef}>
+      <img className="w-100 h-100 image-cover" width="100%" height="100%" src={src} alt={alt} />
+    </div>
+  )
 }
 
-LazyloadImage.propTypes = {
+const LazyImage = handleViewport(ImageObject, {}, { disconnectOnLeave: true })
+export default LazyImage
+
+ImageObject.propTypes = {
+  src: PropTypes.string.isRequired,
+  forwardedRef: PropTypes.string,
+  inViewport: PropTypes.string,
   alt: PropTypes.string,
-  defaultWidthPx: PropTypes.number,
-  sizes: PropTypes.string,
   className: PropTypes.string,
-  src: PropTypes.string,
-  srcsetSizes: PropTypes.arrayOf(
-    PropTypes.shape({
-      imageWidth: PropTypes.number,
-      viewPortWidth: PropTypes.number,
-    })
-  ),
-  widthPx: PropTypes.number,
 }
 
-LazyloadImage.defaultProps = {
-  alt: ``,
-  defaultWidthPx: 50,
-  sizes: ``,
-  src: ``,
+ImageObject.defaultProps = {
+  alt: `Image`,
   className: ``,
-  widthPx: 50,
 }
-
-export default LazyloadImage
