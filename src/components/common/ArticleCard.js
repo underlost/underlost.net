@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Remarkable } from 'remarkable'
-import LazyloadImage from '../../components/LazyloadImage'
+import LazyImage from '../LazyImage'
 
 const md = new Remarkable()
 const ArticleCard = ({ post }) => {
@@ -18,7 +18,7 @@ const ArticleCard = ({ post }) => {
         <Link className="post-card-link d-block" to={url}>
           {post.feature_image && (
             <div className="post-card-image-wrapper">
-              <LazyloadImage className="post-card-image" src={post.feature_image} widthPx={400} alt={post.title} />
+              <LazyImage className="post-card-image" key={post.feature_image} src={post.feature_image} alt={post.title} />
             </div>
           )}
           <div className="pt-4 px-4">
