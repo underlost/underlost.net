@@ -8,7 +8,7 @@ keywords: ["Tyler Rilling Instagram", "underlost Instagram", "Tyler Rilling"]
 website: 'https://www.instagram.com/underlost/'
 icon: 'faInstagram'
 permalink: 'links/instagram'
-weight: 2
+weight: 10
 sticky: "false"
 type: "link"
 ---
