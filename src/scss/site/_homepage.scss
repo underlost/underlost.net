@@ -1,3 +1,16 @@
+.site-loogo-wrapper {
+  position: absolute;
+  z-index: 10;
+  top: -25px;
+  left: 1.5rem;
+  @include media-breakpoint-down(md) {
+    max-width: 250px;
+    top: -35px;
+    .site-logo {
+      width: 100%;
+    }
+  }
+}
 .featured-cards-wrapper {
   position: relative;
   &::after {
@@ -25,8 +38,6 @@
       }
     }
   }
-
-  
 
   article:first-of-type {
     .card-body {

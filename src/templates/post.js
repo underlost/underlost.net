@@ -35,10 +35,10 @@ const Post = ({ data, location }) => {
             {post.primary_tag && <span className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</span>}
             <h1 className="content-title h1 mb-3 text-dark">{post.title}</h1>
             <div className="row post-meta mb-5">
-              <div className="col-6">
+              <div className="col-lg-6">
                 <span className="h6 text-uppercase d-inline-block mb-1 pe-4">{readingTime}</span>
               </div>
-              <div className="col-6 text-end">
+              <div className="col-lg-6 text-lg-end">
                 <time className="post-byline-item d-block text-muted" dateTime={post.published_at}>
                   <span className="sr-only">Published on </span>
                   Written {publishedAt}

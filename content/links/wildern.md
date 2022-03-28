@@ -1,8 +1,8 @@
 ---
 layout: link
 title:  'Wildern'
-alt: 'I work here'
-description: "Where I work."
+alt: 'I currently work here'
+description: "Where I currently work."
 keywords: ["Wildern", "Tyler Rilling"]
 website: 'https://hellowildern.com'
 icon: 'faLink'
@@ -12,6 +12,3 @@ sticky: "false"
 type: "link"
 ---
 
-Where I Work.
-
-<LinkButton layout={`link`} title={`Wildern`} website={`https://hellowildern.com`} alt={`Where I Work.`} />

@@ -7,7 +7,7 @@ keywords: ["Tyler Rilling Github", "underlost Github", "Tyler Rilling"]
 website: 'https://github.com/underlost'
 icon: faGithub
 permalink: 'links/github'
-weight: 1
+weight: 10
 sticky: "false"
 type: "link"
 ---
