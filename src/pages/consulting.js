@@ -5,9 +5,9 @@ import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 /**
- * Aside Page
+ * Consulting Page
  *
- * A somewhat stream of conciousness. WIP
+ * Consulting page. Pulls Content from consulting Ghost page.
  *
  */
 const ConsultingPage = ({ data, location }) => {
@@ -15,8 +15,8 @@ const ConsultingPage = ({ data, location }) => {
 
   return (
     <Layout>
-      <MetaData data={data} location={location} type="website" />
-      <div className="gh-content gh-canvas pt-5">
+      <MetaData data={data} location={location} type="website" /> 
+      <div className="gh-content gh-canvas py-5">
         {page ? (
           <article>
             <h1 className="content-title h1">{page.title}</h1>

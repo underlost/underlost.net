@@ -60,9 +60,12 @@ pre {
 
 .toggle-wrapper {
   position: fixed;
-  right: 40px;
+  right: .5rem;
   top: 40px;
   z-index: 100;
+  @include media-breakpoint-up(md) {
+    right: 40px;
+  }
 }
 
 .navbar-toggler {
@@ -92,8 +95,11 @@ pre {
 .page.nav-is-active {
   .site-head {
     .site-nav {
-      transform: translateX(50%);
+      transform: translateX(10%);
       transition: transform .3s;
+      @include media-breakpoint-up(md) {
+        transform: translateX(50%);
+      }
     }
   }
   .navbar-toggler {

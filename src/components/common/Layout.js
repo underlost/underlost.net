@@ -54,7 +54,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                   <p className="site-banner-desc">{site.description}</p>
                 </div>
               ) : (
-                <div className="gh-header gh-canvas pb-5 pt-5">
+                <div className="gh-header gh-canvas pb-lg-5 pt-5">
                   <SiteLogoTiny />
                 </div>
               )}

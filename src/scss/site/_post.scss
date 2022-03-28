@@ -15,7 +15,10 @@
     bottom: -2rem;
     margin-right: 0;
     margin-left: auto;
-    transform: translateX(90px);
+    transform: translateX(60px);
+    @include media-breakpoint-up(md) {
+      transform: translateX(90px);
+    }
     display: block;
     width: 250px;
     height: 72px;

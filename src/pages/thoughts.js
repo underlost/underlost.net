@@ -5,7 +5,7 @@ import { Layout, AsideCard } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 /**
- * Aside Page
+ * Thoughts Page
  *
  * A somewhat stream of conciousness. WIP
  *
@@ -17,7 +17,7 @@ const ThoughtsPage = ({ data, location }) => {
   return (
     <Layout>
       <MetaData data={data} location={location} type="website" />
-      <div className="gh-content gh-canvas pt-5">
+      <div className="gh-content gh-canvas pt-md-5">
         {page ? (
           <article>
             <h1 className="content-title h2 d-none">{page.title}</h1>

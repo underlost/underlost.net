@@ -46,7 +46,6 @@ const ImageObject = (props) => {
       style={{
         transitionDuration: `300ms`,
         maxWidth: `100%`,
-        marginBottom: `100%`,
         backgroundColor: getBackgroundColor(),
       }}
       ref={forwardedRef}>

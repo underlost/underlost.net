@@ -9,7 +9,7 @@ const PostHero = ({ post }) => {
   const readingTime = readingTimeHelper(post)
 
   return (
-    <div className="container post-hero-wrapper pb-5">
+    <div className="container post-hero-wrapper pb-md-5">
       <article className="post-hero py-4 position-relative">
         <Link to={url} className="d-block position-relative px-4 px-lg-5" style={{ zIndex: 1 }}>
           <header className="post-hero-header d-flex align-items-end" style={{ minHeight: `500px` }}>

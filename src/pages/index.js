@@ -25,14 +25,7 @@ const HomePage = ({ data, location }) => {
       <div className="container-lg pb-5">
         <div className="row">
           <div className="col-md-6 col-lg-5 mb-4 position-relative">
-            <div
-              className="mb-5"
-              style={{
-                position: `absolute`,
-                zIndex: `10`,
-                top: `-25px`,
-                left: `1.5rem`,
-              }}>
+            <div className="site-loogo-wrapper mb-5">
               <SiteLogo />
             </div>
             <div className="ms-md-5">
@@ -40,8 +33,8 @@ const HomePage = ({ data, location }) => {
             </div>
           </div>
           <div className="col-md-6 col-lg-7 mb-5">
-            <div className="card py-5 me-md-5">
-              <div className="card-body px-5">
+            <div className="card py-lg-5 me-md-5">
+              <div className="card-body px-3 px-md-5">
                 {page && <div className="load-external-scripts pb-5" dangerouslySetInnerHTML={{ __html: page.html }} />}
 
                 <div className="pb-5">
