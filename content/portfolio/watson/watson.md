@@ -5,16 +5,11 @@ slug: 'watson-adventures'
 permalink: "/projects/watson-adventures"
 description: 'Scavenger Hunts & Team-Building Activities.'
 color: 'AE3934'
-size: 'col-md-6'
-image: "./314dc_cover.jpg"
+image: "watson_cover.jpg"
 date: '2018-12-15'
 keywords: ["WordPress", "ReactJS", "Gatsby", "web project", "wildern"]
-col1Width: "col-md-5 offset-lg-1"
-col2Width: "col-md-6"
-col1Order: "order-lg-2"
-col2Order: "order-lg-1"
 published: "false"
-type: "project"
+type: "work"
 ---
 
 Succulents cornhole woke, drinking vinegar readymade shaman listicle palo santo vinyl. Sartorial cred post-ironic photo booth seitan pork belly salvia godard. Shaman DIY disrupt austin quinoa williamsburg aesthetic pug. Try-hard VHS snackwave direct trade kinfolk kogi raclette.

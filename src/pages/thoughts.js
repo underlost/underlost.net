@@ -53,7 +53,7 @@ ThoughtsPage.propTypes = {
 export default ThoughtsPage
 
 // This page query loads all posts sorted descending by published date
-export const pageQuery = graphql`
+export const thoughtsPageQuery = graphql`
   query GhostThoughtsQuery {
     ghostPage(slug: { eq: "thoughts" }) {
       ...GhostPageFields

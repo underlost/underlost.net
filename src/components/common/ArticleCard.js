@@ -3,14 +3,11 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
-import { Remarkable } from 'remarkable'
 import LazyImage from '../LazyImage'
 
-const md = new Remarkable()
 const ArticleCard = ({ post }) => {
   const url = `/writing/${post.slug}/`
   const readingTime = readingTimeHelper(post)
-  const postExcept = md.render(post.excerpt)
 
   return (
     <article className="card mb-4">
@@ -28,7 +25,9 @@ const ArticleCard = ({ post }) => {
         </Link>
       </header>
 
-      <div className="card-body px-4 post-card-excerpt" dangerouslySetInnerHTML={{ __html: postExcept }} />
+      <section className="card-body px-4 post-card-excerpt">
+        <p>{post.excerpt}</p>
+      </section>
 
       <footer className="post-card-footer sr-only">
         {post.tags && (

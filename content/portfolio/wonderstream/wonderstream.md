@@ -4,17 +4,12 @@ slug: "wonderstream"
 title: 'Wonderstream'
 description: "Livestreaming Made Easy."
 color: "EF4900"
-size: "col-md-6"
-image: "./314dc_cover.jpg"
+image: "wonderstream_cover.jpg"
 date: "2017-09-01"
 permalink: "projects/wonderstream"
 keywords: ["Livestreaming", "bitcoin", "wowza", "paas", "django", "python", "RESTful API"]
-col1Width: "col-md-12"
-col2Width: "col-md-12"
-col1Order: "order-1"
-col2Order: "order-2"
 published: "false"
-type: "project"
+type: "work"
 ---
 
 Succulents cornhole woke, drinking vinegar readymade shaman listicle palo santo vinyl. Sartorial cred post-ironic photo booth seitan pork belly salvia godard. Shaman DIY disrupt austin quinoa williamsburg aesthetic pug. Try-hard VHS snackwave direct trade kinfolk kogi raclette.

@@ -1,18 +1,12 @@
 ---
 guid: "307"
 slug: "grahamwalker"
-permalink: "portfolio/grahamwalker"
 title: "Graham & Walker"
 description: "Formerly Female Founders Alliance, Graham & Walker is a community and Venture Capitol Fund for woman owned start-ups."
 keywords: ["web project", "wildern", "Female Founders Alliance", "Graham & Walker"]
 color: "EF4900"
-size: "col-md-12"
-image: "cover_314dc.jpg"
-date: "2016-12-29"
-col1Width: "col-md-5"
-col2Width: "col-md-5 offset-lg-1 mt-5"
-col1Order: "order-1"
-col2Order: "order-2"
+image: "cover_grahamwalker.jpg"
+date: "2021-10-30"
 published: "false"
-type: "project"
+type: "work"
 ---

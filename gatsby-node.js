@@ -39,6 +39,13 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      portfolio: allGhostPage(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#portfolio" } } } }) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
       allGhostTag(sort: { order: ASC, fields: name }, filter: { visibility: { eq: "public" } }) {
         edges {
           node {
@@ -84,6 +91,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const thoughts = result.data.thoughts.edges
   const projects = result.data.projects.edges
   const caseStudies = result.data.caseStudies.edges
+  const portfolio = result.data.portfolio.edges
 
   // Load templates
   const indexTemplate = path.resolve(`./src/templates/archive.js`)
@@ -91,6 +99,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const authorTemplate = path.resolve(`./src/templates/author.js`)
   const pageTemplate = path.resolve(`./src/templates/page.js`)
   const postTemplate = path.resolve(`./src/templates/post.js`)
+  const portfolioTemplate = path.resolve(`./src/templates/portfolio.js`)
 
   // Create tag pages
   tags.forEach(({ node }) => {
@@ -190,6 +199,23 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: node.url,
       component: postTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.slug,
+      },
+    })
+  })
+
+  // Create Portfolio items
+  portfolio.forEach(({ node }) => {
+    // This part here defines, that our pages will use
+    // a `/projects/:slug/` permalink.
+    node.url = `/portfolio/${node.slug}/`
+
+    createPage({
+      path: node.url,
+      component: portfolioTemplate,
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.

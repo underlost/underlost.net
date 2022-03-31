@@ -5,23 +5,35 @@ import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import LazyImage from '../LazyImage'
 
-const PostCardArticle = ({ post }) => {
-  const url = `/writing/${post.slug}/`
+const PortfolioCard = ({ post }) => {
+  const url = `/portfolio/${post.slug}/`
   const readingTime = readingTimeHelper(post)
 
   return (
-    <article className="post-card post-card-article py-lg-3 mb-4">
+    <article className="card mb-4">
       <header className="post-card-header">
-        {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
         <Link className="post-card-link d-block" to={url}>
-          <h2 className="post-card-title h3">{post.title}</h2>
-          {post.feature_image && <LazyImage className="post-card-image mb-3" key={post.feature_image} src={post.feature_image} alt={post.title} />}
+          {post.feature_image && (
+            <div className="post-card-image-wrapper">
+              <LazyImage className="post-card-image" key={post.feature_image} src={post.feature_image} alt={post.title} />
+            </div>
+          )}
+          <div className="pt-4 px-4">
+            {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
+            <h2 className="post-card-title h2 mb-1">{post.title}</h2>
+          </div>
         </Link>
-        {post.featured && <span className="h6 text-uppercase mb-1 text-orange sr-only">Featured</span>}
       </header>
 
-      <section className="post-card-excerpt">
-        <p>{post.excerpt}</p>
+      <section className="card-body px-4 post-card-excerpt">
+        <Link className="d-block pb-2" to={url}>
+          <p className="d-inline pe-2">{post.excerpt}</p>
+          <span className="d-inline-block px-1 arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="6" viewBox="0 0 22 6">
+              <path stroke="#03080F" fill="none" fillRule="evenodd" d="M0 3h21m-3-3 3 3-3 3" />
+            </svg>
+          </span>
+        </Link>
       </section>
 
       <footer className="post-card-footer sr-only">
@@ -30,19 +42,18 @@ const PostCardArticle = ({ post }) => {
             Posted in: <Tags post={post} visibility="public" autolink={false} />
           </div>
         )}
-
-        <div className="sr-only">
+        <div className="post-card-footer-author">
           <span>By: {post.primary_author.name}</span>
         </div>
-        <div className="post-card-footer-right">
-          <div>{readingTime}</div>
+        <div className="post-card-footer-time">
+          <span>Reading Time: {readingTime}</span>
         </div>
       </footer>
     </article>
   )
 }
 
-PostCardArticle.propTypes = {
+PortfolioCard.propTypes = {
   post: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -63,4 +74,4 @@ PostCardArticle.propTypes = {
   }).isRequired,
 }
 
-export default PostCardArticle
+export default PortfolioCard

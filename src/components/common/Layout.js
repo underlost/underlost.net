@@ -36,9 +36,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
       <div className={menuState}>
         <div className="viewport">
-          <div className="viewport-top py-lg-4">
+          <div className="viewport-top">
             {/* The main header section on top of the screen */}
-            <header className="site-head mx-auto mt-3">
+            <header className="site-head mx-auto">
               <div className="toggle-wrapper">
                 <button type="button" className="btn navbar-toggler" onClick={toggleMenu}>
                   <span className={`icon-bar top-bar`} />
@@ -62,7 +62,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
               <Navigation data={site.navigation} navClass="site-nav-item py-2" />
             </header>
 
-            <main className="site-main mx-auto py-5">
+            <main className="site-main mx-auto pb-5">
               {/* All the main content gets inserted here, index.js, post.js */}
               {children}
             </main>
