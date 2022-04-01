@@ -103,7 +103,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-netlify`,
+    //`gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-ghost`,
       options: process.env.NODE_ENV === `development` ? ghostConfig.development : ghostConfig.production,
