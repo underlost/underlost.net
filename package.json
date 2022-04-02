@@ -39,7 +39,7 @@
     "cheerio": "^1.0.0-rc.6",
     "core-js": "^3.6.0",
     "dayjs": "^1.8.18",
-    "gatsby": "^4.9.1",
+    "gatsby": "^4.7.2",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-plugin-advanced-sitemap": "^2.0.0",
     "gatsby-plugin-catch-links": "^4.7.0",
