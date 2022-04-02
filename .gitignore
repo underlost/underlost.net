@@ -47,3 +47,6 @@ log
 dist
 public
 .ghost.json
+
+# Local Netlify folder
+.netlify

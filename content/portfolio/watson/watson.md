@@ -8,7 +8,7 @@ color: 'AE3934'
 image: "watson_cover.jpg"
 date: '2018-12-15'
 keywords: ["WordPress", "ReactJS", "Gatsby", "web project", "wildern"]
-published: "false"
+published: false
 type: "work"
 ---
 

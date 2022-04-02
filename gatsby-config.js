@@ -103,7 +103,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    //`gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-ghost`,
       options: process.env.NODE_ENV === `development` ? ghostConfig.development : ghostConfig.production,
@@ -144,49 +144,54 @@ module.exports = {
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
-        query: `
-                {
-                    allGhostPost(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }) {
-                        edges {
-                            node {
-                                id
-                                slug
-                                updated_at
-                                created_at
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostPage {
-                        edges {
-                            node {
-                                id
-                                slug
-                                updated_at
-                                created_at
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostTag(sort: { order: ASC, fields: name }, filter: { visibility: { eq: "public" } }) {
-                        edges {
-                            node {
-                                id
-                                slug
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostAuthor {
-                        edges {
-                            node {
-                                id
-                                slug
-                                profile_image
-                            }
-                        }
-                    }
-                }`,
+        query: `{
+          allGhostPost(
+            sort: {order: ASC, fields: published_at}
+            filter: {tags: {elemMatch: {name: {eq: "#blog"}}}}
+          ) {
+            edges {
+              node {
+                id
+                slug
+                updated_at
+                created_at
+                feature_image
+              }
+            }
+          }
+          allGhostPage(filter: {tags: {elemMatch: {name: {eq: "#page"}}}}) {
+            edges {
+              node {
+                id
+                slug
+                updated_at
+                created_at
+                feature_image
+              }
+            }
+          }
+          allGhostTag(
+            sort: {order: ASC, fields: name}
+            filter: {visibility: {eq: "public"}}
+          ) {
+            edges {
+              node {
+                id
+                slug
+                feature_image
+              }
+            }
+          }
+          allGhostAuthor {
+            edges {
+              node {
+                id
+                slug
+                profile_image
+              }
+            }
+          }
+        }`,
         mapping: {
           allGhostPost: {
             sitemap: `posts`,

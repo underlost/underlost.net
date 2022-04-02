@@ -7,6 +7,6 @@ color: "EF4900"
 image: "pinchefs_cover.jpg"
 date: "2019-09-01"
 keywords: ["pinterest", "wildern"]
-published: "false"
+published: false
 type: "work"
 ---

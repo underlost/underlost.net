@@ -8,7 +8,7 @@ image: "wonderstream_cover.jpg"
 date: "2017-09-01"
 permalink: "projects/wonderstream"
 keywords: ["Livestreaming", "bitcoin", "wowza", "paas", "django", "python", "RESTful API"]
-published: "false"
+published: false
 type: "work"
 ---
 

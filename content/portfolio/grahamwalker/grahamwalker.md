@@ -7,6 +7,6 @@ keywords: ["web project", "wildern", "Female Founders Alliance", "Graham & Walke
 color: "EF4900"
 image: "cover_grahamwalker.jpg"
 date: "2021-10-30"
-published: "false"
+published: false
 type: "work"
 ---
