@@ -62,10 +62,13 @@ const Portfolio = ({ data, location }) => {
           style={{
             backgroundColor: frontmatter.color,
           }}>
+          <Background filename={frontmatter.image} />
           <div
             className="container"
             style={{
               height: `100%`,
+              zIndex: 25,
+              position: `relative`,
             }}>
             <div
               className="row"
@@ -80,7 +83,6 @@ const Portfolio = ({ data, location }) => {
               </div>
             </div>
           </div>
-          <Background filename={frontmatter.image} />
         </header>
 
         <div className="container">
