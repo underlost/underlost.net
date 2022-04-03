@@ -18,9 +18,8 @@ const PortfolioPage = ({ data, location }) => (
           </p>
         </section>
       </article>
-
-      <PortfolioList />
     </div>
+    <PortfolioList />
   </Layout>
 )
 
