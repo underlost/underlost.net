@@ -8,8 +8,8 @@ color: "#AE3934"
 image: "cover_watson.jpg"
 date: '2019-12-15'
 keywords: ["WordPress", "ReactJS", "Gatsby", "web project", "wildern"]
-tools_used: ["Sketch App", "Github", "Wowza Cloud", "Visual Studio Code", ]
-frameworks_used: ["Python", "Django", "Django Rest Framework", "Gulp", "SCSS", "Git", "ReactJS", "GatsbyJS"]
+tools_used: ["Sketch App", "Github", "Visual Studio Code", "Netlify"]
+frameworks_used: ["Python", "Django", "Django Rest Framework", "Gulp", "SCSS", "Git", "ReactJS", "GatsbyJS", "Bootstrap"]
 published: true
 type: "work"
 ---

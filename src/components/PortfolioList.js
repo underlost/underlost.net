@@ -22,7 +22,7 @@ const PortfolioList = () => {
 
 const query = graphql`
   query {
-    allGhostPage(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#portfolio" } } } }) {
+    allGhostPage(sort: { order: DESC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#portfolio" } } } }) {
       edges {
         node {
           ...GhostPageFields
