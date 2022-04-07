@@ -21,7 +21,7 @@ const HomePage = ({ data, location }) => {
 
   return (
     <Layout isHome={true}>
-      <MetaData data={data} location={location} title="Underlost" type="website" isHome={true} />
+      <MetaData data={data} location={location} title="Underlost, By Tyler Rilling" type="website" isHome={true} />
       <div className="container-lg pt-5 pb-5">
         <div className="row pt-5">
           <div className="col-md-6 col-lg-5 mb-4 position-relative">

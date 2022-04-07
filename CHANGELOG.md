@@ -11,7 +11,6 @@
 
 * Imported previous content from A Life Well Played
 
-
 ## 7.0.0 (02/07/22)
 
 * started new design, introducing digital garden, blog hosted through Ghost.
@@ -20,7 +19,6 @@
 
 * Updated Bootstrap to v5
 * Updated packages, getting ready for minor site refresh and updates.
-
 
 ## 6.1.1 (02/29/2020)
 
