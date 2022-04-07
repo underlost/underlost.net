@@ -9,7 +9,7 @@ const ReadFirst = ({ data }) => {
   return (
     <div className="read-first-wrapper">
       <section className="read-first post-feed mb-5 pb-5">
-        <h6 className="h6 text-uppercase text-orange mb-3">Noteworthy</h6>
+        <h6 className="h6 text-uppercase text-orange mb-3">Noteworthy Posts</h6>
         {posts.map(({ node }) => (
           // The tag below includes the markup for each post - components/common/PostCard.js
           <PostItem key={node.id} post={node} />

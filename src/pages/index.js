@@ -24,15 +24,15 @@ const HomePage = ({ data, location }) => {
       <MetaData data={data} location={location} title="Underlost, By Tyler Rilling" type="website" isHome={true} />
       <div className="container-lg pt-5 pb-5">
         <div className="row pt-5">
-          <div className="col-md-6 col-lg-5 mb-4 position-relative">
-            <div className="site-loogo-wrapper mb-5">
+          <div className="col-md-6 col-lg-5 mb-4 position-relative order-2 order-md-1">
+            <div className="site-loogo-wrapper mb-5 d-none d-md-block">
               <SiteLogo />
             </div>
             <div className="ms-md-5">
               <FeaturedCardsBlock />
             </div>
           </div>
-          <div className="col-md-6 col-lg-7 mb-5">
+          <div className="col-md-6 col-lg-7 mb-5 order-1 order-md-2">
             <div className="card py-lg-5 me-md-5">
               <div className="card-body px-3 px-md-5">
                 {page && <div className="load-external-scripts pb-5" dangerouslySetInnerHTML={{ __html: page.html }} />}
@@ -40,10 +40,10 @@ const HomePage = ({ data, location }) => {
                 <div className="pb-5">
                   <p className="h6 text-green text-uppercase">Introduction</p>
                   <h1 className="h2">
-                    Underlost is Tyler Rilling, a Python web developer and narrative designer, living in Seattle, Washington. They are probably not an Undertale game.👾
+                    Underlost is Tyler Rilling, a Python web developer and narrative designer, living in Seattle, Washington. They are probably not an Undertale game. 👾
                   </h1>
                   <p>
-                    I also specialize in React, content management systems like WordPress and Ghost, and various other technologies. Currently a senior developer at an interactive design
+                    As a full-stack developer, I specialize in ReactJS, REST frameworks and content management systems like WordPress and Ghost, and various technology stacks. Currently a senior developer at an interactive design
                     agency in Seattle. I also offer various{` `}
                     <a className="fw-bold btn-link has-arrow" href="/consulting/">
                       consulting services{` `}
