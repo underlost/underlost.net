@@ -3,7 +3,7 @@ guid: '402'
 title: 'Modern Den'
 slug: 'modern-den'
 description: 'A ReactJS web app for Real Estate'
-color: "#AE3934"
+color: "#25252B"
 image: "cover_modernden.jpg"
 date: '2021-12-15'
 keywords: ["ReactJS", "NextJS", "web project", "wildern"]
