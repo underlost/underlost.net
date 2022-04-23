@@ -1,9 +1,12 @@
-export default async function getrevueSubscribe(req, res) {
+import type { Context } from 'netlify:edge'
+
+export default async (request: Request, context: Context) => {
   // 1. Get the email from the payload and
   // validate if it is empty.
-  const { email } = req.body
+  const email = request.body
+
   if (!email) {
-    return res.status(400).json({ error: `Please provide an email id.` })
+    return new Response('Please provide an email id.')
   }
 
   // 2. Use the Revue API Key and create a subscriber using
@@ -26,16 +29,15 @@ export default async function getrevueSubscribe(req, res) {
     if (response.status >= 400) {
       const message = await response.json()
       console.log(message.error.email[0])
-      return res.status(400).json({ error: message.error.email[0] })
+      return context.json({ error: message.error.email[0] })
     }
+
     // Send a JSON response
-    res.status(201).json({
-      message: `Hey, ${email}, Please check your email and verify it. Can't wait to get you boarded.`,
-      error: ``,
-    })
+    return context.json({ message: `Hey, ${email}, Please check your email for next steps!`, error: `` })
+
   } catch (err) {
     // 4. If the control goes inside the catch block
     // let us consider it as a server error(500)
-    return res.status(500).json({ error: err.message || error.toString() })
+    return context.json({ error: err.message || error.toString() })
   }
 }
