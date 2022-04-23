@@ -8,6 +8,7 @@ import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 import RelatedPostsBlock from '../components/RelatedPostsBlock'
 import dayjs from 'dayjs'
+import NewsletterForm from '../components/NewsletterForm'
 
 /**
  * Single post view (/:slug)
@@ -66,11 +67,18 @@ const Post = ({ data, location }) => {
         <div className="gh-canvas">
           <RelatedPostsBlock tags={post.tags} currentArticleSlug={post.slug} />
 
-          <div className="about-author">
+          <div className="about-author mb-5">
             <h6 className="h6 text-uppercase text-green mb-4">About the Author</h6>
             <div className="post-card-author">
               <h6 className="post-byline-item h6 text-uppercase d-block mb-1">{post.primary_author.name}</h6>
               <p className="fs-6">{post.primary_author.bio}</p>
+            </div>
+          </div>
+
+          <div>
+            <hr />
+            <div className="pt-5">
+              <NewsletterForm />
             </div>
           </div>
         </div>

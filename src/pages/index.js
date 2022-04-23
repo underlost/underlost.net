@@ -8,6 +8,7 @@ import ReadFirstBlock from '../components/ReadFirstBlock'
 import SiteLogo from '../components/SiteLogo'
 import PopularPostsBlock from '../components/PopularBlock'
 import RecentBlockContinued from '../components/RecentBlockContinued'
+import NewsletterForm from '../components/NewsletterForm'
 
 /**
  * Homepage Page
@@ -43,8 +44,8 @@ const HomePage = ({ data, location }) => {
                     Underlost is Tyler Rilling, a Python web developer and narrative designer, living in Seattle, Washington. They are probably not an Undertale game. 👾
                   </h1>
                   <p>
-                    As a full-stack developer, I specialize in ReactJS, REST frameworks and content management systems like WordPress and Ghost, and various technology stacks. Currently a senior developer at an interactive design
-                    agency in Seattle. I also offer various{` `}
+                    As a full-stack developer, I specialize in ReactJS, REST frameworks and content management systems like WordPress and Ghost, and various technology stacks. Currently a
+                    senior developer at an interactive design agency in Seattle. I also offer various{` `}
                     <a className="fw-bold btn-link has-arrow" href="/consulting/">
                       consulting services{` `}
                       <span className="d-inline-block px-1 arrow">
@@ -65,12 +66,18 @@ const HomePage = ({ data, location }) => {
       <div className="container-fluid px-0">
         <PopularPostsBlock />
       </div>
+
+      <div className="gh-content gh-canvas pt-5">
+        <NewsletterForm />
+        <hr />
+      </div>
+
       <div>
         <RecentBlockContinued />
       </div>
 
       <div className="gh-content gh-canvas">
-        <nav className="pagination" role="navigation">
+        <nav className="pagination pb-5" role="navigation">
           <Link to="/archive/" rel="next" className="btn btn-link me-0 ms-auto">
             View Archives
           </Link>

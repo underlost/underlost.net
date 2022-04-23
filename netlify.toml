@@ -4,3 +4,7 @@
 
 [template]
   incoming-hooks = ["Ghost"]
+
+[[edge_functions]]
+  function = "getrevueSubscribe"
+  path = "/api/subscribe"

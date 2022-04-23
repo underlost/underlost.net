@@ -15,7 +15,7 @@ const ConsultingPage = ({ data, location }) => {
 
   return (
     <Layout>
-      <MetaData data={data} location={location} type="website" /> 
+      <MetaData data={data} location={location} type="website" />
       <div className="gh-content gh-canvas py-5">
         {page ? (
           <article>

@@ -21,7 +21,7 @@ const Background = props => (
       }
     `}
     render={(data) => {
-      const image = data.images.edges.find((n) => n.node.relativePath.includes(props.filename))
+      const image = data.images.edges.find(n => n.node.relativePath.includes(props.filename))
       if (!image) {
         return null
       }

@@ -26,7 +26,9 @@ const Portfolio = ({ data, location }) => {
         <h4 className="text-uppercase h6">Software Used</h4>
         <ul className="list-inline project-details-list">
           {frontmatter.tools_used.map((tools, i) => (
-            <li key={i} className="list-inline-item mr-0">{tools}</li>
+            <li key={i} className="list-inline-item mr-0">
+              {tools}
+            </li>
           ))}
         </ul>
       </div>
@@ -61,7 +63,8 @@ const Portfolio = ({ data, location }) => {
           className="portfolio-header mb-5 position-relative"
           style={{
             backgroundColor: frontmatter.color,
-          }}>
+          }}
+        >
           <Background filename={frontmatter.image} />
           <div
             className="container"
@@ -69,12 +72,14 @@ const Portfolio = ({ data, location }) => {
               height: `100%`,
               zIndex: 25,
               position: `relative`,
-            }}>
+            }}
+          >
             <div
               className="row"
               style={{
                 height: `100%`,
-              }}>
+              }}
+            >
               <div className="col-md-5 col-lg-4 align-self-center">
                 <div className="bg-light px-4 py-5 my-5">
                   <h1 className="h6">{page.title}</h1>
