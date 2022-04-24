@@ -38,6 +38,6 @@ export default async (request: Request, context: Context) => {
   } catch (err) {
     // 4. If the control goes inside the catch block
     // let us consider it as a server error(500)
-    return context.json({ error: err.message || error.toString() })
+    return context.json({ error: err.message || Error.toString() })
   }
 }
