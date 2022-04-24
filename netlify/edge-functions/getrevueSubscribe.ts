@@ -1,4 +1,5 @@
 import type { Context } from 'netlify:edge'
+require('dotenv').config()
 
 export default async (request: Request, context: Context) => {
   // 1. Get the email from the payload and
