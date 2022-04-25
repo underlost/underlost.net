@@ -7,7 +7,7 @@ import NewsletterForm from '../components/NewsletterForm'
 
 const NewsletterPage = ({ data, location }) => (
   <Layout>
-    <MetaData data={data} location={location} title="Links" type="website" />
+    <MetaData data={data} location={location} title="Sign up to my Newsletter" type="website" />
     <div className="gh-content gh-canvas py-5">
       <article className="content">
         <h1 className="content-title h1">Newsletter</h1>

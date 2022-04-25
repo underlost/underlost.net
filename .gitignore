@@ -44,6 +44,7 @@ _site
 tmp
 log
 .env
+.env.*
 dist
 public
 .ghost.json

@@ -1,10 +1,10 @@
-import type { Context } from 'netlify:edge'
-require('dotenv').config()
+import axios from 'axios'
 
-export default async (request: Request, context: Context) => {
+export default async (request: Request, context) => {
   // 1. Get the email from the payload and
   // validate if it is empty.
   const email = request.body
+  const API_KEY = process.env.REVUE_API_KEY
 
   if (!email) {
     return new Response('Please provide an email id.')
@@ -14,21 +14,25 @@ export default async (request: Request, context: Context) => {
   // the email we pass to the API. Please note, we pass the
   // API Key in the 'Authorization' header.
   try {
-    const API_KEY = process.env.REVUE_API_KEY
-    const response = await fetch(`https://www.getrevue.co/api/v2/subscribers`, {
-      method: `POST`,
-      body: JSON.stringify({ email: email, double_opt_in: false }),
-      headers: {
-        Authorization: `Token ${API_KEY}`,
-        'Content-Type': `application/json`,
-      },
-    })
-
+    const response = await axios.post(`https://www.getrevue.co/api/v2/subscribers`,
+      {
+        email: email,
+        first_name: '',
+        last_name: '',
+        double_opt_in: false,
+      }, {
+        headers: {
+          'Content-Type': `application/json`,
+          Authorization: `Token ${API_KEY}`,
+        },
+      }
+    )
+  
     // 3. We check in the response if the status is 400
     // If so, consider it as error and return. Otherwise a 201
     // for create
     if (response.status >= 400) {
-      const message = await response.json()
+      const message = await response.data.message
       console.log(message.error.email[0])
       return context.json({ error: message.error.email[0] })
     }
@@ -39,6 +43,6 @@ export default async (request: Request, context: Context) => {
   } catch (err) {
     // 4. If the control goes inside the catch block
     // let us consider it as a server error(500)
-    return context.json({ error: err.message || Error.toString() })
+    return context.json({ error: err })
   }
 }
