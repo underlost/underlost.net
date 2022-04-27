@@ -1,11 +1,12 @@
-require(`dotenv`).config()
-const axios = require(`axios`)
+require('dotenv').config()
+const axios = require('axios')
+const fetch = require("node-fetch")
 
-export default async function handler(req, res) {
+exports.handler = async (res, context) => {
   // 1. Get the email from the payload and
   // validate if it is empty.
   //const { email } = req.body
-  
+
   const email = `underlost@gmail.com`
 
   if (!email) {
