@@ -29,4 +29,3 @@ NewsletterPage.propTypes = {
 }
 
 export default NewsletterPage
-

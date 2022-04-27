@@ -24,7 +24,7 @@ TagAside.propTypes = {
   }).isRequired,
 }
 
-const TagAsideBlock = props => (
+const TagAsideBlock = (props) => (
   <StaticQuery
     query={graphql`
       query GhostTagAsideQuery {
@@ -37,7 +37,7 @@ const TagAsideBlock = props => (
         }
       }
     `}
-    render={data => <TagAside data={data} {...props} />}
+    render={(data) => <TagAside data={data} {...props} />}
   />
 )
 

@@ -26,7 +26,7 @@ ReadFirst.propTypes = {
   }).isRequired,
 }
 
-const ReadFirstBlock = props => (
+const ReadFirstBlock = (props) => (
   <StaticQuery
     query={graphql`
       query GhostReadFirstQuery {
@@ -39,7 +39,7 @@ const ReadFirstBlock = props => (
         }
       }
     `}
-    render={data => <ReadFirst data={data} {...props} />}
+    render={(data) => <ReadFirst data={data} {...props} />}
   />
 )
 

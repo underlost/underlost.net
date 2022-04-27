@@ -24,7 +24,7 @@ const RelatedPosts = ({ posts }) => (
 
 class RelatedPostsFactory {
   constructor(articles, currentArticleSlug) {
-    this.articles = articles.filter(aArticle => aArticle.slug !== currentArticleSlug)
+    this.articles = articles.filter((aArticle) => aArticle.slug !== currentArticleSlug)
     this.currentArticleSlug = currentArticleSlug
     this.maxArticles = 4
     this.tags = []
@@ -74,7 +74,7 @@ class RelatedPostsFactory {
     }
 
     function getIdentityMapAsArray() {
-      return Object.keys(identityMap).map(slug => identityMap[slug])
+      return Object.keys(identityMap).map((slug) => identityMap[slug])
     }
 
     for (let article of articles) {
@@ -88,7 +88,7 @@ class RelatedPostsFactory {
   }
 }
 
-const RelatedPostsBlock = props => (
+const RelatedPostsBlock = (props) => (
   <StaticQuery
     query={graphql`
       query GhostRelatedPostsQuery {

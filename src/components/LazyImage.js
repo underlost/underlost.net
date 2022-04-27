@@ -30,13 +30,13 @@ const ImageObject = (props) => {
 
   const getBackgroundColor = () => {
     switch (status) {
-    case LOADING:
-      return `rgba(0,0,0,.32)`
-    case LOADED:
-      return `rgba(0,0,0,.50)`
-    case INIT:
-    default:
-      return `rgba(0,0,0,.12)`
+      case LOADING:
+        return `rgba(0,0,0,.32)`
+      case LOADED:
+        return `rgba(0,0,0,.50)`
+      case INIT:
+      default:
+        return `rgba(0,0,0,.12)`
     }
   }
 

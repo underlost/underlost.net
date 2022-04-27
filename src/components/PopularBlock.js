@@ -112,7 +112,7 @@ PopularPosts.propTypes = {
   }).isRequired,
 }
 
-const PopularPostsBlock = props => (
+const PopularPostsBlock = (props) => (
   <StaticQuery
     query={graphql`
       query GhostPopularPostsQuery {
@@ -125,7 +125,7 @@ const PopularPostsBlock = props => (
         }
       }
     `}
-    render={data => <PopularPosts data={data} {...props} />}
+    render={(data) => <PopularPosts data={data} {...props} />}
   />
 )
 

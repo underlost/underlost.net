@@ -25,7 +25,7 @@ FeaturedCards.propTypes = {
   }).isRequired,
 }
 
-const FeaturedCardsBlock = props => (
+const FeaturedCardsBlock = (props) => (
   <StaticQuery
     query={graphql`
       query GhostFeaturedCardsQuery {
@@ -38,7 +38,7 @@ const FeaturedCardsBlock = props => (
         }
       }
     `}
-    render={data => <FeaturedCards data={data} {...props} />}
+    render={(data) => <FeaturedCards data={data} {...props} />}
   />
 )
 
