@@ -98,13 +98,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: path.join(__dirname, `src`, `images`),
-        name: `images`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-zopfli`,
     },
     `gatsby-plugin-image`,
