@@ -36,7 +36,6 @@ export default async function handler(req, res) {
     // Send a JSON response
     res.status(201).json({
       message: `Hey, ${email}, Thanks for signing up! Please check your email and verify it.`,
-      error: '',
     })
   } catch (err) {
     // 4. If the control goes inside the catch block

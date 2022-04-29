@@ -1,30 +1,47 @@
 import React, { useState } from 'react'
+import FormData from 'form-data'
 
 const NewsletterForm = () => {
   const [emailState, setEmail] = useState(``)
   const [errorState, setError] = useState(``)
   const [successState, setSuccess] = useState(``)
+  const [loading, setLoading] = useState(false)
 
-  const subscribeMe = async (event) => {
-    event.preventDefault()
-
-    const res = await fetch(`/api/subscribe`, {
-      body: JSON.stringify({ email: emailState }),
-      headers: { 'Content-Type': `application/json` },
-      method: `POST`,
-    })
-
-    const { error, message } = await res.json()
-    if (error) {
-      setError(error)
-    } else {
-      setSuccess(message)
-    }
-  }
+  let formData = new FormData()
+  formData.append(`email`, emailState) // multiple upload
 
   const changeEmail = (event) => {
     const email = event.target.value
     setEmail(email)
+  }
+
+  const subscribeMe = async (event) => {
+    event.preventDefault()
+    console.log(`submitting...`)
+    setLoading(true)
+    
+    try {
+      // eslint-disable-next-line ghost/ember/require-fetch-import
+      const res = await fetch(`/api/subscribe`, {
+        headers: {
+          'content-type': `application/json`,
+        },
+        body: JSON.stringify(formData),
+        method: `POST`,
+      })
+      const { error, message } = await res.json()
+      if (error) {
+        setError(error)
+        setLoading(false)
+        console.log(error)
+      } else {
+        setSuccess(message)
+        setLoading(false)
+        console.log(message)
+      }
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
@@ -40,18 +57,18 @@ const NewsletterForm = () => {
         </div>
         <div className="col-md-4">
           <button className="btn btn-secondary w-100" type="submit">
-            Subscribe
+            {loading ? <div className="spinner-border" /> : `Subscribe`}
           </button>
         </div>
       </form>
 
       <p className="text-end">
-        <a className="btn btn-link py-0" href="https://underlost.net/tag/newsletter">
+        <a className="btn btn-link py-0" href="/tag/newsletter">
           View Past Issues
         </a>
       </p>
 
-      {successState ? <span className="text-success">{successState}</span> : <span className="text-secondary">{errorState}</span>}
+      {successState ? <span className="text-secondary">{successState}</span> : <span className="text-secondary">{errorState}</span>}
     </div>
   )
 }
