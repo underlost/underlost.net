@@ -50,7 +50,7 @@ export async function onRequestPost(context) {
   } catch (err) {
     // 4. If the control goes inside the catch block
     // let us consider it as a server error(500)
-    return new Response(JSON.stringify({ error: `Error. Try again?` }), {
+    return new Response(JSON.stringify({ error: err }), {
       headers: {
         'Content-Type': `application/json;charset=utf-8`,
       },
