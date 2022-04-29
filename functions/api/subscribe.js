@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 // eslint-disable-next-line consistent-return
-export default async function handler(req, res) {
+export async function onRequestPost(req, res) {
   // 1. Get the email from the payload and
   // validate if it is empty.
   const { email } = req.body
