@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import FormData from 'form-data'
+import qs from 'qs'
 
 const NewsletterForm = () => {
   const [emailState, setEmail] = useState(``)
@@ -9,6 +10,10 @@ const NewsletterForm = () => {
 
   let formData = new FormData()
   formData.append(`email`, emailState) // multiple upload
+
+  const data = qs.stringify({
+    email: emailState,
+  })
 
   const changeEmail = (event) => {
     const email = event.target.value
@@ -24,9 +29,9 @@ const NewsletterForm = () => {
       // eslint-disable-next-line ghost/ember/require-fetch-import
       const res = await fetch(`/api/subscribe`, {
         headers: {
-          'content-type': `application/json`,
+          'Content-Type': `application/x-www-form-urlencoded`,
         },
-        body: JSON.stringify(formData),
+        body: data,
         method: `POST`,
       })
       const { error, message } = await res.json()
@@ -37,7 +42,7 @@ const NewsletterForm = () => {
       } else {
         setSuccess(message)
         setLoading(false)
-        console.log(message)
+        console.log(res)
       }
     } catch (err) {
       console.log(err)
