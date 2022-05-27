@@ -11,10 +11,12 @@
         "languages": [
           "javascript",
           "css",
+          "html",
           "markup",
           "json",
           "handlebars",
-          "yaml"
+          "yaml",
+          "python"
         ],
         "theme": "okaidia",
         "css": true

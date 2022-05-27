@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { Navigation } from '.'
 import SiteLogoTiny from '../SiteLogoTiny'
 // import config from '../../utils/siteConfig'
+
+import Prism from 'prismjs'
 
 /**
 * Main layout component
@@ -25,6 +27,11 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
       ? `page nav-is-active`
       : `page nav-is-closed`))
   }
+
+  useEffect(() => {
+    // call the highlightAll() function to style our code blocks
+    Prism.highlightAll()
+  })
 
   return (
     <>
