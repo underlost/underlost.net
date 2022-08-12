@@ -7,7 +7,7 @@ import LazyImage from './LazyImage'
 const PopularCard = ({ post }) => {
   const url = `/writing/${post.slug}/`
   return (
-    <article className="col-12 col-md col-lg-3 mb-4">
+    <article className="col-12 col-md-6 col-xl-3 mb-4">
       <header
         className="card post-card-header px-lg-4"
         style={{
