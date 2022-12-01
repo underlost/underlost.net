@@ -112,11 +112,11 @@ PopularPosts.propTypes = {
   }).isRequired,
 }
 
-const PopularPostsBlock = (props) => (
+const PopularPostsBlock = props => (
   <StaticQuery
     query={graphql`
       query GhostPopularPostsQuery {
-        allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#popular" } } } }, limit: 5) {
+        allGhostPost(sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#popular" } } } }, limit: 5) {
           edges {
             node {
               ...GhostPostFields
@@ -125,7 +125,7 @@ const PopularPostsBlock = (props) => (
         }
       }
     `}
-    render={(data) => <PopularPosts data={data} {...props} />}
+    render={data => <PopularPosts data={data} {...props} />}
   />
 )
 

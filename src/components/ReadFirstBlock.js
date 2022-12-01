@@ -9,7 +9,7 @@ const ReadFirst = ({ data }) => {
   return (
     <div className="read-first-wrapper">
       <section className="read-first post-feed mb-5 pb-5">
-        <h6 className="h6 text-uppercase text-orange mb-3">Noteworthy Posts</h6>
+        <h2 className="h6 text-uppercase text-orange mb-3">Noteworthy Posts</h2>
         {posts.map(({ node }) => (
           // The tag below includes the markup for each post - components/common/PostCard.js
           <PostItem key={node.id} post={node} />
@@ -30,7 +30,7 @@ const ReadFirstBlock = (props) => (
   <StaticQuery
     query={graphql`
       query GhostReadFirstQuery {
-        allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#noteworthy" } } } }, limit: 8) {
+        allGhostPost(sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#noteworthy" } } } }, limit: 8) {
           edges {
             node {
               ...GhostPostFields

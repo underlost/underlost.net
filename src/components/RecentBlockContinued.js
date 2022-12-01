@@ -51,7 +51,7 @@ const RecentBlockContinued = (props) => (
   <StaticQuery
     query={graphql`
       query GhostRecentContinuedBlockQuery {
-        allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }, limit: 10, skip: 0) {
+        allGhostPost(sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }, limit: 10, skip: 0) {
           edges {
             node {
               ...GhostPostFields

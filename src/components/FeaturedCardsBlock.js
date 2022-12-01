@@ -25,11 +25,11 @@ FeaturedCards.propTypes = {
   }).isRequired,
 }
 
-const FeaturedCardsBlock = (props) => (
+const FeaturedCardsBlock = props => (
   <StaticQuery
     query={graphql`
       query GhostFeaturedCardsQuery {
-        allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { featured: { eq: true } }, limit: 2) {
+        allGhostPost(sort: { published_at: DESC }, filter: { featured: { eq: true } }, limit: 2) {
           edges {
             node {
               ...GhostPostFields
@@ -38,7 +38,7 @@ const FeaturedCardsBlock = (props) => (
         }
       }
     `}
-    render={(data) => <FeaturedCards data={data} {...props} />}
+    render={data => <FeaturedCards data={data} {...props} />}
   />
 )
 

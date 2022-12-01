@@ -28,7 +28,7 @@ const TagAsideBlock = (props) => (
   <StaticQuery
     query={graphql`
       query GhostTagAsideQuery {
-        allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#aside" } } } }, limit: 12) {
+        allGhostPost(sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#aside" } } } }, limit: 12) {
           edges {
             node {
               ...GhostPostFields

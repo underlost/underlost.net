@@ -11,51 +11,42 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      blog: allGhostPost(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }) {
+      blog: allGhostPost(sort: { published_at: ASC }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }) {
         edges {
           node {
             slug
           }
         }
       }
-      thoughts: allGhostPost(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#thoughts" } } } }) {
+      thoughts: allGhostPost(sort: { published_at: ASC }, filter: { tags: { elemMatch: { name: { eq: "#thoughts" } } } }) {
         edges {
           node {
             slug
           }
         }
       }
-      caseStudies: allGhostPost(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#casestudies" } } } }) {
+      caseStudies: allGhostPost(sort: { published_at: ASC }, filter: { tags: { elemMatch: { name: { eq: "#casestudies" } } } }) {
         edges {
           node {
             slug
           }
         }
       }
-      projects: allGhostPost(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#projects" } } } }) {
+      projects: allGhostPost(sort: { published_at: ASC }, filter: { tags: { elemMatch: { name: { eq: "#projects" } } } }) {
         edges {
           node {
             slug
           }
         }
       }
-      portfolio: allGhostPage(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#portfolio" } } } }) {
+      portfolio: allGhostPage(sort: { published_at: ASC }, filter: { tags: { elemMatch: { name: { eq: "#portfolio" } } } }) {
         edges {
           node {
             slug
           }
         }
       }
-      allGhostTag(sort: { order: ASC, fields: name }, filter: { visibility: { eq: "public" } }) {
-        edges {
-          node {
-            slug
-            url
-            postCount
-          }
-        }
-      }
-      allGhostAuthor(sort: { order: ASC, fields: name }) {
+      allGhostTag(sort: { name: ASC }, filter: { visibility: { eq: "public" } }) {
         edges {
           node {
             slug
@@ -64,7 +55,16 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allGhostPage(sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#page" } } } }) {
+      allGhostAuthor(sort: { name: ASC }) {
+        edges {
+          node {
+            slug
+            url
+            postCount
+          }
+        }
+      }
+      allGhostPage(sort: { published_at: ASC }, filter: { tags: { elemMatch: { name: { eq: "#page" } } } }) {
         edges {
           node {
             slug

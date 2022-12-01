@@ -24,7 +24,7 @@ const LinksList = () => {
 
 const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___weight], order: DESC }, filter: { frontmatter: { type: { eq: "link" } } }) {
+    allMarkdownRemark(sort: { frontmatter: { weight: DESC } }, filter: { frontmatter: { type: { eq: "link" } } }) {
       edges {
         node {
           frontmatter {

@@ -28,7 +28,7 @@ const RecentBlock = (props) => (
   <StaticQuery
     query={graphql`
       query GhostRecentBlockQuery {
-        allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }, limit: 4) {
+        allGhostPost(sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }, limit: 4) {
           edges {
             node {
               ...GhostPostFields

@@ -39,7 +39,7 @@ const HomePage = ({ data, location }) => {
                 {page && <div className="load-external-scripts pb-5" dangerouslySetInnerHTML={{ __html: page.html }} />}
 
                 <div className="pb-5">
-                  <p className="h6 text-green text-uppercase">Introduction</p>
+                  <p className="h6 text-orange text-uppercase">Introduction</p>
                   <h1 className="h2">
                     Underlost is Tyler Rilling, a Python web developer and narrative designer, living in Seattle, Washington. They are probably not an Undertale game. 👾
                   </h1>

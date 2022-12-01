@@ -92,7 +92,7 @@ const RelatedPostsBlock = (props) => (
   <StaticQuery
     query={graphql`
       query GhostRelatedPostsQuery {
-        allGhostPost(limit: 500, sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }) {
+        allGhostPost(limit: 500, sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }) {
           edges {
             node {
               ...GhostPostFields

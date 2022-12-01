@@ -58,7 +58,7 @@ export const thoughtsPageQuery = graphql`
     ghostPage(slug: { eq: "thoughts" }) {
       ...GhostPageFields
     }
-    allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#thoughts" } } } }, limit: 12) {
+    allGhostPost(sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#thoughts" } } } }, limit: 12) {
       edges {
         node {
           ...GhostPostFields
