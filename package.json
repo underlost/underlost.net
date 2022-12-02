@@ -62,7 +62,6 @@
     "gatsby-transformer-rehype": "^2.0.0",
     "gatsby-transformer-remark": "^6.2.0",
     "gatsby-transformer-sharp": "^5.2.0",
-    "node-fetch": "3.3.0",
     "prismjs": "^1.22.0",
     "qs": "^6.10.3",
     "react": "^18.0.0",
@@ -72,8 +71,7 @@
     "react-markdown": "^8.0.3",
     "react-visibility-sensor": "^5.1.1",
     "remarkable": "^2.0.0",
-    "sharp": "^0.31.2",
-    "wrangler": "^2.0.6"
+    "sharp": "^0.31.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
@@ -94,7 +92,8 @@
     "sass": "^1.29.0",
     "typescript": ">=3.7.5",
     "url": "^0.11.0",
-    "webpack": "^5.70.0"
+    "webpack": "^5.70.0",
+    "wrangler": "^2.0.6"
   },
   "repository": {
     "type": "git",

@@ -52,7 +52,7 @@ const generateItem = function generateItem(siteUrl, post) {
 const generateRSSFeed = function generateRSSFeed(siteConfig) {
   return {
     title: `No title`,
-    serialize: ({ query: { allGhostPost } }) => allGhostPost.edges.map(edge => Object.assign({}, generateItem(siteConfig.siteUrl, edge.node))),
+    serialize: ({ query: { allGhostPost } }) => allGhostPost.edges.map((edge) => Object.assign({}, generateItem(siteConfig.siteUrl, edge.node))),
     setup: ({ query: { allGhostSettings } }) => {
       const siteTitle = allGhostSettings.edges[0].node.title || `No Title`
       const siteDescription = allGhostSettings.edges[0].node.description || `No Description`
@@ -76,49 +76,39 @@ const generateRSSFeed = function generateRSSFeed(siteConfig) {
     },
     query: `
         {
-            allGhostPost(
-                sort: { order: ASC, fields: published_at }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }
-              ) {
-                edges {
-                    node {
-                        # Main fields
-                        id
-                        title
-                        slug
-                        featured
-                        feature_image
-
-                        # Dates unformatted
-                        created_at
-                        published_at
-                        updated_at
-
-                        # SEO
-                        excerpt
-                        meta_title
-                        meta_description
-
-                        # Authors
-                        authors {
-                            name
-                        }
-                        primary_author {
-                            name
-                        }
-                        tags {
-                            name
-                            visibility
-                        }
-
-                        # Content
-                        html
-
-                        # Additional fields
-                        url
-                        canonical_url
-                    }
+          allGhostPost(
+            sort: {published_at: ASC}
+            filter: {tags: {elemMatch: {name: {eq: "#blog"}}}}
+          ) {
+            edges {
+              node {
+                id
+                title
+                slug
+                featured
+                feature_image
+                created_at
+                published_at
+                updated_at
+                excerpt
+                meta_title
+                meta_description
+                authors {
+                  name
                 }
+                primary_author {
+                  name
+                }
+                tags {
+                  name
+                  visibility
+                }
+                html
+                url
+                canonical_url
+              }
             }
+          }
         }
   `,
     output: `/rss`,

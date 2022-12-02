@@ -24,7 +24,7 @@ const NewsletterForm = () => {
     event.preventDefault()
     console.log(`submitting...`)
     setLoading(true)
-    
+
     try {
       // eslint-disable-next-line ghost/ember/require-fetch-import
       const res = await fetch(`/api/subscribe`, {

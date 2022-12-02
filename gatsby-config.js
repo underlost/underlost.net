@@ -146,7 +146,7 @@ module.exports = {
       options: {
         query: `{
           allGhostPost(
-            sort: {order: ASC, fields: published_at}
+            sort: {published_at: ASC}
             filter: {tags: {elemMatch: {name: {eq: "#blog"}}}}
           ) {
             edges {
@@ -170,10 +170,7 @@ module.exports = {
               }
             }
           }
-          allGhostTag(
-            sort: {order: ASC, fields: name}
-            filter: {visibility: {eq: "public"}}
-          ) {
+          allGhostTag(sort: {name: ASC}, filter: {visibility: {eq: "public"}}) {
             edges {
               node {
                 id
