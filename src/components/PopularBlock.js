@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql, Link } from 'gatsby'
-import { auto } from '@popperjs/core'
 import LazyImage from './LazyImage'
 
 const PopularCard = ({ post }) => {
@@ -66,7 +65,7 @@ const PopularPosts = ({ data }) => {
               left: 0,
               right: 0,
               top: `2rem`,
-              margin: auto,
+              margin: `auto`,
             }}>
             <svg
               className="post-feed-vertical-line block mx-auto"
