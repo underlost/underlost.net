@@ -8,11 +8,11 @@ const PostItem = ({ post }) => {
   const readingTime = readingTimeHelper(post)
 
   return (
-    <article className="post-item mb-2">
-      <header className="post-item-header">
-        <Link to={url}>
-          <h3 className="h6 text-uppercase d-inline mb-0">{post.title}</h3>
-          <span className="h6 text-uppercase d-inline ps-2 mb-0 text-muted">{readingTime}</span>
+    <article className="post-item">
+      <header className="post-item-header font-semibold">
+        <Link to={url} className="block md:flex uppercase tracking-wider transition duration-150 ease-out hover:text-pink hover:translate-x-1">
+          <h3 className="pr-3">{post.title}</h3>
+          <span className="opacity-50">{readingTime}</span>
         </Link>
       </header>
     </article>

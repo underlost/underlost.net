@@ -18,11 +18,12 @@ const Tag = ({ data, location, pageContext }) => {
     <Layout>
       <MetaData data={data} location={location} type="series" />
       <div className="gh-content gh-canvas py-5">
-        <header className="page-header tag-header mb-5 pb-5 px-4 py-5 px-md-5">
-          <h1 className="h1 mb-4 text-capitalize">{tag.name}</h1>
-          {tag.description ? <p className="mb-0 fw-normal">{tag.description}</p> : null}
+        <header className="page-header tag-header mb-5 pb-5 px-4 py-5 lg:px-16 lg:py-16 bg-platinum border border-caramel overflow-hidden lg:overflow-visible">
+          <h1 className="title-h1">{tag.name}</h1>
+          {tag.description ? <p className="lead mb-0">{tag.description}</p> : null}
+          <div className="has-after-element translate-x-32" />
         </header>
-        <div className="px-3 px-md-5 pt-5">
+        <div className="pt-5">
           <section className="post-feed">
             {posts.map(({ node }) => (
               // The tag below includes the markup for each post - components/common/PostCard.js

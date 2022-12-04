@@ -8,19 +8,16 @@ const PostText = ({ post }) => {
   const readingTime = readingTimeHelper(post)
 
   return (
-    <div className="post-text-wrapper container text-center py-5">
+    <div className="post-text-wrapper text-center py-16 px-8">
       <article
-        className="post-text mb-2 mx-auto"
-        style={{
-          maxWidth: `720px`,
-        }}>
+        className="post-text mx-auto max-w-2xl">
         <header className="post-text-header">
-          <Link to={url}>
-            <h3 className="h4 text-uppercase d-inline mb-0">{post.title}</h3>
-            <p className="post-text-excerpt d-inline ps-2 mb-0">
+          <Link to={url} className="block hover:underline">
+            <h3 className="font-serif uppercase inline pr-2 text-xl">{post.title}</h3>
+            <p className="post-text-excerpt inline font-light text-lg pr-3">
               {post.excerpt}
             </p>
-            <span className="h6 text-uppercase d-inline ps-2 mb-0">{readingTime}</span>
+            <span className="uppercase inline ps-2 font-semibold">{readingTime}</span>
           </Link>
         </header>
       </article>

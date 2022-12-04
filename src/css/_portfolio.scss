@@ -1,0 +1,15 @@
+.portfolio-page {
+  .site-head {
+    @apply absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.5)] h-1/4;
+  }
+}
+
+.project-details-list {
+  li:not(:last-child) {
+    &::after {
+      padding-left: .5rem;
+      padding-right: .5rem;
+      content: '//';
+    }
+  }
+}

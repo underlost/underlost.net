@@ -8,11 +8,11 @@ import PortfolioList from '../components/PortfolioList'
 const PortfolioPage = ({ data, location }) => (
   <Layout>
     <MetaData data={data} location={location} title="Selected Works (Portfolio)" type="website" />
-    <div className="gh-content gh-canvas py-5">
+    <div className="gh-content gh-canvas pt-5 pb-8">
       <article className="content">
-        <h1 className="content-title h1">Selected Works</h1>
+        <h1 className="title-h1">Selected Works</h1>
         <section className="content-body load-external-scripts pt-4">
-          <p className="lead">Below are a few of the selected client works I&apos;ve had the oppertunity to build.</p>
+          <p className="lead mb-8">Below are a few of the selected client works I&apos;ve had the oppertunity to build.</p>
           <p>
             For non-client work and fun projects I&apos;m making, check out my <Link to="/projects/">projects</Link> section!
           </p>

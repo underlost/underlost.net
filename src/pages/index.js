@@ -23,47 +23,48 @@ const HomePage = ({ data, location }) => {
   return (
     <Layout isHome={true}>
       <MetaData data={data} location={location} title="Underlost, By Tyler Rilling" type="website" isHome={true} />
-      <div className="container-lg pt-5 pb-5">
-        <div className="row pt-5">
-          <div className="col-md-6 col-lg-5 mb-4 position-relative order-2 order-md-1">
-            <div className="site-loogo-wrapper mb-5 d-none d-md-block">
+      <div className="mx-auto pt-5 pb-5 container lg:px-32 overflow-hidden lg:overflow-visible">
+        <div className="grid grid-cols-12 pt-5 gap-8 lg:gap-12">
+          <div className="col-span-12 md:col-span-6 lg:col-span-5 mb-4 relative order-2 md:order-1 lg:pt-12">
+            <div className="site-loogo-wrapper mb-5 hidden md:block -translate-x-10 relative z-40">
               <SiteLogo />
             </div>
-            <div className="ms-md-5">
+            <div className="lg:-translate-y-28">
               <FeaturedCardsBlock />
             </div>
           </div>
-          <div className="col-md-6 col-lg-7 mb-5 order-1 order-md-2">
-            <div className="card py-lg-5 me-md-5">
-              <div className="card-body px-3 px-md-5">
-                {page && <div className="load-external-scripts pb-5" dangerouslySetInnerHTML={{ __html: page.html }} />}
+          <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:mb-8 order-1 md:order-2">
+            <div className="bg-platinum py-12 lg:py-16 px-8 md:px-12">
+              {page && <div className="load-external-scripts pb-5" dangerouslySetInnerHTML={{ __html: page.html }} />}
 
-                <div className="pb-5">
-                  <p className="h6 text-orange text-uppercase">Introduction</p>
-                  <h1 className="h2">
-                    Underlost is Tyler Rilling, a Python web developer and narrative designer, living in Seattle, Washington. They are probably not an Undertale game. 👾
-                  </h1>
-                  <p>
-                    As a full-stack developer, I specialize in ReactJS, REST frameworks and content management systems like WordPress and Ghost, and various technology stacks. Currently a
-                    senior developer at an interactive design agency in Seattle. I also offer various{` `}
-                    <a className="fw-bold btn-link has-arrow" href="/consulting/">
-                      consulting services{` `}
-                      <span className="d-inline-block px-1 arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="6" viewBox="0 0 22 6">
-                          <path stroke="#03080F" fill="none" fillRule="evenodd" d="M0 3h21m-3-3 3 3-3 3" />
-                        </svg>
-                      </span>
-                    </a>
-                  </p>
-                </div>
-
-                <ReadFirstBlock />
+              <div className="pb-16">
+                <p className="subtitle text-orange">Introduction</p>
+                <h1 className="h2 mb-4">
+                  Underlost is Tyler Rilling, a Python web developer and narrative designer, living in Seattle, Washington. They are probably not an Undertale game. 👾
+                </h1>
+                <p className="text-lg font-light">
+                  As a full-stack developer, I specialize in ReactJS, REST frameworks and content management systems like WordPress and Ghost, and various technology stacks. Currently a
+                  senior developer at an interactive design agency in Seattle. I also offer various{` `}
+                  <a className="font-bold btn-link has-arrow" href="/consulting/">
+                    consulting services{` `}
+                    <span
+                      className="inline-block px-1 arrow"
+                      style={{
+                        paddingBottom: `0.1em`,
+                      }}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="6" viewBox="0 0 22 6">
+                        <path stroke="#03080F" fill="none" fillRule="evenodd" d="M0 3h21m-3-3 3 3-3 3" />
+                      </svg>
+                    </span>
+                  </a>
+                </p>
               </div>
+              <ReadFirstBlock />
             </div>
           </div>
         </div>
       </div>
-      <div className="container-fluid px-0">
+      <div className="px-0">
         <PopularPostsBlock />
       </div>
 
@@ -77,9 +78,9 @@ const HomePage = ({ data, location }) => {
       </div>
 
       <div className="gh-content gh-canvas">
-        <nav className="pagination pb-5" role="navigation">
-          <Link to="/archive/" rel="next" className="btn btn-link me-0 ms-auto">
-            View Archives
+        <nav className="pagination pb-5 text-right" role="navigation">
+          <Link to="/archive/" rel="next" className="btn-underline">
+            <span>View Archives</span>
           </Link>
         </nav>
       </div>

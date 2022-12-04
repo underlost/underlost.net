@@ -20,7 +20,7 @@ const ThoughtsPage = ({ data, location }) => {
       <div className="gh-content gh-canvas pt-md-5">
         {page ? (
           <article>
-            <h1 className="content-title h2 d-none">{page.title}</h1>
+            <h1 className="hidden">{page.title}</h1>
             <div className="content-body load-external-scripts" dangerouslySetInnerHTML={{ __html: page.html }} />
           </article>
         ) : null}

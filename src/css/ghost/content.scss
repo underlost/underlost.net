@@ -1,0 +1,249 @@
+
+/* Content grid
+/* ---------------------------------------------------------- */
+
+.gh-canvas {
+    display: grid;
+    grid-template-columns: [full-start] minmax(max(4vmin, 20px), auto) [wide-start] minmax(auto, 240px) [main-start] min(720px, calc(100% - max(8vmin, 40px))) [main-end] minmax(auto, 240px) [wide-end] minmax(max(4vmin, 20px), auto) [full-end];
+
+    &>* {
+        grid-column: main-start / main-end;
+    }
+}
+
+.kg-width-wide {
+    grid-column: wide-start / wide-end;
+}
+
+.kg-width-full {
+    grid-column: full-start / full-end;
+    & img {
+        width: 100%;
+    }
+}
+
+
+
+
+/* Content & Typography
+/* ---------------------------------------------------------- */
+
+.gh-feature-image {
+    grid-column: wide-start / wide-end;
+    width: 100%;
+    margin: 0 0 4vmin;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center;
+    min-height: 300px;
+}
+
+.gh-content {
+    &>*+* {
+        margin-top: 4vmin;
+    }
+    &>[id]+* {
+        margin-top: 1.5rem;
+    }
+    & [id]:not(:first-child) {
+        margin: 1.5em 0 0;
+    }
+    & [id]+.kg-card,
+    & blockquote+.kg-card {
+        margin-top: 6vmin;
+    }
+
+    ul,
+    ol,
+    dl {
+        padding-left: 1.9em;
+    }
+
+    ul, ol {
+        margin-top: 1.5rem;
+        li {
+            margin: 0.5em 0;
+        }
+    }
+    ul {
+        list-style: square;
+    }
+
+    hr {
+        margin-top: 6vmin;
+    }
+    hr + * {
+        margin-top: 6vmin !important;
+    }
+    blockquote {
+        position: relative;
+        font-style: italic;
+        &::before {
+            content: "";
+            position: absolute;
+            left: -1.5em;
+            top: 0;
+            bottom: 0;
+            width: 0.3rem;
+            background: var(--color-primary);
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .gh-content blockquote::before {
+        left: -4vw;
+    }
+}
+
+
+/* Cards
+/* ---------------------------------------------------------- */
+
+/* Cards are dynamic blocks of content which appear within Ghost
+posts, for example: embedded videos, tweets, galleries, or
+specially styled bookmark links. We add extra styling here to
+make sure they look good, and are given a bit of extra spacing. */
+
+/* Add extra margin before/after any cards,
+except for when immediately preceeded by a heading */
+.gh-content :not(.kg-card):not([id])+.kg-card {
+    margin-top: 6vmin;
+    margin-bottom: 0;
+}
+
+.gh-content .kg-card+ :not(.kg-card) {
+    margin-top: 6vmin;
+    margin-bottom: 0;
+}
+
+/* This keeps small embeds centered */
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* This keeps small iamges centered */
+.kg-image-card img {
+    margin: auto;
+}
+
+.has-serif-title .kg-toggle-card .kg-toggle-heading-text {
+    font-family: var(--font-serif);
+}
+
+.gh-content .kg-callout-card-accent a {
+    text-decoration: underline;
+}
+
+/* Captions */
+figcaption {
+    padding: 1.5rem 1.5rem 0;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.3rem;
+    line-height: 1.4em;
+}
+
+figcaption strong {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+figcaption a {
+    text-decoration: underline;
+}
+
+
+/* Galleries
+/* ---------------------------------------------------------- */
+
+.kg-gallery-card + .kg-gallery-card {
+    margin-top: 0.75em;
+}
+
+.kg-gallery-container {
+    position: relative;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+    margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em;
+}
+
+
+
+/* Card captions
+/* ---------------------------------------------------------- */
+
+.kg-width-full.kg-card-hascaption {
+    display: grid;
+    grid-template-columns: inherit;
+}
+
+.kg-width-wide.kg-card-hascaption img {
+    grid-column: wide-start / wide-end;
+}
+.kg-width-full.kg-card-hascaption img {
+    grid-column: 1 / -1;
+}
+
+.kg-width-full.kg-card-hascaption figcaption {
+    grid-column: main-start / main-end;
+}
+
+
+/* Tables
+/* ---------------------------------------------------------- */
+
+.gh-content table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.gh-content th {
+    padding: 0.5em 0.8em;
+    text-align: left;
+    font-size: .75em;
+    text-transform: uppercase;
+}
+
+.gh-content td {
+    padding: 0.4em 0.7em;
+}
+
+.gh-content tbody tr:nth-child(2n + 1) {
+    background-color: rgba(0,0,0,0.1);
+    padding: 1px;
+}
+
+.gh-content tbody tr:nth-child(2n + 2) td:last-child {
+    box-shadow:
+        inset 1px 0 rgba(0,0,0,0.1),
+        inset -1px 0 rgba(0,0,0,0.1);
+}
+
+.gh-content tbody tr:nth-child(2n + 2) td {
+    box-shadow: inset 1px 0 rgba(0,0,0,0.1);
+}
+
+.gh-content tbody tr:last-child {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}

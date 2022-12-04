@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 function SiteLogoTiny(props) {
   return (
-    <Link className="site-brand d-block text-center" to="/">
+    <Link className="site-brand block text-center mx-auto mb-8" to="/">
       <svg xmlns="http://www.w3.org/2000/svg" className="site-logo" fillRule="evenodd" strokeMiterlimit={10} clipRule="evenodd" viewBox="0 0 82 82" width="82" height="82" {...props}>
         <title>{`Underlost, By Tyler Rilling`}</title>
         <g className="pixelHeart-container">

@@ -10,17 +10,21 @@ const PostCardArticle = ({ post }) => {
   const readingTime = readingTimeHelper(post)
 
   return (
-    <article className="post-card post-card-article py-lg-3 mb-4">
+    <article className="post-card post-card-article py-4 lg:py-8 mb-8">
       <header className="post-card-header">
-        {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
-        <Link className="post-card-link d-block" to={url}>
-          <h2 className="post-card-title h3">{post.title}</h2>
-          {post.feature_image && <LazyImage className="post-card-image mb-3" key={post.feature_image} src={post.feature_image} alt={post.title} />}
+        {post.primary_tag && <p className="subtitle">{post.primary_tag.name}</p>}
+        <Link className="post-card-link block mb-4 hover:text-pink" to={url}>
+          <h2 className="title-h3 font-serif text-2xl mb-4">{post.title}</h2>
+          {post.feature_image && (
+            <div className="h-64 lg:h-96">
+              <LazyImage className="h-full" key={post.feature_image} src={post.feature_image} alt={post.title} />
+            </div>
+          )}
         </Link>
         {post.featured && <span className="h6 text-uppercase mb-1 text-orange sr-only">Featured</span>}
       </header>
 
-      <section className="post-card-excerpt">
+      <section className="excerpt text-lg font-light">
         <p>{post.excerpt}</p>
       </section>
 

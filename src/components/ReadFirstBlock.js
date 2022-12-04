@@ -8,13 +8,18 @@ const ReadFirst = ({ data }) => {
 
   return (
     <div className="read-first-wrapper">
-      <section className="read-first post-feed mb-5 pb-5">
-        <h2 className="h6 text-uppercase text-orange mb-3">Noteworthy Posts</h2>
-        {posts.map(({ node }) => (
-          // The tag below includes the markup for each post - components/common/PostCard.js
-          <PostItem key={node.id} post={node} />
-        ))}
+      <section className="read-first post-feed">
+        <h2 className="subtitle text-orange">Noteworthy Posts</h2>
+        <ul className="divide-y">
+          {posts.map(({ node }) => (
+            // The tag below includes the markup for each post - components/common/PostCard.js
+            <li key={node.id} className="py-4 border-slatelight">
+              <PostItem post={node} />
+            </li>
+          ))}
+        </ul>
       </section>
+      <div className="has-after-element translate-x-24" />
     </div>
   )
 }

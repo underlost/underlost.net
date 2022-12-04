@@ -10,9 +10,9 @@ const LinksPage = ({ data, location }) => (
     <MetaData data={data} location={location} title="Links" type="website" />
     <div className="gh-content gh-canvas py-5">
       <article className="content">
-        <h1 className="content-title h1">Links</h1>
+        <h1 className="title-h1">Links</h1>
         <section className="content-body load-external-scripts pt-4">
-          <p className="lead">Where you can find me on the internet, and other useful resources.</p>
+          <p className="lead mb-8">Where you can find me on the internet, and other useful resources.</p>
           <p>
             If you&apos;re coming here from another website, make sure to check out the rest of my <Link to="/">website</Link>, as well as some of the{` `}
             <Link to="/consulting/">services</Link> I offer!

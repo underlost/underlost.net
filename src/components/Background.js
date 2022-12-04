@@ -28,11 +28,10 @@ const Background = (props) => (
       return (
         <GatsbyImage
           alt={props.alt}
-          className={`image-wrapper`}
+          className={`h-full w-full object-cover ${props.className}`}
           image={image.node.childImageSharp.gatsbyImageData}
           objectFit="cover"
           objectPosition="50% 50%"
-          style={{ position: `absolute`, right: 0, left: 0, top: 0, bottom: 0 }}
         />
       )
     }}

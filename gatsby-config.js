@@ -103,7 +103,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-netlify`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-ghost`,
       options: process.env.NODE_ENV === `development` ? ghostConfig.development : ghostConfig.production,
@@ -211,12 +211,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        sassOptions: {
-          includePaths: [`${__dirname}/src/scss/site.scss`],
-          precision: 6,
-          sourceComments: false,
-          sourceMap: false,
-        },
+        // Configure SASS to process Tailwind
+        postCssPlugins: [require(`tailwindcss`)],
       },
     },
     `gatsby-plugin-catch-links`,

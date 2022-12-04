@@ -7,7 +7,7 @@ const FeaturedCards = ({ data }) => {
   const posts = data.allGhostPost.edges
 
   return (
-    <section className="featured-cards-wrapper mb-5 pb-0">
+    <section className="featured-cards-wrapper mb-5 pb-0 px-5 md:px-0">
       <span className="sr-only">Featured Articles</span>
       {posts.map(({ node }) => (
         // The tag below includes the markup for each post - components/common/PostCard.js

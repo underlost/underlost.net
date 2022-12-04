@@ -1,0 +1,41 @@
+.featured-cards-wrapper {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    background-color: $yellow;
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    position: absolute;
+    right: -50px;
+    bottom: -30px;
+  }
+
+  .card {
+    position: relative;
+    z-index: 5;
+
+    .post-card-image {
+      opacity: .35;
+    }
+
+    &:hover {
+      .post-card-image {
+        opacity: .85;
+      }
+
+      .post-card-title {
+        color: $secondary;
+      }
+    }
+  }
+
+  article:first-of-type {
+    .card-body {
+      padding-bottom: 2rem;
+      @extend .after-line-break;
+    }
+  }
+}

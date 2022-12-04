@@ -21,11 +21,11 @@ const Author = ({ data, location, pageContext }) => {
     <Layout>
       <MetaData data={data} location={location} type="profile" />
       <div className="gh-content gh-canvas">
-        <header className="page-header author-header mb-5 pb-5 px-4 py-5 px-md-5">
-          <div className="row">
-            <div className="author-header-content col-md-8">
-              <h1 className="h3 text-uppercase">{author.name}</h1>
-              {author.bio && <p>{author.bio}</p>}
+        <header className="page-header author-header mb-5 pb-5 px-4 py-5 lg:px-16 lg:py-16 bg-platinum border border-caramel overflow-hidden lg:overflow-visible">
+          <div className="grid grid-cols-12">
+            <div className="author-header-content lg:col-span-8 col-span-12 order-2 lg:order-1">
+              <h1 className="title-h2">{author.name}</h1>
+              {author.bio && <p className="font-light">{author.bio}</p>}
               <div className="author-header-meta">
                 {author.website && (
                   <a className="author-header-item" href={author.website} target="_blank" rel="noopener noreferrer">
@@ -44,10 +44,11 @@ const Author = ({ data, location, pageContext }) => {
                 )}
               </div>
             </div>
-            <div className="col-md-4">
-              <div className="author-header-image mx-auto">{author.profile_image && <img className="w-100" src={author.profile_image} alt={author.name} />}</div>
+            <div className="lg:col-span-4 col-span-12 order-1 lg:order-2">
+              <div className="author-header-image mx-auto mb-8 mt-5 lg:mt-0">{author.profile_image && <img className="w-100" src={author.profile_image} alt={author.name} />}</div>
             </div>
           </div>
+          <div className="has-after-element translate-x-32" />
         </header>
         <section className="post-feed">
           {posts.map(({ node }) => (

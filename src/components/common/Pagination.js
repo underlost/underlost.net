@@ -7,20 +7,28 @@ const Pagination = ({ pageContext }) => {
 
   return (
     <nav className="pagination" role="navigation">
-      <div>
-        {previousPagePath && (
-          <Link to={previousPagePath} className="btn btn-link text-uppercase" rel="prev">
-            Previous
-          </Link>
-        )}
-      </div>
-      {numberOfPages > 1 && <div className="pagination-location"><small>Page {humanPageNumber} of {numberOfPages}</small></div>}
-      <div>
-        {nextPagePath && (
-          <Link to={nextPagePath} rel="next" className="btn btn-link text-uppercase">
-            Next
-          </Link>
-        )}
+      {numberOfPages > 1 && (
+        <div className="text-center">
+          <small>
+            Page {humanPageNumber} of {numberOfPages}
+          </small>
+        </div>
+      )}
+      <div className="grid grid-cols-2">
+        <div>
+          {previousPagePath && (
+            <Link to={previousPagePath} className="btn-underline" rel="prev">
+              <span>Previous</span>
+            </Link>
+          )}
+        </div>
+        <div className="text-right">
+          {nextPagePath && (
+            <Link to={nextPagePath} rel="next" className="btn-underline">
+              <span>Next</span>
+            </Link>
+          )}
+        </div>
       </div>
     </nav>
   )

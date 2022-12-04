@@ -48,9 +48,8 @@ const ImageObject = (props) => {
         maxWidth: `100%`,
         backgroundColor: getBackgroundColor(),
       }}
-      ref={forwardedRef}
-    >
-      <img className="w-100 h-100 image-cover" width="100%" height="100%" src={src} alt={alt} />
+      ref={forwardedRef}>
+      <img className="w-full h-full object-cover" width="100%" height="100%" src={src} alt={alt} />
     </div>
   )
 }

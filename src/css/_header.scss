@@ -1,0 +1,14 @@
+.site-brand {
+  .logoTitle,
+  .pixelHeart {
+    transition: all .5s ease-in-out;
+  }
+  &:hover {
+    .logoTitle {
+      fill: $primary;
+    }
+    .pixelHeart {
+      fill: $secondary;
+    }
+  }
+}

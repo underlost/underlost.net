@@ -7,7 +7,7 @@ import LazyImage from './LazyImage'
 const PopularCard = ({ post }) => {
   const url = `/writing/${post.slug}/`
   return (
-    <article className="col-12 col-md-6 col-xl-3 mb-4">
+    <article className="col-span-12 md:col-span-6 lg:col-span-3 mb-4">
       <header
         className="card post-card-header px-lg-4"
         style={{
@@ -16,13 +16,13 @@ const PopularCard = ({ post }) => {
       >
         <Link className="post-card-link d-block" to={url}>
           {post.feature_image && (
-            <div className="post-card-image-wrapper">
-              <LazyImage className="post-card-image" key={post.feature_image} src={post.feature_image} alt={post.title} />
+            <div className="card-image h-56 lg:h-60 bg-platinum">
+              <LazyImage className="post-card-image h-full" key={post.feature_image} src={post.feature_image} alt={post.title} />
             </div>
           )}
           <div className="pt-4 px-0">
-            {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1 text-dark">{post.primary_tag.name}</p>}
-            <h2 className="post-card-title h4 text-uppercase">{post.title}</h2>
+            {post.primary_tag && <p className="uppercase font-bold">{post.primary_tag.name}</p>}
+            <h2 className="uppercase font-serif text-lg">{post.title}</h2>
           </div>
         </Link>
       </header>
@@ -53,15 +53,11 @@ PopularCard.propTypes = {
 const PopularPosts = ({ data }) => {
   const posts = data.allGhostPost.edges
   return (
-    <div className="popular-cards-wrapper mb-5 w-100" style={{ overflow: `hidden` }}>
-      <section className="post-feed-vertical bg-blue px-4 py-5 bg-blue">
-        <div className="post-feed-header position-relative pb-4">
+    <div className="popular-cards-wrapper mb-5 w-100 bg-blue px-8 lg:px-16 py-16 overflow-hidden">
+      <section className="post-feed-vertical container mx-auto">
+        <div className="post-feed-header relative mb-8">
           <h3
-            className="h1 text-uppercase text-center position-relative text-sans"
-            style={{
-              zIndex: 10,
-            }}
-          >
+            className="h1 uppercase text-center text-sans text-4xl font-bold tracking-wider relative z-10">
             Popular
           </h3>
           <div
@@ -69,20 +65,18 @@ const PopularPosts = ({ data }) => {
               position: `absolute`,
               left: 0,
               right: 0,
-              top: `30px`,
+              top: `2rem`,
               margin: auto,
-            }}
-          >
+            }}>
             <svg
-              className="post-feed-vertical-line d-block mx-auto"
+              className="post-feed-vertical-line block mx-auto"
               xmlns="http://www.w3.org/2000/svg"
               width="248"
               height="10"
               viewBox="0 0 248 10"
               style={{
                 transform: `translateX(70px)`,
-              }}
-            >
+              }}>
               <defs>
                 <linearGradient id="PopularLinearGradient" x1="1" x2="0" y1=".5" y2=".5" gradientUnits="objectBoundingBox">
                   <stop offset="0" stopColor="#e1bed8" />
@@ -94,7 +88,7 @@ const PopularPosts = ({ data }) => {
           </div>
         </div>
 
-        <div className="row justify-content-center">
+        <div className="grid grid-cols-12 gap-8 justify-content-center">
           {posts.map(({ node }) => (
             // The tag below includes the markup for each post - components/common/PostCard.js
             <PopularCard key={node.id} post={node} />

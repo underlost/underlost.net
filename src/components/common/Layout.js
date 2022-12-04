@@ -46,11 +46,11 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
           <div className="viewport-top">
             {/* The main header section on top of the screen */}
             <header className="site-head mx-auto">
-              <div className="toggle-wrapper">
-                <button type="button" className="btn navbar-toggler" onClick={toggleMenu}>
-                  <span className={`icon-bar top-bar`} />
-                  <span className={`icon-bar middle-bar`} />
-                  <span className={`icon-bar bottom-bar`} />
+              <div className="toggle-wrapper container mx-auto text-right pt-5 pr-5">
+                <button type="button" className="btn navbar-toggler focus:outline-none relative z-50" onClick={toggleMenu}>
+                  <span className={`icon-bar block top-bar`} />
+                  <span className={`icon-bar block middle-bar`} />
+                  <span className={`icon-bar block bottom-bar ml-auto`} />
                   <span className={`sr-only`}>Toggle navigation</span>
                 </button>
               </div>
@@ -61,12 +61,16 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                   <p className="site-banner-desc">{site.description}</p>
                 </div>
               ) : (
-                <div className="gh-header gh-canvas pb-lg-5 pt-5">
+                <div className="gh-header gh-canvas lg:pb-5 pt-5">
                   <SiteLogoTiny />
                 </div>
               )}
 
-              <Navigation data={site.navigation} navClass="site-nav-item py-2" />
+              <div className="site-menu bg-platinum fixed inset-0">
+                <div className="max-w-6xl mx-auto pt-8">
+                  <Navigation data={site.navigation} navClass="site-nav-item py-2" />
+                </div>
+              </div>
             </header>
 
             <main className="site-main mx-auto pb-5">
@@ -77,15 +81,11 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
           <div className="viewport-bottom">
             {/* The footer at the very bottom of the screen */}
-            <footer className="site-footer text-uppercase">
-              <div className="site-footer-nav container px-0 pb-1">
+            <footer className="site-footer uppercase">
+              <div className="site-footer-nav container px-0 pb-1 mx-auto">
                 <Navigation data={site.navigation} navClass="site-footer-nav-item" />
               </div>
-              <div
-                className="site-copyright text-center"
-                style={{
-                  fontSize: `.9rem`,
-                }}>
+              <div className="site-copyright text-center text-xs pb-8">
                 <Link to="/">{site.title}</Link> Copyright © Tyler Rilling 2001 - 2022. <br /> Site last updated:{` `}
                 <a href="https://github.com/underlost/underlost.net/">{data.site.buildTime}</a>. ❤️
               </div>

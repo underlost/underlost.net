@@ -10,7 +10,7 @@ const NewsletterPage = ({ data, location }) => (
     <MetaData data={data} location={location} title="Sign up to my Newsletter" type="website" />
     <div className="gh-content gh-canvas py-5">
       <article className="content">
-        <h1 className="content-title h1">Newsletter</h1>
+        <h1 className="title-h1">Newsletter</h1>
         <section className="content-body load-external-scripts pt-4">
           <div className="pt-4">
             <NewsletterForm />

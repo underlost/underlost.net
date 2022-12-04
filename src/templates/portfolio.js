@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 import Background from '../components/Background'
+import NewsletterForm from '../components/NewsletterForm'
 
 /**
  * Single for Portfolio (/:slug)
@@ -22,11 +23,11 @@ const Portfolio = ({ data, location }) => {
 
   if (frontmatter.tools_used !== null) {
     portfolioTools = (
-      <div className="project-software project-details-block mb-5">
-        <h4 className="text-uppercase h6">Software Used</h4>
+      <div className="project-software project-details-block mb-5 px-8 lg:px-24 lg:py-8">
+        <h4 className="subtitle">Software Used</h4>
         <ul className="list-inline project-details-list">
           {frontmatter.tools_used.map((tools, i) => (
-            <li key={i} className="list-inline-item mr-0">
+            <li key={i} className="inline-block text-lg font-light">
               {tools}
             </li>
           ))}
@@ -39,11 +40,11 @@ const Portfolio = ({ data, location }) => {
 
   if (frontmatter.frameworks_used !== null) {
     portfolioFrameworks = (
-      <div className="project-software project-details-block mb-5">
-        <h4 className="text-uppercase h6">Frameworks and Languages</h4>
+      <div className="project-software project-details-block mb-5 px-8 lg:px-24 py-2 lg:py-8">
+        <h4 className="subtitle">Frameworks and Languages</h4>
         <ul className="list-inline project-details-list">
           {frontmatter.frameworks_used.map((tools, i) => (
-            <li key={i} className="list-inline-item mr-0">
+            <li key={i} className="inline-block text-lg font-light">
               {tools}
             </li>
           ))}
@@ -55,59 +56,67 @@ const Portfolio = ({ data, location }) => {
   }
 
   return (
-    <article className="portfolio-wrapper">
-      <Helmet>{page.codeinjection_styles && <style type="text/css">{`${page.codeinjection_styles}`}</style>}</Helmet>
-      <MetaData data={data} location={location} type="website" />
+    <div className="portfolio-page">
       <Layout>
-        <header
-          className="portfolio-header mb-5 position-relative"
-          style={{
-            backgroundColor: frontmatter.color,
-          }}
-        >
-          <Background filename={frontmatter.image} />
-          <div
-            className="container"
+        <Helmet>{page.codeinjection_styles && <style type="text/css">{`${page.codeinjection_styles}`}</style>}</Helmet>
+        <MetaData data={data} location={location} type="website" />
+        <article>
+          <header
+            className="portfolio-header mb-5 relative h-screen"
             style={{
-              height: `100%`,
-              zIndex: 25,
-              position: `relative`,
-            }}
-          >
-            <div
-              className="row"
-              style={{
-                height: `100%`,
-              }}
-            >
-              <div className="col-md-5 col-lg-4 align-self-center">
-                <div className="bg-light px-4 py-5 my-5">
-                  <h1 className="h6">{page.title}</h1>
-                  <p>{frontmatter.description}</p>
+              backgroundColor: frontmatter.color,
+            }}>
+            <div className="absolute inset-0 h-full">
+              <Background filename={frontmatter.image} />
+            </div>
+            <div className="container mx-auto h-full z-30 relative flex lg:content-center content-end">
+              <div className="max-w-xl mb-0 mt-auto lg:my-auto">
+                <div className="bg-white px-8 py-8 lg:my-8">
+                  <h1 className="font-serif text-xl">{page.title}</h1>
+                  <p className="text-lg font-light">{frontmatter.description}</p>
                 </div>
               </div>
             </div>
-          </div>
-        </header>
+          </header>
 
-        <div className="container">
-          <div className="row justify-content-around">
-            <div className="col-md-5">
-              <div className="pb-4">{portfolioFrameworks}</div>
+          <div className="mx-auto container">
+            <div className="grid grid-cols-2 gap-0 lg:gap-32">
+              <div className="col-span-2 md:col-span-1">
+                <div className="pb-4">{portfolioFrameworks}</div>
+              </div>
+              <div className="col-span-2 md:col-span-1">
+                <div className="pb-4">{portfolioTools}</div>
+              </div>
             </div>
-            <div className="col-md-5">
-              <div className="pb-4">{portfolioTools}</div>
+          </div>
+
+          <div className="gh-content gh-canvas py-5">
+            <div className="content px-4 lg:px-0">
+              <section className="content-body load-external-scripts" dangerouslySetInnerHTML={{ __html: page.html }} />
+            </div>
+          </div>
+        </article>
+
+        <div className="gh-canvas py-16">
+
+          <div className="about-author pb-12">
+            <h6 className="subtitle text-green mb-4">About the Author</h6>
+            <div className="post-card-author">
+              <h6 className="post-byline-item font-bold uppercase block mb-1">{page.primary_author.name}</h6>
+              <p className="font-light">{page.primary_author.bio}</p>
+            </div>
+          </div>
+
+          <div>
+            <hr />
+            <div className="pt-12">
+              <NewsletterForm />
             </div>
           </div>
         </div>
 
-        <div className="gh-content gh-canvas py-5">
-          <div className="content">
-            <section className="content-body load-external-scripts" dangerouslySetInnerHTML={{ __html: page.html }} />
-          </div>
-        </div>
       </Layout>
-    </article>
+    </div>
   )
 }
 
@@ -119,6 +128,11 @@ Portfolio.propTypes = {
       html: PropTypes.string.isRequired,
       feature_image: PropTypes.string,
       custom_excerpt: PropTypes.string,
+      primary_author: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        profile_image: PropTypes.string,
+        bio: PropTypes.string,
+      }),
     }).isRequired,
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,

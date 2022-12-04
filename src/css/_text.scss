@@ -1,0 +1,66 @@
+.h2 {
+  @apply font-serif text-2xl font-semibold;
+}
+
+.title-h1 {
+  @apply font-serif lg:text-6xl text-4xl mb-2;
+}
+
+.title-h2 {
+  @apply font-serif text-3xl;
+}
+
+.title-h3 {
+  @apply font-serif text-2xl;
+}
+
+.subtitle {
+  @apply font-sans text-sm font-semibold uppercase;
+  letter-spacing: 1px;
+}
+
+.lead {
+  @apply font-sans font-light text-xl;
+}
+
+.content-body {
+  @apply text-lg font-light; 
+  p ~ p {
+    @apply mt-5;
+  }
+  p~blockquote {
+    @apply mt-2;
+  }
+
+  h2, h3, h4, h5, h6 {
+    @apply font-serif font-semibold mt-8 mb-2;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  a {
+    @apply underline;
+    &:hover {
+      @apply text-pink bg-black;
+    }
+  }
+}
+
+.excerpt {
+  p~p {
+    @apply mt-4;
+  }
+  p~blockquote {
+    @apply mt-2;
+  }
+}
+
+blockquote{
+  @apply border-l-8 border-green pl-4 font-light mb-5;
+}

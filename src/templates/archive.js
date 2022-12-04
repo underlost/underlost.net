@@ -20,8 +20,8 @@ const Archive = ({ data, location, pageContext }) => {
       <MetaData data={data} location={location} type="website" title="Archive" isHome={false} />
       <div className="gh-content gh-canvas py-5">
         <div className="content">
-          <h1 className="content-title h1">Archive</h1>
-          <p className="lead">Previously, on Underlost...</p>
+          <h1 className="title-h1">Archive</h1>
+          <p className="lead mb-8">Previously, on Underlost...</p>
           {/* The main page content */}
           <section className="post-feed">
             {posts.map(({ node }) => (

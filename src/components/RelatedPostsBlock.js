@@ -10,13 +10,17 @@ import { PostItem } from '../components/common'
 // Adaopted for Ghost
 
 const RelatedPosts = ({ posts }) => (
-  <div className="related-wrapper pb-5 block-after">
+  <div className="related-wrapper py-5 block-after">
     <section className="realated-posts px-0 py-5">
-      <h6 className="h6 text-uppercase text-orange mb-4">Read More</h6>
+      <h6 className="subtitle text-orange mb-4">Read More</h6>
       <nav className="read-first-list">
-        {posts.map(({ article }) => (
-          <PostItem key={article.slug} post={article} />
-        ))}
+        <ul className="divide-y">
+          {posts.map(({ article }) => (
+            <li key={article.slug} className="py-2 border-green">
+              <PostItem post={article} />
+            </li>
+          ))}
+        </ul>
       </nav>
     </section>
   </div>

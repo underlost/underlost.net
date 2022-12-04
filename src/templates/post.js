@@ -30,23 +30,23 @@ const Post = ({ data, location }) => {
       </Helmet>
       <div className="pb-5">
         <article className="content">
-          <header className="gh-header gh-canvas">
+          <header className="gh-header gh-canvas mb-8">
             {post.feature_image ? <img className="gh-feature-image" src={post.feature_image} alt={post.title} /> : null}
 
-            {post.primary_tag && <span className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</span>}
-            <h1 className="content-title h1 mb-3 text-dark">{post.title}</h1>
-            <div className="row post-meta mb-5">
-              <div className="col-lg-6">
-                <span className="h6 text-uppercase d-inline-block mb-1 pe-4">{readingTime}</span>
-              </div>
-              <div className="col-lg-6 text-lg-end">
-                <time className="post-byline-item d-block text-muted" dateTime={post.published_at}>
+            {post.primary_tag && <span className="post-card-tags subtitle">{post.primary_tag.name}</span>}
+            <h1 className="text-6xl font-serif mb-2">{post.title}</h1>
+            <div className="grid grid-cols-2 mb-5">
+              <div className="col-span-2 md:col-span-1 md:text-right lg:order-2">
+                <time className="post-byline-item block text-muted" dateTime={post.published_at}>
                   <span className="sr-only">Published on </span>
                   Written {publishedAt}
                 </time>
-                <time className="post-byline-item d-block text-muted" dateTime={post.updated_at}>
+                <time className="post-byline-item block text-muted" dateTime={post.updated_at}>
                   Last Updated {updatedAt}
                 </time>
+              </div>
+              <div className="col-span-2 md:col-span-1 lg:order-1">
+                <span className="uppercase inline-block mb-1 pe-4 font-bold">{readingTime}</span>
               </div>
             </div>
           </header>
@@ -57,7 +57,7 @@ const Post = ({ data, location }) => {
           </section>
           <footer className="post-footer gh-canvas">
             {post.tags && (
-              <div className="post-byline-item post-card-tags h6 text-uppercase mb-1 d-inline-block">
+              <div className="post-byline-item post-card-tags h6 uppercase my-3 inline-block">
                 in <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} />
               </div>
             )}
@@ -67,17 +67,17 @@ const Post = ({ data, location }) => {
         <div className="gh-canvas">
           <RelatedPostsBlock tags={post.tags} currentArticleSlug={post.slug} />
 
-          <div className="about-author mb-5">
-            <h6 className="h6 text-uppercase text-green mb-4">About the Author</h6>
+          <div className="about-author pb-12">
+            <h6 className="subtitle text-green mb-4">About the Author</h6>
             <div className="post-card-author">
-              <h6 className="post-byline-item h6 text-uppercase d-block mb-1">{post.primary_author.name}</h6>
-              <p className="fs-6">{post.primary_author.bio}</p>
+              <h6 className="post-byline-item font-bold uppercase block mb-1">{post.primary_author.name}</h6>
+              <p className="font-light">{post.primary_author.bio}</p>
             </div>
           </div>
 
           <div>
             <hr />
-            <div className="pt-5">
+            <div className="pt-12">
               <NewsletterForm />
             </div>
           </div>

@@ -22,8 +22,8 @@ const Page = ({ data, location }) => {
         <MetaData data={data} location={location} type="website" />
         <div className="gh-content gh-canvas py-5">
           <article className="content">
-            <h1 className="content-title h1">{page.title}</h1>
-            <p className="lead">{page.custom_excerpt}</p>
+            <h1 className="title-h1">{page.title}</h1>
+            <p className="lead mb-8">{page.custom_excerpt}</p>
             {/* The main page content */}
             <section className="content-body load-external-scripts" dangerouslySetInnerHTML={{ __html: page.html }} />
           </article>
