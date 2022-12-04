@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from "react-helmet"
 import PropTypes from 'prop-types'
-import _ from 'lodash'
+import { get } from 'lodash'
 import { StaticQuery, graphql } from 'gatsby'
 import url from 'url'
 
@@ -12,7 +12,7 @@ const HomepageMeta = ({ data, settings, canonical, title, description, image, ty
   settings = settings.allGhostSettings.edges[0].node
 
   const publisherLogo = url.resolve(config.siteUrl, (settings.logo || config.siteIcon))
-  let shareImage = image || data.feature_image || _.get(settings, `cover_image`, null)
+  let shareImage = image || data.feature_image || get(settings, `cover_image`, null)
 
   shareImage = shareImage ? url.resolve(config.siteUrl, shareImage) : null
 

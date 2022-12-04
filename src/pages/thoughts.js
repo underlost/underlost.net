@@ -17,7 +17,7 @@ const ThoughtsPage = ({ data, location }) => {
   return (
     <Layout>
       <MetaData data={data} location={location} type="website" />
-      <div className="gh-content gh-canvas pt-md-5">
+      <div className="gh-content gh-canvas md:pt-5">
         {page ? (
           <article>
             <h1 className="hidden">{page.title}</h1>

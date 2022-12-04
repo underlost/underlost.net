@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import { join, compact } from 'lodash'
 import PropTypes from 'prop-types'
 
 export const getAuthorProperties = (primaryAuthor) => {
@@ -10,11 +10,11 @@ export const getAuthorProperties = (primaryAuthor) => {
     primaryAuthor.facebook ? `https://www.facebook.com/${primaryAuthor.facebook.replace(/^\//, ``)}/` : null
   )
 
-  authorProfiles = _.compact(authorProfiles)
+  authorProfiles = compact(authorProfiles)
 
   return {
     name: primaryAuthor.name || null,
-    sameAsArray: authorProfiles.length ? `["${_.join(authorProfiles, `", "`)}"]` : null,
+    sameAsArray: authorProfiles.length ? `["${join(authorProfiles, `", "`)}"]` : null,
     image: primaryAuthor.profile_image || null,
     facebookUrl: primaryAuthor.facebook ? `https://www.facebook.com/${primaryAuthor.facebook.replace(/^\//, ``)}/` : null,
   }

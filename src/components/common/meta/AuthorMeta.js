@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from "react-helmet"
 import PropTypes from 'prop-types'
-import _ from 'lodash'
+import { get } from 'lodash'
 import { StaticQuery, graphql } from 'gatsby'
 
 import ImageMeta from './ImageMeta'
@@ -12,7 +12,7 @@ const AuthorMeta = ({ data, settings, canonical }) => {
   settings = settings.allGhostSettings.edges[0].node
 
   const author = getAuthorProperties(data)
-  const shareImage = author.image || _.get(settings, `cover_image`, null)
+  const shareImage = author.image || get(settings, `cover_image`, null)
   const title = `${data.name} - ${settings.title}`
   const description = data.bio || config.siteDescriptionMeta || settings.description
 

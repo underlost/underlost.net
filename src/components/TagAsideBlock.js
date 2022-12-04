@@ -8,7 +8,7 @@ const TagAside = ({ data }) => {
 
   return (
     <div className="read-first-wrapper">
-      <section className="read-first post-feed mb-5 pb-5 px-4 py-5 px-md-5">
+      <section className="read-first post-feed mb-5 pb-5 px-4 py-5 md:px-5">
         {posts.map(({ node }) => (
           <AsideCard key={node.id} post={node} />
         ))}

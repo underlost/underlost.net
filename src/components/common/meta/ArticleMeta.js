@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import _ from 'lodash'
+import { get, map } from 'lodash'
 import url from 'url'
 
 import getAuthorProperties from './getAuthorProperties'
@@ -16,9 +16,9 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
   settings = settings.allGhostSettings.edges[0].node
 
   const author = getAuthorProperties(ghostPost.primary_author)
-  const publicTags = _.map(tagsHelper(ghostPost, { visibility: `public`, fn: tag => tag }), `name`)
+  const publicTags = map(tagsHelper(ghostPost, { visibility: `public`, fn: tag => tag }), `name`)
   const primaryTag = publicTags[0] || ``
-  const shareImage = ghostPost.feature_image ? ghostPost.feature_image : _.get(settings, `cover_image`, null)
+  const shareImage = ghostPost.feature_image ? ghostPost.feature_image : get(settings, `cover_image`, null)
   const publisherLogo = (settings.logo || config.siteIcon) ? url.resolve(config.siteUrl, (settings.logo || config.siteIcon)) : null
 
   const jsonLd = {
