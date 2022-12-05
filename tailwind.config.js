@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [`rubik`, `-apple-system`, `system-ui`, `BlinkMacSystemFont`, `Segoe UI`, `Roboto`, `Helvetica Neue`, `Arial`, `sans-serif`],
-      serif: [`calluna`, `serif`],
+      serif: [`calluna`, `-apple-system`, `system-ui`, `BlinkMacSystemFont`, `Segoe UI`, `serif`],
     },
     colors: {
       transparent: `transparent`,
@@ -23,11 +23,9 @@ module.exports = {
       saphire: `#19647E`,
       yellow: `#EFEA5A`,
       orange: `#F36A2B`,
-
       // Darkmode
       GoblinGreen: `#B3FC38`,
       Nightshade: `#20202A`,
-
       secondary: `#F92A82`,
     },
     fontSize: {

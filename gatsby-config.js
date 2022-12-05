@@ -192,12 +192,15 @@ module.exports = {
         mapping: {
           allGhostPost: {
             sitemap: `posts`,
+            prefix: `writing/`,
           },
           allGhostTag: {
             sitemap: `tags`,
+            prefix: `tags/`,
           },
           allGhostAuthor: {
             sitemap: `authors`,
+            prefix: `author/`,
           },
           allGhostPage: {
             sitemap: `pages`,

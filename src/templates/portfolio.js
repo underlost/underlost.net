@@ -65,7 +65,8 @@ const Portfolio = ({ data, location }) => {
             className="portfolio-header mb-5 relative h-screen"
             style={{
               backgroundColor: frontmatter.color,
-            }}>
+            }}
+          >
             <div className="absolute inset-0 h-full">
               <Background filename={frontmatter.image} />
             </div>
@@ -98,7 +99,6 @@ const Portfolio = ({ data, location }) => {
         </article>
 
         <div className="gh-canvas py-16">
-
           <div className="about-author pb-12">
             <h6 className="subtitle text-green mb-4">About the Author</h6>
             <div className="post-card-author">
@@ -114,7 +114,6 @@ const Portfolio = ({ data, location }) => {
             </div>
           </div>
         </div>
-
       </Layout>
     </div>
   )

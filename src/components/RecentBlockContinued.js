@@ -47,7 +47,7 @@ RecentContinued.propTypes = {
   }).isRequired,
 }
 
-const RecentBlockContinued = (props) => (
+const RecentBlockContinued = props => (
   <StaticQuery
     query={graphql`
       query GhostRecentContinuedBlockQuery {
@@ -60,7 +60,7 @@ const RecentBlockContinued = (props) => (
         }
       }
     `}
-    render={(data) => <RecentContinued data={data} {...props} />}
+    render={data => <RecentContinued data={data} {...props} />}
   />
 )
 

@@ -51,7 +51,8 @@ const HomePage = ({ data, location }) => {
                       className="inline-block px-1 arrow"
                       style={{
                         paddingBottom: `0.1em`,
-                      }}>
+                      }}
+                    >
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="6" viewBox="0 0 22 6">
                         <path stroke="#03080F" fill="none" fillRule="evenodd" d="M0 3h21m-3-3 3 3-3 3" />
                       </svg>

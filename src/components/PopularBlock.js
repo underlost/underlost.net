@@ -55,10 +55,7 @@ const PopularPosts = ({ data }) => {
     <div className="popular-cards-wrapper mb-5 w-100 bg-blue px-8 lg:px-16 py-16 overflow-hidden">
       <section className="post-feed-vertical container mx-auto">
         <div className="post-feed-header relative mb-8">
-          <h3
-            className="h1 uppercase text-center text-sans text-4xl font-bold tracking-wider relative z-10">
-            Popular
-          </h3>
+          <h3 className="h1 uppercase text-center text-sans text-4xl font-bold tracking-wider relative z-10">Popular</h3>
           <div
             style={{
               position: `absolute`,
@@ -66,7 +63,8 @@ const PopularPosts = ({ data }) => {
               right: 0,
               top: `2rem`,
               margin: `auto`,
-            }}>
+            }}
+          >
             <svg
               className="post-feed-vertical-line block mx-auto"
               xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +73,8 @@ const PopularPosts = ({ data }) => {
               viewBox="0 0 248 10"
               style={{
                 transform: `translateX(70px)`,
-              }}>
+              }}
+            >
               <defs>
                 <linearGradient id="PopularLinearGradient" x1="1" x2="0" y1=".5" y2=".5" gradientUnits="objectBoundingBox">
                   <stop offset="0" stopColor="#e1bed8" />
@@ -105,7 +104,7 @@ PopularPosts.propTypes = {
   }).isRequired,
 }
 
-const PopularPostsBlock = (props) => (
+const PopularPostsBlock = props => (
   <StaticQuery
     query={graphql`
       query GhostPopularPostsQuery {
@@ -118,7 +117,7 @@ const PopularPostsBlock = (props) => (
         }
       }
     `}
-    render={(data) => <PopularPosts data={data} {...props} />}
+    render={data => <PopularPosts data={data} {...props} />}
   />
 )
 

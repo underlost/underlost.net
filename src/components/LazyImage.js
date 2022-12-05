@@ -6,12 +6,12 @@ const INIT = 0
 const LOADING = 1
 const LOADED = 2
 
-const ImageObject = (props) => {
+const ImageObject = props => {
   const { src: originalSrc, forwardedRef, inViewport, alt, className } = props
   const [src, setSrc] = useState(null)
   const [status, setStatus] = useState(INIT)
 
-  const loadImage = (imageSrc) => {
+  const loadImage = imageSrc => {
     const img = new Image() // eslint-disable-line
     setStatus(LOADING)
     img.onload = () => {
@@ -48,7 +48,8 @@ const ImageObject = (props) => {
         maxWidth: `100%`,
         backgroundColor: getBackgroundColor(),
       }}
-      ref={forwardedRef}>
+      ref={forwardedRef}
+    >
       <img className="w-full h-full object-cover" width="100%" height="100%" src={src} alt={alt} />
     </div>
   )
