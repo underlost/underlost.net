@@ -1,3 +1,5 @@
+// Cloudflare API endpoint for newsletter subscription
+
 export async function onRequestPost(context) {
   try {
     // Get the email and env from the payload
