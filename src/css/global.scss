@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css?family=Rubik:italic,300,400,700&display=optional');
+
 @layer base {
   html {
     font-family: 'Rubik', rubik, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -34,8 +36,6 @@ $orange: #F36A2B;
 $primary: $saphire;
 $secondary: $pink;
 
-/* Ghost components */
-@import '_fonts.scss';
 @import '_header.scss';
 @import '_menu.scss';
 @import '_homepage.scss';
