@@ -18,7 +18,7 @@ const Tag = ({ data, location, pageContext }) => {
     <Layout>
       <MetaData data={data} location={location} type="series" />
       <div className="gh-content gh-canvas py-5">
-        <header className="page-header tag-header mb-5 pb-5 px-4 py-5 lg:px-16 lg:py-16 bg-platinum border border-caramel overflow-hidden lg:overflow-visible">
+        <header className="page-header tag-header">
           <h1 className="title-h1">{tag.name}</h1>
           {tag.description ? <p className="lead mb-0">{tag.description}</p> : null}
           <div className="has-after-element translate-x-32" />

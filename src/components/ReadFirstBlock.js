@@ -9,11 +9,11 @@ const ReadFirst = ({ data }) => {
   return (
     <div className="read-first-wrapper">
       <section className="read-first post-feed">
-        <h2 className="subtitle text-orange">Noteworthy Posts</h2>
+        <h2 className="subtitle-pill pink-purple mb-4">Noteworthy Posts</h2>
         <ul className="divide-y">
           {posts.map(({ node }) => (
             // The tag below includes the markup for each post - components/common/PostCard.js
-            <li key={node.id} className="py-4 border-slatelight">
+            <li key={node.id} className="py-4 border-caramel">
               <PostItem post={node} />
             </li>
           ))}

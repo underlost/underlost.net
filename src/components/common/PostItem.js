@@ -12,7 +12,7 @@ const PostItem = ({ post }) => {
       <header className="post-item-header font-semibold">
         <Link to={url} className="block md:flex uppercase tracking-wider transition duration-150 ease-out hover:text-pink hover:translate-x-1">
           <h3 className="pr-3">{post.title}</h3>
-          <span className="opacity-50">{readingTime}</span>
+          <span className="">{readingTime}</span>
         </Link>
       </header>
     </article>

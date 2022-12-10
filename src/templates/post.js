@@ -57,8 +57,11 @@ const Post = ({ data, location }) => {
           </section>
           <footer className="post-footer gh-canvas">
             {post.tags && (
-              <div className="post-byline-item post-card-tags h6 uppercase my-3 inline-block">
-                in <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} />
+              <div className="related-tags py-6">
+                <p className="font-serif font-semibold text-lg uppercase mb-2">Related Tags</p>
+                <div>
+                  <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} classes="tag-item" separatorClasses="hidden" />
+                </div>
               </div>
             )}
           </footer>

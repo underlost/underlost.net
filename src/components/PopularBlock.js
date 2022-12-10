@@ -15,7 +15,7 @@ const PopularCard = ({ post }) => {
       >
         <Link className="post-card-link d-block" to={url}>
           {post.feature_image && (
-            <div className="card-image h-56 lg:h-60 bg-platinum">
+            <div className="card-image h-56 lg:h-60 bg-latte">
               <LazyImage className="post-card-image h-full" key={post.feature_image} src={post.feature_image} alt={post.title} />
             </div>
           )}

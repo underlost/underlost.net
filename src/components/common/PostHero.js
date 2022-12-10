@@ -10,7 +10,7 @@ const PostHero = ({ post }) => {
 
   return (
     <div className="max-w-6xl mx-auto postHero py-8 md:py-12 px-8 md:px-0 relative">
-      <article className="relative h-96 lg:h-[32rem] bg-platinum overflow-hidden">
+      <article className="relative h-96 lg:h-[32rem] bg-latte overflow-hidden">
         <Link to={url} className="flex relative z-40 px-4 lg:px-8 content-end h-full">
           <header className="post-hero-header mb-0 mt-auto py-8 w-full">
             <div className="block w-100 text-white" style={{ borderTop: `1px solid #fff` }}>

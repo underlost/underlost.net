@@ -1,6 +1,5 @@
 .kg-bookmark-card {
   width: 100%;
-  border: 1px solid darken($latte, 15%);
   background-color: $latte;
   text-decoration: none;
   * {
@@ -55,7 +54,6 @@
     -webkit-box-align: center;
     align-items: center;
     margin-top: 5px;
-    color: $green;
     text-transform: uppercase;
   }
 

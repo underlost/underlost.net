@@ -40,12 +40,11 @@ module.exports = {
     logo: `images/logo.png`,
     cover_image: `images/background.jpg`,
     siteIcon: `images/logo.png`,
-    description: `Underlost is Tyler Rilling, a Python web developer and narrative designer, living in Seattle, Washington. They are probably not an Undertale game.`,
+    description: `Underlost is Tyler Rilling, a Python web developer and designer, living in Seattle, Washington. They are probably not an Undertale game.`,
     social: {
       twitter: `@underlost`,
       instagram: `underlost`,
       github: `underlost`,
-      keybase: `underlost`,
     },
     keywords: [
       `Tyler Rilling`,

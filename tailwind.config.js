@@ -3,7 +3,7 @@ module.exports = {
   content: [`./src/pages/**/*.{js,jsx,ts,tsx}`, `./src/templates/**/*.{js,jsx,ts,tsx}`, `./src/components/**/*.{js,jsx,ts,tsx}`],
   theme: {
     fontFamily: {
-      sans: [`rubik`, `-apple-system`, `system-ui`, `BlinkMacSystemFont`, `Segoe UI`, `Roboto`, `Helvetica Neue`, `Arial`, `sans-serif`],
+      sans: ['rubik', `-apple-system`, `system-ui`, `BlinkMacSystemFont`, `Segoe UI`, `Roboto`, `Helvetica Neue`, `Arial`, `sans-serif`],
       serif: [`calluna`, `-apple-system`, `system-ui`, `BlinkMacSystemFont`, `Segoe UI`, `serif`],
     },
     colors: {
@@ -13,16 +13,17 @@ module.exports = {
       white: `#FFFFFF`,
       slate: `#63768D`,
       slatelight: `#A7B1C2`,
-      snow: `#F9F1F1`,
-      platinum: `#ede4e4`,
       purple: `#470063`,
-      pink: `#F92A82`,
+      pink: `#F56476`,
       darkblue: `#35C5CF`,
       blue: `#99E2E7`,
       green: `#119DA4`,
       saphire: `#19647E`,
-      yellow: `#EFEA5A`,
-      orange: `#F36A2B`,
+      yellow: `#FDDA67`,
+      orange: `#F18805`,
+      latte: `#F1E9DC`,
+      creame: `#F5F1EC`,
+      caramel: `#CEB9A1`,
       // Darkmode
       GoblinGreen: `#B3FC38`,
       Nightshade: `#20202A`,

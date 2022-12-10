@@ -66,7 +66,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 </div>
               )}
 
-              <div className="site-menu bg-platinum fixed inset-0">
+              <div className="site-menu bg-latte fixed inset-0">
                 <div className="max-w-6xl mx-auto pt-8">
                   <Navigation data={site.navigation} navClass="site-nav-item py-2" />
                 </div>

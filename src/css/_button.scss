@@ -1,10 +1,5 @@
 .btn-underline {
   @apply relative font-bold text-lg;
-
-  .arrow {
-    transition: ease all .3s;
-  }
-
   span {
     @apply relative z-10;
   }
@@ -12,26 +7,37 @@
   &::after {
     transition: ease all .3s;
     content: '';
-    position: absolute;
     bottom: .25rem;
     right: .75rem;
     width: 100%;
     height: 8px;
-    background-color: $platinum;
+    @apply bg-caramel absolute
   }
 
   &:hover {
-    text-decoration: none;
+    @apply no-underline;
+
     &::after {
       height: 15px;
     }
   }
+}
 
-  &.has-arrow {
-    &:hover {
-      .arrow {
-        transform: translateX(1rem);
-      }
+.has-arrow {
+  .arrow {
+    transition: ease all .3s;
+  }
+  &:hover {
+    .arrow {
+      @apply translate-x-1;
     }
+  }
+}
+
+.btn-block {
+  @apply block w-full border-2 px-4 py-2 no-underline hover:bg-pink hover:text-black hover:border-black transition duration-150 ease-out;
+
+  .btn-title {
+    @apply font-bold text-lg block;
   }
 }

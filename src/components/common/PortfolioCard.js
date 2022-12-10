@@ -10,7 +10,7 @@ const PortfolioCard = ({ post }) => {
   const readingTime = readingTimeHelper(post)
 
   return (
-    <article className="card mb-4 bg-platinum">
+    <article className="card mb-4 bg-latte">
       <header className="post-card-header">
         <Link className="post-card-link d-block" to={url}>
           {post.feature_image && (

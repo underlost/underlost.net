@@ -19,12 +19,38 @@
   letter-spacing: 1px;
 }
 
+.subtitle-pill {
+  @apply font-sans text-xs font-semibold uppercase px-4 py-1 inline-block;
+  letter-spacing: 1px;
+
+  &.purple-yellow {
+    @apply bg-purple text-yellow;
+  }
+
+  &.pink-purple {
+    @apply bg-purple text-pink;
+  }
+}
+
+.tag-item {
+  @apply uppercase border px-2 py-1 mr-2 inline-block
+}
+
 .lead {
   @apply font-sans font-light text-xl;
 }
 
 .content-body {
   @apply text-lg font-light; 
+
+  p {
+    a {
+      @apply underline;
+      &:hover {
+        @apply text-pink bg-black;
+      }
+    }
+  }
   p ~ p {
     @apply mt-5;
   }
@@ -44,12 +70,7 @@
     @apply text-2xl;
   }
 
-  a {
-    @apply underline;
-    &:hover {
-      @apply text-pink bg-black;
-    }
-  }
+  
 }
 
 .excerpt {

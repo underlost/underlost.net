@@ -34,13 +34,13 @@ const HomePage = ({ data, location }) => {
             </div>
           </div>
           <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:mb-8 order-1 md:order-2">
-            <div className="bg-platinum py-12 lg:py-16 px-8 md:px-12">
+            <div className="bg-latte py-12 lg:py-16 px-8 md:px-12">
               {page && <div className="load-external-scripts pb-5" dangerouslySetInnerHTML={{ __html: page.html }} />}
 
               <div className="pb-16">
-                <p className="subtitle text-orange">Introduction</p>
+                <p className="subtitle-pill purple-yellow mb-4">Introduction</p>
                 <h1 className="h2 mb-4">
-                  Underlost is Tyler Rilling, a Python web developer and narrative designer, living in Seattle, Washington. They are probably not an Undertale game. 👾
+                  Underlost is Tyler Rilling, a Python web developer, UX designer, and marketing consultant, living in Seattle, Washington. They are probably not an Undertale game. 👾
                 </h1>
                 <p className="text-lg font-light">
                   As a full-stack developer, I specialize in ReactJS, REST frameworks and content management systems like WordPress and Ghost, and various technology stacks. Currently a
@@ -51,8 +51,7 @@ const HomePage = ({ data, location }) => {
                       className="inline-block px-1 arrow"
                       style={{
                         paddingBottom: `0.1em`,
-                      }}
-                    >
+                      }}>
                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="6" viewBox="0 0 22 6">
                         <path stroke="#03080F" fill="none" fillRule="evenodd" d="M0 3h21m-3-3 3 3-3 3" />
                       </svg>

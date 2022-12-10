@@ -6,19 +6,19 @@ const LinkButton = props => {
   const buttonType = props.layout
   if (buttonType === `link`) {
     return (
-      <li className="d-block mb-4">
+      <li className="block py-1">
         <a className="btn btn-primary btn-block text-start w-100 py-3" title={props.alt} href={props.website} rel="noopener noreferrer" target="_blank">
-          <span className="h6 d-block mb-0 text-uppercase">{props.title}</span>
-          <small className="fw-normal d-block mb-0">{props.alt}</small>
+          <span className="btn-title">{props.title}</span>
+          <small className="btn-description">{props.alt}</small>
         </a>
       </li>
     )
   } else {
     return (
-      <li className="d-block mb-4">
+      <li className="block py-1">
         <Link className="btn btn-primary btn-block text-center w-100 py-3" title={props.alt} to={props.slug}>
-          <span className="h6 d-block">{props.title}</span>
-          <small className="fw-normal d-block mb-0">{props.alt}</small>
+          <span className="btn-title">{props.title}</span>
+          <small className="btn-description">{props.alt}</small>
         </Link>
       </li>
     )

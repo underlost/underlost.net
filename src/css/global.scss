@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css?family=Rubik:italic,300,400,700&display=optional');
+@import url('https://fonts.googleapis.com/css?family=Rubik:italic,300,400,700&display=swap');
 
 @layer base {
   html {
@@ -24,13 +23,15 @@ $slatelight: #A7B1C2;
 $snow: #F9F1F1;
 $platinum: #ede4e4;
 $purple: #470063;
-$pink: #F92A82;
+$pink: #F56476;
 $darkblue: #35C5CF;
 $blue: #99E2E7;
 $green: #119DA4;
 $saphire: #19647E;
 $yellow: #EFEA5A;
 $orange: #F36A2B;
+$latte: #F1E9DC;
+$cream: #F5F1EC;
 
 $primary: $saphire;
 $secondary: $pink;
@@ -51,7 +52,7 @@ $secondary: $pink;
 
 html,
 body {
-  background-color: #F9F1F1;
+  background-color: $cream;
   @apply antialiased;
 }
 

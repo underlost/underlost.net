@@ -10,7 +10,7 @@ const ArticleCard = ({ post }) => {
   const readingTime = readingTimeHelper(post)
 
   return (
-    <article className="card mb-8 bg-platinum">
+    <article className="card mb-8 bg-latte">
       <header className="post-card-header mb-5">
         <Link className="post-card-link block" to={url}>
           {post.feature_image && (

@@ -7,10 +7,7 @@ const LinksList = () => {
 
   return (
     <ul
-      className="list-nav list-unstyled mb-0 px-0"
-      style={{
-        maxWidth: `500px`,
-      }}
+      className="!list-none max-w-2xl"
     >
       {data.allMarkdownRemark.edges.map(({ node }) => {
         const title = node.frontmatter.title || node.frontmatter.slug

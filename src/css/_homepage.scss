@@ -1,40 +1,12 @@
 .featured-cards-wrapper {
-  position: relative;
-
+ @apply relative;
   &::after {
-    content: '';
-    display: block;
-    background-color: $yellow;
-    width: 110px;
-    height: 110px;
-    border-radius: 100%;
-    position: absolute;
-    right: -50px;
-    bottom: -30px;
-  }
-
-  .card {
-    position: relative;
-    z-index: 5;
-
-    .post-card-image {
-      opacity: .35;
-    }
-
-    &:hover {
-      .post-card-image {
-        opacity: .85;
-      }
-
-      .post-card-title {
-        color: $secondary;
-      }
-    }
+    @apply bg-yellow block absolute rounded-full content-[''] h-28 w-28 -right-10 -bottom-14;
   }
 
   article:first-of-type {
     .card-body {
-      padding-bottom: 2rem;
+      @apply pb-8;
       @extend .after-line-break;
     }
   }
