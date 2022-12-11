@@ -35,7 +35,7 @@ const Post = ({ data, location }) => {
 
             {post.primary_tag && <span className="post-card-tags subtitle">{post.primary_tag.name}</span>}
             <h1 className="text-6xl font-serif mb-2">{post.title}</h1>
-            <div className="grid grid-cols-2 mb-5">
+            <div className="grid grid-cols-2 mb-8">
               <div className="col-span-2 md:col-span-1 md:text-right lg:order-2">
                 <time className="post-byline-item block text-muted" dateTime={post.published_at}>
                   <span className="sr-only">Published on </span>
@@ -49,12 +49,10 @@ const Post = ({ data, location }) => {
                 <span className="uppercase inline-block mb-1 pe-4 font-bold">{readingTime}</span>
               </div>
             </div>
+            {post.custom_excerpt && <p className="lead">{post.custom_excerpt}</p>}
           </header>
           {/* The main post content */}
-          <section className="gh-content gh-canvas load-external-scripts mb-4">
-            <p className="lead">{post.custom_excerpt}</p>
-            <div className="content-body" dangerouslySetInnerHTML={{ __html: post.html }} />
-          </section>
+          <section className="gh-content gh-canvas load-external-scripts content-body mb-4" dangerouslySetInnerHTML={{ __html: post.html }} />
           <footer className="post-footer gh-canvas">
             {post.tags && (
               <div className="related-tags py-6">

@@ -68,7 +68,7 @@ const HomePage = ({ data, location }) => {
         <PopularPostsBlock />
       </div>
 
-      <div className="gh-content gh-canvas pt-5">
+      <div className="gh-content gh-canvas py-5 lg:py-11">
         <NewsletterForm />
         <hr />
       </div>

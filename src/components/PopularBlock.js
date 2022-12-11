@@ -6,7 +6,7 @@ import LazyImage from './LazyImage'
 const PopularCard = ({ post }) => {
   const url = `/writing/${post.slug}/`
   return (
-    <article className="col-span-12 md:col-span-6 lg:col-span-3 mb-4">
+    <article className="mb-4">
       <header
         className="card post-card-header px-lg-4"
         style={{
@@ -63,8 +63,7 @@ const PopularPosts = ({ data }) => {
               right: 0,
               top: `2rem`,
               margin: `auto`,
-            }}
-          >
+            }}>
             <svg
               className="post-feed-vertical-line block mx-auto"
               xmlns="http://www.w3.org/2000/svg"
@@ -73,8 +72,7 @@ const PopularPosts = ({ data }) => {
               viewBox="0 0 248 10"
               style={{
                 transform: `translateX(70px)`,
-              }}
-            >
+              }}>
               <defs>
                 <linearGradient id="PopularLinearGradient" x1="1" x2="0" y1=".5" y2=".5" gradientUnits="objectBoundingBox">
                   <stop offset="0" stopColor="#e1bed8" />
@@ -86,7 +84,7 @@ const PopularPosts = ({ data }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-12 gap-8 justify-content-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-content-center">
           {posts.map(({ node }) => (
             // The tag below includes the markup for each post - components/common/PostCard.js
             <PopularCard key={node.id} post={node} />
@@ -108,7 +106,7 @@ const PopularPostsBlock = props => (
   <StaticQuery
     query={graphql`
       query GhostPopularPostsQuery {
-        allGhostPost(sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#popular" } } } }, limit: 5) {
+        allGhostPost(sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#popular" } } } }, limit: 4) {
           edges {
             node {
               ...GhostPostFields
