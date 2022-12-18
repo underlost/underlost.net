@@ -2,6 +2,13 @@
 
 ---
 
+## 8.1.0 (12/11/22)
+
+* Switched from Bootstrap to TailwindCSS
+* Updated colors
+* Added new cover story layout option for post hero components
+* Fixed image widths for content areas
+
 ## 8.0.0 (02/22/22)
 
 * completeing merging most content from ALWP, Medium into the site.

@@ -39,7 +39,7 @@ const HomePage = ({ data, location }) => {
 
               <div className="pb-16">
                 <p className="subtitle-pill purple-yellow mb-4">Introduction</p>
-                <h1 className="h2 mb-4">
+                <h1 className="h1 mb-4">
                   Underlost is Tyler Rilling, a Python web developer, UX designer, and marketing consultant, living in Seattle, Washington. They are probably not an Undertale game. 👾
                 </h1>
                 <p className="text-lg font-light">

@@ -7,7 +7,7 @@ const LinksList = () => {
 
   return (
     <ul
-      className="!list-none max-w-2xl"
+      className=""
     >
       {data.allMarkdownRemark.edges.map(({ node }) => {
         const title = node.frontmatter.title || node.frontmatter.slug

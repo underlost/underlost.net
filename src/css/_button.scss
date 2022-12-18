@@ -34,10 +34,26 @@
   }
 }
 
-.btn-block {
-  @apply block w-full border-2 px-4 py-2 no-underline hover:bg-pink hover:text-black hover:border-black transition duration-150 ease-out;
+.btn-block-wrapper {
+  @apply relative;
+
+  &::after {
+    content: '';
+    @apply absolute inset-0 block w-full h-full bg-black transition duration-150 ease-out rounded opacity-70;
+  }
+
+  .btn-block {
+    @apply block w-full border-2 px-4 py-4 no-underline hover:text-black hover:border-black bg-creame rounded relative z-20;
+  }
 
   .btn-title {
     @apply font-bold text-lg block;
   }
+
+  &:hover {
+    &::after {
+      @apply translate-x-2 translate-y-3;
+    }
+  }
+  
 }

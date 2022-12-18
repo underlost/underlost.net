@@ -6,8 +6,8 @@ const LinkButton = props => {
   const buttonType = props.layout
   if (buttonType === `link`) {
     return (
-      <li className="block py-1">
-        <a className="btn btn-primary btn-block text-start w-100 py-3" title={props.alt} href={props.website} rel="noopener noreferrer" target="_blank">
+      <li className="btn-block-wrapper my-5">
+        <a className="btn btn-primary btn-block text-start w-100" title={props.alt} href={props.website} rel="noopener noreferrer" target="_blank">
           <span className="btn-title">{props.title}</span>
           <small className="btn-description">{props.alt}</small>
         </a>
@@ -15,8 +15,8 @@ const LinkButton = props => {
     )
   } else {
     return (
-      <li className="block py-1">
-        <Link className="btn btn-primary btn-block text-center w-100 py-3" title={props.alt} to={props.slug}>
+      <li className="btn-block-wrapper my-5">
+        <Link className="btn btn-primary btn-block text-center w-100" title={props.alt} to={props.slug}>
           <span className="btn-title">{props.title}</span>
           <small className="btn-description">{props.alt}</small>
         </Link>
