@@ -27,6 +27,7 @@
     "sharp": "^0.31.2"
   },
   "dependencies": {
+    "@tryghost/admin-api": "^1.13.2",
     "@tryghost/helpers": "^1.1.75",
     "@tryghost/helpers-gatsby": "^2.0.5",
     "babel-plugin-prismjs": "^2.0.1",

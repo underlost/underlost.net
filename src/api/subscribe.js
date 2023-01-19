@@ -1,6 +1,7 @@
+import GhostAdminAPI from '@tryghost/admin-api'
+
 // gaysby API endpoint for newsletter subscriptions
 
-// eslint-disable-next-line consistent-return
 export default async function getrevueSubscribe(req, res) {
   // 1. Get the email from the payload and
   // validate if it is empty.
@@ -9,37 +10,34 @@ export default async function getrevueSubscribe(req, res) {
     return res.status(400).json({ error: `Please provide an email id.` })
   }
 
-  // 2. Use the Revue API Key and create a subscriber using
-  // the email we pass to the API. Please note, we pass the
-  // API Key in the 'Authorization' header.
+  // 2. Use the Ghost API API Key and create a subscriber using
+  // the email we pass to the API. Note we're using the GhostAdminAPI instead of the Content API
   try {
-    const API_KEY = process.env.REVUE_API_KEY
-    // eslint-disable-next-line ghost/ember/require-fetch-import
-    const response = await fetch(`https://www.getrevue.co/api/v2/subscribers`, {
-      method: `POST`,
-      body: JSON.stringify({ email: email, double_opt_in: false }),
-      headers: {
-        Authorization: `Token ${API_KEY}`,
-        'Content-Type': `application/json`,
-      },
+    const GHOST_ADMIN_API_KEY = process.env.GHOST_ADMIN_API_KEY
+    const api = new GhostAdminAPI({
+      url: process.env.GHOST_API_URL,
+      key: GHOST_ADMIN_API_KEY,
+      version: `v3.0`,
     })
 
-    // 3. We check in the response if the status is 400
-    // If so, consider it as error and return. Otherwise a 201
-    // for create
-    if (response.status >= 400) {
-      const message = await response.json()
-      console.log(message.error.email[0])
-      return res.status(400).json({ error: message.error.email[0] })
-    }
-    // Send a JSON response
-    res.status(201).json({
-      message: `Hey, ${email}, Please check your email and verify it. Can't wait to get you boarded.`,
-      error: ``,
+    const member = await api.members.add({
+      email,
+      name: email,
+      note: `Subscribed via Website API`,
     })
+
+    if (member.error) {
+      return res.status(400).json({ error: member.error })
+    } else if (member.errors) {
+      return res.status(400).json({ error: member.errors[0].message })
+    }
+
+    // 3. If the control goes inside the try block
+    // let us consider it as a success(200)
+    return res.status(200).json({ message: `You've just subsribed! Be on the look out for an email explaining more details soon.` })
   } catch (err) {
     // 4. If the control goes inside the catch block
     // let us consider it as a server error(500)
-    return res.status(500).json({ error: err.message || error.toString() })
+    return res.status(500).json({ error: err.message || err.toString() })
   }
 }
