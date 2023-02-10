@@ -1,23 +1,67 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import { PostCard } from '../components/common'
+import ArticleText from './common/ArticleText'
+import ArticleHero from './common/ArticleHero'
+import ArticleCardLarge from './common/ArticleCardLarge'
 
-const Recent = ({ data }) => {
+// Check if post has a featured Image or not
+const ContinueReadingCards = ({ post }) => {
+  const isCoverStory = post.tags.some(tag => tag.name === `#coverstory`)
+
+  return (
+    <>
+      {post.feature_image ? (
+        <>
+          {isCoverStory ? (
+            <ArticleHero key={post.slug} post={post} />
+          ) : (
+            <div className="py-16">
+              <ArticleCardLarge key={post.slug} post={post} />
+            </div>
+          )}
+        </>
+      ) : (
+        <ArticleText key={post.slug} post={post} />
+      )}
+    </>
+  )
+}
+
+ContinueReadingCards.propTypes = {
+  post: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    feature_image: PropTypes.string,
+    featured: PropTypes.bool,
+    primary_tag: PropTypes.PropTypes.object,
+    tags: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+      })
+    ),
+    html: PropTypes.string.isRequired,
+    excerpt: PropTypes.string.isRequired,
+    primary_author: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      profile_image: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+}
+
+const RecentSection = ({ data }) => {
   const posts = data.allGhostPost.edges
 
   return (
-    <section className="section-recent-posts">
-      <h6 className="h6 text-uppercase text-orange mb-3 sr-only">Recent Posts</h6>
+    <section className="section-recent-posts pt-5 px-8 lg:px-0 container mx-auto">
       {posts.map(({ node }) => (
-        // The tag below includes the markup for each post - components/common/PostCard.js
-        <PostCard key={node.id} post={node} />
+        <ContinueReadingCards key={node.id} post={node} />
       ))}
     </section>
   )
 }
 
-Recent.propTypes = {
+RecentSection.propTypes = {
   data: PropTypes.shape({
     file: PropTypes.object,
     allGhostPost: PropTypes.object.isRequired,
@@ -27,8 +71,8 @@ Recent.propTypes = {
 const RecentBlock = props => (
   <StaticQuery
     query={graphql`
-      query GhostRecentBlockQuery {
-        allGhostPost(sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }, limit: 4) {
+      query GhostRecentContinuedBlockQuery {
+        allGhostPost(sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }, limit: 10, skip: 0) {
           edges {
             node {
               ...GhostPostFields
@@ -37,7 +81,7 @@ const RecentBlock = props => (
         }
       }
     `}
-    render={data => <Recent data={data} {...props} />}
+    render={data => <RecentSection data={data} {...props} />}
   />
 )
 

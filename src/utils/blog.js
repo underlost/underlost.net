@@ -11,6 +11,7 @@ export function getPostsFromQuery(posts) {
             slug: node.slug,
             excerpt: node.excerpt,
             tags: node.tags,
+            reading_time: node.reading_time,
           }
         )
       )

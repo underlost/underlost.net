@@ -2,12 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import dayjs from 'dayjs'
 import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 import RelatedPostsBlock from '../components/RelatedPostsBlock'
-import dayjs from 'dayjs'
+
 import NewsletterForm from '../components/NewsletterForm'
 
 /**
@@ -34,7 +35,7 @@ const Post = ({ data, location }) => {
             {post.feature_image ? <img className="gh-feature-image" src={post.feature_image} alt={post.title} /> : null}
 
             {post.primary_tag && <span className="post-card-tags subtitle">{post.primary_tag.name}</span>}
-            <h1 className="text-6xl font-serif mb-2">{post.title}</h1>
+            <h1 className="text-6xl text-wide font-black mb-2">{post.title}</h1>
             <div className="grid grid-cols-2 mb-8">
               <div className="col-span-2 md:col-span-1 md:text-right lg:order-2">
                 <time className="post-byline-item block text-muted" dateTime={post.published_at}>
@@ -56,8 +57,8 @@ const Post = ({ data, location }) => {
           <footer className="post-footer gh-canvas">
             {post.tags && (
               <div className="related-tags py-6">
-                <p className="font-serif font-semibold text-lg uppercase mb-2">Related Tags</p>
-                <div>
+                <p className="text-lg uppercase mb-2 text-wide">Related Tags</p>
+                <div className="block">
                   <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} classes="tag-item" separatorClasses="hidden" />
                 </div>
               </div>
@@ -69,7 +70,7 @@ const Post = ({ data, location }) => {
           <RelatedPostsBlock tags={post.tags} currentArticleSlug={post.slug} />
 
           <div className="about-author pb-12">
-            <h6 className="subtitle text-green mb-4">About the Author</h6>
+            <h6 className="text-lg uppercase mb-2 text-wide">About the Author</h6>
             <div className="post-card-author">
               <h6 className="post-byline-item font-bold uppercase block mb-1">{post.primary_author.name}</h6>
               <p className="font-light">{post.primary_author.bio}</p>

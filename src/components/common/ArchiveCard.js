@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PostCardLink from './PostCardLink'
-import PostCardArticle from './PostCardArticle'
-const PostCard = ({ post }) => {
+import ArchiveCardLink from './ArchiveCardLink'
+import ArchiveCardArticle from './ArchiveCardArticle'
+
+const ArchiveCard = ({ post }) => {
   // Check if post is a link list item
   const isLinked = post.tags.some(tag => (tag.name === `#linked`))
   //console.log(isLinked)
@@ -10,15 +11,15 @@ const PostCard = ({ post }) => {
   return (
     <>
       {isLinked ? (
-        <PostCardLink key={post.id} post={post} />
+        <ArchiveCardLink key={post.id} post={post} />
       ) : (
-        <PostCardArticle key={post.id} post={post} />
+        <ArchiveCardArticle key={post.id} post={post} />
       )}
     </>
   )
 }
 
-PostCard.propTypes = {
+ArchiveCard.propTypes = {
   post: PropTypes.shape({
     id: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
@@ -40,4 +41,4 @@ PostCard.propTypes = {
   }).isRequired,
 }
 
-export default PostCard
+export default ArchiveCard

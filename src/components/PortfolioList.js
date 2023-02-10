@@ -10,7 +10,6 @@ const PortfolioList = () => {
     <section className="post-feed portfolio-feed container mx-auto">
       <div className="grid grid-cols-2 gap-12 px-8 lg:px-0">
         {posts.map(({ node }) => (
-          // The tag below includes the markup for each post - components/common/PostCard.js
           <div key={node.id} className="col-span-2 md:col-span-1">
             <PortfolioCard post={node} />
           </div>

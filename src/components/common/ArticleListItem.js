@@ -3,23 +3,23 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 
-const PostItem = ({ post }) => {
+const ArticleListItem = ({ post }) => {
   const url = `/writing/${post.slug}/`
   const readingTime = readingTimeHelper(post)
 
   return (
-    <article className="post-item">
+    <article className="article-item">
       <header className="post-item-header font-semibold">
-        <Link to={url} className="block md:flex uppercase tracking-wider transition duration-150 ease-out hover:text-pink hover:translate-x-1">
-          <h3 className="pr-3">{post.title}</h3>
-          <span className="">{readingTime}</span>
+        <Link to={url} className="article-item-link">
+          <h3 className="article-item-title">{post.title}</h3>
+          <span className="reading-time inline-block">{readingTime}</span>
         </Link>
       </header>
     </article>
   )
 }
 
-PostItem.propTypes = {
+ArticleListItem.propTypes = {
   post: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -33,4 +33,4 @@ PostItem.propTypes = {
   }).isRequired,
 }
 
-export default PostItem
+export default ArticleListItem

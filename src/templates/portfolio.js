@@ -65,15 +65,14 @@ const Portfolio = ({ data, location }) => {
             className="portfolio-header mb-5 relative h-screen"
             style={{
               backgroundColor: frontmatter.color,
-            }}
-          >
+            }}>
             <div className="absolute inset-0 h-full">
               <Background filename={frontmatter.image} />
             </div>
             <div className="container mx-auto h-full z-30 relative flex lg:content-center content-end">
               <div className="max-w-xl mb-0 mt-auto lg:my-auto">
                 <div className="bg-white px-8 py-8 lg:my-8">
-                  <h1 className="font-serif text-xl">{page.title}</h1>
+                  <h1 className="text-xl">{page.title}</h1>
                   <p className="text-lg font-light">{frontmatter.description}</p>
                 </div>
               </div>
@@ -100,13 +99,12 @@ const Portfolio = ({ data, location }) => {
 
         <div className="gh-canvas py-16">
           <div className="about-author pb-12">
-            <h6 className="subtitle text-green mb-4">About the Author</h6>
+            <h6 className="text-lg uppercase mb-2 text-wide">About the Author</h6>
             <div className="post-card-author">
               <h6 className="post-byline-item font-bold uppercase block mb-1">{page.primary_author.name}</h6>
               <p className="font-light">{page.primary_author.bio}</p>
             </div>
           </div>
-
           <div>
             <hr />
             <div className="pt-12">

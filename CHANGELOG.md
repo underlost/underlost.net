@@ -2,6 +2,16 @@
 
 ---
 
+## 9.0.0 (02/01/23)
+
+* Updated Color Scheme
+
+## 8.1.1 (01/19/23)
+
+* Updated Newsletter to use Ghost API instead of Revue.
+* Node module updates
+* Fixed incorrect props in components
+
 ## 8.1.0 (12/11/22)
 
 * Switched from Bootstrap to TailwindCSS

@@ -15,13 +15,13 @@ const PopularCard = ({ post }) => {
       >
         <Link className="post-card-link d-block" to={url}>
           {post.feature_image && (
-            <div className="card-image h-56 lg:h-60 bg-latte">
+            <div className="card-image h-56 lg:h-60">
               <LazyImage className="post-card-image h-full" key={post.feature_image} src={post.feature_image} alt={post.title} />
             </div>
           )}
           <div className="pt-4 px-0">
-            {post.primary_tag && <p className="uppercase font-bold">{post.primary_tag.name}</p>}
-            <h2 className="uppercase font-serif text-lg">{post.title}</h2>
+            {post.primary_tag && <p className="subtitle">{post.primary_tag.name}</p>}
+            <h2 className="h3 card-title">{post.title}</h2>
           </div>
         </Link>
       </header>
@@ -52,41 +52,16 @@ PopularCard.propTypes = {
 const PopularPosts = ({ data }) => {
   const posts = data.allGhostPost.edges
   return (
-    <div className="popular-cards-wrapper mb-5 w-100 bg-blue px-8 lg:px-16 py-16 overflow-hidden">
-      <section className="post-feed-vertical container mx-auto">
+    <div className="popular-cards-wrapper mb-5 w-100 lg:py-16">
+      <section className="post-feed-vertical container px-8 lg:px-0 mx-auto">
         <div className="post-feed-header relative mb-8">
-          <h3 className="h1 uppercase text-center text-sans text-4xl font-bold tracking-wider relative z-10">Popular</h3>
-          <div
-            style={{
-              position: `absolute`,
-              left: 0,
-              right: 0,
-              top: `2rem`,
-              margin: `auto`,
-            }}>
-            <svg
-              className="post-feed-vertical-line block mx-auto"
-              xmlns="http://www.w3.org/2000/svg"
-              width="248"
-              height="10"
-              viewBox="0 0 248 10"
-              style={{
-                transform: `translateX(70px)`,
-              }}>
-              <defs>
-                <linearGradient id="PopularLinearGradient" x1="1" x2="0" y1=".5" y2=".5" gradientUnits="objectBoundingBox">
-                  <stop offset="0" stopColor="#e1bed8" />
-                  <stop offset="1" stopColor="#fd6707" />
-                </linearGradient>
-              </defs>
-              <path id="Rectangle" fill="url(#PopularLinearGradient)" d="M0 0h248v10H0z" />
-            </svg>
-          </div>
+          <h3 className="text-wide text-center text-5xl font-black relative z-10">
+            <span className="highlight highlight-right">Popular</span>
+          </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-content-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 justify-content-center">
           {posts.map(({ node }) => (
-            // The tag below includes the markup for each post - components/common/PostCard.js
             <PopularCard key={node.id} post={node} />
           ))}
         </div>

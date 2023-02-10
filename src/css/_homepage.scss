@@ -1,13 +1,8 @@
 .featured-cards-wrapper {
- @apply relative;
-  &::after {
-    @apply bg-yellow block absolute rounded-full content-[''] h-28 w-28 -right-10 -bottom-14;
-  }
 
   article:first-of-type {
     .card-body {
       @apply pb-8;
-      @extend .after-line-break;
     }
   }
 }

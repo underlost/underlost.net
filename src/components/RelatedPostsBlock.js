@@ -3,28 +3,32 @@ import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import { getPostsFromQuery } from '../utils/blog'
 import { includes, orderBy } from 'lodash'
-import { PostItem } from '../components/common'
+import { ArticleListItem } from '../components/common'
 
 // Related posts based on:
 // https://khalilstemmler.com/articles/gatsby-related-posts-component/
 // Adaopted for Ghost
 
-const RelatedPosts = ({ posts }) => (
-  <div className="related-wrapper py-8">
-    <section className="realated-posts px-0 py-5 after-line-break">
-      <h3 className="subtitle-pill bg-purple text-pink mb-4">Read More</h3>
-      <nav className="read-first-list pb-8">
-        <ul className="divide-y">
-          {posts.map(({ article }) => (
-            <li key={article.slug} className="py-2 border-caramel">
-              <PostItem post={article} />
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </section>
-  </div>
-)
+const RelatedPosts = ({ posts }) => {
+  console.log(posts)
+
+  return (
+    <div className="related-wrapper py-8">
+      <section className="realated-posts px-0 py-5 after-line-break">
+        <h3 className="text-lg uppercase mb-2 text-wide">Read More</h3>
+        <nav className="pb-8">
+          <ul>
+            {posts.map(({ article, i }) => (
+              <li key={article.slug}>
+                <ArticleListItem post={article} />
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </section>
+    </div>
+  )
+}
 
 class RelatedPostsFactory {
   constructor(articles, currentArticleSlug) {
@@ -70,7 +74,7 @@ class RelatedPostsFactory {
       const tagPoint = 1
       const slug = getSlug(article)
 
-      article.tags.forEach(aTag => {
+      article.tags.forEach((aTag) => {
         if (includes(tags, aTag)) {
           identityMap[slug].points += tagPoint
         }
@@ -105,7 +109,7 @@ const RelatedPostsBlock = props => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const { tags, currentArticleSlug } = props
 
       const articles = getPostsFromQuery(data.allGhostPost)

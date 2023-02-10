@@ -7,12 +7,10 @@ const FeaturedCards = ({ data }) => {
   const posts = data.allGhostPost.edges
 
   return (
-    <section className="featured-cards-wrapper mb-5 pb-0 px-5 md:px-0">
+    <section className="featured-cards-wrapper pb-0">
       <span className="sr-only">Featured Articles</span>
       {posts.map(({ node }) => (
-        // The tag below includes the markup for each post - components/common/PostCard.js
         <ArticleCard key={node.id} post={node} />
-        // {pageContext.humanPageNumber === 1 && <ReadFirstBlock />}
       ))}
     </section>
   )
@@ -29,7 +27,7 @@ const FeaturedCardsBlock = props => (
   <StaticQuery
     query={graphql`
       query GhostFeaturedCardsQuery {
-        allGhostPost(sort: { published_at: DESC }, filter: { featured: { eq: true } }, limit: 2) {
+        allGhostPost(sort: { published_at: DESC }, filter: { featured: { eq: true } }, limit: 1) {
           edges {
             node {
               ...GhostPostFields

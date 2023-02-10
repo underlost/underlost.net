@@ -1,26 +1,38 @@
 .h1 {
-  @apply font-serif text-3xl font-semibold;
+  @apply text-3xl font-semibold;
 }
 
 .h2 {
-  @apply font-serif text-2xl font-semibold;
+  @apply text-2xl font-semibold;
+  font-stretch: 150%;
+}
+
+.h3 {
+  @apply text-lg font-semibold;
+  font-stretch: 150%;
 }
 
 .title-h1 {
-  @apply font-serif lg:text-6xl text-4xl;
+  @apply lg:text-6xl text-4xl font-black;
+  font-stretch: 175%;
 }
 
 .title-h2 {
-  @apply font-serif text-3xl;
+  @apply text-3xl;
 }
 
 .title-h3 {
-  @apply font-serif text-2xl;
+  @apply text-2xl;
 }
 
 .subtitle {
-  @apply font-sans text-sm font-semibold uppercase;
-  letter-spacing: 1px;
+  @apply font-sans text-lg font-light uppercase;
+  font-stretch: 0%;
+}
+
+.reading-time {
+  @apply font-bold;
+  font-stretch: 0%;
 }
 
 .subtitle-pill {
@@ -44,8 +56,16 @@
   @apply font-sans font-light text-xl;
 }
 
+.text-wide {
+  font-stretch: 150%;
+}
+
+.text-narrow {
+  font-stretch: 0%;
+}
+
 .content-body {
-  @apply text-lg font-light; 
+  @apply text-base leading-normal font-light; 
 
   p {
     a {
@@ -63,7 +83,7 @@
   }
 
   h2, h3, h4, h5, h6 {
-    @apply font-serif font-semibold mt-8 mb-2;
+    @apply font-black mt-8 mb-2;
   }
 
   h2 {
@@ -88,4 +108,25 @@
 
 blockquote{
   @apply border-l-8 border-green pl-4 font-light mb-5;
+}
+
+.style-3d {
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  &:before, &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-stretch: 175%;
+    @apply text-6xl font-black;
+  }
+  &:before {
+    content: attr(data-text);
+    -webkit-text-stroke: 2px #FF00BB;
+    transform: translate3d(-3px, -5px, 0);
+  }
+  &:after {
+    content: attr(data-text);
+    -webkit-text-stroke: 2px #00FFEE;
+  }
 }

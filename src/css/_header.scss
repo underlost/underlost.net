@@ -5,14 +5,14 @@
   }
   &:hover {
     .logoTitle {
-      fill: $primary;
+      //fill: $primary;
     }
     .pixelHeart {
-      fill: $secondary;
+      //fill: $secondary;
     }
   }
 }
 
 .page-header {
-  @apply mb-5 pb-5 px-4 py-5 lg:px-16 lg:py-16 bg-latte overflow-hidden lg:overflow-visible;
+  @apply pb-5 py-5;
 }

@@ -5,13 +5,11 @@
   }
 
   &::after {
-    transition: ease all .3s;
     content: '';
     bottom: .25rem;
     right: .75rem;
-    width: 100%;
     height: 8px;
-    @apply bg-caramel absolute
+    @apply absolute transition-all ease-in-out duration-300 w-full bg-blue;
   }
 
   &:hover {
@@ -39,15 +37,19 @@
 
   &::after {
     content: '';
-    @apply absolute inset-0 block w-full h-full bg-black transition duration-150 ease-out rounded opacity-70;
+    @apply absolute inset-0 block w-full h-full bg-blue transition duration-150 ease-out rounded;
   }
 
   .btn-block {
-    @apply block w-full border-2 px-4 py-4 no-underline hover:text-black hover:border-black bg-creame rounded relative z-20;
+    @apply block w-full border-2 px-4 py-4 no-underline hover:text-black hover:border-black rounded relative z-20 bg-white;
   }
 
   .btn-title {
     @apply font-bold text-lg block;
+  }
+
+  .btn-description {
+    @apply block text-sm;
   }
 
   &:hover {

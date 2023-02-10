@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { Navigation } from '.'
-import SiteLogoTiny from '../SiteLogoTiny'
+import SiteLogo from '../SiteLogo'
 // import config from '../../utils/siteConfig'
 
 import Prism from 'prismjs'
@@ -55,18 +55,18 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 </button>
               </div>
 
-              {isHome ? (
+              {isHome && (
                 <div className="site-banner sr-only">
                   <h1 className="site-banner-title">{site.title}</h1>
                   <p className="site-banner-desc">{site.description}</p>
                 </div>
-              ) : (
-                <div className="gh-header gh-canvas lg:pb-5 pt-5">
-                  <SiteLogoTiny />
-                </div>
               )}
 
-              <div className="site-menu bg-latte fixed inset-0">
+              <div className="gh-header gh-canvas lg:pb-5 pt-5">
+                <SiteLogo />
+              </div>
+
+              <div className="site-menu fixed inset-0">
                 <div className="max-w-6xl mx-auto pt-8">
                   <Navigation data={site.navigation} navClass="site-nav-item py-2" />
                 </div>

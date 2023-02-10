@@ -3,7 +3,7 @@
 .navbar-toggler {
   transition: all .7s ease-in-out;
   .icon-bar {
-    background-color: $black;
+    @apply bg-black;
     transform: rotate(0deg) translate(0px, 0px);
     transition: ease all .2s;
     width: 28px;
@@ -17,26 +17,14 @@
 }
 
 .site-head {
-  position: relative;
-  z-index: 100;
+  @apply relative z-50;
   .site-nav {
     .nav {
       li {
-        font-size: 2.25rem;
-        letter-spacing: 1.5px;
-        line-height: 1.2;
-        font-weight: 600;
         a {
-          color: $black;
-          display: block;
-
-          &:hover {
-            color: $secondary;
-          }
-        }
-        .nav-current {
-          a {
-            color: $secondary;
+          @apply transition duration-150 ease-in-out text-black font-black text-3xl md:text-5xl block hover:text-pink hover:translate-x-2;
+          &.active {
+            @apply text-pink;
           }
         }
       }
@@ -46,7 +34,7 @@
 
 .site-menu {
   transform: translateX(100%);
-  transition: transform .3s;
+  @apply bg-white transition duration-500 ease-in-out border border-black;
 }
 .page.nav-is-active {
   .site-menu {

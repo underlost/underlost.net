@@ -1,0 +1,13 @@
+.pixelHeart-logo {
+  @apply mx-auto;
+  
+  .pixelHeart-circle {
+    @apply transition duration-300 ease-in-out;
+  }
+
+  &:hover {
+    .pixelHeart-circle {
+      @apply fill-pink;
+    }
+  }
+}

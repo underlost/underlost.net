@@ -19,7 +19,7 @@ const ConsultingPage = ({ data, location }) => {
       <div className="gh-content gh-canvas py-5">
         {page ? (
           <article>
-            <h1 className="title-h1">{page.title}</h1>
+            <h1 className="title-h1 mb-5">{page.title}</h1>
             <div className="content-body load-external-scripts" dangerouslySetInnerHTML={{ __html: page.html }} />
           </article>
         ) : null}

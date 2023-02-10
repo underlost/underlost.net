@@ -10,7 +10,7 @@ const ArticleCard = ({ post }) => {
   const readingTime = readingTimeHelper(post)
 
   return (
-    <article className="card mb-8 bg-latte">
+    <article className="card">
       <header className="post-card-header mb-5">
         <Link className="post-card-link block" to={url}>
           {post.feature_image && (
@@ -18,14 +18,14 @@ const ArticleCard = ({ post }) => {
               <LazyImage className="post-card-image" key={post.feature_image} src={post.feature_image} alt={post.title} />
             </div>
           )}
-          <div className="pt-6 px-8">
+          <div className="pt-6">
             {post.primary_tag && <p className="subtitle mb-1">{post.primary_tag.name}</p>}
-            <h2 className="post-card-title h2">{post.title}</h2>
+            <h2 className="card-title h2">{post.title}</h2>
           </div>
         </Link>
       </header>
-
-      <section className="card-body px-8 post-card-excerpt text-lg font-light pb-8">
+      
+      <section className="card-body post-card-excerpt text-lg font-light">
         <p className="mb-4">{post.excerpt}</p>
       </section>
 

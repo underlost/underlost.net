@@ -1,10 +1,7 @@
 .kg-bookmark-card {
+  @apply border;
   width: 100%;
-  background-color: $latte;
   text-decoration: none;
-  * {
-    text-decoration: none;
-  }
 }
 .kg-bookmark-container {
   //padding: 2rem 0;
@@ -64,7 +61,6 @@
   }
 
   .kg-bookmark-publisher {
-    //overflow: hidden;
     max-width: 240px;
     white-space: nowrap;
     display: block;

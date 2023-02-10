@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import { Layout, PostCard, Pagination } from '../components/common'
+import { Layout, ArchiveCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 /**
@@ -21,7 +21,7 @@ const Author = ({ data, location, pageContext }) => {
     <Layout>
       <MetaData data={data} location={location} type="profile" />
       <div className="gh-content gh-canvas">
-        <header className="page-header author-header mb-5 pb-5 px-4 py-5 lg:px-16 lg:py-16 bg-latte border border-caramel overflow-hidden lg:overflow-visible">
+        <header className="page-header author-header mb-5 pb-5 px-4 py-5 lg:px-16 lg:py-16 border border-caramel overflow-hidden lg:overflow-visible">
           <div className="grid grid-cols-12">
             <div className="author-header-content lg:col-span-8 col-span-12 order-2 lg:order-1">
               <h1 className="title-h2">{author.name}</h1>
@@ -52,8 +52,7 @@ const Author = ({ data, location, pageContext }) => {
         </header>
         <section className="post-feed">
           {posts.map(({ node }) => (
-            // The tag below includes the markup for each post - components/common/PostCard.js
-            <PostCard key={node.id} post={node} />
+            <ArchiveCard key={node.id} post={node} />
           ))}
         </section>
         <Pagination pageContext={pageContext} />

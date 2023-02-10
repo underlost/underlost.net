@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import { PostItem } from '../components/common'
+import { ArticleListItem } from '../components/common'
 
 const ReadFirst = ({ data }) => {
   const posts = data.allGhostPost.edges
@@ -9,12 +9,13 @@ const ReadFirst = ({ data }) => {
   return (
     <div className="read-first-wrapper">
       <section className="read-first post-feed">
-        <h2 className="subtitle-pill pink-purple mb-4">Noteworthy Posts</h2>
-        <ul className="divide-y">
+        <h2 className="font-black uppercase mb-4">
+          <span className="highlight">Noteworthy</span> Posts
+        </h2>
+        <ul className="read-first-list">
           {posts.map(({ node }) => (
-            // The tag below includes the markup for each post - components/common/PostCard.js
-            <li key={node.id} className="py-4 border-caramel">
-              <PostItem post={node} />
+            <li key={node.id} className="read-first-list-item">
+              <ArticleListItem post={node} />
             </li>
           ))}
         </ul>

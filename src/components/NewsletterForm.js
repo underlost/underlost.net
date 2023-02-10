@@ -50,9 +50,11 @@ const NewsletterForm = () => {
   }
 
   return (
-    <div className="newsletter-signup px-5 lg:px-0">
-      <h3 className="font-serif text-3xl mb-5">Sign up for the latest updates</h3>
-      <p className="text-lg font-light">
+    <div className="newsletter-signup">
+      <h3 className="text-3xl mb-2 font-black text-wide">
+        Sign up for the <span className="highlight highlight-right primary">latest updates</span>
+      </h3>
+      <p className="text-lg font-light mb-10">
         I have a newsletter now! Want to stay up to date on the musings of a burnt-out developer that still wants to do way too much? Enter your email and you&apos;ll be added to the list,
         of which you can opt out any time.
       </p>
@@ -64,12 +66,12 @@ const NewsletterForm = () => {
             type="email"
             autoComplete="email"
             required
-            className="w-full px-4 py-2 text-lg border-2 border-pink focus:outline-none focus:border-orange"
+            className="w-full px-4 py-3 text-lg border-2 border-black focus:outline-none lg:border-r-0"
             onChange={changeEmail}
           />
         </div>
         <div className="col-span-12 lg:col-span-4 mt-3 lg:mt-0">
-          <button className="font-bold w-full bg-pink px-4 py-2 text-lg hover:bg-pink border-2 border-pink focus:outline-none focus:border-orange focus:bg-orange" type="submit">
+          <button className="font-bold w-full bg-black text-white px-4 py-3 text-lg hover:bg-aqua hover:text-black border-2 border-black focus:outline-none focus:border-aqua focus:bg-aqua" type="submit">
             {loading ? `Subscribing...` : `Subscribe`}
           </button>
         </div>

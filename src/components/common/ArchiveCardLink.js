@@ -5,14 +5,14 @@ import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import ReactMarkdown from 'react-markdown'
 
-const PostCardLink = ({ post }) => {
+const ArchiveCardLink = ({ post }) => {
   const url = `/writing/${post.slug}/`
   const readingTime = readingTimeHelper(post)
 
   return (
     <article className="post-card post-card-linked lg:py-3 mb-8">
       <header className="post-card-header">
-        {post.primary_tag && <p className="post-card-tags h6 uppercase mb-1 font-bold">{post.primary_tag.name}</p>}
+        {post.primary_tag && <p className="subtitle">{post.primary_tag.name}</p>}
         <h2 className="post-card-title h6 uppercase font-bold mb-5">
           <Link className="post-card-link inline border-b pb-1 hover:text-secondary" to={url}>
             {post.title}
@@ -44,7 +44,7 @@ const PostCardLink = ({ post }) => {
   )
 }
 
-PostCardLink.propTypes = {
+ArchiveCardLink.propTypes = {
   post: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -65,4 +65,4 @@ PostCardLink.propTypes = {
   }).isRequired,
 }
 
-export default PostCardLink
+export default ArchiveCardLink
