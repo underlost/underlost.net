@@ -65,7 +65,8 @@ const Portfolio = ({ data, location }) => {
             className="portfolio-header mb-5 relative h-screen"
             style={{
               backgroundColor: frontmatter.color,
-            }}>
+            }}
+          >
             <div className="absolute inset-0 h-full">
               <Background filename={frontmatter.image} />
             </div>

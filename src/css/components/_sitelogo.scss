@@ -2,12 +2,25 @@
   @apply mx-auto;
   
   .pixelHeart-circle {
-    @apply transition duration-300 ease-in-out;
+    @apply transition duration-300 ease-in-out dark:fill-purple-slate;
+  }
+
+  .pixelHeart-container {
+    path {
+      @apply transition duration-300 ease-in-out dark:fill-pink;
+    }
   }
 
   &:hover {
     .pixelHeart-circle {
-      @apply fill-pink;
+      @apply fill-pink dark:fill-purple-slate;
+    }
+    .pixelHeart-container {
+      path {
+        @apply dark:fill-green;
+      }
     }
   }
+
+  
 }

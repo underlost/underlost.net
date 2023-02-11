@@ -1,5 +1,5 @@
 .btn-underline {
-  @apply relative font-bold text-lg;
+  @apply relative font-bold text-lg dark:hover:text-green;
   span {
     @apply relative z-10;
   }
@@ -9,7 +9,7 @@
     bottom: .25rem;
     right: .75rem;
     height: 8px;
-    @apply absolute transition-all ease-in-out duration-300 w-full bg-blue;
+    @apply absolute transition-all ease-in-out duration-300 w-full bg-blue dark:bg-purple-slate;
   }
 
   &:hover {
@@ -24,6 +24,9 @@
 .has-arrow {
   .arrow {
     transition: ease all .3s;
+    path {
+      @apply dark:stroke-purple;
+    }
   }
   &:hover {
     .arrow {
@@ -37,7 +40,7 @@
 
   &::after {
     content: '';
-    @apply absolute inset-0 block w-full h-full bg-blue transition duration-150 ease-out rounded;
+    @apply absolute inset-0 block w-full h-full bg-blue transition duration-150 ease-out rounded dark:bg-purple-slate;
   }
 
   .btn-block {

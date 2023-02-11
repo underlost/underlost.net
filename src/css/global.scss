@@ -11,64 +11,15 @@
   font-stretch: 75% 125%;
 }
 
-.highlight {
-  font-weight: 900;
-  position: relative;
-  z-index: 5;
-  white-space: nowrap;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -1rem;
-    width: 100%;
-    @apply bg-yellow;
-    z-index: -1;
-  }
-  span {
-    @apply z-10 relative;
-  }
-
-  &.highlight-right {
-    &::after {
-      left: auto;
-      right: -2.5rem;
-    }
-  }
-
-  &.primary {
-    &::after {
-      @apply bg-aqua;
-    }
-  }
-  &.secondary {
-    &::after {
-      @apply bg-pink;
-    }
-  }
+html, body {
+  @apply bg-light dark:bg-purple-dark dark:text-purple-light transition duration-150 ease-in-out antialiased;
 }
 
-.site-title {
-  @apply block font-sans text-2xl lg:text-4xl max-w-6xl duration-700 ease-linear leading-tight;
-  font-stretch: 150%;
-  &::after {
-    content: '';
-    display: block;
-    width: 90px;
-    height: 10px;
-    @apply bg-black mt-10;
-  }
-  &:hover {
-    font-stretch: 130%;
-    font-weight: 900;
-  }
-}
-
+@import "ghost/content.scss";
 @import "./components/sitelogo";
 @import "./components/readfirstblock";
 @import "./components/articlelistitem";
+@import "./components/articlehero";
 
 @import '_header.scss';
 @import '_menu.scss';
@@ -76,16 +27,10 @@
 @import '_portfolio.scss';
 @import '_bookmark.scss';
 @import '_author.scss';
-@import '_posthero.scss';
+
 @import '_text.scss';
 @import '_card.scss';
 @import '_button.scss';
 @import '_footer.scss';
-@import "ghost/content.scss";
 @import '_code.scss';
 @import '_glitch.scss';
-
-html,
-body {
-  @apply bg-white antialiased;
-}

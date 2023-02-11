@@ -30,7 +30,6 @@ const ConsultingPage = ({ data, location }) => {
 
 ConsultingPage.propTypes = {
   data: PropTypes.shape({
-    allGhostPost: PropTypes.object.isRequired,
     ghostPage: PropTypes.shape({
       codeinjection_styles: PropTypes.object,
       title: PropTypes.string.isRequired,

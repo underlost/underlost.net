@@ -15,10 +15,11 @@ const ArticleHero = ({ post }) => {
         <article className="relative h-full">
           <div className="bg-gradient-to-t from-black absolute inset-0 z-20 transition duration-300 ease-in hidden lg:block"></div>
           <LazyImage className="object-cover relative h-full" key={post.feature_image} src={post.feature_image} alt={post.title} />
-          <div className="md:absolute bottom-10 z-30 left-0 right-0">
+          <div className="lg:absolute bottom-10 z-30 left-0 right-0">
             <div className="container mx-auto">
               <header className="bg-transparent z-20 px-0">
                 <div className="block w-100 lg:text-white lg:text-center pt-5">
+                  {post.primary_tag && <p className="subtitle mb-1">{post.primary_tag.name}</p>}
                   <h3 className="text-2xl lg:text-4xl uppercase font-black text-wide">{post.title}</h3>
                   {post.custom_excerpt && <p className="lead">{post.custom_excerpt}</p>}
                   <span className="h6 uppercase mb-0 text-narrow">{readingTime}</span>
@@ -35,6 +36,7 @@ const ArticleHero = ({ post }) => {
 ArticleHero.propTypes = {
   post: PropTypes.shape({
     slug: PropTypes.string.isRequired,
+    primary_tag: PropTypes.PropTypes.object,
     title: PropTypes.string.isRequired,
     custom_excerpt: PropTypes.string,
     feature_image: PropTypes.string,

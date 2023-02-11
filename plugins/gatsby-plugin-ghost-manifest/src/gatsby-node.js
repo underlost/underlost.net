@@ -62,7 +62,7 @@ exports.onPostBuild = async ({ graphql }, pluginOptions) => {
     }
     generateIcons(manifest.icons, icon).then(() => {
       //images have been generated
-      console.log(`done generating icons for manifest`)
+      //console.log(`done generating icons for manifest`)
       Promise.resolve()
     })
   } else {

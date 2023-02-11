@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { Navigation } from '.'
 import SiteLogo from '../SiteLogo'
 // import config from '../../utils/siteConfig'
-
 import Prism from 'prismjs'
+import { ThemeContext } from '../../context/themeContext'
 
 /**
 * Main layout component
@@ -20,12 +20,21 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
   const site = data.allGhostSettings.edges[0].node
   //const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
   //const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
-
+  const {theme, setTheme} = useContext(ThemeContext)
   const [menuState, setMenuState] = useState(`page nav-is-closed`)
+
   const toggleMenu = () => {
     setMenuState(state => (state === `page nav-is-closed`
       ? `page nav-is-active`
       : `page nav-is-closed`))
+  }
+
+  const handleThemeToggle = () => {
+    if (theme === `light`) {
+      setTheme(`dark`)
+    } else {
+      setTheme(`light`)
+    }
   }
 
   useEffect(() => {
@@ -36,17 +45,33 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
   return (
     <>
       <Helmet>
-        <html lang={site.lang} />
+        <html lang={site.lang} className={`${theme === `light` ? `light` : `dark`}`} />
         <style type="text/css">{`${site.codeinjection_styles}`}</style>
         <body className={bodyClass} />
       </Helmet>
 
-      <div className={menuState}>
+      <div className={`${menuState}`}>
         <div className="viewport">
           <div className="viewport-top">
             {/* The main header section on top of the screen */}
             <header className="site-head mx-auto">
-              <div className="toggle-wrapper container mx-auto text-right pt-5 pr-5">
+              <div className="toggle-wrapper container mx-auto text-right pt-5 pr-5 flex gap-8 justify-end">
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" className="sr-only peer" checked={theme === `light` ? true : false} onChange={handleThemeToggle} />
+                  <div className="w-11 h-6 bg-slate peer-focus:outline-none peer-focus:ring-0 rounded-full peer dark:bg-purple-slate peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[6px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-slate peer-checked:bg-blue"></div>
+                  <span className="ml-3 text-lg font-medium">
+                    {theme === `light` ? (
+                      <>
+                        ☀️ <span className="sr-only">Light Mode</span>
+                      </>
+                    ) : (
+                      <>
+                        🌙 <span className="sr-only">Dark Mode</span>
+                      </>
+                    )}
+                  </span>
+                </label>
+
                 <button type="button" className="btn navbar-toggler focus:outline-none relative z-50" onClick={toggleMenu}>
                   <span className={`icon-bar block top-bar`} />
                   <span className={`icon-bar block middle-bar`} />

@@ -1,5 +1,8 @@
 /* eslint-disable */
 
+import React from 'react'
+import ThemeContextProvider from './src/context/themeContext'
+
 //CSS
 import './src/css/global.scss'
 import 'prismjs/themes/prism-solarizedlight.css'
@@ -35,4 +38,8 @@ var trustAllScripts = function () {
 
 export function onRouteUpdate() {
   trustAllScripts()
+}
+
+export const wrapRootElement = ({ element }) => {
+  return <ThemeContextProvider>{element}</ThemeContextProvider>
 }

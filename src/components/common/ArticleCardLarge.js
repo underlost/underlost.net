@@ -32,11 +32,6 @@ const ArticleCardLarge = ({ post }) => {
             <p className="mb-4">{post.excerpt}</p>
           </section>
           <footer className="post-card-footer">
-            {post.tags && (
-              <div className="post-card-tags h6 text-uppercase mb-1 sr-only">
-                Posted in: <Tags post={post} visibility="public" autolink={false} />
-              </div>
-            )}
             <div className="post-card-footer-author sr-only">
               <span>By: {post.primary_author.name}</span>
             </div>

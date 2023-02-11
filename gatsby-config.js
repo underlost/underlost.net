@@ -292,14 +292,14 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-web-font-loader`,
-      options: {
-        typekit: {
-          id: `zei6qqd`,
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-web-font-loader`,
+    //   options: {
+    //     typekit: {
+    //       id: `zei6qqd`,
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {

@@ -3,7 +3,7 @@
 .navbar-toggler {
   transition: all .7s ease-in-out;
   .icon-bar {
-    @apply bg-black;
+    @apply bg-black dark:bg-pink;
     transform: rotate(0deg) translate(0px, 0px);
     transition: ease all .2s;
     width: 28px;
@@ -22,7 +22,7 @@
     .nav {
       li {
         a {
-          @apply transition duration-150 ease-in-out text-black font-black text-3xl md:text-5xl block hover:text-pink hover:translate-x-2;
+          @apply transition duration-150 ease-in-out text-black dark:text-purple-light font-black text-3xl md:text-5xl block hover:text-pink hover:translate-x-2;
           &.active {
             @apply text-pink;
           }
@@ -34,7 +34,7 @@
 
 .site-menu {
   transform: translateX(100%);
-  @apply bg-white transition duration-500 ease-in-out border border-black;
+  @apply bg-white dark:bg-purple-slate transition duration-500 ease-in-out border border-black;
 }
 .page.nav-is-active {
   .site-menu {

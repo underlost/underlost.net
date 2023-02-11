@@ -35,7 +35,7 @@ export async function onRequestPost(context) {
     // for create
     if (response.status >= 400) {
       const message = await response.json()
-      console.log(message.error.email[0])
+      //console.log(message.error.email[0])
       return new Response(JSON.stringify({ error: message.error.email[0] }), {
         headers: {
           'Content-Type': `application/json;charset=utf-8`,

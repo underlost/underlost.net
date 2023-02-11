@@ -8,7 +8,7 @@ import ReadFirstBlock from '../components/ReadFirstBlock'
 import PopularPostsBlock from '../components/PopularBlock'
 import NewsletterForm from '../components/NewsletterForm'
 import LinkArrow from '../components/LinkArrow'
-import BoringApp from '../components/BoringApp'
+//import BoringApp from '../components/BoringApp'
 import RecentBlock from '../components/RecentBlock'
 
 /**
@@ -28,26 +28,26 @@ const HomePage = ({ data, location }) => {
         <h1 className="site-title">
           <span className="highlight primary">
             <span>Underlost</span>
-          </span>{' '}
+          </span>{` `}
           is Tyler Rilling, a Python web developer, UX designer, and marketing consultant, living in Seattle, Washington. They are probably not an Undertale game. 👾
         </h1>
 
         <div className="grid grid-cols-12">
-          <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:mb-8">
-            <div className="py-12 lg:py-16 lg:pr-48">
+          <div className="col-span-12 xl:col-span-7 lg:mb-8">
+            <div className="py-12 lg:py-16 xl:pr-20 2xl:pr-48">
               {page && <div className="load-external-scripts pb-5" dangerouslySetInnerHTML={{ __html: page.html }} />}
 
               <div className="pb-16">
                 <p className="text-lg leading-normal font-light">
                   As a full-stack developer, I specialize in Python, ReactJS, Building APIs and REST frameworks with content management systems like WordPress and Ghost, and various other
-                  technology stacks. Currently the lead developer at an interactive design agency in Seattle, Washington. I also offer various{' '}
+                  technology stacks. Currently the lead developer at an interactive design agency in Seattle, Washington. I also offer various{` `}
                   <LinkArrow text="consulting services" url="/consulting/" />
                 </p>
               </div>
               <ReadFirstBlock />
             </div>
           </div>
-          <div className="col-span-12 md:col-span-6 lg:col-span-5 mb-4 relative lg:pt-12">
+          <div className="col-span-12 xl:col-span-5 mb-4 relative lg:pt-12">
             <FeaturedCardsBlock />
           </div>
         </div>

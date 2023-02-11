@@ -6,9 +6,7 @@ const LinksList = () => {
   const data = useStaticQuery(query)
 
   return (
-    <ul
-      className=""
-    >
+    <ul className="">
       {data.allMarkdownRemark.edges.map(({ node }) => {
         const title = node.frontmatter.title || node.frontmatter.slug
         const website = node.frontmatter.website

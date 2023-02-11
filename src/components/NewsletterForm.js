@@ -22,7 +22,7 @@ const NewsletterForm = () => {
 
   const subscribeMe = async event => {
     event.preventDefault()
-    console.log(`submitting...`)
+    //console.log(`submitting...`)
     setLoading(true)
 
     try {
@@ -38,11 +38,11 @@ const NewsletterForm = () => {
       if (error) {
         setError(error)
         setLoading(false)
-        console.log(error)
+        //console.log(error)
       } else {
         setSuccess(message)
         setLoading(false)
-        console.log(res)
+        //console.log(res)
       }
     } catch (err) {
       console.log(err)
@@ -66,12 +66,15 @@ const NewsletterForm = () => {
             type="email"
             autoComplete="email"
             required
-            className="w-full px-4 py-3 text-lg border-2 border-black focus:outline-none lg:border-r-0"
+            className="w-full px-4 py-3 text-lg border-2 border-black dark:border-purple focus:outline-none lg:border-r-0 dark:bg-purple-dark dark:text-white"
             onChange={changeEmail}
           />
         </div>
         <div className="col-span-12 lg:col-span-4 mt-3 lg:mt-0">
-          <button className="font-bold w-full bg-black text-white px-4 py-3 text-lg hover:bg-aqua hover:text-black border-2 border-black focus:outline-none focus:border-aqua focus:bg-aqua" type="submit">
+          <button
+            className="font-bold w-full bg-black dark:bg-purple text-white px-4 py-3 text-lg hover:bg-aqua hover:text-black border-2 border-black dark:border-purple focus:outline-none focus:border-aqua focus:bg-aqua"
+            type="submit"
+          >
             {loading ? `Subscribing...` : `Subscribe`}
           </button>
         </div>

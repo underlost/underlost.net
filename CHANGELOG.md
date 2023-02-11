@@ -2,9 +2,10 @@
 
 ---
 
-## 9.0.0 (02/01/23)
+## 8.5.0 (02/01/23)
 
-* Updated Color Scheme
+* Updated color scheme
+* Added dark mode toggle
 
 ## 8.1.1 (01/19/23)
 

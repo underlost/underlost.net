@@ -35,19 +35,6 @@
   font-stretch: 0%;
 }
 
-.subtitle-pill {
-  @apply font-sans text-xs font-semibold uppercase px-4 py-1 inline-block;
-  letter-spacing: 1px;
-
-  &.purple-yellow {
-    @apply bg-purple text-yellow;
-  }
-
-  &.pink-purple {
-    @apply bg-purple text-pink;
-  }
-}
-
 .tag-item {
   @apply uppercase border px-2 py-1 mr-2 inline-block
 }
@@ -64,6 +51,45 @@
   font-stretch: 0%;
 }
 
+.highlight {
+  font-weight: 900;
+  position: relative;
+  z-index: 5;
+  white-space: nowrap;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1rem;
+    width: 100%;
+    @apply bg-yellow dark:bg-purple-slate;
+    z-index: -1;
+  }
+  span {
+    @apply z-10 relative;
+  }
+
+  &.highlight-right {
+    &::after {
+      left: auto;
+      right: -2.5rem;
+    }
+  }
+
+  &.primary {
+    &::after {
+      @apply bg-aqua dark:bg-purple-slate;
+    }
+  }
+  &.secondary {
+    &::after {
+      @apply bg-pink dark:bg-purple-slate;
+    }
+  }
+}
+
 .content-body {
   @apply text-base leading-normal font-light; 
 
@@ -71,7 +97,7 @@
     a {
       @apply underline;
       &:hover {
-        @apply text-yellow bg-black;
+        @apply text-pink;
       }
     }
   }

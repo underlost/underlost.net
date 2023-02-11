@@ -1,8 +1,14 @@
-.featured-cards-wrapper {
-
-  article:first-of-type {
-    .card-body {
-      @apply pb-8;
-    }
+.site-title {
+  @apply block font-sans text-2xl lg:text-4xl max-w-6xl duration-700 ease-linear leading-tight;
+  font-stretch: 150%;
+  &::after {
+    content: '* * *';
+    display: block;
+    width: 100px;
+    @apply text-black dark:text-pink text-6xl font-black mt-8;
+  }
+  &:hover {
+    font-stretch: 130%;
+    font-weight: 900;
   }
 }

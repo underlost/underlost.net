@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [`./src/pages/**/*.{js,jsx,ts,tsx}`, `./src/templates/**/*.{js,jsx,ts,tsx}`, `./src/components/**/*.{js,jsx,ts,tsx}`],
   theme: {
     fontFamily: {
@@ -20,6 +21,9 @@ module.exports = {
       yellow: `#FFF200`,
       green: `#B3FC38`,
       aqua: `#29FCA5`,
+      'purple-light': `#B3ACE3`,
+      'purple-dark': `#1B1B24`,
+      'purple-slate': `#333345`,
     },
     fontSize: {
       xs: ['.8rem', '1.4'],
