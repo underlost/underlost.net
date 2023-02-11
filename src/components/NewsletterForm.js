@@ -72,7 +72,7 @@ const NewsletterForm = () => {
         </div>
         <div className="col-span-12 lg:col-span-4 mt-3 lg:mt-0">
           <button
-            className="font-bold w-full bg-black dark:bg-purple text-white px-4 py-3 text-lg hover:bg-aqua hover:text-black border-2 border-black dark:border-purple focus:outline-none focus:border-aqua focus:bg-aqua"
+            className="font-bold w-full bg-black dark:bg-purple dark:text-purple-dark text-white px-4 py-3 text-lg hover:bg-aqua hover:text-black border-2 border-black dark:border-purple focus:outline-none focus:border-aqua focus:bg-aqua"
             type="submit"
           >
             {loading ? `Subscribing...` : `Subscribe`}

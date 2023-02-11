@@ -220,7 +220,16 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: `gatsby-plugin-gatsby-cloud`,
+      options: {
+        allPageHeaders: [`Strict-Transport-Security: max-age=31536000; includeSubDomains; preload`],
+        headers: {
+          '/*': [`Cache-Control: public, max-age=31536000, immutable`],
+          'static/*': [`Cache-Control: public, max-age=31536000, immutable`],
+        },
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
