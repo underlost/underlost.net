@@ -46,6 +46,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     <>
       <Helmet>
         <html lang={site.lang} className={`${theme === `light` ? `light` : `dark`}`} />
+        <link rel="preload" href="/fonts/Mona-Sans.woff2" as="font" crossOrigin="anonymous" type="font/woff2" />
         <style type="text/css">{`${site.codeinjection_styles}`}</style>
         <body className={bodyClass} />
       </Helmet>
