@@ -24,17 +24,18 @@ const HomePage = ({ data, location }) => {
   return (
     <Layout isHome={true}>
       <MetaData data={data} location={location} title="Underlost, By Tyler Rilling" type="website" isHome={true} />
-      <div className="mx-auto pt-5 pb-5 px-8 container lg:px-32 overflow-hidden lg:overflow-visible">
+      <div className="mx-auto pt-5 pb-5 px-8 container lg:px-24 overflow-hidden lg:overflow-visible">
         <h1 className="site-title">
           <span className="highlight primary">
             <span>Underlost</span>
-          </span>{` `}
+          </span>
+          {` `}
           is Tyler Rilling, a Python web developer, UX designer, and marketing consultant, living in Seattle, Washington. They are probably not an Undertale game. 👾
         </h1>
 
-        <div className="grid grid-cols-12">
-          <div className="col-span-12 xl:col-span-7 lg:mb-8">
-            <div className="py-12 lg:py-16 xl:pr-20 2xl:pr-48">
+        <div className="grid grid-cols-12 lg:divide-x gap-0">
+          <div className="col-span-12 lg:col-span-6 lg:mb-8">
+            <div className="py-12 lg:py-16 lg:pr-16">
               {page && <div className="load-external-scripts pb-5" dangerouslySetInnerHTML={{ __html: page.html }} />}
 
               <div className="pb-16">
@@ -47,8 +48,10 @@ const HomePage = ({ data, location }) => {
               <ReadFirstBlock />
             </div>
           </div>
-          <div className="col-span-12 xl:col-span-5 mb-4 relative lg:pt-12">
-            <FeaturedCardsBlock />
+          <div className="col-span-12 lg:col-span-5 mb-4 lg:pt-12">
+            <div className="lg:pl-16">
+              <FeaturedCardsBlock />
+            </div>
           </div>
         </div>
       </div>
