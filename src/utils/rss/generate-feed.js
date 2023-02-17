@@ -52,7 +52,7 @@ const generateItem = function generateItem(siteUrl, post) {
 const generateRSSFeed = function generateRSSFeed(siteConfig) {
   return {
     title: `No title`,
-    serialize: ({ query: { allGhostPost } }) => allGhostPost.edges.map((edge) => Object.assign({}, generateItem(siteConfig.siteUrl, edge.node))),
+    serialize: ({ query: { allGhostPost } }) => allGhostPost.edges.map(edge => Object.assign({}, generateItem(siteConfig.siteUrl, edge.node))),
     setup: ({ query: { allGhostSettings } }) => {
       const siteTitle = allGhostSettings.edges[0].node.title || `No Title`
       const siteDescription = allGhostSettings.edges[0].node.description || `No Description`
@@ -77,8 +77,9 @@ const generateRSSFeed = function generateRSSFeed(siteConfig) {
     query: `
         {
           allGhostPost(
-            sort: {published_at: ASC}
+            sort: {published_at: DESC}
             filter: {tags: {elemMatch: {name: {eq: "#blog"}}}}
+            limit: 25
           ) {
             edges {
               node {
