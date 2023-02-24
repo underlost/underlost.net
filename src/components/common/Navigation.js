@@ -17,11 +17,25 @@ const Navigation = ({ data, navClass }) => (
     <nav className={`site-nav-inner px-5 pt-5`}>
       <ul className={`nav px-0`}>
         {data.map((navItem, i) => {
-          if (navItem.url.match(/^\s?http(s?)/gi)) {
-            return <li key={i} className="mb-0 list-item"><a className={navClass} href={navItem.url} target="_blank" rel="noopener noreferrer">{navItem.label}</a></li>
-          } else {
-            return <li key={i} className="mb-0 list-item"><Link activeClassName={`active`} className={navClass} to={navItem.url}>{navItem.label}</Link></li>
-          }
+          // check if our url contains underlost.net in it and if so, it's an internal link
+          const isInternalLink = navItem.url.match(/underlost.net/g)
+          // then strip out the domain and protocol for Gatsby
+          const url = isInternalLink ? navItem.url.replace(/https?:\/\/(www\.)?underlost.net/, ``) : navItem.url
+          const itemClass = navItem.class ? navItem.class : navClass
+
+          return (
+            <li key={i} className={`nav-item`}>
+              {isInternalLink ? (
+                <Link to={url} activeClassName={`active`} className={itemClass}>
+                  {navItem.label}
+                </Link>
+              ) : (
+                <a href={navItem.url} className="external-link" target="_blank" rel="noopener noreferrer">
+                  {navItem.label}
+                </a>
+              )}
+            </li>
+          )
         })}
       </ul>
     </nav>

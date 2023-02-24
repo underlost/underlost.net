@@ -112,7 +112,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <Navigation data={site.navigation} navClass="site-footer-nav-item" />
               </div>
               <div className="site-copyright text-center text-xs pb-8">
-                <Link to="/">{site.title}</Link> Copyright © Tyler Rilling 2001 - 2022. <br /> Site last updated:{` `}
+                <Link to="/">{site.title}</Link> Copyright © Tyler Rilling 2001 - 2023. <br /> Site last updated:{` `}
                 <a href="https://github.com/underlost/underlost.net/">{data.site.buildTime}</a>. ❤️
               </div>
             </footer>
