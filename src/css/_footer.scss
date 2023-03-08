@@ -1,6 +1,6 @@
 .site-footer-nav .nav {
   @apply lg:flex flex-wrap text-center mx-auto lg:justify-center pb-5;
-  .list-item {
+  .nav-item {
     @apply px-5 text-sm py-1;
     &:hover {
       @apply underline;
