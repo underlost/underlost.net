@@ -24,7 +24,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "resolutions": {
-    "sharp": "^0.31.2"
+    "sharp": "^0.32.1"
   },
   "dependencies": {
     "@tryghost/admin-api": "^1.13.2",
@@ -72,7 +72,7 @@
     "react-markdown": "^8.0.3",
     "react-visibility-sensor": "^5.1.1",
     "remarkable": "^2.0.0",
-    "sharp": "^0.31.2",
+    "sharp": "^0.32.1",
     "tailwindcss": "^3.2.4"
   },
   "devDependencies": {
@@ -83,17 +83,16 @@
     "cheerio": "^1.0.0-rc.6",
     "core-js": "^3.22.2",
     "eslint": "^8.14.0",
-    "eslint-plugin-ghost": "^2.7.0",
+    "eslint-plugin-ghost": "^3.0.0",
     "eslint-plugin-react": "^7.29.3",
-    "eslint-plugin-unicorn": "^45.0.1",
+    "eslint-plugin-unicorn": "^47.0.0",
     "precss": "^4.0.0",
     "prettier": "^2.7.1",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.29.0",
     "typescript": ">=3.7.5",
     "url": "^0.11.0",
-    "webpack": "^5.70.0",
-    "wrangler": "^2.0.6"
+    "webpack": "^5.70.0"
   },
   "repository": {
     "type": "git",

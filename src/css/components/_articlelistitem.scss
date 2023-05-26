@@ -3,7 +3,8 @@
 }
 
 .article-item-link {
-  @apply block transition duration-150 ease-out hover:text-pink hover:translate-x-1.5 uppercase relative;
+  @apply block transition duration-150 ease-out hover:text-slate hover:translate-x-1.5 uppercase relative;
+  @apply dark:hover:text-pink;
 
   .article-item-title {
     @apply mr-3 block md:inline-block relative;

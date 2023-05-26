@@ -64,7 +64,7 @@
     bottom: 0;
     left: -1rem;
     width: 100%;
-    @apply bg-yellow dark:bg-purple-slate;
+    @apply bg-blue dark:bg-purple-slate;
     z-index: -1;
   }
   span {
@@ -80,7 +80,7 @@
 
   &.primary {
     &::after {
-      @apply bg-aqua dark:bg-purple-slate;
+      @apply bg-green dark:bg-purple-slate;
     }
   }
   &.secondary {

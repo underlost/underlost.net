@@ -25,12 +25,16 @@
   .arrow {
     transition: ease all .3s;
     path {
-      @apply dark:stroke-purple;
+      @apply dark:fill-purple;
     }
   }
   &:hover {
     .arrow {
       @apply translate-x-1;
+
+      path {
+        @apply fill-pink;
+      }
     }
   }
 }
@@ -40,11 +44,12 @@
 
   &::after {
     content: '';
-    @apply absolute inset-0 block w-full h-full bg-blue transition duration-150 ease-out rounded dark:bg-purple-slate;
+    @apply absolute inset-0 block w-full h-full bg-blue transition duration-150 ease-out rounded dark:bg-purple-slate dark:opacity-80;
   }
 
   .btn-block {
-    @apply block w-full border-2 px-4 py-4 no-underline hover:text-black hover:border-black rounded relative z-20 bg-white;
+    @apply block w-full border-2 px-4 py-4 no-underline hover:text-black hover:border-black rounded relative z-20 bg-white ;
+    @apply dark:bg-purple-slate dark:hover:border-pink dark:hover:text-pink;
   }
 
   .btn-title {

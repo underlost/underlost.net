@@ -21,6 +21,7 @@ html, body {
 @import "./components/readfirstblock";
 @import "./components/articlelistitem";
 @import "./components/articlehero";
+@import "./components/popularblock";
 
 @import '_header.scss';
 @import '_menu.scss';
@@ -35,3 +36,9 @@ html, body {
 @import '_footer.scss';
 @import '_code.scss';
 @import '_glitch.scss';
+
+
+.grid-pattern {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAIElEQVQoz2NggIL/QMBALiBL838sgD42U0XzKBgFNAEApewj3XWLo4QAAAAASUVORK5CYII=");
+  @apply mix-blend-difference dark:mix-blend-soft-light opacity-25 dark:opacity-80;
+}

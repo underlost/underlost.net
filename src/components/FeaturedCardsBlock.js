@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import { ArticleCard } from '../components/common'
+import { ArticleCardSquare } from '../components/common'
 
 const FeaturedCards = ({ data }) => {
   const posts = data.allGhostPost.edges
@@ -10,7 +10,7 @@ const FeaturedCards = ({ data }) => {
     <section className="featured-cards-wrapper pb-0">
       <span className="sr-only">Featured Articles</span>
       {posts.map(({ node }) => (
-        <ArticleCard key={node.id} post={node} />
+        <ArticleCardSquare key={node.id} post={node} />
       ))}
     </section>
   )

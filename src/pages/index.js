@@ -24,21 +24,27 @@ const HomePage = ({ data, location }) => {
   return (
     <Layout isHome={true}>
       <MetaData data={data} location={location} title="Underlost, By Tyler Rilling" type="website" isHome={true} />
-      <div className="mx-auto pt-5 pb-5 px-8 container lg:px-24 overflow-hidden lg:overflow-visible">
+      <div className="mx-auto pt-5 pb-5 px-8 container lg:px-24 overflow-hidden lg:overflow-visible relative">
         <h1 className="site-title">
           <span className="highlight primary">
             <span>Underlost</span>
           </span>
           {` `}
-          is Tyler Rilling, a Python web developer, UX designer, and marketing consultant, living in Seattle, Washington. They are probably not an Undertale game. 👾
+          is Tyler Rilling, a Python web developer, UX designer, and digital marketing consultant, living in Seattle, Washington. They are probably not an Undertale game. 👾
         </h1>
 
-        <div className="grid grid-cols-12 lg:divide-x gap-0">
-          <div className="col-span-12 lg:col-span-6 lg:mb-8">
-            <div className="py-12 lg:py-16 lg:pr-16">
+        <div className="grid grid-cols-12 lg:gap-x-16 xl:gap-x-24">
+          <div className="col-span-12 lg:col-span-6 mb-4 lg:pt-12 order-2 lg:order-1">
+            <div className="xl:pl-16 relative">
+              <div className="grid-pattern h-[300px] w-[120px] absolute right-16 -top-40" />
+              <FeaturedCardsBlock />
+            </div>
+          </div>
+          <div className="col-span-12 lg:col-span-6 lg:mb-8 order-1 lg:order-2">
+            <div className="py-12 lg:py-16">
               {page && <div className="load-external-scripts pb-5" dangerouslySetInnerHTML={{ __html: page.html }} />}
 
-              <div className="pb-16">
+              <div className="pb-16 max-w-lg">
                 <p className="text-lg leading-normal font-light">
                   As a full-stack developer, I specialize in Python, ReactJS, Building APIs and REST frameworks with content management systems like WordPress and Ghost, and various other
                   technology stacks. Currently the lead developer at an interactive design agency in Seattle, Washington. I also offer various{` `}
@@ -46,11 +52,6 @@ const HomePage = ({ data, location }) => {
                 </p>
               </div>
               <ReadFirstBlock />
-            </div>
-          </div>
-          <div className="col-span-12 lg:col-span-5 mb-4 lg:pt-12">
-            <div className="lg:pl-16">
-              <FeaturedCardsBlock />
             </div>
           </div>
         </div>

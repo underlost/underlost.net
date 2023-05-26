@@ -2,9 +2,8 @@ const path = require(`path`)
 const config = require(`./src/utils/siteConfig`)
 const generateRSSFeed = require(`./src/utils/rss/generate-feed`)
 
-require(`dotenv`).config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+// Make sure the NODE_ENV variable is set
+process.env.NODE_ENV = process.env.NODE_ENV || `development`
 
 let ghostConfig
 

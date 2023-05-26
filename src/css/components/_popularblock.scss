@@ -1,0 +1,11 @@
+.popular-dash-block {
+  @apply relative;
+  &::before {
+    content: '';
+    width: 1px;
+    height: 40px;
+    left: -1px;
+    @apply absolute bg-black top-0 opacity-40 hidden lg:block;
+    @apply dark:bg-purple;
+  }
+}

@@ -6,7 +6,7 @@ import LazyImage from './LazyImage'
 const PopularCard = ({ post }) => {
   const url = `/writing/${post.slug}/`
   return (
-    <article className="mb-4">
+    <article className="mb-4 px-8 lg:px-0">
       <header
         className="card post-card-header px-lg-4"
         style={{
@@ -15,11 +15,11 @@ const PopularCard = ({ post }) => {
       >
         <Link className="post-card-link d-block" to={url}>
           {post.feature_image && (
-            <div className="card-image h-56 lg:h-60">
+            <div className="card-image aspect-square">
               <LazyImage className="post-card-image h-full" key={post.feature_image} src={post.feature_image} alt={post.title} />
             </div>
           )}
-          <div className="pt-4 px-0">
+          <div className="py-4 lg:px-8 popular-dash-block">
             {post.primary_tag && <p className="subtitle">{post.primary_tag.name}</p>}
             <h2 className="h3 card-title">{post.title}</h2>
           </div>
@@ -55,14 +55,14 @@ const PopularPostsBlock = () => {
 
   return (
     <div className="popular-cards-wrapper mb-5 w-100 lg:py-16">
-      <section className="post-feed-vertical container px-8 lg:px-0 mx-auto">
-        <div className="post-feed-header relative mb-8">
+      <section className="post-feed-vertical">
+        <div className="post-feed-header relative mb-5">
           <h3 className="text-wide text-center text-5xl font-black relative z-10 dark:text-pink">
             <span className="highlight highlight-right">Popular</span>
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 justify-content-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-0 justify-content-center">
           {posts.map(({ node }) => (
             <PopularCard key={node.id} post={node} />
           ))}
