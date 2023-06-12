@@ -11,7 +11,8 @@ const PopularCard = ({ post }) => {
         className="card post-card-header px-lg-4"
         style={{
           backgroundColor: `transparent`,
-        }}>
+        }}
+      >
         <Link className="post-card-link d-block" to={url}>
           {post.feature_image && (
             <div className="card-image aspect-square">

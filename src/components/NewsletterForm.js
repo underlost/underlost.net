@@ -15,12 +15,12 @@ const NewsletterForm = () => {
     email: emailState,
   })
 
-  const changeEmail = event => {
+  const changeEmail = (event) => {
     const email = event.target.value
     setEmail(email)
   }
 
-  const subscribeMe = async event => {
+  const subscribeMe = async (event) => {
     event.preventDefault()
     //console.log(`submitting...`)
     setLoading(true)

@@ -24,7 +24,6 @@ const NewsletterPage = ({ data, location }) => (
         <Background filename={`background.jpg`} alt={`Background`} />
       </div>
     </div>
-
   </Layout>
 )
 

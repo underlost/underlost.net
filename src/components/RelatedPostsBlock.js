@@ -70,7 +70,7 @@ class RelatedPostsFactory {
       const tagPoint = 1
       const slug = getSlug(article)
 
-      article.tags.forEach(aTag => {
+      article.tags.forEach((aTag) => {
         if (includes(tags, aTag)) {
           identityMap[slug].points += tagPoint
         }
