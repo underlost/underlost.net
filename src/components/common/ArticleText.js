@@ -8,7 +8,7 @@ const ArticleText = ({ post }) => {
   const readingTime = readingTimeHelper(post)
 
   return (
-    <div className="post-text-wrapper text-center py-16 md:px-8">
+    <div className="post-text-wrapper text-center py-12 md:px-8">
       <article className="post-text mx-auto max-w-2xl">
         <header className="post-text-header">
           <Link to={url} className="block hover:underline dark:hover:text-green">

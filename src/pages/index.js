@@ -10,6 +10,9 @@ import NewsletterForm from '../components/NewsletterForm'
 import LinkArrow from '../components/LinkArrow'
 //import BoringApp from '../components/BoringApp'
 import RecentBlock from '../components/RecentBlock'
+import BoringAppBlock from '../components/BoringAppBlock'
+import Background from '../components/Background'
+import MetalostBlock from '../components/MetalostBlock'
 
 /**
  * Homepage Page
@@ -60,22 +63,43 @@ const HomePage = ({ data, location }) => {
         <PopularPostsBlock />
       </div>
 
-      <div className="container mx-auto px-8 lg:px-0 py-5 lg:py-20">
-        <div className="max-w-2xl mx-auto">
-          <NewsletterForm />
-        </div>
+      <div className="pb-20">
+        <BoringAppBlock />
       </div>
 
       <div>
+        <MetalostBlock />
+      </div>
+
+      <div>
+        <div className="text-center pt-10 lg:pt-20">
+          <div className="relative">
+            <h3 className="text-wide text-center text-3xl lg:text-5xl font-black relative z-10 dark:text-pink">
+              <span className="highlight">Recent Posts</span>
+            </h3>
+          </div>
+        </div>
         <RecentBlock />
       </div>
 
       <div className="gh-content gh-canvas">
-        <nav className="pagination pb-5 text-right" role="navigation">
+        <nav className="pagination pb-20 text-right" role="navigation">
           <Link to="/archive/" rel="next" className="btn-underline">
             <span>View Archives</span>
           </Link>
         </nav>
+      </div>
+
+      <div>
+        <div className="bg-black h-[500px] lg:h-[600px] relative">
+          <Background filename={`background.jpg`} alt={`Background`} />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-8 lg:px-0 py-5 lg:py-20">
+        <div className="max-w-2xl mx-auto">
+          <NewsletterForm />
+        </div>
       </div>
     </Layout>
   )

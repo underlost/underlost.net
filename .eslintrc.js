@@ -8,7 +8,7 @@ module.exports = {
     },
   },
   plugins: [`ghost`, `react`],
-  extends: [`plugin:ghost/node`, `plugin:ghost/ember`, `plugin:react/recommended`],
+  extends: [`plugin:ghost/ember`, `plugin:react/recommended`],
   settings: {
     react: {
       createClass: `createReactClass`,

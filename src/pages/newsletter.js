@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { MetaData } from '../components/common/meta'
 import { Layout } from '../components/common'
-import { Link, graphql } from 'gatsby'
+import Background from '../components/Background'
 import NewsletterForm from '../components/NewsletterForm'
 
 const NewsletterPage = ({ data, location }) => (
@@ -18,6 +18,13 @@ const NewsletterPage = ({ data, location }) => (
         </section>
       </article>
     </div>
+
+    <div>
+      <div className="bg-black h-[500px] lg:h-[600px] relative">
+        <Background filename={`background.jpg`} alt={`Background`} />
+      </div>
+    </div>
+
   </Layout>
 )
 

@@ -36,7 +36,8 @@
 }
 
 .tag-item {
-  @apply uppercase border px-2 py-1 mr-2 inline-block
+  @apply uppercase border px-2 py-1 mr-2 inline-block hover:bg-green;
+  @apply dark:hover:bg-purple-slate dark:hover:text-pink;
 }
 
 .lead {

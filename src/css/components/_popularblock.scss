@@ -3,9 +3,32 @@
   &::before {
     content: '';
     width: 1px;
-    height: 40px;
-    left: -1px;
-    @apply absolute bg-black top-0 opacity-40 hidden lg:block;
+    height: 80px;
+    left: 0px;
+    top: -40px;
+    @apply absolute bg-black opacity-40 hidden lg:block;
     @apply dark:bg-purple;
+  }
+  
+}
+
+.popular-cards {
+  .popular-card {
+
+    &::before {
+        content: '';
+        width: 1px;
+        height: 80px;
+        left: 0px;
+        top: -40px;
+        @apply absolute bg-black opacity-40 hidden lg:block;
+        @apply dark:bg-purple;
+      }
+
+    &:nth-child(even) {
+      .card-image {
+        @apply lg:-translate-y-4;
+      }
+    }
   }
 }
