@@ -33,7 +33,7 @@ const MetalostBlock = () => (
       <StaticImage
         src="../../static/images/metalost_v1_background.jpg"
         alt="MetaLost background"
-        className="absolute inset-0 z-0"
+        className="!absolute inset-0 z-0"
         imgStyle={{ objectFit: `cover` }}
       />
     </div>
