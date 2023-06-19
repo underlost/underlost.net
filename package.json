@@ -72,6 +72,7 @@
     "react-dom": "^18.0.0",
     "react-helmet": "^6.0.0",
     "react-in-viewport": "^1.0.0-alpha.20",
+    "react-intersection-observer": "^9.5.0",
     "react-markdown": "^8.0.3",
     "react-stripe-js": "^1.1.5",
     "react-visibility-sensor": "^5.1.1",
