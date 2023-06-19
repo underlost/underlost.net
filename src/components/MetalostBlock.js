@@ -1,5 +1,5 @@
 import React from 'react'
-import Background from '../components/Background'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const MetalostBlock = () => (
   <div className="grid grid-cols-12 gap-0 mt-20 lg:mt-5 mb-20 lg:h-[550px]">
@@ -18,7 +18,7 @@ const MetalostBlock = () => (
             </div>
             <h2 className="text-wide text-3xl font-black mb-5">Project MetaLost Version 0.6.1</h2>
             <p className="text-lg mb-4">
-              A completely free Metahuman model and set of assets you can use in your next Unreal project, with animation rigging support for Mixamo and other popular libraries.
+              A completely free Unreal Engine Metahuman model and set of assets you can use in your next Unreal project, with animation rigging support for Mixamo and other popular libraries.
             </p>
             <p className="text-lg mb-4">Coming Summer 2023.</p>
           </div>
@@ -30,7 +30,12 @@ const MetalostBlock = () => (
       </div>
 
       <div className="bg-black/50 absolute inset-0 z-20 lg:border-r lg:border-r-black" />
-      <Background filename={`metalost_v1_background.jpg`} alt={`MetaLost background`} className="!absolute inset-0 z-10" />
+      <StaticImage
+        src="../../static/images/metalost_v1_background.jpg"
+        alt="MetaLost background"
+        className="absolute inset-0 z-0"
+        imgStyle={{ objectFit: `cover` }}
+      />
     </div>
     <div className="col-span-12 lg:col-span-6 order-1 lg:order-2">
       <video className="w-full lg:h-[550px] object-cover" autoPlay loop muted playsInline>

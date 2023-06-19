@@ -10,7 +10,7 @@
     @apply transition duration-150 ease-out relative z-10 inline-block dark:hover:text-pink;
 
     &::before {
-      @apply duration-300 ease-out absolute left-0 right-0 top-5 bottom-0 block bg-blue dark:bg-purple-slate -z-10 w-0 max-h-5;
+      @apply duration-300 ease-out absolute left-0 right-0 top-5 bottom-0 block bg-blue dark:bg-purple-slate -z-10 w-0 max-h-5 dark:opacity-30;
       content: '';
     }
 

@@ -13,7 +13,7 @@ const ArchiveCardArticle = ({ post }) => {
     <article className="post-card post-card-article py-4 lg:py-8 mb-8">
       <header className="post-card-header">
         {post.primary_tag && <p className="subtitle">{post.primary_tag.name}</p>}
-        <Link className="post-card-link block mb-4 hover:text-pink" to={url}>
+        <Link className="post-card-link block mb-4 hover:underline dark:hover:text-pink" to={url}>
           <h2 className="h2 mb-2">{post.title}</h2>
           {post.feature_image && (
             <div className="h-64 lg:h-96">

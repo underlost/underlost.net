@@ -101,6 +101,9 @@ MetaData.propTypes = {
   }).isRequired,
   settings: PropTypes.shape({
     allGhostSettings: PropTypes.object.isRequired,
+    cover_image: PropTypes.string,
+    description: PropTypes.string,
+    title: PropTypes.string,
   }).isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,

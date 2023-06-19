@@ -41,6 +41,7 @@ const Background = props => (
 Background.propTypes = {
   filename: PropTypes.node.isRequired,
   alt: PropTypes.string,
+  className: PropTypes.string,
 }
 
 export default Background

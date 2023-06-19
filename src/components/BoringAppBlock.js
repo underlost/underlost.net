@@ -10,7 +10,7 @@ const BoringApp = ({ data }) => {
       <div className="grid grid-cols-12 gap-8 lg:gap-24">
         <div className="col-span-12 lg:col-span-5">
           <div className="bg-light dark:bg-purple-dark h-10 w-full relative z-10" />
-          <div className="aspect-square bg-green flex justify-end -translate-y-10">
+          <div className="aspect-square bg-green dark:bg-purple-light flex justify-end -translate-y-10">
             <div className="mt-auto lg:text-right p-8 text-black">
               <h2 className="font-black text-4xl">Boredable.</h2>
               <p className="text-lg max-w-sm">News and updates on building a new, but boring social network.</p>
@@ -19,14 +19,14 @@ const BoringApp = ({ data }) => {
           <div className="-translate-y-10">
             <div className="grid grid-cols-6 gap-0">
               <div className="col-span-2 h-5" />
-              <div className="col-span-1 h-5 bg-green" />
+              <div className="col-span-1 h-5 bg-green dark:bg-purple-light" />
               <div className="col-span-1 h-5" />
-              <div className="col-span-2 h-5 bg-green" />
+              <div className="col-span-2 h-5 bg-green dark:bg-purple-light" />
             </div>
             <div className="grid grid-cols-6 gap-0">
-              <div className="col-span-2 h-5 bg-green" />
+              <div className="col-span-2 h-5 bg-green dark:bg-purple-light" />
               <div className="col-span-1 h-5" />
-              <div className="col-span-1 h-5 bg-green" />
+              <div className="col-span-1 h-5 bg-green dark:bg-purple-light" />
               <div className="col-span-2 h-5" />
             </div>
           </div>
@@ -43,7 +43,9 @@ const BoringApp = ({ data }) => {
                     <li key={node.id} className="py-5">
                       <Link to={url} className="hover:underline">
                         <h3 className="text-3xl text-wide font-black inline pr-3">{node.title}</h3>
-                        <span className="uppercase reading-time text-lg inline text-slate dark:text-pink">4min read</span>
+                        <span className="uppercase reading-time text-lg inline text-slate dark:text-purple">
+                          {node.reading_time} min read
+                        </span>
                       </Link>
                     </li>
                   )

@@ -16,6 +16,10 @@ html, body {
   @apply bg-light dark:bg-purple-dark dark:text-purple-light transition duration-150 ease-in-out antialiased;
 }
 
+.site-main {
+  min-height: 60vh;
+}
+
 @import "ghost/content.scss";
 @import "./components/sitelogo";
 @import "./components/readfirstblock";

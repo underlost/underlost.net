@@ -14,7 +14,7 @@
     "cloudflare": "gatsby build && npx wrangler pages dev ./public",
     "clean": "rm -rf .cache && rm -rf ./public",
     "dev": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write src/**/*.js",
     "fix": "eslint src/**/*.js --ext .js --cache --fix",
     "fix-functions": "eslint netlify/edge-functions/**/*.js --ext .js --cache --fix",
     "lint": "eslint src/**/*.js --ext .js --cache",
@@ -27,6 +27,9 @@
     "sharp": "^0.32.1"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
+    "@stripe/react-stripe-js": "^2.1.1",
+    "@stripe/stripe-js": "^1.54.0",
     "@tryghost/admin-api": "^1.13.2",
     "@tryghost/helpers": "^1.1.75",
     "@tryghost/helpers-gatsby": "^2.0.5",
@@ -70,9 +73,11 @@
     "react-helmet": "^6.0.0",
     "react-in-viewport": "^1.0.0-alpha.20",
     "react-markdown": "^8.0.3",
+    "react-stripe-js": "^1.1.5",
     "react-visibility-sensor": "^5.1.1",
     "remarkable": "^2.0.0",
     "sharp": "^0.32.1",
+    "stripe": "^12.9.0",
     "tailwindcss": "^3.2.4"
   },
   "devDependencies": {

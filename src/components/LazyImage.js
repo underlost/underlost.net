@@ -6,12 +6,12 @@ const INIT = 0
 const LOADING = 1
 const LOADED = 2
 
-const ImageObject = (props) => {
+const ImageObject = props => {
   const { src: originalSrc, forwardedRef, inViewport, alt, className } = props
   const [src, setSrc] = useState(null)
   const [status, setStatus] = useState(INIT)
 
-  const loadImage = (imageSrc) => {
+  const loadImage = imageSrc => {
     const img = new Image() // eslint-disable-line
     setStatus(LOADING)
     img.onload = () => {
@@ -30,13 +30,13 @@ const ImageObject = (props) => {
 
   const getBackgroundColor = () => {
     switch (status) {
-    case LOADING:
-      return `rgba(0,0,0,.32)`
-    case LOADED:
-      return `rgba(0,0,0,.50)`
-    case INIT:
-    default:
-      return `rgba(0,0,0,.12)`
+      case LOADING:
+        return `rgba(0,0,0,.32)`
+      case LOADED:
+        return `rgba(0,0,0,.50)`
+      case INIT:
+      default:
+        return `rgba(0,0,0,.12)`
     }
   }
 

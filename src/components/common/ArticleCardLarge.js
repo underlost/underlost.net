@@ -35,7 +35,7 @@ const ArticleCardLarge = ({ post }) => {
             <div className="post-card-footer-author sr-only">
               <span>By: {post.primary_author.name}</span>
             </div>
-            <div className="uppercase ps-2 font-semibold text-narrow whitespace-nowrap">
+            <div className="uppercase font-semibold text-narrow whitespace-nowrap">
               <span>
                 <span className="sr-only">Reading Time:</span> {readingTime}
               </span>

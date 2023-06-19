@@ -10,6 +10,7 @@ import { MetaData } from '../components/common/meta'
 import RelatedPostsBlock from '../components/RelatedPostsBlock'
 
 import NewsletterForm from '../components/NewsletterForm'
+import TipButton from '../components/TipButton'
 
 /**
  * Single post view (/:slug)
@@ -53,8 +54,15 @@ const Post = ({ data, location }) => {
             {post.custom_excerpt && <p className="lead">{post.custom_excerpt}</p>}
           </header>
           {/* The main post content */}
-          <section className="gh-content gh-canvas load-external-scripts content-body mb-4" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <section className="gh-content gh-canvas load-external-scripts content-body pb-12" dangerouslySetInnerHTML={{ __html: post.html }} />
           <footer className="post-footer gh-canvas">
+            <div className="pb-8">
+              <div className="pb-3">
+                <TipButton text="Show your support!" />
+              </div>
+              <p>If you come across something that has helped or inspired you, consider showing your support!</p>
+            </div>
+
             {post.tags && (
               <div className="related-tags py-6">
                 <p className="text-lg uppercase mb-2 text-wide">Related Tags</p>

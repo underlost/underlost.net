@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
+
 import { Layout } from '../components/common'
 import FeaturedCardsBlock from '../components/FeaturedCardsBlock'
 import { MetaData } from '../components/common/meta'
@@ -8,10 +10,8 @@ import ReadFirstBlock from '../components/ReadFirstBlock'
 import PopularPostsBlock from '../components/PopularBlock'
 import NewsletterForm from '../components/NewsletterForm'
 import LinkArrow from '../components/LinkArrow'
-//import BoringApp from '../components/BoringApp'
 import RecentBlock from '../components/RecentBlock'
 import BoringAppBlock from '../components/BoringAppBlock'
-import Background from '../components/Background'
 import MetalostBlock from '../components/MetalostBlock'
 
 /**
@@ -92,7 +92,14 @@ const HomePage = ({ data, location }) => {
 
       <div>
         <div className="bg-black h-[500px] lg:h-[600px] relative">
-          <Background filename={`background.jpg`} alt={`Background`} />
+          <StaticImage
+            src="../../static/images/background.jpg"
+            alt="Underlost"
+            className="absolute inset-0 w-full h-full object-cover"
+            placeholder="blurred"
+            layout="fullWidth"
+            quality={100}
+          />
         </div>
       </div>
 

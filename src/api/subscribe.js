@@ -2,7 +2,7 @@ import GhostAdminAPI from '@tryghost/admin-api'
 
 // gaysby API endpoint for newsletter subscriptions
 
-export default async function getrevueSubscribe(req, res) {
+export default async function newsletterSubscribe(req, res) {
   // 1. Get the email from the payload and
   // validate if it is empty.
   const { email } = req.body

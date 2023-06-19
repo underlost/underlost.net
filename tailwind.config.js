@@ -25,6 +25,7 @@ module.exports = {
       'purple-light': `#B3ACE3`,
       'purple-dark': `#1B1B24`,
       'purple-slate': `#333345`,
+      red: `#FF0000`,
     },
     fontSize: {
       xs: ['.8rem', '1.4'],
