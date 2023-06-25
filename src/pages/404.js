@@ -1,6 +1,6 @@
 import React from 'react'
 import Background from '../components/Background'
-import LinkArrow from '../components/LinkArrow'
+import { Link } from 'gatsby'
 
 const NotFoundPage = () => (
   <div className="h-screen">
@@ -15,7 +15,14 @@ const NotFoundPage = () => (
             <span className="block text-4xl pt-6 font-thin whitespace-nowrap">(╯°□°）╯︵ ┻━┻</span>
 
             <p className="text-lg font-light pt-6">
-              <LinkArrow text="Back to the homepage" url="/" light={true} />
+              <Link className="font-bold btn-link has-arrow whitespace-nowrap hover:underline hover:text-pink" to="/">
+                Back to the homepage
+                <span className="inline-block px-1 arrow">
+                  <svg width="23" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.087 5.464v3.072h-3.095v1.56h-3.073v1.536h-3.095v1.536H9.752V8.536H.487V5.464h9.265V.832h3.072v1.536h3.095v1.536h3.073v1.56h3.095Z" fill="#fff" />
+                  </svg>
+                </span>
+              </Link>
             </p>
           </div>
         </div>
@@ -24,8 +31,7 @@ const NotFoundPage = () => (
           style={{
             backgroundColor: `rgba(0,0,0,0.75)`,
             backdropFilter: `grayscale(100%)`,
-          }}
-        ></div>
+          }}></div>
       </div>
     </div>
     <div className="absolute inset-0 z-20">

@@ -8,7 +8,7 @@ const LinkButton = props => {
     return (
       <li className="btn-block-wrapper my-5">
         <a className="btn btn-primary btn-block text-start w-100" title={props.alt} href={props.website} rel="noopener noreferrer" target="_blank">
-          <span className="btn-title">{props.title}</span>
+          <span className="btn-title block">{props.title}</span>
           <small className="btn-description">{props.alt}</small>
         </a>
       </li>
@@ -17,7 +17,7 @@ const LinkButton = props => {
     return (
       <li className="btn-block-wrapper my-5">
         <Link className="btn btn-primary btn-block text-center w-100" title={props.alt} to={props.slug}>
-          <span className="btn-title">{props.title}</span>
+          <span className="btn-title block">{props.title}</span>
           <small className="btn-description">{props.alt}</small>
         </Link>
       </li>

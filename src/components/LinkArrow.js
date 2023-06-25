@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const LinkArrow = ({ text, url, light = false }) => (
-  <a className="font-bold btn-link has-arrow whitespace-nowrap hover:underline hover:text-pink" href={url}>
+  <a className="font-bold btn-link has-arrow whitespace-nowrap hover:underline hover:text-pink" href={url} target="_blank" rel="noreferrer noopener">
     {text}
     <span className="inline-block px-1 arrow">
       <svg width="23" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">

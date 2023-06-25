@@ -51,7 +51,7 @@ const HomePage = ({ data, location }) => {
                 <p className="text-lg leading-normal font-light">
                   As a full-stack developer, I specialize in Python, ReactJS, Building APIs and REST frameworks with content management systems like WordPress and Ghost, and various other
                   technology stacks. Currently the lead developer at an interactive design agency in Seattle, Washington. I also offer various{` `}
-                  <LinkArrow text="consulting services" url="/consulting/" />
+                  <LinkArrow text="consulting services" url="https://www.underlost.xyz" />
                 </p>
               </div>
               <ReadFirstBlock />

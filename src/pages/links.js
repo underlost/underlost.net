@@ -13,7 +13,9 @@ const LinksPage = ({ data, location }) => (
       <article className="content gh-content">
         <h1 className="title-h1">underlost.</h1>
         <section className="content-body load-external-scripts pt-4">
-          <p className="lead mb-8">Lead developer at Wildern. Marketing consultant. Indie dev. I&apos;ve made a lot of stuff on the internet. Im sorry about that. </p>
+          <p className="lead mb-8">
+            Former lead developer at Wildern. AI prompt engineer, Web & marketing consultant. Indie game dev. I&apos;ve made a lot of stuff on the internet. I&apos;m sorry about that.{` `}
+          </p>
           <p>
             This is a list of where you can find me on the internet, and other useful resources. If you&apos;re coming here from another website, make sure to check out the rest of my{` `}
             <Link to="/">website</Link>, as well as some of the{` `}

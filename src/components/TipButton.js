@@ -137,7 +137,7 @@ const TipForm = () => {
               }}
             />
           </div>
-          <button type="submit" disabled={!stripe} className="btn btn-primary">
+          <button type="submit" disabled={!stripe} className="btn btn-primary flex">
             Leave a tip
           </button>
         </form>
@@ -161,7 +161,7 @@ const TipButton = ({ text = `Add a tip` }) => {
 
   return (
     <>
-      <button type="button" onClick={openModal} className="btn btn-primary text-base text-wide uppercase">
+      <button type="button" onClick={openModal} className="btn btn-primary text-base text-wide uppercase flex">
         {text}
       </button>
 
@@ -190,10 +190,7 @@ const TipButton = ({ text = `Add a tip` }) => {
                 leaveTo="opacity-0 scale-95">
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-purple-dark dark:text-purple-light p-6 text-left align-middle shadow-xl transition-all relative">
                   <div className="absolute right-8 top-6">
-                    <button
-                      type="button"
-                      className="text-xs"
-                      onClick={closeModal}>
+                    <button type="button" className="text-xs" onClick={closeModal}>
                       Close
                     </button>
                   </div>
