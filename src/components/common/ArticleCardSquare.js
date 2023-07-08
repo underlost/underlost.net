@@ -20,7 +20,7 @@ const ArticleCardSquare = ({ post }) => {
               </div>
             )}
           </Link>
-          <div className="absolute -bottom-5 left-8 bg-green pl-10 pr-10 xl:pl-8 xl:pr-20 py-5 text-black">
+          <div className="absolute -bottom-5 left:8 lg:left-20 bg-green pl-10 pr-10 xl:pl-8 xl:pr-20 py-5 text-black">
             <Link className="bg-green" to={url}>
               {post.primary_tag && <p className="subtitle">{post.primary_tag.name}</p>}
               <h2 className="card-title h2">{post.title}</h2>
@@ -28,7 +28,7 @@ const ArticleCardSquare = ({ post }) => {
           </div>
         </header>
 
-        <section className="card-body post-card-excerpt text-lg font-light px-8">
+        <section className="card-body post-card-excerpt text-lg font-light pl-8 lg:pl-20 pr-8">
           <p className="mb-4">{post.excerpt}</p>
         </section>
       </div>

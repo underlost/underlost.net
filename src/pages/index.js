@@ -55,6 +55,17 @@ const HomePage = ({ data, location }) => {
                 </p>
               </div>
               <ReadFirstBlock />
+
+              <div className="mt-5">
+                <a className="font-bold btn-link has-arrow whitespace-nowrap hover:underline uppercase dark:text-pink" href="#recent">
+                  Read More
+                  <span className="inline-block px-1 arrow">
+                    <svg width="23" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22.087 5.464v3.072h-3.095v1.56h-3.073v1.536h-3.095v1.536H9.752V8.536H.487V5.464h9.265V.832h3.072v1.536h3.095v1.536h3.073v1.56h3.095Z" fill="#03080F" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -71,7 +82,7 @@ const HomePage = ({ data, location }) => {
         <MetalostBlock />
       </div>
 
-      <div>
+      <div id="recent">
         <div className="text-center pt-10 lg:pt-20">
           <div className="relative">
             <h3 className="text-wide text-center text-3xl lg:text-5xl font-black relative z-10 dark:text-pink">

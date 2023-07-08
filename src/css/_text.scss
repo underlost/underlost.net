@@ -106,7 +106,7 @@
     @apply mt-5;
   }
   p~blockquote {
-    @apply mt-2;
+    @apply mt-8;
   }
 
   h2, h3, h4, h5, h6 {
@@ -134,7 +134,19 @@
 }
 
 blockquote{
-  @apply border-l-8 border-green pl-4 font-light mb-5;
+  @apply border-l-8 border-green pl-4 font-light mb-5 relative;
+}
+
+.kg-blockquote-alt {
+  font-stretch: 150%;
+  @apply text-4xl border-l-0 pl-0;
+  @apply dark:text-pink;
+
+  &::before {
+    content: '“';
+    @apply text-8xl block font-black h-4 -z-10 text-green;
+    @apply dark:text-purple dark:opacity-25;
+  }
 }
 
 .style-3d {

@@ -5,7 +5,6 @@ import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 /**
- * Consulting Page
  *
  * Consulting page. Pulls Content from consulting Ghost page.
  *
