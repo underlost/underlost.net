@@ -2,7 +2,7 @@
   "name": "underlost.net",
   "private": true,
   "slug": "underlost",
-  "version": "8.1.0",
+  "version": "8.1.1",
   "description": "underlost.net website",
   "license": "MIT",
   "engines": {
@@ -16,9 +16,7 @@
     "dev": "gatsby develop",
     "format": "prettier --write src/**/*.js",
     "fix": "eslint src/**/*.js --ext .js --cache --fix",
-    "fix-functions": "eslint netlify/edge-functions/**/*.js --ext .js --cache --fix",
     "lint": "eslint src/**/*.js --ext .js --cache",
-    "netlify": "netlify dev",
     "start": "yarn run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
@@ -46,7 +44,6 @@
     "gatsby-plugin-google-gtag": "^5.2.0",
     "gatsby-plugin-image": "^3.2.0",
     "gatsby-plugin-manifest": "^5.2.0",
-    "gatsby-plugin-netlify": "^5.1.0",
     "gatsby-plugin-offline": "^6.2.0",
     "gatsby-plugin-postcss": "^6.2.0",
     "gatsby-plugin-react-helmet": "^6.2.0",
