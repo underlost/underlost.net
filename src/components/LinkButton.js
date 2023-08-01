@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-const LinkButton = props => {
+const LinkButton = (props) => {
   const buttonType = props.layout
   if (buttonType === `link`) {
     return (

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useInView } from 'react-intersection-observer'
 
@@ -6,7 +6,7 @@ const MetalostBlock = () => {
   const [ref, inView] = useInView({
     triggerOnce: true, // Only trigger once when the component comes into view
     threshold: 0.1, // Percentage of the component that should be visible to trigger
-  });
+  })
 
   return (
     <div className="grid grid-cols-12 gap-0 mt-20 lg:mt-5 mb-20 lg:h-[550px]" ref={ref}>

@@ -17,7 +17,6 @@ import MetalostBlock from '../components/MetalostBlock'
 /**
  * Homepage Page
  *
- * Loads all posts from Ghost and displays them as an archibe.
  * Optional Text and title are displayed from the homepage page in Ghost.
  *
  */
@@ -34,7 +33,10 @@ const HomePage = ({ data, location }) => {
           </span>
           {` `}
           is Tyler Rilling, a Python web developer, UX designer, and digital marketing consultant, living in Seattle, Washington. They are probably not an{` `}
-          <a className='underline' href="/writing/a-reminder-that-underlost-is-not-just-an-undertale-thing/">Undertale game</a>. 👾
+          <a className="underline" href="/writing/a-reminder-that-underlost-is-not-just-an-undertale-thing/">
+            Undertale game
+          </a>
+          . 👾
         </h1>
 
         <div className="grid grid-cols-12 lg:gap-x-16 xl:gap-x-24">

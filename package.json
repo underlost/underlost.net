@@ -11,7 +11,6 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "cloudflare": "gatsby build && npx wrangler pages dev ./public",
     "clean": "rm -rf .cache && rm -rf ./public",
     "dev": "gatsby develop",
     "format": "prettier --write src/**/*.js",
@@ -88,9 +87,8 @@
     "eslint": "^8.14.0",
     "eslint-plugin-ghost": "^3.0.0",
     "eslint-plugin-react": "^7.29.3",
-    "eslint-plugin-unicorn": "^47.0.0",
     "precss": "^4.0.0",
-    "prettier": "^2.7.1",
+    "prettier": "^3.0.0",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.29.0",
     "typescript": ">=3.7.5",
