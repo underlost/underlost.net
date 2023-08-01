@@ -51,7 +51,6 @@ const Post = ({ data, location }) => {
                 <span className="uppercase inline-block mb-1 pe-4 font-bold">{readingTime}</span>
               </div>
             </div>
-            {post.custom_excerpt && <p className="lead">{post.custom_excerpt}</p>}
           </header>
           {/* The main post content */}
           <section className="gh-content gh-canvas load-external-scripts content-body pb-12" dangerouslySetInnerHTML={{ __html: post.html }} />

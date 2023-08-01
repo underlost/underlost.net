@@ -33,7 +33,8 @@ const HomePage = ({ data, location }) => {
             <span>Underlost</span>
           </span>
           {` `}
-          is Tyler Rilling, a Python web developer, UX designer, and digital marketing consultant, living in Seattle, Washington. They are probably not an Undertale game. 👾
+          is Tyler Rilling, a Python web developer, UX designer, and digital marketing consultant, living in Seattle, Washington. They are probably not an{` `}
+          <a className='underline' href="/writing/a-reminder-that-underlost-is-not-just-an-undertale-thing/">Undertale game</a>. 👾
         </h1>
 
         <div className="grid grid-cols-12 lg:gap-x-16 xl:gap-x-24">
@@ -51,7 +52,7 @@ const HomePage = ({ data, location }) => {
                 <p className="text-lg leading-normal font-light">
                   As a full-stack developer, I specialize in Python, ReactJS, Building APIs and REST frameworks with content management systems like WordPress and Ghost, and various other
                   technology stacks. Formerly a lead developer at an interactive design agency in Seattle, Washington, now I&apos;ve started my own small {` `}
-                  <LinkArrow text="consulting & development ageny" url="https://www.underlost.xyz" />
+                  <LinkArrow text="consulting & development agency" url="https://www.underlost.xyz" />
                 </p>
               </div>
               <ReadFirstBlock />

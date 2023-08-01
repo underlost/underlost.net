@@ -40,9 +40,23 @@
   @apply dark:hover:bg-purple-slate dark:hover:text-pink;
 }
 
-.lead {
+.lead, .kg-callout-text {
   @apply font-sans font-light text-xl;
+  line-height: 1.6;
 }
+
+.post-text {
+  .post-text-excerpt {
+    @apply opacity-50;
+  }
+  &:hover {
+    .post-text-excerpt {
+      @apply opacity-100;
+    }
+  }
+}
+
+
 
 .text-wide {
   font-stretch: 150%;
