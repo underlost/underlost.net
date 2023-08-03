@@ -4,11 +4,19 @@ export const ThemeContext = React.createContext({
   setTheme: () => {},
 })
 const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState(`dark`)
+  const [theme, setTheme] = useState(`light`)
   useEffect(() => {
     function loadTheme() {
+      const darkModeMediaQuery = window.matchMedia(`(prefers-color-scheme: dark)`)
+      const isDarkMode = darkModeMediaQuery.matches
       const themeLocalStorage = localStorage.getItem(`theme`)
-      return themeLocalStorage || `dark`
+      if (themeLocalStorage) {
+        return themeLocalStorage
+      } else if (isDarkMode) {
+        return `dark`
+      } else {
+        return `light`
+      }
     }
     setTheme(loadTheme())
   }, [])
