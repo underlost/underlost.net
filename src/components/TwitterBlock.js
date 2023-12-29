@@ -26,10 +26,11 @@ const TwitterBlock = () => (
             <StaticImage
               src="../../static/images/twitter_x.jpg"
               alt="The twitter bird in front of a giant X"
-              className="absolute inset-0 w-full h-full object-cover bg-vanilla"
+              className="!absolute inset-0 w-full h-full object-cover bg-vanilla"
               placeholder="blurred"
               layout="fullWidth"
               quality={100}
+              imgStyle={{ objectFit: `cover` }}
             />
           </div>
         </div>

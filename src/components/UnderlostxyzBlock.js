@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 const UnderlostxyzBlock = () => (
   <div className="px-8 lg:px-0 mb-16">
     <div className="container lg:mx-auto shadow-md">
-      <div className="relative rounded-xl overflow-hidden">
+      <div className="relative rounded-xl overflow-hidden bg-black">
         <div className="relative z-40 bg-black/20">
           <div className="px-8 lg:px-16 py-16 lg:py-52 text-white text-shadow shadow-black">
             <p className="text-lg lg:text-4xl font-light mb-1 lg:mb-0 leading-base font-grotesk">
@@ -26,7 +26,7 @@ const UnderlostxyzBlock = () => (
           </div>
         </div>
 
-        <StaticImage src="../../static/images/xyz.jpg" alt="Underlost" className="absolute inset-0 w-full h-full object-cover" placeholder="blurred" layout="fullWidth" quality={100} />
+        <StaticImage src="../../static/images/xyz.jpg" alt="Underlost" className="!absolute inset-0 w-full h-full object-cover" placeholder="blurred" layout="fullWidth" quality={100} />
       </div>
     </div>
   </div>

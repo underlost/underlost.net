@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import dayjs from 'dayjs'
 import fetch from 'node-fetch'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
@@ -127,7 +126,12 @@ const TwitterTimeline = ({ data }) => {
 
       <VerticalTimeline>
         {posts.map(({ node }) => {
-          const publishedAt = dayjs(node.published_at).format(`MMM D, YYYY`)
+          const publishedAt = new Date(node.published_at).toLocaleDateString(`en-US`, {
+            weekday: `long`,
+            year: `numeric`,
+            month: `long`,
+            day: `numeric`,
+          })
 
           const twitterIcon = (
             <svg xmlns="http://www.w3.org/2000/svg" height="1em" className="fill-current h-6 w-6" viewBox="0 0 512 512">

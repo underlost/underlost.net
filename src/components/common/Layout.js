@@ -47,7 +47,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, className = ``, head
         <link rel="preload" href="/fonts/Mona-Sans.woff2" as="font" crossOrigin="anonymous" type="font/woff2" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link href="https://fonts.googleapis.com/css2?family=family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400&display=swap" rel="stylesheet" />
         <style type="text/css">{`${site.codeinjection_styles}`}</style>
         <body className={bodyClass} />
       </Helmet>

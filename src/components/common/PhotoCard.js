@@ -2,9 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 //import { readingTime as readingTimeHelper } from '@tryghost/helpers'
-import dayjs from 'dayjs'
-let relativeTime = require(`dayjs/plugin/relativeTime`)
-dayjs.extend(relativeTime)
 
 const PhotoCard = ({ post }) => {
   const url = `/photos/${post.slug}/`
