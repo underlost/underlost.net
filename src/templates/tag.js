@@ -12,7 +12,7 @@ import { MetaData } from '../components/common/meta'
  */
 const Tag = ({ data, location, pageContext }) => {
   const tag = data.ghostTag
-  console.log(tag)
+  //console.log(tag)
   const posts = data.allGhostPost.edges
   let accentColor = tag.accent_color === null ? `` : `[${tag.accent_color}]`
 

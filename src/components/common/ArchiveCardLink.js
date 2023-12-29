@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
-import ReactMarkdown from 'react-markdown'
 
 const ArchiveCardLink = ({ post }) => {
   const isTwitter = post.tags.some(tag => tag.name === `#twitter`)
@@ -26,9 +25,7 @@ const ArchiveCardLink = ({ post }) => {
         </h2>
       </header>
 
-      <section className="excerpt font-light">
-        <ReactMarkdown>{post.excerpt}</ReactMarkdown>
-      </section>
+      <section className="gh-contentload-external-scripts content-body" dangerouslySetInnerHTML={{ __html: post.html }} />
 
       <footer className="post-card-footer sr-only">
         {post.tags && (
