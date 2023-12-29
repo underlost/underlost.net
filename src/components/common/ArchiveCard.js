@@ -5,7 +5,7 @@ import ArchiveCardArticle from './ArchiveCardArticle'
 
 const ArchiveCard = ({ post }) => {
   // Check if post is a link list item
-  const isLinked = post.tags.some(tag => (tag.name === `#linked`))
+  const isLinked = post.tags.some(tag => (tag.name === `#linked` || tag.name === `#twitter`))
   //console.log(isLinked)
   //console.log(post.tags)
   return (

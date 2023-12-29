@@ -28,7 +28,7 @@ const MetalostBlock = () => {
                 A completely free Unreal Engine Metahuman model and set of assets you can use in your next Unreal project, with animation rigging support for Mixamo and other popular
                 libraries.
               </p>
-              <p className="text-lg mb-4">Coming Summer 2023.</p>
+              <p className="text-lg mb-4">Coming soon.</p>
             </div>
           </div>
         </div>

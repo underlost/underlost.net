@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import dayjs from 'dayjs'
 import { Tags } from '@tryghost/helpers-gatsby'
@@ -33,12 +33,14 @@ const Post = ({ data, location }) => {
       <div className="pb-5">
         <article className="content">
           <header className="gh-header gh-canvas mb-8">
-            {post.feature_image ? <img className="gh-feature-image" src={post.feature_image} alt={post.title} /> : null}
-
-            {post.primary_tag && <span className="post-card-tags subtitle">{post.primary_tag.name}</span>}
+            {post.primary_tag && (
+              <Link className="post-card-tags subtitle" to={`/tag/${post.primary_tag.slug}`}>
+                {post.primary_tag.name}
+              </Link>
+            )}
             <h1 className="text-6xl text-wide font-black mb-2">{post.title}</h1>
             <div className="grid grid-cols-2 mb-8">
-              <div className="col-span-2 md:col-span-1 md:text-right lg:order-2">
+              <div className="col-span-2 md:col-span-1  lg:order-1">
                 <time className="post-byline-item block text-muted" dateTime={post.published_at}>
                   <span className="sr-only">Published on </span>
                   Written {publishedAt}
@@ -47,21 +49,15 @@ const Post = ({ data, location }) => {
                   Last Updated {updatedAt}
                 </time>
               </div>
-              <div className="col-span-2 md:col-span-1 lg:order-1">
+              <div className="col-span-2 md:col-span-1 lg:order-2 md:text-right">
                 <span className="uppercase inline-block mb-1 pe-4 font-bold">{readingTime}</span>
               </div>
             </div>
+            {post.feature_image ? <img className="gh-feature-image mt-8" src={post.feature_image} alt={post.title} /> : null}
           </header>
           {/* The main post content */}
           <section className="gh-content gh-canvas load-external-scripts content-body pb-12" dangerouslySetInnerHTML={{ __html: post.html }} />
           <footer className="post-footer gh-canvas">
-            <div className="pb-8">
-              <div className="pb-3">
-                <TipButton text="Show your support!" />
-              </div>
-              <p>If you come across something that has helped or inspired you, consider showing your support!</p>
-            </div>
-
             {post.tags && (
               <div className="related-tags py-6">
                 <p className="text-lg uppercase mb-2 text-wide">Related Tags</p>
@@ -73,14 +69,28 @@ const Post = ({ data, location }) => {
           </footer>
         </article>
 
-        <div className="gh-canvas">
+        <div className="gh-canvas bg-vanilla mt-11 mb-16 dark:bg-black/40">
           <RelatedPostsBlock tags={post.tags} currentArticleSlug={post.slug} />
-
+        </div>
+        <div className="gh-canvas">
           <div className="about-author pb-12">
             <h6 className="text-lg uppercase mb-2 text-wide">About the Author</h6>
             <div className="post-card-author">
               <h6 className="post-byline-item font-bold uppercase block mb-1">{post.primary_author.name}</h6>
               <p className="font-light">{post.primary_author.bio}</p>
+            </div>
+
+            <div className="py-8">
+              <div className="pb-3">
+                <TipButton text="Show your support" />
+              </div>
+              <p className="mb-5">
+                Blog posts published on this site will always remain free. If you come across something that has helped or inspired you though, consider showing your support! Or{` `}
+                <Link to="/support-this-site/" className="underline">
+                  learn more how you can support this site
+                </Link>
+                .
+              </p>
             </div>
           </div>
 

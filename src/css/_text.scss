@@ -22,11 +22,11 @@
 }
 
 .title-h3 {
-  @apply text-2xl;
+  @apply text-2xl font-black;
 }
 
 .subtitle {
-  @apply font-sans text-lg font-light uppercase;
+  @apply font-light uppercase font-mono underline decoration-blue hover:decoration-pink;
   font-stretch: 0%;
 }
 
@@ -36,8 +36,7 @@
 }
 
 .tag-item {
-  @apply uppercase border px-2 py-1 mr-2 inline-block hover:bg-green;
-  @apply dark:hover:bg-purple-slate dark:hover:text-pink;
+  @apply uppercase border px-2 py-1 mr-2 inline-block hover:bg-black hover:text-white;
 }
 
 .lead, .kg-callout-text {
@@ -67,19 +66,16 @@
 }
 
 .highlight {
+  @apply relative z-10 whitespace-nowrap transition duration-300 ease-in-out;
   font-weight: 900;
-  position: relative;
-  z-index: 5;
-  white-space: nowrap;
 
   &::after {
     content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 30%;
+    bottom: 5%;
     left: -1rem;
-    width: 100%;
-    @apply bg-blue dark:bg-purple-slate;
+    @apply bg-blue dark:bg-slate-dark transition duration-300 ease-in-out w-full;
     z-index: -1;
   }
   span {
@@ -95,22 +91,22 @@
 
   &.primary {
     &::after {
-      @apply bg-green dark:bg-purple-slate;
+      @apply bg-green dark:bg-slate-dark;
     }
   }
   &.secondary {
     &::after {
-      @apply bg-pink dark:bg-purple-slate;
+      @apply bg-pink;
     }
   }
 }
 
 .content-body {
-  @apply text-base leading-normal font-light; 
+  @apply text-base leading-normal font-light;
 
   p {
     a {
-      @apply underline;
+      @apply underline decoration-pink font-normal;
       &:hover {
         @apply text-pink;
       }
@@ -153,25 +149,27 @@ blockquote{
 
 .kg-blockquote-alt {
   font-stretch: 150%;
-  @apply text-4xl border-l-0 pl-0;
-  @apply dark:text-pink;
+  @apply text-4xl border-l-0 pl-0 relative z-10;
+  @apply dark:text-blue-light dark:text-shadow-sm dark:shadow-black;
 
   &::before {
     content: '“';
-    @apply text-8xl block font-black h-4 -z-10 text-green;
-    @apply dark:text-purple dark:opacity-25;
+    @apply text-8xl block font-black h-4 -z-10 text-green absolute -left-3 -top-3;
+    @apply dark:text-green;
   }
 }
 
 .style-3d {
   -webkit-text-fill-color: transparent;
   position: relative;
+  text-shadow: none;
   &:before, &:after {
     position: absolute;
     left: 0;
     right: 0;
     font-stretch: 175%;
-    @apply text-6xl font-black;
+    text-shadow: none;
+    @apply font-black;
   }
   &:before {
     content: attr(data-text);
@@ -181,5 +179,12 @@ blockquote{
   &:after {
     content: attr(data-text);
     -webkit-text-stroke: 2px #00FFEE;
+  }
+}
+
+
+.underline {
+  &:hover {
+    @apply decoration-orange;
   }
 }

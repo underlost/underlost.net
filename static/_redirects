@@ -1,11 +1,21 @@
-# These rules will change if you change your site’s custom domains or HTTPS settings
-
 # Redirect domain aliases to primary domain
-https://underlost.com/* https://underlost.net/:splat 301!
-https://underlost.org/* https://underlost.net/:splat 301!
+https://underlost.com/* https://www.underlost.net/:splat 301!
+https://www.underlost.com/* https://www.underlost.net/:splat 301!
+https://underlost.org/* https://underlost.com/:splat 301!
+https://www.underlost.org/* https://underlost.com/:splat 301!
 
-#Redirect A Life Well Played
-https://alifewellplayed.com/* https://underlost.net/:splat 301!
+# Redirect A Life Well Played
+https://alifewellplayed.com/* https://www.underlost.net/:splat 301!
+https://www.alifewellplayed.com/* https://www.underlost.net/:splat 301!
+https://tyler.codes/* https://www.underlost.net/:splat 301!
+https://www.tyler.codes/* https://www.underlost.net/:splat 301!
+https://tyler.camera/* https://www.underlost.net/photos/:splat 301!
+https://www.tyler.camera/* https://www.underlost.net/photos/:splat 301!
+https://tyler.photos/* https://www.underlost.net/photos/:splat 301!
+https://www.tyler.photos/* https://www.underlost.net/photos/:splat 301!
 
 # Optional: Redirect default Netlify subdomain to primary domain
-https://underlost.netlify.com/* https://underlost.net/:splat 301!
+https://underlost.netlify.com/* https://www.underlost.net/:splat 301!
+
+# Redirects for XYZ
+https://underlost.xyz/* https://www.underlost.net/consulting/:splat 301!

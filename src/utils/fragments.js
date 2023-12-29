@@ -21,6 +21,7 @@ export const ghostTagFields = graphql`
     description
     meta_title
     meta_description
+    accent_color
   }
 `
 

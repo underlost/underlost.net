@@ -5,6 +5,7 @@ import { Layout } from '../components/common'
 import LinksList from '../components/LinksList'
 import ReadFirstBlock from '../components/ReadFirstBlock'
 import { Link, graphql } from 'gatsby'
+import UnderlostxyzBlock from '../components/underlostxyzBlock'
 
 const LinksPage = ({ data, location }) => (
   <Layout>
@@ -14,7 +15,8 @@ const LinksPage = ({ data, location }) => (
         <h1 className="title-h1">underlost.</h1>
         <section className="content-body load-external-scripts pt-4">
           <p className="lead mb-8">
-            Former lead developer at a creative agency. AI prompt engineer, Web & marketing consultant. Indie game dev. I&apos;ve made a lot of stuff on the internet. I&apos;m sorry about that.{` `}
+            Former lead developer at a creative agency. AI prompt engineer, Web & marketing consultant. Indie game dev. I&apos;ve made a lot of stuff on the internet. I&apos;m sorry about
+            that.{` `}
           </p>
           <p>
             This is a list of where you can find me on the internet, and other useful resources. If you&apos;re coming here from another website, make sure to check out the rest of my{` `}
@@ -27,12 +29,18 @@ const LinksPage = ({ data, location }) => (
         </section>
       </article>
 
-      <aside className="pb-8 pt-4">
+      <aside className="pb-4 pt-4">
         <LinksList />
       </aside>
 
-      <aside className="overflow-hidden">
-        <ReadFirstBlock />
+      <aside className="mb-8">
+        <div className="read-first-wrapper bg-green text-black rounded-xl p-8 dark:shadow-md">
+          <ReadFirstBlock />
+        </div>
+      </aside>
+
+      <aside>
+        <UnderlostxyzBlock />
       </aside>
     </div>
   </Layout>

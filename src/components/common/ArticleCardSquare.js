@@ -12,27 +12,25 @@ const ArticleCardSquare = ({ post }) => {
   return (
     <article className="card">
       <div className="">
-        <header className="post-card-header mb-8 aspect-square bg-slate relative">
+        <header className="post-card-header mb-8 aspect-square relative">
           <Link className="post-card-link block" to={url}>
             {post.feature_image && (
-              <div className="card-image absolute inset-0">
-                <LazyImage className="post-card-image absolute inset-0" key={post.feature_image} src={post.feature_image} alt={post.title} />
+              <div className="card-image-wrapper absolute inset-0 aspect-square">
+                <LazyImage className="card-image absolute inset-0 h-full w-full" key={post.feature_image} src={post.feature_image} alt={post.title} />
               </div>
             )}
           </Link>
-          <div className="absolute -bottom-5 left:8 lg:left-20 bg-green pl-10 pr-10 xl:pl-8 xl:pr-20 py-5 text-black">
-            <Link className="bg-green" to={url}>
+          <div className="relative lg:absolute z-20 lg:-bottom-5 lg:left:8 lg:left-0 pl-0 pr-10 xl:pl-0 xl:pr-20 pt-5 bg-light dark:bg-almost-black lg:-translate-x-16 rounded-xl">
+            <Link className="" to={url}>
               {post.primary_tag && <p className="subtitle">{post.primary_tag.name}</p>}
-              <h2 className="card-title h2">{post.title}</h2>
+              <h2 className="card-title text-2xl font-black">{post.title}</h2>
             </Link>
           </div>
         </header>
-
-        <section className="card-body post-card-excerpt text-lg font-light pl-8 lg:pl-20 pr-8">
+        <section className="card-body post-card-excerpt text-lg font-light pl-0 pr-8 xl:pr-20 lg:-translate-x-16">
           <p className="mb-4">{post.excerpt}</p>
         </section>
       </div>
-
       <footer className="post-card-footer sr-only">
         {post.tags && (
           <div className="post-card-tags h6 text-uppercase mb-1">

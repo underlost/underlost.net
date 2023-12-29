@@ -7,21 +7,16 @@ const ReadFirst = ({ data }) => {
   const posts = data.allGhostPost.edges
 
   return (
-    <div className="read-first-wrapper">
-      <section className="read-first post-feed">
-        <h2 className="font-black uppercase mb-4">
-          <span className="highlight">Noteworthy</span> Posts
-        </h2>
-        <ul className="read-first-list">
-          {posts.map(({ node }) => (
-            <li key={node.id} className="read-first-list-item">
-              <ArticleListItem post={node} />
-            </li>
-          ))}
-        </ul>
-      </section>
-      <div className="has-after-element translate-x-24" />
-    </div>
+    <section className="read-first post-feed text-black">
+      <h2 className="uppercase mb-4 font-mono">Noteworthy Posts</h2>
+      <ul className="read-first-list">
+        {posts.map(({ node }) => (
+          <li key={node.id} className="read-first-list-item">
+            <ArticleListItem post={node} />
+          </li>
+        ))}
+      </ul>
+    </section>
   )
 }
 

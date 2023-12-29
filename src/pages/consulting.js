@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
+import ClientSlider from '../components/ClientSlider'
 
 /**
  *
@@ -23,6 +24,7 @@ const ConsultingPage = ({ data, location }) => {
           </article>
         ) : null}
       </div>
+      <ClientSlider />
     </Layout>
   )
 }

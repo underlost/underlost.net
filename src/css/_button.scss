@@ -1,5 +1,5 @@
 .btn-underline {
-  @apply relative font-bold text-lg dark:hover:text-green;
+  @apply relative font-bold text-lg dark:hover:text-green z-10;
   span {
     @apply relative z-10;
   }
@@ -9,7 +9,7 @@
     bottom: .25rem;
     right: .75rem;
     height: 8px;
-    @apply absolute transition-all ease-in-out duration-300 w-full bg-blue dark:bg-purple-slate;
+    @apply absolute transition-all ease-in-out duration-300 w-full bg-blue dark:bg-slate -z-10;
   }
 
   &:hover {
@@ -25,15 +25,26 @@
   .arrow {
     transition: ease all .3s;
     path {
-      @apply dark:fill-purple;
+      @apply dark:fill-green;
+    }
+    &.dark {
+      path {
+        @apply fill-black;
+      }
     }
   }
   &:hover {
     .arrow {
-      @apply translate-x-1;
+      @apply translate-x-2;
 
       path {
         @apply fill-pink;
+        @apply dark:fill-green;
+      }
+      &.dark {
+        path {
+          @apply fill-black;
+        }
       }
     }
   }
@@ -44,12 +55,12 @@
 
   &::after {
     content: '';
-    @apply absolute inset-0 block w-full h-full bg-blue transition duration-150 ease-out rounded dark:bg-purple-slate dark:opacity-80;
+    @apply absolute inset-0 block w-full h-full bg-blue transition duration-150 ease-out rounded dark:opacity-80;
   }
 
   .btn-block {
-    @apply block w-full border-2 px-4 py-4 no-underline hover:text-black hover:border-black rounded relative z-20 bg-white ;
-    @apply dark:bg-purple-slate dark:hover:border-pink dark:hover:text-pink;
+    @apply block w-full border-2 px-4 py-4 no-underline hover:text-black hover:border-black rounded relative z-20 bg-vanilla;
+    @apply dark:bg-slate-dark dark:border-slate-dark dark:text-white dark:hover:text-white;
   }
 
   .btn-title {
@@ -70,6 +81,6 @@
 .btn {
   &.btn-primary {
     @apply bg-black text-white px-4 py-2 hover:text-white;
-    @apply dark:bg-purple dark:text-purple-dark;
+    @apply dark:bg-blue dark:text-black dark:hover:text-almost-black;
   }
 }

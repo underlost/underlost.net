@@ -14,13 +14,13 @@ const PortfolioCard = ({ post }) => {
       <header className="post-card-header">
         <Link className="post-card-link d-block" to={url}>
           {post.feature_image && (
-            <div className="card-image h-96">
-              <LazyImage className="post-card-image h-full" key={post.feature_image} src={post.feature_image} alt={post.title} />
+            <div className="card-image rounded-xl overflow-hidden">
+              <LazyImage className="post-card-image w-full h-auto rounded-xl" key={post.feature_image} src={post.feature_image} alt={post.title} />
             </div>
           )}
-          <div className="pt-4">
+          <div className="pt-4 mb-1">
             {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
-            <h2 className="post-card-title h2 mb-1">{post.title}</h2>
+            <h2 className="card-title h2 ">{post.title}</h2>
           </div>
         </Link>
       </header>

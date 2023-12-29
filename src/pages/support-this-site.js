@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { MetaData } from '../components/common/meta'
 import { Layout } from '../components/common'
 import { graphql } from 'gatsby'
+import NewsletterForm from '../components/NewsletterForm'
+import TipButton from '../components/TipButton'
 
 const MembershipPage = ({ data, location }) => {
   const page = data.ghostPage
@@ -14,6 +16,22 @@ const MembershipPage = ({ data, location }) => {
           <h1 className="title-h1">{page.title}</h1>
           <section className="content-body load-external-scripts pt-4" dangerouslySetInnerHTML={{ __html: page.html }} />
         </article>
+
+        <div className="gh-canvas">
+          <div className="about-author pb-12">
+            <div className="py-8">
+              <div className="pb-3">
+                <TipButton text="Show your support" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <hr />
+            <div className="pt-12">
+              <NewsletterForm />
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   )
@@ -31,7 +49,7 @@ export default MembershipPage
 // This page query loads page with the links slug
 export const pageQuery = graphql`
   query GhostLinksQuery {
-    ghostPage(slug: { eq: "membership" }) {
+    ghostPage(slug: { eq: "support-this-site" }) {
       ...GhostPageFields
     }
   }

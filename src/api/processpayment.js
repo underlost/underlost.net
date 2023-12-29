@@ -5,7 +5,7 @@ export default async function processpayment(req, res) {
   try {
     // Treat req.body as an object, not a string
     const { paymentMethodId, tipAmount, email, name } = req.body
-    console.log(`paymentMethodId:`, paymentMethodId)
+    //console.log(`paymentMethodId:`, paymentMethodId)
     // Create a charge or payment intent using the paymentMethodId and tipAmount
 
     const price = await stripe.prices.create({
@@ -34,7 +34,7 @@ export default async function processpayment(req, res) {
       customer: customer.id,
     })
 
-    console.log(`paymentIntent:`, paymentIntent)
+    //console.log(`paymentIntent:`, paymentIntent)
     if (paymentIntent.error) {
       return res.status(400).json({ error: paymentIntent.error })
     } else if (paymentIntent.errors) {
@@ -43,7 +43,7 @@ export default async function processpayment(req, res) {
     // Return a success response to the client
     return res.status(200).json({ message: `Payment successful! Thank you for your support!` })
   } catch (error) {
-    console.error(`Payment processing error:`, error)
+    //console.error(`Payment processing error:`, error)
     // Return an error response to the client with the specific error message
     return res.status(500).json({ error: error.message })
   }

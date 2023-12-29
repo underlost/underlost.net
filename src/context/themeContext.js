@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 export const ThemeContext = React.createContext({
-  theme: ``,
+  theme: `light`,
   setTheme: () => {},
 })
 const ThemeContextProvider = ({ children }) => {

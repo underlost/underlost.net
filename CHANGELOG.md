@@ -2,6 +2,13 @@
 
 ---
 
+## 9.0.0 (12/28/23)
+
+* Updated color scheme
+* Updated typography
+* Updated layout
+* Added Twitter and Boredable pages
+
 ## 8.5.0 (02/01/23)
 
 * Updated color scheme

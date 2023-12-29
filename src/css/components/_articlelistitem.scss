@@ -1,13 +1,12 @@
 .article-item {
-  @apply py-3 overflow-hidden;
+  @apply py-2.5 overflow-hidden;
 }
 
 .article-item-link {
-  @apply block transition duration-150 ease-out hover:text-slate hover:translate-x-1.5 uppercase relative;
-  @apply dark:hover:text-pink;
+  @apply block transition duration-150 ease-out hover:translate-x-1.5 uppercase relative;
 
   .article-item-title {
-    @apply mr-3 block md:inline-block relative;
+    @apply mr-3 block md:inline-block relative mb-1;
 
     &::after {
       content: "";

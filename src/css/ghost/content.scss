@@ -38,6 +38,16 @@
     min-height: 300px;
 }
 
+.gh-feature-photo {
+    grid-column: wide-start / wide-end;
+    width: 100%;
+    margin: 0 0 4vmin;
+    max-height: auto;
+    object-fit: cover;
+    object-position: center;
+    min-height: 300px;
+}
+
 .gh-content {
     &>*+* {
         margin-top: 4vmin;

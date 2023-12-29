@@ -22,7 +22,7 @@ const Page = ({ data, location }) => {
         <MetaData data={data} location={location} type="website" />
         <div className="gh-content gh-canvas py-5">
           <article className="content">
-            <h1 className="title-h1 mb-11">{page.title}</h1>
+            {page.title && <h1 className="title-h1 mb-11">{page.title}</h1>}
             <section className="content-body load-external-scripts" dangerouslySetInnerHTML={{ __html: page.html }} />
           </article>
         </div>

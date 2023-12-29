@@ -9,10 +9,11 @@ import { MetaData } from '../components/common/meta'
 import ReadFirstBlock from '../components/ReadFirstBlock'
 import PopularPostsBlock from '../components/PopularBlock'
 import NewsletterForm from '../components/NewsletterForm'
-import LinkArrow from '../components/LinkArrow'
 import RecentBlock from '../components/RecentBlock'
 import BoringAppBlock from '../components/BoringAppBlock'
 import MetalostBlock from '../components/MetalostBlock'
+import UnderlostxyzBlock from '../components/underlostxyzBlock'
+import TwitterBlock from '../components/TwitterBlock'
 
 /**
  * Homepage Page
@@ -28,21 +29,20 @@ const HomePage = ({ data, location }) => {
       <MetaData data={data} location={location} title="Underlost, By Tyler Rilling" type="website" isHome={true} />
       <div className="mx-auto pt-5 pb-5 px-8 container lg:px-24 overflow-hidden lg:overflow-visible relative">
         <h1 className="site-title">
-          <span className="highlight primary">
+          <span className="highlight primary dark:text-blue">
             <span>Underlost</span>
           </span>
           {` `}
           is Tyler Rilling, a Python web developer, UX designer, and digital marketing consultant, living in Seattle, Washington. They are probably not an{` `}
-          <a className="underline" href="/writing/a-reminder-that-underlost-is-not-just-an-undertale-thing/">
+          <Link to="/writing/a-reminder-that-underlost-is-not-just-an-undertale-thing/" className="underline">
             Undertale game
-          </a>
+          </Link>
           . 👾
         </h1>
 
         <div className="grid grid-cols-12 lg:gap-x-16 xl:gap-x-24">
           <div className="col-span-12 lg:col-span-6 mb-4 lg:pt-12 order-2 lg:order-1">
             <div className="xl:pl-16 relative">
-              <div className="grid-pattern h-[300px] w-[120px] absolute right-16 -top-40" />
               <FeaturedCardsBlock />
             </div>
           </div>
@@ -53,42 +53,44 @@ const HomePage = ({ data, location }) => {
               <div className="pb-16 max-w-lg">
                 <p className="text-lg leading-normal font-light">
                   As a full-stack developer, I specialize in Python, ReactJS, Building APIs and REST frameworks with content management systems like WordPress and Ghost, and various other
-                  technology stacks. Formerly a lead developer at an interactive design agency in Seattle, Washington, now I&apos;ve started my own small {` `}
-                  <LinkArrow text="consulting & development agency" url="https://www.underlost.xyz" />
+                  technology stacks. Formerly a lead developer at an interactive design agency in Seattle, Washington, I now run my own small {` `}
+                  <Link to="/consulting/" className="underline font-black">
+                    digital marketing agency
+                  </Link>
                 </p>
               </div>
-              <ReadFirstBlock />
 
-              <div className="mt-5">
-                <a className="font-bold btn-link has-arrow whitespace-nowrap hover:underline uppercase dark:text-pink" href="#recent">
-                  Read More
-                  <span className="inline-block px-1 arrow">
-                    <svg width="23" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M22.087 5.464v3.072h-3.095v1.56h-3.073v1.536h-3.095v1.536H9.752V8.536H.487V5.464h9.265V.832h3.072v1.536h3.095v1.536h3.073v1.56h3.095Z" fill="#03080F" />
-                    </svg>
-                  </span>
-                </a>
+              <div className="read-first-wrapper bg-green text-black rounded-xl p-8 max-w-md dark:shadow-md">
+                <ReadFirstBlock />
+
+                <div className="mt-5">
+                  <a className="font-bold btn-link has-arrow whitespace-nowrap hover:underline uppercase" href="#recent">
+                    Read More
+                    <span className="inline-block px-1 arrow">
+                      <svg width="23" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.087 5.464v3.072h-3.095v1.56h-3.073v1.536h-3.095v1.536H9.752V8.536H.487V5.464h9.265V.832h3.072v1.536h3.095v1.536h3.073v1.56h3.095Z" fill="#03080F" />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="px-0">
-        <PopularPostsBlock />
-      </div>
 
-      <div className="pb-20">
-        <BoringAppBlock />
-      </div>
+      <UnderlostxyzBlock />
 
-      <div>
-        <MetalostBlock />
-      </div>
+      <PopularPostsBlock />
+
+      <BoringAppBlock />
+
+      <MetalostBlock />
 
       <div id="recent">
         <div className="text-center pt-10 lg:pt-20">
           <div className="relative">
-            <h3 className="text-wide text-center text-3xl lg:text-5xl font-black relative z-10 dark:text-pink">
+            <h3 className="text-wide text-center text-3xl lg:text-5xl font-black relative z-10 dark:text-blue-light">
               <span className="highlight">Recent Posts</span>
             </h3>
           </div>
@@ -103,6 +105,8 @@ const HomePage = ({ data, location }) => {
           </Link>
         </nav>
       </div>
+
+      <TwitterBlock />
 
       <div>
         <div className="bg-black h-[500px] lg:h-[600px] relative">

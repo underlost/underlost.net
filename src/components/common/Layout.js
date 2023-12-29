@@ -4,9 +4,9 @@ import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { Navigation } from '.'
 import SiteLogo from '../SiteLogo'
-// import config from '../../utils/siteConfig'
 import Prism from 'prismjs'
 import { ThemeContext } from '../../context/themeContext'
+import SocialIcons from '../SocialIcons'
 
 /**
 * Main layout component
@@ -16,7 +16,7 @@ import { ThemeContext } from '../../context/themeContext'
 * styles, and meta data for each page.
 *
 */
-const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
+const DefaultLayout = ({ data, children, bodyClass, isHome, className = ``, headerClass = ``, hideLogo = false }) => {
   const site = data.allGhostSettings.edges[0].node
   const { theme, setTheme } = useContext(ThemeContext)
   const [menuState, setMenuState] = useState(`page nav-is-closed`)
@@ -43,59 +43,74 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
   return (
     <>
       <Helmet>
-        <html lang={site.lang} className={`${theme === `light` ? `light` : `dark`}`} />
+        <html lang={site.lang} className={`${theme === `dark` ? `dark` : `light`}`} />
         <link rel="preload" href="/fonts/Mona-Sans.woff2" as="font" crossOrigin="anonymous" type="font/woff2" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
         <style type="text/css">{`${site.codeinjection_styles}`}</style>
         <body className={bodyClass} />
       </Helmet>
 
-      <div className={`${menuState}`}>
+      <div className={`${menuState} ${className}`}>
         <div className="viewport">
           <div className="viewport-top">
             {/* The main header section on top of the screen */}
-            <header className="site-head mx-auto">
-              <div className="toggle-wrapper container mx-auto text-right pt-5 pr-5 flex gap-8 justify-end">
-                <label className="relative inline-flex items-center cursor-pointer">
-                  <input type="checkbox" className="sr-only peer" checked={theme === `light` ? true : false} onChange={handleThemeToggle} />
-                  <div className="w-11 h-6 bg-slate peer-focus:outline-none peer-focus:ring-0 rounded-full peer dark:bg-purple-slate peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[6px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-slate peer-checked:bg-blue"></div>
-                  <span className="ml-3 text-lg font-medium">
-                    {theme === `light` ? (
+            {!hideLogo && (
+              <header className={`site-head mx-auto ${headerClass}`}>
+                <div className="toggle-wrapper container mx-auto text-right pt-5 pr-5 flex gap-8 justify-end">
+                  <button onClick={handleThemeToggle}>
+                    {theme === `dark` ? (
                       <>
-                        ☀️ <span className="sr-only">Light Mode</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" data-slot="icon" className="w-6 h-6">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                          />
+                        </svg>
+                        <span className="sr-only">Light Mode</span>
                       </>
                     ) : (
                       <>
-                        🌙 <span className="sr-only">Dark Mode</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" data-slot="icon" className="w-6 h-6">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+                          />
+                        </svg>
+                        <span className="sr-only">Dark Mode</span>
                       </>
                     )}
-                  </span>
-                </label>
+                  </button>
 
-                <button type="button" className="btn navbar-toggler focus:outline-none relative z-50" onClick={toggleMenu}>
-                  <span className={`icon-bar block top-bar`} />
-                  <span className={`icon-bar block middle-bar`} />
-                  <span className={`icon-bar block bottom-bar ml-auto`} />
-                  <span className={`sr-only`}>Toggle navigation</span>
-                </button>
-              </div>
-
-              {isHome && (
-                <div className="site-banner sr-only">
-                  <h1 className="site-banner-title">{site.title}</h1>
-                  <p className="site-banner-desc">{site.description}</p>
+                  <button type="button" className="btn navbar-toggler focus:outline-none relative z-50" onClick={toggleMenu}>
+                    <span className={`icon-bar block top-bar`} />
+                    <span className={`icon-bar block middle-bar`} />
+                    <span className={`icon-bar block bottom-bar ml-auto`} />
+                    <span className={`sr-only`}>Toggle navigation</span>
+                  </button>
                 </div>
-              )}
 
-              <div className="gh-header gh-canvas lg:pb-5 pt-5">
-                <SiteLogo />
-              </div>
+                {isHome && (
+                  <div className="site-banner sr-only">
+                    <h1 className="site-banner-title">{site.title}</h1>
+                    <p className="site-banner-desc">{site.description}</p>
+                  </div>
+                )}
 
-              <div className="site-menu fixed inset-0">
-                <div className="max-w-6xl mx-auto pt-8">
-                  <Navigation data={site.navigation} navClass="site-nav-item py-2" />
+                <div className="gh-header gh-canvas lg:pb-5 pt-5">
+                  <SiteLogo />
                 </div>
-              </div>
-            </header>
+
+                <div className="site-menu fixed inset-0 ">
+                  <div className="max-w-6xl mx-auto pt-8">
+                    <Navigation data={site.navigation} navClass="site-nav-item py-2" />
+                  </div>
+                </div>
+              </header>
+            )}
 
             <main className="site-main mx-auto pb-5">
               {/* All the main content gets inserted here, index.js, post.js */}
@@ -109,6 +124,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
               <div className="site-footer-nav container px-0 pb-1 mx-auto">
                 <Navigation data={site.navigation} navClass="site-footer-nav-item" />
               </div>
+              <SocialIcons />
               <div className="site-copyright text-center text-xs pb-8">
                 <Link to="/">{site.title}</Link> Copyright © Tyler Rilling 2001 - 2023. <br /> Site last updated:{` `}
                 <a href="https://github.com/underlost/underlost.net/">{data.site.buildTime}</a>. ❤️
@@ -126,6 +142,9 @@ DefaultLayout.propTypes = {
   children: PropTypes.node.isRequired,
   bodyClass: PropTypes.string,
   isHome: PropTypes.bool,
+  className: PropTypes.string,
+  headerClass: PropTypes.string,
+  hideLogo: PropTypes.bool,
   data: PropTypes.shape({
     file: PropTypes.object,
     site: PropTypes.object,

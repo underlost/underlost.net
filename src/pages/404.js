@@ -31,7 +31,8 @@ const NotFoundPage = () => (
           style={{
             backgroundColor: `rgba(0,0,0,0.75)`,
             backdropFilter: `grayscale(100%)`,
-          }}></div>
+          }}
+        ></div>
       </div>
     </div>
     <div className="absolute inset-0 z-20">

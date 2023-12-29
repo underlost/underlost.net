@@ -1,0 +1,15 @@
+.dark {
+  .vertical-timeline-element-content {
+    @apply bg-slate-dark;
+    box-shadow: none;
+  }
+  .vertical-timeline-element-content-arrow {
+    @apply border-r-slate-dark;
+  }
+}
+
+.vertical-timeline-element-content {
+  em {
+    @apply italic;
+  }
+}

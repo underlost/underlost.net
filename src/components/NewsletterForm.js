@@ -45,7 +45,7 @@ const NewsletterForm = () => {
         //console.log(res)
       }
     } catch (err) {
-      console.log(err)
+      //console.log(err)
     }
   }
 
@@ -66,13 +66,13 @@ const NewsletterForm = () => {
             type="email"
             autoComplete="email"
             required
-            className="w-full px-4 py-3 text-lg border-2 border-black dark:border-purple focus:outline-none lg:border-r-0 dark:bg-purple-dark dark:text-white"
+            className="w-full px-4 py-3 text-lg border-2 border-black dark:border-slate focus:outline-none lg:border-r-0 dark:bg-almost-black dark:text-white"
             onChange={changeEmail}
           />
         </div>
         <div className="col-span-12 lg:col-span-4 mt-3 lg:mt-0">
           <button
-            className="font-bold w-full bg-black dark:bg-purple dark:text-purple-dark text-white px-4 py-3 text-lg hover:bg-blue hover:text-black border-2 border-black dark:border-purple focus:outline-none focus:border-blue focus:bg-blue"
+            className="font-bold w-full bg-black dark:bg-slate text-white px-4 py-3 text-lg hover:bg-blue hover:text-black border-2 border-black dark:border-slate focus:outline-none focus:border-blue focus:bg-blue"
             type="submit"
           >
             {loading ? `Subscribing...` : `Subscribe`}

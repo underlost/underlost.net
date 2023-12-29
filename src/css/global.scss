@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;800;900&family=Space+Mono:wght@400;700&display=swap');
 
 @font-face {
   font-family: 'Mona Sans';
@@ -13,7 +14,8 @@
 }
 
 html, body {
-  @apply bg-light dark:bg-purple-dark dark:text-purple-light transition duration-150 ease-in-out antialiased;
+  @apply bg-light transition duration-300 ease-in-out antialiased;
+  @apply dark:bg-almost-black dark:text-light; 
 }
 
 .site-main {
@@ -33,6 +35,7 @@ html, body {
 @import '_portfolio.scss';
 @import '_bookmark.scss';
 @import '_author.scss';
+@import '_twitter.scss';
 
 @import '_text.scss';
 @import '_card.scss';
@@ -41,8 +44,38 @@ html, body {
 @import '_code.scss';
 @import '_glitch.scss';
 
+  .blinker {
+    display: inline-block;
+    transform: scale(1.5) translateY(-1px);
+    animation: blinker 1.2s infinite;
+    @apply w-3 h-4 bg-white;
+  }
+  @keyframes blinker {
+    0% {
+      opacity: 1;
+    }
+    49% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    99% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
-.grid-pattern {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAIElEQVQoz2NggIL/QMBALiBL838sgD42U0XzKBgFNAEApewj3XWLo4QAAAAASUVORK5CYII=");
-  @apply mix-blend-difference dark:mix-blend-soft-light opacity-25 dark:opacity-80;
+
+.squiggle{
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-image: url('/images/svg/s1.svg');
+  }
 }

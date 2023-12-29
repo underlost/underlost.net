@@ -8,7 +8,7 @@ import url from 'url'
 import ImageMeta from './ImageMeta'
 import config from '../../../utils/siteConfig'
 
-const RecipeMeta = ({ data, settings, canonical, title, description, image, type }) => {
+const RecipeMeta = ({ data, settings, canonical, title, description, image }) => {
   settings = settings.allGhostSettings.edges[0].node
 
   const publisherLogo = url.resolve(config.siteUrl, settings.logo || config.siteIcon)
@@ -25,11 +25,11 @@ const RecipeMeta = ({ data, settings, canonical, title, description, image, type
     url: canonical,
     image: shareImage
       ? {
-          '@type': `ImageObject`,
-          url: shareImage,
-          width: config.shareImageWidth,
-          height: config.shareImageHeight,
-        }
+        '@type': `ImageObject`,
+        url: shareImage,
+        width: config.shareImageWidth,
+        height: config.shareImageHeight,
+      }
       : undefined,
     publisher: {
       '@type': `Organization`,

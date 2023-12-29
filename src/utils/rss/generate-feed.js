@@ -60,7 +60,7 @@ const generateRSSFeed = function generateRSSFeed(siteConfig) {
         title: siteTitle,
         description: siteDescription,
         // generator: `Ghost ` + data.safeVersion,
-        generator: `Ghost 4.0`,
+        generator: `Ghost 5.0`,
         feed_url: `${siteConfig.siteUrl}/rss/`,
         site_url: `${siteConfig.siteUrl}/`,
         image_url: `${siteConfig.siteUrl}/${siteConfig.siteIcon}`,

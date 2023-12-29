@@ -1,4 +1,6 @@
 const path = require(`path`)
+const fs = require(`fs`)
+
 const { postsPerPage } = require(`./src/utils/siteConfig`)
 const { paginate } = require(`gatsby-awesome-pagination`)
 
@@ -18,10 +20,33 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      photos: allGhostPost(sort: { published_at: ASC }, filter: { tags: { elemMatch: { name: { eq: "#photos" } } } }) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
       thoughts: allGhostPost(sort: { published_at: ASC }, filter: { tags: { elemMatch: { name: { eq: "#thoughts" } } } }) {
         edges {
           node {
             slug
+          }
+        }
+      }
+      twitter: allGhostPost(sort: { published_at: DESC }, filter: { tags: { elemMatch: { name: { eq: "#twitter" } } } }) {
+        edges {
+          node {
+            id
+            title
+            slug
+            feature_image
+            published_at
+            tags {
+              name
+              slug
+            }
+            html
           }
         }
       }
@@ -88,17 +113,23 @@ exports.createPages = async ({ graphql, actions }) => {
   const authors = result.data.allGhostAuthor.edges
   const pages = result.data.allGhostPage.edges
   const posts = result.data.blog.edges
+  const photos = result.data.photos.edges
   const thoughts = result.data.thoughts.edges
   const projects = result.data.projects.edges
   const caseStudies = result.data.caseStudies.edges
   const portfolio = result.data.portfolio.edges
 
+  // Load all twitter posts to json file
+  const allTwitterPosts = result.data.twitter.edges.map(({ node }) => node)
+  fs.writeFileSync(path.join(__dirname, `static/json`, `allTwitterPosts.json`), JSON.stringify(allTwitterPosts))
+
   // Load templates
-  const indexTemplate = path.resolve(`./src/templates/archive.js`)
+  const archiveTemplate = path.resolve(`./src/templates/archive.js`)
   const tagsTemplate = path.resolve(`./src/templates/tag.js`)
   const authorTemplate = path.resolve(`./src/templates/author.js`)
   const pageTemplate = path.resolve(`./src/templates/page.js`)
   const postTemplate = path.resolve(`./src/templates/post.js`)
+  const photoTemplate = path.resolve(`./src/templates/photo.js`)
   const portfolioTemplate = path.resolve(`./src/templates/portfolio.js`)
 
   // Create tag pages
@@ -241,6 +272,23 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  // Create photo pages
+  photos.forEach(({ node }) => {
+    // This part here defines, that our posts will use
+    // a `/:slug/` permalink.
+    node.url = `/photos/${node.slug}/`
+
+    createPage({
+      path: node.url,
+      component: photoTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.slug,
+      },
+    })
+  })
+
   // Create post case studies
   caseStudies.forEach(({ node }) => {
     // This part here defines, that our posts will use
@@ -279,7 +327,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage,
     items: posts,
     itemsPerPage: postsPerPage,
-    component: indexTemplate,
+    component: archiveTemplate,
     pathPrefix: ({ pageNumber }) => {
       if (pageNumber === 0) {
         return `/archive/`

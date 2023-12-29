@@ -4,6 +4,7 @@ import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import { Dialog, Transition } from '@headlessui/react'
+import { Link } from 'gatsby'
 
 const stripePromise = loadStripe(`${process.env.STRIPE_PUBLIC_KEY}`)
 
@@ -48,7 +49,7 @@ const TipForm = () => {
         card: elements.getElement(CardElement),
       })
       if (error) {
-        console.log(`Payment error:`, error)
+        //console.log(`Payment error:`, error)
         setErrorMessage(error.message)
       } else {
         const tipAmount = tipAmountValue * 100 //convert to cents
@@ -99,7 +100,7 @@ const TipForm = () => {
             required
             value={name}
             onChange={changeName}
-            className="w-full px-2 py-1.5 text-sm border border-black dark:border-purple focus:outline-none dark:bg-purple-dark dark:text-white mb-2"
+            className="w-full px-2 py-1.5 text-sm border border-black dark:border-purple focus:outline-none dark:bg-almost-black dark:text-white mb-2"
           />
           <input
             aria-label="Email"
@@ -108,14 +109,14 @@ const TipForm = () => {
             required
             value={email}
             onChange={changeEmail}
-            className="w-full px-2 py-1.5 text-sm border border-black dark:border-purple focus:outline-none dark:bg-purple-dark dark:text-white mb-2"
+            className="w-full px-2 py-1.5 text-sm border border-black dark:border-purple focus:outline-none dark:bg-almost-black dark:text-white mb-2"
           />
           <input
             aria-label="Tip amount"
             placeholder="$5.00"
             type="number"
             required
-            className="w-full px-2 py-1.5 text-sm border border-black dark:border-purple focus:outline-none dark:bg-purple-dark dark:text-white mb-2"
+            className="w-full px-2 py-1.5 text-sm border border-black dark:border-purple focus:outline-none dark:bg-almost-black dark:text-white mb-2"
             value={tipAmountValue}
             onChange={changeTip}
           />
@@ -137,7 +138,7 @@ const TipForm = () => {
               }}
             />
           </div>
-          <button type="submit" disabled={!stripe} className="btn btn-primary flex">
+          <button type="submit" disabled={!stripe} className="btn btn-primary flex font-bold">
             Leave a tip
           </button>
         </form>
@@ -161,7 +162,7 @@ const TipButton = ({ text = `Add a tip` }) => {
 
   return (
     <>
-      <button type="button" onClick={openModal} className="btn btn-primary text-base text-wide uppercase flex">
+      <button type="button" onClick={openModal} className="btn btn-primary text-base font-bold">
         {text}
       </button>
 
@@ -188,18 +189,19 @@ const TipButton = ({ text = `Add a tip` }) => {
                 leave="ease-in duration-200"
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95">
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-purple-dark dark:text-purple-light p-6 text-left align-middle shadow-xl transition-all relative">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all relative">
                   <div className="absolute right-8 top-6">
                     <button type="button" className="text-xs" onClick={closeModal}>
                       Close
                     </button>
                   </div>
-                  <Dialog.Title as="h3" className="text-sm font-bold leading-6 text-gray-900">
-                    Show Your Support!
+                  <Dialog.Title as="h3" className="font-black">
+                    Show Your Support
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="mb-5">
-                      Blog posts published on this site will always remain free. If you come across something that has helped or inspired you though, consider showing your support!
+                      Blog posts published on this site will always remain free. If you come across something that has helped or inspired you though, consider showing your support! Or{` `}
+                      <Link to="/support-this-site/" className="underline">learn more how you can support this site</Link>.
                     </p>
                     <Elements stripe={stripePromise}>
                       <TipForm />

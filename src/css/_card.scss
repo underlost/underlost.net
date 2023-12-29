@@ -1,43 +1,69 @@
-.card {
-  .card-image {
-    @apply transition duration-300 ease-out overflow-hidden;
 
+
+.card-image-wrapper {
+  @apply relative z-10;
+  .card-image {
+    @apply relative z-10 overflow-hidden rounded-xl;
     * {
       @apply transition duration-150 ease-out;
     }
   }
-  .card-title {
-    @apply transition duration-150 ease-out relative z-10 inline-block dark:hover:text-pink;
-
-    &::before {
-      @apply duration-300 ease-out absolute left-0 right-0 top-5 bottom-0 block bg-blue dark:bg-purple-slate -z-10 w-0 max-h-5 dark:opacity-30;
-      content: '';
-    }
-
-    &:hover {
-      &::before {
-        @apply w-full;
-      }
-    }
-
-    &.h3 {
-      &::before {
-        @apply top-2 max-h-3;
-      }
-    }
+  &::after {
+    content: '';
+    @apply absolute inset-0 block w-full h-full bg-vanilla dark:bg-slate-dark transition duration-150 ease-out rounded-xl dark:opacity-80 -z-10;
   }
-  
-
   &:hover {
     .card-image {
-      @apply opacity-100 ;
-      
+      @apply opacity-100;
+    
       * {
         @apply scale-105;
       }
     }
-    .h2 {
-      //color: $secondary;
+  }
+}
+
+.card-title {
+  @apply transition duration-150 ease-in-out;
+}
+
+.post-card-header {
+  @apply transition duration-150 ease-in-out;
+  
+  &:hover {
+    .card-title {
+      @apply shadow-[inset_0_-0.45em_0_0] shadow-blue dark:shadow-pink dark:text-light inline;
+    }
+    .card-image-wrapper {
+      &::after {
+        @apply translate-x-3 -translate-y-3;
+      }
+    }
+  }
+}
+
+.photo-card {
+  @apply transition duration-150 ease-in-out;
+
+  .photo-card-overlay {
+    @apply transition duration-150 ease-in-out absolute inset-0 hidden lg:block;
+    top: 40%;
+    background: linear-gradient(to bottom, rgba(33, 36, 37, 0) 0, rgba(33, 36, 37, .7) 50%, rgba(33, 36, 37, .84) 100%);
+  }
+
+  .photo-card-title {
+    @apply transition duration-300 ease-in-out;
+  }
+
+  &:hover {
+    @apply scale-110;
+
+    .photo-card-overlay {
+      @apply opacity-0;
+    }
+
+    .photo-card-title {
+      @apply translate-y-20 opacity-0;
     }
   }
 }
