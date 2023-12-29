@@ -34,7 +34,7 @@ export default async function newsletterSubscribe(req, res) {
 
     // 3. If the control goes inside the try block
     // let us consider it as a success(200)
-    return res.status(200).json({ message: `You've just subsribed! Be on the look out for an email explaining more details soon.` })
+    return res.status(200).json({ message: `You've just subscribed! Be on the look out for an email explaining more details soon.` })
   } catch (err) {
     // 4. If the control goes inside the catch block
     // let us consider it as a server error(500)

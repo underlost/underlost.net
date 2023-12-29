@@ -73,20 +73,19 @@ const NewsletterForm = () => {
         <div className="col-span-12 lg:col-span-4 mt-3 lg:mt-0">
           <button
             className="font-bold w-full bg-black dark:bg-slate text-white px-4 py-3 text-lg hover:bg-blue hover:text-black border-2 border-black dark:border-slate focus:outline-none focus:border-blue focus:bg-blue"
-            type="submit"
-          >
+            type="submit">
             {loading ? `Subscribing...` : `Subscribe`}
           </button>
         </div>
       </form>
+
+      {successState ? <p className="text-secondary my-2">{successState}</p> : <p className="text-secondary">{errorState}</p>}
 
       <p className="text-end">
         <a className="btn-underline" href="/tag/newsletter">
           <span>View Past Issues</span>
         </a>
       </p>
-
-      {successState ? <span className="text-secondary">{successState}</span> : <span className="text-secondary">{errorState}</span>}
     </div>
   )
 }
