@@ -12,7 +12,7 @@ import NewsletterForm from '../components/NewsletterForm'
 import RecentBlock from '../components/RecentBlock'
 import BoringAppBlock from '../components/BoringAppBlock'
 import MetalostBlock from '../components/MetalostBlock'
-import UnderlostxyzBlock from '../components/underlostxyzBlock'
+import UnderlostxyzBlock from '../components/UnderlostxyzBlock'
 import TwitterBlock from '../components/TwitterBlock'
 
 /**

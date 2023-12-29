@@ -5,7 +5,7 @@ import { Layout } from '../components/common'
 import LinksList from '../components/LinksList'
 import ReadFirstBlock from '../components/ReadFirstBlock'
 import { Link, graphql } from 'gatsby'
-import UnderlostxyzBlock from '../components/underlostxyzBlock'
+import UnderlostxyzBlock from '../components/UnderlostxyzBlock'
 
 const LinksPage = ({ data, location }) => (
   <Layout>
