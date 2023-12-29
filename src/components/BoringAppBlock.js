@@ -78,7 +78,7 @@ const BoringApp = ({ data }) => {
                           {node.excerpt && <p className="text-base inline">{node.excerpt}</p>}
                         </Link>
                       ) : (
-                        <span className="opacity-30">
+                        <span className="opacity-50">
                           <h3 className="text-lg text-wide font-black inline pr-3">{node.title}</h3>
                           {node.excerpt && <p className="text-base inline">{node.excerpt}</p>}
                         </span>

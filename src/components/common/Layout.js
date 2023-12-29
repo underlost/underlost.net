@@ -45,9 +45,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, className = ``, head
       <Helmet>
         <html lang={site.lang} className={`${theme === `dark` ? `dark` : `light`}`} />
         <link rel="preload" href="/fonts/Mona-Sans.woff2" as="font" crossOrigin="anonymous" type="font/woff2" />
+        <link rel="preload" href="/fonts/Space-Mono.woff2" as="font" crossOrigin="anonymous" type="font/woff2" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400&display=swap" rel="stylesheet" />
         <style type="text/css">{`${site.codeinjection_styles}`}</style>
         <body className={bodyClass} />
       </Helmet>

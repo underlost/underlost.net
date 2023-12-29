@@ -8,21 +8,23 @@ const PopularCard = ({ post, index }) => {
   return (
     <article className={`mb-4 popular-card relative ${index === 1 ? `` : `lg:px-11`}`}>
       <header className="card post-card-header px-lg-4 bg-transparent">
-        <Link className="post-card-link d-block" to={url}>
-          {post.feature_image && (
+        {post.feature_image && (
+          <Link className="post-card-link d-block" to={url}>
             <div className="card-image-wrapper aspect-square">
               <LazyImage className="card-image h-full w-full" key={post.feature_image} src={post.feature_image} alt={post.title} />
             </div>
+          </Link>
+        )}
+        <div className="pt-4 pb-4 lg:px-8 lg:text-center lg:min-h-32">
+          {post.primary_tag && (
+            <Link to={`/tag/${post.primary_tag.slug}/`} className="subtitle block">
+              {post.primary_tag.name}
+            </Link>
           )}
-          <div className="pt-4 pb-4 lg:px-8 lg:text-center lg:min-h-32">
-            {post.primary_tag && (
-              <Link to={`/tag/${post.primary_tag.slug}/`} className="subtitle block">
-                {post.primary_tag.name}
-              </Link>
-            )}
+          <Link to={url}>
             <h2 className="h3 card-title inline">{post.title}</h2>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </header>
     </article>
   )

@@ -90,9 +90,9 @@ const HomePage = ({ data, location }) => {
       <div id="recent">
         <div className="text-center pt-10 lg:pt-20">
           <div className="relative">
-            <h3 className="text-wide text-center text-3xl lg:text-5xl font-black relative z-10 dark:text-blue-light">
+            <h2 className="text-wide text-center text-3xl lg:text-5xl font-black relative z-10 dark:text-blue-light">
               <span className="highlight">Recent Posts</span>
-            </h3>
+            </h2>
           </div>
         </div>
         <RecentBlock />
@@ -106,6 +106,13 @@ const HomePage = ({ data, location }) => {
         </nav>
       </div>
 
+      <div className="text-center pt-10 lg:pt-20">
+        <div className="relative">
+          <h2 className="text-wide text-center text-3xl lg:text-5xl font-black relative z-10 dark:text-blue-light">
+            <span className="highlight">Other Projects</span>
+          </h2>
+        </div>
+      </div>
       <TwitterBlock />
 
       <div>
