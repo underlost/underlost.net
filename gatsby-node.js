@@ -121,7 +121,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Load all twitter posts to json file
   const allTwitterPosts = result.data.twitter.edges.map(({ node }) => node)
-  fs.writeFileSync(path.join(__dirname, `static/json`, `allTwitterPosts.json`), JSON.stringify(allTwitterPosts))
+  fs.writeFileSync(path.join(__dirname, `src/json`, `allTwitterPosts.json`), JSON.stringify(allTwitterPosts))
 
   // Load templates
   const archiveTemplate = path.resolve(`./src/templates/archive.js`)

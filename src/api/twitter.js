@@ -1,15 +1,11 @@
-const fs = require(`fs`)
-const path = require(`path`)
-
 export default async function twitterposts(req, res) {
   const start = parseInt(req.query.start || `0`, 10)
   const limit = parseInt(req.query.limit || `10`, 10)
   const order = req.query.order || `desc`
   const tag = req.query.tag || null
+  const allPosts = require(`../json/allTwitterPosts.json`)
 
-  const filePath = path.join(__dirname, `..`, `..`, `static`, `json`, `allTwitterPosts.json`)
-  const allPosts = JSON.parse(fs.readFileSync(filePath, `utf8`))
-
+  // Order posts by ascending or descending
   if (order === `asc`) {
     allPosts.reverse()
   }
