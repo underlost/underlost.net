@@ -6,12 +6,14 @@ const TwitterBlock = () => (
   <div className="px-8">
     <div className="max-w-5xl lg:mx-auto lg:mt-16 mb-32">
       <Link to="/twitter/" className="grid grid-cols-12 lg:gap-16">
-        <div className="col-span-12 lg:col-span-7 flex order-2 lg:order-1">
-          <div className="lg:my-auto">
+        <div className="col-span-12 lg:col-span-7 order-2 lg:order-1 lg:my-auto">
+          <header className="lg:my-auto post-card-header">
             <p className="subtitle mb-1">A Timeline of Sorts</p>
-            <h3 className="text-3xl font-black lg:pr-12">
+            <h3 className="text-3xl font-black lg:pr-12 card-title">
               <span className="line-through">Twitter</span> X is doing just Great
             </h3>
+          </header>
+          <div>
             <p className="text-lg mb-3">
               I love the trainwreck that is formerly Twitter (now X). This is my attempt to archive and document all the major changes since Elon Musk took over, and effectivly ruined the
               platform.

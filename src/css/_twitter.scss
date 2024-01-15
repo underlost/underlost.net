@@ -9,7 +9,14 @@
 }
 
 .vertical-timeline-element-content {
+  @apply border-vanilla border;
+  @apply dark:border-0;
   em {
     @apply italic;
   }
+}
+
+.vertical-timeline-element-content-arrow {
+  @apply border-vanilla border;
+  @apply dark:border-0;
 }

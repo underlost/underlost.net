@@ -81,9 +81,13 @@ const TwitterTimeline = ({ data }) => {
                 </label>
                 <select
                   id="twitter-tags"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full py-1 px-2.5 dark:bg-black dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-vanilla border text-black text-sm rounded block w-full py-1 px-2.5 dark:bg-black dark:border-slate-dark dark:placeholder-slate dark:text-white"
+                  value={selectedTag || ``}
+                  onChange={e => handleTagClick(e.target.value)}
                 >
-                  <option selected>Select Tag</option>
+                  <option selected value="">
+                    Select Tag
+                  </option>
                   <option value="censorship">Censorship</option>
                   <option value="politics">Politics</option>
                   <option value="funny">Funny</option>
@@ -102,8 +106,7 @@ const TwitterTimeline = ({ data }) => {
                 <select
                   id="twitter-sort"
                   onChange={handleChangeOrdering}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full py-1 px-2.5 dark:bg-black dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                >
+                  className="bg-vanilla border text-black text-sm rounded block w-full py-1 px-2.5 dark:bg-black dark:border-slate-dark dark:placeholder-slate dark:text-white">
                   <option value="desc">Newest First</option>
                   <option value="asc">Oldest First</option>
                 </select>
@@ -145,8 +148,7 @@ const TwitterTimeline = ({ data }) => {
               className="vertical-timeline-element"
               date={publishedAt}
               iconStyle={{ background: `rgb(33, 150, 243)`, color: `#fff` }}
-              icon={twitterIcon}
-            >
+              icon={twitterIcon}>
               {node.title && <h3 className="font-black text-lg mb-4">{node.title}</h3>}
               <div className="content-body load-external-scripts mb-1 text-sm" dangerouslySetInnerHTML={{ __html: node.html }} />
 

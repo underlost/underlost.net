@@ -12,7 +12,7 @@ const ArticleHero = ({ post }) => {
   return (
     <>
       <Link to={url} className="py-8 md:py-12 relative block lg:h-[90vh]">
-        <article className="relative h-full">
+        <article className="relative h-full rounded-xl overflow-hidden">
           <div className="bg-gradient-to-t from-black absolute inset-0 z-20 transition duration-300 ease-in hidden lg:block"></div>
           <LazyImage className="object-cover relative h-full" key={post.feature_image} src={post.feature_image} alt={post.title} />
           <div className="lg:absolute bottom-10 z-30 left-0 right-0">
@@ -21,7 +21,7 @@ const ArticleHero = ({ post }) => {
                 <div className="block w-100 lg:text-white lg:text-center pt-5">
                   {post.primary_tag && <p className="subtitle mb-1">{post.primary_tag.name}</p>}
                   <h3 className="text-2xl lg:text-4xl uppercase font-black text-wide">{post.title}</h3>
-                  {post.custom_excerpt && <p className="lead">{post.custom_excerpt}</p>}
+                  {post.excerpt && <p className="text-sm mx-auto max-w-lg">{post.excerpt}</p>}
                   <span className="h6 uppercase mb-0 text-narrow">{readingTime}</span>
                 </div>
               </header>

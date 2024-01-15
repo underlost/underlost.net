@@ -24,7 +24,7 @@
 }
 
 .card-title {
-  @apply transition duration-150 ease-in-out;
+  @apply transition duration-150 ease-in-out inline;
 }
 
 .post-card-header {
@@ -32,7 +32,7 @@
   
   &:hover {
     .card-title {
-      @apply shadow-[inset_0_-0.45em_0_0] shadow-blue dark:shadow-pink dark:text-light inline;
+      @apply shadow-[inset_0_-0.45em_0_0] shadow-blue dark:shadow-pink dark:text-light;
     }
     .card-image-wrapper {
       &::after {
