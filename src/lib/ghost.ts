@@ -44,6 +44,7 @@ export interface GhostPostOrPage extends PostOrPage {
   htmlAst?: Node | null
   toc?: IToC[] | null
   tags?: GhostTag[]
+  featured?: boolean
 }
 
 export interface GhostPostsOrPages extends BrowseResults<GhostPostOrPage> {}
