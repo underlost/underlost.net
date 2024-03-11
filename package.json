@@ -47,6 +47,7 @@
     "rss": "^1.2.2",
     "stripe": "^14.9.0",
     "swiper": "^11.0.7",
+    "typescript": "^5.4.2",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
