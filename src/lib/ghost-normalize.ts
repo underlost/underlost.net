@@ -175,7 +175,7 @@ interface ImageParent extends Parent {
 }
 
 const rewriteInlineImages = async (htmlAst: Node) => {
-  let nodes: { node: ImageElement; parent: ImageParent | undefined }[] = []
+  const nodes: { node: ImageElement; parent: ImageParent | undefined }[] = []
 
   visit(htmlAst, { tagName: `img` }, (node: ImageElement, _index: number, parent: ImageParent | undefined) => {
     if (nextImages.inline) {

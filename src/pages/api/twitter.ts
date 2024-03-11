@@ -33,8 +33,8 @@ export default function handler(
     filteredPosts = twitterData.filter((post) => post.tags.some((t) => t.slug === tag))
   }
 
-  let nextPosts = filteredPosts.slice(start, start + limit)
-  let results = {
+  const nextPosts = filteredPosts.slice(start, start + limit)
+  const results = {
     posts: nextPosts,
     meta: {
       start: start,

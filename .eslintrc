@@ -1,12 +1,23 @@
 {
-  "extends": ["next", "next/core-web-vitals", "plugin:react/recommended"],
-  "plugins": ["react", "ghost"],
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "react",
+    "ghost",
+    "@typescript-eslint"
+  ],
   "env": {
     "browser": true,
     "node": true,
     "es6": true
   },
-  "parser": "@babel/eslint-parser",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
@@ -30,6 +41,7 @@
     "indent": [2, 2],
     "no-console": "off",
     "react/react-in-jsx-scope": "off",
+    "react-hooks/exhaustive-deps": "off",
     "no-inner-declarations": "off",
     "valid-jsdoc": "off",
     "require-jsdoc": "off",
@@ -40,6 +52,12 @@
     "semi": ["error", "never"],
     "object-curly-spacing": ["error", "always"],
     "max-lines": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-unsafe-optional-chaining": "off",
+    "@typescript-eslint/no-var-requires": "off",
+
     "comma-dangle": [
       "error",
       {

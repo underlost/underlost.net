@@ -46,7 +46,7 @@ export const generateTableOfContents = (htmlAst: Node) => {
     return text
   }
 
-  let toc: TOC[] = []
+  const toc: TOC[] = []
   visit(htmlAst, headings, (node: TocElement) => {
     const text = walk(node.children || [])
     if (text.length > 0) {
@@ -75,7 +75,7 @@ export const generateTableOfContents = (htmlAst: Node) => {
   toc.forEach((node: TOC) => node.parentIndex >= 0 && (toc[node.parentIndex].items as TOC[]).push(node))
 
   // make final tree
-  let tocTree = toc.filter(({ parentIndex }) => parentIndex === -1)
+  const tocTree = toc.filter(({ parentIndex }) => parentIndex === -1)
 
   const removeProps = ({ id, heading, items }: TOC): IToC => (items.length > 0 ? { id, heading, items: (items as TOC[]).map((item) => removeProps(item)) } : { id, heading })
 

@@ -21,9 +21,9 @@ export const AsideCard = ({ settings, post, num }: AsideCardProps) => {
   const postClass = PostClass({ tags: post.tags, isFeatured: post.featured, isImage: !!featImg })
   const large = (featImg && num !== undefined && 0 === num % 6 && `post-card-large`) || ``
 
-  let timeNow = dayjs()
-  let timeAdded = dayjs(post.published_at)
-  let timeSince = timeNow.to(timeAdded)
+  const timeNow = dayjs()
+  const timeAdded = dayjs(post.published_at)
+  const timeSince = timeNow.to(timeAdded)
 
   const htmlAst = post.html
 
