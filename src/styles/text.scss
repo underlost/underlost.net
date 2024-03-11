@@ -1,0 +1,29 @@
+.gh-content {
+
+  h2, h3, h4, h5, h6 {
+    @apply font-black text-wide;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-lg;
+  }
+  h6 {
+    @apply text-base;
+  }
+}
+
+.page {
+  .kg-callout-text {
+    @apply text-xl;
+  }
+}

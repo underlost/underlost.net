@@ -2,6 +2,14 @@
 
 ---
 
+## 10.0.1 (03/10/24)
+
+* Switched to Next.js
+* Updated color schemes
+* Updated typography
+* Updated layout
+* Added photo gallery
+
 ## 9.0.0 (12/28/23)
 
 * Updated color scheme

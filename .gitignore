@@ -46,8 +46,8 @@ log
 .env
 .env.*
 dist
-public
 .ghost.json
 
 # Local Netlify folder
 .netlify
+.next

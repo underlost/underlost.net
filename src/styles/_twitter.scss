@@ -1,0 +1,16 @@
+.dark {
+  .vertical-timeline-element-content {
+    @apply bg-zinc-800;
+    box-shadow: none;
+  }
+
+  .vertical-timeline-element-content-arrow {
+    @apply border-r-zinc-800;
+  }
+}
+
+.vertical-timeline-element-content {
+  em {
+    @apply italic;
+  }
+}

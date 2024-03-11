@@ -7,10 +7,12 @@ color: "#E60023"
 image: "cover_pincuisine.jpg"
 date: "2019-09-01"
 keywords: ["pinterest", "wildern"]
-tools_used: ["Sketch App", "Github", "Visual Studio Code",]
+tools_used: ["Sketch App", "Github", "Visual Studio Code", "Asana"]
 frameworks_used: ["WordPress", "Advanced Custom Fields", "PHP", "git", "SCSS", "Gulp", "ImageMagick", "Bootstrap"]
 published: true
 type: "work"
+timeline: "6 months"
+role: "Lead Developer"
 ---
 
 PinCusine was an internal website for Pinterest. The PinCusine doubled as both a food blog and cafeteria menu for their campuses throughout the world. The original site was built on Wix, but after experiencing growth in multiple campuses, the team was starting to run into a number of limitations for managing menus and blog posts.

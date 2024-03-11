@@ -1,0 +1,60 @@
+{
+  "extends": ["next", "next/core-web-vitals", "plugin:react/recommended"],
+  "plugins": ["react", "ghost"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "18.0",
+      "flowVersion": "0.53"
+    },
+    "propWrapperFunctions": ["forbidExtraProps"]
+  },
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "arrow-parens": ["error", "always", { "requireForBlockBody": true }],
+    "indent": [2, 2],
+    "no-console": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-inner-declarations": "off",
+    "valid-jsdoc": "off",
+    "require-jsdoc": "off",
+    "quotes": ["error", "backtick"],
+    "consistent-return": ["error"],
+    "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
+    "jsx-quotes": ["error", "prefer-double"],
+    "semi": ["error", "never"],
+    "object-curly-spacing": ["error", "always"],
+    "max-lines": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ],
+    "react/prop-types": [
+      "error",
+      {
+        "ignore": ["children"]
+      }
+    ]
+  }
+}
