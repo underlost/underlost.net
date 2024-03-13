@@ -2,6 +2,7 @@ import React from 'react'
 
 import rehypeReact from 'rehype-react'
 import { unified } from 'unified'
+import { jsx, jsxs } from 'react/jsx-runtime'
 import { Node } from 'unist'
 import ReactGist from 'react-gist'
 
@@ -17,6 +18,8 @@ interface ScriptNodeProps {
 const options = {
   createElement: React.createElement,
   Fragment: React.Fragment,
+  jsx,
+  jsxs,
   passNode: true,
   components: {
     Link: (props: any) => <NextLink {...props} />,

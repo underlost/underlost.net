@@ -60,8 +60,8 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Helmet>
 
-      <main className={`mb-11 ${className}`}>
-        <header className="container mx-auto pt-11 lg:pt-11 px-8 lg:px-0 mb-11">
+      <main className={`bg-splatter mb-11 ${className}`}>
+        <header className="container mx-auto pt-11 lg:pt-11 px-8 mb-16">
           <div className="flex lg:grid lg:grid-cols-3 justify-between lg:justify-end">
             <Link href="/" className="site-brand d-block lg:col-start-2">
               <svg width="99" height="85" fill="none" xmlns="http://www.w3.org/2000/svg" className="pixelHeart-logo mx-auto">
@@ -74,7 +74,7 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
             </Link>
 
             <div className="my-auto">
-              <div className="toggle-wrapper container mx-auto text-right pt-5 pr-5 flex gap-8 justify-end">
+              <div className="toggle-wrapper pt-5 flex gap-8 justify-end">
                 <button className="btn" onClick={handleThemeToggle}>
                   {theme === `dark` ? (
                     <>

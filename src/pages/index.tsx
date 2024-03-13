@@ -39,12 +39,11 @@ export default function Home({ cmsData }: IndexProps) {
     <Layout isHome={true} settings={settings} bodyClass="" className="homepage overflow-x-hidden">
       <SEO {...{ settings, seoImage, title, description }} />
       <div className="container mx-auto mt-11 px-8">
-        <section className="mb-11 relative z-20">
+        <section className="mb-11 relative z-20 stacked-sm">
           <div className="flex">
             <span className="block rounded-full w-28 h-28 mb-5 border p-2">
               <Image src="/images/profile_400x400.jpg" alt="Tyler Rilling" width={400} height={400} className="rounded-full w-full h-full" />
             </span>
-
             <svg xmlns="http://www.w3.org/2000/svg" width="174" height="107" className="mt-auto">
               <g fill="#020202" className="dark:fill-white">
                 <path d="m124 95-.7-.2-.8-.3-1.2-.6-1.9-.7-3.7-1.2-5.2-1.8h-.4l-.2-.1-7.2-2.5-5-1.9A75 75 0 0 1 94 84l-2.6-1.2c.3-.8.8-1.3 1-2 3.5 1.5 6.9 3 10.3 4.2l12.9 4.6 5.6 1.9c1.1.3 2.4.4 3.5.8l.7.4.3.4v.7c-.3.6-1 1.5-1.6 1.2zM75.7 72.7l-.3-.3-.8-.7-1.7-1.8-.4-.4-1.8-2a41.2 41.2 0 0 1-8-14.5c-.7-2.7-1.2-5.6-1.3-8.4a28.2 28.2 0 0 1 7-19 20.7 20.7 0 0 1 6.6-4.8l1.2-.4a14.5 14.5 0 0 1 12.9 1.5l1 .7.8.7.9.7a23 23 0 0 1 3.4 4.3l.9 1.6.8 1.9.7 2 .3 1.7a20 20 0 0 1-.2 9.2 24 24 0 0 1-2.2 5.6L93.9 53a30 30 0 0 1-11.2 9.5c-1.9 1-3.7 1.7-5.7 2.4-3 1-6 1.5-9 1.5A69 69 0 0 1 44.8 62 163.4 163.4 0 0 1 29 55.3l-2.6-1.2-.6-.3-1.5-.7-3.6-1.7c-.5-.3-1.5-1.2-1.5-1.7l.3-.6c.1-.6 1.3-1 2-.6l2 1.2L26 51l.8.6.4.3.2.1.6.3c2.6 1.3 5.2 2.7 8.2 3.9 4.3 1.7 8.7 3.7 13.3 5A58 58 0 0 0 64.9 64a33.8 33.8 0 0 0 23.7-8.3 24 24 0 0 0 5.8-8c4-8.4.7-19.3-6.7-24a12.7 12.7 0 0 0-12.4-.4c-4 2-7.3 5.5-9.1 9.7a25.5 25.5 0 0 0-2.4 13.5A32.5 32.5 0 0 0 69.5 62l.6.7v.2c1.1 1.4 2.3 3 3.6 4.4a44 44 0 0 0 8.3 7.2c0 .9.2 2.2-.3 2.7a32.7 32.7 0 0 1-4.2-3.1l-1.8-1.5z" />
@@ -127,10 +126,12 @@ export default function Home({ cmsData }: IndexProps) {
 
       <section className=" text-black dark:text-white pt-16 pb-16 lg:pb-32">
         <div className="container mx-auto px-8 pb-24">
-          <h3 className="text-2xl lg:text-4xl font-black mb-5">
-            Some of the clients <br /> I&apos;ve worked with:
-          </h3>
-          <ClientSlider />
+          <div className="stacked-sm max-w-xl">
+            <h3 className="text-2xl lg:text-4xl font-black mb-5">
+              Some of the clients <br /> I&apos;ve worked with:
+            </h3>
+            <ClientSlider />
+          </div>
         </div>
       </section>
     </Layout>

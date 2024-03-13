@@ -56,7 +56,7 @@ export default function TagIndex({ cmsData }: TagIndexProps) {
 export const getStaticProps: GetStaticProps = async () => {
   let settings
   let tags
-  console.time(`Writing Index - getStaticProps`)
+  console.time(`Writing Tag Index - getStaticProps`)
   try {
     tags = await getAllTags() // Added the 'page' property with a default value of 1
     settings = await getAllSettings()

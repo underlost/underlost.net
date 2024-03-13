@@ -94,7 +94,11 @@
   .nav-link {
     @apply relative;
     &::before {
-      @apply absolute text-3xl;
+      @apply absolute text-3xl opacity-0 transition-all duration-75 ease-in-out;
+    }
+
+    &:hover::before {
+      @apply opacity-100;
     }
   }
 
@@ -121,9 +125,30 @@
         content: "✉️";
       }
     }
-  }
-
-
-    
+  }   
+    &.nav-personal.projects {
+      .nav-link {
+        &::before {
+          @apply -bottom-3.5 -left-8;
+          content: "🧑‍💻";
+        }
+      }
+    }
+    &.nav-client.work {
+      .nav-link {
+        &::before {
+          @apply -bottom-3.5 -left-8;
+          content: "👔";
+        }
+      }
+    }
+    &.nav-consulting {
+      .nav-link {
+        &::before {
+          @apply -bottom-3.5 -right-8;
+          content: "💁";
+        }
+      }
+    }
 }
 

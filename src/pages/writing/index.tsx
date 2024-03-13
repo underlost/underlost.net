@@ -49,7 +49,7 @@ export default function WritingIndex({ cmsData }: WritingIndexProps) {
       
       <section className="gh-canvas mt-28 mb-11">
         <div className="kg-width-wide">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto stacked-sm mb-16">
             {cmsData.featuredPosts.map((post, i) => (
               <FeaturedPostCard key={i} settings={settings} post={post} num={i} />
             ))}
@@ -71,7 +71,9 @@ export default function WritingIndex({ cmsData }: WritingIndexProps) {
 
         <div className="gap-11 lg:columns-2 mb-11">
           {posts.map((post, i) => (
-            <PostCard key={i} settings={settings} post={post} num={i} />
+            <div key={i} className="stacked-sm mb-11">
+              <PostCard  settings={settings} post={post} num={i} />
+            </div>
           ))}
         </div>
         <p className="text-lg">

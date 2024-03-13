@@ -59,30 +59,32 @@ export default function ArchiveIndex({ cmsData }: ArchiveIndexProps) {
   return (
     <Layout isHome={true} settings={settings} bodyClass="">
       <SEO {...{ settings, seoImage, title }} />
-      <article className="gh-canvas mt-11">
-        <PageHeader title={title} />
+      <div className="inner gh-canvas mb-56">
+        <article className="stacked-sm archive-post">
+          <PageHeader title={title} />
 
-        {Object.entries(groupedPosts).map(([date, posts], index) => (
-          <div className="text-left" key={index}>
-            <p className="text-lg my-4 text-wide">{date}</p>
-            <ul className="mb-8">
-              {posts.map((post, i) => {
-                const url = resolveUrl({ cmsUrl, collectionPath: `writing/`, slug: post.slug, url: post.url })
-                return (
-                  <li key={i}>
-                    <Link href={url}>
-                      <h2 className="inline-block font-black mr-1.5 text-base">{post.title}</h2>
-                      <time className="font-mono uppercase" dateTime={post.published_at || ``}>
-                        {dayjs(post.published_at || ``).format(`D MMM YYYY`)}&nbsp;
-                      </time>
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-        ))}
-      </article>
+          {Object.entries(groupedPosts).map(([date, posts], index) => (
+            <div className="text-left" key={index}>
+              <p className="text-lg my-4 text-wide">{date}</p>
+              <ul className="mb-8">
+                {posts.map((post, i) => {
+                  const url = resolveUrl({ cmsUrl, collectionPath: `writing/`, slug: post.slug, url: post.url })
+                  return (
+                    <li key={i}>
+                      <Link href={url}>
+                        <h2 className="inline-block font-black mr-1.5 text-base">{post.title}</h2>
+                        <time className="font-mono uppercase" dateTime={post.published_at || ``}>
+                          {dayjs(post.published_at || ``).format(`D MMM YYYY`)}&nbsp;
+                        </time>
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          ))}
+        </article>
+      </div>
     </Layout>
   )
 }

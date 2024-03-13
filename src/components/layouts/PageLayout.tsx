@@ -40,8 +40,8 @@ export const PageLayout = ({ cmsData }: PageProps) => {
     <>
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
       <Layout isHome={false} settings={settings} bodyClass={bodyClass}>
-        <div className="inner gh-canvas mb-48">
-          <article className={`post-full ${postClass}`}>
+        <div className="inner gh-canvas mb-56">
+          <article className={`stacked-sm post-full ${postClass}`}>
             <PageHeader title={page.title} />
 
             {featImg &&

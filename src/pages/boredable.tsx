@@ -302,7 +302,7 @@ export const getStaticProps: GetStaticProps = async () => {
     settings,
     seoImage: await seoImage({ siteUrl: settings.processEnv.siteUrl }),
   }
-  console.timeEnd(`Writing Boredable - getStaticProps`)
+  console.timeEnd(`Writing Boredable Page - getStaticProps`)
 
   return {
     props: {

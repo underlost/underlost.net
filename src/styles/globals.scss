@@ -54,6 +54,19 @@ pre {
   background: #073642;
 }
 
+.bg-splatter {
+  background: #fff url(/images/splatter.jpg) top;
+  background-size: auto;
+  background-size: 1132px 1014px;
+  @apply transition-all duration-150 ease-in-out;
+}
+
+.dark .bg-splatter{
+  background: #fff url(/images/splatter-dark.jpg) top;
+  background-size: auto;
+  background-size: 1132px 1014px;
+}
+
 @import "./layout.scss";
 @import "./content.scss";
 @import "./text.scss";
@@ -72,6 +85,13 @@ pre {
   }
 }
 
+.stacked-sm {
+  @apply bg-white border border-black text-black p-5 lg:p-11 w-full relative rounded-sm z-10 antialiased;
+  @apply dark:border-white dark:bg-[#131313] dark:text-white;
+
+  @apply shadow-[10px_10px_0_-1px_#fff,_10px_10px_0_#000];
+  @apply dark:shadow-[10px_10px_0_-1px_#131313,_10px_10px_0_#fff];
+}
 
 .image-logo-wrapper img {
   @apply invert dark:filter-none dark:invert-0;

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { ComponentPropsWithNode } from 'rehype-react'
 import { Node } from 'unist'
 import { Dimensions } from '../../lib/images'
 
@@ -16,16 +15,16 @@ interface ImageNode extends Node {
   properties: PropertyProps
 }
 
-export const NextImage = (props: ComponentPropsWithNode) => {
-  const { node } = props
+interface NextImageProps {
+  node?: ImageNode; // provide the node prop accordingly
+}
+
+export const NextImage = ({ node }: NextImageProps) => {
   if (!node) return null
-  const imageNode = node as ImageNode
-  const imageDimensions = imageNode.imageDimensions
-  const { src, className: classArray, alt } = imageNode.properties
+  const imageDimensions = node.imageDimensions
+  const { src, className: classArray, alt } = node.properties
   const className = classArray?.join(` `)
   const isDomainWhitelisted = domains.some((domain) => src.includes(domain))
-
-  //console.log(imageNode)
 
   return (
     <div className="next-image-wrapper">

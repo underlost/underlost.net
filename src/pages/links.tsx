@@ -46,7 +46,7 @@ export default function LinksPage({ cmsData }: LinksPageProps) {
     <Layout isHome={true} settings={settings} bodyClass="">
       <SEO {...{ settings, seoImage, title }} />
       <div className="mb-48">
-        <article className="gh-canvas mb-11">
+        <article className="gh-canvas lg:mb-11">
           <PageHeader
             title="@underlost"
             excerpt="Former lead developer at a creative agency. AI prompt engineer, full-stack Web & marketing consultant. Occasional indie game dev and photographer. I've made a lot of stuff on the internet. I'm really sorry about that."

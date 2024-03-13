@@ -75,8 +75,10 @@ export const PortfolioLayout = ({ cmsData }: PortfolioPageProps) => {
             {/* The main page content */}
             <section className="post-full-content post-content load-external-scripts text-lg lg:mt-11 container grid lg:grid-cols-12 gap-x-11 relative">
               <div className="lg:col-span-8 order-2 lg:order-1">
-                <div className="gh-content gh-canvas">
-                  <RenderContent htmlAst={htmlAst} />
+                <div className="stacked-sm">
+                  <div className="gh-content gh-canvas">
+                    <RenderContent htmlAst={htmlAst} />
+                  </div>
                 </div>
               </div>
               <div className="lg:col-span-4 order-1 lg:order-2 relative">
