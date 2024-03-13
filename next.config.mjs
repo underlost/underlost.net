@@ -9,7 +9,28 @@ const nextConfig = {
     modifiedDate: new Date().toISOString(),
   },
   images: {
-    domains: [`images.unsplash.com`, `cdn.underlost.net`, `www.gravatar.com`, `cdn.alifewellplayed.com`],
+    remotePatterns: [
+      {
+        protocol: `https`,
+        hostname: `images.unsplash.com`,
+        pathname: `**`,
+      },
+      {
+        protocol: `https`,
+        hostname: `cdn.underlost.net`,
+        pathname: `**`,
+      },
+      {
+        protocol: `https`,
+        hostname: `www.gravatar.com`,
+        pathname: `**`,
+      },
+      {
+        protocol: `https`,
+        hostname: `cdn.alifewellplayed.com`,
+        pathname: `**`,
+      },
+    ],
   },
 }
 

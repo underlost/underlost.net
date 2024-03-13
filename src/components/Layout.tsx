@@ -111,8 +111,8 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
             </div>
           </div>
           <nav className="site-header-nav">
-            <div className="absolute right-10 top-10">
-              <button className="text-xs uppercase font-bold" onClick={toggleMenu}>
+            <div className="absolute left-10 top-10">
+              <button className="text-xs uppercase font-bold text-white bg-black px-1 py-1" onClick={toggleMenu}>
                 Close
               </button>
             </div>
@@ -138,7 +138,7 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
       <footer className="site-footer text-center pt-11 bg-violet-blue text-white">
         <div className="gh-canvas">
           <nav className="mb-4">
-            <Navigation className="lg:flex justify-center gap-11 font-bold mx-auto" data={navigation} />
+            <Navigation className="lg:flex justify-center gap-11 font-bold mx-auto" data={navigation} navClass="nav-link py-2" />
           </nav>
 
           <SocialLinks />
