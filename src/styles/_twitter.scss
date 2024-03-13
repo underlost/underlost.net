@@ -1,16 +1,25 @@
-.dark {
-  .vertical-timeline-element-content {
-    @apply bg-zinc-800;
-    box-shadow: none;
-  }
 
-  .vertical-timeline-element-content-arrow {
-    @apply border-r-zinc-800;
+.vertical-timeline-element-content {
+  @apply bg-white border border-black text-black relative rounded-sm z-10 antialiased;
+  @apply dark:border-white dark:bg-[#131313] dark:text-white;
+  @apply shadow-[10px_10px_0_-1px_#fff,_10px_10px_0_#000];
+  @apply dark:shadow-[10px_10px_0_-1px_#131313,_10px_10px_0_#fff];
+
+  em {
+    @apply italic;
   }
 }
 
-.vertical-timeline-element-content {
-  em {
-    @apply italic;
+.light {
+  .vertical-timeline-element-content {
+    @apply shadow-[10px_10px_0_-1px_#fff,_10px_10px_0_#000];
+  }
+
+  .vertical-timeline-element-content-arrow {
+    @apply border-r-black;
+  }
+
+  .vertical-timeline::before {
+    @apply bg-black
   }
 }

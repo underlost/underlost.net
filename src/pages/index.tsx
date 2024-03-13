@@ -121,9 +121,9 @@ export default function Home({ cmsData }: IndexProps) {
       <section className=" text-black dark:text-white pt-16 pb-16 lg:pb-32">
         <div className="container mx-auto px-8 pb-24">
           <div className="stacked-sm max-w-xl">
-            <h3 className="text-2xl lg:text-4xl font-black mb-5">
+            <p className="text-2xl lg:text-4xl font-black mb-5">
               Some of the clients <br /> I&apos;ve worked with:
-            </h3>
+            </p>
             <ClientSlider />
           </div>
         </div>

@@ -42,14 +42,16 @@ export default function TwitterPage({ cmsData }: TwitterPageProps) {
   return (
     <Layout isHome={true} settings={settings} bodyClass="twitter">
       <SEO {...{ settings, seoImage, title }} />
-      <article className=" gh-canvas">
-        <PageHeader title={title} />
-        <section className="post-content load-external-scripts gh-content">
-          <RenderContent htmlAst={htmlAst} />
-        </section>
-      </article>
+      <div className="gh-canvas">
+        <article className="stacked-sm mb-8">
+          <PageHeader title={title} />
+          <section className="post-content load-external-scripts gh-content">
+            <RenderContent htmlAst={htmlAst} />
+          </section>
+        </article>
+      </div>
 
-      <div className="container mx-auto mb-48">
+      <div className="container mx-auto mb-48 px-4">
         <TwitterTimeline InitialData={posts} />
       </div>
     </Layout>
@@ -65,7 +67,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const AllPostForSerach = await getAllTwitterPosts()
   try {
     const jsonString = JSON.stringify(AllPostForSerach)
-
     fs.writeFile(`twitter.json`, jsonString, `utf8`, (err) => {
       if (err) {
         console.log(`Error writing file`, err)

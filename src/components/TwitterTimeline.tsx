@@ -69,9 +69,10 @@ const TwitterTimeline = ({ InitialData }: TwitterTimelineProps) => {
 
   return (
     <>
-      <div className="gh-content gh-canvas md:pb-8">
-        <section className="timeline-filter mb-8">
-          <div className="grid grid-cols-3 gap-4">
+      <div className="gh-canvas md:pb-8">
+        <section className="timeline-filter mb-8 stacked-sm">
+          <h2 className="text-lg font-black mb-4">Timeline Settings</h2>
+          <div className="grid lg:grid-cols-3 gap-4">
             <div className="col-span-1">
               <div className="flex">
                 <label htmlFor="twitter-tags" className="block mt-auto mr-3 text-xs font-black uppercase">
@@ -79,7 +80,7 @@ const TwitterTimeline = ({ InitialData }: TwitterTimelineProps) => {
                 </label>
                 <select
                   id="twitter-tags"
-                  className="bg-vanilla border text-black text-sm rounded block w-full py-1 px-2.5 dark:bg-black dark:border-slate-dark dark:placeholder-slate dark:text-white"
+                  className="dropdown"
                   value={selectedTag || ``}
                   onChange={(e) => handleTagClick(e.target.value)}
                 >
@@ -104,7 +105,7 @@ const TwitterTimeline = ({ InitialData }: TwitterTimelineProps) => {
                 <select
                   id="twitter-sort"
                   onChange={handleChangeOrdering}
-                  className="bg-vanilla border text-black text-sm rounded block w-full py-1 px-2.5 dark:bg-black dark:border-slate-dark dark:placeholder-slate dark:text-white"
+                  className="dropdown"
                 >
                   <option value="desc">Newest First</option>
                   <option value="asc">Oldest First</option>

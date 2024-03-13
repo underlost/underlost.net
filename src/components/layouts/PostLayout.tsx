@@ -50,7 +50,7 @@ export const PostLayout = ({ cmsData }: PostProps) => {
 
             {isLinked ? (
               <div className="gh-canvas">
-                <PageHeader title={post.title} />
+                <h1 className="text-wide text-2xl mb-5">{post.title}</h1>
               </div>
             ) : (
               <PostHeader title={post.title} excerpt={post.excerpt} primary_tag={post.primary_tag} published_at={post.published_at} updated_at={post.updated_at} />

@@ -260,3 +260,12 @@ figcaption a {
 .gh-content tbody tr:last-child {
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
+
+
+.gh-content {
+    blockquote {
+        @apply text-lg text-wide bg-white italic;
+        @apply border-l-8 border-aqua pl-4;
+        @apply dark:bg-[#131313];
+    }
+}

@@ -1,6 +1,7 @@
 import React, { ReactNode, useState, useEffect, useContext } from 'react'
 import getConfig from 'next/config'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Helmet } from 'react-helmet-async'
 import { ThemeContext } from '../context/ThemeContext'
 import { GhostSettings } from '../lib/ghost'
@@ -125,20 +126,23 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
         {children}
       </main>
 
-      <div
-        style={{
-          backgroundImage: `url(/images/svg/footer_blob.svg)`,
-          height: `160px`,
-          backgroundPosition: `center`,
-          marginTop: `-160px`,
-          paddingTop: `160px`,
-        }}
-      />
-
+      <div className="relative h-[160px] -mt-[165px]">
+        <Image
+          alt="Another paint splatter effect"
+          src="/images/svg/footer_blob.svg"
+          quality={100}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: `cover`,
+            objectPosition: `top`,
+          }}
+        />
+      </div>
       <footer className="site-footer text-center pt-11 bg-violet-blue text-white">
         <div className="gh-canvas">
           <nav className="mb-4">
-            <Navigation className="lg:flex justify-center gap-11 font-bold mx-auto" data={navigation} navClass="nav-link py-2" />
+            <Navigation className="lg:flex justify-center gap-11 font-bold mx-auto" data={navigation} navClass="py-2" />
           </nav>
 
           <SocialLinks />

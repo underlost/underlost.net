@@ -136,3 +136,8 @@ pre {
     background-image: url('/images/svg/s1.svg');
   }
 }
+
+.dropdown {
+  @apply border border-black rounded-sm bg-white px-4 py-1;
+  @apply dark:border-white dark:bg-[#131313];
+}
