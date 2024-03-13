@@ -1,7 +1,7 @@
 import React, { ReactNode, useState, useEffect, useContext } from 'react'
 import getConfig from 'next/config'
 import Link from 'next/link'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 import { ThemeContext } from '../context/ThemeContext'
 import { GhostSettings } from '../lib/ghost'
 import { Navigation } from './Navigation'
