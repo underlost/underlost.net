@@ -22,18 +22,20 @@ export const Navigation = ({ data, navClass = ``, className }: NavigationProps) 
   const items: JSX.Element[] = [] // Use JSX.Element[] for an array of JSX elements
   data?.forEach((navItem, i) => {
     // Prefer forEach for operations that don't return a value
-    const isExternalLink = /^\s?http(s?)/gi.test(navItem.url)
+    //const isExternalLink = /^\s?http(s?)/gi.test(navItem.url)
+    const isInternalLink = navItem.url.match(/underlost.net/g)
+
     const itemClass = `nav-${navItem.label.toLowerCase()} nav-item`
     const element = (
       <li key={i} className={itemClass} role="menuitem">
-        {isExternalLink ? (
-          <a className={navClass} href={navItem.url} target="_blank" rel="noopener noreferrer">
-            {navItem.label}
-          </a>
-        ) : (
+        {isInternalLink ? (
           <div className={navClass}>
             <Link href={navItem.url}>{navItem.label}</Link>
           </div>
+        ) : (
+          <a className={navClass} href={navItem.url} target="_blank" rel="noopener noreferrer">
+            {navItem.label}
+          </a>
         )}
       </li>
     )
