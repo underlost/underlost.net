@@ -27,3 +27,26 @@
     @apply text-xl;
   }
 }
+
+.style-3d {
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  position: relative;
+  &:before, &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    @apply font-black;
+  }
+  &:before {
+    content: attr(data-text);
+    -webkit-text-stroke: 2px #FF00BB;
+    transform: translate3d(-3px, -5px, 0);
+    -webkit-text-fill-color: transparent;
+  }
+  &:after {
+    content: attr(data-text);
+    -webkit-text-stroke: 2px #00FFEE;
+    -webkit-text-fill-color: transparent;
+  }
+}

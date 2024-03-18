@@ -10,7 +10,9 @@ interface PostViewProps {
 export const PostView = (props: PostViewProps) => (
   <div className="inner posts gh-canvas">
     {props.posts.map((post, i) => (
-      <PostCard key={i} settings={props.settings} post={post} num={i} />
+      <div key={i} className="stacked-sm mb-11">
+        <PostCard  settings={props.settings} post={post} num={i} />
+      </div>
     ))}
   </div>
 )

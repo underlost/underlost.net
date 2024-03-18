@@ -47,7 +47,7 @@ const TagPage = ({ cmsData }: TagPageProps) => {
       <Layout isHome={true} settings={settings} bodyClass={bodyClass}>
         <div className="mb-48">
           <article className="gh-canvas mb-11">
-            <header className="mb-5">
+            <header className="mb-5 stacked-sm">
               <h1 className="text-6xl text-wide mb-2">{tag.name}</h1>
               <p className="text-lg">{tag.description}</p>
             </header>

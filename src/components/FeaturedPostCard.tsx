@@ -26,7 +26,7 @@ export const FeaturedPostCard = ({ settings, post, num }: PostCardProps) => {
   const large = (featImg && num !== undefined && 0 === num % 6 && `post-card-large`) || ``
 
   return (
-    <article className={`grid grid-cols-12 post-card relative break-inside-avoid mb-11 gap-x-11 ${postClass} ${large}`}>
+    <article className={`grid grid-cols-12 post-card relative break-inside-avoid gap-x-11 ${postClass} ${large}`}>
       <div className="col-span-7">
         {featImg ? (
           <Link href={url} className="post-card-image-link mb-2 block" aria-label={post.title}>
@@ -52,7 +52,7 @@ export const FeaturedPostCard = ({ settings, post, num }: PostCardProps) => {
         <header className="post-card-header">
           {post.primary_tag && <div className="post-card-primary-tag">{post.primary_tag.name}</div>}
           <Link href={url} className="post-card-content-link">
-            <h2 className="post-card-title text-wide text-3xl">{post.title}</h2>
+            <h2 className="post-card-title text-wide text-3xl text-balance mb-4">{post.title}</h2>
           </Link>
         </header>
 

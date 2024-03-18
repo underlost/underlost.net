@@ -20,12 +20,12 @@ export const HeaderAuthor = ({ settings, author }: HeaderAuthorProps) => {
   const numberOfPosts = author.count?.posts
 
   return (
-    <header className="site-archive-header mb-11">
+    <header className="site-archive-header mb-11 stacked-sm">
       {coverImg && nextImages.feature && <Image src={coverImg} alt={author.name || ``} layout="fill" objectFit="cover" quality={nextImages.quality} />}
       <div className="inner">
         <div className="site-header-content author-header flex gap-8">
           {profileImg && nextImages.feature ? (
-            <div className="author-profile-image h-24 w-24 relative">
+            <div className="author-profile-image h-28 w-28 relative border rounded-full p-2">
               <Image className="author-profile-image rounded-full" src={profileImg.url} alt={author.name || ``} quality={nextImages.quality} {...profileImg.dimensions} />
             </div>
           ) : author.profile_image ? (
@@ -35,33 +35,8 @@ export const HeaderAuthor = ({ settings, author }: HeaderAuthorProps) => {
             <div className="author-profile-image"></div>
           )}
           <div className="author-header-content max-w-xl">
-            <h1 className="site-title text-xl font-black">{author.name}</h1>
-            {author.bio && <h2 className="author-bio mb-5">{author.bio}</h2>}
-            <div className="author-meta">
-              {author.location && <div className="author-location">{author.location}</div>}
-              <div className="author-stats">{(numberOfPosts && ` ${numberOfPosts} ${1 < numberOfPosts ? text(`POSTS`) : text(`POST`)}`) || `${text(`NO_POSTS`)}`}</div>
-              {author.website && (
-                <span className="author-social-link">
-                  <a href={author.website} target="_blank" rel="noopener noreferrer">
-                    {text(`WEBSITE`)}
-                  </a>
-                </span>
-              )}
-              {twitterUrl && (
-                <span className="author-social-link">
-                  <a href={twitterUrl} target="_blank" rel="noopener noreferrer">
-                    Twitter
-                  </a>
-                </span>
-              )}
-              {facebookUrl && (
-                <span className="author-social-link">
-                  <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
-                    Facebook
-                  </a>
-                </span>
-              )}
-            </div>
+            <h1 className="site-title text-xl font-black mb-4">{author.name}</h1>
+            {author.bio && <p className="author-bio mb-5">{author.bio}</p>}
           </div>
         </div>
       </div>

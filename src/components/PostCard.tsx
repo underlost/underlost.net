@@ -26,11 +26,11 @@ export const PostCard = ({ settings, post, num }: PostCardProps) => {
   const large = (featImg && num !== undefined && 0 === num % 6 && `post-card-large`) || ``
 
   return (
-    <article className={`post-card relative break-inside-avoid mb-11 ${postClass} ${large}`}>
+    <article className={`post-card relative ${postClass} ${large}`}>
       {featImg ? (
         <Link href={url} className="post-card-image-link mb-2 block" aria-label={post.title}>
           {nextImages.feature ? (
-            <div className="post-card-image relative">
+            <div className="post-card-image relative mb-5">
               <Image
                 src={featImg.url}
                 alt={post.title || ``}
@@ -48,8 +48,8 @@ export const PostCard = ({ settings, post, num }: PostCardProps) => {
 
       <div className="post-card-content">
         <header className="post-card-header">
-          {post.primary_tag && <div className="post-card-primary-tag">{post.primary_tag.name}</div>}
-          <Link href={url} className="post-card-content-link">
+          {post.primary_tag && <div className="post-card-primary-tag"><Link href={`/tag/${post.primary_tag.slug}`}>{post.primary_tag.name}</Link></div>}
+          <Link href={url} className="post-card-content-link block mb-3">
             <h2 className="post-card-title font-black text-2xl">{post.title}</h2>
           </Link>
         </header>

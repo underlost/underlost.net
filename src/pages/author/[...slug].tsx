@@ -48,8 +48,10 @@ const AuthorIndex = ({ cmsData }: AuthorIndexProps) => {
     <>
       <SEO {...{ settings, description, seoImage, sameAs, title: name }} />
       <Layout isHome={true} settings={settings} bodyClass={bodyClass}>
-        <div className="container mx-auto">
-          <HeaderAuthor {...{ settings, author }} />
+        <div className="container mx-auto mb-48">
+          <div className="gh-canvas">
+            <HeaderAuthor {...{ settings, author }} />
+          </div>
           <PostView {...{ settings, posts }} />
         </div>
       </Layout>

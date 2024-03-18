@@ -139,15 +139,15 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
           }}
         />
       </div>
-      <footer className="site-footer text-center pt-11 bg-violet-blue text-white">
+      <footer className="site-footer text-center lg:pt-11 bg-violet-blue text-white">
         <div className="gh-canvas">
           <nav className="mb-4">
-            <Navigation className="lg:flex justify-center gap-11 font-bold mx-auto" data={navigation} navClass="py-2" />
+            <Navigation className="lg:flex justify-center gap-11 font-bold mx-auto" data={navigation} navClass="py-3 block" />
           </nav>
 
           <SocialLinks />
 
-          <div className="site-copyright text-xs pb-8">
+          <div className="site-copyright text-xs pb-8 px-10">
             <Link href="/">{site.title}</Link> Copyright © Tyler Rilling 2001 - 2024. Published with Ghost.
             <br /> Site last updated:{` `}
             <a href="https://github.com/underlost/underlost.net/">{modifiedDate}</a>. ❤️

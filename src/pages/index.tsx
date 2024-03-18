@@ -39,7 +39,7 @@ export default function Home({ cmsData }: IndexProps) {
     <Layout isHome={true} settings={settings} bodyClass="" className="homepage overflow-x-hidden">
       <SEO {...{ settings, seoImage, title, description }} />
       <div className="container mx-auto mt-11 px-8">
-        <section className="mb-11 relative z-20 stacked-sm">
+        <section className="mb-16 relative z-20 stacked-sm">
           <div className="flex">
             <span className="block rounded-full w-28 h-28 mb-5 border p-2">
               <Image src="/images/profile_400x400.jpg" alt="Tyler Rilling" width={400} height={400} className="rounded-full w-full h-full" />
@@ -54,15 +54,15 @@ export default function Home({ cmsData }: IndexProps) {
 
           <h1 className="text-xl lg:text-3xl text-wide mb-5 lg:pr-11">
             Hey there, I&apos;m <span className="font-black">Tyler Rilling</span>, a Python and React web developer, UX designer, and{` `}
-            <Link className="underline" href="/consulting/">
+            <Link className="underline hover-shadow" href="/consulting/">
               independent consultant
             </Link>
             , living in Seattle, Washington. I&apos;m also{` `}
-            <Link className="underline" href="/boredable/">
+            <Link className="underline hover-shadow" href="/boredable/">
               building
             </Link>{` `}
             my own social media platform. Most people online simply know me as <span className="font-black">Underlost</span>, but I&apos;m probably not an{` `}
-            <Link className="underline" href="/writing/a-reminder-that-underlost-is-not-just-an-undertale-thing">
+            <Link className="underline hover-shadow" href="/writing/a-reminder-that-underlost-is-not-just-an-undertale-thing">
               Undertale game
             </Link>
             {` `}
@@ -91,11 +91,11 @@ export default function Home({ cmsData }: IndexProps) {
           </div>
 
           <div className="absolute -top-[475px] -right-[350px] -z-10">
-            <Image src="/images/svg/splatter.svg" alt="Paint splatter effect" width={809} height={1503} />
+            <Image src="/images/svg/splatter.svg" alt="Paint splatter effect" priority={true} width={809} height={1503} />
           </div>
         </section>
 
-        <section className="mb-20 relative z-10">
+        <section className="lg:mb-20 relative z-10">
           <p className="text-3xl lg:text-8xl font-black mb-11">
             I build websites using PHP, CSS, HTML, WordPress, Ghost, Shopify, Webflow, Squarespace, and Markdown, web apps written in React, Next.js, Gatsby, Astro, Python, and
             Node.js, sometimes with a splash of PostgreSQL, MySQL, and Redis.{` `}
@@ -104,21 +104,26 @@ export default function Home({ cmsData }: IndexProps) {
             </Link>
           </p>
 
-          <div className="flex max-w-md mr-auto lg:ml-24">
-            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="80" className="flex-none mr-3">
-              <g fill="#020202" className="dark:fill-white">
-                <path d="M54.4 79.5c1.6-.4 2.2-1 .9-1.3-3.2-.7-6.4-1-9.7-1.2-5.2-.2-10.7 0-16.1-.6A131.6 131.6 0 0 1 15.6 74c-.7-.2-1.3-.7-1.6-1.4a8 8 0 0 1-.3-2.8l-.1-3.3-.5-17c0-5.1-.3-10.3-.4-15.3l-.2-7c0-2.3 0-4.4-.2-6.7-.3-6-1.8-7-2.2-3.3-.3 2.9 0 9.4.2 13.1l.5 15.8.6 19.1.2 4.8c0 .9 0 1.8.2 2.6.3 1 .8 2 1.6 2.6 1.5 1.1 3 1.3 4.4 1.5l4 .7A171.6 171.6 0 0 0 49 80c1.8 0 3.6-.1 5.4-.5Z" />
-                <path d="m8.8 6.1 1.9-2.5c.5-.7.9.2 1.6 1a97.4 97.4 0 0 1 5.2 8.8l.2.5.2.3v.2c0 .2-.2.2-.3.2l-.4.1-1 .1a56.6 56.6 0 0 1-8.3.2l-1.2-.2c-.6 0-1-.2-1.6-.3l-.1.1a1 1 0 0 1-.7.5c-.1 0-.2 0-.2.3.2.4.5.6.8.8 1 .4 2 .6 3 .6a43.6 43.6 0 0 0 9.6-.6h.2l.3-.1.6-.2.7-.8v-1l-.2-.5-.1-.3-.3-.5a16.6 16.6 0 0 0-1.4-2.9 65 65 0 0 0-4.7-7l-.5-.5a2 2 0 0 0-.7-.5c-.3 0-.6 0-.8.2l-.7.5-.5.5-.3.4-.7.9A38.2 38.2 0 0 0 3.8 13v1.3c0 .4.3.7.5.6l.2-.3.4-.7.9-1.2c.2-.5.5-1 .6-1.6a20.6 20.6 0 0 1 2.4-5Z" />
-              </g>
-            </svg>
-            <p className="font-script mt-11">
-              I also help launch those websites to Heroku, AWS, Vercel, Netlify and just about anywhere else on the internet you can think of, including your own private cloud.
-            </p>
+          <div className="grid lg:grid-cols-2">
+            <div className="flex max-w-md mr-auto lg:ml-24 mb-5 lg:mb-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="80" className="flex-none mr-3">
+                <g fill="#020202" className="dark:fill-white">
+                  <path d="M54.4 79.5c1.6-.4 2.2-1 .9-1.3-3.2-.7-6.4-1-9.7-1.2-5.2-.2-10.7 0-16.1-.6A131.6 131.6 0 0 1 15.6 74c-.7-.2-1.3-.7-1.6-1.4a8 8 0 0 1-.3-2.8l-.1-3.3-.5-17c0-5.1-.3-10.3-.4-15.3l-.2-7c0-2.3 0-4.4-.2-6.7-.3-6-1.8-7-2.2-3.3-.3 2.9 0 9.4.2 13.1l.5 15.8.6 19.1.2 4.8c0 .9 0 1.8.2 2.6.3 1 .8 2 1.6 2.6 1.5 1.1 3 1.3 4.4 1.5l4 .7A171.6 171.6 0 0 0 49 80c1.8 0 3.6-.1 5.4-.5Z" />
+                  <path d="m8.8 6.1 1.9-2.5c.5-.7.9.2 1.6 1a97.4 97.4 0 0 1 5.2 8.8l.2.5.2.3v.2c0 .2-.2.2-.3.2l-.4.1-1 .1a56.6 56.6 0 0 1-8.3.2l-1.2-.2c-.6 0-1-.2-1.6-.3l-.1.1a1 1 0 0 1-.7.5c-.1 0-.2 0-.2.3.2.4.5.6.8.8 1 .4 2 .6 3 .6a43.6 43.6 0 0 0 9.6-.6h.2l.3-.1.6-.2.7-.8v-1l-.2-.5-.1-.3-.3-.5a16.6 16.6 0 0 0-1.4-2.9 65 65 0 0 0-4.7-7l-.5-.5a2 2 0 0 0-.7-.5c-.3 0-.6 0-.8.2l-.7.5-.5.5-.3.4-.7.9A38.2 38.2 0 0 0 3.8 13v1.3c0 .4.3.7.5.6l.2-.3.4-.7.9-1.2c.2-.5.5-1 .6-1.6a20.6 20.6 0 0 1 2.4-5Z" />
+                </g>
+              </svg>
+              <p className="font-script mt-11">
+                I also help launch those websites to Heroku, AWS, Vercel, Netlify and just about anywhere else on the internet you can think of, including your own private cloud.
+              </p>
+            </div>
+            <div>
+              <Image src="/images/svg/catpaw.svg" alt="cat paw sketch" width={50} height={50} className="block lg:mx-auto ml-auto lg:translate-y-28 -rotate-12 dark:invert filter-none" />
+            </div>
           </div>
         </section>
       </div>
 
-      <section className=" text-black dark:text-white pt-16 pb-16 lg:pb-32">
+      <section className=" text-black dark:text-white pt-8 lg:pt-16 pb-16 lg:pb-32">
         <div className="container mx-auto px-8 pb-24">
           <div className="stacked-sm max-w-xl">
             <p className="text-2xl lg:text-4xl font-black mb-5">

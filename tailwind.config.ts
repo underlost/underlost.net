@@ -44,7 +44,7 @@ const config: Config = {
         'pink': `#FD2D78`,
         'green': `#E9EF31`,
         'aqua': `#3CFFD0`,
-        'blue': `#73E2BF`,
+        'blue': `#00FFEE`,
         'orange': `#e05915`,
       },
     },

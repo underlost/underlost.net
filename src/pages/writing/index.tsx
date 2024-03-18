@@ -5,11 +5,12 @@ import { useRouter } from 'next/router'
 import { SEO } from '../../components/meta/seo'
 import { seoImage } from '../../components/meta/seoImage'
 import { processEnv } from '../../lib/processEnv'
-import { getAllSettings, GhostSettings, getAllNoteworthyPosts, GhostPostsOrPages, getPageBySlug, GhostPostOrPage, getAllFeatredPosts } from '../../lib/ghost'
+import { getAllSettings, GhostSettings, getAllNoteworthyPosts, getAllPosts, GhostPostsOrPages, getPageBySlug, GhostPostOrPage, getAllFeatredPosts } from '../../lib/ghost'
 import { PostCard } from '../../components/PostCard'
 import { FeaturedPostCard } from '../../components/FeaturedPostCard'
 import { PageHeader } from "@/components/PageHeader"
 import { RenderContent } from '@/components/RenderContent'
+import Image from 'next/image'
 
 /**
  *
@@ -47,7 +48,7 @@ export default function WritingIndex({ cmsData }: WritingIndexProps) {
     <Layout isHome={true} settings={settings} bodyClass="">
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
       
-      <section className="gh-canvas mt-28 mb-11">
+      <section className="gh-canvas mt-28 my-11">
         <div className="kg-width-wide">
           <div className="max-w-6xl mx-auto stacked-sm mb-16">
             {cmsData.featuredPosts.map((post, i) => (
@@ -67,18 +68,25 @@ export default function WritingIndex({ cmsData }: WritingIndexProps) {
       </div>
 
       <section className="gh-canvas mb-48">
-        <h2 className="font-mono uppercase mb-8">Recent Posts</h2>
+        <h2 className="font-mono uppercase mb-8 text-lg"><span className="strikethrough">Recent Posts</span></h2>
 
         <div className="gap-11 lg:columns-2 mb-11">
           {posts.map((post, i) => (
-            <div key={i} className="stacked-sm mb-11">
+            <div key={i} className="stacked-sm mb-11 break-inside-avoid">
               <PostCard  settings={settings} post={post} num={i} />
             </div>
           ))}
+          <>
+            <Image src="/images/svg/catpaw.svg" alt="cat paw sketch" width={50} height={50} className="block ml-auto  -rotate-12 dark:invert filter-none" />
+          </>
         </div>
-        <p className="text-lg">
-          Looking for more posts? <Link className="text-btn" href="/archive/">Check out the archive</Link>.
-        </p>
+        <div className="mb-16 text-center">
+          <p className="text-lg mb-3">
+           Looking for more posts?
+          </p>
+          <Link className="btn" href="/archive/">Check out the archive</Link>
+        </div>
+
       </section>
     </Layout>
   )
@@ -92,7 +100,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   console.time(`Writing Index - getStaticProps`)
   try {
-    posts = await getAllNoteworthyPosts({ limit: 8 })
+    posts = await getAllPosts({ limit: 8, page: 1 })
     settings = await getAllSettings()
     page = await getPageBySlug(`writing`)
     featuredPosts = await getAllFeatredPosts({ limit: 1 })

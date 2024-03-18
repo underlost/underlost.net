@@ -163,6 +163,19 @@ export async function getAllPosts(props?: { limit: number; page: number }): Prom
   return await createNextFeatureImages(results)
 }
 
+// Get all posts with #blog tag
+export async function getAllProjectPosts(props?: { limit: number; page: number }): Promise<GhostPostsOrPages> {
+  const posts = await api.posts.browse({
+    ...postAndPageFetchOptions,
+    // filter by blog tag and not featured
+    filter: `tags:hash-projects`,
+    order: `published_at DESC`,
+    ...(props && { ...props }),
+  })
+  const results = await createNextProfileImagesFromPosts(posts)
+  return await createNextFeatureImages(results)
+}
+
 // Get all post slugs with #blog tag
 export async function getAllPostSlugs(): Promise<string[]> {
   const posts = await api.posts.browse({

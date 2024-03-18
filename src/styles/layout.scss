@@ -75,7 +75,7 @@
 }
 
 .promo-unit {
-  @apply relative text-center mb-28 py-28 text-white dark:text-black;
+  @apply relative mb-28 py-28 text-white dark:text-black;
 
   &::before {
     @apply bg-black dark:bg-white;

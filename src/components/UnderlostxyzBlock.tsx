@@ -3,12 +3,12 @@ import Image from 'next/image'
 
 const UnderlostxyzBlock = () => (
   <div className="container lg:mx-auto shadow-md">
-    <div className="relative rounded-xl overflow-hidden bg-black">
-      <div className="relative z-40 bg-black/20">
-        <div className="px-8 lg:px-16 py-16 lg:py-52 text-white text-shadow shadow-black">
+    <div className="relative stacked-sm">
+      <div className="relative z-40 bg-black/20 ">
+        <div className="px-8 lg:px-16 py-16 lg:py-48 text-white text-shadow shadow-black">
           <p className="text-lg lg:text-4xl font-light mb-1 lg:mb-0 leading-base font-grotesk">
             Say{` `}
-            <span className="font-black style-3d inline-block pr-3" data-text="hello">
+            <span className="font-black style-3d inline-block pr-2" data-text="hello">
               hello
             </span>
             {` `}
@@ -19,7 +19,7 @@ const UnderlostxyzBlock = () => (
             <span className="blinker"></span>
           </h2>
           <p className="mb-8 text-lg max-w-md">With two decades of experienace, I help businesses and startups bring their visions to life.</p>
-          <a href="https://www.underlost.xyz" target="_blank" className="uppercase border px-4 py-2 inline-block hover:bg-black hover:text-white" rel="noreferrer">
+          <a href="https://www.underlost.xyz" target="_blank" className="btn-white" rel="noreferrer">
             <span>Learn More about underlost XYZ</span>
           </a>
         </div>
