@@ -51,30 +51,30 @@ const config: Config = {
   },
   darkMode: `class`,
   corePlugins: {
-    container: false
+    container: false,
   },
   plugins: [
     function ({ addComponents }: { addComponents: any }) {
       addComponents({
         '.container': {
-          width: '100%',
+          width: `100%`,
           // marginLeft: 'auto',
           // marginRight: 'auto',
           // paddingLeft: '2rem',
           // paddingRight: '2rem',
           '@screen sm': {
-            maxWidth: '640px',
+            maxWidth: `640px`,
           },
           '@screen md': {
-            maxWidth: '768px',
+            maxWidth: `768px`,
           },
           '@screen lg': {
-            maxWidth: '1024px',
+            maxWidth: `1024px`,
           },
           '@screen xl': {
-            maxWidth: '1280px',
+            maxWidth: `1280px`,
           },
-        }
+        },
       })
     },
     require(`tailwindcss`), require(`precss`), require(`autoprefixer`),
