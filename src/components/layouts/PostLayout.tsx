@@ -64,6 +64,7 @@ export const PostLayout = ({ cmsData }: PostProps) => {
                     src={featImg.url}
                     alt={post.feature_image_alt || post.title || ``}
                     quality={nextImages.quality}
+                    className="max-h-[600px] object-contain"
                     sizes={`
                               (max-width: 350px) 350px,
                               (max-width: 530px) 530px,

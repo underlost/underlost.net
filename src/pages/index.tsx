@@ -41,8 +41,8 @@ export default function Home({ cmsData }: IndexProps) {
       <div className="container mx-auto mt-11 px-8">
         <section className="mb-16 relative z-20 stacked-sm">
           <div className="flex">
-            <span className="block rounded-full w-28 h-28 mb-5 border p-2">
-              <Image src="/images/profile_400x400.jpg" alt="Tyler Rilling" width={400} height={400} className="rounded-full w-full h-full" />
+            <span className="block w-36 h-36 mb-5">
+              <Image src="/images/profile.png" alt="Tyler Rilling" width={400} height={400} className="rounded-full w-full h-full" />
             </span>
             <svg xmlns="http://www.w3.org/2000/svg" width="174" height="107" className="mt-auto">
               <g fill="#020202" className="dark:fill-white">
