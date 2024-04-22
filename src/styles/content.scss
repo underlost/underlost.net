@@ -56,7 +56,7 @@
 
 .gh-content {
     &>*+* {
-        margin-top: 4vmin;
+        margin-top: 2vmin;
     }
     &>[id]+* {
         margin-top: 1.5rem;
@@ -145,10 +145,6 @@ except for when immediately preceeded by a heading */
     margin: auto;
 }
 
-.has-serif-title .kg-toggle-card .kg-toggle-heading-text {
-    font-family: var(--font-serif);
-}
-
 .gh-content .kg-callout-card-accent a {
     text-decoration: underline;
 }
@@ -156,7 +152,7 @@ except for when immediately preceeded by a heading */
 /* Captions */
 figcaption {
     padding: 1.5rem 1.5rem 0;
-    @apply text-sm text-center italic mb-4;
+    @apply text-xs text-center mb-4 font-mono;
 }
 
 figcaption strong {
@@ -264,7 +260,7 @@ figcaption a {
 
 .gh-content {
     blockquote {
-        @apply text-lg text-wide bg-white italic;
+        @apply text-xl text-wide bg-white italic;
         @apply border-l-8 border-aqua pl-4;
         @apply dark:bg-[#131313];
     }

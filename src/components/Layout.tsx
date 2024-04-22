@@ -57,19 +57,25 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
         <html lang="en" className={`${theme === `dark` ? `dark` : `light`} ${menuState}`} />
         <link rel="preload" href="/fonts/MonaSans[slnt,wdth,wght].woff2" as="font" crossOrigin="anonymous" type="font/woff2" />
         <link rel="preload" href="/fonts/Space-Mono.woff2" as="font" crossOrigin="anonymous" type="font/woff2" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/Shantell-Sans.woff2" as="font" crossOrigin="anonymous" type="font/woff2" />
       </Helmet>
 
       <main className={`bg-splatter mb-11 ${className}`}>
         <header className="container mx-auto pt-11 lg:pt-11 px-8 mb-16">
           <div className="flex lg:grid lg:grid-cols-3 justify-between lg:justify-end">
             <Link href="/" className="site-brand d-block lg:col-start-2">
-              <svg width="99" height="85" fill="none" xmlns="http://www.w3.org/2000/svg" className="pixelHeart-logo mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="90" height="68" viewBox="0 0 90 68" className="pixelHeart-logo mx-auto">
                 <title>{`Underlost, By Tyler Rilling`}</title>
                 <g className="pixelHeart-container dark:fill-white transition-all duration-150 ease-in-out" fill="#000">
-                  <path d="M88.392 18.444h5.9v5.847h-5.9v-5.847ZM76.747 13.6h5.814v5.847h-5.814V13.6Zm0 17.375H70.9v-5.78h-5.814v5.78h-5.714v-5.78h-5.83v5.813h-5.765v5.695l-.169.05h-5.78v-5.745h-5.815v-5.814h-5.83v5.781h-5.76v5.694h-5.715v11.542h5.764v5.85h5.83v5.814h5.764v5.747h5.798v5.814h5.83v-5.834h5.814v-5.744h5.797v-5.797h5.798v-5.85h5.814v5.85h5.863v-5.85H70.9V36.786h5.863v5.78h5.814V36.67h-5.83v-5.61h5.814v-5.864h-5.814v5.78ZM53.438 59.669v.137Zm-17.289.137v-.137ZM70.9 36.669h-5.78v-5.611h5.78v5.611Z" />
-                  <path d="M59.203 59.942h5.884v5.863h-5.884v-5.863Z" />
+                  <path className="pixel-block b-0" d="M83 7h7v7h-7z"/>
+                  <path className="pixel-block b-1" d="M70.001 0h7v7h-7z"/>
+                  <path className="pixel-block b-2" d="M70.001 14h7v7h-7z"/>
+                  <path className="pixel-block b-0" d="M49 55h7v7h-7"/>
+                  <path className="pixel-block b-1" d="M63 41h7v7h-7"/>
+                  <path className="pixel-block b-2" d="M70.006 28h7v7h-7"/>
+                  <path className="pixel-block b-0" d="M63.006 21h7v7h-7"/>
+                  <path className="pixel-block b-1" d="M56 14h7v7h-7"/>
+                  <path d="m55.995 28.003.003-7.002h-7.002V14h-7v7.001h-6.999v7.002h-7.003v-7.002h-6.996V14h-7.001v7.001H7v7.002H0V41h7v7h6.997v7h7.001v7h6.996v6h7.003v-6h6.999v-7h7l.005-7.006 6.994.006v-7H63h-.006L63 28.003z"/>
                 </g>
               </svg>
             </Link>

@@ -226,14 +226,24 @@ export async function getAllTwitterPosts(props?: { limit: number }): Promise<Gho
   return await createNextFeatureImages(pages)
 }
 
-// Thoughts and random links
-export async function getAllThoughtsPosts(props?: { limit: number }): Promise<GhostPostsOrPages> {
+// Thoughts and random links with the #aside tag
+export async function getAllAsidePosts(props?: { limit: number }): Promise<GhostPostsOrPages> {
   const pages = await api.posts.browse({
-    filter: `tags:hash-thoughts`,
+    filter: `tags:hash-aside`,
     ...postAndPageFetchOptions,
     ...(props && { ...props }),
   })
   return await createNextFeatureImages(pages)
+}
+
+// Get all post slugs with #aside tag
+export async function getAllAsidePostSlugs(): Promise<string[]> {
+  const posts = await api.posts.browse({
+    limit: `all`,
+    fields: `slug`,
+    filter: `tags:hash-aside`,
+  })
+  return posts.map((p) => p.slug)
 }
 
 // Linked posts

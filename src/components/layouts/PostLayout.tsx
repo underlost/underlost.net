@@ -1,22 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 import Link from 'next/link'
-import { Layout } from '../Layout'
-import { RenderContent } from '../RenderContent'
-import { PostClass } from '../helpers/PostClass'
-import { SEO } from '../meta/seo'
-
-
-import { GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '../../lib/ghost'
-import { ISeoImage } from '../meta/seoImage'
-import { PreviewPosts } from '../PreviewPosts'
-import { PostHeader } from '../PostHeader'
-import { PageHeader } from '../PageHeader'
+import { Layout } from '@/components/Layout'
+import { RenderContent } from '@/components/RenderContent'
+import { PostClass } from '@/components/helpers/PostClass'
+import { SEO } from '@/components/meta/seo'
+import { GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '@/lib/ghost'
+import { ISeoImage } from '@/components/meta/seoImage'
+import { PreviewPosts } from '@/components/PreviewPosts'
+import { PostHeader } from '@/components/PostHeader'
 
 /**
- * Single page (/:slug)
+ * Meant for single post (/writing/:slug)
  *
- * This file renders a single page and loads all the content.
+ * This file renders a single post layout and loads all the content.
  *
  */
 
@@ -38,7 +35,7 @@ export const PostLayout = ({ cmsData }: PostProps) => {
   const featImg = post.featureImage
   const postClass = PostClass({ tags: post.tags, isPage: post && true, isImage: !!featImg })
   const htmlAst = post.htmlAst
-  if (htmlAst === undefined) throw Error(`Page.tsx: htmlAst must be defined.`)
+  if (htmlAst === undefined) throw Error(`PostLayout.tsx: htmlAst must be defined.`)
   const isLinked = post.tags?.some((tag) => (tag.name === `#linked` || tag.name === `#twitter`))
 
   return (

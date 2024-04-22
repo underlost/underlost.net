@@ -1,3 +1,41 @@
+.pixelHeart-logo {
+    animation-play-state: paused;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    .pixel-block {
+      @apply transition-all duration-300 ease-in-out;
+    }
+    &:hover {
+      animation-play-state: running;
+      .pixel-block.b-0 {
+        @apply fill-pink;
+      }
+      .pixel-block.b-1 {
+        @apply fill-aqua;
+      }
+      .pixel-block.b-2 {
+        @apply fill-blue;
+      }
+    }
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translate(0, 0px);
+    }
+
+    50% {
+      transform: translate(0, 15px);
+    }
+
+    100% {
+      transform: translate(0, -0px);
+    }
+  }
+
 .navbar-toggler {
   transition: all .7s ease-in-out;
 
