@@ -1,0 +1,13 @@
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-wide {
+    font-stretch: 150%;
+  }
+
+  .text-narrow {
+    font-stretch: 0%;
+  }
+}

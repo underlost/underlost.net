@@ -103,6 +103,12 @@
     code[class*="language-"] {
         @apply text-sm;
     }
+
+    blockquote {
+        @apply text-xl text-wide bg-white italic;
+        @apply border-l-8 border-aqua pl-4;
+        @apply dark:bg-[#131313];
+    }
 }
 
 @media (max-width: 650px) {
@@ -189,7 +195,7 @@ figcaption a {
 }
 
 .kg-gallery-row:not(:first-of-type) {
-    margin: 0.75em 0 0 0;
+    margin: 0.75em 0 0;
 }
 
 .kg-gallery-image:not(:first-of-type) {
@@ -255,13 +261,4 @@ figcaption a {
 
 .gh-content tbody tr:last-child {
     border-bottom: 1px solid rgba(0,0,0,.1);
-}
-
-
-.gh-content {
-    blockquote {
-        @apply text-xl text-wide bg-white italic;
-        @apply border-l-8 border-aqua pl-4;
-        @apply dark:bg-[#131313];
-    }
 }
