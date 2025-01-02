@@ -69,13 +69,16 @@ export const FullPageLayout = ({ cmsData }: PageProps) => {
               <PageHeader title={page.title} size="large" />
             </div>
           </div>
-          <div className="inner gh-canvas py-11">
+          <div className="inner gh-canvas lg:py-11">
             <section className="post-full-content post-content load-external-scripts gh-content text-lg">
               <div className="max-w-lg mx-auto my-16 squiggle s1 px-8" />
               <RenderContent htmlAst={htmlAst} />
               
+              <div className="max-w-lg mx-auto my-16! squiggle s1 px-8" />
             </section>
-            <div className="max-w-lg mx-auto my-16 squiggle s1 px-8" />
+
+            
+            
           </div>
         </article>
       </Layout>

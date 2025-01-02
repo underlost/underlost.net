@@ -8,11 +8,11 @@
 }
 
 .h1-xl {
-  @apply text-5xl md:text-8xl lg:text-9xl uppercase;
+  @apply text-4xl md:text-8xl lg:text-9xl uppercase;
 }
 
 .h1 {
-  @apply text-5xl md:text-7xl lg:text-8xl;
+  @apply text-4xl md:text-7xl lg:text-8xl;
 }
 
 .h2 {
@@ -47,7 +47,7 @@
 
 .gh-content {
   h2, h3, h4, h5, h6 {
-    @apply font-black font-stretch-extra-expanded;
+    @apply font-black font-stretch-extra-expanded text-balance;
   }
 
   h2 {
@@ -73,10 +73,10 @@
     @apply flex gap-x-5 p-5 justify-center;
   }
   .kg-callout-emoji {
-    @apply text-3xl;
+    @apply text-lg md:text-2xl lg:text-3xl;
   }
   .kg-callout-text {
-    @apply text-3xl;
+    @apply text-lg md:text-2xl lg:text-3xl;
   }
 }
 

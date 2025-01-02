@@ -15,11 +15,11 @@ body {
 }
 
 .container-inner {
-  @apply py-4 px-4 md:py-8 md:px-8 lg:py-16 lg:px-16 relative z-20;
+  @apply p-3 md:p-8 lg:p-16 relative z-20;
 }
 
 .container-border {
-  @apply border-t-4 border-l-4 border-r-4 md:border-t-8 md:border-l-8 md:border-r-8 lg:border-t-16 lg:border-l-16 lg:border-r-16;
+  @apply border-t-2 border-l-2 border-r-2 md:border-t-8 md:border-l-8 md:border-r-8 lg:border-t-16 lg:border-l-16 lg:border-r-16;
 }
 
 .container-intro {
@@ -27,7 +27,10 @@ body {
 }
 
 .container-content {
-  @apply relative z-10 max-w-4xl mx-auto py-12 lg:pt-42 px-4 lg:px-0;
+  @apply relative z-10 max-w-4xl mx-auto py-12 pt-22 lg:pt-42 px-4 lg:px-0;
+  &.gh-canvas {
+    @apply px-0;
+  }
 }
 
 .background-image {
@@ -71,6 +74,7 @@ body {
 
 .squiggle {
   position: relative;
+
   &::after {
     content: '';
     display: block;
@@ -133,7 +137,7 @@ body {
   mask-image: url('/images/svg/featured_image_blob.svg');
   mask-size: contain;
   mask-repeat: no-repeat;
-  @apply absolute left-11 right-11 lg:left-0 lg:right-0 top-3 md:top-12 w-auto h-full z-10 mx-auto max-w-3xl;
+  @apply absolute left-8 right-8 lg:left-0 lg:right-0 top-3 md:top-12 w-auto h-full z-10 mx-auto max-w-3xl;
 }
 
 .layout-fullbleed {
