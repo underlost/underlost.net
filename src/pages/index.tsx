@@ -56,7 +56,7 @@ export default function Home({ cmsData }: IndexProps) {
               <div className="my-16">
                 <div className="flex">
                   <span className="block w-24 h-24 lg:w-36 lg:h-36 mb-5 aspect-square">
-                    <Image src="/images/profile.png" alt="Tyler Rilling" width={400} height={400} className="rounded-full w-full h-full" loading='eager' />
+                    <Image src="/images/profile.png" alt="Tyler Rilling" width={400} height={400} className="rounded-full w-full h-full" loading="eager" />
                   </span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="174" height="107" className="mt-auto">
                     <g fill="currentColor">
