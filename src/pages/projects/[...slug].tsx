@@ -46,7 +46,7 @@ export default ProjectPostSlug
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!(params && params.slug && Array.isArray(params.slug))) throw Error(`getStaticProps: wrong parameters.`)
   const [slug] = params.slug.reverse()
-  console.time(`Project Page - getStaticProps`)
+  console.time(`Project Page ${slug} - getStaticProps`)
   const settings = await getAllSettings()
   let page: GhostPostOrPage | null = null
 
@@ -61,7 +61,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const imageUrl = (page)?.feature_image || undefined
   const image = await seoImage({ siteUrl, imageUrl })
   const tags = (page && page.tags) || undefined
-  console.timeEnd(`Project Page - getStaticProps`)
+  console.timeEnd(`Project Page ${slug} - getStaticProps`)
 
   return {
     props: {

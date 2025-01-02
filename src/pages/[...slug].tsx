@@ -49,7 +49,7 @@ export default PostOrPageIndex
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!(params && params.slug && Array.isArray(params.slug))) throw Error(`getStaticProps: wrong parameters.`)
   const [slug] = params.slug.reverse()
-  console.time(`Page - getStaticProps`)
+  console.time(`Page ${slug} - getStaticProps`)
   const settings = await getAllSettings()
   let page: GhostPostOrPage | null = null
   page = await getPageBySlug(slug)
@@ -63,7 +63,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const imageUrl = page?.feature_image || undefined
   const image = await seoImage({ siteUrl, imageUrl })
   const tags = (page && page.tags) || undefined
-  console.timeEnd(`Page - getStaticProps`)
+  console.timeEnd(`Page ${slug} - getStaticProps`)
 
   return {
     props: {

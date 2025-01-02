@@ -113,7 +113,7 @@ export default ConsultingPage
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!(params && params.slug && Array.isArray(params.slug))) throw Error(`getStaticProps: wrong parameters.`)
   const [slug] = params.slug.reverse()
-  console.time(`Writing Consulting Page - getStaticProps`)
+  console.time(`Writing ${slug} Consulting Page - getStaticProps`)
   const settings = await getAllSettings()
   let page: GhostPostOrPage | null = null
   page = await getPageBySlug(slug)
@@ -127,7 +127,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const imageUrl = page?.feature_image || undefined
   const image = await seoImage({ siteUrl, imageUrl })
   const tags = (page && page.tags) || undefined
-  console.timeEnd(`Writing Consulting Page - getStaticProps`)
+  console.timeEnd(`Writing ${slug} Consulting Page - getStaticProps`)
 
   return {
     props: {

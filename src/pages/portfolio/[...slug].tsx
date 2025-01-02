@@ -48,7 +48,7 @@ export default PortfolioPostSlug
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!(params && params.slug && Array.isArray(params.slug))) throw Error(`getStaticProps: wrong parameters.`)
   const [slug] = params.slug.reverse()
-  console.time(`Portfolio Page - getStaticProps`)
+  console.time(`Portfolio Page ${slug} - getStaticProps`)
   const settings = await getAllSettings()
   let page: GhostPostOrPage | null = null
   let extraPortfolioData
@@ -71,7 +71,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const imageUrl = (page)?.feature_image || undefined
   const image = await seoImage({ siteUrl, imageUrl })
   const tags = (page && page.tags) || undefined
-  console.timeEnd(`Portfolio Page - getStaticProps`)
+  console.timeEnd(`Portfolio Page ${slug} - getStaticProps`)
 
   return {
     props: {
