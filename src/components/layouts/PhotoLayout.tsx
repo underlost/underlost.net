@@ -43,7 +43,7 @@ export const PhotoLayout = ({ cmsData }: PostProps) => {
         <div className="container inner mx-auto">
           <div className="py-16 px-16">
             <article className={`post-full ${postClass}`}>
-              <PageHeader title={post.title} size='small' />
+              <PageHeader title={post.title} size="small" />
               {featImg &&
                 (nextImages.feature && featImg.dimensions ? (
                   <figure className="container mx-auto text-center mb-8" style={{ display: `inherit` }}>

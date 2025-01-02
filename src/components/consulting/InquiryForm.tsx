@@ -12,7 +12,7 @@ export const InquiryForm = () => {
           <>
             <div className="text-xl text-lime text-center">
               Thank you! Your message has been sent! <br />
-              I'll try to respond within the next 24-48 hours!
+              I&apos;ll try to respond within the next 24-48 hours!
             </div>
           </>
         ) : (

@@ -43,14 +43,14 @@ export default function ErrorPage({ cmsData }: ErrorPageProps) {
         <div className="tag-color-scheme-g container-inner">
           <div className="border-color container-border">
             <figure className="featured-image-blob" style={{ display: `inherit` }}>
-                <Image src="/images/404.jpg" alt="cat." width={500} height={500} className="aspect-square w-full grayscale" />
+              <Image src="/images/404.jpg" alt="cat." width={500} height={500} className="aspect-square w-full grayscale" />
             </figure>
-            <div className='py-11 lg:py-24' />
+            <div className="py-11 lg:py-24" />
             <article className="container-content">
-            <h1 className='h1-xl text-outline '>Page Not Found</h1>
-            <p className='text-left text-lg mb-8'>The page you are looking for does not exist. Sorry about that.</p>
+              <h1 className="h1-xl text-outline ">Page Not Found</h1>
+              <p className="text-left text-lg mb-8">The page you are looking for does not exist. Sorry about that.</p>
 
-            <Link className="btn btn-lg" href='/'>Go Home</Link>
+              <Link className="btn btn-lg" href="/">Go Home</Link>
             </article>
           </div>
 
@@ -64,8 +64,8 @@ export default function ErrorPage({ cmsData }: ErrorPageProps) {
 
         <section className="relative tag-color-scheme-i p-11">
           <div className="max-w-xl py-16 mx-auto">
-                    <NewsletterForm />
-                  </div>
+            <NewsletterForm />
+          </div>
         </section>
 
       </div>

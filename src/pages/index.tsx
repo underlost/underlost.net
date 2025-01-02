@@ -109,7 +109,7 @@ export default function Home({ cmsData }: IndexProps) {
                 <div className="col-span-12 lg:col-span-6 mb-5">
                   <div className="squiggle-static s1 my-8" />
                   <p className="text-secondary font-stretch-extra-expanded text-2xl mb-11">
-                    Need help building your website? Or maybe you're looking how to build the next great web app. Wheather it's just planning or you need help fixing bugs, I'm here to
+                    Need help building your website? Or maybe you&apos;re looking how to build the next great web app. Wheather it&apos;s just planning or you need help fixing bugs, I&apos;m here to
                     help!
                   </p>
                   <Link className="btn btn-lg" href="/consulting/">

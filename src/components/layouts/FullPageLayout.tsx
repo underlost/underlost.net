@@ -65,8 +65,8 @@ export const FullPageLayout = ({ cmsData }: PageProps) => {
                 </figure>
               )
             ))}
-            <div className='max-w-5xl mx-auto relative'>
-              <PageHeader title={page.title} size='large' />
+            <div className="max-w-5xl mx-auto relative">
+              <PageHeader title={page.title} size="large" />
             </div>
           </div>
           <div className="inner gh-canvas py-11">

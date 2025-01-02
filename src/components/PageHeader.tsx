@@ -6,7 +6,7 @@ interface PageHeaderProps {
   size?: string
 }
 
-export const PageHeader = ({ title = '', excerpt, size }: PageHeaderProps) => {
+export const PageHeader = ({ title = ``, excerpt, size }: PageHeaderProps) => {
   let h1Class = `h1`
   if (size === `small`) {
     h1Class = `h2`

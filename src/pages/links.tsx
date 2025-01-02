@@ -120,17 +120,17 @@ export default function LinksPage({ cmsData }: LinksPageProps) {
 
         <PostView title="Popular Posts" className="tag-color-scheme-d" posts={posts} settings={settings} />
 
-        <section className='tag-color-scheme-m pb-11'>
+        <section className="tag-color-scheme-m pb-11">
 
           <ConsultingHeader pongColor2={0xFFBCAA} pongColor1={0x4645D1} />
 
-          <div className='text-lg max-w-xl text-center mx-auto px-8 mb-8'>
+          <div className="text-lg max-w-xl text-center mx-auto px-8 mb-8">
             <p>I offer personalized consulting and web services for developers and designers looking to build and launch websites or web apps. Whether you’re refining an idea, troubleshooting technical issues, or creating something from scratch, I’ll help you make meaningful progress and achieve your goals. Each package includes a detailed critique of your project and the opportunity to collaborate directly with me to improve functionality, optimize performance, and bring your vision to life. With over two decades of experience, I’m here to guide you through every step of your journey.</p>
           </div>
 
-          <div className='max-w-lg mx-auto mb-11'>
-            <div className='px-8 text-center'>
-              <Link className='btn btn-lg mx-auto' href="/consulting">
+          <div className="max-w-lg mx-auto mb-11">
+            <div className="px-8 text-center">
+              <Link className="btn btn-lg mx-auto" href="/consulting">
                 Learn More
               </Link>
             </div>

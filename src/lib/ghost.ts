@@ -86,7 +86,7 @@ export const createNextImage = async (url?: string | null): Promise<NextImage | 
 
 async function createNextFeatureImages(nodes: BrowseResults<Tag | PostOrPage>): Promise<GhostTags | PostsOrPages> {
   const { meta } = nodes
-  const images = await Promise.all(nodes.map(node => createNextImage(node.feature_image)))
+  const images = await Promise.all(nodes.map((node) => createNextImage(node.feature_image)))
   const results = nodes.map((node, i) => {
     return { ...node, ...(images[i] && { featureImage: images[i] }) }
   })
@@ -95,7 +95,7 @@ async function createNextFeatureImages(nodes: BrowseResults<Tag | PostOrPage>): 
 
 async function createNextProfileImages(nodes: BrowseResults<Author>): Promise<GhostAuthors> {
   const { meta } = nodes
-  const images = await Promise.all(nodes.map(node => createNextImage(node.profile_image)))
+  const images = await Promise.all(nodes.map((node) => createNextImage(node.profile_image)))
   const results = nodes.map((node, i) => {
     return { ...node, ...(images[i] && { profileImage: images[i] }) }
   })
@@ -104,7 +104,7 @@ async function createNextProfileImages(nodes: BrowseResults<Author>): Promise<Gh
 
 export async function createNextProfileImagesFromAuthors(nodes: Author[] | undefined): Promise<Author[] | undefined> {
   if (!nodes) return undefined
-  const images = await Promise.all(nodes.map(node => createNextImage(node.profile_image)))
+  const images = await Promise.all(nodes.map((node) => createNextImage(node.profile_image)))
   return nodes.map((node, i) => {
     return { ...node, ...(images[i] && { profileImage: images[i] }) }
   })
@@ -112,7 +112,7 @@ export async function createNextProfileImagesFromAuthors(nodes: Author[] | undef
 
 async function createNextProfileImagesFromPosts(nodes: BrowseResults<PostOrPage>): Promise<PostsOrPages> {
   const { meta } = nodes
-  const authors = await Promise.all(nodes.map(node => createNextProfileImagesFromAuthors(node.authors)))
+  const authors = await Promise.all(nodes.map((node) => createNextProfileImagesFromAuthors(node.authors)))
   const results = nodes.map((node, i) => {
     return { ...node, ...(authors[i] && { authors: authors[i] }) }
   })
@@ -209,7 +209,7 @@ export async function getAllPostSlugs(): Promise<string[]> {
     fields: `slug`,
     filter: `tags:blog`,
   })
-  return posts.map(p => p.slug)
+  return posts.map((p) => p.slug)
 }
 
 // Get external pages tagged with #page
@@ -278,7 +278,7 @@ export async function getAllAsidePostSlugs(): Promise<string[]> {
     fields: `slug`,
     filter: `tags:hash-aside`,
   })
-  return posts.map(p => p.slug)
+  return posts.map((p) => p.slug)
 }
 
 // Linked posts

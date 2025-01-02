@@ -68,7 +68,7 @@ const ConsultingPage = ({ cmsData }: PostOrPageProps) => {
 
         <div className="gh-canvas py-11 relative">
 
-          <h1 className='text-center h4 mb-11'>{page.title}</h1>
+          <h1 className="text-center h4 mb-11">{page.title}</h1>
 
           {featImg &&
             (nextImages.feature && featImg.dimensions ? (

@@ -46,11 +46,11 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
 
   const toggleMenu = () => {
-    setMenuState(state => (state === `page nav-is-closed` ? `page nav-is-active` : `page nav-is-closed`))
+    setMenuState((state) => (state === `page nav-is-closed` ? `page nav-is-active` : `page nav-is-closed`))
   }
 
   const toggleSettings = () => {
-    setIsSettingsOpen(state => !state)
+    setIsSettingsOpen((state) => !state)
   }
 
   const handleAccessibleToggle = () => {
@@ -146,7 +146,7 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
           <div className="relative z-10">
             <Link href="/">{site.title}</Link> Copyright © Tyler Rilling 2001 - 2024. Published with Ghost.
             <br /> Site last updated:{` `}
-            <a href="https://github.com/underlost/underlost.net/">{modifiedDate}</a>. ❤️ View <Link className='underline' href="/terms/">Term of Use</Link> and <Link className='underline' href="/privacy/">Privacy Policy</Link>.
+            <a href="https://github.com/underlost/underlost.net/">{modifiedDate}</a>. ❤️ View <Link className="underline" href="/terms/">Term of Use</Link> and <Link className="underline" href="/privacy/">Privacy Policy</Link>.
           </div>
         </div>
       </footer>
@@ -188,9 +188,9 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
                 <span className="text-xl block">Toggle Light/Dark Mode</span>
                 <span className="text-sm block mb-5">Select the theme that works best for you. Light/dark modes generally only apply when Reduced colors is enabled, and on blog posts.</span>
 
-                <div className='grid grid-cols-2'>
+                <div className="grid grid-cols-2">
 
-                  <button className={`border border-white p-4 ${theme === 'light' ? 'bg-white text-black' : ''}`} onClick={handleThemeToggle}>
+                  <button className={`border border-white p-4 ${theme === `light` ? `bg-white text-black` : ``}`} onClick={handleThemeToggle}>
                     <span className="flex gap-x-4 justify-center">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" data-slot="icon" className="w-6 h-6">
                         <path
@@ -203,7 +203,7 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
                     </span>
                   </button>
 
-                    <button className={`border border-white p-4 ${theme === 'dark' ? 'bg-white text-black' : ''}`} onClick={handleThemeToggle}>
+                  <button className={`border border-white p-4 ${theme === `dark` ? `bg-white text-black` : ``}`} onClick={handleThemeToggle}>
                     <span className="flex gap-x-4 justify-center">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" data-slot="icon" className="w-6 h-6">
                         <path

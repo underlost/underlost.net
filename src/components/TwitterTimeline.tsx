@@ -35,7 +35,7 @@ const TwitterTimeline = ({ InitialData }: TwitterTimelineProps) => {
         return
       }
 
-      setPosts(prevPosts => [...prevPosts, ...newPosts]) // Correctly merge the new posts with the existing ones
+      setPosts((prevPosts) => [...prevPosts, ...newPosts]) // Correctly merge the new posts with the existing ones
 
       setStart(start + 10)
     } catch (error) {
@@ -77,7 +77,7 @@ const TwitterTimeline = ({ InitialData }: TwitterTimelineProps) => {
               <label htmlFor="twitter-tags" className="block mt-auto mr-3 text-xs font-black uppercase">
                 Filter:
               </label>
-              <select id="twitter-tags" className="dropdown" value={selectedTag || ``} onChange={e => handleTagClick(e.target.value)}>
+              <select id="twitter-tags" className="dropdown" value={selectedTag || ``} onChange={(e) => handleTagClick(e.target.value)}>
                 <option selected value="">
                   Select Tag
                 </option>
@@ -144,7 +144,7 @@ const TwitterTimeline = ({ InitialData }: TwitterTimelineProps) => {
                 <div className="related-tags">
                   <div className="block">
                     {post.tags
-                      .filter(tag => !tag.name?.startsWith(`#`))
+                      .filter((tag) => !tag.name?.startsWith(`#`))
                       .map((tag, index, array) => (
                         <span key={tag.name}>
                           <button className="twitter-tag-item italic text-xs" onClick={() => handleTagClick(tag.slug)}>

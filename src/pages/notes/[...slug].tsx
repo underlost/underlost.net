@@ -57,8 +57,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   let previewPosts: GhostPostsOrPages | never[] = []
-  let prevPost: GhostPostOrPage | null = null
-  let nextPost: GhostPostOrPage | null = null
+  const prevPost: GhostPostOrPage | null = null
+  const nextPost: GhostPostOrPage | null = null
 
   if (post?.id && post?.slug) {
     const tagSlug = post?.primary_tag?.slug

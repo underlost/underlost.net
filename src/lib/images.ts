@@ -5,7 +5,6 @@ import { createReadStream, createWriteStream, existsSync } from 'fs'
 import { join } from 'path'
 import { processEnv } from './processEnv'
 import { promisify } from 'util'
-
 import { sha1 } from 'crypto-hash'
 
 const streamPipeline = promisify(require(`stream`).pipeline)

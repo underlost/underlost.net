@@ -11,15 +11,15 @@ export default async function handler(
     return res.status(400).json({ message: `Email is required` })
   }
   try {
-    console.log('GHOST_API_URL:', process.env.CMS_GHOST_API_URL);
+    console.log(`GHOST_API_URL:`, process.env.CMS_GHOST_API_URL)
     const GHOST_ADMIN_API_KEY = process.env.CMS_GHOST_ADMIN_API_KEY
     const api = new GhostAdminAPI({
       url: process.env.CMS_GHOST_API_URL || ``, // Add a default value of an empty string if GHOST_API_URL is undefined
       key: GHOST_ADMIN_API_KEY || ``,
       version: `v3.0`,
     })
-    const data = { email: email,name: email, note: `Subscribed via Website API`, }
-    const options = { send_email: true, email_type: 'subscribe' }
+    const data = { email: email,name: email, note: `Subscribed via Website API` }
+    const options = { send_email: true, email_type: `subscribe` }
     const member = await api.members.add(data, options)
 
     if (member.error) {

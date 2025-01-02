@@ -67,7 +67,7 @@ export const PageLayout = ({ cmsData }: PageProps) => {
                       </figure>
                     )
                   ))
-                }
+              }
               <article className="container-content gh-canvas">
                 <PageHeader title={page.title} />
                 <section className="post-full-content post-content load-external-scripts gh-content">

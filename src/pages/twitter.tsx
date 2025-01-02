@@ -72,7 +72,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const AllPostForSerach = await getAllTwitterPosts()
   try {
     const jsonString = JSON.stringify(AllPostForSerach)
-    fs.writeFile(`twitter.json`, jsonString, `utf8`, err => {
+    fs.writeFile(`twitter.json`, jsonString, `utf8`, (err) => {
       if (err) {
         console.log(`Error writing file`, err)
       } else {

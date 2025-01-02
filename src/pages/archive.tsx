@@ -60,14 +60,14 @@ export default function ArchiveIndex({ cmsData }: ArchiveIndexProps) {
     <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-d">
       <SEO {...{ settings, seoImage, title }} />
       
-        <article className="archive-post">
-          <div className='lg:pt-24 pb-11 py-11'>
-            <PageHeader title={title} />
-          </div>
+      <article className="archive-post">
+        <div className="lg:pt-24 pb-11 py-11">
+          <PageHeader title={title} />
+        </div>
 
-          <div className="max-w-lg mx-auto my-16 squiggle s4 px-8" />
+        <div className="max-w-lg mx-auto my-16 squiggle s4 px-8" />
 
-          <div className="gh-canvas">
+        <div className="gh-canvas">
 
           {Object.entries(groupedPosts).map(([date, posts], index) => (
             <div className="text-left" key={index}>
@@ -89,8 +89,8 @@ export default function ArchiveIndex({ cmsData }: ArchiveIndexProps) {
               </ul>
             </div>
           ))}
-          </div>
-        </article>
+        </div>
+      </article>
       
     </Layout>
   )

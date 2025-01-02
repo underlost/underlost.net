@@ -43,17 +43,17 @@ export const PostLayout = ({ cmsData }: PostProps) => {
     <>
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
       <Layout isHome={false} settings={settings} bodyClass={`single ${bodyClass}`}>
-          <article className={`post-full lg:mb-32 ${postClass}`}>
+        <article className={`post-full lg:mb-32 ${postClass}`}>
 
-            {isFeatured ? (
-              <div className='post-header-featured'>
+          {isFeatured ? (
+            <div className="post-header-featured">
 
-                <header className='relative max-w-xl mx-auto mb-11 z-20 text-center text-white'>
-                  <h1 className="post-full-title h2">{post.title}</h1>
-                  {post.excerpt && <p className="post-full-custom-excerpt subtitle">{post.excerpt}</p>}
-                </header>
+              <header className="relative max-w-xl mx-auto mb-11 z-20 text-center text-white">
+                <h1 className="post-full-title h2">{post.title}</h1>
+                {post.excerpt && <p className="post-full-custom-excerpt subtitle">{post.excerpt}</p>}
+              </header>
 
-                {featImg &&
+              {featImg &&
                     (nextImages.feature && featImg.dimensions ? (
                       <figure className="absolute inset-0 w-full h-full object-cover" style={{ display: `inherit` }}>
                         <Image
@@ -66,20 +66,20 @@ export const PostLayout = ({ cmsData }: PostProps) => {
                         />
                         {featImg && post.feature_image_caption && <figcaption className="max-w-lg mx-auto text-center pt-4 text-sm italic" dangerouslySetInnerHTML={{ __html: post.feature_image_caption }} />}
                       </figure>
-                  ) : (
-                    post.feature_image && (
-                      <figure className="post-full-image">
-                        <img src={post.feature_image} alt={post.feature_image_alt || post.title || ``} />
-                        {featImg && post.feature_image_caption && <figcaption className="max-w-lg mx-auto text-center pt-4 text-sm italic" dangerouslySetInnerHTML={{ __html: post.feature_image_caption }} />}
-                      </figure>
-                    )
-                  ))}
-              </div>
-                ) : (
-                  <>
-                  <PostHeader title={post.title} excerpt={post.excerpt} primary_tag={post.primary_tag} published_at={post.published_at} updated_at={post.updated_at} />
+                    ) : (
+                      post.feature_image && (
+                        <figure className="post-full-image">
+                          <img src={post.feature_image} alt={post.feature_image_alt || post.title || ``} />
+                          {featImg && post.feature_image_caption && <figcaption className="max-w-lg mx-auto text-center pt-4 text-sm italic" dangerouslySetInnerHTML={{ __html: post.feature_image_caption }} />}
+                        </figure>
+                      )
+                    ))}
+            </div>
+          ) : (
+            <>
+              <PostHeader title={post.title} excerpt={post.excerpt} primary_tag={post.primary_tag} published_at={post.published_at} updated_at={post.updated_at} />
 
-                  {featImg &&
+              {featImg &&
                     (nextImages.feature && featImg.dimensions ? (
                       <figure className="post-full-image container mx-auto mb-11" style={{ display: `inherit` }}>
                         <Image
@@ -92,39 +92,39 @@ export const PostLayout = ({ cmsData }: PostProps) => {
                         />
                         {featImg && post.feature_image_caption && <figcaption className="max-w-lg mx-auto text-center pt-4 text-sm italic" dangerouslySetInnerHTML={{ __html: post.feature_image_caption }} />}
                       </figure>
-                  ) : (
-                    post.feature_image && (
-                      <figure className="post-full-image">
-                        <img src={post.feature_image} alt={post.feature_image_alt || post.title || ``} />
-                        {featImg && post.feature_image_caption && <figcaption className="max-w-lg mx-auto text-center pt-4 text-sm italic" dangerouslySetInnerHTML={{ __html: post.feature_image_caption }} />}
-                      </figure>
-                    )
-                  ))}
-                  </>
-                )}
+                    ) : (
+                      post.feature_image && (
+                        <figure className="post-full-image">
+                          <img src={post.feature_image} alt={post.feature_image_alt || post.title || ``} />
+                          {featImg && post.feature_image_caption && <figcaption className="max-w-lg mx-auto text-center pt-4 text-sm italic" dangerouslySetInnerHTML={{ __html: post.feature_image_caption }} />}
+                        </figure>
+                      )
+                    ))}
+            </>
+          )}
 
             
             
 
-            <section className="post-full-content mb-11">
-              <div className="post-content load-external-scripts gh-content text-lg gh-canvas">
-                <RenderContent htmlAst={htmlAst} />
-              </div>
-            </section>
+          <section className="post-full-content mb-11">
+            <div className="post-content load-external-scripts gh-content text-lg gh-canvas">
+              <RenderContent htmlAst={htmlAst} />
+            </div>
+          </section>
 
-            <section className="gh-canvas">
-              <h3 className="uppercase font-mono mb-3">Tags</h3>
-              <ul className="flex">
-                {post.tags?.filter((tag) => tag.visibility === `public`).map((tag, i) => (
-                  <li key={i} className="mr-1.5 mb-1.5">
-                    <Link className="border uppercase px-2.5 py-1.5 text-sm font-stretch-extra-expanded" href={`/tag/${tag.slug}/`}>{tag.name}</Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </article>
+          <section className="gh-canvas">
+            <h3 className="uppercase font-mono mb-3">Tags</h3>
+            <ul className="flex">
+              {post.tags?.filter((tag) => tag.visibility === `public`).map((tag, i) => (
+                <li key={i} className="mr-1.5 mb-1.5">
+                  <Link className="border uppercase px-2.5 py-1.5 text-sm font-stretch-extra-expanded" href={`/tag/${tag.slug}/`}>{tag.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </article>
 
-        <div className='mb-16 rounded-lg bg-black text-white dark:bg-white dark:text-black max-w-3xl mx-auto'>
+        <div className="mb-16 rounded-lg bg-black text-white dark:bg-white dark:text-black max-w-3xl mx-auto">
           <PreviewPosts {...{ settings, primaryTag: post.primary_tag, posts: previewPosts }} />
         </div>
 

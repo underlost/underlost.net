@@ -99,8 +99,8 @@ export default function ConsultingIndexPage({ cmsData }: ConsultingIndexPageProp
             <div>
               <p className="text-2xl lg:text-4xl font-black mb-5">
               Some of the clients <br /> I&apos;ve worked with:
-            </p>
-            <ClientSlider />
+              </p>
+              <ClientSlider />
             </div>
           </div>
         </div>

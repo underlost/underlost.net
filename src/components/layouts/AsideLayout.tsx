@@ -37,14 +37,14 @@ export const AsideLayout = ({ cmsData }: PostProps) => {
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
       <Layout isHome={false} settings={settings} bodyClass={`tag-color-scheme-c ${bodyClass}`}  image="/images/background_duotone.jpg">
         <div className="container">
-          <div className='grid grid-cols-12 py-8 tag-color-scheme-c'>
-            <div className='col-span-12 lg:col-span-7'>
+          <div className="grid grid-cols-12 py-8 tag-color-scheme-c">
+            <div className="col-span-12 lg:col-span-7">
               <section className="gh-canvas">
                 <AsideCard settings={settings} post={post} num={0} />
               </section>
             </div>
-            <div className='col-span-12 lg:col-span-5'>
-              <div className='lg:py-16'>
+            <div className="col-span-12 lg:col-span-5">
+              <div className="lg:py-16">
                 <PreviewPosts {...{ settings, primaryTag: post.primary_tag, posts: previewPosts }} />
               </div>
             </div>
