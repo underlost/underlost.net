@@ -78,7 +78,6 @@ export const FullPageLayout = ({ cmsData }: PageProps) => {
             </section>
 
             
-            
           </div>
         </article>
       </Layout>
