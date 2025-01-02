@@ -285,13 +285,19 @@
     .btn-transparent {
       @apply border-dewdrop-green shadow-dewdrop-green;
     }
-    .h1,
     .h1-xl {
       @apply text-twilight-blue;
       -webkit-text-stroke-color: var(--color-emberglow-red);
+      -webkit-text-stroke-width: 2px;
+      paint-order: stroke fill;
     }
+    .h1,
     .h2 {
       @apply text-emberglow-red;
+    }
+
+    .kg-callout-card {
+      @apply bg-deeplake-blue;
     }
 
     .border-color {

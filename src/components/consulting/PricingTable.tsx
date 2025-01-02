@@ -16,7 +16,7 @@ const svgCheckInverted = () => (
 )
 
 export const PricingTable = () => (
-  <div className="max-w-7xl mx-auto mb-24 md:px-8 relative z-10">
+  <div className="max-w-7xl mx-auto mb-24 px-8 relative z-10">
 
     <div className="grid lg:grid-cols-4 md:grid-cols-2 max-lg:gap-8 mt-8 max-md:max-w-sm max-md:mx-auto gap-x-5">
 
