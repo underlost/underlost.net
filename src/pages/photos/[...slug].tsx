@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { PhotoLayout } from '../../components/layouts/PhotoLayout'
 
 import { getPostsByTag, getTagBySlug, GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '../../lib/ghost'
-import { getPostBySlug, getAllSettings, getAllPostSlugs, getAllPhotoPosts } from '../../lib/ghost'
+import { getPostBySlug, getAllSettings, getAllPhotoPostSlugs, getAllPhotoPosts } from '../../lib/ghost'
 import { resolveUrl } from '../../utils/routing'
 
 import { ISeoImage, seoImage } from '../../components/meta/seoImage'
@@ -45,7 +45,7 @@ export default PhotoPost
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!(params && params.slug && Array.isArray(params.slug))) throw Error(`getStaticProps: wrong parameters.`)
   const [slug] = params.slug.reverse()
-  console.time(`Photo - getStaticProps`)
+  console.time(`Photo ${slug} - getStaticProps`)
   const settings = await getAllSettings()
   let post: GhostPostOrPage | null = null
   post = await getPostBySlug(slug)
@@ -62,7 +62,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const tagSlug = post?.primary_tag?.slug
     previewPosts = (tagSlug && (await getPostsByTag(tagSlug, 3, post?.id))) || []
 
-    const postSlugs = await getAllPostSlugs()
+    const postSlugs = await getAllPhotoPostSlugs()
     const index = postSlugs.indexOf(post?.slug)
     const prevSlug = index > 0 ? postSlugs[index - 1] : null
     const nextSlug = index < postSlugs.length - 1 ? postSlugs[index + 1] : null
@@ -76,7 +76,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const image = await seoImage({ siteUrl, imageUrl })
   const tags = (post && post.tags) || undefined
 
-  console.timeEnd(`Photo - getStaticProps`)
+  console.timeEnd(`Photo ${slug} - getStaticProps`)
 
   return {
     props: {

@@ -160,6 +160,7 @@ export async function getAllPosts(props?: { limit: number; page: number }): Prom
     ...(props && { ...props }),
   })
   const results = await createNextProfileImagesFromPosts(posts)
+
   return await createNextFeatureImages(results)
 }
 
@@ -277,6 +278,16 @@ export async function getAllAsidePostSlugs(): Promise<string[]> {
     limit: `all`,
     fields: `slug`,
     filter: `tags:hash-aside`,
+  })
+  return posts.map((p) => p.slug)
+}
+
+// Get all photo slugs with #aside tag
+export async function getAllPhotoPostSlugs(): Promise<string[]> {
+  const posts = await api.posts.browse({
+    limit: `all`,
+    fields: `slug`,
+    filter: `tags:hash-photos`,
   })
   return posts.map((p) => p.slug)
 }

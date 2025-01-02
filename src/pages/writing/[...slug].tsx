@@ -57,31 +57,23 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   console.time(`Post ${slug} - getStaticProps`)
   const settings = await getAllSettings()
   let post: GhostPostOrPage | null = null
+  let recentPosts: GhostPostsOrPages | never[] = []
   
   post = await getPostBySlug(slug)
+  recentPosts = await getAllNoteworthyPosts({ limit: 5 }) || []
+
   if (post?.primary_tag) {
     const primaryTag = await getTagBySlug(post?.primary_tag.slug)
     post.primary_tag = primaryTag
   }
-
   let previewPosts: GhostPostsOrPages | never[] = []
-  let prevPost: GhostPostOrPage | null = null
-  let nextPost: GhostPostOrPage | null = null
   
   if (post?.id && post?.slug) {
     const tagSlug = post?.primary_tag?.slug
     previewPosts = (tagSlug && (await getPostsByTag(tagSlug, 5, post?.id))) || []
     if (previewPosts.length === 0) {
-      previewPosts = (await getAllNoteworthyPosts({ limit: 5 })) || []
+      previewPosts = recentPosts
     }
-
-    const postSlugs = await getAllPostSlugs()
-    const index = postSlugs.indexOf(post?.slug)
-    const prevSlug = index > 0 ? postSlugs[index - 1] : null
-    const nextSlug = index < postSlugs.length - 1 ? postSlugs[index + 1] : null
-
-    prevPost = (prevSlug && (await getPostBySlug(prevSlug))) || null
-    nextPost = (nextSlug && (await getPostBySlug(nextSlug))) || null
   }
 
   const siteUrl = settings.processEnv.siteUrl
@@ -98,15 +90,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         post,
         seoImage: image,
         previewPosts,
-        prevPost,
-        nextPost,
         bodyClass: BodyClass({ tags }),
       },
     },
     ...(processEnv.isr.enable && { revalidate: processEnv.isr.revalidate }), // re-generate at most once every revalidate second
   }
 }
-
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { enable, maxNumberOfPages } = processEnv.isr
@@ -115,9 +104,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { url: cmsUrl } = settings
   const pageRoutes = (pages as GhostPostsOrPages).map(({ slug, url }) => resolveUrl({ cmsUrl, collectionPath: `writing/`, slug, url }))
   const paths = [...pageRoutes]
-
   console.log(`Paths:`, paths)
-
   return {
     paths,
     fallback: enable && `blocking`,
