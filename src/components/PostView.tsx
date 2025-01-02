@@ -6,7 +6,7 @@ interface PostViewProps {
   posts: GhostPostsOrPages
   isHome?: boolean
   title?: string
-  className: string
+  className?: string
   collectionPath?: string
   cards?: boolean
 }

@@ -52,7 +52,7 @@ const AuthorIndex = ({ cmsData }: AuthorIndexProps) => {
           <div className="gh-canvas">
             <HeaderAuthor {...{ settings, author }} />
           </div>
-          <PostView {...{ settings, posts }} />
+          <PostView posts={posts} settings={settings} />
         </div>
       </Layout>
     </>
