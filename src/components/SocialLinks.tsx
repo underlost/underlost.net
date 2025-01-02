@@ -1,7 +1,7 @@
 import React from 'react'
 
 const SocialLinks = () => (
-  <div className="mt-8 mb-4 flex justify-center gap-4">
+  <div className="pt-8 mb-4 flex justify-center gap-4">
     <a target="_blank" rel="noreferrer noopener" href="https://instagram.com/underlost/">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="h-8 w-8  mx-auto">
         <title>Follow me on Instagram</title>

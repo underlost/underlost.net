@@ -1,0 +1,19 @@
+.post-card-featured {
+  @apply relative;
+  .post-card-content {
+    @apply text-center my-auto py-36 relative z-20 text-white;
+  }
+  .post-card-title {
+    @apply font-stretch-extra-expanded text-5xl text-balance mb-4 font-black;
+  }
+  .post-card-excerpt {
+    @apply mb-2 text-lg;
+  }
+  .post-card-meta {
+    @apply mb-24
+  }
+
+  .btn {
+    @apply border-white text-white shadow-white;
+  }
+}

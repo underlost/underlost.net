@@ -23,3 +23,17 @@
     @apply bg-black
   }
 }
+
+.dark {
+  .vertical-timeline-element-content {
+    @apply bg-black shadow-[10px_10px_0_-1px_#131313,_10px_10px_0_#fff];
+  }
+
+  .vertical-timeline-element-content-arrow {
+    @apply border-r-white;
+  }
+
+  .vertical-timeline::before {
+    @apply bg-white
+  }
+}

@@ -1,7 +1,3 @@
 .clients-list {
   height: 200px;
 }
-
-.imageLogo {
-  @apply invert dark:filter-none;
-}

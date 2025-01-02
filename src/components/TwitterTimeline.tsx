@@ -35,7 +35,7 @@ const TwitterTimeline = ({ InitialData }: TwitterTimelineProps) => {
         return
       }
 
-      setPosts((prevPosts) => [...prevPosts, ...newPosts]) // Correctly merge the new posts with the existing ones
+      setPosts(prevPosts => [...prevPosts, ...newPosts]) // Correctly merge the new posts with the existing ones
 
       setStart(start + 10)
     } catch (error) {
@@ -72,45 +72,32 @@ const TwitterTimeline = ({ InitialData }: TwitterTimelineProps) => {
       <div className="gh-canvas md:pb-8">
         <section className="timeline-filter mb-8 stacked-sm">
           <h2 className="text-lg font-black mb-4">Timeline Settings</h2>
-          <div className="grid lg:grid-cols-3 gap-4">
-            <div className="col-span-1">
-              <div className="flex">
-                <label htmlFor="twitter-tags" className="block mt-auto mr-3 text-xs font-black uppercase">
-                  Filter:
-                </label>
-                <select
-                  id="twitter-tags"
-                  className="dropdown"
-                  value={selectedTag || ``}
-                  onChange={(e) => handleTagClick(e.target.value)}
-                >
-                  <option selected value="">
-                    Select Tag
-                  </option>
-                  <option value="censorship">Censorship</option>
-                  <option value="politics">Politics</option>
-                  <option value="funny">Funny</option>
-                  <option value="outage">Outage</option>
-                  <option value="bsuiness">Business</option>
-                  <option value="advertising">Advertising</option>
-                </select>
-              </div>
+          <div className="lg:flex gap-20">
+            <div className="block">
+              <label htmlFor="twitter-tags" className="block mt-auto mr-3 text-xs font-black uppercase">
+                Filter:
+              </label>
+              <select id="twitter-tags" className="dropdown" value={selectedTag || ``} onChange={e => handleTagClick(e.target.value)}>
+                <option selected value="">
+                  Select Tag
+                </option>
+                <option value="censorship">Censorship</option>
+                <option value="politics">Politics</option>
+                <option value="funny">Funny</option>
+                <option value="outage">Outage</option>
+                <option value="bsuiness">Business</option>
+                <option value="advertising">Advertising</option>
+              </select>
             </div>
 
-            <div className="col-span-1">
-              <div className="flex">
-                <label htmlFor="twitter-sort" className="block mt-auto mr-3 text-xs font-black uppercase">
-                  Sort:
-                </label>
-                <select
-                  id="twitter-sort"
-                  onChange={handleChangeOrdering}
-                  className="dropdown"
-                >
-                  <option value="desc">Newest First</option>
-                  <option value="asc">Oldest First</option>
-                </select>
-              </div>
+            <div className="block">
+              <label htmlFor="twitter-sort" className="block mt-auto mr-3 text-xs font-black uppercase">
+                Sort:
+              </label>
+              <select id="twitter-sort" onChange={handleChangeOrdering} className="dropdown">
+                <option value="desc">Newest First</option>
+                <option value="asc">Oldest First</option>
+              </select>
             </div>
           </div>
         </section>
@@ -157,7 +144,7 @@ const TwitterTimeline = ({ InitialData }: TwitterTimelineProps) => {
                 <div className="related-tags">
                   <div className="block">
                     {post.tags
-                      .filter((tag) => !tag.name?.startsWith(`#`))
+                      .filter(tag => !tag.name?.startsWith(`#`))
                       .map((tag, index, array) => (
                         <span key={tag.name}>
                           <button className="twitter-tag-item italic text-xs" onClick={() => handleTagClick(tag.slug)}>

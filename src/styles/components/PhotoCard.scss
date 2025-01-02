@@ -1,0 +1,15 @@
+.photo-card {
+  @apply relative mb-4 lg:mb-8 shadow-lg duration-200 ease-in-out transition-all overflow-hidden;
+
+  .post-card-header {
+    @apply hidden md:block absolute -bottom-5 right-8 left-8 z-10 opacity-0 duration-200 ease-in-out transition-all;
+  }
+
+  &:hover {
+    @apply shadow-2xl scale-105;
+
+    .post-card-header {
+      @apply opacity-100 bottom-8;
+    }
+  }
+}

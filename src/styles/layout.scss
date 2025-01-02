@@ -1,23 +1,45 @@
 html,
 body {
-  @apply bg-white transition duration-300 ease-in-out antialiased dark:bg-[#131313] dark:text-white;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  @apply bg-cloud-white text-midnight-black transition duration-300 ease-in-out antialiased ;
 }
 
-.bg-splatter {
-  background: url(/images/splatter.jpg) top;
-  background-size: auto;
-  background-size: 1132px 1014px;
-  @apply transition-all duration-150 ease-in-out;
+#page {
+  @apply dark:bg-midnight-black dark:text-white;
 }
 
-.dark .bg-splatter {
-  background: url(/images/splatter-dark.jpg) top;
-  background-size: auto;
-  background-size: 1132px 1014px;
+.container {
+  @apply mx-auto px-4 lg:px-8 relative z-10;
+}
+
+.container-inner {
+  @apply py-4 px-4 md:py-8 md:px-8 lg:py-16 lg:px-16 relative z-20;
+}
+
+.container-border {
+  @apply border-t-4 border-l-4 border-r-4 md:border-t-8 md:border-l-8 md:border-r-8 lg:border-t-16 lg:border-l-16 lg:border-r-16;
+}
+
+.container-intro {
+  @apply relative z-10 max-w-4xl mx-auto my-11 px-4 lg:px-0;
+}
+
+.container-content {
+  @apply relative z-10 max-w-4xl mx-auto py-12 lg:pt-42 px-4 lg:px-0;
+}
+
+.background-image {
+  @apply fixed inset-0 z-0;
+
+  img {
+    @apply object-cover w-full h-full;
+  }
 }
 
 .post-card-primary-tag {
-  @apply font-mono uppercase;
+  @apply font-mono uppercase underline underline-offset-2;
 }
 
 .swiper-slide {
@@ -26,6 +48,13 @@ body {
   &.swiper-slide-active {
     opacity: 1;
   }
+}
+
+.stack {
+  @apply border border-black text-black p-5 lg:p-11 w-full relative rounded-sm z-10 antialiased bg-white mb-11;
+  @apply dark:border-white dark:bg-[#131313] dark:text-white;
+  @apply shadow-[20px_20px_0_-1px_#fff,_20px_20px_0_#191a1b,40px_40px_0_-1px_#fff,40px_40px_0_#191a1b];
+  @apply dark:shadow-[20px_20px_0_-1px_#131313,_20px_20px_0_#fff,40px_40px_0_-1px_#131313,40px_40px_0_#fff];
 }
 
 .stacked-sm {
@@ -40,32 +69,8 @@ body {
   @apply invert dark:filter-none dark:invert-0;
 }
 
-
-.btn {
-  @apply bg-white border-2 border-black rounded font-mono font-bold px-5 py-3 inline-block shadow-[3px_3px_0_-1px_#000,_3px_3px_0_#000] transition-all duration-150 ease-in-out;
-  @apply dark:shadow-[3px_3px_0_-1px_#fff,_3px_3px_0_#fff] dark:border-white dark:bg-black;
-
-  &:hover {
-    @apply shadow-[0_0_0_-1px_#fff,_0_0_0_#fff] translate-x-[3px] translate-y-[3px];
-  }
-
-  &.btn-lg {
-    @apply text-lg;
-  }
-}
-
-.btn-white {
-  @apply bg-white text-black border-2 border-black rounded font-mono font-bold px-5 py-3 inline-block shadow-[3px_3px_0_-1px_#000,_3px_3px_0_#000] transition-all duration-150 ease-in-out;
-  text-shadow: none;
-
-  &:hover {
-    @apply shadow-[0_0_0_-1px_#fff,_0_0_0_#fff] translate-x-[3px] translate-y-[3px];
-  }
-}
-
 .squiggle {
   position: relative;
-
   &::after {
     content: '';
     display: block;
@@ -73,152 +78,32 @@ body {
     width: 100%;
     background-image: url('/images/svg/s1.svg');
   }
-}
-
-.dropdown {
-  @apply border border-black rounded-sm bg-white px-4 py-1;
-  @apply dark:border-white dark:bg-[#131313];
-}
-
-
-.post-card-title {
-  @apply inline;
-
-  &:hover {
-    @apply shadow-[inset_0_-0.5em_0_0] shadow-blue dark:shadow-pink;
+  &.s3 {
+    &::after {
+      background-image: url('/images/svg/s3.svg');
+    }
+  }
+  &.s4 {
+    &::after {
+      background-image: url('/images/svg/s4.svg');
+    }
+  }
+  &.s12 {
+    &::after {
+      background-image: url('/images/svg/s12.svg');
+    }
   }
 }
 
-.hover-shadow {
-  @apply inline;
-  @apply transition-all duration-150 ease-in-out;
-
-  &:hover {
-    @apply shadow-[inset_0_-0.5em_0_0] shadow-blue dark:shadow-pink;
-  }
-}
-
-.strikethrough {
-  @apply relative z-10;
-
-  &::before {
+.squiggle-static {
+  position: relative;
+  &::after {
     content: '';
-    @apply h-[.4em] bg-blue absolute top-1/2 bottom-1/2 -left-3 -right-3 z-[-1] my-auto;
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-image: url('/images/svg/s2.svg');
   }
-}
-
-.pixelHeart-logo {
-    animation-play-state: paused;
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-
-    .pixel-block {
-      @apply transition-all duration-300 ease-in-out;
-    }
-    &:hover {
-      animation-play-state: running;
-      .pixel-block.b-0 {
-        @apply fill-pink;
-      }
-      .pixel-block.b-1 {
-        @apply fill-aqua;
-      }
-      .pixel-block.b-2 {
-        @apply fill-blue;
-      }
-    }
-  }
-
-  @keyframes floating {
-    0% {
-      transform: translate(0, 0px);
-    }
-
-    50% {
-      transform: translate(0, 15px);
-    }
-
-    100% {
-      transform: translate(0, -0px);
-    }
-  }
-
-.navbar-toggler {
-  transition: all .7s ease-in-out;
-
-  .icon-bar {
-    @apply bg-black dark:bg-white;
-    transform: rotate(0deg) translate(0px, 0px);
-    transition: ease all .2s;
-    width: 28px;
-    height: 4px;
-    border-radius: 1px;
-    margin: 5px 0;
-
-    &:nth-child(3) {
-      width: 20px;
-    }
-  }
-}
-
-.site-header-nav {
-  @apply fixed top-0 bottom-0 right-0 z-40 bg-pink text-white w-[90%] lg:w-[50%] translate-x-full duration-100 ease-in-out transition-all; 
-  .nav-wrapper {
-    @apply flex flex-col items-start max-w-lg mx-auto justify-center h-full px-8 lg:px-0;
-    .nav {
-      @apply flex flex-col items-start;
-    }
-    .nav-item {
-      @apply text-xl md:text-3xl font-bold text-white uppercase bg-black my-1 px-3 duration-100 ease-in-out transition-all;
-
-      &:hover {
-        @apply text-pink;
-      }
-    }
-  }
-}
-
-.nav-is-active {
-  .site-header-nav {
-      @apply translate-x-0;
-  }
-  .navbar-toggler {
-    transition: transform .3s;
-    .icon-bar {
-      transition: ease all .3s;
-      margin: 6px 0;
-    }
-
-    .icon-bar:nth-child(1) {
-      transform: rotate(45deg) translateX(0px);
-      transform-origin: bottom left;
-    }
-    .icon-bar:nth-child(2) {
-      opacity: 0;
-    }
-    .icon-bar:nth-child(3) {
-      transform: rotate(-45deg) translateX(0px);
-      transform-origin: top left;
-      width: 28px;
-    }
-    &:hover {
-      .icon-bar {
-        opacity: 1;
-        margin: 5px -4px;
-        transform: rotate(0deg) translate(0px, 0px);
-      }
-    }
-  }
-}
-
-.post-full-image img {
-  @apply mx-auto;
-}
-
-.post-card-primary-tag {
-  @apply underline underline-offset-2 decoration-blue;
 }
 
 .promo-unit {
@@ -237,72 +122,36 @@ body {
   }
 }
 
-.nav-item {
-  .nav-link {
-    @apply relative;
-    &::before {
-      @apply absolute text-3xl opacity-0 transition-all duration-75 ease-in-out;
-    }
 
-    &:hover::before {
-      @apply opacity-100;
-    }
+.post-full-image {
+  img {
+    @apply w-full mx-auto max-h-[700px] object-cover;
   }
-
-  &.nav-home {
-    .nav-link {
-      &::before {
-        @apply -bottom-3.5 -right-8;
-        content: "🏠";
-      }
-    }
-  }
-  &.nav-about {
-    .nav-link {
-      &::before {
-        @apply -bottom-3.5 -left-8;
-        content: "👀";
-      }
-    }
-  }
-  &.nav-contact {
-    .nav-link {
-      &::before {
-        @apply bottom-3.5 -right-8;
-        content: "✉️";
-      }
-    }
-  }   
-    &.nav-personal.projects {
-      .nav-link {
-        &::before {
-          @apply -bottom-3.5 -left-8;
-          content: "🧑‍💻";
-        }
-      }
-    }
-    &.nav-client.work {
-      .nav-link {
-        &::before {
-          @apply -bottom-3.5 -left-8;
-          content: "👔";
-        }
-      }
-    }
-    &.nav-consulting {
-      .nav-link {
-        &::before {
-          @apply -bottom-3.5 -right-8;
-          content: "💁";
-        }
-      }
-    }
 }
 
-pre {
-  border-radius: .3em;
-  margin: .5em 0;
-  overflow: auto;
-  padding: 1em;
-  background: #073642;
+.featured-image-blob {
+  mask-image: url('/images/svg/featured_image_blob.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  @apply absolute left-11 right-11 lg:left-0 lg:right-0 top-3 md:top-12 w-auto h-full z-10 mx-auto max-w-3xl;
+}
+
+.layout-fullbleed {
+  .page-full-image {
+    @apply mx-auto max-w-2xl absolute inset-0 h-full mix-blend-multiply z-[2] opacity-35 pointer-events-none;
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.tag-list {
+  @apply mb-11;
+  .tag-btn {
+    @apply inline-block mr-2.5 mb-5;
+    .tag-link {
+      @apply bg-black dark:bg-zinc-800 text-white p-2;
+    }
+  }
 }

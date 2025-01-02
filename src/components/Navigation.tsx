@@ -1,3 +1,4 @@
+import React, { useEffect, useRef, JSX } from 'react'
 import Link from 'next/link'
 import { NavItem } from '../lib/ghost'
 
@@ -18,7 +19,7 @@ interface NavigationProps {
   className?: string
 }
 
-export const Navigation = ({ data, navClass = ``, className }: NavigationProps) => {
+export const Navigation = ({ data, navClass, className }: NavigationProps) => {
   const items: JSX.Element[] = [] // Use JSX.Element[] for an array of JSX elements
   data?.forEach((navItem, i) => {
     // Prefer forEach for operations that don't return a value
@@ -29,9 +30,9 @@ export const Navigation = ({ data, navClass = ``, className }: NavigationProps) 
     const element = (
       <li key={i} className={itemClass} role="menuitem">
         {isInternalLink ? (
-          <div className={navClass}>
-            <Link href={navItem.url}>{navItem.label}</Link>
-          </div>
+          <Link className={navClass} href={navItem.url}>
+            {navItem.label}
+          </Link>
         ) : (
           <a className={navClass} href={navItem.url} target="_blank" rel="noopener noreferrer">
             {navItem.label}

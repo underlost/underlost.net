@@ -1,10 +1,74 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import "./utilities.scss";
-@import "./fonts.scss";
-@import "./layout.scss";
-@import "./content.scss";
-@import "./text.scss";
-@import "./bookmark.scss";
-@import "./twitter.scss";
+@use "tailwindcss";
+@use "./utilities.scss";
+@use "./fonts.scss";
+@use "./layout.scss";
+@use "./_header.scss";
+@use "./_footer.scss";
+@use "./_btn.scss";
+@use "./_form.scss";
+@use "./components/PostCard.scss";
+@use "./components/FeaturedPostCard.scss";
+@use "./components/PostCardSimple.scss";
+@use "./components/PhotoCard.scss";
+@use "./components/PostHeaderFeatured.scss";
+@use "./content.scss";
+@use "./text.scss";
+@use "./bookmark.scss";
+@use "./twitter.scss";
+@use "./colors.scss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  // Fonts
+  --font-sans: 'Mona Sans', '-apple-system', 'system-ui', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Space Mono', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  --font-script: 'Shantell Sans', 'Space Mono', Courier New, monospace;
+  
+  // Lineheight adjustments
+  --text-xs--line-height: 1.4;
+  --text-sm--line-height: 1.4;
+  --text-base--line-height: 1.4;
+  --text-lg--line-height: 1.4;
+  --text-xl--line-height: 1.4;
+  --text-2xl--line-height: 1.4;
+  --text-3xl--line-height: 1.4;
+  --text-4xl--line-height: 1.4;
+  --text-5xl--line-height: 1.4;
+  --text-6xl--line-height: 1.4;
+  --text-7xl--line-height: 1.2;
+  --text-8xl--line-height: 1.2;
+  --text-9xl--line-height: 1.2;
+  --text-10xl--line-height: 1.2;
+
+  // Colors
+  --color-midnight-black: #131313;
+  --color-cloud-white: #F5F1EC;
+  // Blue
+  --color-twilight-blue: #183F63;
+  --color-deeplake-blue: #04284A;
+  --color-wisteriabloom-blue: #4645D1;
+  --color-starfall-blue: #4745D1;
+  // Green
+  --color-mistveil-green: #D5F7F3;
+  --color-dewdrop-green: #AFFFCC;
+  --color-enchantedmeadow-green: #00FF7E;
+  --color-wintershade-teal: #00596F;
+  // Red
+  --color-emberglow-red: #FB6754;
+  --color-berrybloom-red: #FF294C;
+  --color-crimsonleaf-red: #881910;
+  // Purple
+  --color-plumshade-purple: #661F4F;
+  --color-thistlebark-purple: #68268C;
+  --color-amethystgrove-purple: #7D3C9E;
+  --color-shadow-purple: #2C185B;
+  --color-twilightbark-purple: #402952;
+  // Pink
+  --color-blushwood-pink: #FFBCAA;
+  --color-wildrose-pink: #FF6B68;
+  --color-frostedpeach-pink: #FFD8D1;
+  // Yellow
+  --color-fairylantern-yellow: #FFFF00;
+  --color-honeydew-yellow: #FFFFB3;
+}

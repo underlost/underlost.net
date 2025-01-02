@@ -1,16 +1,12 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import Script from 'next/script'
 
-
 export default function Document() {
   return (
     <Html lang="en">
       <link rel="shortcut icon" href="/images/favicon.png" />
       <Head />
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-YZ280RLRRY`}
-      />
+      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=G-YZ280RLRRY`} />
       <Script
         id="gtag-init"
         strategy="afterInteractive"

@@ -57,15 +57,21 @@ export default function ArchiveIndex({ cmsData }: ArchiveIndexProps) {
   )
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass="">
+    <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-d">
       <SEO {...{ settings, seoImage, title }} />
-      <div className="inner gh-canvas mb-56">
-        <article className="stacked-sm archive-post">
-          <PageHeader title={title} />
+      
+        <article className="archive-post">
+          <div className='lg:pt-24 pb-11 py-11'>
+            <PageHeader title={title} />
+          </div>
+
+          <div className="max-w-lg mx-auto my-16 squiggle s4 px-8" />
+
+          <div className="gh-canvas">
 
           {Object.entries(groupedPosts).map(([date, posts], index) => (
             <div className="text-left" key={index}>
-              <p className="text-lg my-4 text-wide">{date}</p>
+              <p className="text-lg my-4 font-stretch-extra-expanded">{date}</p>
               <ul className="mb-8">
                 {posts.map((post, i) => {
                   const url = resolveUrl({ cmsUrl, collectionPath: `writing/`, slug: post.slug, url: post.url })
@@ -83,8 +89,9 @@ export default function ArchiveIndex({ cmsData }: ArchiveIndexProps) {
               </ul>
             </div>
           ))}
+          </div>
         </article>
-      </div>
+      
     </Layout>
   )
 }

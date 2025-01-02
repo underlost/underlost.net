@@ -60,17 +60,17 @@ interface LinkElement extends Node {
 
 const withRewriteGhostLinks =
   (cmsUrl: UrlWithStringQuery, basePath = `/`) =>
-    (htmlAst: Node) => {
-      visit(htmlAst, { tagName: `a` }, (node: LinkElement) => {
-        if (!node.properties || !node.properties.href) return
-        const href = urlParse(node.properties.href)
-        if (href.protocol === cmsUrl.protocol && href.host === cmsUrl.host) {
-          node.properties.href = basePath + href.pathname?.substring(1)
-        }
-      })
+  (htmlAst: Node) => {
+    visit(htmlAst, { tagName: `a` }, (node: LinkElement) => {
+      if (!node.properties || !node.properties.href) return
+      const href = urlParse(node.properties.href)
+      if (href.protocol === cmsUrl.protocol && href.host === cmsUrl.host) {
+        node.properties.href = basePath + href.pathname?.substring(1)
+      }
+    })
 
-      return htmlAst
-    }
+    return htmlAst
+  }
 
 /**
  * Rewrite relative links to be used with next/link

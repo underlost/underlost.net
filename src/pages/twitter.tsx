@@ -40,19 +40,24 @@ export default function TwitterPage({ cmsData }: TwitterPageProps) {
   if (htmlAst === undefined) throw Error(`twitter.tsx: htmlAst must be defined.`)
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass="twitter">
+    <Layout isHome={true} settings={settings} bodyClass="twitter ">
       <SEO {...{ settings, seoImage, title }} />
-      <div className="gh-canvas">
-        <article className="stacked-sm mb-8">
+
+      <article className="lg:pt-24">
+        <div className="max-w-4xl mx-auto">
           <PageHeader title={title} />
-          <section className="post-content load-external-scripts gh-content">
+        </div>
+        <div className="gh-canvas inner">
+          <section className="post-content load-external-scripts gh-content py-16 text-lg">
             <RenderContent htmlAst={htmlAst} />
           </section>
-        </article>
-      </div>
+        </div>
+      </article>
 
-      <div className="container mx-auto mb-48 px-4">
-        <TwitterTimeline InitialData={posts} />
+      <div className="inner">
+        <div className="container mb-16">
+          <TwitterTimeline InitialData={posts} />
+        </div>
       </div>
     </Layout>
   )
@@ -67,7 +72,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const AllPostForSerach = await getAllTwitterPosts()
   try {
     const jsonString = JSON.stringify(AllPostForSerach)
-    fs.writeFile(`twitter.json`, jsonString, `utf8`, (err) => {
+    fs.writeFile(`twitter.json`, jsonString, `utf8`, err => {
       if (err) {
         console.log(`Error writing file`, err)
       } else {

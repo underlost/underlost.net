@@ -31,33 +31,32 @@ export default function PhotosIndex({ cmsData }: PhotosIndexProps) {
   const router = useRouter()
   if (router.isFallback) return <div>Loading...</div>
 
-  const { settings, seoImage } = cmsData
-  const title = `Photography`
+  const { settings, seoImage, page } = cmsData
+  const { meta_title, meta_description } = page
+  const title = meta_title || `${page.title} - ${settings.title}`
   const posts = cmsData.posts
-  const page = cmsData.page
   const htmlAst = page.htmlAst
   if (htmlAst === undefined) throw Error(`Photography page index: htmlAst must be defined.`)
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass="">
-      <SEO {...{ settings, seoImage, title }} />
-      <div className="container mx-auto">
-        <article className="mb-11 gh-canvas">
-          <PageHeader title={title} />
-          {htmlAst && 
-          <section className="post-content load-external-scripts gh-content text-lg">
-            <RenderContent htmlAst={htmlAst} />
+    <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-g" image="/images/background_duotone.jpg">
+      <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
+      <div className="container">
+        <div className="tag-color-scheme-g container-inner">
+          <article className="container-content">
+            <PageHeader title={page.title} />
+            <section className="post-content load-external-scripts gh-content text-lg">
+              <RenderContent htmlAst={htmlAst} />
+            </section>
+          </article>
+          <section className="lg:mb-48 lg:mx-16">
+            <div className="gap-4 lg:gap-8 columns-2 lg:columns-3">
+              {posts.map((post, i) => (
+                <PhotoCard key={i} settings={settings} post={post} num={i} />
+              ))}
+            </div>
           </section>
-          }
-        </article>
-
-        <section className="mb-48">
-          <div className="gap-8 columns-2 lg:columns-4">
-            {posts.map((post, i) => (
-              <PhotoCard key={i} settings={settings} post={post} num={i} />
-            ))}
-          </div>
-        </section>
+        </div>
       </div>
     </Layout>
   )
@@ -69,7 +68,7 @@ export const getStaticProps: GetStaticProps = async () => {
   let page
   console.time(`Writing Photos Index - getStaticProps`)
   try {
-    page = await getPageBySlug(`photography`)
+    page = await getPageBySlug(`photos`)
     posts = await getAllPhotoPosts()
     settings = await getAllSettings()
   } catch (error) {

@@ -21,6 +21,7 @@ interface CmsData {
   posts: GhostPostsOrPages
   page: GhostPostOrPage
   seoImage : any
+  bodyClass: string
 }
 
 interface PortfolioIndexProps {
@@ -31,7 +32,7 @@ export default function PortfolioIndex({ cmsData }: PortfolioIndexProps) {
   const router = useRouter()
   if (router.isFallback) return <div>Loading...</div>
 
-  const { settings, seoImage } = cmsData
+  const { settings, seoImage, bodyClass } = cmsData
   const title = `Selected Works - ${settings.title}`
   const posts = cmsData.posts
   const page = cmsData.page
@@ -40,21 +41,27 @@ export default function PortfolioIndex({ cmsData }: PortfolioIndexProps) {
   if (htmlAst === undefined) throw Error(`Portfolio page index: htmlAst must be defined.`)
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass="">
+    <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-g" image="/images/background_duotone.jpg">
       <SEO {...{ settings, seoImage, title }} />
-      <div className="gh-canvas mb-48">
-        <article className="mb-11">
-          <PageHeader title={page.title} />
-          <section className="post-content load-external-scripts gh-content text-lg">
-            <RenderContent htmlAst={htmlAst} />
-          </section>
-        </article>
 
-        <section>
-          <div className="lg:columns-2 gap-8 mb-11">
-            {posts.map((post, i) => (
-              <PortfolioCard key={i} settings={settings} post={post} num={i} />
-            ))}
+      <div className="container">
+        <section className="tag-color-scheme-g container-inner">
+          <div className="border-color container-border">
+            <div className="relative z-10 max-w-5xl mx-auto my-11">
+              <article className="container-content">
+                <PageHeader title={page.title} />
+                <section className="post-content load-external-scripts gh-content text-xl">
+                  <RenderContent htmlAst={htmlAst} />
+                </section>
+              </article>
+
+              <div className="lg:columns-2 gap-11 mb-11">
+                {posts.map((post, i) => (
+                  <PortfolioCard key={i} settings={settings} post={post} num={i} />
+                ))}
+              </div>
+
+            </div>
           </div>
         </section>
       </div>

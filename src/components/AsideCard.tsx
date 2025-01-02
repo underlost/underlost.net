@@ -31,20 +31,14 @@ export const AsideCard = ({ settings, post, num }: AsideCardProps) => {
   const htmlAst = post.html
 
   return (
-    <aside className={`post-card relative py-8 ${postClass} ${large}`}>
+    <aside className={`aside-card relative py-8 ${postClass} ${large}`}>
       <div className="post-card-content">
         <header className="post-card-header">
           <div className="tags flex gap-2 items-center justify-between mb-6 w-full leading-none">
             <div className="relative flex items-center gap-2 text-sm">
               <div className="flex items-center gap-1">
-                <img
-                  className="w-6 h-6 rounded-full" 
-                  alt={post.primary_author?.name || ``}
-                  src={post.primary_author?.profile_image || ``}
-                />
-                <span className="text-sm font-semibold">
-                  {post.primary_author?.name || ``}
-                </span>
+                <img className="w-6 h-6 rounded-full" alt={post.primary_author?.name || ``} src={post.primary_author?.profile_image || ``} />
+                <span className="text-sm font-semibold">{post.primary_author?.name || ``}</span>
               </div>
               <time className="relative group text-xs" dateTime={post.published_at || ``}>
                 <span className="group-hover:hidden">{timeSince}</span>

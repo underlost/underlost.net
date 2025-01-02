@@ -63,14 +63,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (post?.id && post?.slug) {
     const tagSlug = post?.primary_tag?.slug
     previewPosts = (tagSlug && (await getPostsByTag(tagSlug, 4, post?.id))) || []
-
-    const postSlugs = await getAllAsidePostSlugs()
-    const index = postSlugs.indexOf(post?.slug)
-    const prevSlug = index > 0 ? postSlugs[index - 1] : null
-    const nextSlug = index < postSlugs.length - 1 ? postSlugs[index + 1] : null
-
-    prevPost = (prevSlug && (await getPostBySlug(prevSlug))) || null
-    nextPost = (nextSlug && (await getPostBySlug(nextSlug))) || null
   }
 
   const siteUrl = settings.processEnv.siteUrl
@@ -87,8 +79,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         post,
         seoImage: image,
         previewPosts,
-        prevPost,
-        nextPost,
         bodyClass: BodyClass({ tags }),
       },
     },

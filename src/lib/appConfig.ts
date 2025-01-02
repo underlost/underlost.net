@@ -32,6 +32,6 @@ export const maxDepth: number = 2
 // Incremental Static Regenerations (ISR)
 // Note: must be disbaled, when using `next export`
 export const isr: boolean = false
-export const revalidate: number = 10
+export const revalidate: number = 0
 export const maxNumberOfPosts: number = 20
 export const maxNumberOfPages: number = 20

@@ -1,0 +1,75 @@
+button {
+  @apply cursor-pointer;
+}
+
+.btn-transparent {
+  @apply border-2 border-black rounded font-mono font-bold px-4 py-2 inline-block shadow-[3px_3px_0_-1px_#000,_3px_3px_0_#000] transition-all duration-150 ease-in-out cursor-pointer;
+  @apply dark:shadow-[3px_3px_0_-1px_#fff,_3px_3px_0_#fff] dark:border-white;
+
+  &:hover {
+    @apply shadow-[0_0_0_-1px_#fff,_0_0_0_#fff] translate-x-[3px] translate-y-[3px];
+  }
+
+  &.btn-lg {
+    @apply text-lg;
+  }
+}
+
+.btn {
+  @apply px-5 py-3 inline-block font-black transition-all duration-150 ease-in-out cursor-pointer bg-white text-black relative z-10;
+  @apply dark:bg-black dark:text-white;
+
+  &::before,
+  &::after {
+    @apply transition-all duration-150 ease-in-out;
+    content: '';
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='stripe-svg' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M-1,1 l2,-2 M0,10 l10,-10 M9,11 l2,-2' stroke='%23fff' stroke-width='1' /%3E%3C/svg%3E");
+    background-size: 10px 10px;
+    display: block;
+    position: absolute;
+    bottom: -7px;
+    z-index: -1;
+    opacity: 0;
+  }
+  
+  &:before {
+    right: -7px;
+    height: 100%;
+    width: 6px;
+    transform: translate(-7px, -7px);
+  }
+  
+  &:after {
+    left: 6px;
+    height: 6px;
+    width: calc(100% - 5px);
+    transform: translate(-7px, -7px);
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+}
+
+.btn-lg {
+  @apply text-xl font-stretch-extra-expanded;
+}
+
+.btn-white {
+  @apply bg-white text-black border-black rounded font-bold px-5 py-3 inline-block transition-all duration-150 ease-in-out;
+  text-shadow: none;
+
+  &:hover {
+    @apply shadow-[0_0_0_-1px_#fff,_0_0_0_#fff] translate-x-[3px] translate-y-[3px];
+  }
+}
+
+.btn-solid {
+  @apply transition-all duration-150 ease-in-out font-bold uppercase py-4 px-6;
+
+ 
+}

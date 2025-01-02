@@ -1,0 +1,202 @@
+
+.site-header {
+  @apply relative z-40;
+}
+
+.pixelHeart-logo {
+  animation-play-state: running;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+  .pixel-block {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  &:hover {
+    animation-play-state: paused;
+
+    .pixel-block.b-0 {
+      @apply fill-blushwood-pink
+    }
+
+    .pixel-block.b-1 {
+      @apply fill-emberglow-red;
+    }
+
+    .pixel-block.b-2 {
+      @apply fill-twilight-blue;
+    }
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  50% {
+    transform: translate(0, 15px);
+  }
+
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+.navbar-toggler {
+  .icon-bar {
+    @apply bg-current;
+    transform: rotate(0deg) translate(0px, 0px);
+    transition: ease all .2s;
+    width: 28px;
+    height: 4px;
+    border-radius: 1px;
+    margin: 5px 0;
+
+    &:nth-child(3) {
+      width: 20px;
+    }
+  }
+}
+
+.site-header-nav {
+  @apply fixed top-0 bottom-0 right-0 z-40 bg-berrybloom-red text-white w-[90%] lg:w-[50%] translate-x-full duration-100 ease-in-out transition-all;
+
+  .nav-wrapper {
+    @apply flex flex-col items-start max-w-lg mx-auto justify-center h-full px-8 lg:px-0;
+
+    .nav {
+      @apply flex flex-col items-start;
+    }
+
+    .nav-item {
+      @apply text-xl md:text-4xl font-bold text-white uppercase bg-deeplake-blue my-1 px-3 duration-100 ease-in-out transition-all;
+
+      &:hover {
+        @apply text-dewdrop-green;
+      }
+    }
+  }
+}
+
+.menu-overlay {
+  @apply fixed inset-0 z-30 bg-black opacity-0 w-full h-full duration-100 ease-in-out transition-all hidden;
+}
+
+.nav-item {
+  .nav-link {
+    @apply relative;
+
+    &::before {
+      @apply absolute text-3xl opacity-0 transition-all duration-75 ease-in-out;
+    }
+
+    &:hover::before {
+      @apply opacity-100;
+    }
+  }
+
+  &.nav-home {
+    .nav-link {
+      &::before {
+        @apply -bottom-3.5 -right-8;
+        content: "🏠";
+      }
+    }
+  }
+
+  &.nav-about {
+    .nav-link {
+      &::before {
+        @apply -bottom-3.5 -left-8;
+        content: "👀";
+      }
+    }
+  }
+
+  &.nav-contact {
+    .nav-link {
+      &::before {
+        @apply bottom-3.5 -right-8;
+        content: "✉️";
+      }
+    }
+  }
+
+  &.nav-personal.projects {
+    .nav-link {
+      &::before {
+        @apply -bottom-3.5 -left-8;
+        content: "🧑‍💻";
+      }
+    }
+  }
+
+  &.nav-client.work {
+    .nav-link {
+      &::before {
+        @apply -bottom-3.5 -left-8;
+        content: "👔";
+      }
+    }
+  }
+
+  &.nav-consulting {
+    .nav-link {
+      &::before {
+        @apply -bottom-3.5 -right-8;
+        content: "💁";
+      }
+    }
+  }
+}
+
+.nav-link {
+  @apply hover:underline;
+}
+
+.nav-is-active {
+  @apply overflow-hidden max-h-[100vh];
+
+  .menu-overlay {
+    @apply opacity-50 block;
+  }
+
+  .site-header-nav {
+    @apply translate-x-0;
+  }
+
+  .navbar-toggler {
+    transition: transform .3s;
+
+    .icon-bar {
+      transition: ease all .3s;
+      margin: 6px 0;
+    }
+
+    .icon-bar:nth-child(1) {
+      transform: rotate(45deg) translateX(0px);
+      transform-origin: bottom left;
+    }
+
+    .icon-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .icon-bar:nth-child(3) {
+      transform: rotate(-45deg) translateX(0px);
+      transform-origin: top left;
+      width: 28px;
+    }
+
+    &:hover {
+      .icon-bar {
+        opacity: 1;
+        margin: 5px -4px;
+        transform: rotate(0deg) translate(0px, 0px);
+      }
+    }
+  }
+}

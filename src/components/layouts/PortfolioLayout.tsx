@@ -75,14 +75,14 @@ export const PortfolioLayout = ({ cmsData }: PortfolioPageProps) => {
             {/* The main page content */}
             <section className="post-full-content post-content load-external-scripts text-lg lg:mt-11 container grid lg:grid-cols-12 gap-x-11 relative">
               <div className="lg:col-span-8 order-2 lg:order-1">
-                <div className="stacked-sm">
+                <div className="stack">
                   <div className="gh-content gh-canvas">
                     <RenderContent htmlAst={htmlAst} />
                   </div>
                 </div>
               </div>
               <div className="lg:col-span-4 order-1 lg:order-2 relative">
-                <div className="bg-aqua text-black lg:rounded-lg p-8 pb-0 mb-11 text-sm lg:sticky lg:top-11">
+                <div className="bg-SageGreen text-black lg:rounded-lg p-8 pb-0 mb-11 text-sm lg:sticky lg:top-11">
 
                   {extraPortfolioData && extraPortfolioData.role && (
                     <div className="pb-8">
@@ -101,7 +101,7 @@ export const PortfolioLayout = ({ cmsData }: PortfolioPageProps) => {
                   {extraPortfolioData && extraPortfolioData.tools_used && (
                     <div className="pb-8">
                       <h2 className="font-mono uppercase text-sm mb-2">Software & Services Used</h2>
-                      <ul className="divide-y divide-blue">
+                      <ul className="divide-y divide-TwilightBlue">
                         {extraPortfolioData.tools_used.map((tool, i) => (
                           <li className="py-1" key={i}>{tool}</li>
                         ))}
@@ -112,7 +112,7 @@ export const PortfolioLayout = ({ cmsData }: PortfolioPageProps) => {
                   {extraPortfolioData && extraPortfolioData.frameworks_used && (
                     <div className="pb-8">
                       <h2 className="font-mono uppercase text-sm mb-2">Frameworks & Languages Used</h2>
-                      <ul className="divide-y divide-blue">
+                      <ul className="divide-y divide-TwilightBlue">
                         {extraPortfolioData.frameworks_used.map((framework, i) => (
                           <li className="py-1" key={i}>{framework}</li>
                         ))}

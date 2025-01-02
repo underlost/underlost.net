@@ -28,9 +28,9 @@ export const generateRSSFeed = ({ posts, settings }: FeedProps) => {
   }
   const feed = new RSS(feedOptions)
 
-  const feedItems = posts.map((post) => generateItem({ post, settings }))
+  const feedItems = posts.map(post => generateItem({ post, settings }))
 
-  feedItems.forEach((item) => feed.item(item))
+  feedItems.forEach(item => feed.item(item))
 
   return feed.xml({ indent: false })
 }

@@ -4,8 +4,6 @@ import Link from 'next/link'
 import dayjs from 'dayjs'
 
 import { resolveUrl } from '../utils/routing'
-import { getLang, get } from '../utils/use-lang'
-import { AuthorList } from '../components/AuthorList'
 import { PostClass } from '../components/helpers/PostClass'
 import { GhostPostOrPage, GhostSettings } from '../lib/ghost'
 
@@ -24,7 +22,7 @@ export const PhotoCard = ({ settings, post, num }: PostCardProps) => {
   const large = (featImg && num !== undefined && 0 === num % 6 && `post-card-large`) || ``
 
   return (
-    <article className={`post-card relative mb-8 ${postClass} ${large}`}>
+    <article className={`photo-card ${postClass} ${large}`}>
       {featImg ? (
         <Link href={url} className="post-card-image-link" aria-label={post.title}>
           {nextImages.feature ? (
@@ -49,7 +47,7 @@ export const PhotoCard = ({ settings, post, num }: PostCardProps) => {
         <Link href={url} className="post-card-content-link">
           <header className="post-card-header">
             {post.primary_tag && <div className="post-card-primary-tag">{post.primary_tag.name}</div>}
-            <h2 className="post-card-title text-wide text-lg font-black">{post.title}</h2>
+            <h2 className="post-card-title font-stretch-extra-expanded text-lg font-black">{post.title}</h2>
           </header>
         </Link>
 

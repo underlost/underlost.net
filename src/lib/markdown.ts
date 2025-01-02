@@ -22,7 +22,7 @@ export function getLinkBySlug(slug: string) {
 export function getAllLinks(): Link[] {
   const slugs = getLinkSlugs()
   const posts = slugs
-    .map((slug) => getLinkBySlug(slug))
+    .map(slug => getLinkBySlug(slug))
     // sort links by weight in descending order
     .sort((post1, post2) => (post1.weight > post2.weight ? -1 : 1))
   return posts
@@ -46,6 +46,6 @@ export function getPortfolioBySlug(slug: string) {
 
 export function getAllPortfolios() {
   const slugs = getPortfolioSlugs()
-  const posts = slugs.map((slug) => getPortfolioBySlug(slug))
+  const posts = slugs.map(slug => getPortfolioBySlug(slug))
   return posts
 }

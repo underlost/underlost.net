@@ -1,7 +1,53 @@
-.gh-content {
+.h1, .h1-xl,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  @apply font-stretch-extra-expanded text-balance font-black;
+}
 
+.h1-xl {
+  @apply text-5xl md:text-8xl lg:text-9xl uppercase;
+}
+
+.h1 {
+  @apply text-5xl md:text-7xl lg:text-8xl;
+}
+
+.h2 {
+  @apply text-3xl md:text-6xl lg:text-7xl;
+}
+
+.h3 {
+  @apply text-2xl md:text-5xl lg:text-6xl;
+}
+
+.h4 {
+  @apply text-xl md:text-4xl lg:text-5xl;
+}
+
+.h5 {
+  @apply text-lg md:text-3xl lg:text-4xl;
+}
+
+.h6 {
+  @apply text-base md:text-2xl lg:text-3xl;
+}
+
+.text-outline {
+  -webkit-text-stroke-color: currentColor;
+  -webkit-text-stroke-width: 2px;
+  paint-order: stroke fill;
+}
+
+.subtitle {
+  @apply font-mono text-lg lg:text-xl text-balance uppercase tracking-wider;
+}
+
+.gh-content {
   h2, h3, h4, h5, h6 {
-    @apply font-black text-wide;
+    @apply font-black font-stretch-extra-expanded;
   }
 
   h2 {
@@ -23,8 +69,14 @@
 }
 
 .page {
+  .kg-callout-card {
+    @apply flex gap-x-5 p-5 justify-center;
+  }
+  .kg-callout-emoji {
+    @apply text-3xl;
+  }
   .kg-callout-text {
-    @apply text-xl;
+    @apply text-3xl;
   }
 }
 
@@ -49,4 +101,12 @@
     -webkit-text-stroke: 2px #00FFEE;
     -webkit-text-fill-color: transparent;
   }
+}
+
+pre {
+  border-radius: .3em;
+  margin: .5em 0;
+  overflow: auto;
+  padding: 1em;
+  background: #073642;
 }

@@ -2,7 +2,7 @@ import * as appConfig from './appConfig'
 
 // siteUrl, platform, ghostAPIUrl, ghostAPIKey must be defined here
 export const ghostAPIUrl = process.env.CMS_GHOST_API_URL || `https://secure.underlost.net`
-export const ghostAPIKey = process.env.CMS_GHOST_API_KEY || `387f956eaa95345f7bb484d0b8`
+export const ghostAPIKey = process.env.CMS_GHOST_API_KEY || ``
 
 const siteUrl = process.env.SITE_URL || (process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`) || process.env.URL || `http://localhost:3000`
 

@@ -1,13 +1,3 @@
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .text-wide {
-    font-stretch: 150%;
-  }
-
-  .text-narrow {
-    font-stretch: 0%;
-  }
+.hover-shadow:hover {
+  @apply shadow-[inset_0_-0.5em_0_0];
 }

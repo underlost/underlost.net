@@ -7,7 +7,7 @@
     grid-template-columns: 
         [full-start] minmax(max(4vmin, 20px), auto) 
         [wide-start] minmax(auto, 240px) 
-        [main-start] min(820px, calc(100% - max(8vmin, 40px))) 
+        [main-start] min(675px, calc(100% - max(8vmin, 40px))) 
         [main-end] minmax(auto, 240px)
         [wide-end] minmax(max(4vmin, 20px), auto) 
         [full-end];
@@ -27,9 +27,6 @@
         width: 100%;
     }
 }
-
-
-
 
 /* Content & Typography
 /* ---------------------------------------------------------- */
@@ -68,13 +65,11 @@
     & blockquote+.kg-card {
         margin-top: 3vmin;
     }
-
     ul,
     ol,
     dl {
         padding-left: 1.9em;
     }
-
     ul, ol {
         margin-top: 1.5rem;
         li {
@@ -84,30 +79,25 @@
     ul {
         list-style: square;
     }
-
     ol {
         list-style: decimal;
     }
-
     hr {
         margin-top: 6vmin;
     }
     hr + * {
         margin-top: 6vmin !important;
     }
-
     a {
         @apply underline underline-offset-2;
     }
-
     code[class*="language-"] {
         @apply text-sm;
     }
 
     blockquote {
-        @apply text-xl text-wide bg-white italic;
-        @apply border-l-8 border-aqua pl-4;
-        @apply dark:bg-[#131313];
+        @apply text-xl font-stretch-extra-expanded italic;
+        @apply border-l-10 pl-4;
     }
 }
 

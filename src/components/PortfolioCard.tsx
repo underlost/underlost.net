@@ -21,7 +21,7 @@ export const PortfolioCard = ({ settings, post, num }: PortfolioCardProps) => {
   const large = (featImg && num !== undefined && 0 === num % 6 && `post-card-large`) || ``
 
   return (
-    <article className={`post-card relative mb-11 ${postClass} ${large}`}>
+    <article className={`portfolio-card relative mb-11 ${postClass} ${large}`}>
       {featImg ? (
         <Link href={url} className="post-card-image-link block mb-3" aria-label={post.title}>
           {nextImages.feature ? (
@@ -46,10 +46,9 @@ export const PortfolioCard = ({ settings, post, num }: PortfolioCardProps) => {
         <Link href={url} className="post-card-content-link">
           <header className="post-card-header">
             {post.primary_tag && <div className="post-card-primary-tag">{post.primary_tag.name}</div>}
-            <h2 className="post-card-title text-2xl font-black text-wide mb-2">{post.title}</h2>
+            <h2 className="post-card-title text-2xl font-black font-stretch-extra-expanded mb-2">{post.title}</h2>
           </header>
           <section className="post-card-excerpt">
-            {/* post.excerpt *is* an excerpt and does not need to be truncated any further */}
             <p>{post.excerpt}</p>
           </section>
         </Link>

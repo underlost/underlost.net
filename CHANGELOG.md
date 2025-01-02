@@ -2,6 +2,14 @@
 
 ---
 
+## 11.0.0 (01/01/25)
+
+* Updated color scheme
+* Updated typography
+* Updated layout
+* Switched to TailwindCSS v4 Beta
+
+
 ## 10.0.1 (03/10/24)
 
 * Switched to Next.js

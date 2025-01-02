@@ -35,7 +35,7 @@ export const generateTableOfContents = (htmlAst: Node) => {
 
   // recursive walk to visit all children
   const walk = (children: TocElement[], text = ``, depth = 0) => {
-    children.forEach((child) => {
+    children.forEach(child => {
       if (child.type === `text`) {
         text = text + child.value
       } else if (child.children && depth < 3) {
@@ -77,7 +77,7 @@ export const generateTableOfContents = (htmlAst: Node) => {
   // make final tree
   const tocTree = toc.filter(({ parentIndex }) => parentIndex === -1)
 
-  const removeProps = ({ id, heading, items }: TOC): IToC => (items.length > 0 ? { id, heading, items: (items as TOC[]).map((item) => removeProps(item)) } : { id, heading })
+  const removeProps = ({ id, heading, items }: TOC): IToC => (items.length > 0 ? { id, heading, items: (items as TOC[]).map(item => removeProps(item)) } : { id, heading })
 
-  return tocTree.map((node) => removeProps(node))
+  return tocTree.map(node => removeProps(node))
 }

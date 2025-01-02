@@ -8,30 +8,30 @@ const RSS = () => null
 export const getServerSideProps: GetServerSideProps | undefined = process.env.IS_EXPORT
   ? undefined
   : async ({ res }) => {
-    let settings
-    let posts: GhostPostsOrPages | []
+      let settings
+      let posts: GhostPostsOrPages | []
 
-    try {
-      settings = await getAllSettings()
-      posts = await getAllPosts()
-    } catch (error) {
-      throw new Error(`Index creation failed.`)
-    }
+      try {
+        settings = await getAllSettings()
+        posts = await getAllPosts()
+      } catch (error) {
+        throw new Error(`Index creation failed.`)
+      }
 
-    let rssData = null
-    if (settings.processEnv.rssFeed) {
-      rssData = generateRSSFeed({ posts, settings })
-    }
+      let rssData = null
+      if (settings.processEnv.rssFeed) {
+        rssData = generateRSSFeed({ posts, settings })
+      }
 
-    if (res && rssData) {
-      res.setHeader(`Content-Type`, `text/xml`)
-      res.write(rssData)
-      res.end()
-    }
+      if (res && rssData) {
+        res.setHeader(`Content-Type`, `text/xml`)
+        res.write(rssData)
+        res.end()
+      }
 
-    return {
-      props: {},
+      return {
+        props: {},
+      }
     }
-  }
 
 export default RSS

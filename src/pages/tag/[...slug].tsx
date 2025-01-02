@@ -4,6 +4,7 @@ import { Tag } from '@tryghost/content-api'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { Layout } from "@/components/Layout"
 import { PostView } from '@/components/PostView'
+import { PageHeader } from '@/components/PageHeader'
 import { SEO } from '@/components/meta/seo'
 import { getTagBySlug, getAllTags, getAllSettings, getPostsByTag, GhostSettings, GhostPostOrPage, GhostPostsOrPages } from '@/lib/ghost'
 import { resolveUrl } from '@/utils/routing'
@@ -42,20 +43,18 @@ const TagPage = ({ cmsData }: TagPageProps) => {
   const title = `${tag.name} - ${settings.title}`
 
   return (
-    <>
+    <Layout isHome={true} settings={settings} bodyClass={`tag-color-scheme-c layout-fullbleed ${bodyClass}`}>
       <SEO {...{ settings, title: title || meta_title || ``, description: meta_description || ``, seoImage }} />
-      <Layout isHome={true} settings={settings} bodyClass={bodyClass}>
-        <div className="mb-48">
-          <article className="gh-canvas mb-11">
-            <header className="mb-5 stacked-sm">
-              <h1 className="text-6xl text-wide mb-2">{tag.name}</h1>
-              <p className="text-lg">{tag.description}</p>
-            </header>
-          </article>
-          <PostView {...{ settings, posts }} />
+      <article>
+        <div className="container lg:mt-24 mb-11 my-11 relative">
+          <PageHeader title={tag.name ?? ``} excerpt={tag.description ?? ``} />
         </div>
-      </Layout>
-    </>
+        <div className="inner py-11">
+          <div className="max-w-lg mx-auto my-16 squiggle s3 px-8" />
+          <PostView className="tag-color-scheme-a" posts={posts} settings={settings} />
+        </div>
+      </article>
+    </Layout>
   )
 }
 

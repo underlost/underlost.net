@@ -10,10 +10,12 @@ import { getAllSettings, GhostSettings, GhostPostOrPage, GhostPostsOrPages, getA
 import { RenderContent } from '@/components/RenderContent'
 import { AsideCard } from '@/components/AsideCard'
 import { PageHeader } from '@/components/PageHeader'
+import { BodyClass } from '@/components/helpers/BodyClass'
+
 
 /**
  *
- * Renders the Thoughts page
+ * Renders the Notes page
  *
  */
 
@@ -22,6 +24,7 @@ interface CmsData {
   posts: GhostPostsOrPages
   seoImage: any
   page: GhostPostOrPage
+  bodyClass: string
 }
 
 interface NotesPageIndexProps {
@@ -32,7 +35,7 @@ export default function NotesPageIndex({ cmsData }: NotesPageIndexProps) {
   const router = useRouter()
   if (router.isFallback) return <div>Loading...</div>
 
-  const { settings, seoImage } = cmsData
+  const { settings, seoImage, bodyClass } = cmsData
   const { nextImages } = settings.processEnv
   const page = cmsData.page
   const { meta_title, meta_description } = page
@@ -44,42 +47,44 @@ export default function NotesPageIndex({ cmsData }: NotesPageIndexProps) {
   if (htmlAst === undefined) throw Error(`notebook page index: htmlAst must be defined.`)
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass="">
+    <Layout isHome={true} settings={settings} bodyClass={bodyClass}>
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
 
-      <section className="gh-canvas mb-52">
-        <div className="stacked-sm">
+      <div className="gh-canvas">
+        <div className="stack">
 
           <article className={`${postClass}`}>
-            {featImg &&
-              (nextImages.feature && featImg.dimensions ? (
-                <figure className="post-full-image container mx-auto mb-11" style={{ display: `inherit` }}>
-                  <Image
-                    src={featImg.url}
-                    alt={page.feature_image_alt || page.title || ``}
-                    quality={nextImages.quality}
-                    className="max-h-[600px] object-contain"
-                    sizes={`
-                              (max-width: 350px) 350px,
-                              (max-width: 530px) 530px,
-                              (max-width: 710px) 710px,
-                              (max-width: 1170px) 1170px,
-                              (max-width: 2110px) 2110px, 2000px
-                            `}
-                    {...featImg.dimensions}
-                  />
-                  {featImg && page.feature_image_caption && <figcaption className="max-w-lg mx-auto text-center pt-4 text-sm italic" dangerouslySetInnerHTML={{ __html: page.feature_image_caption }} />}
-                </figure>
-              ) : (
-                page.feature_image && (
-                  <figure className="post-full-image">
-                    <img src={page.feature_image} alt={page.feature_image_alt || page.title || ``} />
+            <header>
+              {featImg &&
+                (nextImages.feature && featImg.dimensions ? (
+                  <figure className="post-full-image mx-auto mb-11" style={{ display: `inherit` }}>
+                    <Image
+                      src={featImg.url}
+                      alt={page.feature_image_alt || page.title || ``}
+                      quality={nextImages.quality}
+                      className="max-h-[600px] object-contain"
+                      sizes={`
+                                (max-width: 350px) 350px,
+                                (max-width: 530px) 530px,
+                                (max-width: 710px) 710px,
+                                (max-width: 1170px) 1170px,
+                                (max-width: 2110px) 2110px, 2000px
+                              `}
+                      {...featImg.dimensions}
+                    />
                     {featImg && page.feature_image_caption && <figcaption className="max-w-lg mx-auto text-center pt-4 text-sm italic" dangerouslySetInnerHTML={{ __html: page.feature_image_caption }} />}
                   </figure>
-                )
-              ))}
-            
-            <h1 className="font-bold text-lg">{page.title}</h1>
+                ) : (
+                  page.feature_image && (
+                    <figure className="post-full-image">
+                      <img src={page.feature_image} alt={page.feature_image_alt || page.title || ``} />
+                      {featImg && page.feature_image_caption && <figcaption className="max-w-lg mx-auto text-center pt-4 text-sm italic" dangerouslySetInnerHTML={{ __html: page.feature_image_caption }} />}
+                    </figure>
+                  )
+                ))}
+              
+              <h1 className="font-bold text-xl">{page.title}</h1>
+            </header>
           
             <section className="post-content load-external-scripts gh-content">
               <RenderContent htmlAst={htmlAst} />
@@ -90,7 +95,7 @@ export default function NotesPageIndex({ cmsData }: NotesPageIndexProps) {
             {posts.map((post, i) => <AsideCard key={post.id} settings={settings} post={post} num={i} />)}
           </div>
         </div>
-      </section>
+      </div>
     </Layout>
   )
 }
@@ -107,10 +112,12 @@ export const getStaticProps: GetStaticProps = async () => {
   } catch (error) {
     throw new Error(`Notes Page creation failed.`)
   }
+  const tags = (page && page.tags) || undefined
   const cmsData = {
     settings,
     posts,
     page,
+    bodyClass: BodyClass({ page: page || undefined, tags }),
     seoImage: await seoImage({ siteUrl: settings.processEnv.siteUrl }),
   }
   console.timeEnd(`Notes Page - getStaticProps`)

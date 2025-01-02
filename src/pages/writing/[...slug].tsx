@@ -1,14 +1,15 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 
-import { getPostsByTag, getTagBySlug, GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '../../lib/ghost'
-import { getPostBySlug, getAllPosts, getAllSettings, getAllPostSlugs } from '../../lib/ghost'
-import { resolveUrl } from '../../utils/routing'
+import { getPostsByTag, getTagBySlug, GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '@/lib/ghost'
+import { getPostBySlug, getAllPosts, getAllSettings, getAllPostSlugs, getAllNoteworthyPosts } from '@/lib/ghost'
+import { resolveUrl } from '@/utils/routing'
 
-import { ISeoImage, seoImage } from '../../components/meta/seoImage'
-import { processEnv } from '../../lib/processEnv'
-import { BodyClass } from '../../components/helpers/BodyClass'
-import { PostLayout } from '../../components/layouts/PostLayout'
+import { ISeoImage, seoImage } from '@/components/meta/seoImage'
+import { processEnv } from '@/lib/processEnv'
+import { BodyClass } from '@/components/helpers/BodyClass'
+import { PostLayout } from '@/components/layouts/PostLayout'
+import { AsideLayout } from '@/components/layouts/AsideLayout'
 
 
 /**
@@ -22,6 +23,7 @@ interface CmsDataCore {
   settings: GhostSettings
   seoImage: ISeoImage
   previewPosts?: GhostPostsOrPages
+  noteworthyPosts?: GhostPostsOrPages
   prevPost?: GhostPostOrPage
   nextPost?: GhostPostOrPage
   bodyClass: string
@@ -37,8 +39,14 @@ interface PostOrPageProps {
 
 const PostIndex = ({ cmsData }: PostOrPageProps) => {
   const router = useRouter()
+  const isLinked = cmsData.post.tags?.some((tag) => (tag.name === `#linked` || tag.name === `#twitter`))
   if (router.isFallback) return <div>Loading...</div>
-  return <PostLayout cmsData={cmsData} />
+
+  if (isLinked) {
+    return <AsideLayout cmsData={cmsData} />
+  } else {
+    return <PostLayout cmsData={cmsData} />
+  }
 }
 
 export default PostIndex
@@ -59,10 +67,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   let previewPosts: GhostPostsOrPages | never[] = []
   let prevPost: GhostPostOrPage | null = null
   let nextPost: GhostPostOrPage | null = null
-
+  
   if (post?.id && post?.slug) {
     const tagSlug = post?.primary_tag?.slug
-    previewPosts = (tagSlug && (await getPostsByTag(tagSlug, 4, post?.id))) || []
+    previewPosts = (tagSlug && (await getPostsByTag(tagSlug, 5, post?.id))) || []
+    if (previewPosts.length === 0) {
+      previewPosts = (await getAllNoteworthyPosts({ limit: 5 })) || []
+    }
 
     const postSlugs = await getAllPostSlugs()
     const index = postSlugs.indexOf(post?.slug)

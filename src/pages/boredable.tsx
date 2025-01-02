@@ -78,7 +78,7 @@ export default function BoredablePage({ cmsData }: BoredablePageProps) {
             <div className="max-w-lg mx-auto my-16 squiggle s1 px-8" />
           </div>
 
-          <div className="bg-aqua text-black py-16 lg:py-28">
+          <div className="bg-SageGreen text-black py-16 lg:py-28">
             <blockquote className="text-xl lg:text-3xl max-w-3xl mx-auto italic text-center border-none mb-0 px-4 lg:px-0">
               <p className="italic font-wide font-black">
                 X is the future state of unlimited interactivity - centered in audio, video, messaging, payments/banking - creating a global marketplace for ideas, goods, services, and
@@ -224,7 +224,7 @@ export default function BoredablePage({ cmsData }: BoredablePageProps) {
           </div>
 
           <div className="bg-black text-white py-16 lg:py-28 px-8 lg:px-0">
-            <div className="max-w-2xl mx-auto text-aqua">
+            <div className="max-w-2xl mx-auto text-SageGreen">
               <h2 className="text-3xl font-black mb-8">A non-profit organization with a focus on creating a better social media experience for everyone.</h2>
             </div>
 

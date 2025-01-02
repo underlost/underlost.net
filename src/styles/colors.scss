@@ -1,0 +1,453 @@
+// Color Schemes for the site
+
+.btn {
+  @apply bg-black text-white;
+  @apply dark:bg-white dark:text-black;
+}
+
+#page.accessible-mode {
+  .background-image {
+    display: none !important;
+  }
+  .container-border {
+    border: 0 !important;
+  }
+  .hover-shadow:hover {
+    @apply shadow-enchantedmeadow-green dark:shadow-wisteriabloom-blue;
+  }
+
+  .non-accessible {
+    display: none;
+  }
+}
+
+.tag-featured {
+  .site-header {
+    @apply text-white;
+    
+    svg path {
+      @apply fill-white;
+    }
+    .btn-transparent {
+      @apply border-white shadow-white;
+    }
+  }
+}
+
+#page:not(.accessible-mode) {
+
+  
+
+  .container-primary {
+    @apply bg-twilight-blue text-dewdrop-green;
+  }
+
+
+  &.tag-color-scheme-a,
+  .tag-color-scheme-a {
+    @apply bg-twilight-blue text-dewdrop-green;
+
+    svg path {
+      @apply fill-current;
+    }
+
+    .border-color {
+      @apply border-emberglow-red;
+    }
+
+    .hover-shadow:hover {
+      @apply shadow-emberglow-red;
+    }
+
+    .btn-transparent {
+      @apply border-dewdrop-green shadow-dewdrop-green;
+    }
+
+    .btn {
+      @apply bg-dewdrop-green text-twilight-blue;
+    }
+
+    .site-footer {
+      @apply text-dewdrop-green;
+    }
+
+    .text-secondary {
+      @apply text-white;
+    }
+  }
+
+  &.tag-color-scheme-b,
+  .tag-color-scheme-b {
+    @apply bg-plumshade-purple text-enchantedmeadow-green;
+
+    svg path {
+      @apply fill-current;
+    }
+
+    .btn-transparent {
+      @apply border-enchantedmeadow-green shadow-enchantedmeadow-green;
+    }
+
+    .border-color,
+    .border-currentcolor {
+      @apply border-enchantedmeadow-green;
+    }
+
+    .text-field {
+      @apply border-enchantedmeadow-green placeholder-enchantedmeadow-green;
+    }
+
+    .btn-solid,
+    .btn {
+      @apply bg-enchantedmeadow-green text-plumshade-purple;
+    }
+
+  }
+
+  &.tag-hash-projects,
+  &.tag-color-scheme-c,
+  .tag-color-scheme-c {
+    @apply bg-deeplake-blue text-dewdrop-green;
+    .post-card {
+      @apply bg-twilight-blue;
+      .post-card-primary-tag {
+        @apply decoration-wildrose-pink;
+      }
+      &:hover {
+        .post-card-title {
+          @apply shadow-wildrose-pink;
+        }
+      }
+    }
+    .h1,
+    .h1-xl {
+      @apply text-deeplake-blue;
+      -webkit-text-stroke-color: var(--color-enchantedmeadow-green);
+      -webkit-text-stroke-width: 2px;
+      paint-order: stroke fill;
+    }
+    .h2 {
+      @apply text-enchantedmeadow-green;
+    }
+
+    svg path {
+      @apply fill-enchantedmeadow-green;
+    }
+
+    .btn {
+      @apply text-deeplake-blue bg-enchantedmeadow-green;
+    }
+
+    .btn-transparent {
+      @apply border-enchantedmeadow-green shadow-enchantedmeadow-green;
+    }
+    
+    .site-footer {
+      @apply text-dewdrop-green;
+    }
+    .inner {
+      @apply bg-twilight-blue;
+      .post-card {
+        @apply bg-deeplake-blue;
+      }
+    }
+    &.layout-fullbleed {
+      .site-footer {
+        @apply bg-twilight-blue;
+      }
+    }
+    .tag-link {
+      @apply bg-deeplake-blue text-enchantedmeadow-green;
+    }
+
+    .stack {
+      @apply bg-deeplake-blue text-dewdrop-green;
+      @apply shadow-[20px_20px_0_-1px_#AFFFCC,_20px_20px_0_#191a1b,40px_40px_0_-1px_#AFFFCC,40px_40px_0_#191a1b];
+    }
+
+    .gh-content {
+      a {
+        @apply text-enchantedmeadow-green;
+      }
+    }
+  }
+
+  
+  &.tag-color-scheme-d,
+  .tag-color-scheme-d {
+    @apply bg-amethystgrove-purple text-emberglow-red;
+
+    svg path {
+      @apply fill-emberglow-red;
+    }
+
+    .post-card {
+      @apply bg-shadow-purple;
+      .post-card-primary-tag {
+        @apply decoration-emberglow-red;
+      }
+      .post-card-title {
+        @apply text-white;
+      }
+      &:hover {
+        .post-card-title {
+          @apply shadow-emberglow-red;
+        }
+      }
+    }
+    .h1,
+    .h1-xl {
+      @apply text-amethystgrove-purple;
+      -webkit-text-stroke-color: var(--color-emberglow-red);
+      -webkit-text-stroke-width: 2px;
+      paint-order: stroke fill;
+    }
+
+    .btn-transparent {
+      @apply border-emberglow-red shadow-emberglow-red;
+    }
+
+    .btn {
+      @apply bg-emberglow-red text-amethystgrove-purple;
+    }
+
+    .inner {
+      @apply bg-shadow-purple text-white;
+    }
+
+    &.tag-layout-fullbleed {
+      .site-footer {
+        @apply bg-shadow-purple text-white;
+      }
+    }
+
+    .tag-link {
+      @apply bg-amethystgrove-purple text-emberglow-red;
+    }
+  }
+
+  &.tag-color-scheme-e,
+  .tag-color-scheme-e {
+    @apply bg-amethystgrove-purple text-white;
+
+    .subtitle,
+    .text-secondary {
+      @apply text-emberglow-red;
+    }
+  }
+
+  &.tag-color-scheme-f,
+  .tag-color-scheme-f {
+    @apply bg-thistlebark-purple text-emberglow-red;
+
+    .post-card-simple {
+      @apply text-white;
+    }
+  }
+
+  &.tag-color-scheme-g,
+  .tag-color-scheme-g {
+    @apply bg-deeplake-blue text-mistveil-green;
+
+    svg path {
+      @apply fill-current;
+    }
+
+    .text-outline {
+      @apply text-deeplake-blue;
+        -webkit-text-stroke-color: var(--color-mistveil-green);
+    }
+
+    .btn-transparent {
+      @apply border-mistveil-green shadow-mistveil-green;
+    }
+
+    .btn {
+      @apply bg-berrybloom-red text-white;
+    }
+
+    .border-color {
+      @apply border-berrybloom-red;
+    }
+
+    .h2 {
+      @apply text-berrybloom-red;
+    }
+  }
+
+  &.tag-color-scheme-h,
+  .tag-color-scheme-h {
+    @apply bg-twilight-blue text-dewdrop-green;
+
+    svg path {
+      @apply fill-current;
+    }
+    .btn-transparent {
+      @apply border-dewdrop-green shadow-dewdrop-green;
+    }
+    .h1,
+    .h1-xl {
+      @apply text-twilight-blue;
+      -webkit-text-stroke-color: var(--color-emberglow-red);
+    }
+    .h2 {
+      @apply text-emberglow-red;
+    }
+
+    .border-color {
+      @apply border-dewdrop-green;
+    }
+  }
+
+  &.tag-color-scheme-i,
+  .tag-color-scheme-i {
+    @apply bg-berrybloom-red text-white;
+
+    svg path {
+      @apply fill-current;
+    }
+
+    .btn {
+      @apply bg-deeplake-blue text-white;
+    }
+
+    .btn-transparent {
+      @apply border-deeplake-blue shadow-deeplake-blue;
+    }
+  }
+
+  &.tag-color-scheme-j,
+  .tag-color-scheme-j {
+    @apply bg-emberglow-red text-amethystgrove-purple;
+
+    svg path {
+      @apply fill-current;
+    }
+
+    .btn-transparent {
+      @apply border-amethystgrove-purple shadow-amethystgrove-purple;
+    }
+
+    .inner.gh-canvas {
+      @apply bg-amethystgrove-purple text-white;
+
+      .kg-callout-card {
+        @apply bg-emberglow-red text-amethystgrove-purple;
+      }
+
+      a {
+        @apply decoration-emberglow-red underline hover:text-emberglow-red;
+      }
+    }
+
+    .h1-xl {
+      @apply text-emberglow-red;
+      -webkit-text-stroke-color: var(--color-amethystgrove-purple);
+      -webkit-text-stroke-width: 2px;
+      paint-order: stroke fill;
+    }
+
+    &.tag-layout-fullbleed {
+      .site-footer {
+        @apply bg-amethystgrove-purple text-white;
+      }
+    }
+  }
+  
+  &.tag-color-scheme-k,
+  .tag-color-scheme-k {
+    @apply bg-deeplake-blue text-dewdrop-green;
+
+    .border-color {
+      @apply border-fairylantern-yellow;
+    }
+
+    svg path {
+      @apply fill-current;
+    }
+
+    .post-card-title {
+      @apply text-fairylantern-yellow;
+    }
+    .post-card-excerpt {
+      @apply text-white;
+    }
+
+    .btn-transparent {
+      @apply border-dewdrop-green shadow-dewdrop-green;
+    }
+
+    .site-footer {
+      @apply text-dewdrop-green;
+    }
+
+    .squiggle-static {
+      &::after {
+        background-image: url('/images/svg/s11.svg');
+      }
+    }
+    //.stack {
+      //@apply bg-deeplake-blue text-dewdrop-green;
+      //@apply shadow-[20px_20px_0_-1px_#AFFFCC,_20px_20px_0_#191a1b,40px_40px_0_-1px_#AFFFCC,40px_40px_0_#191a1b];
+    //}
+  }
+
+  &.tag-color-scheme-l,
+  .tag-color-scheme-l {
+    @apply bg-blushwood-pink text-wisteriabloom-blue;
+
+    svg path {
+      @apply fill-current;
+    }
+
+    .btn-transparent {
+      @apply border-wisteriabloom-blue shadow-wisteriabloom-blue;
+    }
+
+    .btn {
+      @apply bg-wisteriabloom-blue text-white;
+
+      &.btn-inverted {
+        @apply bg-white text-wisteriabloom-blue;
+      }
+    }
+
+
+
+    .inner {
+      @apply bg-wisteriabloom-blue text-white;
+    }
+
+    .h1-xl {
+      @apply text-blushwood-pink;
+      -webkit-text-stroke-color: var(--color-wisteriabloom-blue);
+      -webkit-text-stroke-width: 2px;
+      paint-order: stroke fill;
+    }
+
+    .kg-callout-card {
+      @apply p-5 border mb-16;
+      @apply shadow-[10px_10px_0_-1px_#4645D1,_10px_10px_0_#FFBCAA,20px_20px_0_-1px_#4645D1,20px_20px_0_#FFBCAA];
+    }
+
+    .image-logo-wrapper img {
+      @apply filter-none;
+    }
+  }
+  &.tag-color-scheme-m,
+  .tag-color-scheme-m  {
+    @apply text-blushwood-pink bg-wisteriabloom-blue;
+
+    .h1-xl {
+      @apply text-wisteriabloom-blue;
+      -webkit-text-stroke-color: var(--color-blushwood-pink);
+      -webkit-text-stroke-width: 2px;
+      paint-order: stroke fill;
+    }
+
+    .btn {
+      @apply bg-blushwood-pink text-wisteriabloom-blue;
+    }
+
+  }
+}

@@ -1,0 +1,60 @@
+.post-card {
+  @apply relative h-[450px] shadow-lg duration-200 ease-in-out transition-all flex;
+  .post-card-content {
+    @apply relative z-10 p-5 text-white;
+  }
+ 
+  .post-card-title {
+    @apply inline font-black text-2xl;
+  }
+  .post-card-excerpt {
+    @apply mb-2;
+  }
+  .post-card-content-link {
+    @apply block mb-3;
+  }
+  &:hover {
+    @apply shadow-2xl scale-105;
+    .post-card-title {
+      @apply shadow-[inset_0_-0.5em_0_0];
+    }
+  }
+  &.tag-hash-projects {
+    .post-card-content {
+      @apply my-auto text-center w-full;
+    }
+    .post-card-byline-date {
+      @apply sr-only;
+    }
+  }
+}
+
+.post-card-image-wrapper {
+  @apply absolute inset-0 w-full h-full object-cover;
+  img {
+    @apply w-full h-full object-cover;
+  }
+  &::before {
+    background-color: rgba(0,0,0,.5);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.post-card-link {
+  @apply absolute inset-0;
+}
+
+.portfolio-card {
+  .post-card-image{
+    @apply relative shadow-lg duration-200 ease-in-out transition-all;
+  }
+  &:hover {
+    .post-card-image {
+      @apply shadow-2xl scale-105;
+    }
+  }
+}

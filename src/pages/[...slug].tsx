@@ -1,15 +1,15 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
-import { PageLayout } from '../components/layouts/PageLayout'
+import { PageLayout } from '@/components/layouts/PageLayout'
+import { FullPageLayout } from '@/components/layouts/FullPageLayout'
 
-import { GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '../lib/ghost'
-import { getPageBySlug, getAllPages, getAllSettings } from '../lib/ghost'
-import { resolveUrl } from '../utils/routing'
+import { GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '@/lib/ghost'
+import { getPageBySlug, getAllPages, getAllSettings } from '@/lib/ghost'
+import { resolveUrl } from '@/utils/routing'
 
-import { SEO } from '../components/meta/seo'
-import { ISeoImage, seoImage } from '../components/meta/seoImage'
-import { processEnv } from '../lib/processEnv'
-import { BodyClass } from '../components/helpers/BodyClass'
+import { ISeoImage, seoImage } from '@/components/meta/seoImage'
+import { processEnv } from '@/lib/processEnv'
+import { BodyClass } from '@/components/helpers/BodyClass'
 
 /**
  *
@@ -36,7 +36,12 @@ interface PostOrPageProps {
 const PostOrPageIndex = ({ cmsData }: PostOrPageProps) => {
   const router = useRouter()
   if (router.isFallback) return <div>Loading...</div>
-  return <PageLayout cmsData={cmsData} />
+  const { bodyClass } = cmsData
+  if (bodyClass.includes(`tag-layout-fullbleed`)) {
+    return <FullPageLayout cmsData={cmsData} />
+  } else {
+    return <PageLayout cmsData={cmsData} />
+  }
 }
 
 export default PostOrPageIndex

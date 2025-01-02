@@ -219,7 +219,7 @@ declare module "@tryghost/admin-api" {
       browse(options?: object): Promise<Member[]>;
       read(options: { id: string }): Promise<Member>;
       edit(options: { id: string; data: Member }): Promise<Member>;
-      add(options: Partial<Member>): Promise<Member>;
+      add(data: Partial<Member>, options?: object): Promise<Member>;
       delete(options: { id: string }): Promise<void>;
     };
 

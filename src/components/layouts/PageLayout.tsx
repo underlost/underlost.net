@@ -34,45 +34,48 @@ export const PageLayout = ({ cmsData }: PageProps) => {
   const featImg = page.featureImage
   const postClass = PostClass({ tags: page.tags, isPage: page && true, isImage: !!featImg })
   const htmlAst = page.htmlAst
-  if (htmlAst === undefined) throw Error(`Page.tsx: htmlAst must be defined.`)
+  if (htmlAst === undefined) throw Error(`PageLayout.tsx: htmlAst must be defined.`)
 
   return (
     <>
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
-      <Layout isHome={false} settings={settings} bodyClass={bodyClass}>
-        <div className="inner gh-canvas mb-56">
-          <article className={`stacked-sm post-full ${postClass}`}>
-            <PageHeader title={page.title} />
-
-            {featImg &&
-              (nextImages.feature && featImg.dimensions ? (
-                <figure className="post-full-image" style={{ display: `inherit` }}>
-                  <Image
-                    src={featImg.url}
-                    alt={page.title || ``}
-                    quality={nextImages.quality}
-                    sizes={`
-                              (max-width: 350px) 350px,
-                              (max-width: 530px) 530px,
-                              (max-width: 710px) 710px,
-                              (max-width: 1170px) 1170px,
-                              (max-width: 2110px) 2110px, 2000px
-                            `}
-                    {...featImg.dimensions}
-                  />
-                </figure>
-              ) : (
-                page.feature_image && (
-                  <figure className="post-full-image">
-                    <img src={page.feature_image} alt={page.title} />
-                  </figure>
-                )
-              ))}
-
-            <section className="post-full-content post-content load-external-scripts gh-content text-lg">
-              <RenderContent htmlAst={htmlAst} />
-            </section>
-          </article>
+      <Layout isHome={false} settings={settings} bodyClass={bodyClass} image="/images/background_duotone.jpg">
+        <div className="container ">
+          <div className="container-inner container-primary">
+            <div className="border-color container-border">
+              {featImg &&
+                  (nextImages.feature && featImg.dimensions ? (
+                    <figure className="featured-image-blob" style={{ display: `inherit` }}>
+                      <Image
+                        src={featImg.url}
+                        alt={page.title || ``}
+                        quality={nextImages.quality}
+                        sizes={`
+                          (max-width: 350px) 350px,
+                          (max-width: 530px) 530px,
+                          (max-width: 710px) 710px,
+                          (max-width: 1170px) 1170px,
+                          (max-width: 2110px) 2110px, 2000px
+                        `}
+                        {...featImg.dimensions}
+                      />
+                    </figure>
+                  ) : (
+                    page.feature_image && (
+                      <figure className="featured-image-blob">
+                        <img src={page.feature_image} alt={page.title} />
+                      </figure>
+                    )
+                  ))
+                }
+              <article className="container-content gh-canvas">
+                <PageHeader title={page.title} />
+                <section className="post-full-content post-content load-external-scripts gh-content">
+                  <RenderContent htmlAst={htmlAst} />
+                </section>
+              </article>
+            </div>
+          </div>
         </div>
       </Layout>
     </>

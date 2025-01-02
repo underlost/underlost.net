@@ -34,20 +34,24 @@ export default function TagIndex({ cmsData }: TagIndexProps) {
   const tags = cmsData.tags
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass="">
+    <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-c layout-fullbleed">
       <SEO {...{ settings, seoImage, title }} />
-      <article className="gh-canvas mb-48">
-        <PageHeader title="Tags" excerpt="Looking for a specific tag?" />
-
-        <section>
-          <ul className="mb-11">
-            {tags.map((tag, i) => (
-              <li className="inline-block mr-1.5 mb-2" key={i}>
-                <Link className="bg-black dark:bg-zinc-800 text-white p-1" href={`/tag/${tag.slug}`}>{tag.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </section>
+      <article>
+        <div className="container lg:mt-24 mb-11 my-11 relative">
+          <PageHeader title="Tags" excerpt="Looking for a specific tag?" />
+        </div>
+        <div className="inner gh-canvas py-11">
+          <section className="post-full-content post-content text-lg">
+            <div className="max-w-lg mx-auto my-16 squiggle s3 px-8" />
+            <ul className="tag-list">
+              {tags.map((tag, i) => (
+                <li className="tag-btn" key={i}>
+                  <Link className="tag-link" href={`/tag/${tag.slug}`}>{tag.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
       </article>
     </Layout>
   )

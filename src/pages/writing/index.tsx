@@ -1,16 +1,19 @@
-import { Layout } from "@/components/Layout"
+
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { SEO } from '../../components/meta/seo'
-import { seoImage } from '../../components/meta/seoImage'
-import { processEnv } from '../../lib/processEnv'
-import { getAllSettings, GhostSettings, getAllNoteworthyPosts, getAllPosts, GhostPostsOrPages, getPageBySlug, GhostPostOrPage, getAllFeatredPosts } from '../../lib/ghost'
-import { PostCard } from '../../components/PostCard'
-import { FeaturedPostCard } from '../../components/FeaturedPostCard'
+
+import { Layout } from "@/components/Layout"
+import { SEO } from '@/components/meta/seo'
+import { seoImage } from '@/components/meta/seoImage'
+import { processEnv } from '@/lib/processEnv'
+import { getAllSettings, GhostSettings, getAllPosts, GhostPostsOrPages, getPageBySlug, GhostPostOrPage, getAllFeatredPosts } from '@/lib/ghost'
+import { FeaturedPostCard } from '@/components/FeaturedPostCard'
 import { PageHeader } from "@/components/PageHeader"
 import { RenderContent } from '@/components/RenderContent'
-import Image from 'next/image'
+import { PostView } from '@/components/PostView'
+
 
 /**
  *
@@ -45,49 +48,37 @@ export default function WritingIndex({ cmsData }: WritingIndexProps) {
   if (htmlAst === undefined) throw Error(`Writing page index: htmlAst must be defined.`)
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass="">
+    <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-c" image="/images/background_duotone.jpg">
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
-      
-      <section className="gh-canvas mt-28 my-11">
-        <div className="kg-width-wide">
-          <div className="max-w-6xl mx-auto stacked-sm mb-16">
-            {cmsData.featuredPosts.map((post, i) => (
-              <FeaturedPostCard key={i} settings={settings} post={post} num={i} />
-            ))}
+
+      <div className="container">
+        <div className="tag-color-scheme-c container-inner">
+          <div className="border-color container-border">
+            <article className="container-content">
+              <PageHeader title={page.title} />
+              <section className="post-content load-external-scripts gh-content text-2xl mx-auto max-w-4xl">
+                <RenderContent htmlAst={htmlAst} />
+              </section>
+              <div className="squiggle-static s1 my-8 lg:my-16 max-w-md mx-auto" />
+            </article>
           </div>
         </div>
-      </section>
-
-      <div className="promo-unit">
-        <article className="mb-11 gh-canvas relative">
-          <PageHeader title={page.title} />
-          <section className="post-content load-external-scripts gh-content text-lg lg:px-24">
-            <RenderContent htmlAst={htmlAst} />
-          </section>
-        </article>
-      </div>
-
-      <section className="gh-canvas mb-48">
-        <h2 className="font-mono uppercase mb-8 text-lg"><span className="strikethrough">Recent Posts</span></h2>
-
-        <div className="gap-11 lg:columns-2 mb-11">
-          {posts.map((post, i) => (
-            <div key={i} className="stacked-sm mb-11 break-inside-avoid">
-              <PostCard  settings={settings} post={post} num={i} />
-            </div>
+        <section className="relative z-0">
+          {cmsData.featuredPosts.slice(0, 1).map((post, i) => (
+            <FeaturedPostCard key={i} settings={settings} post={post} num={i} />
           ))}
-          <>
-            <Image src="/images/svg/catpaw.svg" alt="cat paw sketch" width={50} height={50} className="block ml-auto  -rotate-12 dark:invert filter-none" />
-          </>
-        </div>
-        <div className="mb-16 text-center">
-          <p className="text-lg mb-3">
-           Looking for more posts?
-          </p>
-          <Link className="btn" href="/archive/">Check out the archive</Link>
-        </div>
+        </section>
 
-      </section>
+        <PostView title="Recent Posts" className="tag-color-scheme-d" posts={posts} settings={settings} />
+
+        <section className="tag-color-scheme-d pb-11">
+          <div className="mb-16 text-center max-w-5xl mx-auto">
+            <Image src="/images/svg/catpaw.svg" alt="cat paw sketch" width={50} height={50} className="block ml-auto  -rotate-12 dark:invert filter-none" />
+            <p className="subtitle mb-3">Looking for more posts?</p>
+            <Link className="btn btn-lg" href="/archive/">Check out the archive</Link>
+          </div>
+        </section>
+      </div>
     </Layout>
   )
 }
@@ -100,7 +91,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   console.time(`Writing Index - getStaticProps`)
   try {
-    posts = await getAllPosts({ limit: 8, page: 1 })
+    posts = await getAllPosts({ limit: 9, page: 1 })
     settings = await getAllSettings()
     page = await getPageBySlug(`writing`)
     featuredPosts = await getAllFeatredPosts({ limit: 1 })
