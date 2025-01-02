@@ -1,4 +1,4 @@
-import cheerio from 'cheerio'
+import * as cheerio from 'cheerio';
 import RSS from 'rss'
 
 import { GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '@/lib/ghost'
@@ -49,7 +49,7 @@ const generateItem = ({ post, settings }: ItemProps) => {
 
   // ToDo:
   // const transformedHtml = post.htmlAst
-  const htmlContent = cheerio.load(html || ``, { decodeEntities: false, xmlMode: true })
+  const htmlContent = cheerio.load(html || ``, { xmlMode: true })
   const imageUrl = post.feature_image
 
   const tagsFilter = (tags: Tag[]) => tags.filter(({ name }) => !!name && name.substr(0, 5) !== `hash-`).map(({ name }) => name || ``)
