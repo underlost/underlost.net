@@ -1,4 +1,4 @@
-import * as cheerio from 'cheerio';
+import * as cheerio from 'cheerio'
 import RSS from 'rss'
 
 import { GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '@/lib/ghost'
