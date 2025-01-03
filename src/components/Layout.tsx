@@ -144,9 +144,9 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
 
         <div className="site-copyright text-xs py-5 px-10 relative">
           <div className="relative z-10">
-            <Link href="/">{site.title}</Link> Copyright © Tyler Rilling 2001 - 2024. Published with Ghost.
+            <p className="text-balance"><Link href="/">{site.title}</Link> Copyright © Tyler Rilling 2001 - 2024. Published with Ghost. View <Link className="underline" href="/terms/">Term of Use</Link> and <Link className="underline" href="/privacy/">Privacy Policy</Link>.</p>
             <br /> Site last updated:{` `}
-            <a href="https://github.com/underlost/underlost.net/">{modifiedDate}</a>. ❤️ View <Link className="underline" href="/terms/">Term of Use</Link> and <Link className="underline" href="/privacy/">Privacy Policy</Link>.
+            <a href="https://github.com/underlost/underlost.net/">{modifiedDate}</a>. ❤️
           </div>
         </div>
       </footer>

@@ -55,7 +55,7 @@ export default function PortfolioIndex({ cmsData }: PortfolioIndexProps) {
                 </section>
               </article>
 
-              <div className="lg:columns-2 gap-11 mb-11">
+              <div className="px-4 lg:columns-2 gap-11 mb-11">
                 {posts.map((post, i) => (
                   <PortfolioCard key={i} settings={settings} post={post} num={i} />
                 ))}

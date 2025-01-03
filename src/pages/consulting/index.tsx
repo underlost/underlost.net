@@ -95,9 +95,9 @@ export default function ConsultingIndexPage({ cmsData }: ConsultingIndexPageProp
             <RenderContent htmlAst={htmlAst} />
           </section>
 
-          <div className="mx-8 lg:mx-auto">
+          <div className="mx-8 lg:mx-auto max-w-lg ">
             <div className="p-8 text-center kg-card kg-callout-card bg-wisteriabloom-blue text-white border-blushwood-pink justify-center">
-              <div>
+              <div className="overflow-hidden">
                 <p className="text-2xl lg:text-4xl font-black mb-5">
                 Some of the clients <br /> I&apos;ve worked with:
                 </p>

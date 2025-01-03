@@ -7,7 +7,7 @@ import 'swiper/css'
 import styles from '@/styles/components/ClientSlider.module.css'
 
 const ClientSlider = () => (
-  <div className="clients-list max-w-md mx-auto" id="clients">
+  <div className="clients-list max-w-md mx-auto overflow-hidden" id="clients">
     <Swiper modules={[Autoplay]} spaceBetween={0} slidesPerView={1} autoplay={{ delay: 1000, disableOnInteraction: false }} loop={true} centeredSlides={true} className="mx-auto">
       <SwiperSlide className="my-auto mx-auto image-logo-wrapper">
         <Image src="/images/logos/frs-clipper.png" alt="FRS Clipper" className={`my-auto mx-auto ${styles.imageLogo}`} width={320} height={58} />
