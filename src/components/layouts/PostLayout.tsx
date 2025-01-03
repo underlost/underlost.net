@@ -44,7 +44,6 @@ export const PostLayout = ({ cmsData }: PostProps) => {
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
       <Layout isHome={false} settings={settings} bodyClass={`single ${bodyClass}`}>
         <article className={`post-full lg:mb-32 ${postClass}`}>
-
           {isFeatured ? (
             <div className="post-header-featured">
 
@@ -81,7 +80,7 @@ export const PostLayout = ({ cmsData }: PostProps) => {
 
               {featImg &&
                     (nextImages.feature && featImg.dimensions ? (
-                      <figure className="post-full-image container mx-auto mb-11" style={{ display: `inherit` }}>
+                      <figure className="post-full-image container mb-11" style={{ display: `inherit` }}>
                         <Image
                           src={featImg.url}
                           alt={post.feature_image_alt || post.title || ``}
@@ -124,7 +123,7 @@ export const PostLayout = ({ cmsData }: PostProps) => {
           </section>
         </article>
 
-        <div className="mb-16 rounded-lg bg-black text-white dark:bg-white dark:text-black max-w-3xl mx-auto">
+        <div className="my-16 rounded-lg bg-black text-white dark:bg-white dark:text-black max-w-3xl mx-8 md:mx-auto">
           <PreviewPosts {...{ settings, primaryTag: post.primary_tag, posts: previewPosts }} />
         </div>
 

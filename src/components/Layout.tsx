@@ -190,7 +190,7 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
 
                 <div className="grid grid-cols-2">
 
-                  <button className={`border border-white p-4 ${theme === `light` ? `bg-white text-black` : ``}`} onClick={handleThemeToggle}>
+                  <button className={`col-span-2 lg:col-span-1 border border-white p-4 ${theme === `light` ? `bg-white text-black` : ``}`} onClick={handleThemeToggle}>
                     <span className="flex gap-x-4 justify-center">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" data-slot="icon" className="w-6 h-6">
                         <path
@@ -203,7 +203,7 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
                     </span>
                   </button>
 
-                  <button className={`border border-white p-4 ${theme === `dark` ? `bg-white text-black` : ``}`} onClick={handleThemeToggle}>
+                  <button className={`col-span-2 lg:col-span-1 border border-white p-4 ${theme === `dark` ? `bg-white text-black` : ``}`} onClick={handleThemeToggle}>
                     <span className="flex gap-x-4 justify-center">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" data-slot="icon" className="w-6 h-6">
                         <path

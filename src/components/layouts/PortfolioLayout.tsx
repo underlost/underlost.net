@@ -42,14 +42,14 @@ export const PortfolioLayout = ({ cmsData }: PortfolioPageProps) => {
     <>
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
       <Layout isHome={false} settings={settings} bodyClass={bodyClass}>
-        <div className="container">
-          <article className={`post-full ${postClass}`}>
+        
+        <article className={`post-full ${postClass}`}>
             
-            <PostHeader title={page.title} excerpt={page.excerpt} primary_tag={page.primary_tag} />
+          <PostHeader title={page.title} excerpt={page.excerpt} primary_tag={page.primary_tag} />
 
-            {featImg &&
+          {featImg &&
               (nextImages.feature && featImg.dimensions ? (
-                <figure className="post-full-image" style={{ display: `inherit` }}>
+                <figure className="post-full-image container mb-11" style={{ display: `inherit` }}>
                   <Image
                     src={featImg.url}
                     alt={page.title || ``}
@@ -66,14 +66,14 @@ export const PortfolioLayout = ({ cmsData }: PortfolioPageProps) => {
                 </figure>
               ) : (
                 page.feature_image && (
-                  <figure className="post-full-image">
+                  <figure className="post-full-image container mb-11">
                     <img src={page.feature_image} alt={page.title} />
                   </figure>
                 )
               ))}
-
+          <div className="container">
             {/* The main page content */}
-            <section className="post-full-content post-content load-external-scripts text-lg mt-11 grid grid-cols-12 lg:gap-x-11 relative">
+            <section className="post-full-content post-content load-external-scripts text-lg grid grid-cols-12 lg:gap-x-11 relative">
               <div className="col-span-12 lg:col-span-8 order-2 lg:order-1">
                 <div className="stack">
                   <div className="gh-content gh-canvas">
@@ -122,8 +122,9 @@ export const PortfolioLayout = ({ cmsData }: PortfolioPageProps) => {
                 </div>
               </div>
             </section>
-          </article>
-        </div>
+          </div>
+        </article>
+        
       </Layout>
     </>
   )
