@@ -53,9 +53,9 @@ export default function Home({ cmsData }: IndexProps) {
         <section className="tag-color-scheme-a container-inner">
           <div className="border-color container-border">
             <div className="container-intro">
-              <div className="my-16">
+              <div className="lg:my-16">
                 <div className="flex">
-                  <span className="block w-24 h-24 lg:w-36 lg:h-36 mb-5 aspect-square">
+                  <span className="block w-22 h-22 lg:w-36 lg:h-36 mb-5 aspect-square">
                     <Image src="/images/profile.png" alt="Tyler Rilling" width={400} height={400} className="rounded-full w-full h-full" loading="eager" />
                   </span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="174" height="107" className="mt-auto">

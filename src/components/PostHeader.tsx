@@ -13,7 +13,7 @@ interface PostHeaderProps {
 }
 
 export const PostHeader = ({ title, excerpt, primary_tag, published_at, updated_at, readingTime }: PostHeaderProps) => (
-  <header className="post-full-header max-w-7xl mx-auto mb-8 lg:mb-16 px-8 lg:px-0 text-shadow shadow-white dark:shadow-black">
+  <header className="post-full-header max-w-7xl mx-auto mb-8 lg:mb-16 text-shadow shadow-white dark:shadow-black">
     <div className="lg:grid lg:grid-cols-12 lg:gap-x-11">
       <div className="col-span-12 lg:col-span-7">
         {primary_tag && <div className="post-card-primary-tag">{primary_tag.name}</div>}

@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  @apply mx-auto px-4 lg:px-8 relative z-10;
+  @apply mx-auto px-2 md:px-8 relative z-10;
 }
 
 .container-inner {
@@ -54,7 +54,7 @@ body {
 }
 
 .stack {
-  @apply border border-black text-black p-5 lg:p-11 w-full relative rounded-sm z-10 antialiased bg-white mb-11;
+  @apply border border-black text-black p-5 lg:p-11 relative rounded-sm z-10 antialiased bg-white mb-11 max-w-full mr-[40px] md:mr-auto;
   @apply dark:border-white dark:bg-[#131313] dark:text-white;
   @apply shadow-[20px_20px_0_-1px_#fff,_20px_20px_0_#191a1b,40px_40px_0_-1px_#fff,40px_40px_0_#191a1b];
   @apply dark:shadow-[20px_20px_0_-1px_#131313,_20px_20px_0_#fff,40px_40px_0_-1px_#131313,40px_40px_0_#fff];
@@ -142,7 +142,7 @@ body {
 
 .layout-fullbleed {
   .page-full-image {
-    @apply mx-auto max-w-2xl absolute inset-0 h-full mix-blend-multiply z-[2] opacity-35 pointer-events-none;
+    @apply m-auto max-w-2xl absolute inset-0 h-[80%] lg:h-full mix-blend-multiply z-[2] opacity-35 pointer-events-none;
     img {
       height: 100%;
       object-fit: contain;

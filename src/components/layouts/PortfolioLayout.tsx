@@ -42,7 +42,7 @@ export const PortfolioLayout = ({ cmsData }: PortfolioPageProps) => {
     <>
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
       <Layout isHome={false} settings={settings} bodyClass={bodyClass}>
-        <div className="inner container mx-auto mb-48">
+        <div className="container">
           <article className={`post-full ${postClass}`}>
             
             <PostHeader title={page.title} excerpt={page.excerpt} primary_tag={page.primary_tag} />
@@ -73,35 +73,35 @@ export const PortfolioLayout = ({ cmsData }: PortfolioPageProps) => {
               ))}
 
             {/* The main page content */}
-            <section className="post-full-content post-content load-external-scripts text-lg lg:mt-11 container grid lg:grid-cols-12 gap-x-11 relative">
-              <div className="lg:col-span-8 order-2 lg:order-1">
+            <section className="post-full-content post-content load-external-scripts text-lg mt-11 grid grid-cols-12 lg:gap-x-11 relative">
+              <div className="col-span-12 lg:col-span-8 order-2 lg:order-1">
                 <div className="stack">
                   <div className="gh-content gh-canvas">
                     <RenderContent htmlAst={htmlAst} />
                   </div>
                 </div>
               </div>
-              <div className="lg:col-span-4 order-1 lg:order-2 relative">
-                <div className="bg-SageGreen text-black lg:rounded-lg p-8 pb-0 mb-11 text-sm lg:sticky lg:top-11">
+              <div className="col-span-12 lg:col-span-4 order-1 lg:order-2 relative">
+                <div className="lg:p-8 pb-0 text-sm lg:sticky lg:top-11">
 
                   {extraPortfolioData && extraPortfolioData.role && (
                     <div className="pb-8">
-                      <h2 className="font-mono uppercase text-sm mb-2">Project Role:</h2>
+                      <h2 className="subtitle">Project Role:</h2>
                       <p>{extraPortfolioData.role}</p>
                     </div>
                   )}
 
                   {extraPortfolioData && extraPortfolioData.timeline && (
                     <div className="pb-8">
-                      <h2 className="font-mono uppercase text-sm mb-2">Timeline:</h2>
+                      <h2 className="subtitle">Timeline</h2>
                       <p>{extraPortfolioData.timeline}</p>
                     </div>
                   )}
 
                   {extraPortfolioData && extraPortfolioData.tools_used && (
                     <div className="pb-8">
-                      <h2 className="font-mono uppercase text-sm mb-2">Software & Services Used</h2>
-                      <ul className="divide-y divide-TwilightBlue">
+                      <h2 className="subtitle">Software & Services Used</h2>
+                      <ul className="divide-y">
                         {extraPortfolioData.tools_used.map((tool, i) => (
                           <li className="py-1" key={i}>{tool}</li>
                         ))}
@@ -111,8 +111,8 @@ export const PortfolioLayout = ({ cmsData }: PortfolioPageProps) => {
 
                   {extraPortfolioData && extraPortfolioData.frameworks_used && (
                     <div className="pb-8">
-                      <h2 className="font-mono uppercase text-sm mb-2">Frameworks & Languages Used</h2>
-                      <ul className="divide-y divide-TwilightBlue">
+                      <h2 className="subtitle">Frameworks & Languages Used</h2>
+                      <ul className="divide-y">
                         {extraPortfolioData.frameworks_used.map((framework, i) => (
                           <li className="py-1" key={i}>{framework}</li>
                         ))}
