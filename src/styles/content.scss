@@ -99,6 +99,12 @@
         @apply text-xl font-stretch-extra-expanded italic;
         @apply border-l-10 pl-4;
     }
+
+    .kg-embed-card {
+        iframe {
+            max-width: 100%;
+        }
+    }
 }
 
 @media (max-width: 650px) {
