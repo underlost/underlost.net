@@ -31,7 +31,7 @@ export const PostCard = ({ settings, post, num, collectionPath = `writing/`, car
 
   // Update collectionPath based on the tag
   const effectiveCollectionPath = isNote ? `notes/` : isPhoto ? `photos/` : isTwitter ? `twitter/` : collectionPath
-  const effectiveSlug = isTwitter ? '' : post.slug
+  const effectiveSlug = isTwitter ? `` : post.slug
 
 
   const url = resolveUrl({ cmsUrl, collectionPath: effectiveCollectionPath, slug: effectiveSlug, url: post.url })

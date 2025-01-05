@@ -50,9 +50,9 @@ export default function ConsultingIndexPage({ cmsData }: ConsultingIndexPageProp
       <article className={`${postClass}`}>
         <ConsultingHeader />
         <div className="max-w-lg mx-auto squiggle s12 px-8" />
-          <div className="gh-canvas py-11 relative">
-            <h1 className="text-center h4 mb-11">{page.title}</h1>
-                {featImg &&
+        <div className="gh-canvas py-11 relative">
+          <h1 className="text-center h4 mb-11">{page.title}</h1>
+          {featImg &&
                   (nextImages.feature && featImg.dimensions ? (
                     <figure className="post-full-image" style={{ display: `inherit` }}>
                       <Image
@@ -76,9 +76,9 @@ export default function ConsultingIndexPage({ cmsData }: ConsultingIndexPageProp
                       </figure>
                     )
                   ))}
-                <section className="post-full-content post-content load-external-scripts gh-content text-lg mb-11">
-                  <RenderContent htmlAst={htmlAst} />
-                </section>
+          <section className="post-full-content post-content load-external-scripts gh-content text-lg mb-11">
+            <RenderContent htmlAst={htmlAst} />
+          </section>
                       
         </div>
       </article>
