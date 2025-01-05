@@ -2,7 +2,7 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 
 import { getPostsByTag, getTagBySlug, GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '../../lib/ghost'
-import { getPostBySlug, getAllAsidePosts, getAllSettings, getAllAsidePostSlugs } from '../../lib/ghost'
+import { getPostBySlug, getAllAsidePosts, getAllSettings, getAllAsidePostSlugs, getAllNoteworthyPosts } from '../../lib/ghost'
 import { resolveUrl } from '../../utils/routing'
 
 import { ISeoImage, seoImage } from '../../components/meta/seoImage'
@@ -57,12 +57,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   let previewPosts: GhostPostsOrPages | never[] = []
-  const prevPost: GhostPostOrPage | null = null
-  const nextPost: GhostPostOrPage | null = null
-
   if (post?.id && post?.slug) {
-    const tagSlug = post?.primary_tag?.slug
-    previewPosts = (tagSlug && (await getPostsByTag(tagSlug, 4, post?.id))) || []
+    previewPosts = await getAllNoteworthyPosts({ limit: 5 }) || []
   }
 
   const siteUrl = settings.processEnv.siteUrl

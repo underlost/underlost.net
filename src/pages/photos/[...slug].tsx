@@ -54,19 +54,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     post.primary_tag = primaryTag
   }
 
-  let previewPosts: GhostPostsOrPages | never[] = []
   let prevPost: GhostPostOrPage | null = null
   let nextPost: GhostPostOrPage | null = null
 
   if (post?.id && post?.slug) {
-    const tagSlug = post?.primary_tag?.slug
-    previewPosts = (tagSlug && (await getPostsByTag(tagSlug, 3, post?.id))) || []
-
     const postSlugs = await getAllPhotoPostSlugs()
     const index = postSlugs.indexOf(post?.slug)
     const prevSlug = index > 0 ? postSlugs[index - 1] : null
     const nextSlug = index < postSlugs.length - 1 ? postSlugs[index + 1] : null
-
     prevPost = (prevSlug && (await getPostBySlug(prevSlug))) || null
     nextPost = (nextSlug && (await getPostBySlug(nextSlug))) || null
   }
@@ -84,7 +79,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         settings,
         post,
         seoImage: image,
-        previewPosts,
         prevPost,
         nextPost,
         bodyClass: BodyClass({ tags }),

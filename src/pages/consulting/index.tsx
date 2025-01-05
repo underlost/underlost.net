@@ -43,6 +43,7 @@ export default function ConsultingIndexPage({ cmsData }: ConsultingIndexPageProp
   const { meta_title, meta_description } = page
   const { nextImages } = settings.processEnv
   const title = meta_title || `${page.title} - ${settings.title}`
+  const description = meta_description || settings.description
   const featImg = page.featureImage
   const postClass = PostClass({ tags: page.tags, isPage: page && true, isImage: !!featImg })
   const htmlAst = page.htmlAst
@@ -50,7 +51,7 @@ export default function ConsultingIndexPage({ cmsData }: ConsultingIndexPageProp
 
   return (
     <Layout isHome={true} settings={settings} bodyClass={`tag-color-scheme-l ${bodyClass}`} className="color-scheme-full-page tag-color-scheme-l">
-      <SEO {...{ settings, seoImage, title }} />
+      <SEO {...{ settings, seoImage, title, description }} />
 
       <article className={`${postClass}`}>
         <div className="lg:pt-24 pb-11 py-11 container min-h-[300px]">
@@ -129,7 +130,7 @@ export const getStaticProps: GetStaticProps = async () => {
     bodyClass: BodyClass({ page: page || undefined, tags }),
     seoImage: await seoImage({ siteUrl: settings.processEnv.siteUrl }),
   }
-  console.timeEnd(`Writing Consulting IndexPage - getStaticProps`)
+  console.timeEnd(`Writing Consulting Index Page - getStaticProps`)
 
   return {
     props: {

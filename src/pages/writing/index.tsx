@@ -75,7 +75,7 @@ export default function WritingIndex({ cmsData }: WritingIndexProps) {
           <div className="mb-16 text-center max-w-5xl mx-auto">
             <Image src="/images/svg/catpaw.svg" alt="cat paw sketch" width={50} height={50} className="block ml-auto  -rotate-12 dark:invert filter-none" />
             <p className="subtitle mb-3">Looking for more posts?</p>
-            <Link className="btn btn-lg" href="/archive/">Check out the archive</Link>
+            <Link className="btn btn-lg" href="/tag/">Browse posts by tag</Link>
           </div>
         </section>
       </div>

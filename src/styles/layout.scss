@@ -151,7 +151,7 @@ body {
 }
 
 .tag-list {
-  @apply mb-11;
+  @apply mb-11 text-center;
   .tag-btn {
     @apply inline-block mr-2.5 mb-5;
     .tag-link {
