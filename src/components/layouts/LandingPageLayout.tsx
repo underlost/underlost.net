@@ -4,7 +4,7 @@ import { Layout } from '../Layout'
 import { RenderContent } from '../RenderContent'
 import { PostClass } from '../helpers/PostClass'
 import { SEO } from '../meta/seo'
-import { FreeSignupForm } from '@/components/portal/FreeSignupForm'
+import { FreeSignupForm } from '@/components/membership/FreeSignupForm'
 
 import { GhostPostOrPage, GhostSettings } from '../../lib/ghost'
 import { ISeoImage } from '../meta/seoImage'

@@ -3,8 +3,8 @@ import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react
 import useSWR from 'swr'
 import { useStripe, useElements, Elements, CardElement } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
-import { MemberLoginForm } from './portal/MemberLoginForm'
-import { FreeSignupForm } from './portal/FreeSignupForm'
+import { MemberLoginForm } from './MemberLoginForm'
+import { FreeSignupForm } from './FreeSignupForm'
 
 interface Tier {
   id: string
@@ -64,8 +64,8 @@ export const SubscribePortal = () => {
         body: JSON.stringify({
           tierName: tier.name, // Send tier name to the backend
           selectedInterval,
-          successUrl: `${window.location.origin}/success`,
-          cancelUrl: `${window.location.origin}/cancel`,
+          successUrl: `${window.location.origin}/members/login/`,
+          cancelUrl: `${window.location.origin}/membership/`,
         }),
       })
 
@@ -158,15 +158,11 @@ export const SubscribePortal = () => {
       {errorMessage && <p className="text-center font-bold">{errorMessage}</p>}
 
       {/* Modals */}
-      <Dialog transition open={isSubscribeOpen} onClose={() => setIsSubscribeOpen(false)} className="relative z-50 focus:outline-none">
-        <div className="fixed inset-0 z-10 w-screen overflow-y-auto bg-black/40 ">
+      <Dialog transition open={isSubscribeOpen} onClose={() => setIsSubscribeOpen(false)} className="dialog-wrapper">
+        <div className="dialog-overlay">
           <div className="flex min-h-full items-center justify-center p-4">
-            <DialogPanel
-              transition
-              className="w-full max-w-3xl rounded-xl bg-black text-white p-6 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 shadow-lg"
-            >
+            <DialogPanel transition className="dialog-panel">
               <DialogTitle className="h6 text-center">Sign up</DialogTitle>
-
               <div className="max-w-lg mx-auto my-8">
                 <FreeSignupForm title="" description="" />
               </div>
@@ -175,17 +171,12 @@ export const SubscribePortal = () => {
         </div>
       </Dialog>
 
-      <Dialog transition open={isLoginOpen} onClose={() => setIsLoginOpen(false)} className="relative z-50 focus:outline-none">
-        <div className="fixed inset-0 z-10 w-screen overflow-y-auto bg-black/40 ">
-          <div className="flex min-h-full items-center justify-center p-4">
-            <DialogPanel
-              transition
-              className="w-full max-w-lg rounded-xl bg-black text-white p-6 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 shadow-lg"
-            >
+      <Dialog transition open={isLoginOpen} onClose={() => setIsLoginOpen(false)} className="dialog-wrapper">
+        <div className="dialog-overlay">
+          <div className="dialog-center">
+            <DialogPanel transition className="dialog-panel">
               <DialogTitle className="h6 text-center">Sign In</DialogTitle>
-
               <MemberLoginForm />
-              
             </DialogPanel>
           </div>
         </div>

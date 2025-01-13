@@ -8,7 +8,7 @@ import { seoImage } from '@/components/meta/seoImage'
 import { processEnv } from '@/lib/processEnv'
 import { getAllSettings, GhostSettings } from '@/lib/ghost'
 import PongGame from '@/components/consulting/PongGame'
-import { FreeSignupForm } from '@/components/portal/FreeSignupForm'
+import { FreeSignupForm } from '@/components/membership/FreeSignupForm'
 
 /**
  *

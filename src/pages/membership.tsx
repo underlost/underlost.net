@@ -9,7 +9,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { BodyClass } from '@/components/helpers/BodyClass'
 import { PostClass } from '@/components/helpers/PostClass'
 import { RenderContent } from '@/components/RenderContent'
-import { SubscribePortal } from '@/components/SubscribePortal'
+import { SubscribePortal } from '@/components/membership/SubscribePortal'
 
 import Image from 'next/image'
 

@@ -109,14 +109,14 @@ const TipForm = () => {
           </button>
           <p className="text-sm">
             Payments are submitted through Stripe. No credit card information is stored on underlost.net. For full transparency all code is freely available to view on{` `}
-            <a className="underline" href="https://github.com/underlost/underlost.net">
+            <a className="underline" target="_blank" rel="noreferrer" href="https://github.com/underlost/underlost.net">
               Github
             </a>
             .
           </p>
         </form>
       )}
-      {loading && <p className="text-gray-500 mt-2">Processing payment...</p>}
+      {loading && <p className="font-bold text-lg mt-2">Processing payment...</p>}
       {errorMessage && <p className="mt-2 text-red">{errorMessage}</p>}
     </>
   )

@@ -11,7 +11,7 @@ import { getAllSettings, GhostSettings, getPageBySlug, getAllPosts, GhostPostsOr
 import { PostView } from '@/components/PostView'
 import { BodyClass } from '@/components/helpers/BodyClass'
 import StatsSection from '@/components/StatsSection'
-import { FreeSignupForm } from '@/components/portal/FreeSignupForm'
+import { FreeSignupForm } from '@/components/membership/FreeSignupForm'
 
 /**
  *

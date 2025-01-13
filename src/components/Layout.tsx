@@ -182,13 +182,10 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
         </div>
       )}
 
-      <Dialog transition open={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} className="relative z-50 focus:outline-none">
-        <div className="fixed inset-0 z-10 w-screen overflow-y-auto bg-black/40 ">
-          <div className="flex min-h-full items-center justify-center p-4">
-            <DialogPanel
-              transition
-              className="w-full max-w-lg rounded-xl bg-black text-white p-6 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 shadow-lg"
-            >
+      <Dialog transition open={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} className="dialog-wrapper">
+        <div className="dialog-overlay">
+          <div className="dialog-center">
+            <DialogPanel transition className="dialog-panel">
               <DialogTitle className="font-bold text-2xl">Accessibility Settings</DialogTitle>
               <Description className="mb-11">Use the controls below to customize your web experience.</Description>
               <div>

@@ -5,8 +5,8 @@ import { SEO } from '@/components/meta/seo'
 import { seoImage } from '@/components/meta/seoImage'
 import { processEnv } from '@/lib/processEnv'
 import { getAllSettings, GhostSettings } from '@/lib/ghost'
-import { FreeSignupForm } from '@/components/portal/FreeSignupForm'
-import { MemberLoginForm } from '@/components/portal/MemberLoginForm'
+import { FreeSignupForm } from '@/components/membership/FreeSignupForm'
+import { MemberLoginForm } from '@/components/membership/MemberLoginForm'
 import { useEffect, useState } from 'react'
 
 /**
