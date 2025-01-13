@@ -16,7 +16,7 @@ button {
 }
 
 .btn {
-  @apply px-5 py-3 inline-block font-black transition-all duration-150 ease-in-out cursor-pointer bg-white text-black relative z-10;
+  @apply px-5 py-3 inline-block font-black rounded transition-all duration-150 ease-in-out cursor-pointer bg-white text-black relative z-10;
   @apply dark:bg-black dark:text-white;
 
   &::before,
@@ -72,4 +72,17 @@ button {
   @apply transition-all duration-150 ease-in-out font-bold uppercase py-4 px-6;
 
  
+}
+
+.btn-subscribe {
+  @apply rounded flex gap-x-2 items-center justify-center shadow ;
+
+  &:hover {
+    @apply translate-x-[3px] translate-y-[3px] shadow-xl;
+  }
+
+  &::before, &::after {
+    display: none;
+  }
+
 }

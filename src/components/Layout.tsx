@@ -21,7 +21,7 @@ import { motion } from 'framer-motion'
  *
  */
 
-interface SiteNavProps {
+interface LayoutProps {
   settings: GhostSettings
   postTitle?: string
   children: ReactNode
@@ -33,7 +33,7 @@ interface SiteNavProps {
   image?: string
 }
 
-export const Layout = ({ children, settings, bodyClass = ``, isHome = false, className = ``, headerClass = ``, hideLogo = false, image = `` }: SiteNavProps) => {
+export const Layout = ({ children, settings, bodyClass = ``, isHome = false, className = ``, headerClass = ``, hideLogo = false, image = `` }: LayoutProps) => {
   const { publicRuntimeConfig } = getConfig()
   const modifiedDate = new Date(publicRuntimeConfig.modifiedDate).toLocaleDateString(`en-US`, { month: `long`, day: `numeric`, year: `numeric` })
   const site = settings
@@ -136,6 +136,20 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
         {children}
       </motion.main>
 
+      <div className="fixed bottom-8 right-8 z-30">
+        <Link className="btn btn-subscribe" href="/membership">
+          <span>
+            <svg className="h-6 w-6" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="m57.512 33.078v-3.0859h-6.0664v3.0859h-3.0859v15.324h3.0859v3.0859h6.0664v-3.0859h3.082v-15.324z" />
+              <path d="m29.738 33.078v-3.0859h-6.0625v3.0859h-3.0859v15.324h3.0859v3.0859h6.0625v-3.0859h3.0859v-15.324z" />
+              <path d="m91.715 36.164h-0.10547v-6.1719h-3.0859v-6.1719h-3.0859v-3.0859h-3.0859v-3.0859h-3.0859v-3.0859h-3.0898v-3.0859h-3.0859l0.003906-3.0859h-9.2578v-3.0859h-27.672v3.0859h-9.2578v3.0859h-3.0898v3.0859h-3.0859v3.0859h-3.0859v3.0859h-3.0859v3.0859h-3.0859v6.1719h-3.082v6.1719l-3.0859 0.003907v30.758l3.0859-0.003906v6.1719h3.0859v3.0859h3.0859v6.1719h3.0859v3.0859h6.1719v3.0859h3.0898v3.0859h9.2578v3.0859h27.672l-0.003906-3.0859h9.2578v-3.0859h3.0859v-3.0859h6.1758v-3.0859h3.0859l-0.003906-6.1719h3.0859v-3.0859h3.0859v-6.1719h3.0859v-30.758zm0 10.246v17.527h-3.0859v6.1719h-3.0859v3.0859h-3.0859v6.1719h-3.0859v3.0859h-6.1719v3.0859h-3.0859v3.0859h-9.2617v3.0859l-21.707 0.003906v-3.0859h-9.2578v-3.082h-3.082v-3.082l-1.4961-0.003906h-4.6797v-3.0859h-3.0859v-6.1719h-3.0859v-3.0859l-3.0859-0.003907v-6.1719h-3.0859v-24.797h3.0859v-6.1719h3.0859v-6.1719h3.0859v-3.0859h3.0859v-3.0859h3.0859v-3.0859h3.0859v-3.0859h3.0859v-3.0859h9.2578v-3.0859h21.707l0.003907 3.0859h9.2539l0.007813 3.0859h3.0859v3.0859h3.0859v3.0859h3.0859v3.0859h3.0859v3.0859h3.0859v6.1719h3.0859v6.1719h3.0859z" />
+              <path d="m42.328 63.934h9.1523v2.9805h-9.1523z" />
+            </svg>
+          </span>
+          <span>Subscribe</span>
+        </Link>
+      </div>
+
       <footer className="site-footer text-center">
         <SocialLinks />
         <nav className="mb-4">
@@ -144,7 +158,18 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
 
         <div className="site-copyright text-xs py-5 px-10 relative">
           <div className="relative z-10">
-            <p className="text-balance"><Link href="/">{site.title}</Link> Copyright © Tyler Rilling 2001 - 2024. Published with Ghost. View <Link className="underline" href="/terms/">Term of Use</Link> and <Link className="underline" href="/privacy/">Privacy Policy</Link>.</p>
+            <p className="text-balance">
+              <Link href="/">{site.title}</Link> Copyright © Tyler Rilling 2001 - 2024. Published with Ghost. <br /> View{` `}
+              <Link className="underline" href="/terms/">
+                Term of Use
+              </Link>
+              {` `}
+              and{` `}
+              <Link className="underline" href="/privacy/">
+                Privacy Policy
+              </Link>
+              .
+            </p>
             <br /> Site last updated:{` `}
             <a href="https://github.com/underlost/underlost.net/">{modifiedDate}</a>. ❤️
           </div>
@@ -186,10 +211,11 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
 
               <div className="mb-8">
                 <span className="text-xl block">Toggle Light/Dark Mode</span>
-                <span className="text-sm block mb-5">Select the theme that works best for you. Light/dark modes generally only apply when Reduced colors is enabled, and on blog posts.</span>
+                <span className="text-sm block mb-5">
+                  Select the theme that works best for you. Light/dark modes generally only apply when Reduced colors is enabled, and on blog posts.
+                </span>
 
                 <div className="grid grid-cols-2">
-
                   <button className={`col-span-2 lg:col-span-1 border border-white p-4 ${theme === `light` ? `bg-white text-black` : ``}`} onClick={handleThemeToggle}>
                     <span className="flex gap-x-4 justify-center">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" data-slot="icon" className="w-6 h-6">

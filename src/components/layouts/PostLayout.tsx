@@ -9,6 +9,7 @@ import { GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '@/lib/ghost'
 import { ISeoImage } from '@/components/meta/seoImage'
 import { PreviewPosts } from '@/components/PreviewPosts'
 import { PostHeader } from '@/components/PostHeader'
+import { useAuth } from '@/hooks/useAuth'
 
 /**
  * Meant for single post (/writing/:slug)
@@ -37,7 +38,10 @@ export const PostLayout = ({ cmsData }: PostProps) => {
   const htmlAst = post.htmlAst
   const isFeatured = cmsData.post.tags?.some((tag) => (tag.name === `#featured`))
 
+  const { isLoggedIn, user } = useAuth()
+
   if (htmlAst === undefined) throw Error(`PostLayout.tsx: htmlAst must be defined.`)
+    
 
   return (
     <>
@@ -101,9 +105,6 @@ export const PostLayout = ({ cmsData }: PostProps) => {
                     ))}
             </>
           )}
-
-            
-            
 
           <section className="post-full-content mb-11">
             <div className="post-content load-external-scripts gh-content text-lg gh-canvas">

@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 
 interface NavigationProps {
-  title?: string;
-  description?: string;
+  title?: string
+  description?: string
 }
 
-export const NewsletterForm = ({
-  title = `Newsletter`,
-  description = `Want to keep up with my latest updates?`,
-}: NavigationProps) => {
+export const FreeSignupForm = ({ title = `Newsletter`, description = `Want to keep up with my latest updates?` }: NavigationProps) => {
   const [email, setEmail] = useState(``)
+  const [name, setName] = useState(``)
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState(``)
   const [error, setError] = useState(false)
@@ -37,7 +35,7 @@ export const NewsletterForm = ({
         headers: {
           'Content-Type': `application/json`,
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, name }),
       })
 
       const result = await response.json()
@@ -62,22 +60,13 @@ export const NewsletterForm = ({
       <h2 className="h6 text-center">{title}</h2>
       <p className="text-center text-lg">{description}</p>
       <form className="form-group-stacked my-5 mx-auto max-w-lg" onSubmit={handleSubmit}>
-        <input
-          type="email"
-          className="text-field text-center"
-          placeholder="Email Address"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <input type="text" className="text-field text-center" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+        <input type="email" className="text-field text-center" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} />
         <button className="btn btn-lg" type="submit" disabled={loading}>
           {loading ? `Subscribing...` : `Subscribe`}
         </button>
       </form>
-      {message && (
-        <p className={`text-center mt-2 font-bold ${error ? `text-white` : `text-green-500`}`}>
-          {message}
-        </p>
-      )}
+      {message && <p className={`text-center mt-2 font-bold ${error ? `text-warning` : ``}`}>{message}</p>}
     </>
   )
 }

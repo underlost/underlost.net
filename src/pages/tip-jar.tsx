@@ -1,14 +1,13 @@
 import { Layout } from '@/components/Layout'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
+import { SEO } from '../components/meta/seo'
+import { seoImage } from '../components/meta/seoImage'
+import { processEnv } from '../lib/processEnv'
+import { getAllSettings, GhostSettings, getAllNoteworthyPosts, getAllPosts, GhostPostsOrPages, getPageBySlug, GhostPostOrPage, getAllFeatredPosts } from '../lib/ghost'
 import Image from 'next/image'
-import Link from 'next/link'
-import { SEO } from '@/components/meta/seo'
-import { seoImage } from '@/components/meta/seoImage'
-import { processEnv } from '@/lib/processEnv'
-import { getAllSettings, GhostSettings } from '@/lib/ghost'
-import PongGame from '@/components/consulting/PongGame'
-import { FreeSignupForm } from '@/components/portal/FreeSignupForm'
+import { PageHeader } from '@/components/PageHeader'
+import TipButton from '@/components/TipButton'
 
 /**
  *
@@ -25,7 +24,7 @@ interface ErrorPageProps {
   cmsData: CmsData
 }
 
-export default function ErrorPage({ cmsData }: ErrorPageProps) {
+export default function TipJarPage({ cmsData }: ErrorPageProps) {
   const router = useRouter()
   if (router.isFallback) return <div>Loading...</div>
 
@@ -42,31 +41,15 @@ export default function ErrorPage({ cmsData }: ErrorPageProps) {
         <div className="tag-color-scheme-g container-inner">
           <div className="border-color container-border">
             <figure className="featured-image-blob" style={{ display: `inherit` }}>
-              <Image src="/images/404.jpg" alt="cat." width={500} height={500} className="aspect-square w-full grayscale" />
+              <Image src="/images/background.jpg" alt="cat." width={500} height={500} className="aspect-square w-full" />
             </figure>
-            <div className="py-11 lg:py-24" />
             <article className="container-content">
-              <h1 className="h1-xl text-outline ">Page Not Found</h1>
-              <p className="text-left text-lg mb-8">The page you are looking for does not exist. Sorry about that.</p>
+              <PageHeader title="Tip Jar" excerpt="Donate to underlost.net" size="large" className="text-outline" />
 
-              <Link className="btn btn-lg" href="/">
-                Go Home
-              </Link>
+              <TipButton />
             </article>
           </div>
-
-          <div className="pb-11 py-11 container  min-h-[350px]">
-            <div className="md:max-w-3xl mx-auto relative">
-              <PongGame color1={0x04284a} color2={0xff294c} />
-            </div>
-          </div>
         </div>
-
-        <section className="relative tag-color-scheme-i p-11">
-          <div className="max-w-xl py-16 mx-auto">
-            <FreeSignupForm />
-          </div>
-        </section>
       </div>
     </Layout>
   )

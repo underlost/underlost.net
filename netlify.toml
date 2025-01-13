@@ -9,31 +9,31 @@
 
 
 [[redirects]]
-  from = "/projects/boredable"
+  from = "/projects/boredable/"
   to = "/boredable"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/projects/gatsby-just-docs"
+  from = "/projects/gatsby-just-docs/"
   to = "/writing/gatsby-just-docs"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/projects/astro-just-docs"
+  from = "/projects/astro-just-docs/"
   to = "/writing/astro-just-docs"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/projects/i-built-a-micro-blogging-tool-for-ghost"
+  from = "/projects/i-built-a-micro-blogging-tool-for-ghost/"
   to = "/writing/i-built-a-micro-blogging-tool-for-ghost"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/projects/undertasker"
+  from = "/projects/undertasker/"
   to = "/writing/undertasker"
   status = 301
   force = true

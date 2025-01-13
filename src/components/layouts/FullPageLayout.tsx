@@ -2,13 +2,11 @@
 import Image from 'next/image'
 import { Layout } from '../Layout'
 import { RenderContent } from '../RenderContent'
-import { PostClass } from '../helpers/PostClass'
+import { PostClass } from '@/components/helpers/PostClass'
 import { SEO } from '../meta/seo'
-
-import { GhostPostOrPage, GhostSettings } from '../../lib/ghost'
-import { ISeoImage } from '../meta/seoImage'
-
-import { PageHeader } from '../PageHeader'
+import { GhostPostOrPage, GhostSettings } from '@/lib/ghost'
+import { ISeoImage } from '@/components/meta/seoImage'
+import { PageHeader } from '@/components/PageHeader'
 
 /**
  * Single page (/:slug)

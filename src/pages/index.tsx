@@ -7,13 +7,11 @@ import { SEO } from '@/components/meta/seo'
 import { seoImage } from '@/components/meta/seoImage'
 import { FeaturedPostCard } from '@/components/FeaturedPostCard'
 import { processEnv } from '@/lib/processEnv'
-import { getAllSettings, GhostSettings, getPageBySlug, getAllPosts, GhostPostsOrPages, GhostPostOrPage, getAllFeatredPosts } from '@/lib/ghost'
+import { getAllSettings, GhostSettings, getPageBySlug, getAllPosts, GhostPostsOrPages, GhostPostOrPage, getAllFeatredPosts, getAllTiers } from '@/lib/ghost'
 import { PostView } from '@/components/PostView'
 import { BodyClass } from '@/components/helpers/BodyClass'
 import StatsSection from '@/components/StatsSection'
-import { NewsletterForm } from '@/components/NewsletterForm'
-
-
+import { FreeSignupForm } from '@/components/portal/FreeSignupForm'
 
 /**
  *
@@ -109,8 +107,8 @@ export default function Home({ cmsData }: IndexProps) {
                 <div className="col-span-12 lg:col-span-6 mb-5">
                   <div className="squiggle-static s1 my-8" />
                   <p className="text-secondary font-stretch-extra-expanded text-2xl mb-11">
-                    Need help building your website? Or maybe you&apos;re looking how to build the next great web app. Wheather it&apos;s just planning or you need help fixing bugs, I&apos;m here to
-                    help!
+                    Need help building your website? Or maybe you&apos;re looking how to build the next great web app. Wheather it&apos;s just planning or you need help fixing bugs,
+                    I&apos;m here to help!
                   </p>
                   <Link className="btn btn-lg" href="/consulting/">
                     Get Started
@@ -133,7 +131,7 @@ export default function Home({ cmsData }: IndexProps) {
 
         <section className="relative tag-color-scheme-i p-11">
           <div className="max-w-xl py-16 mx-auto">
-            <NewsletterForm />
+            <FreeSignupForm />
 
             <div className="mt-8 ">
               <Image src="/images/svg/catpaw.svg" alt="cat paw sketch" width={50} height={50} className=" block lg:ml-auto ml-auto -rotate-12 invert filter-none" />
@@ -150,6 +148,7 @@ export const getStaticProps: GetStaticProps = async () => {
   let page
   let posts
   let featuredPosts
+  let tiers
 
   console.time(`Index - getStaticProps`)
   try {
@@ -157,6 +156,7 @@ export const getStaticProps: GetStaticProps = async () => {
     settings = await getAllSettings()
     posts = await getAllPosts({ limit: 6, page: 1 })
     featuredPosts = await getAllFeatredPosts({ limit: 1 })
+    tiers = await getAllTiers()
   } catch (error) {
     throw new Error(`Index creation failed.`)
   }

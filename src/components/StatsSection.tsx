@@ -20,7 +20,6 @@ const StatsSection = () => {
     <section className="relative tag-color-scheme-b">
       <div className="lg:px-32 py-11 md:py-20" ref={ref}>
         <div className="grid grid-cols-12 gap-8 lg:gap-20">
-
           <div className="col-span-6 lg:col-span-12 flex md:block justify-center">
             <h3 className="pl-8 md:pl-0 md:text-center font-mono font-bold uppercase my-auto">Development by the Numbers</h3>
           </div>

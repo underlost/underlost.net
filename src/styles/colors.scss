@@ -285,15 +285,18 @@
     .btn-transparent {
       @apply border-dewdrop-green shadow-dewdrop-green;
     }
-    .h1-xl {
+    
+    .h1,
+    .h2 {
+      @apply text-emberglow-red;
+    }
+
+    .h1-xl,
+    .text-outline {
       @apply text-twilight-blue;
       -webkit-text-stroke-color: var(--color-emberglow-red);
       -webkit-text-stroke-width: 2px;
       paint-order: stroke fill;
-    }
-    .h1,
-    .h2 {
-      @apply text-emberglow-red;
     }
 
     .kg-callout-card {

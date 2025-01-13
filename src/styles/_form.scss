@@ -5,7 +5,7 @@
 }
 
 .text-field {
-  @apply p-4 bg-transparent border-b focus:outline-none;
+  @apply py-3 px-5 bg-transparent border focus:outline-none rounded;
 }
 
 .form-group-stacked {

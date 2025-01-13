@@ -4,9 +4,10 @@ interface PageHeaderProps {
   title?: string
   excerpt?: string
   size?: string
+  className?: string
 }
 
-export const PageHeader = ({ title = ``, excerpt, size }: PageHeaderProps) => {
+export const PageHeader = ({ title = ``, excerpt, size, className = `` }: PageHeaderProps) => {
   let h1Class = `h1`
   if (size === `small`) {
     h1Class = `h2`
@@ -15,7 +16,7 @@ export const PageHeader = ({ title = ``, excerpt, size }: PageHeaderProps) => {
   }
   return (
     <header className="page-full-header text-center mb-8">
-      <h1 className={h1Class}>{title}</h1>
+      <h1 className={`${h1Class} ${className}`}>{title}</h1>
       {excerpt && <p className="post-full-custom-excerpt text-xl">{excerpt}</p>}
     </header>
   )

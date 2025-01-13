@@ -53,6 +53,15 @@ export interface GhostTags extends BrowseResults<GhostTag> {}
 
 export interface GhostAuthors extends BrowseResults<GhostAuthor> {}
 
+export interface GhostTiers {
+  monthly_price: number
+  yearly_price: number
+  benefits: string[]
+  type: string
+  id: string
+  name: string
+}
+
 const api = new GhostContentAPI({
   url: ghostAPIUrl,
   key: ghostAPIKey,
@@ -145,9 +154,26 @@ export async function getAllTags(): Promise<GhostTags> {
   return await createNextFeatureImages(tags)
 }
 
+export async function getAllTiers(): Promise<GhostTiers> {
+  const tiers = await api.tiers.browse({
+    limit: `all`,
+    filter: `visibility:public`,
+    include: [`monthly_price`, `yearly_price`, `benefits`],
+  })
+  return tiers
+}
+
 export async function getAllAuthors() {
   const authors = await api.authors.browse(tagAndAuthorFetchOptions)
   return await createNextProfileImages(authors)
+}
+
+export async function getallNewsletters() {
+  const newsletters = await api.newsletters.browse({
+    limit: `all`,
+    filter: `visibility:public`,
+  })
+  return newsletters
 }
 
 // Get all posts with #blog tag

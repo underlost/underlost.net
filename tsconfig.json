@@ -25,11 +25,13 @@
   },
   "include": [
     "next-env.d.ts",
-    "admin-api.d.ts",
+    "ghost-admin-api.d.ts",
+    "ghost-content-api.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/lib/ghost.ts"
   ]
 }

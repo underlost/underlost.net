@@ -51,6 +51,14 @@ declare module "@tryghost/admin-api" {
     published_by: string;
   }
 
+  export interface MemberLabels {
+    id: string;
+    name: string;
+    slug: string;
+    created_at: string;
+    updated_at: string;
+  }
+
   export interface Member {
     errors: any;
     error: any;
@@ -59,6 +67,9 @@ declare module "@tryghost/admin-api" {
     email: string;
     status: string;
     note: string;
+    labels?: (string | MemberLabels)[];
+    tiers?: any[];
+    newsletters?: any[];
   }
 
   export interface Tag {
@@ -72,6 +83,50 @@ declare module "@tryghost/admin-api" {
     created_by: string;
     updated_at: string;
     updated_by: string;
+  }
+
+  export interface Tier {
+    id: string;
+    name: string;
+    description: string | null;
+    slug: string;
+    active: boolean;
+    type: string;
+    welcome_page_url: string | null;
+    created_at: string;
+    updated_at: string;
+    stripe_prices: any | null;
+    monthly_price: any | null;
+    yearly_price: any | null;
+    benefits: any[];
+    visibility: string;
+  }
+
+  export interface Newsletter {
+    id: string;
+    name: string;
+    description: string | null;
+    slug: string;
+    sender_name: string | null;
+    sender_email: string | null;
+    sender_reply_to: string;
+    status: string;
+    visibility: string;
+    subscribe_on_signup: boolean;
+    sort_order: number;
+    header_image: string | null;
+    show_header_icon: boolean;
+    show_header_title: boolean;
+    title_font_category: string;
+    title_alignment: string;
+    show_feature_image: boolean;
+    body_font_category: string;
+    footer_content: string | null;
+    show_badge: boolean;
+    created_at: string;
+    updated_at: string;
+    show_header_name: boolean;
+    uuid: string;
   }
 
   export interface Webhook {
@@ -98,17 +153,6 @@ declare module "@tryghost/admin-api" {
     meta_title: string;
     meta_description: string;
     last_login: string;
-    created_at: string;
-    created_by: string;
-    updated_at: string;
-    updated_by: string;
-  }
-
-  export interface Newsletter {
-    id: string;
-    name: string;
-    slug: string;
-    status: string;
     created_at: string;
     created_by: string;
     updated_at: string;
@@ -218,7 +262,7 @@ declare module "@tryghost/admin-api" {
     members: {
       browse(options?: object): Promise<Member[]>;
       read(options: { id: string }): Promise<Member>;
-      edit(options: { id: string; data: Member }): Promise<Member>;
+      edit(options: { id: string; labels: string[] }): Promise<Member>; // Allow Partial<Member> for flexibility
       add(data: Partial<Member>, options?: object): Promise<Member>;
       delete(options: { id: string }): Promise<void>;
     };
@@ -254,6 +298,14 @@ declare module "@tryghost/admin-api" {
       add(options: Partial<Newsletter>): Promise<Newsletter>;
       delete(options: { id: string }): Promise<void>;
     };
+
+    tiers: {
+      browse(options?: object): Promise<Tier[]>;
+      read(options: { id: string }): Promise<Tier>;
+      edit(options: { id: string; data: Tier }): Promise<Tier>;
+      add(options: Partial<Tier>): Promise<Tier>;
+      delete(options: { id: string }): Promise<void>;
+    }
 
     images: {
       upload(options: { file: any }): Promise<Image>;

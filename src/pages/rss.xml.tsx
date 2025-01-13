@@ -13,7 +13,7 @@ export const getServerSideProps: GetServerSideProps | undefined = process.env.IS
 
     try {
       settings = await getAllSettings()
-      posts = await getAllPosts({ limit: 20, page:1 })
+      posts = await getAllPosts({ limit: 20, page: 1 })
     } catch (error) {
       throw new Error(`Index creation failed.`)
     }

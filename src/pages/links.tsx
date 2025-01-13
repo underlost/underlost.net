@@ -60,26 +60,27 @@ export default function LinksPage({ cmsData }: LinksPageProps) {
       <div className="container">
         <article className="tag-color-scheme-c container-inner">
           <div className="border-color container-border">
-            {featImg && (nextImages.feature && featImg.dimensions ? (
-              <figure className="featured-image-blob" style={{ display: `inherit` }}>
-                <Image
-                  src={featImg.url}
-                  alt={page.title || ``}
-                  quality={nextImages.quality}
-                  sizes={`(max-width: 350px) 350px,(max-width: 530px) 530px,(max-width: 710px) 710px,(max-width: 1170px) 1170px,(max-width: 2110px) 2110px, 2000px`}
-                  {...featImg.dimensions}
-                />
-              </figure>
-            ) : (
-              page.feature_image && (
-                <figure className="featured-image-blob">
-                  <img src={page.feature_image} alt={page.title} />
+            {featImg &&
+              (nextImages.feature && featImg.dimensions ? (
+                <figure className="featured-image-blob" style={{ display: `inherit` }}>
+                  <Image
+                    src={featImg.url}
+                    alt={page.title || ``}
+                    quality={nextImages.quality}
+                    sizes={`(max-width: 350px) 350px,(max-width: 530px) 530px,(max-width: 710px) 710px,(max-width: 1170px) 1170px,(max-width: 2110px) 2110px, 2000px`}
+                    {...featImg.dimensions}
+                  />
                 </figure>
-              )
-            ))}
+              ) : (
+                page.feature_image && (
+                  <figure className="featured-image-blob">
+                    <img src={page.feature_image} alt={page.title} />
+                  </figure>
+                )
+              ))}
             <div className="container-content">
               <PageHeader title="@underlost" />
-              
+
               <section className="post-full-content post-content load-external-scripts gh-content text-2xl mb-11">
                 <RenderContent htmlAst={htmlAst} />
               </section>
@@ -88,8 +89,6 @@ export default function LinksPage({ cmsData }: LinksPageProps) {
 
               <div className="max-w-lg mx-auto my-16 squiggle s1 px-8" />
               <section className="max-w-lg mx-auto">
-                
-
                 <div className="max-w-lg mx-auto">
                   <ul>
                     {links.map((externalLink: any, i: number) => (
@@ -102,7 +101,6 @@ export default function LinksPage({ cmsData }: LinksPageProps) {
                   </ul>
                 </div>
                 <div className="flex gap-11">
-   
                   <div className="flex-none my-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 fill-emberglow-red" viewBox="0 0 55.19 42.73">
                       <path
@@ -121,11 +119,15 @@ export default function LinksPage({ cmsData }: LinksPageProps) {
         <PostView title="Popular Posts" className="tag-color-scheme-d" posts={posts} settings={settings} />
 
         <section className="tag-color-scheme-m pb-11">
-
-          <ConsultingHeader pongColor2={0xFFBCAA} pongColor1={0x4645D1} />
+          <ConsultingHeader pongColor2={0xffbcaa} pongColor1={0x4645d1} />
 
           <div className="text-lg max-w-xl text-center mx-auto px-8 mb-8">
-            <p>I offer personalized consulting and web services for developers and designers looking to build and launch websites or web apps. Whether you’re refining an idea, troubleshooting technical issues, or creating something from scratch, I’ll help you make meaningful progress and achieve your goals. Each package includes a detailed critique of your project and the opportunity to collaborate directly with me to improve functionality, optimize performance, and bring your vision to life. With over two decades of experience, I’m here to guide you through every step of your journey.</p>
+            <p>
+              I offer personalized consulting and web services for developers and designers looking to build and launch websites or web apps. Whether you’re refining an idea,
+              troubleshooting technical issues, or creating something from scratch, I’ll help you make meaningful progress and achieve your goals. Each package includes a detailed critique
+              of your project and the opportunity to collaborate directly with me to improve functionality, optimize performance, and bring your vision to life. With over two decades of
+              experience, I’m here to guide you through every step of your journey.
+            </p>
           </div>
 
           <div className="max-w-lg mx-auto mb-11">
@@ -137,7 +139,6 @@ export default function LinksPage({ cmsData }: LinksPageProps) {
           </div>
           <Image src="/images/svg/catpaw.svg" alt="cat paw sketch" width={50} height={50} className="block ml-auto mr-8 -rotate-12 dark:invert filter-none" />
         </section>
-      
       </div>
     </Layout>
   )
