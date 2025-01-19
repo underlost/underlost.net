@@ -1,6 +1,8 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 
+import pLimit from 'p-limit'
+
 import { getPostsByTag, getTagBySlug, GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '@/lib/ghost'
 import { getPostBySlug, getAllPosts, getAllSettings, getAllPostSlugs, getAllNoteworthyPosts } from '@/lib/ghost'
 import { resolveUrl } from '@/utils/routing'
@@ -99,14 +101,24 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { enable, maxNumberOfPages } = processEnv.isr
+  const limit = pLimit(5)
+
   const pages = await getAllPosts()
   const settings = await getAllSettings()
   const { url: cmsUrl } = settings
-  const pageRoutes = (pages as GhostPostsOrPages).map(({ slug, url }) => resolveUrl({ cmsUrl, collectionPath: `writing/`, slug, url }))
-  const paths = [...pageRoutes]
-  console.log(`Paths:`, paths)
+  //const pageRoutes = (pages as GhostPostsOrPages).map(({ slug, url }) => resolveUrl({ cmsUrl, collectionPath: `writing/`, slug, url }))
+
+  const pageRoutes = await Promise.all(
+    pages.map((page) =>
+      limit(() =>
+        resolveUrl({ cmsUrl, collectionPath: `writing/`, slug: page.slug, url: page.url })
+      )
+    )
+  )
+
+  console.log(`Paths:`, pageRoutes)
   return {
-    paths,
+    paths: pageRoutes,
     fallback: enable && `blocking`,
   }
 }
