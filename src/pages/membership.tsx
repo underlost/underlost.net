@@ -1,17 +1,20 @@
-import { Layout } from '@/components/Layout'
+
 import { GetStaticProps } from 'next'
+import Script from 'next/script';
+import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { processEnv } from '@/lib/processEnv'
+import { getAllSettings, GhostSettings, GhostPostsOrPages, getPageBySlug, GhostPostOrPage } from '@/lib/ghost'
+
+import { Layout } from '@/components/Layout'
 import { SEO } from '@/components/meta/seo'
 import { seoImage } from '@/components/meta/seoImage'
-import { processEnv } from '@/lib/processEnv'
-import { getAllSettings, GhostSettings, getAllNoteworthyPosts, GhostPostsOrPages, getPageBySlug, GhostPostOrPage } from '../lib/ghost'
 import { PageHeader } from '@/components/PageHeader'
 import { BodyClass } from '@/components/helpers/BodyClass'
 import { PostClass } from '@/components/helpers/PostClass'
 import { RenderContent } from '@/components/RenderContent'
 import { SubscribePortal } from '@/components/membership/SubscribePortal'
 
-import Image from 'next/image'
 
 /**
  *
@@ -89,6 +92,7 @@ export default function MembershipPage({ cmsData }: MembershipPageProps) {
           </section>
         </div>
       </article>
+
     </Layout>
   )
 }

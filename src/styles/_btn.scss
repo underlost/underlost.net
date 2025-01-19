@@ -53,6 +53,10 @@ button {
       opacity: 1;
     }
   }
+
+  &.disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
 }
 
 .btn-lg {

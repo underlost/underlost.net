@@ -55,7 +55,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       note: `Subscribed via website`,
       labels: [`unverified`, `free`],
       newsletters: [],
-      tiers: [],
     }
 
     const memberOptions = {

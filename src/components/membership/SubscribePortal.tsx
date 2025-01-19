@@ -56,7 +56,7 @@ export const SubscribePortal = () => {
     }
     try {
       console.log(`Creating Stripe Checkout session for ${tier.name}`)
-      const res = await fetch(`/api/create-checkout-session`, {
+      const res = await fetch(`/api/stripe/create-checkout-session`, {
         method: `POST`,
         headers: {
           'Content-Type': `application/json`,
@@ -132,14 +132,14 @@ export const SubscribePortal = () => {
             <div>
               {tier.type === `free` ? (
                 <button className="btn w-full" onClick={() => toggleSubscribe()}>
-                  Choose
+                  Subscribe
                 </button>
               ) : (
-                <button className="btn w-full" onClick={(event) => {
+                <button className="btn w-full disabled" disabled={true} onClick={(event) => {
                   setSelectedTier(tier)
                   handleCheckout(event, tier)
                 }}>
-                  {loading ? `Loading...` : `Subscribe`}
+                  {loading ? `Loading...` : `Coming Soon`}
                 </button>
               )}
             </div>

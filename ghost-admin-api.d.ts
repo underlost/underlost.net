@@ -51,7 +51,7 @@ declare module "@tryghost/admin-api" {
     published_by: string;
   }
 
-  export interface MemberLabels {
+  export interface Label {
     id: string;
     name: string;
     slug: string;
@@ -59,16 +59,94 @@ declare module "@tryghost/admin-api" {
     updated_at: string;
   }
 
-  export interface Member {
-    errors: any;
-    error: any;
+  export interface Customer {
     id: string;
     name: string;
     email: string;
-    status: string;
-    note: string;
-    labels?: (string | MemberLabels)[];
-    tiers?: any[];
+  }
+
+  export interface Tier {
+    id?: string;
+    name?: string;
+    slug?: string;
+    active?: boolean;
+    welcome_page_url?: string | null;
+    visibility: string;
+    trial_days: number;
+    description: string | null;
+    type: string;
+    currency: string;
+    monthly_price: number;
+    yearly_price: number;
+    created_at: string;
+    updated_at: string;
+    monthly_price_id: string | null;
+    yearly_price_id: string | null;
+    expiry_at: string | null;
+  }
+
+  export interface Price {
+    id?: string;
+    price_id?: string;
+    nickname?: string | null;
+    amount?: number;
+    interval?: string;
+    type?: string;
+    currency?: string;
+    tier?: Tier;
+  }
+
+  export interface Subscription {
+    id: string;
+    customer?: Customer;
+    plan?: {
+      id?: string;
+      nickname?: string | null;
+      amount?: number;
+      interval?: string;
+      currency?: string;
+    };
+    status?: string;
+    start_date?: string;
+    default_payment_card_last4?: string | null;
+    cancel_at_period_end?: boolean;
+    cancellation_reason?: string | null;
+    current_period_end?: string;
+    trial_start_at?: string | null;
+    trial_end_at: string | null;
+    price?: Price;
+    tier?: Tier;
+    offer?: string | null;
+  }
+
+
+  export interface EmailSuppression {
+    suppressed?: boolean;
+    info?: string | null;
+  }
+
+  export interface Member {
+    errors: any;
+    id?: string;
+    uuid?: string;
+    email?: string;
+    name?: string | null;
+    note?: string | null;
+    geolocation?: any[];
+    subscribed?: boolean;
+    created_at?: string;
+    updated_at?: string;
+    labels?: (string | Label)[];
+    subscriptions?: Subscription[];
+    avatar_image?: string;
+    comped?: boolean;
+    email_count?: number;
+    email_opened_count?: number;
+    email_open_rate?: number | null;
+    status?: string;
+    last_seen_at?: string | null;
+    unsubscribe_url?: string;
+    email_suppression?: EmailSuppression;
     newsletters?: any[];
   }
 
