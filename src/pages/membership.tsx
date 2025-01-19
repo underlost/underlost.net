@@ -1,6 +1,6 @@
 
 import { GetStaticProps } from 'next'
-import Script from 'next/script';
+import Script from 'next/script'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { processEnv } from '@/lib/processEnv'

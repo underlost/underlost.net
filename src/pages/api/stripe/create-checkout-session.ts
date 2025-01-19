@@ -65,11 +65,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         },
       ],
       metadata: {
-        "newsletters": "[]",
-        "referrer_source": "Direct",
-        "attribution_url": "/membership",
-        "requestSrc": "Membership Page",
-        "attribution_type": "url",
+        "newsletters": `[]`,
+        "referrer_source": `Direct`,
+        "attribution_url": `/membership`,
+        "requestSrc": `Membership Page`,
+        "attribution_type": `url`,
       },
       success_url: successUrl, // URL to redirect after successful payment
       cancel_url: cancelUrl,   // URL to redirect after a canceled payment
