@@ -15,13 +15,12 @@
   .hover-shadow:hover {
     @apply shadow-enchantedmeadow-green dark:shadow-wisteriabloom-blue;
   }
-
   .non-accessible {
     display: none;
   }
 }
 
-.tag-featured {
+.tag-hash-featured {
   .site-header {
     @apply text-white;
     
@@ -34,10 +33,17 @@
   }
 }
 
+#page.single {
+  .btn.btn-subscribe {
+    @apply bg-twilight-blue text-dewdrop-green;
+  }
+}
+
+.kg-callout-members-only {
+  @apply bg-enchantedmeadow-green text-deeplake-blue;
+}
+
 #page:not(.accessible-mode) {
-
-  
-
   .container-primary {
     @apply bg-twilight-blue text-dewdrop-green;
   }

@@ -1,17 +1,15 @@
 import { useRouter } from 'next/router'
-
-import { Tag } from '@tryghost/content-api'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import { Tag } from '@tryghost/content-api'
+import { getTagBySlug, getAllTags, getAllSettings, getPostsByTag, GhostSettings, GhostPostOrPage, GhostPostsOrPages } from '@/lib/ghost'
+import { resolveUrl } from '@/utils/routing'
+import { processEnv } from '@/lib/processEnv'
+import { BodyClass } from '@/components/helpers/BodyClass'
+import { SEO } from '@/components/meta/seo'
+import { ISeoImage, seoImage } from '@/components/meta/seoImage'
 import { Layout } from "@/components/Layout"
 import { PostView } from '@/components/PostView'
 import { PageHeader } from '@/components/PageHeader'
-import { SEO } from '@/components/meta/seo'
-import { getTagBySlug, getAllTags, getAllSettings, getPostsByTag, GhostSettings, GhostPostOrPage, GhostPostsOrPages } from '@/lib/ghost'
-import { resolveUrl } from '@/utils/routing'
-import { ISeoImage, seoImage } from '@/components/meta/seoImage'
-import { processEnv } from '@/lib/processEnv'
-
-import { BodyClass } from '@/components/helpers/BodyClass'
 
 /**
  * Tag page (/tag/:slug)

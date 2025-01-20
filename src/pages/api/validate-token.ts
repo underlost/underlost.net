@@ -3,8 +3,8 @@ import jwt from 'jsonwebtoken'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { token } = req.body
-  const { JWT_SECRET_KEY } = process.env
-  if (!JWT_SECRET_KEY) {
+  const { SITE_SECRET_KEY } = process.env
+  if (!SITE_SECRET_KEY) {
     return res.status(500).json({ message: `JWT secret key is not configured.` })
   }
   if (!token) {
@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
   try {
     // Verify the token using the secret key
-    const decoded = jwt.verify(token, JWT_SECRET_KEY)
+    const decoded = jwt.verify(token, SITE_SECRET_KEY)
     // If valid, return the decoded token data (e.g., email, exp, etc.)
     return res.status(200).json({
       message: `Token is valid.`,

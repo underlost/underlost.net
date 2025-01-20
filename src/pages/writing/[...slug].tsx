@@ -1,18 +1,14 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
-
 import pLimit from 'p-limit'
-
 import { getPostsByTag, getTagBySlug, GhostPostOrPage, GhostPostsOrPages, GhostSettings } from '@/lib/ghost'
 import { getPostBySlug, getAllPosts, getAllSettings, getAllPostSlugs, getAllNoteworthyPosts } from '@/lib/ghost'
 import { resolveUrl } from '@/utils/routing'
-
 import { ISeoImage, seoImage } from '@/components/meta/seoImage'
 import { processEnv } from '@/lib/processEnv'
 import { BodyClass } from '@/components/helpers/BodyClass'
 import { PostLayout } from '@/components/layouts/PostLayout'
 import { AsideLayout } from '@/components/layouts/AsideLayout'
-
 
 /**
  *
@@ -41,10 +37,9 @@ interface PostOrPageProps {
 
 const PostIndex = ({ cmsData }: PostOrPageProps) => {
   const router = useRouter()
-  const isLinked = cmsData.post.tags?.some((tag) => (tag.name === `#linked` || tag.name === `#twitter`))
+  const isAside = cmsData.post.tags?.some((tag) => (tag.name === `#linked` || tag.name === `#aside` || tag.name === `#twitter`))
   if (router.isFallback) return <div>Loading...</div>
-
-  if (isLinked) {
+  if (isAside) {
     return <AsideLayout cmsData={cmsData} />
   } else {
     return <PostLayout cmsData={cmsData} />

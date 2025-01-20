@@ -52,8 +52,12 @@
 }
 
 .gh-content {
+    p {
+        @apply text-lg;
+        line-height: 1.8;
+    }
     &>*+* {
-        margin-top: 2vmin;
+        margin-top: 4vmin;
     }
     &>[id]+* {
         margin-top: 1.5rem;

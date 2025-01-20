@@ -6,8 +6,8 @@ import { jsx, jsxs } from 'react/jsx-runtime'
 import { Node } from 'unist'
 import ReactGist from 'react-gist'
 
-import { NextLink } from './helpers/NextLink'
-import { NextImage } from './helpers/NextImage'
+import { NextLink } from '@/components/helpers/NextLink'
+import { NextImage } from '@/components/helpers/NextImage'
 
 const gist_regex = /https:\/\/gist.github.com\/\S+\/([a-f0-9]+)\.js/g
 
@@ -38,11 +38,47 @@ const renderAst = unified().use(rehypeReact as any, options)
 
 interface RenderContentProps {
   htmlAst: Node | null
+  isPreview?: boolean
 }
 
-export const RenderContent = ({ htmlAst }: RenderContentProps) => {
+interface CommentNode extends Node {
+  type: `comment`;
+  value: string;
+}
+
+interface ParentNode extends Node {
+  children?: Node[];
+}
+
+const stripAfterMembersOnly = (node: Node): Node | null => {
+  if (!node || typeof node !== `object` || !(`children` in node)) return node
+
+  const children = (node as ParentNode).children || []
+  const processedChildren: Node[] = []
+
+  for (const child of children) {
+    if (child.type === `comment` && (child as CommentNode).value === `members-only`) {
+      break
+    }
+    if (`children` in child) {
+      const processedChild = stripAfterMembersOnly(child)
+      if (processedChild) {
+        processedChildren.push(processedChild)
+      }
+    } else {
+      processedChildren.push(child)
+    }
+  }
+
+  return { ...(node as ParentNode), children: processedChildren } as ParentNode
+}
+
+
+export const RenderContent = ({ htmlAst, isPreview = false }: RenderContentProps) => {
   if (!htmlAst) return null
-  return <>{renderAst.stringify(htmlAst)}</>
+  const processedAst = isPreview ? stripAfterMembersOnly(htmlAst) : htmlAst
+  return <>{renderAst.stringify(processedAst)}</>
+
 }
 
 //<div className="post-content load-external-scripts">{renderAst.stringify(htmlAst)}</div>

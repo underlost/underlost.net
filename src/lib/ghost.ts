@@ -181,7 +181,7 @@ export async function getAllPosts(props?: { limit: number; page: number }): Prom
   const posts = await api.posts.browse({
     ...postAndPageFetchOptions,
     // filter by blog tag and not featured
-    filter: `tags:blog`,
+    filter: `tags:hash-blog`,
     order: `published_at DESC`,
     ...(props && { ...props }),
   })
@@ -234,7 +234,7 @@ export async function getAllPostSlugs(): Promise<string[]> {
   const posts = await api.posts.browse({
     limit: `all`,
     fields: `slug`,
-    filter: `tags:blog`,
+    filter: `tags:hash-blog`,
   })
   return posts.map((p) => p.slug)
 }
