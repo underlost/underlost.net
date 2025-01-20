@@ -155,7 +155,7 @@ export const getStaticProps: GetStaticProps = async () => {
     page = await getPageBySlug(`homepage`)
     settings = await getAllSettings()
     posts = await getAllPosts({ limit: 6, page: 1 })
-    featuredPosts = await getAllFeatredPosts({ limit: 1 })
+    featuredPosts = await getAllFeatredPosts({ limit: 2 })
     tiers = await getAllTiers()
   } catch (error) {
     throw new Error(`Index creation failed.`)

@@ -342,7 +342,7 @@ export async function getAllNoteworthyPosts(props?: { limit: number }): Promise<
 // Featured Posts
 export async function getAllFeatredPosts(props?: { limit: number }): Promise<GhostPostsOrPages> {
   const pages = await api.posts.browse({
-    filter: `tags:featured`,
+    filter: `tags:hash-featured`,
     order: `published_at DESC`,
     ...postAndPageFetchOptions,
     ...(props && { ...props }),
