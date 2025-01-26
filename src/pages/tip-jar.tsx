@@ -29,9 +29,9 @@ export default function TipJarPage({ cmsData }: ErrorPageProps) {
   if (router.isFallback) return <div>Loading...</div>
 
   const { settings, seoImage } = cmsData
-  const title = `Page Not Found - ${settings.title}`
-  const meta_title = `Page Not Found - ${settings.title}`
-  const meta_description = `The page you are looking for does not exist.`
+  const title = `Tip Jar - ${settings.title}`
+  const meta_title = `Tip Jar - ${settings.title}`
+  const meta_description = `Help support underlost.net and Tyler's random projects on the internet.`
 
   return (
     <Layout isHome={false} settings={settings} bodyClass="tag-color-scheme-g 404-page" image="/images/background_duotone.jpg">

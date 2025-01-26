@@ -42,12 +42,12 @@ interface RenderContentProps {
 }
 
 interface CommentNode extends Node {
-  type: `comment`;
-  value: string;
+  type: `comment`
+  value: string
 }
 
 interface ParentNode extends Node {
-  children?: Node[];
+  children?: Node[]
 }
 
 const stripAfterMembersOnly = (node: Node): Node | null => {
@@ -73,12 +73,10 @@ const stripAfterMembersOnly = (node: Node): Node | null => {
   return { ...(node as ParentNode), children: processedChildren } as ParentNode
 }
 
-
 export const RenderContent = ({ htmlAst, isPreview = false }: RenderContentProps) => {
   if (!htmlAst) return null
   const processedAst = isPreview ? stripAfterMembersOnly(htmlAst) : htmlAst
   return <>{renderAst.stringify(processedAst)}</>
-
 }
 
 //<div className="post-content load-external-scripts">{renderAst.stringify(htmlAst)}</div>

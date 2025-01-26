@@ -13,10 +13,11 @@ const TipForm = () => {
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState(``)
   const [successMessage, setSuccessMessage] = useState(``)
-  const [tipAmountValue, setTipAmountValue] = useState(``) // tip amount
+  const [tipAmountValue, setTipAmountValue] = useState(`8.00`) // tip amount
   const [name, setName] = useState(``)
   const [email, setEmail] = useState(``)
-  
+  const [subscribe, setSubscribe] = useState(true)
+
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault()
     setLoading(true)
@@ -50,7 +51,7 @@ const TipForm = () => {
             tipAmount: tipAmount,
             email: email,
             name: name,
-            subscribe: false,
+            subscribe: subscribe,
           }),
         })
         const { e, message } = await res.json()
@@ -85,7 +86,15 @@ const TipForm = () => {
         <form onSubmit={handleSubmit}>
           <input aria-label="Name" placeholder="Name" type="text" required value={name} onChange={(e) => setName(e.target.value)} className="text-field w-full mb-3" />
           <input aria-label="Email" placeholder="Email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="text-field w-full mb-3" />
-          <input aria-label="Tip amount" placeholder="$5.00" type="number" required className="text-field w-full mb-3" value={tipAmountValue} onChange={(e) => setTipAmountValue(e.target.value)} />
+          <input
+            aria-label="Tip amount"
+            placeholder="$5.00"
+            type="number"
+            required
+            className="text-field w-full mb-3"
+            value={tipAmountValue}
+            onChange={(e) => setTipAmountValue(e.target.value)}
+          />
           <div className="text-field w-full mb-3">
             <CardElement
               options={{
@@ -104,11 +113,19 @@ const TipForm = () => {
               }}
             />
           </div>
+
+          <div className="flex items-center my-4">
+            <input id="default-checkbox" type="checkbox" checked={subscribe} className="w-4 h-4 rounded-sm focus:ring-blue-500 focus:ring-2" onChange={() => setSubscribe(!subscribe)} />
+            <label htmlFor="default-checkbox" className="ms-2 text-sm font-medium">
+              Subscribe to periodic email updates from underlost.net?
+            </label>
+          </div>
+
           <button type="submit" disabled={!stripe} className="btn btn-lg w-full mb-5">
             Leave a tip
           </button>
           <p className="text-sm">
-            Payments are submitted through Stripe. No credit card information is stored on underlost.net. For full transparency all code is freely available to view on{` `}
+            Payments are submitted through Stripe. No credit card information is stored on underlost.net. For full transparency, all code is freely available to view on{` `}
             <a className="underline" target="_blank" rel="noreferrer" href="https://github.com/underlost/underlost.net">
               Github
             </a>
@@ -126,11 +143,11 @@ const TipButton = () => (
   <>
     <div className="mt-2 max-w-lg mx-auto">
       <p className="mb-5 text-lg">
-          Most content published on this site will always remain free. If you come across something that has helped or inspired you though, consider showing your support! Or{` `}
+        Most content published on this site will always remain free. If you come across something that has helped or inspired you though, consider showing your support! Or{` `}
         <Link href="/membership/" className="underline">
-            learn more about the membership program
+          learn more about the membership program
         </Link>
-          .
+        .
       </p>
       <Elements stripe={stripePromise}>
         <TipForm />

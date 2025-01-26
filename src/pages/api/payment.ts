@@ -1,9 +1,34 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Stripe from 'stripe'
+import GhostAdminAPI from '@tryghost/admin-api'
+import mailgun from 'mailgun-js'
+
+import { getAllSettings } from '@/lib/ghost'
+import { generateToken } from '@/utils/token'
 
 export default async function handler( req: NextApiRequest, res: NextApiResponse) {
   try {
-    const { paymentMethodId, tipAmount, email, name } = req.body
+    const { paymentMethodId, tipAmount, email, name, subscribe } = req.body
+
+    const {
+      CMS_GHOST_API_URL,
+      CMS_GHOST_ADMIN_API_KEY,
+      SITE_SECRET_KEY,
+      SITE_URL,
+      MAILGUN_API_KEY,
+      MAILGUN_DOMAIN,
+    } = process.env
+
+    if (
+      !CMS_GHOST_API_URL ||
+      !CMS_GHOST_ADMIN_API_KEY ||
+      !SITE_SECRET_KEY ||
+      !SITE_URL ||
+      !MAILGUN_API_KEY ||
+      !MAILGUN_DOMAIN
+    ) {
+      throw new Error(`Missing required environment variables`)
+    }
 
     if (!email) {
       return res.status(400).json({ message: `Email is required` })
@@ -45,6 +70,56 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
       },
       
     })
+
+    const mailgunClient = mailgun({ apiKey: MAILGUN_API_KEY, domain: MAILGUN_DOMAIN })
+    const settings = await getAllSettings()
+
+    if (subscribe) {
+      // Initialize Ghost Admin API
+      const api = new GhostAdminAPI({
+        url: CMS_GHOST_API_URL,
+        key: CMS_GHOST_ADMIN_API_KEY,
+        version: `v5.0`,
+      })
+
+      const memberData = {
+        email,
+        name: name || email,
+        note: `Subscribed via website`,
+        labels: [`unverified`, `free`],
+        newsletters: [],
+      }
+
+      const memberOptions = {
+        send_email: false,
+        email_type: `subscribe`,
+      }
+
+      const member = await api.members.add(memberData, memberOptions)
+
+      const expiry = Date.now() + 24 * 60 * 60 * 1000 // 24 hours
+      const token = generateToken(email, expiry, SITE_SECRET_KEY)
+      const confirmationLink = `${SITE_URL}/members/verify?token=${encodeURIComponent(token)}&action=signup`
+
+      const emailSubscribeData = {
+        from: `${settings.title} <no-reply@${MAILGUN_DOMAIN}>`,
+        to: email,
+        subject: `Complete your sign up`,
+        text: `Signup here: ${confirmationLink}`,
+      }
+
+      await mailgunClient.messages().send(emailSubscribeData)
+
+    }
+
+    const emailData = {
+      from: `${settings.title} <no-reply@${MAILGUN_DOMAIN}>`,
+      to: email,
+      subject: `Thank you for supporting underlost.net!`,
+      text: `Thank you for your support! Your tip of $${tipAmount / 100} has been received. If you also subscribed, please check your email to confirm your subscription.`,
+    }
+
+    await mailgunClient.messages().send(emailData)
 
     //console.log(`paymentIntent:`, paymentIntent)
     if (paymentIntent.status !== `succeeded`) {

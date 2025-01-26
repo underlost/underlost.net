@@ -379,7 +379,7 @@ export async function getPostBySlug(slug: string): Promise<GhostPostOrPage | nul
     })
     // older Ghost versions do not throw error on 404
     if (!post) return null
-    const { url } = await getAllSettings()
+    const url = process.env.CMS_GHOST_API_URL
     result = await normalizePost(post, (url && urlParse(url)) || undefined)
   } catch (e) {
     const error = e as { response?: { status: number } }
@@ -398,7 +398,7 @@ export async function getPageBySlug(slug: string): Promise<GhostPostOrPage | nul
     })
     // older Ghost versions do not throw error on 404
     if (!page) return null
-    const { url } = await getAllSettings()
+    const url = process.env.CMS_GHOST_API_URL
     result = await normalizePost(page, (url && urlParse(url)) || undefined)
   } catch (e) {
     const error = e as { response?: { status: number } }
@@ -418,7 +418,7 @@ export async function getPortfolioPageBySlug(slug: string): Promise<GhostPostOrP
     })
     // older Ghost versions do not throw error on 404
     if (!page) return null
-    const { url } = await getAllSettings()
+    const url = process.env.CMS_GHOST_API_URL
     result = await normalizePost(page, (url && urlParse(url)) || undefined)
   } catch (e) {
     const error = e as { response?: { status: number } }

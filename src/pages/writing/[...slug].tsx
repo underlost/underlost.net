@@ -90,19 +90,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         bodyClass: BodyClass({ tags }),
       },
     },
-    ...(processEnv.isr.enable && { revalidate: processEnv.isr.revalidate }), // re-generate at most once every revalidate second
+    ...(processEnv.isr.enable && { revalidate: processEnv.isr.revalidate }),
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { enable, maxNumberOfPages } = processEnv.isr
   const limit = pLimit(5)
-
   const pages = await getAllPosts()
   const settings = await getAllSettings()
   const { url: cmsUrl } = settings
-  //const pageRoutes = (pages as GhostPostsOrPages).map(({ slug, url }) => resolveUrl({ cmsUrl, collectionPath: `writing/`, slug, url }))
-
   const pageRoutes = await Promise.all(
     pages.map((page) =>
       limit(() =>

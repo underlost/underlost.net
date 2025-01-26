@@ -1,4 +1,3 @@
-
 import { GetStaticProps } from 'next'
 import Script from 'next/script'
 import Image from 'next/image'
@@ -14,7 +13,6 @@ import { BodyClass } from '@/components/helpers/BodyClass'
 import { PostClass } from '@/components/helpers/PostClass'
 import { RenderContent } from '@/components/RenderContent'
 import { SubscribePortal } from '@/components/membership/SubscribePortal'
-
 
 /**
  *
@@ -92,7 +90,6 @@ export default function MembershipPage({ cmsData }: MembershipPageProps) {
           </section>
         </div>
       </article>
-
     </Layout>
   )
 }
