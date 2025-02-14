@@ -357,6 +357,7 @@ export async function getTagBySlug(slug: string): Promise<Tag> {
     slug,
   })
 }
+
 export async function getAuthorBySlug(slug: string): Promise<GhostAuthor> {
   const author = await api.authors.read({
     ...tagAndAuthorFetchOptions,

@@ -38,7 +38,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
     if (!STRIPE_SECRET_KEY) {
       throw new Error(`Stripe key is not defined`)
     }
-    const stripe = new Stripe(STRIPE_SECRET_KEY, { apiVersion: `2024-12-18.acacia` })
+    const stripe = new Stripe(STRIPE_SECRET_KEY, { apiVersion: `2025-01-27.acacia` })
 
     const price = await stripe.prices.create({
       product: `prod_RXFLoZ20kX5Uy7`, // product id

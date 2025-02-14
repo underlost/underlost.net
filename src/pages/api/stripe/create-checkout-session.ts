@@ -34,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       throw new Error(`Missing required environment variables`)
     }
 
-    const stripe = new Stripe(STRIPE_SECRET_KEY, { apiVersion: `2024-12-18.acacia` })
+    const stripe = new Stripe(STRIPE_SECRET_KEY, { apiVersion: `2025-01-27.acacia` })
 
     // Fetch all products from Stripe
     const products = await stripe.products.list()
