@@ -9,6 +9,13 @@ import { ghostAPIUrl, ghostAPIKey, processEnv, ProcessEnvProps } from './process
 import { imageDimensions, normalizedImageUrl, Dimensions } from './images'
 import { IToC } from './toc'
 
+import { Redis } from '@upstash/redis'
+
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+})
+
 export interface NextImage {
   url: string
   dimensions: Dimensions
@@ -372,41 +379,57 @@ export async function getAuthorBySlug(slug: string): Promise<GhostAuthor> {
 }
 
 export async function getPostBySlug(slug: string): Promise<GhostPostOrPage | null> {
-  let result: GhostPostOrPage
+  const cacheKey = `post:${slug}`
   try {
+    // Try to fetch from Redis cache
+    const cachedPost = await redis.get(cacheKey)
+    if (cachedPost) {
+      return JSON.parse(typeof cachedPost === `string` ? cachedPost : JSON.stringify(cachedPost))
+    }
+
+    // If not cached, fetch from Ghost API
     const post = await api.posts.read({
       ...postAndPageFetchOptions,
       slug,
     })
-    // older Ghost versions do not throw error on 404
     if (!post) return null
     const url = process.env.CMS_GHOST_API_URL
-    result = await normalizePost(post, (url && urlParse(url)) || undefined)
+    const result = await normalizePost(post, (url && urlParse(url)) || undefined)
+    // Store in Redis with an expiration of 1 year (31536000 seconds)
+    await redis.set(cacheKey, JSON.stringify(result), { ex: 31536000 })
+
+    return result
   } catch (e) {
     const error = e as { response?: { status: number } }
     if (error.response?.status === 404) return null
     throw e
   }
-  return result
 }
 
 export async function getPageBySlug(slug: string): Promise<GhostPostOrPage | null> {
-  let result: GhostPostOrPage
+  const cacheKey = `page:${slug}`
   try {
+    // Try to fetch from Redis cache
+    const cachedPage = await redis.get(cacheKey)
+    if (cachedPage) {
+      return JSON.parse(typeof cachedPage === `string` ? cachedPage : JSON.stringify(cachedPage))
+    }
+    // If not cached, fetch from Ghost API
     const page = await api.pages.read({
       ...postAndPageFetchOptions,
       slug,
     })
-    // older Ghost versions do not throw error on 404
     if (!page) return null
     const url = process.env.CMS_GHOST_API_URL
-    result = await normalizePost(page, (url && urlParse(url)) || undefined)
+    const result = await normalizePost(page, (url && urlParse(url)) || undefined)
+    // Store in Redis with an expiration of 1 year (31536000 seconds)
+    await redis.set(cacheKey, JSON.stringify(result), { ex: 31536000 })
+    return result
   } catch (e) {
     const error = e as { response?: { status: number } }
     if (error.response?.status === 404) return null
     throw e
   }
-  return result
 }
 
 export async function getPortfolioPageBySlug(slug: string): Promise<GhostPostOrPage | null> {
