@@ -49,7 +49,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Fetch the updated post (this will trigger re-caching in getPostBySlug)
     await getPostBySlug(slug)
     
-    return res.status(200).json({ message: `Post cache invalidated and refreshed successfully`, slug })
+    return res.status(200).json({ message: `200 Okay`, slug })
   } catch (error) {
     console.error(`Error handling webhook:`, error)
     return res.status(500).json({ error: `Internal Server Error` })
