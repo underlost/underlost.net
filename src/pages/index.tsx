@@ -107,7 +107,7 @@ export default function Home({ cmsData }: IndexProps) {
                 <div className="col-span-12 lg:col-span-6 mb-5">
                   <div className="squiggle-static s1 my-8" />
                   <p className="text-secondary font-stretch-extra-expanded text-2xl mb-11">
-                    Need help building your website? Or maybe you&apos;re looking how to build the next great web app. Wheather it&apos;s just planning or you need help fixing bugs,
+                    Need help building your website? Or maybe you&apos;re looking how to build the next great web app. Whether it&apos;s just planning or you need help fixing bugs,
                     I&apos;m here to help!
                   </p>
                   <Link className="btn btn-lg" href="/consulting/">
@@ -128,6 +128,12 @@ export default function Home({ cmsData }: IndexProps) {
         </section>
 
         <PostView title="Recent Posts" className="tag-color-scheme-c" posts={cmsData.posts} settings={settings} />
+
+        <section className="relative z-0">
+          {cmsData.featuredPosts.slice(1, 2).map((post, i) => (
+            <FeaturedPostCard key={i + 1} settings={settings} post={post} num={i + 1} />
+          ))}
+        </section>
 
         <section className="relative tag-color-scheme-i p-11">
           <div className="max-w-xl py-16 mx-auto">
@@ -155,7 +161,7 @@ export const getStaticProps: GetStaticProps = async () => {
     page = await getPageBySlug(`homepage`)
     settings = await getAllSettings()
     posts = await getAllPosts({ limit: 6, page: 1 })
-    featuredPosts = await getAllFeatredPosts({ limit: 2 })
+    featuredPosts = await getAllFeatredPosts({ limit: 3 })
     tiers = await getAllTiers()
   } catch (error) {
     throw new Error(`Index creation failed.`)
