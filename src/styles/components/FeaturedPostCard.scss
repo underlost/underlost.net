@@ -4,7 +4,7 @@
     @apply text-center my-auto py-36 relative z-20 text-white;
   }
   .post-card-title {
-    @apply font-stretch-extra-expanded text-5xl text-balance mb-4 font-black max-w-2xl mx-auto;
+    @apply font-stretch-extra-expanded text-3xl lg:text-5xl text-balance mb-4 font-black max-w-2xl mx-auto;
   }
   .post-card-excerpt {
     @apply mb-2 text-lg max-w-2xl mx-auto text-balance;
@@ -12,7 +12,6 @@
   .post-card-meta {
     @apply mb-24
   }
-
   .btn {
     @apply border-white text-white shadow-white;
   }
