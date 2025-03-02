@@ -1,6 +1,8 @@
 import { Layout } from '@/components/Layout'
 import Image from 'next/image'
 import Link from 'next/link'
+import VideoPlayer from '@/components/VideoPlayer'
+
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { SEO } from '@/components/meta/seo'
@@ -87,21 +89,7 @@ export default function Home({ cmsData }: IndexProps) {
               <div className="grid grid-cols-12 md:gap-x-11">
                 <div className="col-span-12 md:col-span-6 mb-5">
                   <div className="aspect-square z-10 relative overflow-hidden border border-DeepWoodBlue">
-                    <video
-                      width="1280"
-                      height="1020"
-                      muted
-                      autoPlay
-                      loop
-                      playsInline
-                      preload="none"
-                      className=" object-cover object-center h-full absolute inset-0"
-                      poster="/images/video-placeholder.jpg"
-                    >
-                      <source src="/video/web_reel_1.mp4" type="video/mp4" />
-                      <source src="/video/web_reel_2.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
+                    <VideoPlayer />
                   </div>
                 </div>
                 <div className="col-span-12 lg:col-span-6 mb-5">

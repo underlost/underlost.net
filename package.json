@@ -46,6 +46,7 @@
     "next": "^15.1.7",
     "next-seo": "^6.4.0",
     "next-sitemap": "^4.2.3",
+    "next-video": "^2.1.0",
     "p-limit": "^6.2.0",
     "prismjs": "^1.22.0",
     "probe-image-size": "^7.2.3",
