@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
         window.gtag(`config`, `G-YZ280RLRRY`, {
           page_path: url,
         })
-        console.log(`Page view tracked: ${url}`) // Optional: for debugging
+        //console.log(`Page view tracked: ${url}`) // Optional: for debugging
       }
     }
 

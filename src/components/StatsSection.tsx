@@ -21,16 +21,16 @@ const StatsSection = () => {
       <div className="lg:px-32 py-11 md:py-20" ref={ref}>
         <div className="grid grid-cols-12 gap-8 lg:gap-20">
           <div className="col-span-6 lg:col-span-12 flex md:block justify-center">
-            <h3 className="pl-8 md:pl-0 md:text-center font-mono font-bold uppercase my-auto">Development by the Numbers</h3>
+            <h2 className="pl-8 md:pl-0 md:text-center font-mono font-bold uppercase my-auto">Development by the Numbers</h2>
           </div>
 
           {stats.map((stat, index) => (
-            <div key={index} className={`text-center font-mono col-span-6 lg:col-span-${index < 3 ? 4 : 6}`}>
+            <p key={index} className={`text-center font-mono col-span-6 lg:col-span-${index < 3 ? 4 : 6}`}>
               <span className="block text-5xl font-bold">
                 {inView ? <CountUp start={0} end={stat.value} suffix={stat.suffix} duration={3} delay={0.5} /> : `${stat.value}${stat.suffix}`}
               </span>
               <span className="block px-5">{stat.label}</span>
-            </div>
+            </p>
           ))}
         </div>
       </div>

@@ -39,7 +39,7 @@ export const SubscribePortal = () => {
 
   const toggleSubscribe = () => {
     setIsSubscribeOpen((state) => !state)
-    console.log(`Subscribe open:`, isSubscribeOpen)
+    //console.log(`Subscribe open:`, isSubscribeOpen)
   }
 
   const togglePrices = () => {
@@ -55,7 +55,7 @@ export const SubscribePortal = () => {
       return
     }
     try {
-      console.log(`Creating Stripe Checkout session for ${tier.name}`)
+      //console.log(`Creating Stripe Checkout session for ${tier.name}`)
       const res = await fetch(`/api/stripe/create-checkout-session`, {
         method: `POST`,
         headers: {
