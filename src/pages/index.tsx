@@ -46,7 +46,7 @@ export default function Home({ cmsData }: IndexProps) {
   const featImg = page.featureImage || settings.cover_image || undefined
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass={bodyClass} className="homepage" image="/images/background_duotone.jpg">
+    <Layout isHome={true} settings={settings} bodyClass={bodyClass} className="homepage" image="/images/background_default.jpg">
       <SEO {...{ settings, seoImage, title, description }} />
 
       <div className="container">

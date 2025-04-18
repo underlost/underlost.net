@@ -178,7 +178,7 @@ export const Layout = ({ children, settings, bodyClass = ``, isHome = false, cla
 
       {image && (
         <div className="background-image">
-          <Image src={image} alt="Background Image" fill={true} />
+          <Image src={image} alt="Background Image" width={3072} height={2048} quality={100} />
         </div>
       )}
 

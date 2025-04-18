@@ -39,7 +39,7 @@ export default function PhotosIndex({ cmsData }: PhotosIndexProps) {
   if (htmlAst === undefined) throw Error(`Photography page index: htmlAst must be defined.`)
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-g" image="/images/background_duotone.jpg">
+    <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-g" image="/images/.jpg">
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
       <div className="container">
         <div className="tag-color-scheme-g container-inner">

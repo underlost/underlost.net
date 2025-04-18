@@ -41,7 +41,7 @@ export default function PortfolioIndex({ cmsData }: PortfolioIndexProps) {
   if (htmlAst === undefined) throw Error(`Portfolio page index: htmlAst must be defined.`)
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-g" image="/images/background_duotone.jpg">
+    <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-g" image="/images/.jpg">
       <SEO {...{ settings, seoImage, title }} />
 
       <div className="container">

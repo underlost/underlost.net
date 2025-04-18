@@ -34,7 +34,7 @@ export default function TipJarPage({ cmsData }: ErrorPageProps) {
   const meta_description = `Help support underlost.net and Tyler's random projects on the internet.`
 
   return (
-    <Layout isHome={false} settings={settings} bodyClass="tag-color-scheme-g 404-page" image="/images/background_duotone.jpg">
+    <Layout isHome={false} settings={settings} bodyClass="tag-color-scheme-g 404-page" image="/images/.jpg">
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
 
       <div className="container">
