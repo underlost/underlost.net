@@ -55,7 +55,7 @@ export default function LinksPage({ cmsData }: LinksPageProps) {
   if (htmlAst === undefined) throw Error(`Links page index: htmlAst must be defined.`)
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass={bodyClass} image="/images/.jpg">
+    <Layout isHome={true} settings={settings} bodyClass={bodyClass} image="/images/background_default.jpg">
       <SEO {...{ settings, seoImage, title }} />
       <div className="container">
         <article className="tag-color-scheme-c container-inner">

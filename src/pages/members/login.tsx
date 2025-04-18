@@ -79,7 +79,7 @@ export default function MembersLoginPage({ cmsData }: ErrorPageProps) {
   if (router.isFallback) return <div>Loading...</div>
 
   return (
-    <Layout isHome={false} settings={settings} bodyClass="tag-color-scheme-g login-page" image="/images/.jpg">
+    <Layout isHome={false} settings={settings} bodyClass="tag-color-scheme-g login-page" image="/images/background_default.jpg">
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
 
       <div className="container">

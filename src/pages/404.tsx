@@ -35,7 +35,7 @@ export default function ErrorPage({ cmsData }: ErrorPageProps) {
   const meta_description = `The page you are looking for does not exist.`
 
   return (
-    <Layout isHome={false} settings={settings} bodyClass="tag-color-scheme-g 404-page" image="/images/.jpg">
+    <Layout isHome={false} settings={settings} bodyClass="tag-color-scheme-g 404-page" image="/images/background_default.jpg">
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
 
       <div className="container">

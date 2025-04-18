@@ -35,7 +35,7 @@ export const LandingPageLayout = ({ children, cmsData, page_title }: LandingPage
   return (
     <>
       <SEO {...{ settings, title, seoImage }} />
-      <Layout isHome={false} settings={settings} bodyClass="tag-color-scheme-g landing-page" image="/images/.jpg">
+      <Layout isHome={false} settings={settings} bodyClass="tag-color-scheme-g landing-page" image="/images/background_default.jpg">
         <div className="container">
           <div className="tag-color-scheme-g container-inner">
             <div className="border-color container-border">

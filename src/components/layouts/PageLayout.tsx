@@ -39,7 +39,7 @@ export const PageLayout = ({ cmsData }: PageProps) => {
   return (
     <>
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
-      <Layout isHome={false} settings={settings} bodyClass={bodyClass} image="/images/.jpg">
+      <Layout isHome={false} settings={settings} bodyClass={bodyClass} image="/images/background_default.jpg">
         <div className="container ">
           <div className="container-inner container-primary">
             <div className="border-color container-border">

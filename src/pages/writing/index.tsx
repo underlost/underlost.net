@@ -48,7 +48,7 @@ export default function WritingIndex({ cmsData }: WritingIndexProps) {
   if (htmlAst === undefined) throw Error(`Writing page index: htmlAst must be defined.`)
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-c" image="/images/.jpg">
+    <Layout isHome={true} settings={settings} bodyClass="tag-color-scheme-c" image="/images/background_default.jpg">
       <SEO {...{ settings, title, meta_title, meta_description, seoImage }} />
 
       <div className="container">

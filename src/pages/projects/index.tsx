@@ -46,7 +46,7 @@ export default function ProjectsIndex({ cmsData }: ProjectsIndexProps) {
   if (htmlAst === undefined) throw Error(`Projects page index: htmlAst must be defined.`)
 
   return (
-    <Layout isHome={true} settings={settings} bodyClass={bodyClass} image="/images/.jpg">
+    <Layout isHome={true} settings={settings} bodyClass={bodyClass} image="/images/background_default.jpg">
       <SEO {...{ settings, seoImage, title }} />
       <div className="container">
         <div className="tag-color-scheme-k container-inner">
