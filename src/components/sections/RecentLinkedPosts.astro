@@ -1,0 +1,12 @@
+---
+import { getLinkedPosts } from "@/utils/ghost";
+import EntryInlineList from "@/components/entries/EntryInlineList.astro";
+const posts = await getLinkedPosts();
+---
+
+<EntryInlineList
+  title=""
+  className="tag-color-scheme-f"
+  posts={posts.posts}
+  collectionPath="writing/"
+/>

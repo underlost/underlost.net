@@ -1,0 +1,149 @@
+---
+import SvgCheck from "@/components/consulting/SvgCheck.astro";
+import SvgCheckInverted from "@/components/consulting/SvgCheckInverted.astro";
+---
+
+<div class="max-w-7xl mx-auto mb-11 lg:mb-24 lg:px-5 relative z-10">
+  <div
+    class="lg:grid lg:grid-cols-4 md:grid-cols-2 max-lg:gap-8 mt-8 max-md:max-w-sm max-md:mx-auto gap-x-5"
+  >
+    <div class="bg-transparent rounded-3xl overflow-hidden p-8 my-4 border">
+      <div class="text-left">
+        <h4 class="font-black text-2xl">Indie Advice</h4>
+        <h3 class="font-semibold text-2xl mt-4">$99</h3>
+        <p class="text-sm mt-2">
+          Ideal for gaining insight on how you can start refining your brand or
+          idea.
+        </p>
+        <a
+          href="/consulting/indie-advice/"
+          type="button"
+          class="block btn text-center w-full mt-8 px-5 py-2.5 text-sm rounded-full"
+          >Book Now</a
+        >
+      </div>
+
+      <div class="mt-8">
+        <h4 class="font-semibold text-lg mb-4">Includes:</h4>
+        <ul class="space-y-4">
+          <li class="flex text-sm">
+            <SvgCheck />
+            Video Q & A (1 hour)
+          </li>
+          <li class="flex text-sm">
+            <SvgCheck />
+            Portfolio / web app critique
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-transparent rounded-3xl overflow-hidden p-8 my-4 border">
+      <div class="text-left">
+        <h4 class="font-black text-2xl">Small Sprint</h4>
+        <h3 class="font-semibold text-2xl mt-4">$299</h3>
+        <p class="text-sm mt-2">
+          Ideal for helping troubleshoot site issues such as speed problems or
+          user acquisition
+        </p>
+
+        <a
+          href="/consulting/small-sprint/"
+          type="button"
+          class="block btn text-center w-full mt-8 px-5 py-2.5 text-sm rounded-full"
+          >Book Now</a
+        >
+      </div>
+
+      <div class="mt-8">
+        <h4 class="font-semibold text-lg mb-4">Includes:</h4>
+        <ul class="space-y-4">
+          <li class="flex text-sm">
+            <SvgCheck />
+            Video Q & A (up to 2 hours)
+          </li>
+          <li class="flex text-sm">
+            <SvgCheck />
+            Website/Web app Critique
+          </li>
+          <li class="flex text-sm">
+            <SvgCheck />
+            Full website audit and reccomendations
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="bg-wisteriabloom-blue text-white lg:scale-[1.05] shadow-[0_2px_40px_-4px_rgba(93,96,127,0.2)] my-4 rounded-3xl overflow-hidden p-8"
+    >
+      <div class="text-left">
+        <h4 class="font-black text-2xl">Essentials</h4>
+        <h3 class="font-semibold text-2xl mt-4 flex">
+          $670<sub class="text-xs font-medium ml-1">/ Month</sub>
+        </h3>
+        <p class="text-sm mt-2">
+          Ideal for helping with basic site additions and content updates
+        </p>
+        <a
+          href="/consulting/essentials-package/"
+          type="button"
+          class="block btn btn-inverted text-center w-full mt-8 px-5 py-2.5 text-sm rounded-full"
+          >Book Now</a
+        >
+      </div>
+
+      <div class="mt-8">
+        <h4 class="font-semibold text-lg mb-4">Includes:</h4>
+        <ul class="space-y-4">
+          <li class="flex text-sm">
+            <SvgCheckInverted />
+            Weekly video call check-ins & email support
+          </li>
+          <li class="flex text-sm">
+            <SvgCheckInverted />
+            Help with new features and optimizing website speed and functionality,
+            including SEO
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-transparent rounded-3xl overflow-hidden p-8 my-4 border">
+      <div class="text-left">
+        <h4 class="font-black text-2xl">Accelerator</h4>
+        <h3 class="font-semibold text-2xl mt-4 flex">
+          $1995<sub class="text-xs font-black ml-1">/ Month</sub>
+        </h3>
+        <p class="text-sm mt-2">
+          Ideal for helping ship your SAAS, web app, blog or portfolio and
+          larger feature requests
+        </p>
+        <a
+          href="/consulting/accelerator-package/"
+          type="button"
+          class="block btn btn-inverse text-center w-full mt-8 px-5 py-2.5 text-sm rounded-full"
+          >Book Now</a
+        >
+      </div>
+
+      <div class="mt-8">
+        <h4 class="font-semibold text-lg mb-4">Includes:</h4>
+        <ul class="space-y-4">
+          <li class="flex text-sm">
+            <SvgCheck />
+            Everything in Essentials, plus:
+          </li>
+          <li class="flex text-sm">
+            <SvgCheck />
+            Live Slack/Discord chat support
+          </li>
+          <li class="flex text-sm">
+            <SvgCheck />
+            Unlimited website development and feature requests
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

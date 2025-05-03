@@ -1,0 +1,34 @@
+---
+import { getAllProjects } from "@/utils/ghost";
+import FullPageLayout from "@/layouts/FullPageLayout.astro";
+import { BodyClass } from "@/utils/BodyClass";
+
+export async function getStaticPaths() {
+  const pages = await getAllProjects();
+
+  return pages.map((page) => {
+    return {
+      params: {
+        slug: page.slug,
+      },
+      props: {
+        page: page,
+      },
+    };
+  });
+}
+
+const { page } = Astro.props;
+const tags =
+  (page &&
+    page.tags?.map((tag) => ({
+      id: tag.id,
+      name: tag.name,
+      slug: tag.slug,
+    }))) ||
+  undefined;
+
+const bodyClass = BodyClass({ isPost: true, tags });
+---
+
+<FullPageLayout post={page} bodyClass={`layout-fullbleed ${bodyClass}`} />

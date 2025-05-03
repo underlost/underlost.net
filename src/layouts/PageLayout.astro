@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import PageHeader from "@/components/pages/PageHeader.astro";
+import { renderHtmlFromAst } from "@/utils/renderHtmlAst";
+
+const { post, bodyClass } = Astro.props;
+
+const isMembersOnly = (post.tags ?? []).some(
+  (tag: { name: string }) => tag.name === "#members"
+);
+const html = await renderHtmlFromAst(post.html, isMembersOnly);
+---
+
+<Layout
+  isHome={false}
+  bodyClass={bodyClass}
+  title={post.og_title || post.title}
+  description={post.og_description || post.meta_description || post.excerpt}
+  ogImage={post?.og_image || post?.feature_image}
+  twitterImage={post?.twitter_image || post?.feature_image}
+  image="/images/background_default.jpg"
+>
+  <div class="container-wrapper">
+    <div class="container-inner container-primary">
+      <div class="border-color container-border">
+        {
+          post.feature_image && (
+            <figure class="featured-image-blob">
+              <Image
+                src={post.feature_image}
+                alt={post.title}
+                height={1200}
+                width={1800}
+                loading={"eager"}
+              />
+            </figure>
+          )
+        }
+        <article class="container-content gh-canvas">
+          <PageHeader title={post.title} className="h1" />
+          <section
+            class="page-content load-external-scripts gh-content"
+            set:html={html}
+          />
+        </article>
+      </div>
+    </div>
+  </div>
+</Layout>

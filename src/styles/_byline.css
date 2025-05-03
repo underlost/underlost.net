@@ -1,0 +1,8 @@
+.byline-meta-content {
+  @apply mt-3 font-mono text-xs text-center;
+}
+
+.byline-reading-time,
+.byline-meta-date {
+  @apply block;
+}

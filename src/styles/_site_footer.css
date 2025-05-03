@@ -1,0 +1,13 @@
+.site-footer {
+  @apply relative z-10 ;
+  
+  .site-nav {
+    @apply lg:flex font-bold;
+  }
+  .site-nav-menu {
+    @apply mx-auto lg:flex gap-8
+  }
+  .menu-item-link {
+    @apply hover:underline
+  }
+}

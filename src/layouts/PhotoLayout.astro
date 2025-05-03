@@ -1,0 +1,78 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "@/layouts/Layout.astro";
+import { PostClass } from "@/utils/PostClass.ts";
+import { renderHtmlFromAst } from "@/utils/renderHtmlAst";
+import Share from "@/components/common/Share.astro";
+
+const { post, bodyClass } = Astro.props;
+
+const postClass = PostClass({
+  tags: post.tags,
+  isFeatured: post.featured,
+});
+
+const isMembersOnly = (post.tags ?? []).some(
+  (tag: { name: string }) => tag.name === "#members"
+);
+
+const html = await renderHtmlFromAst(post.html, isMembersOnly);
+
+//console.log("post", post);
+---
+
+<Layout
+  bodyClass={bodyClass}
+  title={post.og_title || post.title}
+  description={post.og_description || post.meta_description || post.excerpt}
+>
+  <article class={`post-full lg:my-11 ${postClass}`}>
+    <header class="entry-header text-center container mb-11">
+      <div class="entry-full-content">
+        {
+          post.primary_tag && (
+            <div class="entry-primary-tag">
+              <a href={`/tag/${post.primary_tag.slug}`}>
+                {post.primary_tag.name}
+              </a>
+            </div>
+          )
+        }
+        <h1 class="h3 mb-8">{post.title}</h1>
+      </div>
+      <Share url={post.url} title={post.title} tags={post.tags} />
+    </header>
+
+    <section class="post-full-content mb-11">
+      {
+        post.feature_image && (
+          <div class="entry-full-image gh-content gh-canvas mb-11">
+            <figure class="kg-width-wide">
+              <Image
+                loading="eager"
+                decoding="async"
+                src={post.feature_image}
+                alt={post.title}
+                width={1800}
+                height={1200}
+              />
+            </figure>
+          </div>
+        )
+      }
+
+      <div
+        class="post-content load-external-scripts gh-content gh-canvas"
+        set:html={html}
+      />
+      {
+        isMembersOnly && (
+          <div class="members-only">
+            <p>This content is for members only. Please subscribe to view.</p>
+          </div>
+        )
+      }
+    </section>
+  </article>
+</Layout>

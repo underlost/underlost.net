@@ -1,0 +1,37 @@
+---
+import SocialLinks from "@/components/common/SocialLinks.astro";
+import Navigation from "@/components/common/Navigation.astro";
+
+const { title, navigation, secondaryNavigation } = Astro.props;
+
+const modifiedDate = new Date(
+  import.meta.env.PUBLIC_MODIFIED_DATE
+).toLocaleDateString("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+});
+---
+
+<footer class="site-footer text-center">
+  <SocialLinks />
+
+  <Navigation navigation={navigation} navClass="nav-primary" />
+  <Navigation navigation={secondaryNavigation} navClass="nav-secondary" />
+
+  <div class="site-copyright text-xs py-5 px-10 relative">
+    <div class="relative z-10">
+      <p class="text-balance">
+        <a href="/">{title}</a> Copyright © Tyler Rilling 2001 - 2025. Published
+        with Ghost. <br /> View
+        <a class="underline" href="/terms/"> Term of Use </a> and <a
+          class="underline"
+          href="/privacy/">Privacy Policy</a
+        >.
+      </p>
+      <br /> Site last updated: <a
+        href="https://github.com/underlost/underlost.net/">{modifiedDate}</a
+      >. ❤️
+    </div>
+  </div>
+</footer>

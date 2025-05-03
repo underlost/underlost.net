@@ -1,0 +1,34 @@
+---
+import { getAllPhotoPosts } from "@/utils/ghost";
+import { BodyClass } from "@/utils/BodyClass";
+import PhotoLayout from "@/layouts/PhotoLayout.astro";
+
+export async function getStaticPaths() {
+  const pages = await getAllPhotoPosts();
+
+  return pages.map((page) => {
+    return {
+      params: {
+        slug: page.slug,
+      },
+      props: {
+        page: page,
+      },
+    };
+  });
+}
+
+const { page } = Astro.props;
+const tags =
+  (page &&
+    page.tags?.map((tag) => ({
+      id: tag.id,
+      name: tag.name,
+      slug: tag.slug,
+    }))) ||
+  undefined;
+
+const bodyClass = BodyClass({ isPost: true, tags });
+---
+
+<PhotoLayout post={page} bodyClass={bodyClass} />

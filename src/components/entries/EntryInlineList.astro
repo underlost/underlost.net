@@ -1,0 +1,19 @@
+---
+import EntryAside from "@/components/entries/EntryAside.astro";
+
+const { title, posts, className, collectionPath } = Astro.props;
+---
+
+<section class={`${className} px-4 lg:px-8 pt-24 pb-16`}>
+  {title && <h2 class="h1 text-center uppercase">{title}</h2>}
+
+  <div class="max-w-5xl mx-auto -translate-y-4 lg:-translate-y-6">
+    <span>
+      {
+        posts.map((post: any, i: any) => (
+          <EntryAside post={post} num={i} collectionPath={collectionPath} />
+        ))
+      }
+    </span>
+  </div>
+</section>

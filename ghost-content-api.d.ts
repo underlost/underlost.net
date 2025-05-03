@@ -165,7 +165,7 @@ declare module "@tryghost/content-api" {
     export interface PostOrPage extends Identification, Excerpt, CodeInjection, Metadata, SocialMedia {
         // Identification
         uuid?: string | undefined;
-        comment_id?: string | undefined;
+
         featured?: boolean | undefined;
 
         // Post or Page

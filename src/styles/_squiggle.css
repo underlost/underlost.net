@@ -1,0 +1,41 @@
+.squiggle {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-image: url('/images/svg/s1.svg');
+  }
+
+  &.s3 {
+    &::after {
+      background-image: url('/images/svg/s3.svg');
+    }
+  }
+
+  &.s4 {
+    &::after {
+      background-image: url('/images/svg/s4.svg');
+    }
+  }
+
+  &.s12 {
+    &::after {
+      background-image: url('/images/svg/s12.svg');
+    }
+  }
+}
+
+.squiggle-static {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-image: url('/images/svg/s2.svg');
+  }
+}

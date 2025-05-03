@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+import {
+  getPage,
+  getCurrentProjectPosts,
+  getOldProjectPosts,
+} from "@/utils/ghost";
+import { BodyClass } from "@/utils/BodyClass";
+import PageHeader from "@/components/pages/PageHeader.astro";
+import { renderHtmlFromAst } from "@/utils/renderHtmlAst";
+
+import Layout from "@/layouts/Layout.astro";
+import EntryGrid from "@/components/entries/EntryGrid.astro";
+import EntryList from "@/components/entries/EntryList.astro";
+
+const page = (await getPage(`projects`)) || ({} as any);
+const currentProjects = await getCurrentProjectPosts();
+const oldProjects = await getOldProjectPosts();
+
+const tags =
+  (page &&
+    page.tags?.map((tag: { id: any; name: any; slug: any }) => ({
+      id: tag.id,
+      name: tag.name,
+      slug: tag.slug,
+    }))) ||
+  undefined;
+
+const bodyClass = BodyClass({ page: page, tags });
+const html = await renderHtmlFromAst(page.html);
+---
+
+<Layout
+  bodyClass={`page-template page-projects ${bodyClass}`}
+  isHome={false}
+  title={page.og_title || page?.title || "Current Projects"}
+  description={page.og_description || page.meta_description || page.excerpt}
+  ogImage={page?.og_image || page?.feature_image}
+  twitterImage={page?.twitter_image || page?.feature_image}
+  image="/images/background_default.jpg"
+>
+  <div class="container-wrapper">
+    <div class="tag-color-scheme-k container-inner">
+      <div class="border-color container-border">
+        {
+          page.feature_image && (
+            <figure class="featured-image-blob">
+              <Image
+                src={page.feature_image}
+                alt={page.title}
+                width={1200}
+                height={900}
+                loading={"eager"}
+              />
+            </figure>
+          )
+        }
+        <article class="container-content">
+          <PageHeader title={page.title} className="h1 uppercase" />
+          <section
+            class="project-content gh-content text-2xl"
+            set:html={html}
+          />
+        </article>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto max-md:px-8">
+        <EntryList
+          className="tag-color-scheme-k"
+          cards={false}
+          posts={currentProjects}
+          collectionPath="projects/"
+        />
+      </div>
+    </div>
+
+    <EntryGrid
+      title="Previous Projects"
+      className="tag-color-scheme-d py-16"
+      cardClass="entry--project"
+      posts={oldProjects}
+      collectionPath="projects/"
+    />
+  </div>
+</Layout>

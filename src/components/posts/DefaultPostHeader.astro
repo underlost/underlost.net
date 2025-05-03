@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+
+const { title, excerpt, primary_tag, feature_image } = Astro.props;
+
+// Get length of title
+const titleLength = title.length;
+const h1Class = titleLength > 50 ? "h1-xl" : "h2";
+---
+
+<div class="container mb-8 mt-16">
+  {
+    feature_image ? (
+      <header class="entry-header mb-8 lg:mb-16 px-3 lg:px-0">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-24">
+          <div class="lg:order-2 lg:col-span-8">
+            {feature_image && (
+              <div class="post-full-feature-image mb-8">
+                <Image
+                  src={feature_image}
+                  alt={title}
+                  loading="eager"
+                  width={1200}
+                  height={900}
+                />
+              </div>
+            )}
+          </div>
+          <div class="lg:order-1 rounded-lg lg:col-span-4">
+            {primary_tag && (
+              <div class="entry-primary-tag">
+                <a href={`/tag/${primary_tag.slug}`}>{primary_tag.name}</a>
+              </div>
+            )}
+            <h1 class="h5 mb-4 lg:mb-11">{title}</h1>
+            {excerpt && (
+              <p class="entry-custom-excerpt text-xl">{excerpt}</p>
+            )}
+          </div>
+        </div>
+      </header>
+    ) : (
+      <header class="gh-canvas">
+        <h1 class="h6 mb-5">{title}</h1>
+        {excerpt && <p class="entry-custom-excerpt text-xl">{excerpt}</p>}
+      </header>
+    )
+  }
+</div>

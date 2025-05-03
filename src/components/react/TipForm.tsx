@@ -1,0 +1,156 @@
+import React, { useState, Fragment } from 'react'
+import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js'
+import { Elements } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
+
+const stripePromise = loadStripe(import.meta.env.PUBLIC_STRIPE_PUBLIC_KEY || ``)
+
+//console.log('PUBLIC_STRIPE_PUBLIC_KEY:', import.meta.env.PUBLIC_STRIPE_PUBLIC_KEY);
+//console.log('stripePromise:', stripePromise);
+
+const TipFormInner = () => {
+  const stripe = useStripe()
+  const elements = useElements()
+
+  const [loading, setLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState(``)
+  const [successMessage, setSuccessMessage] = useState(``)
+  const [tipAmountValue, setTipAmountValue] = useState(`8.00`) // tip amount
+  const [name, setName] = useState(``)
+  const [email, setEmail] = useState(``)
+  const [subscribe, setSubscribe] = useState(true)
+
+  
+
+  const handleSubmit = async (event: { preventDefault: () => void }) => {
+    event.preventDefault()
+    setLoading(true)
+
+    if (!stripe || !elements || !tipAmountValue || !name || !email) {
+      return
+    }
+
+    try {
+      const cardElement = elements.getElement(CardElement)
+      if (!cardElement) {
+        setErrorMessage(`Card information is missing`)
+        setLoading(false)
+        return
+      }
+      const { error, paymentMethod } = await stripe.createPaymentMethod({
+        type: `card`,
+        card: cardElement,
+      })
+      if (error) {
+        setErrorMessage(error.message || `An unknown error occurred`)
+      } else {
+        const tipAmount = parseFloat(tipAmountValue) * 100 //convert to cents
+        const res = await fetch(`/api/payment`, {
+          method: `POST`,
+          headers: {
+            'Content-Type': `application/json`,
+          },
+          body: JSON.stringify({
+            paymentMethodId: paymentMethod.id,
+            tipAmount: tipAmount,
+            email: email,
+            name: name,
+            subscribe: subscribe,
+          }),
+        })
+        const { e, message } = await res.json()
+        if (e) {
+          setErrorMessage(e)
+          setLoading(false)
+          //console.log(error)
+        } else {
+          setSuccessMessage(message)
+          setErrorMessage(``)
+          setLoading(false)
+          //console.log(res)
+        }
+      }
+      setLoading(false)
+    } catch (error) {
+      console.error(`Payment error:`, error)
+      setLoading(false)
+      if (error instanceof Error) {
+        setErrorMessage(error.message)
+      } else {
+        setErrorMessage(`An unknown error occurred`)
+      }
+    }
+  }
+
+  return (
+    <>
+      {successMessage ? (
+        <p className="mt-2 px-4 py-2 font-bold text-wide uppercase">{successMessage}</p>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <input aria-label="Name" placeholder="Name" type="text" required value={name} onChange={(e) => setName(e.target.value)} className="text-field w-full mb-3" />
+          <input aria-label="Email" placeholder="Email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="text-field w-full mb-3" />
+          <input
+            aria-label="Tip amount"
+            placeholder="$5.00"
+            type="number"
+            required
+            className="text-field w-full mb-3"
+            value={tipAmountValue}
+            onChange={(e) => setTipAmountValue(e.target.value)}
+          />
+          <div className="text-field w-full mb-3">
+            <CardElement
+              options={{
+                style: {
+                  base: {
+                    fontSize: `16px`,
+                    color: `#424770`,
+                    '::placeholder': {
+                      color: `#aab7c4`,
+                    },
+                  },
+                  invalid: {
+                    color: `#9e2146`,
+                  },
+                },
+              }}
+            />
+          </div>
+
+          <div className="flex items-center my-4">
+            <input id="default-checkbox" type="checkbox" checked={subscribe} className="w-4 h-4 rounded-sm focus:ring-blue-500 focus:ring-2" onChange={() => setSubscribe(!subscribe)} />
+            <label htmlFor="default-checkbox" className="ms-2 text-sm font-medium">
+              Subscribe to periodic email updates from underlost.net?
+            </label>
+          </div>
+
+          <button type="submit" disabled={!stripe} className="btn btn-lg w-full mb-5">
+            Leave a tip
+          </button>
+          <p className="text-sm">
+            Payments are submitted through Stripe. No credit card information is stored on underlost.net. For full transparency, all code is freely available to view on{` `}
+            <a className="underline" target="_blank" rel="noreferrer" href="https://github.com/underlost/underlost.net">
+              Github
+            </a>
+            .
+          </p>
+        </form>
+      )}
+      {loading && <p className="font-bold text-lg mt-2">Processing payment...</p>}
+      {errorMessage && <p className="mt-2 text-red">{errorMessage}</p>}
+    </>
+  )
+}
+
+const TipForm = () => {
+  return (
+    <div>
+      <Elements stripe={stripePromise}>
+        <TipFormInner />
+      </Elements>
+  </div>
+  )
+}
+
+export default TipForm

@@ -2,6 +2,10 @@
 
 ---
 
+## 12.0.0 (04/17/25)
+
+* Migrate to Astro
+
 ## 11.0.0 (01/01/25)
 
 * Updated color scheme

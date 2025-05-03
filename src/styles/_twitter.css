@@ -1,0 +1,9 @@
+.dark {
+  .vertical-timeline-element-content {
+    @apply bg-black shadow-[0_3px_0_rgba(255,255,255,0.1)] text-white;
+  }
+
+  .vertical-timeline-element-content-arrow {
+    @apply border-r-black;
+  }
+}

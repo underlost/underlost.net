@@ -1,0 +1,80 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { PostClass } from "@/utils/PostClass.ts";
+import { renderHtmlFromAst } from "@/utils/renderHtmlAst";
+import DefaultPostHeader from "@/components/posts/DefaultPostHeader.astro";
+import FeaturedPostHeader from "@/components/posts/FeaturedPostHeader.astro";
+import Byline from "@/components/common/Byline.astro";
+import Share from "@/components/common/Share.astro";
+
+const { post, bodyClass } = Astro.props;
+
+const postClass = PostClass({
+  tags: post.tags,
+  isFeatured: post.featured,
+});
+
+const isMembersOnly = (post.tags ?? []).some(
+  (tag: { name: string }) => tag.name === "#members"
+);
+const isFeatured = (post.tags ?? []).some(
+  (tag: { name: string }) => tag.name === "#featured"
+);
+const html = await renderHtmlFromAst(post.html, isMembersOnly);
+
+//console.log("post", post);
+---
+
+<Layout
+  bodyClass={bodyClass}
+  title={post.og_title || post.title}
+  description={post.og_description || post.meta_description || post.excerpt}
+>
+  <article class={`post-full lg:mb-32 ${postClass}`}>
+    {
+      isFeatured ? (
+        <FeaturedPostHeader
+          title={post.title}
+          excerpt={post.excerpt}
+          primary_tag={post.primary_tag}
+          feature_image={post.feature_image}
+        />
+
+        <Byline post={post} />
+        <Share url={post.url} title={post.title} tags={post.tags} />
+        <div class="max-w-lg mx-auto my-16! squiggle s1 px-8"></div>
+
+
+      ) : (
+        <DefaultPostHeader
+          title={post.title}
+          excerpt={post.excerpt}
+          primary_tag={post.primary_tag}
+          feature_image={post.feature_image}
+        />
+
+        <>
+          {post.feature_image && (
+            <Byline post={post} />
+            <Share url={post.url} title={post.title} tags={post.tags} />
+            <div class="max-w-lg mx-auto my-16! squiggle s1 px-8"></div>
+          )}
+        </>        
+      )
+    }
+
+    <section class="post-full-content mb-11">
+      <div
+        class="post-content load-external-scripts gh-content gh-canvas"
+        set:html={html}
+      />
+      {
+        isMembersOnly && (
+          <div class="members-only">
+            <p>This content is for members only. Please subscribe to view.</p>
+          </div>
+        )
+      }
+    </section>
+  </article>
+</Layout>

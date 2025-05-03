@@ -1,0 +1,36 @@
+---
+import EntryCardMinimal from "@/components/entries/EntryCardMinimal.astro";
+
+const tags = [
+  {
+    title: "Development",
+    slug: "development",
+    excerpt:
+      "Personal projects, coding tutorials, and resources.",
+  },
+  {
+    title: "Play",
+    slug: "play",
+    excerpt: "Video games news, and what Ive been playing.",
+  },
+  {
+    title: "Culture",
+    slug: "culture",
+    excerpt: "Popular culture, art, and media.",
+  },
+];
+---
+
+<div class="max-w-5xl mx-auto -translate-y-4 lg:-translate-y-6">
+  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-14">
+    {
+      tags.map((tag, i) => (
+        <div class="col-span-1">
+          <div class="lg:h-full flex flex-col justify-between">
+            <EntryCardMinimal entry={tag} num={i} collectionPath={`/tags`} />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

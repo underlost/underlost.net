@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import Newsletter from "@/components/sections/Newsletter.astro";
+import SocialLinks from "@/components/common/SocialLinks.astro";
+---
+
+<Layout
+  bodyClass="page-template page-404"
+  isHome={false}
+  title="Page Not Found."
+  description="The page you are looking for does not exist. Sorry about that."
+  image="/images/background_default.jpg"
+>
+  <div class="container-wrapper tag-color-scheme-g">
+    <div class="container-inner">
+      <div class="border-color container-border">
+        <figure class="featured-image-blob">
+          <Image
+            src="/images/404.jpg"
+            alt="Page not found"
+            height={1200}
+            width={1800}
+            loading={"eager"}
+          />
+        </figure>
+        <article class="container-content gh-canvas">
+          <h1 class="h1-xl text-outline">Page Not Found</h1>
+          <p class="text-left text-lg mb-8">
+            The page you are looking for does not exist. Sorry about that.
+          </p>
+          <SocialLinks />
+        </article>
+      </div>
+    </div>
+    <Newsletter />
+  </div>
+</Layout>

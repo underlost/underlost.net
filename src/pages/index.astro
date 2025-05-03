@@ -1,0 +1,49 @@
+---
+import { getFeaturedPosts, getPage } from "@/utils/ghost";
+import { BodyClass } from "@/utils/BodyClass";
+
+import Layout from "@/layouts/Layout.astro";
+import Welcome from "@/components/sections/Welcome.astro";
+import EntryFeatured from "@/components/entries/EntryFeatured.astro";
+import Newsletter from "@/components/sections/Newsletter.astro";
+import RecentPosts from "@/components/sections/RecentPosts.astro";
+
+
+const page = await getPage(`homepage`);
+const featuredPosts = await getFeaturedPosts();
+const featuredPostOne = featuredPosts.posts[0];
+const featuredPostTwo = featuredPosts.posts[1];
+
+const tags =
+  (page &&
+    page.tags?.map((tag: { id: any; name: any; slug: any }) => ({
+      id: tag.id,
+      name: tag.name,
+      slug: tag.slug,
+    }))) ||
+  undefined;
+
+const bodyClass = BodyClass({ isPost: false, tags });
+---
+
+<Layout
+  bodyClass={`page-template page-homepage ${bodyClass}`}
+  isHome={true}
+  title={page?.og_title || page?.title || "Underlost, by Tyler Rilling"}
+  description={page?.og_description || page?.meta_description || page?.excerpt}
+  ogImage={page?.og_image || page?.feature_image}
+  twitterImage={page?.twitter_image || page?.feature_image}
+  image="/images/background_default.jpg"
+>
+  <div class="container-wrapper">
+    <Welcome />
+
+    <EntryFeatured entry={featuredPostOne} />
+
+    <RecentPosts />
+
+    <EntryFeatured entry={featuredPostTwo} />
+
+    <Newsletter />
+  </div>
+</Layout>

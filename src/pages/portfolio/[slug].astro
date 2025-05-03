@@ -1,0 +1,34 @@
+---
+import { getAllPortfolioPages } from "@/utils/ghost";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+import { BodyClass } from "@/utils/BodyClass";
+
+export async function getStaticPaths() {
+  const pages = await getAllPortfolioPages();
+
+  return pages.map((page) => {
+    return {
+      params: {
+        slug: page.slug,
+      },
+      props: {
+        page: page,
+      },
+    };
+  });
+}
+
+const { page } = Astro.props;
+const tags =
+  (page &&
+    page.tags?.map((tag) => ({
+      id: tag.id,
+      name: tag.name,
+      slug: tag.slug,
+    }))) ||
+  undefined;
+
+const bodyClass = BodyClass({ isPost: true, tags });
+---
+
+<PortfolioLayout post={page} bodyClass={bodyClass} />

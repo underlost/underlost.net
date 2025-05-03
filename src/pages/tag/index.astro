@@ -1,0 +1,42 @@
+---
+import { getAllTags } from "@/utils/ghost";
+import Layout from "@/layouts/Layout.astro";
+import PageHeader from "@/components/pages/PageHeader.astro";
+
+const tags = await getAllTags();
+---
+
+<Layout
+  bodyClass="page-tags tag-color-scheme-c layout-fullbleed"
+  isHome={false}
+  title="Website tags"
+  description=""
+  ogImage=""
+  twitterImage=""
+>
+  <article>
+    <div class="container lg:mt-24 mb-11 my-11 relative text-center">
+      <PageHeader
+        title="Tags"
+        excerpt="Looking for a specific tag?"
+        className="h1"
+      />
+    </div>
+    <div class="inner gh-canvas py-11">
+      <section class="page-content text-lg">
+        <div class="max-w-lg mx-auto my-16 squiggle s3 px-8"></div>
+        <ul class="tag-list flex gap-2 flex-wrap justify-center">
+          {
+            tags.map((tag, i) => (
+              <li class="tag-btn p-1">
+                <a class="tag-link px-3 py-1.5 rounded-xl" href={`/tag/${tag.slug}`}>
+                  {tag.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+  </article>
+</Layout>

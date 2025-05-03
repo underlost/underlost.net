@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import { PostClass } from "@/utils/PostClass.ts";
+import { resolveUrl } from "@/utils/routing";
+
+const { entry } = Astro.props;
+
+const postClass = PostClass({
+  tags: entry.tags,
+  isFeatured: entry.featured,
+});
+
+const url = resolveUrl({
+  cmsUrl: `/`,
+  collectionPath: "/portfolio",
+  slug: entry.slug,
+  url: entry.url,
+});
+---
+
+<article class={`entry--portfolio ${postClass}`}>
+  <div class="entry-inner">
+    {
+      entry.feature_image && (
+        <a href={url} class="entry-image">
+          <Image
+            src={entry.feature_image}
+            alt={entry.feature_image_alt || entry.title}
+            loading="lazy"
+            width="1200"
+            height="630"
+          />
+        </a>
+      )
+    }
+    <div class="entry-content">
+      <header class="entry-header">
+        {
+          entry.primary_tag && (
+            <div class="entry-primary-tag">
+              <a href={`/tag/${entry.primary_tag.slug}`}>
+                {entry.primary_tag.name}
+              </a>
+            </div>
+          )
+        }
+        <h2 class="entry-title"><a href={url}>{entry.title}</a></h2>
+      </header>
+      <section class="entry-excerpt">
+        <a href={url}>{entry.excerpt}</a>
+      </section>
+    </div>
+
+    <a class="entry-link-overlay" href={url}>
+      <span class="sr-only">Continue reading {entry.title}</span>
+    </a>
+  </div>
+</article>

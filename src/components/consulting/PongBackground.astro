@@ -1,0 +1,12 @@
+---
+/* front-matter (server-side) */
+import loaderURL from "../../scripts/PongScene-loader.js?url";
+---
+
+<canvas
+  class="webgl non-accessible"
+  style="width:100%; height:300px; display:block; position:relative;"
+  transition:persist></canvas>
+
+<!-- Browser picks up the bundled loader via its final URL -->
+<script type="module" src={loaderURL}></script>

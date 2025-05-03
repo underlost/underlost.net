@@ -1,0 +1,119 @@
+---
+import { renderHtmlFromAst } from "@/utils/renderHtmlAst";
+import { PostClass } from "@/utils/PostClass.ts";
+import { getEntry } from "astro:content"
+
+import Layout from "@/layouts/Layout.astro";
+import DefaultPostHeader from "@/components/posts/DefaultPostHeader.astro";
+import FeaturedPostHeader from "@/components/posts/FeaturedPostHeader.astro";
+import Share from "@/components/common/Share.astro";
+
+const { post, bodyClass } = Astro.props;
+
+const postClass = PostClass({
+  tags: post.tags,
+  isFeatured: post.featured,
+});
+
+const isMembersOnly = (post.tags ?? []).some(
+  (tag: { name: string }) => tag.name === "#members"
+);
+const isFeatured = (post.tags ?? []).some(
+  (tag: { name: string }) => tag.name === "#featured"
+);
+const html = await renderHtmlFromAst(post.html, isMembersOnly);
+
+const markdownContent = await getEntry('portfolio', post.slug);
+
+//console.log(markdownContent);
+---
+
+<Layout
+  bodyClass={bodyClass}
+  title={post.og_title || post.title}
+  description={post.og_description || post.meta_description || post.excerpt}
+  ogImage={post?.og_image || post?.feature_image}
+  twitterImage={post?.twitter_image || post?.feature_image}
+>
+  <article class={`post-full lg:mb-32 ${postClass}`}>
+    {
+      isFeatured ? (
+        <FeaturedPostHeader
+          title={post.title}
+          excerpt={post.excerpt}
+          primary_tag={post.primary_tag}
+          feature_image={post.feature_image}
+        />
+
+        <Share url={post.url} title={post.title} tags={post.tags} />
+        <div class="max-w-lg mx-auto my-16! squiggle s1 px-8"></div>
+
+
+      ) : (
+        <DefaultPostHeader
+          title={post.title}
+          excerpt={post.excerpt}
+          primary_tag={post.primary_tag}
+          feature_image={post.feature_image}
+        />
+
+        <>
+          {post.feature_image && (
+            <Share url={post.url} title={post.title} tags={post.tags} />
+            <div class="max-w-lg mx-auto my-16! squiggle s1 px-8"></div>
+          )}
+        </>        
+      )
+    }
+
+    <section class="container">
+      <div class="grid grid-cols-12 lg:gap-x-11 relative post-full-content mb-11">
+        <div class="col-span-12 lg:col-span-8 order-2 lg:order-1">
+          <div
+            class="portfolio-content load-external-scripts gh-content gh-canvas"
+            set:html={html}
+          />
+        </div>
+        <div class="col-span-12 lg:col-span-4 order-1 lg:order-2 relative">
+          <div class="lg:p-8 pb-0 text-sm lg:sticky lg:top-11">
+                  {markdownContent?.data?.role && (
+                    <div class="pb-8">
+                      <h2 class="subtitle">Project Role:</h2>
+                      <p>{markdownContent.data.role}</p>
+                    </div>
+                  )}
+
+                  {markdownContent?.data?.timeline && (
+                    <div class="pb-8">
+                      <h2 class="subtitle">Timeline</h2>
+                      <p>{markdownContent.data.timeline}</p>
+                    </div>
+                  )}
+
+                  {markdownContent?.data?.tools_used && (
+                    <div class="pb-8">
+                      <h2 class="subtitle">Software & Services Used</h2>
+                      <ul class="divide-y">
+                        {markdownContent.data.tools_used.map((tool, i) => (
+                          <li class="py-1">{tool}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {markdownContent?.data?.frameworks_used && (
+                    <div class="pb-8">
+                      <h2 class="subtitle">Frameworks & Languages Used</h2>
+                      <ul class="divide-y">
+                        {markdownContent.data.frameworks_used.map((framework, i) => (
+                          <li class="py-1">{framework}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>

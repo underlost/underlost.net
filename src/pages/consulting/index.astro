@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets";
+import { getPage } from "@/utils/ghost";
+import { BodyClass } from "@/utils/BodyClass";
+import PageHeader from "@/components/pages/PageHeader.astro";
+import { renderHtmlFromAst } from "@/utils/renderHtmlAst";
+
+import PongBackground from "@/components/consulting/PongBackground.astro";
+
+import Layout from "@/layouts/Layout.astro";
+import PricingTable from "@/components/consulting/PricingTable.astro";
+
+const page = (await getPage(`consulting`)) || ({} as any);
+
+const tags =
+  (page &&
+    page.tags?.map((tag: { id: any; name: any; slug: any }) => ({
+      id: tag.id,
+      name: tag.name,
+      slug: tag.slug,
+    }))) ||
+  undefined;
+
+const bodyClass = BodyClass({ page: page, tags });
+const html = await renderHtmlFromAst(page.html);
+---
+
+<Layout
+  bodyClass={`page-consulting ${bodyClass}`}
+  isHome={false}
+  title={page.og_title || page?.title || "Current Projects"}
+  description={page.og_description || page.meta_description || page.excerpt}
+  ogImage={page?.og_image || page?.feature_image}
+  twitterImage={page?.twitter_image || page?.feature_image}
+>
+  <div class="container px-0">
+    <article class="py-16">
+      <div class="elative min-h-[200px] lg:min-h-[300px]">
+        <div class="h-[300px] absolute lg:top-24 left-0 right-0 z-0">
+          <PongBackground />
+        </div>
+
+        <div class="max-w-5xl mx-auto relative text-center">
+          <PageHeader
+            title={page.title}
+            className="h1-xl text-outline text-shadow-md"
+          />
+        </div>
+      </div>
+
+      <PricingTable />
+
+      {
+        page.feature_image && (
+          <figure class="featured-image-consulting mb-4">
+            <Image
+              src={page.feature_image}
+              alt={page.title}
+              width={1200}
+              height={900}
+              loading={"eager"}
+            />
+          </figure>
+        )
+      }
+      <section
+        class="post-full-content page-content gh-content gh-canvas text-2xl"
+        set:html={html}
+      />
+    </article>
+  </div>
+</Layout>

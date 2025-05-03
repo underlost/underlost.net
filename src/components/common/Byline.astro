@@ -1,0 +1,31 @@
+---
+import dayjs from "dayjs";
+import { readingTime as readingTimeHelper } from "@/utils/readingTime";
+
+const { post } = Astro.props;
+
+const published_at = post.published_at;
+const updated_at = post.updated_at;
+const readingTime = readingTimeHelper(post);
+---
+
+<div class="byline-meta-content mt-3 font-mono">
+  {
+    published_at && (
+      <span>
+        <time class="byline-meta-date" datetime={published_at || ``}>
+          Written {dayjs(published_at || ``).format(`MMMM D, YYYY`)}
+        </time>
+
+        {updated_at && (
+          <>
+            <time class="byline-meta-date" datetime={updated_at || ``}>
+              Last updated {dayjs(updated_at || ``).format(`MMMM D, YYYY`)}
+            </time>
+          </>
+        )}
+      </span>
+    )
+  }
+  {readingTime && <span class="byline-reading-time">{readingTime}</span>}
+</div>

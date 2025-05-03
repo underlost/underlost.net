@@ -1,0 +1,19 @@
+.entry-header--featured {
+  @apply relative z-10 flex h-screen w-full items-center justify-center text-white mb-16 text-center flex-col;
+
+  &::before {
+    @apply absolute z-10 inset-0 h-full w-full bg-black/60 content-[''] transition-all duration-300 ease-in-out;
+  }
+
+  .entry-full-content {
+    @apply mx-auto max-w-3xl px-4 lg:px-0 relative z-20;
+  }
+
+  .entry-full-image {
+    @apply absolute inset-0 h-full w-full object-cover object-center -z-10;
+
+    img {
+      @apply h-full w-full object-cover object-center;
+    }
+  }
+}
