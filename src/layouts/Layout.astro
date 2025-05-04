@@ -94,7 +94,6 @@ const navigationSecondary = settings.secondary_navigation || [];
       })}
     </script>
 
-    <ClientRouter />
     <slot name="head" />
   </head>
 
@@ -233,6 +232,7 @@ const navigationSecondary = settings.secondary_navigation || [];
             loop
             muted
             autoplay
+            class="hidden md:block"
           >
             <source src="/video/background_video.mp4" type="video/mp4" />
           </video>

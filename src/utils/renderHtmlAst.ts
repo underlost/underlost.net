@@ -27,6 +27,23 @@ export function stripAfterMembersOnly(node: Node): Node {
 
 }
 
+function rewriteSecureUrls() {
+  return (tree: Node) => {
+    visit(tree, 'element', (node: any) => {
+      if (node.properties) {
+        const props = node.properties;
+
+        ['href', 'src'].forEach((attr) => {
+          const val = props[attr];
+          if (typeof val === 'string' && val.startsWith('https://secure.underlost.net/')) {
+            props[attr] = val.replace('https://secure.underlost.net/', '/');
+          }
+        });
+      }
+    });
+  };
+}
+
 export async function renderHtmlFromAst(html: string, isMembersOnly = false): Promise<string> {
   const processor = unified().use(rehypeParse, { fragment: true })
   const ast = processor.parse(html)
@@ -34,6 +51,7 @@ export async function renderHtmlFromAst(html: string, isMembersOnly = false): Pr
   const processedAst = isMembersOnly ? stripAfterMembersOnly(ast) : ast
 
   const result = await unified()
+    .use(rewriteSecureUrls)
     .use(rehypePrism)
     .use(rehypeStringify)
     .run(processedAst as Root)

@@ -91,6 +91,7 @@
 
 .welcome-text {
   @apply text-xl lg:text-4xl font-stretch-extra-expanded mb-5 lg:mr-11;
+  contain: paint layout;
 }
 
 .members-only {
