@@ -214,14 +214,12 @@ const navigationSecondary = settings.secondary_navigation || [];
       <div id="nav-overlay" class="menu-overlay hidden fixed inset-0 bg-black/50 z-40" transition:persist></div>
 
       {image && (
-        <div class="background-image" transition:persist>
+        <div class="background-image">
           <video
             playsinline
             loop
             muted
             autoplay
-            transition:persist
-            transition:name="background-video"
           >
             <source src="/video/background_video.mp4" type="video/mp4" />
           </video>

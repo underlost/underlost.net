@@ -60,6 +60,10 @@
     @apply text-2xl mb-2 inline;
   }
 
+  .entry-excerpt {
+    @apply line-clamp-9;
+  }
+
   &:hover {
     @apply shadow-2xl scale-105;
     .entry-title {

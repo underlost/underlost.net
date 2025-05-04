@@ -70,11 +70,27 @@ const html = await renderHtmlFromAst(post.html, isMembersOnly);
       />
       {
         isMembersOnly && (
-          <div class="members-only">
-            <p>This content is for members only. Please subscribe to view.</p>
+          <div class="gh-content gh-canvas">
+            <div class="members-only">
+              <h3 class="h4 font-black mb-5">This content is for members only. Please subscribe to view.</h3>
+              <p>
+                Become a paid member for unlimited ad-free access to articles, bonus content, and more.
+              </p>
+            </div>
           </div>
         )
       }
     </section>
+
+    <footer class="gh-canvas">
+      <h3 class="uppercase font-mono mb-3">Tags</h3>
+      <ul class="flex list-none flex-wrap">
+        {post.tags?.filter((tag: { visibility: string; }) => tag.visibility === `public`).map((tag: { slug: string; name: string; }) => (
+          <li class="mr-1.5 mb-1.5">
+            <a class="border rounded-xl uppercase px-3 py-1.5 text-sm font-stretch-extra-expanded" href={`/tag/${tag.slug}/`}>{tag.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </footer>
   </article>
 </Layout>

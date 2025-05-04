@@ -89,6 +89,10 @@
   }
 }
 
+.members-only {
+  @apply text-center mt-11 bg-emeraldglow-green p-8 rounded-lg text-black font-mono text-lg shadow-xl;
+}
+
 .style-3d {
   -webkit-text-fill-color: transparent;
   text-shadow: none;

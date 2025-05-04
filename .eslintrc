@@ -33,7 +33,6 @@
     "propWrapperFunctions": ["forbidExtraProps"]
   },
   "rules": {
-    "@next/next/no-img-element": "off",
     "arrow-parens": ["error", "always", { "requireForBlockBody": true }],
     "indent": [2, 2],
     "no-console": "off",

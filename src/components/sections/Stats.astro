@@ -4,7 +4,7 @@ const stats = [
   { value: 10, suffix: `M+`, label: `Combined Page Views` },
   { value: 20, suffix: `+`, label: `Years Experience` },
   { value: 95, suffix: `%`, label: `Repeat Client Engagement` },
-];
+]
 ---
 
 <div class="max-w-5xl mx-auto mb-16 stats-section">
@@ -12,12 +12,9 @@ const stats = [
   <div class="grid grid-cols-12 gap-8 lg:gap-20">
     {
       stats.map((stat, index) => (
-        <p
-          class={`stat font-mono col-span-6 lg:col-span-3`}
-          style="opacity: 0;"
-        >
+        <p class="stat font-mono col-span-6 lg:col-span-3 text-center" style="opacity: 0;">
           <span class="block text-5xl font-bold">
-            <span class="stat-value">{stat.value}</span>{stat.suffix}
+            <span class="stat-value">{stat.value}</span><span>{stat.suffix}</span>
           </span>
           <span class="block uppercase">{stat.label}</span>
         </p>
@@ -27,35 +24,27 @@ const stats = [
 </div>
 
 <script>
-  import { animate, stagger, inView } from "motion";
+  import { animate, stagger, inView } from 'motion'
 
   function initStats() {
-    const section = document.querySelector(".stats-section");
-    if (!section) return;
+    const section = document.querySelector('.stats-section')
+    if (!section) return
     inView(
       section,
-      (element) => {
+      element => {
         // section fade-in
-        animate(
-          element,
-          { opacity: [0, 1], y: [50, 0] },
-          { ease: [0.39, 0.24, 0.3, 1], duration: 1 }
-        );
+        animate(element, { opacity: [0, 1], y: [50, 0] }, { ease: [0.39, 0.24, 0.3, 1], duration: 1 })
 
         // stagger cards
-        const cards = element.querySelectorAll(".stat");
-        animate(
-          cards,
-          { opacity: [0, 1], y: [25, 0] },
-          { type: "spring", delay: stagger(0.25, { startDelay: 0.25 }) }
-        );
+        const cards = element.querySelectorAll('.stat')
+        animate(cards, { opacity: [0, 1], y: [25, 0] }, { type: 'spring', delay: stagger(0.25, { startDelay: 0.25 }) })
 
         // count-up each stat-value
         cards.forEach((card, i) => {
-          const valueEl = card.querySelector(".stat-value");
-          const endValue = valueEl && valueEl.textContent ? parseInt(valueEl.textContent, 10) : 0;
+          const valueEl = card.querySelector('.stat-value')
+          const endValue = valueEl && valueEl.textContent ? parseInt(valueEl.textContent, 10) : 0
           if (valueEl) {
-            valueEl.textContent = "0";
+            valueEl.textContent = '0'
           }
           animate(0, endValue, {
             duration: 1.5,
@@ -63,16 +52,16 @@ const stats = [
             delay: 0.25 * i + 0.5,
             onUpdate(latest) {
               if (valueEl) {
-                valueEl.textContent = Math.round(latest).toString();
+                valueEl.textContent = Math.round(latest).toString()
               }
             },
-          });
-        });
+          })
+        })
       },
       { amount: 0.25 }
-    );
+    )
   }
 
   // run on hard refresh *and* after every Astro view transition
-  document.addEventListener("astro:page-load", initStats);
+  document.addEventListener('astro:page-load', initStats)
 </script>
