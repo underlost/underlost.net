@@ -89,6 +89,10 @@
   }
 }
 
+.welcome-text {
+  @apply text-xl lg:text-4xl font-stretch-extra-expanded mb-5 lg:mr-11;
+}
+
 .members-only {
   @apply text-center mt-11 bg-emeraldglow-green p-8 rounded-lg text-black font-mono text-lg shadow-xl;
 }
