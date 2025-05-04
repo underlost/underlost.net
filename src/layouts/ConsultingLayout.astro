@@ -1,22 +1,18 @@
 ---
-import { Image } from "astro:assets";
-import Layout from "@/layouts/Layout.astro";
-import PageHeader from "@/components/pages/PageHeader.astro";
-import { renderHtmlFromAst } from "@/utils/renderHtmlAst";
-import PongBackground from "@/components/consulting/PongBackground.astro";
-import { BookNowButton } from "@/components/react/BookNowButton";
+import { Image } from 'astro:assets'
+import Layout from '@/layouts/Layout.astro'
+import PageHeader from '@/components/pages/PageHeader.astro'
+import { renderHtmlFromAst } from '@/utils/renderHtmlAst'
+import PongGame from '@/components/react/PongGame.tsx'
+import { BookNowButton } from '@/components/react/BookNowButton'
 
-const { post, bodyClass } = Astro.props;
+const { post, bodyClass } = Astro.props
 
-const isMembersOnly = (post.tags ?? []).some(
-  (tag: { name: string }) => tag.name === "#members"
-);
+const isMembersOnly = (post.tags ?? []).some((tag: { name: string }) => tag.name === '#members')
 
-const canBookNow = (post.tags ?? []).some(
-  (tag: { name: string }) => tag.name === "#booknow"
-);
+const canBookNow = (post.tags ?? []).some((tag: { name: string }) => tag.name === '#booknow')
 
-const html = await renderHtmlFromAst(post.html, isMembersOnly);
+const html = await renderHtmlFromAst(post.html, isMembersOnly)
 ---
 
 <Layout
@@ -28,17 +24,13 @@ const html = await renderHtmlFromAst(post.html, isMembersOnly);
   twitterImage={post?.twitter_image || post?.feature_image}
 >
   <article class="layout-fullbleed">
-    <div
-      class="container lg:pt-24 my-11 relative min-h-[200px] lg:min-h-[300px]"
-    >
+    <div class="container lg:pt-24 my-11 relative min-h-[200px] lg:min-h-[300px]">
       <div class="h-[300px] absolute lg:top-24 left-0 right-0 -z-10">
-        <PongBackground />
+        <PongGame client:only="react" />
       </div>
 
       <div class="max-w-5xl mx-auto relative text-center">
-        <a href="/consulting/" class="h1 text-outline uppercase text-shadow-md block">
-          Consulting Services
-        </a>
+        <a href="/consulting/" class="h1 text-outline uppercase text-shadow-md block"> Consulting Services </a>
         <div class="max-w-lg mx-auto my-11 squiggle s12 px-8"></div>
         <PageHeader title={post.title} className="h2" />
       </div>
@@ -46,12 +38,7 @@ const html = await renderHtmlFromAst(post.html, isMembersOnly);
       {
         post.feature_image && (
           <figure class="page-full-image">
-            <Image
-              src={post.feature_image}
-              alt={post.title}
-              height={800}
-              width={800}
-            />
+            <Image src={post.feature_image} alt={post.title} height={800} width={800} />
           </figure>
         )
       }
