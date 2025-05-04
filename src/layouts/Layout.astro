@@ -227,15 +227,6 @@ const navigationSecondary = settings.secondary_navigation || [];
 
       {image && (
         <div class="background-image">
-          <video
-            playsinline
-            loop
-            muted
-            autoplay
-            class="hidden md:block"
-          >
-            <source src="/video/background_video.mp4" type="video/mp4" />
-          </video>
           <Image src={image} alt={title} width={3072} height={2048} loading="eager" />
         </div>
       )}

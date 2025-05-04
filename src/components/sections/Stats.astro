@@ -62,6 +62,9 @@ const stats = [
     )
   }
 
+  // run on initial load
+  document.addEventListener('DOMContentLoaded', initStats)
+
   // run on hard refresh *and* after every Astro view transition
   document.addEventListener('astro:page-load', initStats)
 </script>
