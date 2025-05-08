@@ -1,16 +1,14 @@
 ---
-import SocialLinks from "@/components/common/SocialLinks.astro";
-import Navigation from "@/components/common/Navigation.astro";
+import SocialLinks from '@/components/common/SocialLinks.astro'
+import Navigation from '@/components/common/Navigation.astro'
 
-const { title, navigation, secondaryNavigation } = Astro.props;
+const { title, navigation, secondaryNavigation } = Astro.props
 
-const modifiedDate = new Date(
-  import.meta.env.PUBLIC_MODIFIED_DATE
-).toLocaleDateString("en-US", {
-  month: "long",
-  day: "numeric",
-  year: "numeric",
-});
+const modifiedDate = new Date(import.meta.env.PUBLIC_MODIFIED_DATE).toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+})
 ---
 
 <footer class="site-footer text-center">
@@ -22,16 +20,18 @@ const modifiedDate = new Date(
   <div class="site-copyright text-xs py-5 px-10 relative">
     <div class="relative z-10">
       <p class="text-balance">
-        <a href="/">{title}</a> Copyright © Tyler Rilling 2001 - 2025. Published
-        with Ghost. <br /> View
-        <a class="underline" href="/terms/"> Term of Use </a> and <a
-          class="underline"
-          href="/privacy/">Privacy Policy</a
-        >.
+        <a href="/">{title}</a> Copyright © Tyler Rilling 2001 - 2025. Published with Ghost. <br /> View
+        <a class="underline" href="/terms/"> Term of Use </a> and <a class="underline" href="/privacy/">Privacy Policy</a>.
       </p>
-      <br /> Site last updated: <a
-        href="https://github.com/underlost/underlost.net/">{modifiedDate}</a
-      >. ❤️
+      <br /> Site last updated: <a href="https://github.com/underlost/underlost.net/">{modifiedDate}</a>. ❤️
     </div>
   </div>
 </footer>
+
+<script
+  defer
+  is:inline
+  src="https://unpkg.com/@tryghost/portal@latest/umd/portal.min.js"
+  data-ghost="https://newsletter.underlost.net"
+  data-api="https://newsletter.underlost.net/ghost/api/content/"
+  data-key="a21acf24510466a23b928da0dd"></script>

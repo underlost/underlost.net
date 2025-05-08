@@ -85,14 +85,16 @@ const TipFormInner = () => {
   return (
     <>
       {successMessage ? (
-        <p className="mt-2 px-4 py-2 font-bold text-wide uppercase">{successMessage}</p>
+        <p className="mt-2 py-2 font-bold text-wide">
+          Thank you for your support! Your payment has been received. You'll usually receive thank you message within 24-48 hours.
+        </p>
       ) : (
         <form onSubmit={handleSubmit}>
           <input aria-label="Name" placeholder="Name" type="text" required value={name} onChange={(e) => setName(e.target.value)} className="text-field w-full mb-3" />
           <input aria-label="Email" placeholder="Email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="text-field w-full mb-3" />
           <input
             aria-label="Tip amount"
-            placeholder="$5.00"
+            placeholder="$8.00"
             type="number"
             required
             className="text-field w-full mb-3"

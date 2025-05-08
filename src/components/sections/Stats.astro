@@ -35,12 +35,12 @@ const stats = [
         // section fade-in
         animate(element, { opacity: [0, 1], y: [50, 0] }, { ease: [0.39, 0.24, 0.3, 1], duration: 1 })
 
-        // stagger cards
-        const cards = element.querySelectorAll('.stat')
-        animate(cards, { opacity: [0, 1], y: [25, 0] }, { type: 'spring', delay: stagger(0.25, { startDelay: 0.25 }) })
+        // stagger stats
+        const stats = element.querySelectorAll('.stat')
+        animate(stats, { opacity: [0, 1], y: [25, 0] }, { type: 'spring', delay: stagger(0.25, { startDelay: 0.25 }) })
 
         // count-up each stat-value
-        cards.forEach((card, i) => {
+        stats.forEach((card, i) => {
           const valueEl = card.querySelector('.stat-value')
           const endValue = valueEl && valueEl.textContent ? parseInt(valueEl.textContent, 10) : 0
           if (valueEl) {
