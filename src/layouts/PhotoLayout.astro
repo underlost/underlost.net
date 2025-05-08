@@ -26,6 +26,7 @@ const html = await renderHtmlFromAst(post.html, isMembersOnly);
   bodyClass={bodyClass}
   title={post.og_title || post.title}
   description={post.og_description || post.meta_description || post.excerpt}
+  url={`https://underlost.net/photos/${post.slug}`}
 >
   <article class={`post-full lg:my-11 ${postClass}`}>
     <header class="entry-header text-center container mb-11">

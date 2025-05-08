@@ -1,16 +1,16 @@
 ---
-import { getAllTwitterPosts, getPage } from "@/utils/ghost";
-import { BodyClass } from "@/utils/BodyClass";
+import { getAllTwitterPosts, getPage } from '@/utils/ghost'
+import { BodyClass } from '@/utils/BodyClass'
 
-import { Image } from "astro:assets";
-import Layout from "@/layouts/Layout.astro";
-import PageHeader from "@/components/pages/PageHeader.astro";
-import { renderHtmlFromAst } from "@/utils/renderHtmlAst";
+import { Image } from 'astro:assets'
+import Layout from '@/layouts/Layout.astro'
+import PageHeader from '@/components/pages/PageHeader.astro'
+import { renderHtmlFromAst } from '@/utils/renderHtmlAst'
 
-import TwitterTimeline from "@/components/react/TwitterTimeline.tsx";
+import TwitterTimeline from '@/components/react/TwitterTimeline.tsx'
 
-const page = await getPage(`twitter`);
-const posts = await getAllTwitterPosts();
+const page = await getPage(`twitter`)
+const posts = await getAllTwitterPosts()
 
 const tags =
   (page &&
@@ -19,29 +19,27 @@ const tags =
       name: tag.name,
       slug: tag.slug,
     }))) ||
-  undefined;
+  undefined
 
-const html = await renderHtmlFromAst(page?.html || "");
-const bodyClass = BodyClass({ isPost: false, tags });
+const html = await renderHtmlFromAst(page?.html || '')
+const bodyClass = BodyClass({ isPost: false, tags })
 ---
 
 <Layout
   bodyClass={`page-twitter ${bodyClass}`}
   isHome={true}
-  title={page?.og_title || page?.title || "Support"}
+  title={page?.og_title || page?.title || 'Support'}
   description={page?.og_description || page?.meta_description || page?.excerpt}
   ogImage={page?.og_image || page?.feature_image}
   twitterImage={page?.twitter_image || page?.feature_image}
+  \url="https://underlost.net/twitter/"
 >
   <article class="pt-11">
     <div class="max-w-3xl mx-auto relative">
       <PageHeader title={page?.title} className="h2" excerpt={page?.excerpt} />
     </div>
     <div class="inner gh-canvas lg:py-11">
-      <section
-        class="post-content load-external-scripts gh-content text-lg"
-        set:html={html}
-      />
+      <section class="post-content load-external-scripts gh-content text-lg" set:html={html} />
     </div>
   </article>
   <div>

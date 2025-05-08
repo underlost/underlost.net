@@ -22,13 +22,15 @@ const isFeatured = (post.tags ?? []).some(
 );
 const html = await renderHtmlFromAst(post.html, isMembersOnly);
 
-//console.log("post", post);
 ---
 
 <Layout
   bodyClass={bodyClass}
   title={post.og_title || post.title}
   description={post.og_description || post.meta_description || post.excerpt}
+  ogImage={post?.og_image || post?.feature_image}
+  twitterImage={post?.twitter_image || post?.feature_image}
+  url={`https://underlost.net/writing/${post.slug}`}
 >
   <article class={`post-full lg:mb-32 ${postClass}`}>
     {

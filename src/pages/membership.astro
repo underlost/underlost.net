@@ -1,12 +1,12 @@
 ---
-import { getPage } from "@/utils/ghost";
-import { BodyClass } from "@/utils/BodyClass";
-import PageHeader from "@/components/pages/PageHeader.astro";
-import { Image } from "astro:assets";
-import Layout from "@/layouts/Layout.astro";
-import { renderHtmlFromAst } from "@/utils/renderHtmlAst";
+import { getPage } from '@/utils/ghost'
+import { BodyClass } from '@/utils/BodyClass'
+import PageHeader from '@/components/pages/PageHeader.astro'
+import { Image } from 'astro:assets'
+import Layout from '@/layouts/Layout.astro'
+import { renderHtmlFromAst } from '@/utils/renderHtmlAst'
 
-const post = await getPage(`membership`);
+const post = await getPage(`membership`)
 
 const tags =
   (post &&
@@ -15,37 +15,31 @@ const tags =
       name: tag.name,
       slug: tag.slug,
     }))) ||
-  undefined;
+  undefined
 
-const html = await renderHtmlFromAst(post?.html || "");
-const bodyClass = BodyClass({ isPost: false, tags });
+const html = await renderHtmlFromAst(post?.html || '')
+const bodyClass = BodyClass({ isPost: false, tags })
 ---
 
 <Layout
   bodyClass={`page-template page-membership ${bodyClass}`}
   isHome={true}
-  title={post?.og_title || post?.title || "Site Membership"}
+  title={post?.og_title || post?.title || 'Site Membership'}
   description={post?.og_description || post?.meta_description || post?.excerpt}
   ogImage=""
   twitterImage=""
+  url="https://underlost.net/membership/"
 >
   <article>
     <div class="container lg:pt-24 mb-11 my-11 relative lg:min-h-[300px]">
       <div class="max-w-3xl mx-auto relative text-center">
-        <PageHeader
-          title={post?.title}
-          excerpt={post?.excerpt}
-          className="h2"
-        />
+        <PageHeader title={post?.title} excerpt={post?.excerpt} className="h2" />
       </div>
     </div>
 
     <div class="max-w-lg mx-auto my-16 squiggle s1 px-8"></div>
     <div class="inner gh-canvas lg:py-11">
-      <section
-        class="post-full-content page-content load-external-scripts gh-content text-lg"
-        set:html={html}
-      />
+      <section class="post-full-content page-content load-external-scripts gh-content text-lg" set:html={html} />
     </div>
     <div class="max-w-lg mx-auto my-16! squiggle s1 px-8"></div>
   </article>

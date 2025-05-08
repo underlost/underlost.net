@@ -20,6 +20,7 @@ const html = await renderHtmlFromAst(post.html, isMembersOnly);
   ogImage={post?.og_image || post?.feature_image}
   twitterImage={post?.twitter_image || post?.feature_image}
   image="/images/background_default.jpg"
+  url={`https://underlost.net/${post.slug}`}
 >
   <div class="container-wrapper">
     <div class="container-inner container-primary">

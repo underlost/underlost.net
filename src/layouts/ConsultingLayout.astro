@@ -22,6 +22,7 @@ const html = await renderHtmlFromAst(post.html, isMembersOnly)
   description={post.og_description || post.meta_description || post.excerpt}
   ogImage={post?.og_image || post?.feature_image}
   twitterImage={post?.twitter_image || post?.feature_image}
+  url={`https://underlost.net/consulting/${post.slug}`}
 >
   <article class="layout-fullbleed">
     <div class="container lg:pt-24 my-11 relative min-h-[200px] lg:min-h-[300px]">

@@ -34,6 +34,7 @@ const markdownContent = await getEntry('portfolio', post.slug);
   description={post.og_description || post.meta_description || post.excerpt}
   ogImage={post?.og_image || post?.feature_image}
   twitterImage={post?.twitter_image || post?.feature_image}
+  url={`https://underlost.net/portfolio/${post.slug}`}
 >
   <article class={`post-full lg:mb-32 ${postClass}`}>
     {

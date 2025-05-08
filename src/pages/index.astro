@@ -30,6 +30,7 @@ const bodyClass = BodyClass({ isPost: false, tags });
   bodyClass={`page-template page-homepage ${bodyClass}`}
   isHome={true}
   title={page?.og_title || page?.title || "Underlost, by Tyler Rilling"}
+  url="https://underlost.net"
   description={page?.og_description || page?.meta_description || page?.excerpt}
   ogImage={page?.og_image || page?.feature_image}
   twitterImage={page?.twitter_image || page?.feature_image}
