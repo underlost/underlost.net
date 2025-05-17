@@ -24,10 +24,9 @@ import Stats from '@/components/sections/Stats.astro'
             </svg>
           </div>
           <h1 class="welcome-text">
-            Hey there, I&apos;m <span class="font-black">Tyler Rilling</span>, a Python and React web developer, UX designer, and{` `}
-            <a class="underline hover-shadow" href="/consulting/"> independent consultant </a>
-            , living in Seattle, Washington. I&apos;m also{` `}
-            <a class="underline hover-shadow" href="/boredable/"> building </a>
+            Hey there, I&apos;m <span class="font-black">Tyler Rilling</span>, a growth & success engineer, and{` `}
+            <a class="underline hover-shadow" href="/consulting/">independent consultant</a>, living in Seattle, Washington. I&apos;m also{` `}
+            <a class="underline hover-shadow" href="/boredable/">building</a>
             {` `}
             my own social media platform. Most people online simply know me as <span class="font-black">Underlost</span>. 👾
           </h1>
@@ -38,15 +37,13 @@ import Stats from '@/components/sections/Stats.astro'
         <div class="grid grid-cols-12 md:gap-x-16">
           <div class="col-span-12 md:col-span-6 mb-5">
             <div class="aspect-square z-10 relative overflow-hidden border border-DeepWoodBlue">
-              <video playsinline loop muted autoplay>
-                <source src="/video/web_reel_1.mp4" type="video/mp4" />
-              </video>
+              <video playsinline muted class="video-reel" poster="/images/video-placeholder.jpg"> </video>
             </div>
           </div>
           <div class="col-span-12 lg:col-span-6 mb-5">
             <p class="text-secondary font-stretch-extra-expanded text-2xl mb-11">
-              Need help building your website? Or maybe you&apos;re looking how to build the next great web app. Whether it&apos;s just planning or you need help fixing bugs, I&apos;m here
-              to help!
+              Need help building your website? Or maybe you'&apos;'re looking how to build the next great web app. Whether it&apos;s just planning or you need help fixing bugs, I&apos;m
+              here to help!
             </p>
             <a class="btn btn-lg" href="/consulting/"> Get Started </a>
           </div>
@@ -61,7 +58,7 @@ import Stats from '@/components/sections/Stats.astro'
 </section>
 
 <script>
-  import { animate, stagger, inView } from 'motion'
+  import { animate, inView } from 'motion'
 
   function initStats() {
     const section = document.querySelector('.container-border')
@@ -75,10 +72,27 @@ import Stats from '@/components/sections/Stats.astro'
       { amount: 0.25 }
     )
   }
-
-  // run on initial load
-  //document.addEventListener('DOMContentLoaded', initStats)
-
   // run on hard refresh *and* after every Astro view transition
   document.addEventListener('astro:page-load', initStats)
+
+  // Video reel
+  document.addEventListener('astro:page-load', () => {
+    const video = document.querySelector('.video-reel') as HTMLVideoElement | null
+    if (!video) return
+    const sources = ['/video/web_reel_1.mp4', '/video/web_reel_2.mp4']
+    let index = 0
+    const source = document.createElement('source')
+    source.type = 'video/mp4'
+    video.appendChild(source)
+    function playNextVideo() {
+      source.src = sources[index]
+      if (video) {
+        video.load()
+        video.play().catch(() => {})
+      }
+      index = (index + 1) % sources.length
+    }
+    video.addEventListener('ended', playNextVideo)
+    playNextVideo()
+  })
 </script>
