@@ -1,12 +1,9 @@
 ---
-import { getAsidePosts } from "@/utils/ghost";
-import EntryInlineList from "@/components/entries/EntryInlineList.astro";
-const posts = await getAsidePosts();
+import Aside from '@/components/common/Aside.astro'
+
+const { posts, collectionPath } = Astro.props
 ---
 
-<EntryInlineList
-  title=""
-  className="tag-color-scheme-c"
-  posts={posts.posts}
-  collectionPath="writing/"
-/>
+<section class={`px-4 lg:px-8 pt-24 pb-16`}>
+  {posts.map((post: any, i: any) => <Aside post={post} num={i} collectionPath={collectionPath} />)}
+</section>

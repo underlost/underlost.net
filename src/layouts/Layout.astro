@@ -5,7 +5,7 @@ import SiteFooter from '@/components/common/SiteFooter.astro'
 import Navigation from '@/components/common/Navigation.astro'
 import SocialLinks from '@/components/common/SocialLinks.astro'
 import { Image } from 'astro:assets'
-import { ClientRouter } from 'astro:transitions'
+import { ClientRouter, fade } from 'astro:transitions'
 
 import '../styles/global.css'
 import 'prismjs/themes/prism-tomorrow.css'
@@ -138,7 +138,7 @@ const schema = {
         </div>
       </div>
 
-      <main class="site-main" transition:animate="fade">
+      <main class="site-main" transition:animate={fade({ duration: '0.4s' })}>
         <slot />
       </main>
 
@@ -284,7 +284,5 @@ const schema = {
       }
       document.addEventListener('astro:page-load', initSettings)
     </script>
-
-    
   </body>
 </html>

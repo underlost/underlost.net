@@ -101,7 +101,7 @@
 
     blockquote {
         @apply text-lg leading-8;
-        @apply border-l-10 pl-4;
+        @apply border-l-10 pl-4 italic;
     }
 
     .kg-embed-card {
