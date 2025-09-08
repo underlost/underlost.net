@@ -2,10 +2,10 @@
 import path from "path";
 import { defineConfig, envField } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
-import netlify from '@astrojs/netlify';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import react from "@astrojs/react";
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
@@ -73,6 +73,6 @@ export default defineConfig({
     domains: ["underlost.net", "cdn.underlost.net"],
   },
 
-  adapter: netlify(),
+  adapter: cloudflare(),
   integrations: [mdx(), sitemap(), react()],
 });
