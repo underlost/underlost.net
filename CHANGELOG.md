@@ -2,6 +2,10 @@
 
 ---
 
+## 13.0.0 (06/25/26)
+
+* Moved to landing page to archive website.
+
 ## 12.0.0 (04/17/25)
 
 * Migrate to Astro

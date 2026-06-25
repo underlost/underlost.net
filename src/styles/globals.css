@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Mona Sans';
+  src:
+    url('/fonts/MonaSans[slnt,wdth,wght].woff2') format('woff2 supports variations'),
+    url('/fonts/MonaSans[slnt,wdth,wght].woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('/fonts/Space-Mono.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #000;
+  --primary: #D1FF19;
+}
+
+html,
+body,
+#__next {
+  @apply h-dvh max-h-dvh overflow-hidden overscroll-none;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  @apply fixed inset-0 w-full touch-none;
+}
+
+.scene-canvas {
+  position: absolute !important;
+  inset: 0;
+}
+
+.text-wide {
+  font-stretch: 150%;
+}
+
+.site-main {
+  background: var(--foreground);
+  color: var(--background);
+  @apply relative z-10;
+}
+
+.site-header {
+  @apply py-4 fixed z-10 left-0 right-0 top-0;
+}
+
+.site-name {
+  @apply uppercase self-center text-2xl md:text-3xl font-black whitespace-nowrap;
+}
+
+.site-menu-wrapper {
+  @apply w-full md:w-auto hidden md:block bg-white md:bg-transparent rounded-lg md:rounded-none mt-5 md:mt-0;
+}
+
+.site-menu-wrapper.open {
+  display: block !important;
+}
+
+.site-menu {
+  @apply font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0;
+}
+
+.menu-item {
+  @apply block py-2 px-3 rounded hover:underline md:p-0;
+}
+
+.site-footer {
+  @apply py-4 fixed z-10 left-0 right-0 bottom-0;
+}
+
+.subtitle {
+  @apply font-black uppercase text-[#D1FF19] font-mono;
+}
+
+.dialog-panel {
+  @apply relative shadow-lg w-full max-w-md rounded-xl bg-white p-6 backdrop-blur-2xl duration-300 ease-out;
+}
+
+.dialog-title {
+  @apply text-lg font-black text-wide text-black;
+}
