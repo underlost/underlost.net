@@ -38,6 +38,7 @@ validation-report.json
 
 # Folders to ignore
 node_modules
+.yarn
 bower_components
 _site
 .publish
@@ -46,6 +47,7 @@ log
 .env
 .env.*
 dist
+out
 .ghost.json
 
 # Local Netlify folder

@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://underlost.net
-
-# Sitemaps
-Sitemap: https://underlost.net/sitemap.xml
